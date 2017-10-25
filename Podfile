@@ -7,11 +7,12 @@ target 'JacksGoGo' do
 
   # Pods for JacksGoGo
 
-pod 'UIColor_Hex_Swift'
-pod 'Alamofire', '~> 4.4.0'
-pod 'AlamofireObjectMapper', '~> 4.1.0'
+pod 'UIColor_Hex_Swift', :git => 'https://github.com/yeahdongcn/UIColor-Hex-Swift.git'
+# pod 'UIColor_Hex_Swift', '~> 4.0.0'
+pod 'Alamofire', '~> 4.5.1'
+pod 'AlamofireObjectMapper', '~> 5.0.0'
 pod 'SwiftyJSON'
-pod 'SnapKit', '~> 3.0.2'
+pod 'SnapKit', '~> 4.0.0'
 pod 'MBProgressHUD', '~> 1.0.0'
 
 end

@@ -37,6 +37,8 @@
 		63BE91F71FA0287E00D40C07 /* JGGAppointmentsBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91F61FA0287E00D40C07 /* JGGAppointmentsBaseVC.swift */; };
 		63BE91F91FA0289D00D40C07 /* JGGMainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91F81FA0289D00D40C07 /* JGGMainTabbarController.swift */; };
 		63BE91FB1FA028B300D40C07 /* JGGLoginBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91FA1FA028B300D40C07 /* JGGLoginBaseVC.swift */; };
+		63DBC8AF1FA02E7800AAECA8 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DBC8AE1FA02E7800AAECA8 /* UIColor.swift */; };
+		63DBC8B11FA0356000AAECA8 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DBC8B01FA0356000AAECA8 /* UIFont.swift */; };
 		F7862BF9654B02B90CFE4900 /* Pods_JacksGoGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781CEC96D6051F4CC98B1136 /* Pods_JacksGoGo.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,8 @@
 		63BE91F61FA0287E00D40C07 /* JGGAppointmentsBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppointmentsBaseVC.swift; sourceTree = "<group>"; };
 		63BE91F81FA0289D00D40C07 /* JGGMainTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGMainTabbarController.swift; sourceTree = "<group>"; };
 		63BE91FA1FA028B300D40C07 /* JGGLoginBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGLoginBaseVC.swift; sourceTree = "<group>"; };
+		63DBC8AE1FA02E7800AAECA8 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		63DBC8B01FA0356000AAECA8 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		781CEC96D6051F4CC98B1136 /* Pods_JacksGoGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JacksGoGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DDBAF2BE302FE617614219B /* Pods-JacksGoGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JacksGoGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JacksGoGo/Pods-JacksGoGo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,8 +136,8 @@
 		63BE91B41FA0257D00D40C07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				63BE91B51FA0257D00D40C07 /* Controllers */,
 				63BE91B61FA0257D00D40C07 /* Global */,
+				63BE91B51FA0257D00D40C07 /* Controllers */,
 				63BE91B71FA0257D00D40C07 /* Libraries */,
 				63BE91B81FA0257D00D40C07 /* Models */,
 				63BE91B91FA0257D00D40C07 /* Views */,
@@ -156,6 +160,7 @@
 		63BE91B61FA0257D00D40C07 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				63DBC8AD1FA02E6600AAECA8 /* Extension */,
 				63BE91BF1FA025D100D40C07 /* JGGAppManager.swift */,
 			);
 			path = Global;
@@ -306,6 +311,15 @@
 				63BE91A61FA0233300D40C07 /* Main.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		63DBC8AD1FA02E6600AAECA8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				63DBC8AE1FA02E7800AAECA8 /* UIColor.swift */,
+				63DBC8B01FA0356000AAECA8 /* UIFont.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -478,6 +492,8 @@
 				63BE91BC1FA025B700D40C07 /* JGGViewController.swift in Sources */,
 				63BE91F01FA0283600D40C07 /* JGGServicesBaseVC.swift in Sources */,
 				63BE91C31FA025ED00D40C07 /* JGGBaseModel.swift in Sources */,
+				63DBC8AF1FA02E7800AAECA8 /* UIColor.swift in Sources */,
+				63DBC8B11FA0356000AAECA8 /* UIFont.swift in Sources */,
 				63BE91F51FA0286C00D40C07 /* JGGAppointmentsTableVC.swift in Sources */,
 				63BE91F71FA0287E00D40C07 /* JGGAppointmentsBaseVC.swift in Sources */,
 				63BE91F21FA0285200D40C07 /* JGGServicesBaseTableVC.swift in Sources */,

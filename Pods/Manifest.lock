@@ -1,0 +1,31 @@
+PODS:
+  - Alamofire (4.4.0)
+  - AlamofireObjectMapper (4.1.0):
+    - Alamofire (~> 4.1)
+    - ObjectMapper (~> 2.0)
+  - MBProgressHUD (1.0.0)
+  - ObjectMapper (2.2.9)
+  - SnapKit (3.0.2)
+  - SwiftyJSON (3.1.4)
+  - UIColor_Hex_Swift (3.0.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4.0)
+  - AlamofireObjectMapper (~> 4.1.0)
+  - MBProgressHUD (~> 1.0.0)
+  - SnapKit (~> 3.0.2)
+  - SwiftyJSON
+  - UIColor_Hex_Swift
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  AlamofireObjectMapper: 435adc82f5b367679bd9e71c4974a54efd0b2521
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  ObjectMapper: 63cfe41bc6f8e7c8f44344c49901b8ae7de14c52
+  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
+
+PODFILE CHECKSUM: 1c574246f50f15d494322a3713bbf0fbbac1516c
+
+COCOAPODS: 1.3.1

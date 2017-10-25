@@ -8,20 +8,74 @@
 
 /* Begin PBXBuildFile section */
 		63BE91A31FA0233300D40C07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91A21FA0233300D40C07 /* AppDelegate.swift */; };
-		63BE91A51FA0233300D40C07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91A41FA0233300D40C07 /* ViewController.swift */; };
 		63BE91A81FA0233300D40C07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE91A61FA0233300D40C07 /* Main.storyboard */; };
 		63BE91AA1FA0233300D40C07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BE91A91FA0233300D40C07 /* Assets.xcassets */; };
 		63BE91AD1FA0233300D40C07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE91AB1FA0233300D40C07 /* LaunchScreen.storyboard */; };
+		63BE91BC1FA025B700D40C07 /* JGGViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91BB1FA025B700D40C07 /* JGGViewController.swift */; };
+		63BE91BE1FA025C500D40C07 /* JGGTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91BD1FA025C500D40C07 /* JGGTableViewController.swift */; };
+		63BE91C01FA025D100D40C07 /* JGGAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91BF1FA025D100D40C07 /* JGGAppManager.swift */; };
+		63BE91C31FA025ED00D40C07 /* JGGBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91C21FA025ED00D40C07 /* JGGBaseModel.swift */; };
+		63BE91C61FA025FD00D40C07 /* JGGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91C51FA025FD00D40C07 /* JGGView.swift */; };
+		63BE91D71FA0263C00D40C07 /* Muli-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63BE91C91FA0263C00D40C07 /* Muli-Black.ttf */; };
+		63BE91D81FA0263C00D40C07 /* Muli-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63BE91CA1FA0263C00D40C07 /* Muli-BlackItalic.ttf */; };
+		63BE91D91FA0263C00D40C07 /* Muli-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63BE91CB1FA0263C00D40C07 /* Muli-Bold.ttf */; };
+		63BE91DA1FA0263C00D40C07 /* Muli-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63BE91CC1FA0263C00D40C07 /* Muli-BoldItalic.ttf */; };
+		63BE91DB1FA0263C00D40C07 /* Muli-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63BE91CD1FA0263C00D40C07 /* Muli-ExtraBold.ttf */; };
+		63BE91DC1FA0263C00D40C07 /* Muli-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63BE91CE1FA0263C00D40C07 /* Muli-ExtraBoldItalic.ttf */; };
+		63BE91DD1FA0263C00D40C07 /* Muli-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63BE91CF1FA0263C00D40C07 /* Muli-ExtraLight.ttf */; };
+		63BE91DE1FA0263C00D40C07 /* Muli-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63BE91D01FA0263C00D40C07 /* Muli-ExtraLightItalic.ttf */; };
+		63BE91DF1FA0263C00D40C07 /* Muli-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63BE91D11FA0263C00D40C07 /* Muli-Italic.ttf */; };
+		63BE91E01FA0263C00D40C07 /* Muli-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63BE91D21FA0263C00D40C07 /* Muli-Light.ttf */; };
+		63BE91E11FA0263C00D40C07 /* Muli-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63BE91D31FA0263C00D40C07 /* Muli-LightItalic.ttf */; };
+		63BE91E21FA0263C00D40C07 /* Muli-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63BE91D41FA0263C00D40C07 /* Muli-Regular.ttf */; };
+		63BE91E31FA0263C00D40C07 /* Muli-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63BE91D51FA0263C00D40C07 /* Muli-SemiBold.ttf */; };
+		63BE91E41FA0263C00D40C07 /* Muli-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63BE91D61FA0263C00D40C07 /* Muli-SemiBoldItalic.ttf */; };
+		63BE91E71FA0274600D40C07 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BE91E61FA0274600D40C07 /* MapKit.framework */; };
+		63BE91F01FA0283600D40C07 /* JGGServicesBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91EF1FA0283600D40C07 /* JGGServicesBaseVC.swift */; };
+		63BE91F21FA0285200D40C07 /* JGGServicesBaseTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91F11FA0285200D40C07 /* JGGServicesBaseTableVC.swift */; };
+		63BE91F51FA0286C00D40C07 /* JGGAppointmentsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91F41FA0286C00D40C07 /* JGGAppointmentsTableVC.swift */; };
+		63BE91F71FA0287E00D40C07 /* JGGAppointmentsBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91F61FA0287E00D40C07 /* JGGAppointmentsBaseVC.swift */; };
+		63BE91F91FA0289D00D40C07 /* JGGMainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91F81FA0289D00D40C07 /* JGGMainTabbarController.swift */; };
+		63BE91FB1FA028B300D40C07 /* JGGLoginBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91FA1FA028B300D40C07 /* JGGLoginBaseVC.swift */; };
+		F7862BF9654B02B90CFE4900 /* Pods_JacksGoGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781CEC96D6051F4CC98B1136 /* Pods_JacksGoGo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5946E967F53932667006CC0B /* Pods-JacksGoGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JacksGoGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JacksGoGo/Pods-JacksGoGo.debug.xcconfig"; sourceTree = "<group>"; };
 		63BE919F1FA0233300D40C07 /* JacksGoGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JacksGoGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BE91A21FA0233300D40C07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		63BE91A41FA0233300D40C07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		63BE91A71FA0233300D40C07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63BE91A91FA0233300D40C07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63BE91AC1FA0233300D40C07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63BE91AE1FA0233300D40C07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63BE91BB1FA025B700D40C07 /* JGGViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGViewController.swift; sourceTree = "<group>"; };
+		63BE91BD1FA025C500D40C07 /* JGGTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGTableViewController.swift; sourceTree = "<group>"; };
+		63BE91BF1FA025D100D40C07 /* JGGAppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppManager.swift; sourceTree = "<group>"; };
+		63BE91C21FA025ED00D40C07 /* JGGBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGBaseModel.swift; sourceTree = "<group>"; };
+		63BE91C51FA025FD00D40C07 /* JGGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGView.swift; sourceTree = "<group>"; };
+		63BE91C91FA0263C00D40C07 /* Muli-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Black.ttf"; sourceTree = "<group>"; };
+		63BE91CA1FA0263C00D40C07 /* Muli-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-BlackItalic.ttf"; sourceTree = "<group>"; };
+		63BE91CB1FA0263C00D40C07 /* Muli-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Bold.ttf"; sourceTree = "<group>"; };
+		63BE91CC1FA0263C00D40C07 /* Muli-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-BoldItalic.ttf"; sourceTree = "<group>"; };
+		63BE91CD1FA0263C00D40C07 /* Muli-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-ExtraBold.ttf"; sourceTree = "<group>"; };
+		63BE91CE1FA0263C00D40C07 /* Muli-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		63BE91CF1FA0263C00D40C07 /* Muli-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-ExtraLight.ttf"; sourceTree = "<group>"; };
+		63BE91D01FA0263C00D40C07 /* Muli-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		63BE91D11FA0263C00D40C07 /* Muli-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Italic.ttf"; sourceTree = "<group>"; };
+		63BE91D21FA0263C00D40C07 /* Muli-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Light.ttf"; sourceTree = "<group>"; };
+		63BE91D31FA0263C00D40C07 /* Muli-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-LightItalic.ttf"; sourceTree = "<group>"; };
+		63BE91D41FA0263C00D40C07 /* Muli-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Regular.ttf"; sourceTree = "<group>"; };
+		63BE91D51FA0263C00D40C07 /* Muli-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-SemiBold.ttf"; sourceTree = "<group>"; };
+		63BE91D61FA0263C00D40C07 /* Muli-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		63BE91E61FA0274600D40C07 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		63BE91EF1FA0283600D40C07 /* JGGServicesBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServicesBaseVC.swift; sourceTree = "<group>"; };
+		63BE91F11FA0285200D40C07 /* JGGServicesBaseTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServicesBaseTableVC.swift; sourceTree = "<group>"; };
+		63BE91F41FA0286C00D40C07 /* JGGAppointmentsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppointmentsTableVC.swift; sourceTree = "<group>"; };
+		63BE91F61FA0287E00D40C07 /* JGGAppointmentsBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppointmentsBaseVC.swift; sourceTree = "<group>"; };
+		63BE91F81FA0289D00D40C07 /* JGGMainTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGMainTabbarController.swift; sourceTree = "<group>"; };
+		63BE91FA1FA028B300D40C07 /* JGGLoginBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGLoginBaseVC.swift; sourceTree = "<group>"; };
+		781CEC96D6051F4CC98B1136 /* Pods_JacksGoGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JacksGoGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DDBAF2BE302FE617614219B /* Pods-JacksGoGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JacksGoGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JacksGoGo/Pods-JacksGoGo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +83,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63BE91E71FA0274600D40C07 /* MapKit.framework in Frameworks */,
+				F7862BF9654B02B90CFE4900 /* Pods_JacksGoGo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5EE3910EB3A10CA8D5142F73 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5946E967F53932667006CC0B /* Pods-JacksGoGo.debug.xcconfig */,
+				7DDBAF2BE302FE617614219B /* Pods-JacksGoGo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		63BE91961FA0233300D40C07 = {
 			isa = PBXGroup;
 			children = (
 				63BE91A11FA0233300D40C07 /* JacksGoGo */,
 				63BE91A01FA0233300D40C07 /* Products */,
+				63BE91E51FA0274600D40C07 /* Frameworks */,
+				5EE3910EB3A10CA8D5142F73 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +122,190 @@
 			isa = PBXGroup;
 			children = (
 				63BE91A21FA0233300D40C07 /* AppDelegate.swift */,
-				63BE91A41FA0233300D40C07 /* ViewController.swift */,
-				63BE91A61FA0233300D40C07 /* Main.storyboard */,
-				63BE91A91FA0233300D40C07 /* Assets.xcassets */,
-				63BE91AB1FA0233300D40C07 /* LaunchScreen.storyboard */,
 				63BE91AE1FA0233300D40C07 /* Info.plist */,
+				63BE91B41FA0257D00D40C07 /* Classes */,
+				63BE91C71FA0263C00D40C07 /* Resources */,
 			);
 			path = JacksGoGo;
+			sourceTree = "<group>";
+		};
+		63BE91B41FA0257D00D40C07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				63BE91B51FA0257D00D40C07 /* Controllers */,
+				63BE91B61FA0257D00D40C07 /* Global */,
+				63BE91B71FA0257D00D40C07 /* Libraries */,
+				63BE91B81FA0257D00D40C07 /* Models */,
+				63BE91B91FA0257D00D40C07 /* Views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		63BE91B51FA0257D00D40C07 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				63BE91BA1FA025A400D40C07 /* Base */,
+				63BE91EB1FA0279F00D40C07 /* Login */,
+				63BE91EA1FA0279A00D40C07 /* Main */,
+				63BE91E91FA0279200D40C07 /* Appointments */,
+				63BE91E81FA0278D00D40C07 /* Services */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		63BE91B61FA0257D00D40C07 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				63BE91BF1FA025D100D40C07 /* JGGAppManager.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		63BE91B71FA0257D00D40C07 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		63BE91B81FA0257D00D40C07 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				63BE91C11FA025E200D40C07 /* Base */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		63BE91B91FA0257D00D40C07 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				63BE91C41FA025F100D40C07 /* Base */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		63BE91BA1FA025A400D40C07 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				63BE91BB1FA025B700D40C07 /* JGGViewController.swift */,
+				63BE91BD1FA025C500D40C07 /* JGGTableViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		63BE91C11FA025E200D40C07 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				63BE91C21FA025ED00D40C07 /* JGGBaseModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		63BE91C41FA025F100D40C07 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				63BE91C51FA025FD00D40C07 /* JGGView.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		63BE91C71FA0263C00D40C07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				63BE91A91FA0233300D40C07 /* Assets.xcassets */,
+				63BE91FC1FA029FA00D40C07 /* Storyboard */,
+				63BE91C81FA0263C00D40C07 /* font */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		63BE91C81FA0263C00D40C07 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				63BE91C91FA0263C00D40C07 /* Muli-Black.ttf */,
+				63BE91CA1FA0263C00D40C07 /* Muli-BlackItalic.ttf */,
+				63BE91CB1FA0263C00D40C07 /* Muli-Bold.ttf */,
+				63BE91CC1FA0263C00D40C07 /* Muli-BoldItalic.ttf */,
+				63BE91CD1FA0263C00D40C07 /* Muli-ExtraBold.ttf */,
+				63BE91CE1FA0263C00D40C07 /* Muli-ExtraBoldItalic.ttf */,
+				63BE91CF1FA0263C00D40C07 /* Muli-ExtraLight.ttf */,
+				63BE91D01FA0263C00D40C07 /* Muli-ExtraLightItalic.ttf */,
+				63BE91D11FA0263C00D40C07 /* Muli-Italic.ttf */,
+				63BE91D21FA0263C00D40C07 /* Muli-Light.ttf */,
+				63BE91D31FA0263C00D40C07 /* Muli-LightItalic.ttf */,
+				63BE91D41FA0263C00D40C07 /* Muli-Regular.ttf */,
+				63BE91D51FA0263C00D40C07 /* Muli-SemiBold.ttf */,
+				63BE91D61FA0263C00D40C07 /* Muli-SemiBoldItalic.ttf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
+		63BE91E51FA0274600D40C07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63BE91E61FA0274600D40C07 /* MapKit.framework */,
+				781CEC96D6051F4CC98B1136 /* Pods_JacksGoGo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		63BE91E81FA0278D00D40C07 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				63BE91EE1FA0281F00D40C07 /* Base */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		63BE91E91FA0279200D40C07 /* Appointments */ = {
+			isa = PBXGroup;
+			children = (
+				63BE91F31FA0285A00D40C07 /* Base */,
+			);
+			path = Appointments;
+			sourceTree = "<group>";
+		};
+		63BE91EA1FA0279A00D40C07 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				63BE91F81FA0289D00D40C07 /* JGGMainTabbarController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		63BE91EB1FA0279F00D40C07 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				63BE91FA1FA028B300D40C07 /* JGGLoginBaseVC.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		63BE91EE1FA0281F00D40C07 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				63BE91EF1FA0283600D40C07 /* JGGServicesBaseVC.swift */,
+				63BE91F11FA0285200D40C07 /* JGGServicesBaseTableVC.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		63BE91F31FA0285A00D40C07 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				63BE91F41FA0286C00D40C07 /* JGGAppointmentsTableVC.swift */,
+				63BE91F61FA0287E00D40C07 /* JGGAppointmentsBaseVC.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		63BE91FC1FA029FA00D40C07 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				63BE91AB1FA0233300D40C07 /* LaunchScreen.storyboard */,
+				63BE91A61FA0233300D40C07 /* Main.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +315,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63BE91B11FA0233400D40C07 /* Build configuration list for PBXNativeTarget "JacksGoGo" */;
 			buildPhases = (
+				0999789FC488B3AEBDA63652 /* [CP] Check Pods Manifest.lock */,
 				63BE919B1FA0233300D40C07 /* Sources */,
 				63BE919C1FA0233300D40C07 /* Frameworks */,
 				63BE919D1FA0233300D40C07 /* Resources */,
+				098CC8FCC6F9E348E8F27D22 /* [CP] Embed Pods Frameworks */,
+				17492B64194FFD254AE7D200 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -90,6 +337,7 @@
 		63BE91971FA0233300D40C07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JGG;
 				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Hemin Wang";
@@ -97,6 +345,11 @@
 					63BE919E1FA0233300D40C07 = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -123,21 +376,111 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63BE91E31FA0263C00D40C07 /* Muli-SemiBold.ttf in Resources */,
+				63BE91DC1FA0263C00D40C07 /* Muli-ExtraBoldItalic.ttf in Resources */,
+				63BE91DF1FA0263C00D40C07 /* Muli-Italic.ttf in Resources */,
+				63BE91E11FA0263C00D40C07 /* Muli-LightItalic.ttf in Resources */,
+				63BE91E21FA0263C00D40C07 /* Muli-Regular.ttf in Resources */,
+				63BE91D91FA0263C00D40C07 /* Muli-Bold.ttf in Resources */,
 				63BE91AD1FA0233300D40C07 /* LaunchScreen.storyboard in Resources */,
+				63BE91DD1FA0263C00D40C07 /* Muli-ExtraLight.ttf in Resources */,
+				63BE91E41FA0263C00D40C07 /* Muli-SemiBoldItalic.ttf in Resources */,
+				63BE91DE1FA0263C00D40C07 /* Muli-ExtraLightItalic.ttf in Resources */,
 				63BE91AA1FA0233300D40C07 /* Assets.xcassets in Resources */,
+				63BE91E01FA0263C00D40C07 /* Muli-Light.ttf in Resources */,
+				63BE91D81FA0263C00D40C07 /* Muli-BlackItalic.ttf in Resources */,
+				63BE91DA1FA0263C00D40C07 /* Muli-BoldItalic.ttf in Resources */,
 				63BE91A81FA0233300D40C07 /* Main.storyboard in Resources */,
+				63BE91D71FA0263C00D40C07 /* Muli-Black.ttf in Resources */,
+				63BE91DB1FA0263C00D40C07 /* Muli-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		098CC8FCC6F9E348E8F27D22 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-JacksGoGo/Pods-JacksGoGo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/UIColor_Hex_Swift/UIColor_Hex_Swift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIColor_Hex_Swift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JacksGoGo/Pods-JacksGoGo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0999789FC488B3AEBDA63652 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JacksGoGo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		17492B64194FFD254AE7D200 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JacksGoGo/Pods-JacksGoGo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		63BE919B1FA0233300D40C07 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63BE91A51FA0233300D40C07 /* ViewController.swift in Sources */,
+				63BE91FB1FA028B300D40C07 /* JGGLoginBaseVC.swift in Sources */,
+				63BE91C61FA025FD00D40C07 /* JGGView.swift in Sources */,
+				63BE91C01FA025D100D40C07 /* JGGAppManager.swift in Sources */,
+				63BE91F91FA0289D00D40C07 /* JGGMainTabbarController.swift in Sources */,
 				63BE91A31FA0233300D40C07 /* AppDelegate.swift in Sources */,
+				63BE91BE1FA025C500D40C07 /* JGGTableViewController.swift in Sources */,
+				63BE91BC1FA025B700D40C07 /* JGGViewController.swift in Sources */,
+				63BE91F01FA0283600D40C07 /* JGGServicesBaseVC.swift in Sources */,
+				63BE91C31FA025ED00D40C07 /* JGGBaseModel.swift in Sources */,
+				63BE91F51FA0286C00D40C07 /* JGGAppointmentsTableVC.swift in Sources */,
+				63BE91F71FA0287E00D40C07 /* JGGAppointmentsBaseVC.swift in Sources */,
+				63BE91F21FA0285200D40C07 /* JGGServicesBaseTableVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,16 +615,18 @@
 		};
 		63BE91B21FA0233400D40C07 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5946E967F53932667006CC0B /* Pods-JacksGoGo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 64L6BFS38D;
 				INFOPLIST_FILE = JacksGoGo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.JacksGoGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "6c93466c-1107-44fa-b29d-d08724559e08";
+				PROVISIONING_PROFILE_SPECIFIER = allpro0429pat;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -289,6 +634,7 @@
 		};
 		63BE91B31FA0233400D40C07 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DDBAF2BE302FE617614219B /* Pods-JacksGoGo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;

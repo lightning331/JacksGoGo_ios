@@ -1,0 +1,6 @@
+framework module Pods_JacksGoGo {
+  umbrella header "Pods-JacksGoGo-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,5 +1,5 @@
 //
-//  JGGView.swift
+//  JGGTextField.swift
 //  JacksGoGo
 //
 //  Created by Hemin Wang on 25/10/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JGGView: UIView {
+class JGGTextField: UITextField {
 
     /*
     // Only override draw() if you perform custom drawing.

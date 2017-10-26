@@ -50,6 +50,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="wqu-XW-SA7"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KJq-iQ-qrQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

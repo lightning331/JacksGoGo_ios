@@ -18,7 +18,7 @@ class JGGAppMainVC: JGGStartTableVC {
         registerCell()
         
     }
-    
+        
     private func initializeTableView() {
         self.tableView.keyboardDismissMode = .onDrag
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -49,7 +49,7 @@ class JGGAppMainVC: JGGStartTableVC {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
-
+    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionTitleView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "JGGSectionTitleView") as? JGGSectionTitleView
         if section == 0 {

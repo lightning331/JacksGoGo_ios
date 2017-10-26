@@ -13,7 +13,7 @@ class JGGMainStartNC: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.hidesBarsOnSwipe = true
+//        self.hidesBarsOnSwipe = true
         self.hidesBarsWhenKeyboardAppears = true
         
     }

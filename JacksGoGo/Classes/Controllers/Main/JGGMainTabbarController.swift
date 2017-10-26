@@ -13,8 +13,9 @@ class JGGMainTabbarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         loadViewControllers()
+        
+        self.selectedIndex = 2
     }
     
     fileprivate func loadViewControllers() {

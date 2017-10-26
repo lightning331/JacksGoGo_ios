@@ -14,6 +14,8 @@ class JGGAppMainVC: JGGStartTableVC {
     fileprivate lazy var arrayServicePackages: [JGGServicePackageModel] = []
     fileprivate lazy var arrayPendingJobs: [JGGAppointmentBaseModel] = []
     
+    fileprivate var selectedTab: AppointmentTabButton = .pending
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +40,7 @@ class JGGAppMainVC: JGGStartTableVC {
             let frame = CGRect(origin: CGPoint.zero, size: size)
             view.frame = frame
             self.navigationItem.titleView = view
+            view.delegate = self
         }
     }
     
@@ -59,11 +62,19 @@ class JGGAppMainVC: JGGStartTableVC {
     
     // MARK: - UITableView Data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        if selectedTab == .pending {
+            return 3
+        } else {
+            return 1
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        if selectedTab == .pending {
+            return 50
+        } else {
+            return 0
+        }
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -82,7 +93,11 @@ class JGGAppMainVC: JGGStartTableVC {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return arrayQuickJobs.count
+            if selectedTab == .pending {
+                return arrayQuickJobs.count
+            } else {
+                return arrayPendingJobs.count
+            }
         }
         else if section == 1 {
             return arrayServicePackages.count
@@ -98,7 +113,12 @@ class JGGAppMainVC: JGGStartTableVC {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppHistoryListCell") as! JGGAppHistoryListCell
         if indexPath.section == 0 {
-            cell.appointment = arrayQuickJobs[indexPath.row];
+            if selectedTab == .pending {
+                cell.appointment = arrayQuickJobs[indexPath.row];
+            } else {
+                let index = Int(arc4random_uniform(UInt32(indexPath.row)))
+                cell.appointment = arrayPendingJobs[index];
+            }
         } else if indexPath.section == 1 {
             cell.appointment = arrayServicePackages[indexPath.row];
         } else if indexPath.section == 2 {
@@ -187,6 +207,17 @@ class JGGAppMainVC: JGGStartTableVC {
         arrayPendingJobs.append(pendingJob09)
         
     }
-    
+}
 
+extension JGGAppMainVC: JGGAppHomeTabViewDelegate {
+    func appointmentHomeTabView(_ view: JGGAppHomeTabView, selectedButton: AppointmentTabButton) {
+        if selectedButton == .filter {
+            
+        } else {
+            selectedTab = selectedButton
+            self.tableView.reloadData()
+            self.tableView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1),
+                                               animated: true)
+        }
+    }
 }

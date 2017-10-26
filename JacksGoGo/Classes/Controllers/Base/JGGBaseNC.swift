@@ -14,6 +14,7 @@ class JGGBaseNC: UINavigationController {
         super.viewDidLoad()
 
         self.hidesBarsOnSwipe = true
+        self.navigationBar.barTintColor = UIColor.JGGWhite
     }
 
     override func didReceiveMemoryWarning() {

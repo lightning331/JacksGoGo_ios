@@ -45,35 +45,42 @@ class JGGAppHomeTabView: UIView {
         super.awakeFromNib()
         selectedTabButton = self.btnPending;
         
-        btnPending.setTitleColor(UIColor.JGGBlack, for: .normal)
-        btnPending.setTitleColor(UIColor.JGGOrange, for: .selected)
+        btnPending.setTitleColor(UIColor.JGGOrange, for: .normal)
+        viewPendingDot.isHidden = false
+
         btnConfirmed.setTitleColor(UIColor.JGGBlack, for: .normal)
-        btnConfirmed.setTitleColor(UIColor.JGGOrange, for: .selected)
+        viewConfirmedDot.isHidden = true
+        
         btnHistory.setTitleColor(UIColor.JGGBlack, for: .normal)
-        btnHistory.setTitleColor(UIColor.JGGOrange, for: .selected)
+        viewHistoryDot.isHidden = true
     }
     
+    override var intrinsicContentSize: CGSize {
+        return UILayoutFittingExpandedSize
+    }
+
     @IBAction func onPressButton(_ sender: UIButton) {
         viewPendingDot.isHidden = true
         viewConfirmedDot.isHidden = true
         viewHistoryDot.isHidden = true
-        btnPending.isSelected = false
-        btnConfirmed.isSelected = false
-        btnHistory.isSelected = false
         
+        btnPending.setTitleColor(UIColor.JGGBlack, for: .normal)
+        btnConfirmed.setTitleColor(UIColor.JGGBlack, for: .normal)
+        btnHistory.setTitleColor(UIColor.JGGBlack, for: .normal)
+
         if sender == btnPending {
             delegate?.appointmentHomeTabView(self, selectedButton: .pending)
-            btnPending.isSelected = true
+            btnPending.setTitleColor(UIColor.JGGOrange, for: .normal)
             viewPendingDot.isHidden = false
         }
         else if sender == btnConfirmed {
             delegate?.appointmentHomeTabView(self, selectedButton: .confirmed)
-            btnConfirmed.isSelected = true
+            btnConfirmed.setTitleColor(UIColor.JGGOrange, for: .normal)
             viewConfirmedDot.isHidden = false
         }
         else if sender == btnHistory {
             delegate?.appointmentHomeTabView(self, selectedButton: .history)
-            btnConfirmed.isSelected = true
+            btnHistory.setTitleColor(UIColor.JGGOrange, for: .normal)
             viewHistoryDot.isHidden = false
         }
         else if sender == btnFilter {

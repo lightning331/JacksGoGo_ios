@@ -20,17 +20,47 @@ class JGGAppHistoryListCell: UITableViewCell {
     @IBOutlet weak var viewCountBadge: UIView!
     @IBOutlet weak var lblCountBadge: UILabel!
     
+    var appointment: JGGAppointmentBaseModel? {
+        didSet {
+            updateValue()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
         
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
+    fileprivate func updateValue() {
+        if let appointment = appointment {
+            lblDay.text = appointment.appointmentDay()
+            lblMonth.text = appointment.appointmentMonth()
+            lblTitle.text = appointment.title
+            lblDescription.text = appointment.comment
+            lblCountBadge.text = String(appointment.badgeNumber)
+            viewCountBadge.isHidden = appointment.badgeNumber == 0
+            viewRightSideBadge.isHidden = appointment.badgeNumber == 0
+            
+            var color = UIColor.JGGCyan
+            if let _ = appointment as? JGGServiceModel {
+                color = UIColor.JGGGreen
+            } else if let _ = appointment as? JGGEventModel {
+                color = UIColor.JGGPurple
+            }
+            lblDay.textColor = color
+            lblMonth.textColor = color
+            
+            if appointment.status == .cancelled {
+                lblStatus.isHidden = false
+                lblStatus.text = "Cancelled"
+            } else {
+                lblStatus.isHidden = true
+            }
+        }
+    }
 }

@@ -16,8 +16,10 @@ extension UIView {
         set {
             layer.cornerRadius = newValue
             layer.masksToBounds = newValue > 0
+            clipsToBounds = newValue > 0
         }
     }
+    
     @IBInspectable var borderColor: UIColor? {
         get {
             return layer.borderColor != nil ? UIColor(cgColor: layer.borderColor!) : nil

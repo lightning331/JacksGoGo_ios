@@ -29,7 +29,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNe-Vu-dU4">
-                        <rect key="frame" x="0.0" y="12" width="40" height="30.5"/>
+                        <rect key="frame" x="0.0" y="12" width="40" height="28"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="0R3-Pr-s8C"/>
                         </constraints>
@@ -38,7 +38,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35l-dx-nLl">
-                        <rect key="frame" x="0.0" y="40" width="40" height="15.5"/>
+                        <rect key="frame" x="0.0" y="37.5" width="40" height="14"/>
                         <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
                         <color key="textColor" red="0.078738220040000001" green="0.69248288869999997" blue="0.97351557020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -50,30 +50,35 @@
                             <constraint firstAttribute="width" constant="4" id="CPO-pH-Pqz"/>
                         </constraints>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RHM-pH-v9o">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="222.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="RHM-pH-v9o">
                         <rect key="frame" x="431" y="15.5" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="RHM-pH-v9o" secondAttribute="height" multiplier="1:1" id="mFq-ag-Fl1"/>
                             <constraint firstAttribute="width" constant="50" id="tg8-LR-yTD"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="25"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VjZ-VX-Pn7">
                         <rect key="frame" x="0.0" y="12" width="0.0" height="60.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlI-mv-EFH">
-                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="27.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="29.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOE-lD-gZo">
-                                <rect key="frame" x="0.0" y="27.5" width="0.0" height="16.5"/>
+                                <rect key="frame" x="0.0" y="29.5" width="0.0" height="15.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Cancelled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fr1-rd-hfv">
-                                <rect key="frame" x="0.0" y="44" width="0.0" height="16.5"/>
+                                <rect key="frame" x="0.0" y="45" width="0.0" height="15.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="13"/>
                                 <color key="textColor" red="0.95005923510000001" green="0.39661446210000001" blue="0.073047049340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -98,6 +103,11 @@
                             <constraint firstItem="6Vr-jG-oRB" firstAttribute="top" secondItem="PHq-g4-McN" secondAttribute="top" id="Z4r-an-6wD"/>
                             <constraint firstAttribute="bottom" secondItem="6Vr-jG-oRB" secondAttribute="bottom" id="pXI-A4-7gJ"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="9"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <constraints>
@@ -133,4 +143,7 @@
             <point key="canvasLocation" x="-100.5" y="-72.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="222.jpg" width="289" height="289"/>
+    </resources>
 </document>

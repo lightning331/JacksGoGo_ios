@@ -10,4 +10,9 @@ import UIKit
 
 class JGGAppManager: NSObject {
 
+    static let sharedManager : JGGAppManager = {
+        let instance = JGGAppManager()
+        return instance
+    }()
+    
 }

@@ -10,7 +10,7 @@
 		63955EC91FA058E600D825B2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63955EC71FA058E600D825B2 /* Login.storyboard */; };
 		63955ECC1FA058F500D825B2 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63955ECA1FA058F500D825B2 /* Profile.storyboard */; };
 		63955ECF1FA0590200D825B2 /* Services.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63955ECD1FA0590200D825B2 /* Services.storyboard */; };
-		63955ED21FA0590F00D825B2 /* Appointments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63955ED01FA0590F00D825B2 /* Appointments.storyboard */; };
+		63955ED21FA0590F00D825B2 /* Appointment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63955ED01FA0590F00D825B2 /* Appointment.storyboard */; };
 		63955ED41FA0593400D825B2 /* JGGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63955ED31FA0593400D825B2 /* JGGButton.swift */; };
 		63955ED61FA0594300D825B2 /* JGGTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63955ED51FA0594300D825B2 /* JGGTextField.swift */; };
 		63955ED81FA0598800D825B2 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63955ED71FA0598800D825B2 /* UITextField.swift */; };
@@ -21,6 +21,15 @@
 		63955EE41FA0643A00D825B2 /* JGGAppSearchHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63955EE31FA0643A00D825B2 /* JGGAppSearchHeaderView.xib */; };
 		63955EE81FA0668800D825B2 /* JGGAppHomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63955EE71FA0668800D825B2 /* JGGAppHomeTabView.swift */; };
 		63955EEA1FA0669B00D825B2 /* JGGAppHomeTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63955EE91FA0669A00D825B2 /* JGGAppHomeTabView.xib */; };
+		63B8DC2A1FA17C8E003C6EBF /* JGGMainStartNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B8DC291FA17C8E003C6EBF /* JGGMainStartNC.swift */; };
+		63B8DC2D1FA17F0F003C6EBF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B8DC2B1FA17F0F003C6EBF /* Home.storyboard */; };
+		63B8DC301FA17F1B003C6EBF /* Favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63B8DC2E1FA17F1B003C6EBF /* Favorite.storyboard */; };
+		63B8DC321FA187F4003C6EBF /* JGGStartTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B8DC311FA187F4003C6EBF /* JGGStartTableVC.swift */; };
+		63B8DC341FA18852003C6EBF /* JGGAppMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B8DC331FA18852003C6EBF /* JGGAppMainVC.swift */; };
+		63B8DC361FA18AD5003C6EBF /* JGGSectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B8DC351FA18AD5003C6EBF /* JGGSectionTitleView.swift */; };
+		63B8DC381FA18AE3003C6EBF /* JGGSectionTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B8DC371FA18AE3003C6EBF /* JGGSectionTitleView.xib */; };
+		63B8DC3C1FA18EEE003C6EBF /* 222.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63B8DC3B1FA18EEE003C6EBF /* 222.jpg */; };
+		63B8DC3E1FA19FEE003C6EBF /* JGGBaseNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B8DC3D1FA19FED003C6EBF /* JGGBaseNC.swift */; };
 		63BE91A31FA0233300D40C07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91A21FA0233300D40C07 /* AppDelegate.swift */; };
 		63BE91A81FA0233300D40C07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE91A61FA0233300D40C07 /* Main.storyboard */; };
 		63BE91AA1FA0233300D40C07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BE91A91FA0233300D40C07 /* Assets.xcassets */; };
@@ -61,7 +70,7 @@
 		63955EC81FA058E600D825B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		63955ECB1FA058F500D825B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		63955ECE1FA0590200D825B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Services.storyboard; sourceTree = "<group>"; };
-		63955ED11FA0590F00D825B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Appointments.storyboard; sourceTree = "<group>"; };
+		63955ED11FA0590F00D825B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Appointment.storyboard; sourceTree = "<group>"; };
 		63955ED31FA0593400D825B2 /* JGGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGButton.swift; sourceTree = "<group>"; };
 		63955ED51FA0594300D825B2 /* JGGTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGTextField.swift; sourceTree = "<group>"; };
 		63955ED71FA0598800D825B2 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
@@ -72,6 +81,15 @@
 		63955EE31FA0643A00D825B2 /* JGGAppSearchHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGAppSearchHeaderView.xib; sourceTree = "<group>"; };
 		63955EE71FA0668800D825B2 /* JGGAppHomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppHomeTabView.swift; sourceTree = "<group>"; };
 		63955EE91FA0669A00D825B2 /* JGGAppHomeTabView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGAppHomeTabView.xib; sourceTree = "<group>"; };
+		63B8DC291FA17C8E003C6EBF /* JGGMainStartNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGMainStartNC.swift; sourceTree = "<group>"; };
+		63B8DC2C1FA17F0F003C6EBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
+		63B8DC2F1FA17F1B003C6EBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Favorite.storyboard; sourceTree = "<group>"; };
+		63B8DC311FA187F4003C6EBF /* JGGStartTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGStartTableVC.swift; sourceTree = "<group>"; };
+		63B8DC331FA18852003C6EBF /* JGGAppMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppMainVC.swift; sourceTree = "<group>"; };
+		63B8DC351FA18AD5003C6EBF /* JGGSectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSectionTitleView.swift; sourceTree = "<group>"; };
+		63B8DC371FA18AE3003C6EBF /* JGGSectionTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGSectionTitleView.xib; sourceTree = "<group>"; };
+		63B8DC3B1FA18EEE003C6EBF /* 222.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 222.jpg; sourceTree = "<group>"; };
+		63B8DC3D1FA19FED003C6EBF /* JGGBaseNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGBaseNC.swift; sourceTree = "<group>"; };
 		63BE919F1FA0233300D40C07 /* JacksGoGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JacksGoGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BE91A21FA0233300D40C07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63BE91A71FA0233300D40C07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -135,6 +153,8 @@
 		63955EDB1FA05B8400D825B2 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				63B8DC351FA18AD5003C6EBF /* JGGSectionTitleView.swift */,
+				63B8DC371FA18AE3003C6EBF /* JGGSectionTitleView.xib */,
 				63955EE61FA0662900D825B2 /* Appointment */,
 			);
 			path = TableViewCell;
@@ -166,6 +186,22 @@
 				63955EDE1FA05C1F00D825B2 /* JGGAppHistoryListCell.xib */,
 			);
 			path = Appointment;
+			sourceTree = "<group>";
+		};
+		63B8DC391FA18EEE003C6EBF /* images */ = {
+			isa = PBXGroup;
+			children = (
+				63B8DC3A1FA18EEE003C6EBF /* temp */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		63B8DC3A1FA18EEE003C6EBF /* temp */ = {
+			isa = PBXGroup;
+			children = (
+				63B8DC3B1FA18EEE003C6EBF /* 222.jpg */,
+			);
+			path = temp;
 			sourceTree = "<group>";
 		};
 		63BE91961FA0233300D40C07 = {
@@ -213,8 +249,8 @@
 			isa = PBXGroup;
 			children = (
 				63BE91BA1FA025A400D40C07 /* Base */,
-				63BE91EB1FA0279F00D40C07 /* Login */,
 				63BE91EA1FA0279A00D40C07 /* Main */,
+				63BE91EB1FA0279F00D40C07 /* Login */,
 				63BE91E91FA0279200D40C07 /* Appointment */,
 				63BE91E81FA0278D00D40C07 /* Services */,
 			);
@@ -260,6 +296,8 @@
 			children = (
 				63BE91BB1FA025B700D40C07 /* JGGViewController.swift */,
 				63BE91BD1FA025C500D40C07 /* JGGTableViewController.swift */,
+				63B8DC311FA187F4003C6EBF /* JGGStartTableVC.swift */,
+				63B8DC3D1FA19FED003C6EBF /* JGGBaseNC.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -288,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				63BE91A91FA0233300D40C07 /* Assets.xcassets */,
+				63B8DC391FA18EEE003C6EBF /* images */,
 				63BE91FC1FA029FA00D40C07 /* Storyboard */,
 				63BE91C81FA0263C00D40C07 /* font */,
 			);
@@ -336,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				63BE91F31FA0285A00D40C07 /* Base */,
+				63B8DC331FA18852003C6EBF /* JGGAppMainVC.swift */,
 			);
 			path = Appointment;
 			sourceTree = "<group>";
@@ -343,6 +383,7 @@
 		63BE91EA1FA0279A00D40C07 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				63B8DC291FA17C8E003C6EBF /* JGGMainStartNC.swift */,
 				63BE91F81FA0289D00D40C07 /* JGGMainTabbarController.swift */,
 			);
 			path = Main;
@@ -380,9 +421,11 @@
 				63BE91AB1FA0233300D40C07 /* LaunchScreen.storyboard */,
 				63BE91A61FA0233300D40C07 /* Main.storyboard */,
 				63955EC71FA058E600D825B2 /* Login.storyboard */,
-				63955ECA1FA058F500D825B2 /* Profile.storyboard */,
+				63B8DC2B1FA17F0F003C6EBF /* Home.storyboard */,
 				63955ECD1FA0590200D825B2 /* Services.storyboard */,
-				63955ED01FA0590F00D825B2 /* Appointments.storyboard */,
+				63955ED01FA0590F00D825B2 /* Appointment.storyboard */,
+				63B8DC2E1FA17F1B003C6EBF /* Favorite.storyboard */,
+				63955ECA1FA058F500D825B2 /* Profile.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -476,17 +519,21 @@
 				63BE91AD1FA0233300D40C07 /* LaunchScreen.storyboard in Resources */,
 				63BE91DD1FA0263C00D40C07 /* Muli-ExtraLight.ttf in Resources */,
 				63955EC91FA058E600D825B2 /* Login.storyboard in Resources */,
+				63B8DC3C1FA18EEE003C6EBF /* 222.jpg in Resources */,
+				63B8DC301FA17F1B003C6EBF /* Favorite.storyboard in Resources */,
 				63BE91E41FA0263C00D40C07 /* Muli-SemiBoldItalic.ttf in Resources */,
 				63BE91DE1FA0263C00D40C07 /* Muli-ExtraLightItalic.ttf in Resources */,
 				63BE91AA1FA0233300D40C07 /* Assets.xcassets in Resources */,
 				63BE91E01FA0263C00D40C07 /* Muli-Light.ttf in Resources */,
-				63955ED21FA0590F00D825B2 /* Appointments.storyboard in Resources */,
+				63955ED21FA0590F00D825B2 /* Appointment.storyboard in Resources */,
 				63955ECF1FA0590200D825B2 /* Services.storyboard in Resources */,
 				63955EEA1FA0669B00D825B2 /* JGGAppHomeTabView.xib in Resources */,
 				63BE91D81FA0263C00D40C07 /* Muli-BlackItalic.ttf in Resources */,
 				63BE91DA1FA0263C00D40C07 /* Muli-BoldItalic.ttf in Resources */,
+				63B8DC2D1FA17F0F003C6EBF /* Home.storyboard in Resources */,
 				63BE91A81FA0233300D40C07 /* Main.storyboard in Resources */,
 				63BE91D71FA0263C00D40C07 /* Muli-Black.ttf in Resources */,
+				63B8DC381FA18AE3003C6EBF /* JGGSectionTitleView.xib in Resources */,
 				63BE91DB1FA0263C00D40C07 /* Muli-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,6 +613,7 @@
 			files = (
 				63BE91FB1FA028B300D40C07 /* JGGLoginBaseVC.swift in Sources */,
 				63BE91C61FA025FD00D40C07 /* UIView.swift in Sources */,
+				63B8DC3E1FA19FEE003C6EBF /* JGGBaseNC.swift in Sources */,
 				63BE91C01FA025D100D40C07 /* JGGAppManager.swift in Sources */,
 				63BE91F91FA0289D00D40C07 /* JGGMainTabbarController.swift in Sources */,
 				63BE91A31FA0233300D40C07 /* AppDelegate.swift in Sources */,
@@ -575,6 +623,8 @@
 				63BE91F01FA0283600D40C07 /* JGGServicesBaseVC.swift in Sources */,
 				63BE91C31FA025ED00D40C07 /* JGGBaseModel.swift in Sources */,
 				63DBC8AF1FA02E7800AAECA8 /* UIColor.swift in Sources */,
+				63B8DC321FA187F4003C6EBF /* JGGStartTableVC.swift in Sources */,
+				63B8DC341FA18852003C6EBF /* JGGAppMainVC.swift in Sources */,
 				63955ED41FA0593400D825B2 /* JGGButton.swift in Sources */,
 				63DBC8B11FA0356000AAECA8 /* UIFont.swift in Sources */,
 				63BE91F51FA0286C00D40C07 /* JGGAppointmentsTableVC.swift in Sources */,
@@ -583,6 +633,8 @@
 				63955EDD1FA05C0B00D825B2 /* JGGAppHistoryListCell.swift in Sources */,
 				63955ED61FA0594300D825B2 /* JGGTextField.swift in Sources */,
 				63955ED81FA0598800D825B2 /* UITextField.swift in Sources */,
+				63B8DC361FA18AD5003C6EBF /* JGGSectionTitleView.swift in Sources */,
+				63B8DC2A1FA17C8E003C6EBF /* JGGMainStartNC.swift in Sources */,
 				63BE91F21FA0285200D40C07 /* JGGServicesBaseTableVC.swift in Sources */,
 				63955EDA1FA0599400D825B2 /* UIButton.swift in Sources */,
 			);
@@ -615,12 +667,28 @@
 			name = Services.storyboard;
 			sourceTree = "<group>";
 		};
-		63955ED01FA0590F00D825B2 /* Appointments.storyboard */ = {
+		63955ED01FA0590F00D825B2 /* Appointment.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				63955ED11FA0590F00D825B2 /* Base */,
 			);
-			name = Appointments.storyboard;
+			name = Appointment.storyboard;
+			sourceTree = "<group>";
+		};
+		63B8DC2B1FA17F0F003C6EBF /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63B8DC2C1FA17F0F003C6EBF /* Base */,
+			);
+			name = Home.storyboard;
+			sourceTree = "<group>";
+		};
+		63B8DC2E1FA17F1B003C6EBF /* Favorite.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63B8DC2F1FA17F1B003C6EBF /* Base */,
+			);
+			name = Favorite.storyboard;
 			sourceTree = "<group>";
 		};
 		63BE91A61FA0233300D40C07 /* Main.storyboard */ = {

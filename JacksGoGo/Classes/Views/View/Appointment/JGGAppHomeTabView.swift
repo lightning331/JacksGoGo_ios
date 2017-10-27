@@ -60,31 +60,34 @@ class JGGAppHomeTabView: UIView {
     }
 
     @IBAction func onPressButton(_ sender: UIButton) {
-        viewPendingDot.isHidden = true
-        viewConfirmedDot.isHidden = true
-        viewHistoryDot.isHidden = true
-        
-        btnPending.setTitleColor(UIColor.JGGBlack, for: .normal)
-        btnConfirmed.setTitleColor(UIColor.JGGBlack, for: .normal)
-        btnHistory.setTitleColor(UIColor.JGGBlack, for: .normal)
 
-        if sender == btnPending {
-            delegate?.appointmentHomeTabView(self, selectedButton: .pending)
-            btnPending.setTitleColor(UIColor.JGGOrange, for: .normal)
-            viewPendingDot.isHidden = false
-        }
-        else if sender == btnConfirmed {
-            delegate?.appointmentHomeTabView(self, selectedButton: .confirmed)
-            btnConfirmed.setTitleColor(UIColor.JGGOrange, for: .normal)
-            viewConfirmedDot.isHidden = false
-        }
-        else if sender == btnHistory {
-            delegate?.appointmentHomeTabView(self, selectedButton: .history)
-            btnHistory.setTitleColor(UIColor.JGGOrange, for: .normal)
-            viewHistoryDot.isHidden = false
-        }
-        else if sender == btnFilter {
+        if sender == btnFilter {
             delegate?.appointmentHomeTabView(self, selectedButton: .filter)
+        } else {
+            
+            viewPendingDot.isHidden = true
+            viewConfirmedDot.isHidden = true
+            viewHistoryDot.isHidden = true
+            
+            btnPending.setTitleColor(UIColor.JGGBlack, for: .normal)
+            btnConfirmed.setTitleColor(UIColor.JGGBlack, for: .normal)
+            btnHistory.setTitleColor(UIColor.JGGBlack, for: .normal)
+
+            if sender == btnPending {
+                delegate?.appointmentHomeTabView(self, selectedButton: .pending)
+                btnPending.setTitleColor(UIColor.JGGOrange, for: .normal)
+                viewPendingDot.isHidden = false
+            }
+            else if sender == btnConfirmed {
+                delegate?.appointmentHomeTabView(self, selectedButton: .confirmed)
+                btnConfirmed.setTitleColor(UIColor.JGGOrange, for: .normal)
+                viewConfirmedDot.isHidden = false
+            }
+            else if sender == btnHistory {
+                delegate?.appointmentHomeTabView(self, selectedButton: .history)
+                btnHistory.setTitleColor(UIColor.JGGOrange, for: .normal)
+                viewHistoryDot.isHidden = false
+            }
         }
     }
 }

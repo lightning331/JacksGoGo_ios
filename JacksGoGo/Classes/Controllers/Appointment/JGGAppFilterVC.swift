@@ -34,8 +34,8 @@ class JGGAppFilterVC: JGGAppointmentsBaseVC {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     

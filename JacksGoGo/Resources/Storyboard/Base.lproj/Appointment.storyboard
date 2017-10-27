@@ -72,7 +72,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFb-mS-EHf">
-                                <rect key="frame" x="327" y="30" width="32" height="32"/>
+                                <rect key="frame" x="317" y="20" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="o9H-oD-FcU"/>
+                                    <constraint firstAttribute="height" constant="50" id="tcV-8g-Ojo"/>
+                                </constraints>
                                 <state key="normal" image="button_close_round_orange"/>
                                 <connections>
                                     <action selector="btnClose:" destination="Ciu-S9-eST" eventType="touchUpInside" id="YqL-KQ-S8L"/>
@@ -80,7 +84,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tah-RU-WOJ">
-                                <rect key="frame" x="16" y="67" width="343" height="580"/>
+                                <rect key="frame" x="16" y="75" width="343" height="572"/>
                                 <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JGGAppFilterOptionCell" rowHeight="60" id="Qft-n8-ajt" customClass="JGGAppFilterOptionCell" customModule="JacksGoGo" customModuleProvider="target">
@@ -98,7 +102,7 @@
                                                     <rect key="frame" x="8" y="8" width="327" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jobs posted." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zw8-gB-vrh">
-                                                            <rect key="frame" x="16" y="14" width="295" height="17.5"/>
+                                                            <rect key="frame" x="16" y="12.5" width="295" height="19"/>
                                                             <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -147,10 +151,10 @@
                         <constraints>
                             <constraint firstItem="ZW5-xx-91O" firstAttribute="bottom" secondItem="Tah-RU-WOJ" secondAttribute="bottom" constant="20" id="0fP-8K-7SR"/>
                             <constraint firstItem="Tah-RU-WOJ" firstAttribute="leading" secondItem="ZW5-xx-91O" secondAttribute="leading" constant="16" id="CZr-ll-uJb"/>
-                            <constraint firstItem="hFb-mS-EHf" firstAttribute="top" secondItem="ZW5-xx-91O" secondAttribute="top" constant="10" id="KIb-0w-Bt2"/>
+                            <constraint firstItem="hFb-mS-EHf" firstAttribute="top" secondItem="ZW5-xx-91O" secondAttribute="top" id="KIb-0w-Bt2"/>
                             <constraint firstItem="Tah-RU-WOJ" firstAttribute="top" secondItem="hFb-mS-EHf" secondAttribute="bottom" constant="5" id="bwc-aq-Pal"/>
                             <constraint firstItem="ZW5-xx-91O" firstAttribute="trailing" secondItem="Tah-RU-WOJ" secondAttribute="trailing" constant="16" id="eYM-pn-4cx"/>
-                            <constraint firstItem="ZW5-xx-91O" firstAttribute="trailing" secondItem="hFb-mS-EHf" secondAttribute="trailing" constant="16" id="qH2-YR-qkt"/>
+                            <constraint firstItem="ZW5-xx-91O" firstAttribute="trailing" secondItem="hFb-mS-EHf" secondAttribute="trailing" constant="8" id="qH2-YR-qkt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZW5-xx-91O"/>
                     </view>

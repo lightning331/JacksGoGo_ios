@@ -50,7 +50,7 @@ class JGGAppMainVC: JGGStartTableVC {
                 .instantiate(withOwner: nil, options: nil)
                 .first as? JGGAppSearchHeaderView
         self.tableView.tableHeaderView = searchfieldView
-        
+        searchfieldView?.searchBar.delegate = self
     }
     
     private func registerCell() {
@@ -212,7 +212,7 @@ class JGGAppMainVC: JGGStartTableVC {
 extension JGGAppMainVC: JGGAppHomeTabViewDelegate {
     func appointmentHomeTabView(_ view: JGGAppHomeTabView, selectedButton: AppointmentTabButton) {
         if selectedButton == .filter {
-            
+            openFilterOption()
         } else {
             selectedTab = selectedButton
             self.tableView.reloadData()
@@ -220,4 +220,23 @@ extension JGGAppMainVC: JGGAppHomeTabViewDelegate {
                                                animated: true)
         }
     }
+    
+    private func openFilterOption() {
+        let filterOptionVC =
+            self.storyboard?
+                .instantiateViewController(withIdentifier: "JGGAppFilterVC") as! JGGAppFilterVC
+        self.navigationController?.pushViewController(filterOptionVC, animated: true)
+    }
+}
+
+extension JGGAppMainVC: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+    }
+    
+    private func searchByText(_ queryText: String?) {
+        
+    }
+    
 }

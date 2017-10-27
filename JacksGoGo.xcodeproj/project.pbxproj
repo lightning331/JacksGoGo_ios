@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		632E78271FA2F92D00CFFB24 /* JGGAppFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632E78261FA2F92D00CFFB24 /* JGGAppFilterVC.swift */; };
+		632E78291FA2FC3A00CFFB24 /* JGGAppFilterOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632E78281FA2FC3A00CFFB24 /* JGGAppFilterOptionCell.swift */; };
 		63955EC91FA058E600D825B2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63955EC71FA058E600D825B2 /* Login.storyboard */; };
 		63955ECC1FA058F500D825B2 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63955ECA1FA058F500D825B2 /* Profile.storyboard */; };
 		63955ECF1FA0590200D825B2 /* Services.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63955ECD1FA0590200D825B2 /* Services.storyboard */; };
@@ -72,6 +74,8 @@
 
 /* Begin PBXFileReference section */
 		5946E967F53932667006CC0B /* Pods-JacksGoGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JacksGoGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JacksGoGo/Pods-JacksGoGo.debug.xcconfig"; sourceTree = "<group>"; };
+		632E78261FA2F92D00CFFB24 /* JGGAppFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppFilterVC.swift; sourceTree = "<group>"; };
+		632E78281FA2FC3A00CFFB24 /* JGGAppFilterOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppFilterOptionCell.swift; sourceTree = "<group>"; };
 		63955EC81FA058E600D825B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		63955ECB1FA058F500D825B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		63955ECE1FA0590200D825B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Services.storyboard; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 			children = (
 				63955EDC1FA05C0B00D825B2 /* JGGAppHistoryListCell.swift */,
 				63955EDE1FA05C1F00D825B2 /* JGGAppHistoryListCell.xib */,
+				632E78281FA2FC3A00CFFB24 /* JGGAppFilterOptionCell.swift */,
 			);
 			path = Appointment;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 			children = (
 				63BE91F31FA0285A00D40C07 /* Base */,
 				63B8DC331FA18852003C6EBF /* JGGAppMainVC.swift */,
+				632E78261FA2F92D00CFFB24 /* JGGAppFilterVC.swift */,
 			);
 			path = Appointment;
 			sourceTree = "<group>";
@@ -628,11 +634,13 @@
 			files = (
 				63BE91FB1FA028B300D40C07 /* JGGLoginBaseVC.swift in Sources */,
 				63BE91C61FA025FD00D40C07 /* UIView.swift in Sources */,
+				632E78291FA2FC3A00CFFB24 /* JGGAppFilterOptionCell.swift in Sources */,
 				63B8DC3E1FA19FEE003C6EBF /* JGGBaseNC.swift in Sources */,
 				63BE91C01FA025D100D40C07 /* JGGAppManager.swift in Sources */,
 				63BE91F91FA0289D00D40C07 /* JGGMainTabbarController.swift in Sources */,
 				63BE91A31FA0233300D40C07 /* AppDelegate.swift in Sources */,
 				63955EE81FA0668800D825B2 /* JGGAppHomeTabView.swift in Sources */,
+				632E78271FA2F92D00CFFB24 /* JGGAppFilterVC.swift in Sources */,
 				63BE91BE1FA025C500D40C07 /* JGGTableViewController.swift in Sources */,
 				63BE91BC1FA025B700D40C07 /* JGGViewController.swift in Sources */,
 				63BE91F01FA0283600D40C07 /* JGGServicesBaseVC.swift in Sources */,

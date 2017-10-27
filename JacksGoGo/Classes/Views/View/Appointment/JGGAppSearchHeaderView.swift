@@ -22,6 +22,7 @@ class JGGAppSearchHeaderView: UIView {
                 }
             }
         }
+        
     }
 
 }

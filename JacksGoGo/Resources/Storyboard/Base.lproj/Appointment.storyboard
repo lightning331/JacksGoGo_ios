@@ -6,8 +6,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Bold.ttf">
+            <string>Muli-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Root View Controller-->
         <scene sceneID="Q8q-70-rV9">
@@ -56,6 +63,107 @@
             </objects>
             <point key="canvasLocation" x="602" y="160"/>
         </scene>
+        <!--App FilterVC-->
+        <scene sceneID="hXL-ip-ZAM">
+            <objects>
+                <viewController storyboardIdentifier="JGGAppFilterVC" id="HkQ-Cw-xFM" customClass="JGGAppFilterVC" customModule="JacksGoGo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bkv-cC-Gy8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFb-mS-EHf">
+                                <rect key="frame" x="327" y="30" width="32" height="32"/>
+                                <state key="normal" image="button_close_round_orange"/>
+                                <connections>
+                                    <action selector="btnClose:" destination="Ciu-S9-eST" eventType="touchUpInside" id="YqL-KQ-S8L"/>
+                                    <action selector="onPressClose:" destination="HkQ-Cw-xFM" eventType="touchUpInside" id="xab-rc-vrW"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tah-RU-WOJ">
+                                <rect key="frame" x="16" y="67" width="343" height="580"/>
+                                <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JGGAppFilterOptionCell" rowHeight="60" id="Qft-n8-ajt" customClass="JGGAppFilterOptionCell" customModule="JacksGoGo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qft-n8-ajt" id="yTI-Gh-oi0">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ye6-IJ-NXT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
+                                                    <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWt-k0-V7U">
+                                                    <rect key="frame" x="8" y="8" width="327" height="44"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jobs posted." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zw8-gB-vrh">
+                                                            <rect key="frame" x="16" y="14" width="295" height="17.5"/>
+                                                            <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="0.90313822030000002" blue="0.24389696120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="zw8-gB-vrh" secondAttribute="trailing" constant="16" id="fL8-lE-PR9"/>
+                                                        <constraint firstItem="zw8-gB-vrh" firstAttribute="leading" secondItem="BWt-k0-V7U" secondAttribute="leading" constant="16" id="fvc-ji-yk8"/>
+                                                        <constraint firstItem="zw8-gB-vrh" firstAttribute="centerY" secondItem="BWt-k0-V7U" secondAttribute="centerY" id="uUC-Yq-hnd"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="BWt-k0-V7U" firstAttribute="top" secondItem="yTI-Gh-oi0" secondAttribute="topMargin" id="JBr-Pg-CNm"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ye6-IJ-NXT" secondAttribute="bottom" id="WCx-HV-o9J"/>
+                                                <constraint firstItem="BWt-k0-V7U" firstAttribute="bottom" secondItem="yTI-Gh-oi0" secondAttribute="bottomMargin" id="aZz-0G-AtB"/>
+                                                <constraint firstItem="BWt-k0-V7U" firstAttribute="trailing" secondItem="yTI-Gh-oi0" secondAttribute="trailingMargin" id="eee-s8-RB9"/>
+                                                <constraint firstItem="BWt-k0-V7U" firstAttribute="leading" secondItem="yTI-Gh-oi0" secondAttribute="leadingMargin" id="f6t-b5-6c6"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ye6-IJ-NXT" secondAttribute="trailing" id="g60-lI-zpb"/>
+                                                <constraint firstItem="Ye6-IJ-NXT" firstAttribute="leading" secondItem="yTI-Gh-oi0" secondAttribute="leading" id="gvM-ek-Jlc"/>
+                                                <constraint firstItem="Ye6-IJ-NXT" firstAttribute="top" secondItem="yTI-Gh-oi0" secondAttribute="top" id="k9j-ai-6Dv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="lblTitle" destination="zw8-gB-vrh" id="yiZ-2t-Nmu"/>
+                                            <outlet property="selectedBackgroundView" destination="Ye6-IJ-NXT" id="8yD-Nr-vCR"/>
+                                            <outlet property="viewBackground" destination="BWt-k0-V7U" id="gP2-OH-VMk"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="HkQ-Cw-xFM" id="1oF-Wj-zdb"/>
+                                    <outlet property="delegate" destination="HkQ-Cw-xFM" id="RKc-rd-pBW"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZW5-xx-91O" firstAttribute="bottom" secondItem="Tah-RU-WOJ" secondAttribute="bottom" constant="20" id="0fP-8K-7SR"/>
+                            <constraint firstItem="Tah-RU-WOJ" firstAttribute="leading" secondItem="ZW5-xx-91O" secondAttribute="leading" constant="16" id="CZr-ll-uJb"/>
+                            <constraint firstItem="hFb-mS-EHf" firstAttribute="top" secondItem="ZW5-xx-91O" secondAttribute="top" constant="10" id="KIb-0w-Bt2"/>
+                            <constraint firstItem="Tah-RU-WOJ" firstAttribute="top" secondItem="hFb-mS-EHf" secondAttribute="bottom" constant="5" id="bwc-aq-Pal"/>
+                            <constraint firstItem="ZW5-xx-91O" firstAttribute="trailing" secondItem="Tah-RU-WOJ" secondAttribute="trailing" constant="16" id="eYM-pn-4cx"/>
+                            <constraint firstItem="ZW5-xx-91O" firstAttribute="trailing" secondItem="hFb-mS-EHf" secondAttribute="trailing" constant="16" id="qH2-YR-qkt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZW5-xx-91O"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnClose" destination="hFb-mS-EHf" id="jBY-t9-oiX"/>
+                        <outlet property="tableView" destination="Tah-RU-WOJ" id="fGC-zI-t7R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ayu-Ub-ghw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ciu-S9-eST" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1440.8" y="158.77061469265368"/>
+        </scene>
         <!--Appointment-->
         <scene sceneID="6r8-YW-GV7">
             <objects>
@@ -63,7 +171,7 @@
                     <tabBarItem key="tabBarItem" title="Appointment" image="tab_appointment" selectedImage="tab_appointment_active" id="slP-AZ-EQU"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Q4X-7j-q6f">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -76,6 +184,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="button_close_round_orange" width="32" height="32"/>
         <image name="tab_appointment" width="30" height="26"/>
         <image name="tab_appointment_active" width="30" height="26"/>
     </resources>

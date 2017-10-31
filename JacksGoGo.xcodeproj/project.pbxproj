@@ -16,6 +16,8 @@
 		631EF2A51FA875D8001D2915 /* JGGBiddingProviderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631EF2A41FA875D8001D2915 /* JGGBiddingProviderModel.swift */; };
 		631EF2A71FA87848001D2915 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631EF2A61FA87848001D2915 /* Global.swift */; };
 		631EF2A91FA87C7B001D2915 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631EF2A81FA87C7B001D2915 /* Double.swift */; };
+		631EF2AF1FA88CC8001D2915 /* TGLParallaxCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631EF2AC1FA88CC6001D2915 /* TGLParallaxCarousel.swift */; };
+		631EF2B01FA88CC8001D2915 /* TGLParallaxCarousel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631EF2AD1FA88CC6001D2915 /* TGLParallaxCarousel.xib */; };
 		632E78271FA2F92D00CFFB24 /* JGGAppFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632E78261FA2F92D00CFFB24 /* JGGAppFilterVC.swift */; };
 		632E78291FA2FC3A00CFFB24 /* JGGAppFilterOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632E78281FA2FC3A00CFFB24 /* JGGAppFilterOptionCell.swift */; };
 		63955EC91FA058E600D825B2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63955EC71FA058E600D825B2 /* Login.storyboard */; };
@@ -76,6 +78,7 @@
 		63BE91F71FA0287E00D40C07 /* JGGAppointmentsBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91F61FA0287E00D40C07 /* JGGAppointmentsBaseVC.swift */; };
 		63BE91F91FA0289D00D40C07 /* JGGMainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91F81FA0289D00D40C07 /* JGGMainTabbarController.swift */; };
 		63BE91FB1FA028B300D40C07 /* JGGLoginBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91FA1FA028B300D40C07 /* JGGLoginBaseVC.swift */; };
+		63CA7F131FA8A04A005A44B0 /* JGGAppBiddingProviderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63CA7F121FA8A04A005A44B0 /* JGGAppBiddingProviderCell.xib */; };
 		63DBC8AF1FA02E7800AAECA8 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DBC8AE1FA02E7800AAECA8 /* UIColor.swift */; };
 		63DBC8B11FA0356000AAECA8 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DBC8B01FA0356000AAECA8 /* UIFont.swift */; };
 		F7862BF9654B02B90CFE4900 /* Pods_JacksGoGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781CEC96D6051F4CC98B1136 /* Pods_JacksGoGo.framework */; };
@@ -92,6 +95,8 @@
 		631EF2A41FA875D8001D2915 /* JGGBiddingProviderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGBiddingProviderModel.swift; sourceTree = "<group>"; };
 		631EF2A61FA87848001D2915 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		631EF2A81FA87C7B001D2915 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		631EF2AC1FA88CC6001D2915 /* TGLParallaxCarousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TGLParallaxCarousel.swift; sourceTree = "<group>"; };
+		631EF2AD1FA88CC6001D2915 /* TGLParallaxCarousel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGLParallaxCarousel.xib; sourceTree = "<group>"; };
 		632E78261FA2F92D00CFFB24 /* JGGAppFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppFilterVC.swift; sourceTree = "<group>"; };
 		632E78281FA2FC3A00CFFB24 /* JGGAppFilterOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppFilterOptionCell.swift; sourceTree = "<group>"; };
 		63955EC81FA058E600D825B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
@@ -154,6 +159,7 @@
 		63BE91F61FA0287E00D40C07 /* JGGAppointmentsBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppointmentsBaseVC.swift; sourceTree = "<group>"; };
 		63BE91F81FA0289D00D40C07 /* JGGMainTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGMainTabbarController.swift; sourceTree = "<group>"; };
 		63BE91FA1FA028B300D40C07 /* JGGLoginBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGLoginBaseVC.swift; sourceTree = "<group>"; };
+		63CA7F121FA8A04A005A44B0 /* JGGAppBiddingProviderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGAppBiddingProviderCell.xib; sourceTree = "<group>"; };
 		63DBC8AE1FA02E7800AAECA8 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		63DBC8B01FA0356000AAECA8 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		781CEC96D6051F4CC98B1136 /* Pods_JacksGoGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JacksGoGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,6 +211,15 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		631EF2AA1FA88CC6001D2915 /* TGLParallaxCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				631EF2AC1FA88CC6001D2915 /* TGLParallaxCarousel.swift */,
+				631EF2AD1FA88CC6001D2915 /* TGLParallaxCarousel.xib */,
+			);
+			path = TGLParallaxCarousel;
+			sourceTree = "<group>";
+		};
 		63955EDB1FA05B8400D825B2 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +256,7 @@
 				63955EDE1FA05C1F00D825B2 /* JGGAppHistoryListCell.xib */,
 				632E78281FA2FC3A00CFFB24 /* JGGAppFilterOptionCell.swift */,
 				631EF2961FA87022001D2915 /* JGGAppBiddingProviderCell.swift */,
+				63CA7F121FA8A04A005A44B0 /* JGGAppBiddingProviderCell.xib */,
 			);
 			path = Appointment;
 			sourceTree = "<group>";
@@ -326,6 +342,7 @@
 		63BE91B71FA0257D00D40C07 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				631EF2AA1FA88CC6001D2915 /* TGLParallaxCarousel */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -579,7 +596,9 @@
 				63955EDF1FA05C1F00D825B2 /* JGGAppHistoryListCell.xib in Resources */,
 				63BE91DF1FA0263C00D40C07 /* Muli-Italic.ttf in Resources */,
 				63BE91E11FA0263C00D40C07 /* Muli-LightItalic.ttf in Resources */,
+				631EF2B01FA88CC8001D2915 /* TGLParallaxCarousel.xib in Resources */,
 				63BE91E21FA0263C00D40C07 /* Muli-Regular.ttf in Resources */,
+				63CA7F131FA8A04A005A44B0 /* JGGAppBiddingProviderCell.xib in Resources */,
 				63BE91D91FA0263C00D40C07 /* Muli-Bold.ttf in Resources */,
 				63BE91AD1FA0233300D40C07 /* LaunchScreen.storyboard in Resources */,
 				63BE91DD1FA0263C00D40C07 /* Muli-ExtraLight.ttf in Resources */,
@@ -691,6 +710,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				631EF2AF1FA88CC8001D2915 /* TGLParallaxCarousel.swift in Sources */,
 				63BE91FB1FA028B300D40C07 /* JGGLoginBaseVC.swift in Sources */,
 				63BE91C61FA025FD00D40C07 /* UIView.swift in Sources */,
 				631EF2A31FA874A0001D2915 /* JGGEventUserModel.swift in Sources */,

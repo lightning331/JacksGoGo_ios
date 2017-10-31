@@ -19,6 +19,8 @@ class JGGAppBiddingProviderCell: UITableViewCell {
     @IBOutlet weak var imgviewNoteBadge: UIImageView!
     @IBOutlet weak var constraintPriceVerticalCenter: NSLayoutConstraint!
     
+    
+    
     var biddingProvider: JGGBiddingProviderModel? {
         didSet {
             updateValue()

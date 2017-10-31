@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		631EF2971FA87022001D2915 /* JGGAppBiddingProviderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631EF2961FA87022001D2915 /* JGGAppBiddingProviderCell.swift */; };
+		631EF2991FA870DF001D2915 /* JGGCircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631EF2981FA870DF001D2915 /* JGGCircleImageView.swift */; };
+		631EF29D1FA8744F001D2915 /* JGGUserBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631EF29C1FA8744F001D2915 /* JGGUserBaseModel.swift */; };
+		631EF29F1FA87462001D2915 /* JGGClientUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631EF29E1FA87462001D2915 /* JGGClientUserModel.swift */; };
+		631EF2A11FA8746E001D2915 /* JGGProviderUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631EF2A01FA8746E001D2915 /* JGGProviderUserModel.swift */; };
+		631EF2A31FA874A0001D2915 /* JGGEventUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631EF2A21FA874A0001D2915 /* JGGEventUserModel.swift */; };
+		631EF2A51FA875D8001D2915 /* JGGBiddingProviderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631EF2A41FA875D8001D2915 /* JGGBiddingProviderModel.swift */; };
+		631EF2A71FA87848001D2915 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631EF2A61FA87848001D2915 /* Global.swift */; };
+		631EF2A91FA87C7B001D2915 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631EF2A81FA87C7B001D2915 /* Double.swift */; };
 		632E78271FA2F92D00CFFB24 /* JGGAppFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632E78261FA2F92D00CFFB24 /* JGGAppFilterVC.swift */; };
 		632E78291FA2FC3A00CFFB24 /* JGGAppFilterOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632E78281FA2FC3A00CFFB24 /* JGGAppFilterOptionCell.swift */; };
 		63955EC91FA058E600D825B2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63955EC71FA058E600D825B2 /* Login.storyboard */; };
@@ -74,6 +83,15 @@
 
 /* Begin PBXFileReference section */
 		5946E967F53932667006CC0B /* Pods-JacksGoGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JacksGoGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JacksGoGo/Pods-JacksGoGo.debug.xcconfig"; sourceTree = "<group>"; };
+		631EF2961FA87022001D2915 /* JGGAppBiddingProviderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppBiddingProviderCell.swift; sourceTree = "<group>"; };
+		631EF2981FA870DF001D2915 /* JGGCircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGCircleImageView.swift; sourceTree = "<group>"; };
+		631EF29C1FA8744F001D2915 /* JGGUserBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGUserBaseModel.swift; sourceTree = "<group>"; };
+		631EF29E1FA87462001D2915 /* JGGClientUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGClientUserModel.swift; sourceTree = "<group>"; };
+		631EF2A01FA8746E001D2915 /* JGGProviderUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGProviderUserModel.swift; sourceTree = "<group>"; };
+		631EF2A21FA874A0001D2915 /* JGGEventUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGEventUserModel.swift; sourceTree = "<group>"; };
+		631EF2A41FA875D8001D2915 /* JGGBiddingProviderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGBiddingProviderModel.swift; sourceTree = "<group>"; };
+		631EF2A61FA87848001D2915 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		631EF2A81FA87C7B001D2915 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		632E78261FA2F92D00CFFB24 /* JGGAppFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppFilterVC.swift; sourceTree = "<group>"; };
 		632E78281FA2FC3A00CFFB24 /* JGGAppFilterOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppFilterOptionCell.swift; sourceTree = "<group>"; };
 		63955EC81FA058E600D825B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
@@ -164,6 +182,29 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		631EF29A1FA87429001D2915 /* Jobs&Services */ = {
+			isa = PBXGroup;
+			children = (
+				63B755E31FA1BCCD0032B4F1 /* JGGServicePackageModel.swift */,
+				63B755E51FA1BDB30032B4F1 /* JGGAppointmentBaseModel.swift */,
+				63B755E71FA1BE230032B4F1 /* JGGEventModel.swift */,
+				63B755E91FA1BEA10032B4F1 /* JGGServiceModel.swift */,
+				63B755EB1FA1BF020032B4F1 /* JGGJobModel.swift */,
+			);
+			path = "Jobs&Services";
+			sourceTree = "<group>";
+		};
+		631EF29B1FA8743E001D2915 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				631EF29C1FA8744F001D2915 /* JGGUserBaseModel.swift */,
+				631EF29E1FA87462001D2915 /* JGGClientUserModel.swift */,
+				631EF2A01FA8746E001D2915 /* JGGProviderUserModel.swift */,
+				631EF2A21FA874A0001D2915 /* JGGEventUserModel.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		63955EDB1FA05B8400D825B2 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +240,7 @@
 				63955EDC1FA05C0B00D825B2 /* JGGAppHistoryListCell.swift */,
 				63955EDE1FA05C1F00D825B2 /* JGGAppHistoryListCell.xib */,
 				632E78281FA2FC3A00CFFB24 /* JGGAppFilterOptionCell.swift */,
+				631EF2961FA87022001D2915 /* JGGAppBiddingProviderCell.swift */,
 			);
 			path = Appointment;
 			sourceTree = "<group>";
@@ -292,11 +334,9 @@
 			isa = PBXGroup;
 			children = (
 				63BE91C11FA025E200D40C07 /* Base */,
-				63B755E31FA1BCCD0032B4F1 /* JGGServicePackageModel.swift */,
-				63B755E51FA1BDB30032B4F1 /* JGGAppointmentBaseModel.swift */,
-				63B755E71FA1BE230032B4F1 /* JGGEventModel.swift */,
-				63B755E91FA1BEA10032B4F1 /* JGGServiceModel.swift */,
-				63B755EB1FA1BF020032B4F1 /* JGGJobModel.swift */,
+				631EF29B1FA8743E001D2915 /* User */,
+				631EF29A1FA87429001D2915 /* Jobs&Services */,
+				631EF2A41FA875D8001D2915 /* JGGBiddingProviderModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -326,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				63BE91C21FA025ED00D40C07 /* JGGBaseModel.swift */,
+				631EF2A61FA87848001D2915 /* Global.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -338,6 +379,7 @@
 				63955ED71FA0598800D825B2 /* UITextField.swift */,
 				63955ED91FA0599400D825B2 /* UIButton.swift */,
 				63BE91C51FA025FD00D40C07 /* UIView.swift */,
+				631EF2981FA870DF001D2915 /* JGGCircleImageView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -456,6 +498,7 @@
 			children = (
 				63DBC8AE1FA02E7800AAECA8 /* UIColor.swift */,
 				63DBC8B01FA0356000AAECA8 /* UIFont.swift */,
+				631EF2A81FA87C7B001D2915 /* Double.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -572,6 +615,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-JacksGoGo/Pods-JacksGoGo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -582,6 +626,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -648,19 +693,26 @@
 			files = (
 				63BE91FB1FA028B300D40C07 /* JGGLoginBaseVC.swift in Sources */,
 				63BE91C61FA025FD00D40C07 /* UIView.swift in Sources */,
+				631EF2A31FA874A0001D2915 /* JGGEventUserModel.swift in Sources */,
 				632E78291FA2FC3A00CFFB24 /* JGGAppFilterOptionCell.swift in Sources */,
 				63B8DC3E1FA19FEE003C6EBF /* JGGBaseNC.swift in Sources */,
+				631EF29D1FA8744F001D2915 /* JGGUserBaseModel.swift in Sources */,
 				63BE91C01FA025D100D40C07 /* JGGAppManager.swift in Sources */,
+				631EF2971FA87022001D2915 /* JGGAppBiddingProviderCell.swift in Sources */,
 				63BE91F91FA0289D00D40C07 /* JGGMainTabbarController.swift in Sources */,
 				63BE91A31FA0233300D40C07 /* AppDelegate.swift in Sources */,
 				63955EE81FA0668800D825B2 /* JGGAppHomeTabView.swift in Sources */,
 				632E78271FA2F92D00CFFB24 /* JGGAppFilterVC.swift in Sources */,
+				631EF2A71FA87848001D2915 /* Global.swift in Sources */,
 				63BE91BE1FA025C500D40C07 /* JGGTableViewController.swift in Sources */,
 				63BE91BC1FA025B700D40C07 /* JGGViewController.swift in Sources */,
+				631EF29F1FA87462001D2915 /* JGGClientUserModel.swift in Sources */,
 				63BE91F01FA0283600D40C07 /* JGGServicesBaseVC.swift in Sources */,
 				63BE91C31FA025ED00D40C07 /* JGGBaseModel.swift in Sources */,
 				63DBC8AF1FA02E7800AAECA8 /* UIColor.swift in Sources */,
 				63B8DC321FA187F4003C6EBF /* JGGStartTableVC.swift in Sources */,
+				631EF2A11FA8746E001D2915 /* JGGProviderUserModel.swift in Sources */,
+				631EF2991FA870DF001D2915 /* JGGCircleImageView.swift in Sources */,
 				63B8DC341FA18852003C6EBF /* JGGAppMainVC.swift in Sources */,
 				63955ED41FA0593400D825B2 /* JGGButton.swift in Sources */,
 				63DBC8B11FA0356000AAECA8 /* UIFont.swift in Sources */,
@@ -673,10 +725,12 @@
 				63B755EA1FA1BEA10032B4F1 /* JGGServiceModel.swift in Sources */,
 				63955ED61FA0594300D825B2 /* JGGTextField.swift in Sources */,
 				63955ED81FA0598800D825B2 /* UITextField.swift in Sources */,
+				631EF2A91FA87C7B001D2915 /* Double.swift in Sources */,
 				63B8DC361FA18AD5003C6EBF /* JGGSectionTitleView.swift in Sources */,
 				63B8DC2A1FA17C8E003C6EBF /* JGGMainStartNC.swift in Sources */,
 				63BE91F21FA0285200D40C07 /* JGGServicesBaseTableVC.swift in Sources */,
 				63B755E81FA1BE230032B4F1 /* JGGEventModel.swift in Sources */,
+				631EF2A51FA875D8001D2915 /* JGGBiddingProviderModel.swift in Sources */,
 				63955EDA1FA0599400D825B2 /* UIButton.swift in Sources */,
 				63B755EC1FA1BF020032B4F1 /* JGGJobModel.swift in Sources */,
 			);
@@ -891,8 +945,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.JacksGoGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "69ff7650-e1c4-477e-bf94-c818c699cfc6";
-				PROVISIONING_PROFILE_SPECIFIER = JacksGoGo_adhoc1027;
+				PROVISIONING_PROFILE = "d14d59f7-2be0-4056-94b7-6eab8bcbeb4c";
+				PROVISIONING_PROFILE_SPECIFIER = JacksGoGo_adhoc1030;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

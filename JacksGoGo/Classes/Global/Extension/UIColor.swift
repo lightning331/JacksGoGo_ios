@@ -23,6 +23,12 @@ extension UIColor {
         }
     }
     
+    static public var JGGGreen10Percent: UIColor {
+        get {
+            return UIColor("#E3F1E5")
+        }
+    }
+    
     static public var JGGCyan: UIColor {
         get {
             return UIColor("#14B1F8")
@@ -47,11 +53,19 @@ extension UIColor {
         }
     }
     
+    static public var JGGRed10Percecnt: UIColor {
+        get {
+            return UIColor("#F1D2CC")
+        }
+    }
+    
     static public var JGGBlack: UIColor {
         get {
             return UIColor("#000000")
         }
     }
+    
+    
     
     static public var JGGGrey1: UIColor {
         get {

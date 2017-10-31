@@ -14,6 +14,7 @@ pod 'AlamofireObjectMapper', '~> 5.0.0'
 pod 'SwiftyJSON'
 pod 'SnapKit', '~> 4.0.0'
 pod 'MBProgressHUD', '~> 1.0.0'
+pod 'Cosmos', '~> 12.0'
 
 pod 'Fabric'
 pod 'Crashlytics'

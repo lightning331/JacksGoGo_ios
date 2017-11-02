@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Bold.ttf">
+            <string>Muli-Bold</string>
+        </array>
+        <array key="Muli-Regular.ttf">
+            <string>Muli-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="NmJ-n8-Z6r" customClass="JGGNextStepTitleView" customModule="JacksGoGo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="407" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4d-eM-CW6">
+                    <rect key="frame" x="0.0" y="16" width="407" height="56"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kj3-WR-U0w">
+                            <rect key="frame" x="0.0" y="0.0" width="4" height="56"/>
+                            <color key="backgroundColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="4" id="28k-1L-4Ae"/>
+                            </constraints>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_client" translatesAutoresizingMaskIntoConstraints="NO" id="G47-oQ-hE3">
+                            <rect key="frame" x="8" y="8" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="G47-oQ-hE3" secondAttribute="height" multiplier="1:1" id="G3x-7H-lW7"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Next step:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0E-nN-lMe">
+                            <rect key="frame" x="56" y="10" width="56" height="14"/>
+                            <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
+                            <color key="textColor" red="0.54115974899999997" green="0.54185396429999999" blue="0.56077778339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Choose a provider." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1B-0d-MbE">
+                            <rect key="frame" x="56" y="24" width="126.5" height="17.5"/>
+                            <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Kj3-WR-U0w" firstAttribute="top" secondItem="L4d-eM-CW6" secondAttribute="top" id="15F-RV-TXZ"/>
+                        <constraint firstItem="G47-oQ-hE3" firstAttribute="top" secondItem="L4d-eM-CW6" secondAttribute="top" constant="8" id="9Td-ng-8Wn"/>
+                        <constraint firstItem="l1B-0d-MbE" firstAttribute="top" secondItem="G0E-nN-lMe" secondAttribute="bottom" id="Osb-7z-BTH"/>
+                        <constraint firstAttribute="bottom" secondItem="Kj3-WR-U0w" secondAttribute="bottom" id="YxK-h2-p2l"/>
+                        <constraint firstAttribute="bottom" secondItem="G47-oQ-hE3" secondAttribute="bottom" constant="8" id="bMm-A2-Ga8"/>
+                        <constraint firstItem="G47-oQ-hE3" firstAttribute="leading" secondItem="Kj3-WR-U0w" secondAttribute="trailing" constant="4" id="kfX-ce-SsR"/>
+                        <constraint firstItem="l1B-0d-MbE" firstAttribute="leading" secondItem="G0E-nN-lMe" secondAttribute="leading" id="nvr-n3-hO0"/>
+                        <constraint firstItem="Kj3-WR-U0w" firstAttribute="leading" secondItem="L4d-eM-CW6" secondAttribute="leading" id="sFB-Rt-7VI"/>
+                        <constraint firstItem="G0E-nN-lMe" firstAttribute="top" secondItem="G47-oQ-hE3" secondAttribute="top" constant="2" id="tDW-LA-ihk"/>
+                        <constraint firstItem="G0E-nN-lMe" firstAttribute="leading" secondItem="G47-oQ-hE3" secondAttribute="trailing" constant="8" id="xUK-Go-ixy"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="5Xo-5b-jm7" firstAttribute="bottom" secondItem="L4d-eM-CW6" secondAttribute="bottom" constant="8" id="22h-qN-kJg"/>
+                <constraint firstItem="L4d-eM-CW6" firstAttribute="top" secondItem="5Xo-5b-jm7" secondAttribute="top" constant="16" id="F75-8d-exi"/>
+                <constraint firstItem="L4d-eM-CW6" firstAttribute="leading" secondItem="5Xo-5b-jm7" secondAttribute="leading" id="ZnV-Ic-31b"/>
+                <constraint firstItem="L4d-eM-CW6" firstAttribute="trailing" secondItem="5Xo-5b-jm7" secondAttribute="trailing" id="fcJ-57-Bab"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="5Xo-5b-jm7"/>
+            <connections>
+                <outlet property="imgviewIcon" destination="G47-oQ-hE3" id="Ekc-TW-mwo"/>
+                <outlet property="lblSubTitle" destination="G0E-nN-lMe" id="dDW-kq-Iqv"/>
+                <outlet property="lblTitle" destination="l1B-0d-MbE" id="gH9-nb-14a"/>
+                <outlet property="viewLeftGreenBar" destination="Kj3-WR-U0w" id="bT0-PZ-2yq"/>
+            </connections>
+            <point key="canvasLocation" x="-0.5" y="-190.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_client" width="24" height="24"/>
+    </resources>
+</document>

@@ -46,7 +46,6 @@
 		63B8DC341FA18852003C6EBF /* JGGAppMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B8DC331FA18852003C6EBF /* JGGAppMainVC.swift */; };
 		63B8DC361FA18AD5003C6EBF /* JGGSectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B8DC351FA18AD5003C6EBF /* JGGSectionTitleView.swift */; };
 		63B8DC381FA18AE3003C6EBF /* JGGSectionTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B8DC371FA18AE3003C6EBF /* JGGSectionTitleView.xib */; };
-		63B8DC3C1FA18EEE003C6EBF /* 222.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 63B8DC3B1FA18EEE003C6EBF /* 222.jpg */; };
 		63B8DC3E1FA19FEE003C6EBF /* JGGBaseNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B8DC3D1FA19FED003C6EBF /* JGGBaseNC.swift */; };
 		63BE91A31FA0233300D40C07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91A21FA0233300D40C07 /* AppDelegate.swift */; };
 		63BE91A81FA0233300D40C07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE91A61FA0233300D40C07 /* Main.storyboard */; };
@@ -82,6 +81,31 @@
 		63DBC8AF1FA02E7800AAECA8 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DBC8AE1FA02E7800AAECA8 /* UIColor.swift */; };
 		63DBC8B11FA0356000AAECA8 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DBC8B01FA0356000AAECA8 /* UIFont.swift */; };
 		F7862BF9654B02B90CFE4900 /* Pods_JacksGoGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781CEC96D6051F4CC98B1136 /* Pods_JacksGoGo.framework */; };
+		FF21FAE21FAB5525004D0ADA /* JGGImageCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAE11FAB5525004D0ADA /* JGGImageCarouselCell.swift */; };
+		FF21FAE41FAB5535004D0ADA /* JGGImageCarouselCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF21FAE31FAB5535004D0ADA /* JGGImageCarouselCell.xib */; };
+		FF21FAE61FAB5588004D0ADA /* JGGDetailInfoFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAE51FAB5588004D0ADA /* JGGDetailInfoFooterView.swift */; };
+		FF21FAE81FAB5597004D0ADA /* JGGDetailInfoFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF21FAE71FAB5597004D0ADA /* JGGDetailInfoFooterView.xib */; };
+		FF21FAEA1FAB5B2A004D0ADA /* JGGDetailInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAE91FAB5B2A004D0ADA /* JGGDetailInfoHeaderView.swift */; };
+		FF21FAEC1FAB5BAA004D0ADA /* JGGDetailInfoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF21FAEB1FAB5BAA004D0ADA /* JGGDetailInfoHeaderView.xib */; };
+		FF21FAEE1FAB5CE4004D0ADA /* JGGNextStepTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAED1FAB5CE4004D0ADA /* JGGNextStepTitleView.swift */; };
+		FF21FAF01FAB5E1C004D0ADA /* JGGNextStepTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF21FAEF1FAB5E1C004D0ADA /* JGGNextStepTitleView.xib */; };
+		FF21FAF81FAB6387004D0ADA /* AZDropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAF31FAB6387004D0ADA /* AZDropdownMenu.swift */; };
+		FF21FAF91FAB6387004D0ADA /* AZDropdownMenuBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAF41FAB6387004D0ADA /* AZDropdownMenuBaseCell.swift */; };
+		FF21FAFA1FAB6387004D0ADA /* AZDropdownMenuConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAF51FAB6387004D0ADA /* AZDropdownMenuConfig.swift */; };
+		FF21FAFB1FAB6387004D0ADA /* AZDropdownMenuDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAF61FAB6387004D0ADA /* AZDropdownMenuDefaultCell.swift */; };
+		FF21FB001FAB67E5004D0ADA /* FCAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAFD1FAB67E5004D0ADA /* FCAlertView.swift */; };
+		FF21FB011FAB67E5004D0ADA /* FCAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAFE1FAB67E5004D0ADA /* FCAlertViewDelegate.swift */; };
+		FF21FB021FAB67E5004D0ADA /* FCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAFF1FAB67E5004D0ADA /* FCColors.swift */; };
+		FFA061B61FAB4C2D00185C56 /* 222.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FFA061B51FAB4C2D00185C56 /* 222.jpg */; };
+		FFA061B81FAB4E9300185C56 /* JGGUserAvatarNameRateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA061B71FAB4E9300185C56 /* JGGUserAvatarNameRateCell.swift */; };
+		FFA061BB1FAB4F4200185C56 /* JGGAppInviteProviderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA061B91FAB4F4200185C56 /* JGGAppInviteProviderCell.swift */; };
+		FFA061BC1FAB4F4200185C56 /* JGGAppInviteProviderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA061BA1FAB4F4200185C56 /* JGGAppInviteProviderCell.xib */; };
+		FFA061BF1FAB50A000185C56 /* JGGDetailInfoDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA061BD1FAB50A000185C56 /* JGGDetailInfoDescriptionCell.swift */; };
+		FFA061C01FAB50A000185C56 /* JGGDetailInfoDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA061BE1FAB50A000185C56 /* JGGDetailInfoDescriptionCell.xib */; };
+		FFA061C31FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA061C11FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.swift */; };
+		FFA061C41FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA061C21FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.xib */; };
+		FFA061C71FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA061C51FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.swift */; };
+		FFA061C81FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA061C61FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,7 +149,6 @@
 		63B8DC331FA18852003C6EBF /* JGGAppMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppMainVC.swift; sourceTree = "<group>"; };
 		63B8DC351FA18AD5003C6EBF /* JGGSectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSectionTitleView.swift; sourceTree = "<group>"; };
 		63B8DC371FA18AE3003C6EBF /* JGGSectionTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGSectionTitleView.xib; sourceTree = "<group>"; };
-		63B8DC3B1FA18EEE003C6EBF /* 222.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 222.jpg; sourceTree = "<group>"; };
 		63B8DC3D1FA19FED003C6EBF /* JGGBaseNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGBaseNC.swift; sourceTree = "<group>"; };
 		63BE919F1FA0233300D40C07 /* JacksGoGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JacksGoGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BE91A21FA0233300D40C07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +187,31 @@
 		63DBC8B01FA0356000AAECA8 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		781CEC96D6051F4CC98B1136 /* Pods_JacksGoGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JacksGoGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DDBAF2BE302FE617614219B /* Pods-JacksGoGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JacksGoGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JacksGoGo/Pods-JacksGoGo.release.xcconfig"; sourceTree = "<group>"; };
+		FF21FAE11FAB5525004D0ADA /* JGGImageCarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGImageCarouselCell.swift; sourceTree = "<group>"; };
+		FF21FAE31FAB5535004D0ADA /* JGGImageCarouselCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGImageCarouselCell.xib; sourceTree = "<group>"; };
+		FF21FAE51FAB5588004D0ADA /* JGGDetailInfoFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGDetailInfoFooterView.swift; sourceTree = "<group>"; };
+		FF21FAE71FAB5597004D0ADA /* JGGDetailInfoFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGDetailInfoFooterView.xib; sourceTree = "<group>"; };
+		FF21FAE91FAB5B2A004D0ADA /* JGGDetailInfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGDetailInfoHeaderView.swift; sourceTree = "<group>"; };
+		FF21FAEB1FAB5BAA004D0ADA /* JGGDetailInfoHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGDetailInfoHeaderView.xib; sourceTree = "<group>"; };
+		FF21FAED1FAB5CE4004D0ADA /* JGGNextStepTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGNextStepTitleView.swift; sourceTree = "<group>"; };
+		FF21FAEF1FAB5E1C004D0ADA /* JGGNextStepTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGNextStepTitleView.xib; sourceTree = "<group>"; };
+		FF21FAF31FAB6387004D0ADA /* AZDropdownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZDropdownMenu.swift; sourceTree = "<group>"; };
+		FF21FAF41FAB6387004D0ADA /* AZDropdownMenuBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZDropdownMenuBaseCell.swift; sourceTree = "<group>"; };
+		FF21FAF51FAB6387004D0ADA /* AZDropdownMenuConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZDropdownMenuConfig.swift; sourceTree = "<group>"; };
+		FF21FAF61FAB6387004D0ADA /* AZDropdownMenuDefaultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZDropdownMenuDefaultCell.swift; sourceTree = "<group>"; };
+		FF21FAFD1FAB67E5004D0ADA /* FCAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCAlertView.swift; sourceTree = "<group>"; };
+		FF21FAFE1FAB67E5004D0ADA /* FCAlertViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCAlertViewDelegate.swift; sourceTree = "<group>"; };
+		FF21FAFF1FAB67E5004D0ADA /* FCColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCColors.swift; sourceTree = "<group>"; };
+		FFA061B51FAB4C2D00185C56 /* 222.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 222.jpg; sourceTree = "<group>"; };
+		FFA061B71FAB4E9300185C56 /* JGGUserAvatarNameRateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGUserAvatarNameRateCell.swift; sourceTree = "<group>"; };
+		FFA061B91FAB4F4200185C56 /* JGGAppInviteProviderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppInviteProviderCell.swift; sourceTree = "<group>"; };
+		FFA061BA1FAB4F4200185C56 /* JGGAppInviteProviderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGAppInviteProviderCell.xib; sourceTree = "<group>"; };
+		FFA061BD1FAB50A000185C56 /* JGGDetailInfoDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGDetailInfoDescriptionCell.swift; sourceTree = "<group>"; };
+		FFA061BE1FAB50A000185C56 /* JGGDetailInfoDescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGDetailInfoDescriptionCell.xib; sourceTree = "<group>"; };
+		FFA061C11FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGDetailInfoAccessoryButtonCell.swift; sourceTree = "<group>"; };
+		FFA061C21FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGDetailInfoAccessoryButtonCell.xib; sourceTree = "<group>"; };
+		FFA061C51FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGDetailInfoCenterAlignCell.swift; sourceTree = "<group>"; };
+		FFA061C61FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGDetailInfoCenterAlignCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,7 +273,9 @@
 			children = (
 				63B8DC351FA18AD5003C6EBF /* JGGSectionTitleView.swift */,
 				63B8DC371FA18AE3003C6EBF /* JGGSectionTitleView.xib */,
+				FFA061B71FAB4E9300185C56 /* JGGUserAvatarNameRateCell.swift */,
 				63955EE61FA0662900D825B2 /* Appointment */,
+				FFA061CD1FAB536100185C56 /* JobDetail */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -257,24 +307,10 @@
 				632E78281FA2FC3A00CFFB24 /* JGGAppFilterOptionCell.swift */,
 				631EF2961FA87022001D2915 /* JGGAppBiddingProviderCell.swift */,
 				63CA7F121FA8A04A005A44B0 /* JGGAppBiddingProviderCell.xib */,
+				FFA061B91FAB4F4200185C56 /* JGGAppInviteProviderCell.swift */,
+				FFA061BA1FAB4F4200185C56 /* JGGAppInviteProviderCell.xib */,
 			);
 			path = Appointment;
-			sourceTree = "<group>";
-		};
-		63B8DC391FA18EEE003C6EBF /* images */ = {
-			isa = PBXGroup;
-			children = (
-				63B8DC3A1FA18EEE003C6EBF /* temp */,
-			);
-			path = images;
-			sourceTree = "<group>";
-		};
-		63B8DC3A1FA18EEE003C6EBF /* temp */ = {
-			isa = PBXGroup;
-			children = (
-				63B8DC3B1FA18EEE003C6EBF /* 222.jpg */,
-			);
-			path = temp;
 			sourceTree = "<group>";
 		};
 		63BE91961FA0233300D40C07 = {
@@ -342,6 +378,8 @@
 		63BE91B71FA0257D00D40C07 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				FF21FAF11FAB6387004D0ADA /* AZDropDownMenu */,
+				FF21FAFC1FAB67E5004D0ADA /* FCAlertView */,
 				631EF2AA1FA88CC6001D2915 /* TGLParallaxCarousel */,
 			);
 			path = Libraries;
@@ -405,7 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				63BE91A91FA0233300D40C07 /* Assets.xcassets */,
-				63B8DC391FA18EEE003C6EBF /* images */,
+				FFA061B31FAB4C2D00185C56 /* images */,
 				63BE91FC1FA029FA00D40C07 /* Storyboard */,
 				63BE91C81FA0263C00D40C07 /* font */,
 			);
@@ -520,6 +558,64 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		FF21FAF11FAB6387004D0ADA /* AZDropDownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				FF21FAF31FAB6387004D0ADA /* AZDropdownMenu.swift */,
+				FF21FAF41FAB6387004D0ADA /* AZDropdownMenuBaseCell.swift */,
+				FF21FAF51FAB6387004D0ADA /* AZDropdownMenuConfig.swift */,
+				FF21FAF61FAB6387004D0ADA /* AZDropdownMenuDefaultCell.swift */,
+			);
+			path = AZDropDownMenu;
+			sourceTree = "<group>";
+		};
+		FF21FAFC1FAB67E5004D0ADA /* FCAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				FF21FAFD1FAB67E5004D0ADA /* FCAlertView.swift */,
+				FF21FAFE1FAB67E5004D0ADA /* FCAlertViewDelegate.swift */,
+				FF21FAFF1FAB67E5004D0ADA /* FCColors.swift */,
+			);
+			path = FCAlertView;
+			sourceTree = "<group>";
+		};
+		FFA061B31FAB4C2D00185C56 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				FFA061B41FAB4C2D00185C56 /* temp */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		FFA061B41FAB4C2D00185C56 /* temp */ = {
+			isa = PBXGroup;
+			children = (
+				FFA061B51FAB4C2D00185C56 /* 222.jpg */,
+			);
+			path = temp;
+			sourceTree = "<group>";
+		};
+		FFA061CD1FAB536100185C56 /* JobDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FFA061BD1FAB50A000185C56 /* JGGDetailInfoDescriptionCell.swift */,
+				FFA061BE1FAB50A000185C56 /* JGGDetailInfoDescriptionCell.xib */,
+				FFA061C11FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.swift */,
+				FFA061C21FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.xib */,
+				FFA061C51FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.swift */,
+				FFA061C61FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.xib */,
+				FF21FAE11FAB5525004D0ADA /* JGGImageCarouselCell.swift */,
+				FF21FAE31FAB5535004D0ADA /* JGGImageCarouselCell.xib */,
+				FF21FAE51FAB5588004D0ADA /* JGGDetailInfoFooterView.swift */,
+				FF21FAE71FAB5597004D0ADA /* JGGDetailInfoFooterView.xib */,
+				FF21FAE91FAB5B2A004D0ADA /* JGGDetailInfoHeaderView.swift */,
+				FF21FAEB1FAB5BAA004D0ADA /* JGGDetailInfoHeaderView.xib */,
+				FF21FAED1FAB5CE4004D0ADA /* JGGNextStepTitleView.swift */,
+				FF21FAEF1FAB5E1C004D0ADA /* JGGNextStepTitleView.xib */,
+			);
+			path = JobDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -589,12 +685,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF21FAEC1FAB5BAA004D0ADA /* JGGDetailInfoHeaderView.xib in Resources */,
 				63955EE41FA0643A00D825B2 /* JGGAppSearchHeaderView.xib in Resources */,
 				63BE91E31FA0263C00D40C07 /* Muli-SemiBold.ttf in Resources */,
 				63955ECC1FA058F500D825B2 /* Profile.storyboard in Resources */,
+				FF21FAF01FAB5E1C004D0ADA /* JGGNextStepTitleView.xib in Resources */,
 				63BE91DC1FA0263C00D40C07 /* Muli-ExtraBoldItalic.ttf in Resources */,
 				63955EDF1FA05C1F00D825B2 /* JGGAppHistoryListCell.xib in Resources */,
+				FF21FAE81FAB5597004D0ADA /* JGGDetailInfoFooterView.xib in Resources */,
 				63BE91DF1FA0263C00D40C07 /* Muli-Italic.ttf in Resources */,
+				FFA061B61FAB4C2D00185C56 /* 222.jpg in Resources */,
 				63BE91E11FA0263C00D40C07 /* Muli-LightItalic.ttf in Resources */,
 				631EF2B01FA88CC8001D2915 /* TGLParallaxCarousel.xib in Resources */,
 				63BE91E21FA0263C00D40C07 /* Muli-Regular.ttf in Resources */,
@@ -602,16 +702,20 @@
 				63BE91D91FA0263C00D40C07 /* Muli-Bold.ttf in Resources */,
 				63BE91AD1FA0233300D40C07 /* LaunchScreen.storyboard in Resources */,
 				63BE91DD1FA0263C00D40C07 /* Muli-ExtraLight.ttf in Resources */,
+				FFA061BC1FAB4F4200185C56 /* JGGAppInviteProviderCell.xib in Resources */,
 				63955EC91FA058E600D825B2 /* Login.storyboard in Resources */,
-				63B8DC3C1FA18EEE003C6EBF /* 222.jpg in Resources */,
 				63B8DC301FA17F1B003C6EBF /* Favorite.storyboard in Resources */,
 				63BE91E41FA0263C00D40C07 /* Muli-SemiBoldItalic.ttf in Resources */,
+				FF21FAE41FAB5535004D0ADA /* JGGImageCarouselCell.xib in Resources */,
 				63BE91DE1FA0263C00D40C07 /* Muli-ExtraLightItalic.ttf in Resources */,
 				63BE91AA1FA0233300D40C07 /* Assets.xcassets in Resources */,
 				63BE91E01FA0263C00D40C07 /* Muli-Light.ttf in Resources */,
 				63955ED21FA0590F00D825B2 /* Appointment.storyboard in Resources */,
 				63955ECF1FA0590200D825B2 /* Services.storyboard in Resources */,
 				63955EEA1FA0669B00D825B2 /* JGGAppHomeTabView.xib in Resources */,
+				FFA061C01FAB50A000185C56 /* JGGDetailInfoDescriptionCell.xib in Resources */,
+				FFA061C41FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.xib in Resources */,
+				FFA061C81FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.xib in Resources */,
 				63BE91D81FA0263C00D40C07 /* Muli-BlackItalic.ttf in Resources */,
 				63BE91DA1FA0263C00D40C07 /* Muli-BoldItalic.ttf in Resources */,
 				63B8DC2D1FA17F0F003C6EBF /* Home.storyboard in Resources */,
@@ -711,28 +815,44 @@
 			buildActionMask = 2147483647;
 			files = (
 				631EF2AF1FA88CC8001D2915 /* TGLParallaxCarousel.swift in Sources */,
+				FFA061B81FAB4E9300185C56 /* JGGUserAvatarNameRateCell.swift in Sources */,
 				63BE91FB1FA028B300D40C07 /* JGGLoginBaseVC.swift in Sources */,
 				63BE91C61FA025FD00D40C07 /* UIView.swift in Sources */,
+				FF21FAFB1FAB6387004D0ADA /* AZDropdownMenuDefaultCell.swift in Sources */,
 				631EF2A31FA874A0001D2915 /* JGGEventUserModel.swift in Sources */,
+				FF21FB021FAB67E5004D0ADA /* FCColors.swift in Sources */,
 				632E78291FA2FC3A00CFFB24 /* JGGAppFilterOptionCell.swift in Sources */,
 				63B8DC3E1FA19FEE003C6EBF /* JGGBaseNC.swift in Sources */,
+				FF21FAEA1FAB5B2A004D0ADA /* JGGDetailInfoHeaderView.swift in Sources */,
 				631EF29D1FA8744F001D2915 /* JGGUserBaseModel.swift in Sources */,
+				FF21FAF91FAB6387004D0ADA /* AZDropdownMenuBaseCell.swift in Sources */,
+				FF21FAFA1FAB6387004D0ADA /* AZDropdownMenuConfig.swift in Sources */,
+				FF21FAE21FAB5525004D0ADA /* JGGImageCarouselCell.swift in Sources */,
 				63BE91C01FA025D100D40C07 /* JGGAppManager.swift in Sources */,
 				631EF2971FA87022001D2915 /* JGGAppBiddingProviderCell.swift in Sources */,
 				63BE91F91FA0289D00D40C07 /* JGGMainTabbarController.swift in Sources */,
+				FF21FAF81FAB6387004D0ADA /* AZDropdownMenu.swift in Sources */,
+				FFA061BB1FAB4F4200185C56 /* JGGAppInviteProviderCell.swift in Sources */,
+				FFA061BF1FAB50A000185C56 /* JGGDetailInfoDescriptionCell.swift in Sources */,
 				63BE91A31FA0233300D40C07 /* AppDelegate.swift in Sources */,
+				FFA061C31FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.swift in Sources */,
 				63955EE81FA0668800D825B2 /* JGGAppHomeTabView.swift in Sources */,
+				FF21FB001FAB67E5004D0ADA /* FCAlertView.swift in Sources */,
+				FFA061C71FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.swift in Sources */,
 				632E78271FA2F92D00CFFB24 /* JGGAppFilterVC.swift in Sources */,
 				631EF2A71FA87848001D2915 /* Global.swift in Sources */,
 				63BE91BE1FA025C500D40C07 /* JGGTableViewController.swift in Sources */,
 				63BE91BC1FA025B700D40C07 /* JGGViewController.swift in Sources */,
 				631EF29F1FA87462001D2915 /* JGGClientUserModel.swift in Sources */,
+				FF21FAE61FAB5588004D0ADA /* JGGDetailInfoFooterView.swift in Sources */,
 				63BE91F01FA0283600D40C07 /* JGGServicesBaseVC.swift in Sources */,
 				63BE91C31FA025ED00D40C07 /* JGGBaseModel.swift in Sources */,
 				63DBC8AF1FA02E7800AAECA8 /* UIColor.swift in Sources */,
 				63B8DC321FA187F4003C6EBF /* JGGStartTableVC.swift in Sources */,
 				631EF2A11FA8746E001D2915 /* JGGProviderUserModel.swift in Sources */,
+				FF21FAEE1FAB5CE4004D0ADA /* JGGNextStepTitleView.swift in Sources */,
 				631EF2991FA870DF001D2915 /* JGGCircleImageView.swift in Sources */,
+				FF21FB011FAB67E5004D0ADA /* FCAlertViewDelegate.swift in Sources */,
 				63B8DC341FA18852003C6EBF /* JGGAppMainVC.swift in Sources */,
 				63955ED41FA0593400D825B2 /* JGGButton.swift in Sources */,
 				63DBC8B11FA0356000AAECA8 /* UIFont.swift in Sources */,

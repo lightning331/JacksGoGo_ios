@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Regular.ttf">
+            <string>Muli-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="JGGDetailInfoHeaderView" customModule="JacksGoGo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="401" height="70"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAZ-q3-WKn">
+                    <rect key="frame" x="0.0" y="16" width="401" height="54"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_more" translatesAutoresizingMaskIntoConstraints="NO" id="jOU-Se-rsb">
+                            <rect key="frame" x="16" y="0.0" width="16" height="54"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Job Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KMs-Bq-YX2">
+                            <rect key="frame" x="48" y="18.5" width="80" height="19"/>
+                            <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giR-HI-5f3">
+                            <rect key="frame" x="343" y="0.0" width="50" height="54"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="h8I-KG-cUc"/>
+                            </constraints>
+                            <state key="normal" image="button_showless_green"/>
+                            <state key="selected" image="button_showmore_green"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="giR-HI-5f3" secondAttribute="bottom" id="03O-Ee-AJs"/>
+                        <constraint firstItem="KMs-Bq-YX2" firstAttribute="leading" secondItem="jOU-Se-rsb" secondAttribute="trailing" constant="16" id="4h6-5D-mho"/>
+                        <constraint firstItem="giR-HI-5f3" firstAttribute="top" secondItem="UAZ-q3-WKn" secondAttribute="top" id="8P0-J4-pMs"/>
+                        <constraint firstAttribute="trailing" secondItem="giR-HI-5f3" secondAttribute="trailing" constant="8" id="I5M-Gf-Hh7"/>
+                        <constraint firstItem="KMs-Bq-YX2" firstAttribute="centerY" secondItem="jOU-Se-rsb" secondAttribute="centerY" id="PCS-CH-oBr"/>
+                        <constraint firstItem="jOU-Se-rsb" firstAttribute="leading" secondItem="UAZ-q3-WKn" secondAttribute="leading" constant="16" id="XWc-9c-BZa"/>
+                        <constraint firstAttribute="bottom" secondItem="jOU-Se-rsb" secondAttribute="bottom" id="f7h-TU-18K"/>
+                        <constraint firstItem="jOU-Se-rsb" firstAttribute="top" secondItem="UAZ-q3-WKn" secondAttribute="top" id="zCo-cS-Yqf"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="UAZ-q3-WKn" secondAttribute="bottom" id="E2m-Dh-0Y5"/>
+                <constraint firstItem="UAZ-q3-WKn" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="Pwj-M0-5i4"/>
+                <constraint firstItem="UAZ-q3-WKn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="UuY-uc-2N4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="UAZ-q3-WKn" secondAttribute="trailing" id="X0W-C1-3Jk"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="btnExpand" destination="giR-HI-5f3" id="9AX-SH-ag7"/>
+                <outlet property="imgviewIcon" destination="jOU-Se-rsb" id="jpe-3H-GhX"/>
+                <outlet property="lblTitle" destination="KMs-Bq-YX2" id="BhN-iA-WX6"/>
+            </connections>
+            <point key="canvasLocation" x="-105.5" y="-45"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="button_showless_green" width="32" height="32"/>
+        <image name="button_showmore_green" width="32" height="32"/>
+        <image name="icon_more" width="16" height="16"/>
+    </resources>
+</document>

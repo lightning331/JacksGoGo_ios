@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JGGDetailInfoDescriptionCell" rowHeight="60" id="nxD-dJ-XMh" customClass="JGGDetailInfoDescriptionCell" customModule="JacksGoGo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nxD-dJ-XMh" id="ywW-yg-mrc">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MX6-Ul-y35">
+                        <rect key="frame" x="0.0" y="4" width="375" height="51.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_budget" translatesAutoresizingMaskIntoConstraints="NO" id="jdo-Cb-Vyk">
+                                <rect key="frame" x="16" y="9" width="20" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="bUz-4W-LpX"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 50.00 - $ 100.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVV-qZ-ddc">
+                                <rect key="frame" x="44" y="8" width="323" height="35.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wVV-qZ-ddc" firstAttribute="top" secondItem="MX6-Ul-y35" secondAttribute="top" constant="8" id="Ce0-Fr-h9O"/>
+                            <constraint firstAttribute="trailing" secondItem="wVV-qZ-ddc" secondAttribute="trailing" constant="8" id="QBA-y0-j0v"/>
+                            <constraint firstItem="jdo-Cb-Vyk" firstAttribute="top" secondItem="MX6-Ul-y35" secondAttribute="top" constant="9" id="U78-qY-CfW"/>
+                            <constraint firstItem="jdo-Cb-Vyk" firstAttribute="leading" secondItem="MX6-Ul-y35" secondAttribute="leading" constant="16" id="hMX-8E-vC0"/>
+                            <constraint firstAttribute="bottom" secondItem="wVV-qZ-ddc" secondAttribute="bottom" constant="8" id="ins-zp-C2M"/>
+                            <constraint firstItem="wVV-qZ-ddc" firstAttribute="leading" secondItem="jdo-Cb-Vyk" secondAttribute="trailing" constant="8" id="rVE-en-bSh"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="MX6-Ul-y35" firstAttribute="leading" secondItem="ywW-yg-mrc" secondAttribute="leading" id="1HZ-gJ-Jgc"/>
+                    <constraint firstItem="MX6-Ul-y35" firstAttribute="top" secondItem="ywW-yg-mrc" secondAttribute="top" constant="4" id="9ZX-Yj-bph"/>
+                    <constraint firstAttribute="trailing" secondItem="MX6-Ul-y35" secondAttribute="trailing" id="LLs-df-OCt"/>
+                    <constraint firstAttribute="bottom" secondItem="MX6-Ul-y35" secondAttribute="bottom" constant="4" id="Te5-Sd-0dx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imgviewIcon" destination="jdo-Cb-Vyk" id="xrW-LL-jAR"/>
+                <outlet property="lblTitle" destination="wVV-qZ-ddc" id="2Wi-nM-M7J"/>
+            </connections>
+            <point key="canvasLocation" x="-99" y="-30"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon_budget" width="16" height="16"/>
+    </resources>
+</document>

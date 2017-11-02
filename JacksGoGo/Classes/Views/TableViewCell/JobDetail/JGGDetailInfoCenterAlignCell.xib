@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+        <array key="Muli-Regular.ttf">
+            <string>Muli-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JGGDetailInfoCenterAlignCell" rowHeight="60" id="JU6-RO-rz7" customClass="JGGDetailInfoCenterAlignCell" customModule="JacksGoGo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JU6-RO-rz7" id="1mq-fm-B1h">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OXx-jP-2sK">
+                        <rect key="frame" x="0.0" y="4" width="375" height="51.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job reference no : J38291" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpe-C4-cQ3">
+                                <rect key="frame" x="16" y="8" width="343" height="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Job posted on 7 Jul, 2017" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uf-r1-2O6">
+                                <rect key="frame" x="118.5" y="29" width="138" height="14"/>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
+                                <color key="textColor" red="0.54115974899999997" green="0.54185396429999999" blue="0.56077778339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="6uf-r1-2O6" secondAttribute="bottom" constant="8" id="FIp-jL-r3r"/>
+                            <constraint firstItem="6uf-r1-2O6" firstAttribute="top" secondItem="bpe-C4-cQ3" secondAttribute="bottom" constant="3" id="QLH-8J-pW8"/>
+                            <constraint firstItem="6uf-r1-2O6" firstAttribute="centerX" secondItem="OXx-jP-2sK" secondAttribute="centerX" id="bbZ-Hc-5gq"/>
+                            <constraint firstItem="bpe-C4-cQ3" firstAttribute="top" secondItem="OXx-jP-2sK" secondAttribute="top" constant="8" id="e87-WT-LMx"/>
+                            <constraint firstAttribute="trailing" secondItem="bpe-C4-cQ3" secondAttribute="trailing" constant="16" id="uEc-hc-Dtl"/>
+                            <constraint firstItem="bpe-C4-cQ3" firstAttribute="leading" secondItem="OXx-jP-2sK" secondAttribute="leading" constant="16" id="vrt-Ze-Qmd"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="OXx-jP-2sK" firstAttribute="top" secondItem="1mq-fm-B1h" secondAttribute="top" constant="4" id="QIf-l0-wLH"/>
+                    <constraint firstItem="OXx-jP-2sK" firstAttribute="leading" secondItem="1mq-fm-B1h" secondAttribute="leading" id="Rr3-9d-gls"/>
+                    <constraint firstAttribute="trailing" secondItem="OXx-jP-2sK" secondAttribute="trailing" id="wm5-0H-jIF"/>
+                    <constraint firstAttribute="bottom" secondItem="OXx-jP-2sK" secondAttribute="bottom" constant="4" id="xPw-Ja-znD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lblSubTitle" destination="6uf-r1-2O6" id="ZzS-dr-wP5"/>
+                <outlet property="lblTitle" destination="bpe-C4-cQ3" id="uec-ST-OoD"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

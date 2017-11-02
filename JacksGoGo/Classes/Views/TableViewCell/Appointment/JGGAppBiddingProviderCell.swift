@@ -9,12 +9,9 @@
 import UIKit
 import Cosmos
 
-class JGGAppBiddingProviderCell: UITableViewCell {
+class JGGAppBiddingProviderCell: JGGUserAvatarNameRateCell {
 
-    @IBOutlet weak var imgviewUserAvatar: JGGCircleImageView!
-    @IBOutlet weak var lblUsername: UILabel!
-    @IBOutlet weak var ratebarUserRate: CosmosView!
-    @IBOutlet weak var lblPriceAndStatus: UILabel!
+    @IBOutlet weak var lblPrice: UILabel!
     @IBOutlet weak var lblStatus: UILabel!
     @IBOutlet weak var imgviewNoteBadge: UIImageView!
     @IBOutlet weak var constraintPriceVerticalCenter: NSLayoutConstraint!
@@ -45,7 +42,7 @@ class JGGAppBiddingProviderCell: UITableViewCell {
             self.contentView.backgroundColor = biddingProvider.isNew ? UIColor.JGGGreen10Percent : UIColor.JGGWhite
             switch biddingProvider.status {
             case .pending:
-                self.lblPriceAndStatus.text = biddingProvider.price.formattedPriceString()
+                self.lblPrice.text = biddingProvider.price.formattedPriceString()
                 self.lblStatus.text = nil
                 self.imgviewNoteBadge.isHidden = false
                 self.contentView.alpha = 1.0
@@ -53,13 +50,13 @@ class JGGAppBiddingProviderCell: UITableViewCell {
                 updateConstraints()
                 break
             case .notResponded:
-                self.lblPriceAndStatus.text = nil
+                self.lblPrice.text = nil
                 self.lblStatus.text = nil
                 self.imgviewNoteBadge.isHidden = true
                 self.contentView.alpha = 1.0
                 break
             case .declined:
-                self.lblPriceAndStatus.text = nil
+                self.lblPrice.text = nil
                 self.lblStatus.text = "Declined"
                 self.imgviewNoteBadge.isHidden = true
                 self.contentView.alpha = 0.5
@@ -67,7 +64,7 @@ class JGGAppBiddingProviderCell: UITableViewCell {
                 updateConstraints()
                 break
             case .rejected:
-                self.lblPriceAndStatus.text = biddingProvider.price.formattedPriceString()
+                self.lblPrice.text = biddingProvider.price.formattedPriceString()
                 self.lblStatus.text = "Rejected"
                 self.imgviewNoteBadge.isHidden = false
                 self.contentView.alpha = 0.5
@@ -76,7 +73,7 @@ class JGGAppBiddingProviderCell: UITableViewCell {
                 break
             case .accepted:
                 self.contentView.backgroundColor = UIColor.JGGRed10Percecnt
-                self.lblPriceAndStatus.text = biddingProvider.price.formattedPriceString()
+                self.lblPrice.text = biddingProvider.price.formattedPriceString()
                 self.lblStatus.text = nil
                 self.imgviewNoteBadge.isHidden = true
                 self.contentView.alpha = 1.0

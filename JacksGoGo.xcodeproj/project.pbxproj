@@ -116,6 +116,8 @@
 		FFA21F6A1FABC20000F5A6DA /* JGGTotalReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA21F681FABC20000F5A6DA /* JGGTotalReviewCell.xib */; };
 		FFA21F6D1FABC33400F5A6DA /* JGGJobBookedInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA21F6B1FABC33400F5A6DA /* JGGJobBookedInfoCell.swift */; };
 		FFA21F6E1FABC33400F5A6DA /* JGGJobBookedInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA21F6C1FABC33400F5A6DA /* JGGJobBookedInfoCell.xib */; };
+		FFA21F711FABC57F00F5A6DA /* JGGTagListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA21F6F1FABC57F00F5A6DA /* JGGTagListCell.swift */; };
+		FFA21F721FABC57F00F5A6DA /* JGGTagListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA21F701FABC57F00F5A6DA /* JGGTagListCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -232,6 +234,8 @@
 		FFA21F681FABC20000F5A6DA /* JGGTotalReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGTotalReviewCell.xib; sourceTree = "<group>"; };
 		FFA21F6B1FABC33400F5A6DA /* JGGJobBookedInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGJobBookedInfoCell.swift; sourceTree = "<group>"; };
 		FFA21F6C1FABC33400F5A6DA /* JGGJobBookedInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGJobBookedInfoCell.xib; sourceTree = "<group>"; };
+		FFA21F6F1FABC57F00F5A6DA /* JGGTagListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGTagListCell.swift; sourceTree = "<group>"; };
+		FFA21F701FABC57F00F5A6DA /* JGGTagListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGTagListCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -642,6 +646,8 @@
 				FFA21F681FABC20000F5A6DA /* JGGTotalReviewCell.xib */,
 				FFA21F6B1FABC33400F5A6DA /* JGGJobBookedInfoCell.swift */,
 				FFA21F6C1FABC33400F5A6DA /* JGGJobBookedInfoCell.xib */,
+				FFA21F6F1FABC57F00F5A6DA /* JGGTagListCell.swift */,
+				FFA21F701FABC57F00F5A6DA /* JGGTagListCell.xib */,
 			);
 			path = JobDetail;
 			sourceTree = "<group>";
@@ -730,6 +736,7 @@
 				63BE91E11FA0263C00D40C07 /* Muli-LightItalic.ttf in Resources */,
 				631EF2B01FA88CC8001D2915 /* TGLParallaxCarousel.xib in Resources */,
 				63BE91E21FA0263C00D40C07 /* Muli-Regular.ttf in Resources */,
+				FFA21F721FABC57F00F5A6DA /* JGGTagListCell.xib in Resources */,
 				63CA7F131FA8A04A005A44B0 /* JGGAppBiddingProviderCell.xib in Resources */,
 				63BE91D91FA0263C00D40C07 /* Muli-Bold.ttf in Resources */,
 				63BE91AD1FA0233300D40C07 /* LaunchScreen.storyboard in Resources */,
@@ -885,6 +892,7 @@
 				63BE91BE1FA025C500D40C07 /* JGGTableViewController.swift in Sources */,
 				63BE91BC1FA025B700D40C07 /* JGGViewController.swift in Sources */,
 				631EF29F1FA87462001D2915 /* JGGClientUserModel.swift in Sources */,
+				FFA21F711FABC57F00F5A6DA /* JGGTagListCell.swift in Sources */,
 				FF21FAE61FAB5588004D0ADA /* JGGDetailInfoFooterView.swift in Sources */,
 				63BE91F01FA0283600D40C07 /* JGGServicesBaseVC.swift in Sources */,
 				63BE91C31FA025ED00D40C07 /* JGGBaseModel.swift in Sources */,

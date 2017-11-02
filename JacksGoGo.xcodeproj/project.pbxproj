@@ -106,6 +106,16 @@
 		FFA061C41FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA061C21FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.xib */; };
 		FFA061C71FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA061C51FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.swift */; };
 		FFA061C81FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA061C61FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.xib */; };
+		FFA21F5D1FAB87D600F5A6DA /* JGGBorderButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA21F5B1FAB87D600F5A6DA /* JGGBorderButtonCell.swift */; };
+		FFA21F5E1FAB87D600F5A6DA /* JGGBorderButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA21F5C1FAB87D600F5A6DA /* JGGBorderButtonCell.xib */; };
+		FFA21F611FABBE8A00F5A6DA /* JGGDetailCategoryTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA21F5F1FABBE8A00F5A6DA /* JGGDetailCategoryTitleCell.swift */; };
+		FFA21F621FABBE8A00F5A6DA /* JGGDetailCategoryTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA21F601FABBE8A00F5A6DA /* JGGDetailCategoryTitleCell.xib */; };
+		FFA21F651FABC0A400F5A6DA /* JGGTimeSlotsAvailableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA21F631FABC0A400F5A6DA /* JGGTimeSlotsAvailableCell.swift */; };
+		FFA21F661FABC0A400F5A6DA /* JGGTimeSlotsAvailableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA21F641FABC0A400F5A6DA /* JGGTimeSlotsAvailableCell.xib */; };
+		FFA21F691FABC20000F5A6DA /* JGGTotalReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA21F671FABC20000F5A6DA /* JGGTotalReviewCell.swift */; };
+		FFA21F6A1FABC20000F5A6DA /* JGGTotalReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA21F681FABC20000F5A6DA /* JGGTotalReviewCell.xib */; };
+		FFA21F6D1FABC33400F5A6DA /* JGGJobBookedInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA21F6B1FABC33400F5A6DA /* JGGJobBookedInfoCell.swift */; };
+		FFA21F6E1FABC33400F5A6DA /* JGGJobBookedInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA21F6C1FABC33400F5A6DA /* JGGJobBookedInfoCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -212,6 +222,16 @@
 		FFA061C21FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGDetailInfoAccessoryButtonCell.xib; sourceTree = "<group>"; };
 		FFA061C51FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGDetailInfoCenterAlignCell.swift; sourceTree = "<group>"; };
 		FFA061C61FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGDetailInfoCenterAlignCell.xib; sourceTree = "<group>"; };
+		FFA21F5B1FAB87D600F5A6DA /* JGGBorderButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGBorderButtonCell.swift; sourceTree = "<group>"; };
+		FFA21F5C1FAB87D600F5A6DA /* JGGBorderButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGBorderButtonCell.xib; sourceTree = "<group>"; };
+		FFA21F5F1FABBE8A00F5A6DA /* JGGDetailCategoryTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGDetailCategoryTitleCell.swift; sourceTree = "<group>"; };
+		FFA21F601FABBE8A00F5A6DA /* JGGDetailCategoryTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGDetailCategoryTitleCell.xib; sourceTree = "<group>"; };
+		FFA21F631FABC0A400F5A6DA /* JGGTimeSlotsAvailableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGTimeSlotsAvailableCell.swift; sourceTree = "<group>"; };
+		FFA21F641FABC0A400F5A6DA /* JGGTimeSlotsAvailableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGTimeSlotsAvailableCell.xib; sourceTree = "<group>"; };
+		FFA21F671FABC20000F5A6DA /* JGGTotalReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGTotalReviewCell.swift; sourceTree = "<group>"; };
+		FFA21F681FABC20000F5A6DA /* JGGTotalReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGTotalReviewCell.xib; sourceTree = "<group>"; };
+		FFA21F6B1FABC33400F5A6DA /* JGGJobBookedInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGJobBookedInfoCell.swift; sourceTree = "<group>"; };
+		FFA21F6C1FABC33400F5A6DA /* JGGJobBookedInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGJobBookedInfoCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -612,6 +632,16 @@
 				FF21FAEB1FAB5BAA004D0ADA /* JGGDetailInfoHeaderView.xib */,
 				FF21FAED1FAB5CE4004D0ADA /* JGGNextStepTitleView.swift */,
 				FF21FAEF1FAB5E1C004D0ADA /* JGGNextStepTitleView.xib */,
+				FFA21F5B1FAB87D600F5A6DA /* JGGBorderButtonCell.swift */,
+				FFA21F5C1FAB87D600F5A6DA /* JGGBorderButtonCell.xib */,
+				FFA21F5F1FABBE8A00F5A6DA /* JGGDetailCategoryTitleCell.swift */,
+				FFA21F601FABBE8A00F5A6DA /* JGGDetailCategoryTitleCell.xib */,
+				FFA21F631FABC0A400F5A6DA /* JGGTimeSlotsAvailableCell.swift */,
+				FFA21F641FABC0A400F5A6DA /* JGGTimeSlotsAvailableCell.xib */,
+				FFA21F671FABC20000F5A6DA /* JGGTotalReviewCell.swift */,
+				FFA21F681FABC20000F5A6DA /* JGGTotalReviewCell.xib */,
+				FFA21F6B1FABC33400F5A6DA /* JGGJobBookedInfoCell.swift */,
+				FFA21F6C1FABC33400F5A6DA /* JGGJobBookedInfoCell.xib */,
 			);
 			path = JobDetail;
 			sourceTree = "<group>";
@@ -694,6 +724,8 @@
 				63955EDF1FA05C1F00D825B2 /* JGGAppHistoryListCell.xib in Resources */,
 				FF21FAE81FAB5597004D0ADA /* JGGDetailInfoFooterView.xib in Resources */,
 				63BE91DF1FA0263C00D40C07 /* Muli-Italic.ttf in Resources */,
+				FFA21F6A1FABC20000F5A6DA /* JGGTotalReviewCell.xib in Resources */,
+				FFA21F5E1FAB87D600F5A6DA /* JGGBorderButtonCell.xib in Resources */,
 				FFA061B61FAB4C2D00185C56 /* 222.jpg in Resources */,
 				63BE91E11FA0263C00D40C07 /* Muli-LightItalic.ttf in Resources */,
 				631EF2B01FA88CC8001D2915 /* TGLParallaxCarousel.xib in Resources */,
@@ -703,7 +735,9 @@
 				63BE91AD1FA0233300D40C07 /* LaunchScreen.storyboard in Resources */,
 				63BE91DD1FA0263C00D40C07 /* Muli-ExtraLight.ttf in Resources */,
 				FFA061BC1FAB4F4200185C56 /* JGGAppInviteProviderCell.xib in Resources */,
+				FFA21F661FABC0A400F5A6DA /* JGGTimeSlotsAvailableCell.xib in Resources */,
 				63955EC91FA058E600D825B2 /* Login.storyboard in Resources */,
+				FFA21F6E1FABC33400F5A6DA /* JGGJobBookedInfoCell.xib in Resources */,
 				63B8DC301FA17F1B003C6EBF /* Favorite.storyboard in Resources */,
 				63BE91E41FA0263C00D40C07 /* Muli-SemiBoldItalic.ttf in Resources */,
 				FF21FAE41FAB5535004D0ADA /* JGGImageCarouselCell.xib in Resources */,
@@ -718,6 +752,7 @@
 				FFA061C81FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.xib in Resources */,
 				63BE91D81FA0263C00D40C07 /* Muli-BlackItalic.ttf in Resources */,
 				63BE91DA1FA0263C00D40C07 /* Muli-BoldItalic.ttf in Resources */,
+				FFA21F621FABBE8A00F5A6DA /* JGGDetailCategoryTitleCell.xib in Resources */,
 				63B8DC2D1FA17F0F003C6EBF /* Home.storyboard in Resources */,
 				63BE91A81FA0233300D40C07 /* Main.storyboard in Resources */,
 				63BE91D71FA0263C00D40C07 /* Muli-Black.ttf in Resources */,
@@ -743,6 +778,7 @@
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/TagListView/TagListView.framework",
 				"${BUILT_PRODUCTS_DIR}/UIColor_Hex_Swift/UIColor_Hex_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -754,6 +790,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TagListView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIColor_Hex_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -820,9 +857,12 @@
 				63BE91C61FA025FD00D40C07 /* UIView.swift in Sources */,
 				FF21FAFB1FAB6387004D0ADA /* AZDropdownMenuDefaultCell.swift in Sources */,
 				631EF2A31FA874A0001D2915 /* JGGEventUserModel.swift in Sources */,
+				FFA21F691FABC20000F5A6DA /* JGGTotalReviewCell.swift in Sources */,
 				FF21FB021FAB67E5004D0ADA /* FCColors.swift in Sources */,
+				FFA21F6D1FABC33400F5A6DA /* JGGJobBookedInfoCell.swift in Sources */,
 				632E78291FA2FC3A00CFFB24 /* JGGAppFilterOptionCell.swift in Sources */,
 				63B8DC3E1FA19FEE003C6EBF /* JGGBaseNC.swift in Sources */,
+				FFA21F651FABC0A400F5A6DA /* JGGTimeSlotsAvailableCell.swift in Sources */,
 				FF21FAEA1FAB5B2A004D0ADA /* JGGDetailInfoHeaderView.swift in Sources */,
 				631EF29D1FA8744F001D2915 /* JGGUserBaseModel.swift in Sources */,
 				FF21FAF91FAB6387004D0ADA /* AZDropdownMenuBaseCell.swift in Sources */,
@@ -836,6 +876,7 @@
 				FFA061BF1FAB50A000185C56 /* JGGDetailInfoDescriptionCell.swift in Sources */,
 				63BE91A31FA0233300D40C07 /* AppDelegate.swift in Sources */,
 				FFA061C31FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.swift in Sources */,
+				FFA21F5D1FAB87D600F5A6DA /* JGGBorderButtonCell.swift in Sources */,
 				63955EE81FA0668800D825B2 /* JGGAppHomeTabView.swift in Sources */,
 				FF21FB001FAB67E5004D0ADA /* FCAlertView.swift in Sources */,
 				FFA061C71FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.swift in Sources */,
@@ -869,6 +910,7 @@
 				63B8DC361FA18AD5003C6EBF /* JGGSectionTitleView.swift in Sources */,
 				63B8DC2A1FA17C8E003C6EBF /* JGGMainStartNC.swift in Sources */,
 				63BE91F21FA0285200D40C07 /* JGGServicesBaseTableVC.swift in Sources */,
+				FFA21F611FABBE8A00F5A6DA /* JGGDetailCategoryTitleCell.swift in Sources */,
 				63B755E81FA1BE230032B4F1 /* JGGEventModel.swift in Sources */,
 				631EF2A51FA875D8001D2915 /* JGGBiddingProviderModel.swift in Sources */,
 				63955EDA1FA0599400D825B2 /* UIButton.swift in Sources */,

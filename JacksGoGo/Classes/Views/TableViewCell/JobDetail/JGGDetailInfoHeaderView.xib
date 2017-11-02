@@ -28,7 +28,7 @@
                             <rect key="frame" x="16" y="0.0" width="16" height="54"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Job Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KMs-Bq-YX2">
-                            <rect key="frame" x="48" y="18.5" width="80" height="19"/>
+                            <rect key="frame" x="48" y="18" width="80" height="19"/>
                             <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>

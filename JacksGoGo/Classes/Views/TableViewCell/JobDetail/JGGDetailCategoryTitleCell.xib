@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Bold.ttf">
+            <string>Muli-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JGGDetailCategoryTitleCell" rowHeight="123" id="KGk-i7-Jjw" customClass="JGGDetailCategoryTitleCell" customModule="JacksGoGo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="372" height="123"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="372" height="122.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hk9-es-t1x">
+                        <rect key="frame" x="0.0" y="8" width="100" height="109.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_cat_householdchores" translatesAutoresizingMaskIntoConstraints="NO" id="tcA-sh-zbr">
+                                <rect key="frame" x="0.0" y="8" width="100" height="56"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Household Chores" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6g-Yk-oe6">
+                                <rect key="frame" x="8" y="64" width="84" height="41.5"/>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tcA-sh-zbr" firstAttribute="leading" secondItem="Hk9-es-t1x" secondAttribute="leading" id="2UY-Gt-izt"/>
+                            <constraint firstItem="g6g-Yk-oe6" firstAttribute="top" secondItem="tcA-sh-zbr" secondAttribute="bottom" id="62g-ZV-XVn"/>
+                            <constraint firstAttribute="trailing" secondItem="tcA-sh-zbr" secondAttribute="trailing" id="DT6-s6-tkr"/>
+                            <constraint firstItem="g6g-Yk-oe6" firstAttribute="leading" secondItem="Hk9-es-t1x" secondAttribute="leading" constant="8" id="Hta-bY-eDz"/>
+                            <constraint firstAttribute="trailing" secondItem="g6g-Yk-oe6" secondAttribute="trailing" constant="8" id="eQs-0V-79R"/>
+                            <constraint firstAttribute="bottom" secondItem="g6g-Yk-oe6" secondAttribute="bottom" constant="4" id="fZe-97-1ws"/>
+                            <constraint firstAttribute="width" constant="100" id="sHt-Jd-ccw"/>
+                            <constraint firstItem="tcA-sh-zbr" firstAttribute="top" secondItem="Hk9-es-t1x" secondAttribute="top" constant="8" id="yDJ-54-aVZ"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="leS-SF-zpP">
+                        <rect key="frame" x="108" y="8" width="264" height="110"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gardening" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkj-Vn-E43">
+                                <rect key="frame" x="16" y="39.5" width="232" height="33"/>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jkj-Vn-E43" secondAttribute="trailing" constant="16" id="aQX-e9-No2"/>
+                            <constraint firstItem="jkj-Vn-E43" firstAttribute="centerY" secondItem="leS-SF-zpP" secondAttribute="centerY" id="hOv-ki-kIc"/>
+                            <constraint firstItem="jkj-Vn-E43" firstAttribute="leading" secondItem="leS-SF-zpP" secondAttribute="leading" constant="16" id="owy-UL-xH5"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="leS-SF-zpP" firstAttribute="leading" secondItem="Hk9-es-t1x" secondAttribute="trailing" constant="8" id="1no-TJ-yPR"/>
+                    <constraint firstItem="leS-SF-zpP" firstAttribute="top" secondItem="Hk9-es-t1x" secondAttribute="top" id="6Rq-CV-xPQ"/>
+                    <constraint firstItem="Hk9-es-t1x" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="FcI-NL-oyp"/>
+                    <constraint firstAttribute="trailing" secondItem="leS-SF-zpP" secondAttribute="trailing" id="Us2-qp-Wm6"/>
+                    <constraint firstAttribute="bottom" secondItem="Hk9-es-t1x" secondAttribute="bottom" constant="5" id="VzC-7z-vnY"/>
+                    <constraint firstItem="leS-SF-zpP" firstAttribute="bottom" secondItem="Hk9-es-t1x" secondAttribute="bottom" id="lgD-5J-WKa"/>
+                    <constraint firstItem="Hk9-es-t1x" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="vot-8R-jSe"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgviewIcon" destination="tcA-sh-zbr" id="Ajt-CB-wdq"/>
+                <outlet property="lblCategoryName" destination="g6g-Yk-oe6" id="9Z4-EM-rGm"/>
+                <outlet property="lblTitle" destination="jkj-Vn-E43" id="rZW-UH-AfQ"/>
+            </connections>
+            <point key="canvasLocation" x="-152" y="3.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon_cat_householdchores" width="56" height="56"/>
+    </resources>
+</document>

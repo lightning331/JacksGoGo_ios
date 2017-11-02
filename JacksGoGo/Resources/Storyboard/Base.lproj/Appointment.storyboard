@@ -85,13 +85,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Next step:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efR-RV-QLg">
-                                                    <rect key="frame" x="56" y="10" width="56" height="14"/>
+                                                    <rect key="frame" x="56" y="10" width="56" height="15.5"/>
                                                     <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
                                                     <color key="textColor" red="0.54115974899999997" green="0.54185396429999999" blue="0.56077778339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Choose a provider." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2UR-8g-luU">
-                                                    <rect key="frame" x="56" y="24" width="126.5" height="17.5"/>
+                                                    <rect key="frame" x="56" y="25.5" width="133" height="19"/>
                                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -140,7 +140,7 @@
                                                     <rect key="frame" x="335" y="8" width="32" height="64"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 100.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BVF-DL-wh9">
-                                                    <rect key="frame" x="235" y="25.5" width="90" height="17.5"/>
+                                                    <rect key="frame" x="235" y="25" width="90" height="19"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="mM7-To-5q9"/>
                                                     </constraints>
@@ -149,13 +149,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="CYYong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eft-GH-Lbb">
-                                                    <rect key="frame" x="87" y="21" width="140" height="17.5"/>
+                                                    <rect key="frame" x="87" y="20.5" width="140" height="19"/>
                                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wZs-sk-9Fp" customClass="CosmosView" customModule="Cosmos">
-                                                    <rect key="frame" x="87" y="40.5" width="80" height="15"/>
+                                                    <rect key="frame" x="87" y="41.5" width="80" height="15"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="OTE-Fj-Jc7"/>
@@ -181,7 +181,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Declined" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LGs-s9-QzX">
-                                                    <rect key="frame" x="235" y="43" width="47" height="14"/>
+                                                    <rect key="frame" x="235" y="44" width="48" height="15.5"/>
                                                     <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -265,7 +265,7 @@
                                                             <rect key="frame" x="16" y="0.0" width="16" height="50"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Job Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pTN-DI-KLN">
-                                                            <rect key="frame" x="48" y="15.5" width="80" height="19"/>
+                                                            <rect key="frame" x="48" y="15" width="80" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -309,7 +309,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job posted on 7 Jul, 2017 8:16 PM" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyW-6n-mrK">
-                                                    <rect key="frame" x="23" y="11.5" width="329" height="14"/>
+                                                    <rect key="frame" x="23" y="11" width="329" height="15.5"/>
                                                     <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
                                                     <color key="textColor" red="0.54115974899999997" green="0.54185396429999999" blue="0.56077778339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -444,14 +444,14 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWH-GX-QpN">
                                                     <rect key="frame" x="0.0" y="4" width="375" height="51.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job reference no : J38291" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeh-DF-hic">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Job reference no : J38291" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeh-DF-hic">
                                                             <rect key="frame" x="16" y="8" width="343" height="18"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job posted on 7 Jul, 2017" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsu-EJ-Tl8">
-                                                            <rect key="frame" x="118" y="29" width="140.5" height="14"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Job posted on 7 Jul, 2017" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsu-EJ-Tl8">
+                                                            <rect key="frame" x="119.5" y="29" width="138" height="14"/>
                                                             <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
                                                             <color key="textColor" red="0.54115974899999997" green="0.54185396429999999" blue="0.56077778339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -490,13 +490,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9q-qT-e3R">
-                                        <rect key="frame" x="48" y="8" width="319" height="14"/>
+                                        <rect key="frame" x="48" y="8" width="319" height="15.5"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVZ-dl-Y5K">
-                                        <rect key="frame" x="48" y="24" width="319" height="14"/>
+                                        <rect key="frame" x="48" y="25.5" width="319" height="15.5"/>
                                         <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -573,7 +573,7 @@
                                                     <rect key="frame" x="15" y="11" width="313" height="38"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jobs posted." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zw8-gB-vrh">
-                                                            <rect key="frame" x="16" y="10.5" width="281" height="17.5"/>
+                                                            <rect key="frame" x="16" y="10" width="281" height="19"/>
                                                             <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>

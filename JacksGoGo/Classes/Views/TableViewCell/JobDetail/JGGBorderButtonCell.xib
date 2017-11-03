@@ -50,6 +50,7 @@
                 <constraints>
                     <constraint firstItem="XPp-I3-w0W" firstAttribute="top" secondItem="Ipl-Ww-Vm1" secondAttribute="topMargin" constant="8" id="5zw-Lv-6uh"/>
                     <constraint firstAttribute="trailingMargin" secondItem="XPp-I3-w0W" secondAttribute="trailing" constant="8" id="7Eg-kg-Mrt"/>
+                    <constraint firstAttribute="bottom" secondItem="XPp-I3-w0W" secondAttribute="bottom" constant="8" id="IX0-aA-rLT"/>
                     <constraint firstItem="XPp-I3-w0W" firstAttribute="leading" secondItem="Ipl-Ww-Vm1" secondAttribute="leadingMargin" constant="8" id="reb-3k-1yg"/>
                 </constraints>
             </tableViewCellContentView>

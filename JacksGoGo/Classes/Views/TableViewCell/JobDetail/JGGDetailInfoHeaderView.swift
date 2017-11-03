@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JGGDetailInfoHeaderView: UIView {
+class JGGDetailInfoHeaderView: UITableViewHeaderFooterView {
 
     @IBOutlet weak var imgviewIcon: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!

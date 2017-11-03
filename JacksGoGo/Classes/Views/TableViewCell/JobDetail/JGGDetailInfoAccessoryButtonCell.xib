@@ -32,16 +32,17 @@
                                     <constraint firstAttribute="width" constant="20" id="5SR-XO-fU6"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 50.00 - $ 100.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZa-dp-Poq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 50.00 - $ 100.00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZa-dp-Poq">
                                 <rect key="frame" x="44" y="8" width="275" height="36"/>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3B-oT-5Vw">
-                                <rect key="frame" x="327" y="0.0" width="40" height="51.5"/>
+                                <rect key="frame" x="327" y="6" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="L6e-jj-yAh"/>
+                                    <constraint firstAttribute="height" constant="40" id="MK2-lw-WaD"/>
                                 </constraints>
                                 <state key="normal" image="button_location_green"/>
                             </button>
@@ -49,9 +50,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="azR-xS-XhY" firstAttribute="top" secondItem="CNY-pI-yR4" secondAttribute="top" constant="9" id="6Ub-3K-Imn"/>
-                            <constraint firstItem="u3B-oT-5Vw" firstAttribute="top" secondItem="CNY-pI-yR4" secondAttribute="top" id="9l7-cN-EyP"/>
+                            <constraint firstItem="u3B-oT-5Vw" firstAttribute="centerY" secondItem="CNY-pI-yR4" secondAttribute="centerY" id="SxP-Vg-tfG"/>
                             <constraint firstAttribute="bottom" secondItem="dZa-dp-Poq" secondAttribute="bottom" constant="8" id="TIu-wE-jtg"/>
-                            <constraint firstAttribute="bottom" secondItem="u3B-oT-5Vw" secondAttribute="bottom" id="ZZQ-QQ-UfU"/>
                             <constraint firstItem="azR-xS-XhY" firstAttribute="leading" secondItem="CNY-pI-yR4" secondAttribute="leading" constant="16" id="aER-4y-CBK"/>
                             <constraint firstItem="u3B-oT-5Vw" firstAttribute="leading" secondItem="dZa-dp-Poq" secondAttribute="trailing" constant="8" id="mpu-Jk-Ck6"/>
                             <constraint firstItem="dZa-dp-Poq" firstAttribute="top" secondItem="CNY-pI-yR4" secondAttribute="top" constant="8" id="sOx-uj-grN"/>
@@ -70,6 +70,8 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="btnAccessory" destination="u3B-oT-5Vw" id="TWF-ec-PHV"/>
+                <outlet property="imgviewIcon" destination="azR-xS-XhY" id="Afx-tB-kdA"/>
+                <outlet property="lblTitle" destination="dZa-dp-Poq" id="sMS-hp-UfO"/>
             </connections>
         </tableViewCell>
     </objects>

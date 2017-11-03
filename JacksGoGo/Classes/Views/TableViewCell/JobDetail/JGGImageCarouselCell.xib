@@ -18,16 +18,33 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5zs-Ch-edb" customClass="TGLParallaxCarousel" customModule="JacksGoGo" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5zs-Ch-edb" customClass="TGLParallaxCarousel" customModule="JacksGoGo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="250" id="7EN-HW-3IP"/>
+                        </constraints>
                     </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3cf-h6-ziA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                    </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="3cf-h6-ziA" firstAttribute="leading" secondItem="lzz-XQ-f4s" secondAttribute="leading" id="6Ao-Ot-ThT"/>
+                    <constraint firstAttribute="trailing" secondItem="3cf-h6-ziA" secondAttribute="trailing" id="B0D-nP-pJe"/>
+                    <constraint firstAttribute="trailing" secondItem="5zs-Ch-edb" secondAttribute="trailing" id="Jae-vd-xjl"/>
+                    <constraint firstAttribute="bottom" secondItem="5zs-Ch-edb" secondAttribute="bottom" id="ThZ-af-UbB"/>
+                    <constraint firstItem="3cf-h6-ziA" firstAttribute="top" secondItem="lzz-XQ-f4s" secondAttribute="top" id="U58-Lu-hSf"/>
+                    <constraint firstItem="5zs-Ch-edb" firstAttribute="leading" secondItem="lzz-XQ-f4s" secondAttribute="leading" id="Xl2-i0-hl9"/>
+                    <constraint firstItem="5zs-Ch-edb" firstAttribute="top" secondItem="lzz-XQ-f4s" secondAttribute="top" id="bMA-Z7-BUH"/>
+                    <constraint firstAttribute="bottom" secondItem="3cf-h6-ziA" secondAttribute="bottom" id="pLN-dR-EYD"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="carouselView" destination="5zs-Ch-edb" id="l34-iU-dy0"/>
+                <outlet property="imgviewJobSummary" destination="3cf-h6-ziA" id="m2n-Do-gVO"/>
             </connections>
+            <point key="canvasLocation" x="24.5" y="52"/>
         </tableViewCell>
     </objects>
 </document>

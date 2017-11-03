@@ -11,10 +11,12 @@ import UIKit
 class JGGImageCarouselCell: UITableViewCell {
 
     @IBOutlet weak var carouselView: TGLParallaxCarousel!
+    @IBOutlet weak var imgviewJobSummary: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        carouselView.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

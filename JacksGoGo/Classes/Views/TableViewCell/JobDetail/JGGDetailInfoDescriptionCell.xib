@@ -32,7 +32,7 @@
                                     <constraint firstAttribute="width" constant="20" id="bUz-4W-LpX"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 50.00 - $ 100.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVV-qZ-ddc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 50.00 - $ 100.00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVV-qZ-ddc">
                                 <rect key="frame" x="44" y="8" width="323" height="35.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                 <nil key="textColor"/>

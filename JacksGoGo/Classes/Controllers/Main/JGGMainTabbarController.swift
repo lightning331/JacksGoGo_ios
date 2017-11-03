@@ -14,6 +14,7 @@ class JGGMainTabbarController: UITabBarController {
         super.viewDidLoad()
         
         loadViewControllers()
+        self.hidesBottomBarWhenPushed = true
         
         self.selectedIndex = 2
     }

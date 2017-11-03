@@ -50,6 +50,7 @@
                             <constraint firstItem="nxC-w1-ohg" firstAttribute="leading" secondItem="dX3-TB-plD" secondAttribute="trailing" constant="8" id="AOA-8i-LQf"/>
                             <constraint firstAttribute="bottom" secondItem="nxC-w1-ohg" secondAttribute="bottom" id="LGQ-bi-yRR"/>
                             <constraint firstAttribute="trailing" secondItem="nxC-w1-ohg" secondAttribute="trailing" id="NsU-bo-XX8"/>
+                            <constraint firstAttribute="height" constant="31.5" id="apP-gx-HCS"/>
                             <constraint firstItem="dX3-TB-plD" firstAttribute="centerY" secondItem="T0Q-fX-lak" secondAttribute="centerY" id="b18-hx-Ok6"/>
                             <constraint firstItem="nxC-w1-ohg" firstAttribute="top" secondItem="T0Q-fX-lak" secondAttribute="top" id="uiw-3U-36h"/>
                         </constraints>

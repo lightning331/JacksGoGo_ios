@@ -100,13 +100,13 @@ class JGGAppMainVC: JGGStartTableVC {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionTitleView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "JGGSectionTitleView") as? JGGSectionTitleView
         if section == 0 {
-            sectionTitleView?.title = "Quick Jobs"
+            sectionTitleView?.title = LocalizedString("Quick Jobs")
         }
         else if section == 1 {
-            sectionTitleView?.title = "Service Packages"
+            sectionTitleView?.title = LocalizedString("Service Packages")
         }
         else if section == 2 {
-            sectionTitleView?.title = "Pending Jobs"
+            sectionTitleView?.title = LocalizedString("Pending Jobs")
         }
         return sectionTitleView
     }
@@ -145,6 +145,11 @@ class JGGAppMainVC: JGGStartTableVC {
             cell.appointment = arrayPendingJobs[indexPath.row];
         }
         return cell
+    }
+    
+    // MARK: delegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         self.performSegue(withIdentifier: "gotoServiceDetail", sender: self)
     }
     
     // MARK: - Should remove on Product
@@ -241,13 +246,13 @@ extension JGGAppMainVC: JGGAppHomeTabViewDelegate {
             var placeholder: String?
             switch selectedButton {
             case .pending:
-                placeholder = "Search through Pending list"
+                placeholder = LocalizedString("Search through Pending list")
                 break
             case .confirmed:
-                placeholder = "Search through Confirmed list"
+                placeholder = LocalizedString("Search through Confirmed list")
                 break
             case .history:
-                placeholder = "Search through History list"
+                placeholder = LocalizedString("Search through History list")
                 break
             default:
                 placeholder = nil

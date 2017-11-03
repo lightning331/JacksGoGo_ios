@@ -15,3 +15,7 @@ public enum BiddingStatus: String {
     case declined = "declined"
     case notResponded = "notResponded"
 }
+
+public func LocalizedString(_ key: String, comment: String = "") -> String {
+    return NSLocalizedString(key, comment: comment)
+}

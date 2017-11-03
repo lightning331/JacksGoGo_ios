@@ -34,13 +34,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="CYYong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="32u-p9-B6l">
-                        <rect key="frame" x="88" y="22" width="54.5" height="17.5"/>
+                        <rect key="frame" x="88" y="21.5" width="54.5" height="17.5"/>
                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fy-Q5-0mp" customClass="CosmosView" customModule="Cosmos">
-                        <rect key="frame" x="88" y="41.5" width="80" height="15"/>
+                        <rect key="frame" x="88" y="41" width="80" height="15"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="0bT-Gw-skU"/>

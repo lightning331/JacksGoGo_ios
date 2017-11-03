@@ -67,6 +67,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HNc-c8-3m1" firstAttribute="centerY" secondItem="9Tb-Dj-8XP" secondAttribute="centerY" id="0S5-fm-mRz"/>
+                            <constraint firstAttribute="height" constant="31.5" id="5lm-tr-4Xd"/>
                             <constraint firstItem="HNc-c8-3m1" firstAttribute="leading" secondItem="9Tb-Dj-8XP" secondAttribute="leading" constant="16" id="ESr-AC-vIF"/>
                             <constraint firstAttribute="bottom" secondItem="guJ-rc-AaG" secondAttribute="bottom" id="FHE-Pn-US0"/>
                             <constraint firstItem="guJ-rc-AaG" firstAttribute="top" secondItem="9Tb-Dj-8XP" secondAttribute="top" id="FTs-K7-AK1"/>

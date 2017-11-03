@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JGGDetailInfoFooterView: UIView {
+class JGGDetailInfoFooterView: UITableViewHeaderFooterView {
 
     @IBOutlet weak var lblText: UILabel!
     

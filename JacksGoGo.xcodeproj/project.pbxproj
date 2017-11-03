@@ -96,6 +96,14 @@
 		FF21FB001FAB67E5004D0ADA /* FCAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAFD1FAB67E5004D0ADA /* FCAlertView.swift */; };
 		FF21FB011FAB67E5004D0ADA /* FCAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAFE1FAB67E5004D0ADA /* FCAlertViewDelegate.swift */; };
 		FF21FB021FAB67E5004D0ADA /* FCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAFF1FAB67E5004D0ADA /* FCColors.swift */; };
+		FF9E9E6A1FAC3F4B00F32283 /* JGGServiceDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9E691FAC3F4B00F32283 /* JGGServiceDetailVC.swift */; };
+		FF9E9E6C1FAC4B7300F32283 /* JGGAppClientServiceDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9E6B1FAC4B7300F32283 /* JGGAppClientServiceDetailVC.swift */; };
+		FF9E9E6E1FAC52C600F32283 /* JGGUserAvatarNameRateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9E9E6D1FAC52C600F32283 /* JGGUserAvatarNameRateCell.xib */; };
+		FF9E9E721FAC633500F32283 /* carousel03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF9E9E6F1FAC633400F32283 /* carousel03.jpg */; };
+		FF9E9E731FAC633500F32283 /* carousel02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF9E9E701FAC633500F32283 /* carousel02.jpg */; };
+		FF9E9E741FAC633500F32283 /* carousel01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FF9E9E711FAC633500F32283 /* carousel01.jpg */; };
+		FF9E9E761FAC652300F32283 /* JGGCarouselImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E9E751FAC652300F32283 /* JGGCarouselImageView.swift */; };
+		FF9E9E781FAC654700F32283 /* JGGCarouselImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9E9E771FAC654700F32283 /* JGGCarouselImageView.xib */; };
 		FFA061B61FAB4C2D00185C56 /* 222.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FFA061B51FAB4C2D00185C56 /* 222.jpg */; };
 		FFA061B81FAB4E9300185C56 /* JGGUserAvatarNameRateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA061B71FAB4E9300185C56 /* JGGUserAvatarNameRateCell.swift */; };
 		FFA061BB1FAB4F4200185C56 /* JGGAppInviteProviderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA061B91FAB4F4200185C56 /* JGGAppInviteProviderCell.swift */; };
@@ -214,6 +222,14 @@
 		FF21FAFD1FAB67E5004D0ADA /* FCAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCAlertView.swift; sourceTree = "<group>"; };
 		FF21FAFE1FAB67E5004D0ADA /* FCAlertViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCAlertViewDelegate.swift; sourceTree = "<group>"; };
 		FF21FAFF1FAB67E5004D0ADA /* FCColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCColors.swift; sourceTree = "<group>"; };
+		FF9E9E691FAC3F4B00F32283 /* JGGServiceDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceDetailVC.swift; sourceTree = "<group>"; };
+		FF9E9E6B1FAC4B7300F32283 /* JGGAppClientServiceDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppClientServiceDetailVC.swift; sourceTree = "<group>"; };
+		FF9E9E6D1FAC52C600F32283 /* JGGUserAvatarNameRateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGUserAvatarNameRateCell.xib; sourceTree = "<group>"; };
+		FF9E9E6F1FAC633400F32283 /* carousel03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = carousel03.jpg; sourceTree = "<group>"; };
+		FF9E9E701FAC633500F32283 /* carousel02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = carousel02.jpg; sourceTree = "<group>"; };
+		FF9E9E711FAC633500F32283 /* carousel01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = carousel01.jpg; sourceTree = "<group>"; };
+		FF9E9E751FAC652300F32283 /* JGGCarouselImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGCarouselImageView.swift; sourceTree = "<group>"; };
+		FF9E9E771FAC654700F32283 /* JGGCarouselImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGCarouselImageView.xib; sourceTree = "<group>"; };
 		FFA061B51FAB4C2D00185C56 /* 222.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 222.jpg; sourceTree = "<group>"; };
 		FFA061B71FAB4E9300185C56 /* JGGUserAvatarNameRateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGUserAvatarNameRateCell.swift; sourceTree = "<group>"; };
 		FFA061B91FAB4F4200185C56 /* JGGAppInviteProviderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppInviteProviderCell.swift; sourceTree = "<group>"; };
@@ -298,6 +314,7 @@
 				63B8DC351FA18AD5003C6EBF /* JGGSectionTitleView.swift */,
 				63B8DC371FA18AE3003C6EBF /* JGGSectionTitleView.xib */,
 				FFA061B71FAB4E9300185C56 /* JGGUserAvatarNameRateCell.swift */,
+				FF9E9E6D1FAC52C600F32283 /* JGGUserAvatarNameRateCell.xib */,
 				63955EE61FA0662900D825B2 /* Appointment */,
 				FFA061CD1FAB536100185C56 /* JobDetail */,
 			);
@@ -395,6 +412,7 @@
 			children = (
 				63DBC8AD1FA02E6600AAECA8 /* Extension */,
 				63BE91BF1FA025D100D40C07 /* JGGAppManager.swift */,
+				631EF2A61FA87848001D2915 /* Global.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -445,7 +463,6 @@
 			isa = PBXGroup;
 			children = (
 				63BE91C21FA025ED00D40C07 /* JGGBaseModel.swift */,
-				631EF2A61FA87848001D2915 /* Global.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -508,6 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				63BE91EE1FA0281F00D40C07 /* Base */,
+				FF9E9E691FAC3F4B00F32283 /* JGGServiceDetailVC.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -518,6 +536,7 @@
 				63BE91F31FA0285A00D40C07 /* Base */,
 				63B8DC331FA18852003C6EBF /* JGGAppMainVC.swift */,
 				632E78261FA2F92D00CFFB24 /* JGGAppFilterVC.swift */,
+				FF9E9E6B1FAC4B7300F32283 /* JGGAppClientServiceDetailVC.swift */,
 			);
 			path = Appointment;
 			sourceTree = "<group>";
@@ -614,6 +633,9 @@
 		FFA061B41FAB4C2D00185C56 /* temp */ = {
 			isa = PBXGroup;
 			children = (
+				FF9E9E711FAC633500F32283 /* carousel01.jpg */,
+				FF9E9E701FAC633500F32283 /* carousel02.jpg */,
+				FF9E9E6F1FAC633400F32283 /* carousel03.jpg */,
 				FFA061B51FAB4C2D00185C56 /* 222.jpg */,
 			);
 			path = temp;
@@ -630,6 +652,8 @@
 				FFA061C61FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.xib */,
 				FF21FAE11FAB5525004D0ADA /* JGGImageCarouselCell.swift */,
 				FF21FAE31FAB5535004D0ADA /* JGGImageCarouselCell.xib */,
+				FF9E9E751FAC652300F32283 /* JGGCarouselImageView.swift */,
+				FF9E9E771FAC654700F32283 /* JGGCarouselImageView.xib */,
 				FF21FAE51FAB5588004D0ADA /* JGGDetailInfoFooterView.swift */,
 				FF21FAE71FAB5597004D0ADA /* JGGDetailInfoFooterView.xib */,
 				FF21FAE91FAB5B2A004D0ADA /* JGGDetailInfoHeaderView.swift */,
@@ -721,15 +745,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF9E9E721FAC633500F32283 /* carousel03.jpg in Resources */,
 				FF21FAEC1FAB5BAA004D0ADA /* JGGDetailInfoHeaderView.xib in Resources */,
 				63955EE41FA0643A00D825B2 /* JGGAppSearchHeaderView.xib in Resources */,
 				63BE91E31FA0263C00D40C07 /* Muli-SemiBold.ttf in Resources */,
 				63955ECC1FA058F500D825B2 /* Profile.storyboard in Resources */,
+				FF9E9E731FAC633500F32283 /* carousel02.jpg in Resources */,
 				FF21FAF01FAB5E1C004D0ADA /* JGGNextStepTitleView.xib in Resources */,
 				63BE91DC1FA0263C00D40C07 /* Muli-ExtraBoldItalic.ttf in Resources */,
 				63955EDF1FA05C1F00D825B2 /* JGGAppHistoryListCell.xib in Resources */,
 				FF21FAE81FAB5597004D0ADA /* JGGDetailInfoFooterView.xib in Resources */,
 				63BE91DF1FA0263C00D40C07 /* Muli-Italic.ttf in Resources */,
+				FF9E9E6E1FAC52C600F32283 /* JGGUserAvatarNameRateCell.xib in Resources */,
 				FFA21F6A1FABC20000F5A6DA /* JGGTotalReviewCell.xib in Resources */,
 				FFA21F5E1FAB87D600F5A6DA /* JGGBorderButtonCell.xib in Resources */,
 				FFA061B61FAB4C2D00185C56 /* 222.jpg in Resources */,
@@ -746,7 +773,9 @@
 				63955EC91FA058E600D825B2 /* Login.storyboard in Resources */,
 				FFA21F6E1FABC33400F5A6DA /* JGGJobBookedInfoCell.xib in Resources */,
 				63B8DC301FA17F1B003C6EBF /* Favorite.storyboard in Resources */,
+				FF9E9E741FAC633500F32283 /* carousel01.jpg in Resources */,
 				63BE91E41FA0263C00D40C07 /* Muli-SemiBoldItalic.ttf in Resources */,
+				FF9E9E781FAC654700F32283 /* JGGCarouselImageView.xib in Resources */,
 				FF21FAE41FAB5535004D0ADA /* JGGImageCarouselCell.xib in Resources */,
 				63BE91DE1FA0263C00D40C07 /* Muli-ExtraLightItalic.ttf in Resources */,
 				63BE91AA1FA0233300D40C07 /* Assets.xcassets in Resources */,
@@ -884,7 +913,9 @@
 				63BE91A31FA0233300D40C07 /* AppDelegate.swift in Sources */,
 				FFA061C31FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.swift in Sources */,
 				FFA21F5D1FAB87D600F5A6DA /* JGGBorderButtonCell.swift in Sources */,
+				FF9E9E6C1FAC4B7300F32283 /* JGGAppClientServiceDetailVC.swift in Sources */,
 				63955EE81FA0668800D825B2 /* JGGAppHomeTabView.swift in Sources */,
+				FF9E9E6A1FAC3F4B00F32283 /* JGGServiceDetailVC.swift in Sources */,
 				FF21FB001FAB67E5004D0ADA /* FCAlertView.swift in Sources */,
 				FFA061C71FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.swift in Sources */,
 				632E78271FA2F92D00CFFB24 /* JGGAppFilterVC.swift in Sources */,
@@ -893,6 +924,7 @@
 				63BE91BC1FA025B700D40C07 /* JGGViewController.swift in Sources */,
 				631EF29F1FA87462001D2915 /* JGGClientUserModel.swift in Sources */,
 				FFA21F711FABC57F00F5A6DA /* JGGTagListCell.swift in Sources */,
+				FF9E9E761FAC652300F32283 /* JGGCarouselImageView.swift in Sources */,
 				FF21FAE61FAB5588004D0ADA /* JGGDetailInfoFooterView.swift in Sources */,
 				63BE91F01FA0283600D40C07 /* JGGServicesBaseVC.swift in Sources */,
 				63BE91C31FA025ED00D40C07 /* JGGBaseModel.swift in Sources */,

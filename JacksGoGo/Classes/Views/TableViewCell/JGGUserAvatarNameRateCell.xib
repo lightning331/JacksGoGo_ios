@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Bold.ttf">
+            <string>Muli-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JGGUserAvatarNameRateCell" rowHeight="80" id="lcv-Ir-FmJ" customClass="JGGUserAvatarNameRateCell" customModule="JacksGoGo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lcv-Ir-FmJ" id="BbA-B2-TaH">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6nx-K0-Abt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="222.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="6Xq-VN-fAv" customClass="JGGCircleImageView" customModule="JacksGoGo" customModuleProvider="target">
+                                <rect key="frame" x="24" y="12" width="56" height="56"/>
+                                <color key="backgroundColor" red="0.89019607840000003" green="0.94509803920000002" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6Xq-VN-fAv" secondAttribute="height" multiplier="1:1" id="69C-tM-aHB"/>
+                                    <constraint firstAttribute="width" constant="56" id="Dl3-Ws-cDr"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="CYYong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8jp-sC-MBD">
+                                <rect key="frame" x="88" y="23" width="54.5" height="17.5"/>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KgN-c5-rMV" customClass="CosmosView" customModule="Cosmos">
+                                <rect key="frame" x="88" y="42.5" width="80" height="15"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="170-gn-9bX"/>
+                                    <constraint firstAttribute="height" constant="15" id="xw2-F1-4FN"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                        <color key="value" red="0.78437811140000002" green="0.78115159270000001" blue="0.79996067289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KgN-c5-rMV" firstAttribute="leading" secondItem="8jp-sC-MBD" secondAttribute="leading" id="8UE-ql-mWJ"/>
+                            <constraint firstItem="6Xq-VN-fAv" firstAttribute="leading" secondItem="6nx-K0-Abt" secondAttribute="leadingMargin" constant="16" id="D7U-gt-z9l"/>
+                            <constraint firstItem="6Xq-VN-fAv" firstAttribute="centerY" secondItem="6nx-K0-Abt" secondAttribute="centerY" id="O6O-q0-UgW"/>
+                            <constraint firstItem="8jp-sC-MBD" firstAttribute="leading" secondItem="6Xq-VN-fAv" secondAttribute="trailing" constant="8" id="P4e-u3-Ama"/>
+                            <constraint firstItem="KgN-c5-rMV" firstAttribute="top" secondItem="8jp-sC-MBD" secondAttribute="bottom" constant="2" id="XnZ-fD-nTE"/>
+                            <constraint firstAttribute="height" constant="80" id="bgb-AT-LJK"/>
+                            <constraint firstItem="8jp-sC-MBD" firstAttribute="centerY" secondItem="6nx-K0-Abt" secondAttribute="centerY" constant="-8.5" id="fLf-E1-GBp"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="6nx-K0-Abt" secondAttribute="bottom" id="TzQ-tc-quX"/>
+                    <constraint firstItem="6nx-K0-Abt" firstAttribute="top" secondItem="BbA-B2-TaH" secondAttribute="top" id="UYU-hW-BME"/>
+                    <constraint firstAttribute="trailing" secondItem="6nx-K0-Abt" secondAttribute="trailing" id="Xic-pZ-duZ"/>
+                    <constraint firstItem="6nx-K0-Abt" firstAttribute="leading" secondItem="BbA-B2-TaH" secondAttribute="leading" id="eHD-Va-FFb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imgviewUserAvatar" destination="6Xq-VN-fAv" id="rZw-8L-uUc"/>
+                <outlet property="lblUsername" destination="8jp-sC-MBD" id="Ssu-hD-wWD"/>
+                <outlet property="ratebarUserRate" destination="KgN-c5-rMV" id="4RE-Gb-Fcu"/>
+            </connections>
+            <point key="canvasLocation" x="-89.5" y="-2"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="222.jpg" width="289" height="289"/>
+    </resources>
+</document>

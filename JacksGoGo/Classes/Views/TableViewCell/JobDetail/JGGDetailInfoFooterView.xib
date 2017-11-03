@@ -21,18 +21,30 @@
             <rect key="frame" x="0.0" y="0.0" width="325" height="49"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job posted on 7 Jul, 2017 8:16 PM" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJd-3f-oqo">
-                    <rect key="frame" x="8" y="16.5" width="309" height="15.5"/>
-                    <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
-                    <color key="textColor" red="0.54115974899999997" green="0.54185396429999999" blue="0.56077778339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kWy-nZ-8MQ">
+                    <rect key="frame" x="0.0" y="0.0" width="325" height="49"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job posted on 7 Jul, 2017 8:16 PM" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJd-3f-oqo">
+                            <rect key="frame" x="16" y="17" width="301" height="15.5"/>
+                            <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
+                            <color key="textColor" red="0.54115974899999997" green="0.54185396429999999" blue="0.56077778339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="MJd-3f-oqo" firstAttribute="centerY" secondItem="kWy-nZ-8MQ" secondAttribute="centerY" id="M5O-bs-yqE"/>
+                        <constraint firstAttribute="trailing" secondItem="MJd-3f-oqo" secondAttribute="trailing" constant="8" id="fVh-hn-EFi"/>
+                        <constraint firstItem="MJd-3f-oqo" firstAttribute="leading" secondItem="kWy-nZ-8MQ" secondAttribute="leading" constant="16" id="woV-H8-eAb"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="MJd-3f-oqo" firstAttribute="leading" secondItem="vY1-gT-t2s" secondAttribute="leading" constant="8" id="Dx3-0x-wxz"/>
-                <constraint firstItem="vY1-gT-t2s" firstAttribute="trailing" secondItem="MJd-3f-oqo" secondAttribute="trailing" constant="8" id="RKl-qM-BMa"/>
-                <constraint firstItem="MJd-3f-oqo" firstAttribute="centerY" secondItem="ltB-lU-4rx" secondAttribute="centerY" id="qDw-5c-Mgd"/>
+                <constraint firstItem="kWy-nZ-8MQ" firstAttribute="trailing" secondItem="vY1-gT-t2s" secondAttribute="trailing" id="7Oc-nB-DPO"/>
+                <constraint firstItem="kWy-nZ-8MQ" firstAttribute="bottom" secondItem="vY1-gT-t2s" secondAttribute="bottom" id="UxD-g3-AXy"/>
+                <constraint firstItem="kWy-nZ-8MQ" firstAttribute="leading" secondItem="vY1-gT-t2s" secondAttribute="leading" id="VyM-J2-gVF"/>
+                <constraint firstItem="kWy-nZ-8MQ" firstAttribute="top" secondItem="vY1-gT-t2s" secondAttribute="top" id="ian-Ra-ohz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vY1-gT-t2s"/>

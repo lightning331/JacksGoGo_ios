@@ -10,11 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JacksGoGo/Classes/Controllers/Appointment/JGGAppClientServiceDetailVC.swift"
-            timestampString = "531749680.182511"
+            timestampString = "531761094.159875"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "302"
-            endingLineNumber = "302">
+            startingLineNumber = "332"
+            endingLineNumber = "332"
+            landmarkName = "carouselView(_:didSelectItemAtIndex:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -24,11 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JacksGoGo/Classes/Controllers/Appointment/JGGAppClientServiceDetailVC.swift"
-            timestampString = "531749680.183309"
+            timestampString = "531761094.159957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "302"
-            endingLineNumber = "302">
+            startingLineNumber = "332"
+            endingLineNumber = "332"
+            landmarkName = "carouselView(_:didSelectItemAtIndex:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -38,11 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JacksGoGo/Classes/Controllers/Appointment/JGGAppClientServiceDetailVC.swift"
-            timestampString = "531749680.183874"
+            timestampString = "531761094.160019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "302"
-            endingLineNumber = "302">
+            startingLineNumber = "332"
+            endingLineNumber = "332"
+            landmarkName = "carouselView(_:didSelectItemAtIndex:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

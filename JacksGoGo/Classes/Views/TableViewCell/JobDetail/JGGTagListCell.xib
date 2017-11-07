@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="96" id="KGk-i7-Jjw" customClass="JGGTagListCell" customModule="JacksGoGo" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JGGTagListCell" rowHeight="96" id="KGk-i7-Jjw" customClass="JGGTagListCell" customModule="JacksGoGo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="342" height="96"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -20,8 +20,8 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPm-TH-LkL" customClass="TagListView" customModule="TagListView">
-                        <rect key="frame" x="0.0" y="0.0" width="342" height="96"/>
-                        <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <rect key="frame" x="16" y="8" width="310" height="79.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                 <color key="value" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -33,7 +33,7 @@
                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                <color key="value" red="0.78437811140000002" green="0.78115159270000001" blue="0.79996067289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="value" red="0.91757661099999999" green="0.91768664119999999" blue="0.91753917929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                 <real key="value" value="1"/>
@@ -57,11 +57,12 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
+                <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstItem="DPm-TH-LkL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="IA7-7j-2Xb"/>
-                    <constraint firstAttribute="bottom" secondItem="DPm-TH-LkL" secondAttribute="bottom" id="Zmc-o6-2pd"/>
-                    <constraint firstAttribute="trailing" secondItem="DPm-TH-LkL" secondAttribute="trailing" id="etg-EL-OF5"/>
-                    <constraint firstItem="DPm-TH-LkL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="nCg-gh-Qn1"/>
+                    <constraint firstItem="DPm-TH-LkL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="IA7-7j-2Xb"/>
+                    <constraint firstAttribute="bottom" secondItem="DPm-TH-LkL" secondAttribute="bottom" constant="8" id="Zmc-o6-2pd"/>
+                    <constraint firstAttribute="trailing" secondItem="DPm-TH-LkL" secondAttribute="trailing" constant="16" id="etg-EL-OF5"/>
+                    <constraint firstItem="DPm-TH-LkL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="nCg-gh-Qn1"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

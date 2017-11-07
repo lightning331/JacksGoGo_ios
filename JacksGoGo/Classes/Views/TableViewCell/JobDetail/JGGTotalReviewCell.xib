@@ -33,7 +33,7 @@
                                     <constraint firstAttribute="width" constant="150" id="6vc-Bn-9Fz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
-                                <state key="normal" title="View Time Slots">
+                                <state key="normal" title="See All Reviews">
                                     <color key="titleColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
@@ -86,7 +86,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="isZ-Xe-v0D"/>
             <connections>
-                <outlet property="btnViewTimeSlots" destination="guJ-rc-AaG" id="CDO-kQ-fN6"/>
+                <outlet property="btnSeeAllReviews" destination="guJ-rc-AaG" id="RXg-eT-uzg"/>
+                <outlet property="ratebarTotalReviews" destination="HNc-c8-3m1" id="jAS-7e-0s7"/>
             </connections>
             <point key="canvasLocation" x="105.5" y="59"/>
         </tableViewCell>

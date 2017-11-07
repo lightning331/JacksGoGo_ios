@@ -84,6 +84,7 @@
 		FF0CA88B1FB1BA3B00A2C98B /* JGGAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CA8891FB1BA3B00A2C98B /* JGGAlertViewController.swift */; };
 		FF0CA88C1FB1BA3B00A2C98B /* JGGAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF0CA88A1FB1BA3B00A2C98B /* JGGAlertViewController.xib */; };
 		FF0CA88E1FB1CFCD00A2C98B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CA88D1FB1CFCD00A2C98B /* String.swift */; };
+		FF0CA8901FB205F600A2C98B /* JGGLocationMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CA88F1FB205F600A2C98B /* JGGLocationMapVC.swift */; };
 		FF21FAE21FAB5525004D0ADA /* JGGImageCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAE11FAB5525004D0ADA /* JGGImageCarouselCell.swift */; };
 		FF21FAE41FAB5535004D0ADA /* JGGImageCarouselCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF21FAE31FAB5535004D0ADA /* JGGImageCarouselCell.xib */; };
 		FF21FAE61FAB5588004D0ADA /* JGGDetailInfoFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAE51FAB5588004D0ADA /* JGGDetailInfoFooterView.swift */; };
@@ -213,6 +214,7 @@
 		FF0CA8891FB1BA3B00A2C98B /* JGGAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAlertViewController.swift; sourceTree = "<group>"; };
 		FF0CA88A1FB1BA3B00A2C98B /* JGGAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGAlertViewController.xib; sourceTree = "<group>"; };
 		FF0CA88D1FB1CFCD00A2C98B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		FF0CA88F1FB205F600A2C98B /* JGGLocationMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGLocationMapVC.swift; sourceTree = "<group>"; };
 		FF21FAE11FAB5525004D0ADA /* JGGImageCarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGImageCarouselCell.swift; sourceTree = "<group>"; };
 		FF21FAE31FAB5535004D0ADA /* JGGImageCarouselCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGImageCarouselCell.xib; sourceTree = "<group>"; };
 		FF21FAE51FAB5588004D0ADA /* JGGDetailInfoFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGDetailInfoFooterView.swift; sourceTree = "<group>"; };
@@ -544,6 +546,7 @@
 				63B8DC331FA18852003C6EBF /* JGGAppMainVC.swift */,
 				632E78261FA2F92D00CFFB24 /* JGGAppFilterVC.swift */,
 				FF9E9E6B1FAC4B7300F32283 /* JGGAppClientServiceDetailVC.swift */,
+				FF0CA88F1FB205F600A2C98B /* JGGLocationMapVC.swift */,
 			);
 			path = Appointment;
 			sourceTree = "<group>";
@@ -958,6 +961,7 @@
 				631EF2991FA870DF001D2915 /* JGGCircleImageView.swift in Sources */,
 				FF21FB011FAB67E5004D0ADA /* FCAlertViewDelegate.swift in Sources */,
 				63B8DC341FA18852003C6EBF /* JGGAppMainVC.swift in Sources */,
+				FF0CA8901FB205F600A2C98B /* JGGLocationMapVC.swift in Sources */,
 				63955ED41FA0593400D825B2 /* JGGButton.swift in Sources */,
 				FF0CA88B1FB1BA3B00A2C98B /* JGGAlertViewController.swift in Sources */,
 				63DBC8B11FA0356000AAECA8 /* UIFont.swift in Sources */,

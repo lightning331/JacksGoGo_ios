@@ -27,13 +27,23 @@ class JGGAppClientServiceDetailVC: JGGAppointmentsBaseVC {
     
     private var menu: AZDropdownMenu!
     
+    // MARK: - Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = " "
         createMenu()
         showCategoryAndTitle()
         initTableView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.tintColor = UIColor.JGGOrange
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedStringKey.foregroundColor: UIColor.JGGOrange]
+}
     
     private func showCategoryAndTitle() {
         lblTitle.text = "Gardening"
@@ -100,6 +110,7 @@ class JGGAppClientServiceDetailVC: JGGAppointmentsBaseVC {
         self.menu = menu
     }
     
+    // MARK: Menu
     @IBAction func onPressedMenu(_ sender: UIBarButtonItem) -> Void {
         if self.menu.isDescendant(of: self.view) {
             self.menu.hideMenu()
@@ -125,6 +136,21 @@ class JGGAppClientServiceDetailVC: JGGAppointmentsBaseVC {
                                     cancelButtonTitle: LocalizedString("Cancel")) {
                                         
                                     }
+    }
+    
+    // MARK: Button actions
+    
+    /// Open Map
+    @objc fileprivate func onPressedMapLocation(_ sender: UIButton) {
+        if let mapLocationVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGLocationMapVC") {
+            self.navigationController?.pushViewController(mapLocationVC, animated: true)
+        }
+    }
+    
+    /// View Original Service Post
+    @objc fileprivate func onPressedViewOriginalServicePost(_ sender: UIButton) {
+        let vc = JGGServiceDetailVC()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -249,6 +275,9 @@ extension JGGAppClientServiceDetailVC: UITableViewDataSource, UITableViewDelegat
                 cell.icon = UIImage(named: "icon_location")
                 cell.title = "2 Jurong West Avenue 5 6437327"
                 cell.lblTitle.font = UIFont.JGGListText
+                cell.btnAccessory.addTarget(self,
+                                            action: #selector(onPressedMapLocation(_:)),
+                                            for: .touchUpInside)
                 return cell
             }
             else if row == 5 {
@@ -262,6 +291,9 @@ extension JGGAppClientServiceDetailVC: UITableViewDataSource, UITableViewDelegat
                 cell.buttonTitle = LocalizedString("View Original Servicce Post")
                 cell.btnPrimary.borderColor = UIColor.JGGGreen
                 cell.btnPrimary.setTitleColor(UIColor.JGGGreen, for: .normal)
+                cell.btnPrimary.addTarget(self,
+                                          action: #selector(onPressedViewOriginalServicePost(_:)),
+                                          for: .touchUpInside)
                 return cell
             }
         }

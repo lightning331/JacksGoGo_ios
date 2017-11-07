@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import Cosmos
 
 class JGGTotalReviewCell: UITableViewCell {
 
+    @IBOutlet weak var ratebarTotalReviews: CosmosView!
+    @IBOutlet weak var btnSeeAllReviews: UIButton!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

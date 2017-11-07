@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Bold.ttf">
+            <string>Muli-Bold</string>
+        </array>
+        <array key="Muli-Regular.ttf">
+            <string>Muli-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JGGAlertViewController" customModule="JacksGoGo" customModuleProvider="target">
+            <connections>
+                <outlet property="btnCancel" destination="aB5-AZ-0gk" id="OY6-Vz-TnS"/>
+                <outlet property="btnOK" destination="aSt-xK-ox1" id="J5S-KO-oiO"/>
+                <outlet property="lblMessage" destination="BPu-Uo-PhG" id="cyJ-Ag-gvS"/>
+                <outlet property="lblTitle" destination="6Fw-kj-43R" id="bTc-ba-QMH"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Fw-kj-43R">
+                    <rect key="frame" x="30" y="50" width="315" height="23"/>
+                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nd6-Fc-SEg">
+                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aB5-AZ-0gk">
+                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="50"/>
+                            <color key="backgroundColor" red="0.79507212400000005" green="0.93322943650000001" blue="0.79997090530000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                            <state key="normal" title="Cancel">
+                                <color key="titleColor" red="0.90196078431372551" green="0.96862745098039216" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="onPressedCancel:" destination="-1" eventType="touchUpInside" id="lTa-eA-OcE"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSt-xK-ox1">
+                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="50"/>
+                            <color key="backgroundColor" red="0.99882382150000004" green="0.23147797580000001" blue="0.18649774790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                            <state key="normal" title="Delete">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="onPressedOK:" destination="-1" eventType="touchUpInside" id="jOm-EK-7tt"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="aSt-xK-ox1" firstAttribute="top" secondItem="nd6-Fc-SEg" secondAttribute="top" id="17V-Hn-hrj"/>
+                        <constraint firstAttribute="bottom" secondItem="aSt-xK-ox1" secondAttribute="bottom" id="bf2-YW-b8K"/>
+                        <constraint firstItem="aB5-AZ-0gk" firstAttribute="leading" secondItem="nd6-Fc-SEg" secondAttribute="leading" id="gTj-J5-E0J"/>
+                        <constraint firstItem="aSt-xK-ox1" firstAttribute="width" secondItem="aB5-AZ-0gk" secondAttribute="width" id="kuw-hp-VcI"/>
+                        <constraint firstAttribute="trailing" secondItem="aSt-xK-ox1" secondAttribute="trailing" id="lhq-S9-nSo"/>
+                        <constraint firstItem="aSt-xK-ox1" firstAttribute="leading" secondItem="aB5-AZ-0gk" secondAttribute="trailing" id="mBq-Hk-OPB"/>
+                        <constraint firstItem="aB5-AZ-0gk" firstAttribute="top" secondItem="nd6-Fc-SEg" secondAttribute="top" id="qWa-nx-wsM"/>
+                        <constraint firstAttribute="height" constant="50" id="u6c-Nq-4mK"/>
+                        <constraint firstAttribute="bottom" secondItem="aB5-AZ-0gk" secondAttribute="bottom" id="wNB-lK-TnP"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Deleted jobs can be found in Appointment, under History tab." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPu-Uo-PhG">
+                    <rect key="frame" x="20" y="88" width="335" height="504"/>
+                    <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="nd6-Fc-SEg" firstAttribute="top" secondItem="BPu-Uo-PhG" secondAttribute="bottom" constant="25" id="0Ib-bW-QSn"/>
+                <constraint firstItem="nd6-Fc-SEg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="19V-ib-WSu"/>
+                <constraint firstItem="BPu-Uo-PhG" firstAttribute="top" secondItem="6Fw-kj-43R" secondAttribute="bottom" constant="15" id="3L1-Mi-qTl"/>
+                <constraint firstItem="6Fw-kj-43R" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="90I-d8-iHd"/>
+                <constraint firstItem="nd6-Fc-SEg" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="GNq-cL-KfU"/>
+                <constraint firstItem="nd6-Fc-SEg" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="HtM-ck-HqG"/>
+                <constraint firstItem="6Fw-kj-43R" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="NwM-GI-Ujm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BPu-Uo-PhG" secondAttribute="trailing" constant="20" id="OaB-Z4-ZDs"/>
+                <constraint firstItem="BPu-Uo-PhG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="e1e-Tf-aAE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6Fw-kj-43R" secondAttribute="trailing" constant="30" id="fAT-6f-4hU"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="25.5" y="51.5"/>
+        </view>
+    </objects>
+</document>

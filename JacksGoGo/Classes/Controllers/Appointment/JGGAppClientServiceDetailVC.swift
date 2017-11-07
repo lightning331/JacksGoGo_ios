@@ -25,9 +25,12 @@ class JGGAppClientServiceDetailVC: JGGAppointmentsBaseVC {
     
     fileprivate var isExandedJobDetail = false
     
+    private var menu: AZDropdownMenu!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        createMenu()
         showCategoryAndTitle()
         initTableView()
     }
@@ -66,6 +69,63 @@ class JGGAppClientServiceDetailVC: JGGAppointmentsBaseVC {
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
 
+    // MARK: Create Menu
+    
+    private func createMenu() {
+        var menuDataSource: [AZDropdownMenuItemData] = []
+        menuDataSource.append(AZDropdownMenuItemData(title:LocalizedString("Edit"),
+                                                     icon:UIImage(named: "button_edit_orange")!))
+        menuDataSource.append(AZDropdownMenuItemData(title:LocalizedString("Delete"),
+                                                     icon:UIImage(named: "button_delete_orange")!))
+        
+        let menu = AZDropdownMenu(dataSource: menuDataSource)
+        menu.itemHeight = 60
+        menu.itemFontName = UIFont.JGGListTitle.fontName
+        menu.itemFontSize = 15
+        menu.overlayColor = UIColor.JGGBlack
+        menu.overlayAlpha = 0.5
+        menu.itemAlignment = .left
+        menu.itemImagePosition = .prefix
+        menu.menuSeparatorStyle = .none
+        menu.cellTapHandler = { [weak self] (indexPath: IndexPath) -> Void in
+            if indexPath.row == 0 { // Edit
+                self?.onPressedMenuEdit()
+            } else if indexPath.row == 1 { // Delete
+                self?.onPressedMenuDelete()
+            }
+        }
+        menu.hiddenCompleteHandler = {
+            self.navigationItem.rightBarButtonItem?.image = UIImage(named: "button_more_orange")
+        }
+        self.menu = menu
+    }
+    
+    @IBAction func onPressedMenu(_ sender: UIBarButtonItem) -> Void {
+        if self.menu.isDescendant(of: self.view) {
+            self.menu.hideMenu()
+        } else {
+            self.menu.showMenuFromView(self.view, offsetY: self.topLayoutGuide.length) //, offsetY: self.navigationController?.navigationBar.frame.height)
+            sender.image = UIImage(named: "button_more_orange_active")
+        }
+    }
+    
+    private func onPressedMenuEdit() {
+        print("Pressed Edit")
+    }
+    
+    private func onPressedMenuDelete() {
+        print("Pressed Delete")
+        JGGAlertViewController.show(title: LocalizedString("Delete Job?"),
+                                    message: LocalizedString("Deleted jobs can be found in Appointment, under History tab."),
+                                    colorSchema: .red,
+                                    okButtonTitle: LocalizedString("Delete"),
+                                    okAction: {
+                                        print("Delete Job")
+                                    },
+                                    cancelButtonTitle: LocalizedString("Cancel")) {
+                                        
+                                    }
+    }
 }
 
 extension JGGAppClientServiceDetailVC: UITableViewDataSource, UITableViewDelegate {

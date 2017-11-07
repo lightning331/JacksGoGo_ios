@@ -25,6 +25,9 @@ open class AZDropdownMenu: UIView {
     /// The handler used when menu item is tapped
     open var cellTapHandler : ((_ indexPath:IndexPath) -> Void)?
 
+    /// The handler used when hidden menu
+    open var hiddenCompleteHandler : (() -> Void)?
+    
     // MARK: - Configuration options
 
     /// Row height of the menu item
@@ -261,10 +264,16 @@ open class AZDropdownMenu: UIView {
 
     - parameter view: The view to be attached by the menu, ex. the controller's view
     */
-    open func showMenuFromView(_ view:UIView) {
+    open func showMenuFromView(_ view: UIView, offsetY: CGFloat? = 0) {
 
         view.addSubview(self)
 
+        if let offsetY = offsetY, offsetY > 0 {
+            var menuViewFrame = menuView.frame
+            menuViewFrame.origin.y = offsetY
+            menuView.frame = menuViewFrame
+        }
+        
         animateOvelay(overlayAlpha, interval: 0.4, completionHandler: nil)
         menuView.reloadData()
         UIView.animate(
@@ -275,6 +284,7 @@ open class AZDropdownMenu: UIView {
             options:[],
             animations: {
                 self.frame.origin.y = view.frame.origin.y
+                
                 }, completion: { (finished : Bool) -> Void in
                 self.initialMenuCenter = self.menuView.center
             }
@@ -319,6 +329,7 @@ open class AZDropdownMenu: UIView {
             completion: { (finished: Bool) -> Void in
                 self.menuView.center = self.initialMenuCenter
                 self.removeFromSuperview()
+                self.hiddenCompleteHandler?()
             }
         )
     }

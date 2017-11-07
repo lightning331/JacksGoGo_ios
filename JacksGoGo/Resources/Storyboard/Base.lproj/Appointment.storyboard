@@ -121,6 +121,9 @@
                     <navigationItem key="navigationItem" id="aWB-Mh-h3Q">
                         <barButtonItem key="rightBarButtonItem" image="button_more_orange" id="w9B-JR-9Vx">
                             <color key="tintColor" red="0.95005923510000001" green="0.39661446210000001" blue="0.073047049340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="onPressedMenu:" destination="TqP-lV-jcI" id="4rQ-9f-UOc"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

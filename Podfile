@@ -16,6 +16,7 @@ pod 'SnapKit', '~> 4.0.0'
 pod 'MBProgressHUD', '~> 1.0.0'
 pod 'Cosmos', '~> 12.0'
 pod 'TagListView', '~> 1.3.0'
+pod 'MZFormSheetPresentationController', '~> 2.4.1'
 
 pod 'Fabric'
 pod 'Crashlytics'

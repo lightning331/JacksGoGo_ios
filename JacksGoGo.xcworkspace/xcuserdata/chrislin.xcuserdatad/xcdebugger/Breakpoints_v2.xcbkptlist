@@ -10,13 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JacksGoGo/Classes/Controllers/Appointment/JGGAppClientServiceDetailVC.swift"
-            timestampString = "531396201.766982"
+            timestampString = "531749680.182511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
-            landmarkName = "numberOfItemsInCarouselView(_:)"
-            landmarkType = "7">
+            startingLineNumber = "302"
+            endingLineNumber = "302">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,13 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JacksGoGo/Classes/Controllers/Appointment/JGGAppClientServiceDetailVC.swift"
-            timestampString = "531396201.767602"
+            timestampString = "531749680.183309"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
-            landmarkName = "carouselView(_:itemForRowAtIndex:)"
-            landmarkType = "7">
+            startingLineNumber = "302"
+            endingLineNumber = "302">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -42,13 +38,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JacksGoGo/Classes/Controllers/Appointment/JGGAppClientServiceDetailVC.swift"
-            timestampString = "531396201.768048"
+            timestampString = "531749680.183874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
-            landmarkName = "carouselView(_:willDisplayItem:forIndex:)"
-            landmarkType = "7">
+            startingLineNumber = "302"
+            endingLineNumber = "302">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

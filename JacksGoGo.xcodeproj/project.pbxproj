@@ -81,6 +81,9 @@
 		63DBC8AF1FA02E7800AAECA8 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DBC8AE1FA02E7800AAECA8 /* UIColor.swift */; };
 		63DBC8B11FA0356000AAECA8 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DBC8B01FA0356000AAECA8 /* UIFont.swift */; };
 		F7862BF9654B02B90CFE4900 /* Pods_JacksGoGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781CEC96D6051F4CC98B1136 /* Pods_JacksGoGo.framework */; };
+		FF0CA88B1FB1BA3B00A2C98B /* JGGAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CA8891FB1BA3B00A2C98B /* JGGAlertViewController.swift */; };
+		FF0CA88C1FB1BA3B00A2C98B /* JGGAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF0CA88A1FB1BA3B00A2C98B /* JGGAlertViewController.xib */; };
+		FF0CA88E1FB1CFCD00A2C98B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CA88D1FB1CFCD00A2C98B /* String.swift */; };
 		FF21FAE21FAB5525004D0ADA /* JGGImageCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAE11FAB5525004D0ADA /* JGGImageCarouselCell.swift */; };
 		FF21FAE41FAB5535004D0ADA /* JGGImageCarouselCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF21FAE31FAB5535004D0ADA /* JGGImageCarouselCell.xib */; };
 		FF21FAE61FAB5588004D0ADA /* JGGDetailInfoFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAE51FAB5588004D0ADA /* JGGDetailInfoFooterView.swift */; };
@@ -207,6 +210,9 @@
 		63DBC8B01FA0356000AAECA8 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		781CEC96D6051F4CC98B1136 /* Pods_JacksGoGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JacksGoGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DDBAF2BE302FE617614219B /* Pods-JacksGoGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JacksGoGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JacksGoGo/Pods-JacksGoGo.release.xcconfig"; sourceTree = "<group>"; };
+		FF0CA8891FB1BA3B00A2C98B /* JGGAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAlertViewController.swift; sourceTree = "<group>"; };
+		FF0CA88A1FB1BA3B00A2C98B /* JGGAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGAlertViewController.xib; sourceTree = "<group>"; };
+		FF0CA88D1FB1CFCD00A2C98B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		FF21FAE11FAB5525004D0ADA /* JGGImageCarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGImageCarouselCell.swift; sourceTree = "<group>"; };
 		FF21FAE31FAB5535004D0ADA /* JGGImageCarouselCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGImageCarouselCell.xib; sourceTree = "<group>"; };
 		FF21FAE51FAB5588004D0ADA /* JGGDetailInfoFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGDetailInfoFooterView.swift; sourceTree = "<group>"; };
@@ -441,6 +447,7 @@
 		63BE91B91FA0257D00D40C07 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FF0CA8881FB1BA1C00A2C98B /* AlertView */,
 				63BE91C41FA025F100D40C07 /* Base */,
 				63955EE01FA0641800D825B2 /* View */,
 				63955EDB1FA05B8400D825B2 /* TableViewCell */,
@@ -597,8 +604,18 @@
 				63DBC8AE1FA02E7800AAECA8 /* UIColor.swift */,
 				63DBC8B01FA0356000AAECA8 /* UIFont.swift */,
 				631EF2A81FA87C7B001D2915 /* Double.swift */,
+				FF0CA88D1FB1CFCD00A2C98B /* String.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		FF0CA8881FB1BA1C00A2C98B /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				FF0CA8891FB1BA3B00A2C98B /* JGGAlertViewController.swift */,
+				FF0CA88A1FB1BA3B00A2C98B /* JGGAlertViewController.xib */,
+			);
+			path = AlertView;
 			sourceTree = "<group>";
 		};
 		FF21FAF11FAB6387004D0ADA /* AZDropDownMenu */ = {
@@ -767,6 +784,7 @@
 				63CA7F131FA8A04A005A44B0 /* JGGAppBiddingProviderCell.xib in Resources */,
 				63BE91D91FA0263C00D40C07 /* Muli-Bold.ttf in Resources */,
 				63BE91AD1FA0233300D40C07 /* LaunchScreen.storyboard in Resources */,
+				FF0CA88C1FB1BA3B00A2C98B /* JGGAlertViewController.xib in Resources */,
 				63BE91DD1FA0263C00D40C07 /* Muli-ExtraLight.ttf in Resources */,
 				FFA061BC1FAB4F4200185C56 /* JGGAppInviteProviderCell.xib in Resources */,
 				FFA21F661FABC0A400F5A6DA /* JGGTimeSlotsAvailableCell.xib in Resources */,
@@ -811,6 +829,8 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MZAppearance/MZAppearance.framework",
+				"${BUILT_PRODUCTS_DIR}/MZFormSheetPresentationController/MZFormSheetPresentationController.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -823,6 +843,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZAppearance.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZFormSheetPresentationController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -919,6 +941,7 @@
 				FF21FB001FAB67E5004D0ADA /* FCAlertView.swift in Sources */,
 				FFA061C71FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.swift in Sources */,
 				632E78271FA2F92D00CFFB24 /* JGGAppFilterVC.swift in Sources */,
+				FF0CA88E1FB1CFCD00A2C98B /* String.swift in Sources */,
 				631EF2A71FA87848001D2915 /* Global.swift in Sources */,
 				63BE91BE1FA025C500D40C07 /* JGGTableViewController.swift in Sources */,
 				63BE91BC1FA025B700D40C07 /* JGGViewController.swift in Sources */,
@@ -936,6 +959,7 @@
 				FF21FB011FAB67E5004D0ADA /* FCAlertViewDelegate.swift in Sources */,
 				63B8DC341FA18852003C6EBF /* JGGAppMainVC.swift in Sources */,
 				63955ED41FA0593400D825B2 /* JGGButton.swift in Sources */,
+				FF0CA88B1FB1BA3B00A2C98B /* JGGAlertViewController.swift in Sources */,
 				63DBC8B11FA0356000AAECA8 /* UIFont.swift in Sources */,
 				63BE91F51FA0286C00D40C07 /* JGGAppointmentsTableVC.swift in Sources */,
 				63B755E61FA1BDB30032B4F1 /* JGGAppointmentBaseModel.swift in Sources */,

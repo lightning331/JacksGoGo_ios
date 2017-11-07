@@ -16,8 +16,8 @@ public enum FCAlertType {
 
 public class FCAlertView: UIView {
     
-    var defaultHeight: CGFloat = 200
-    var defaultSpacing: CGFloat = 105
+    var defaultHeight: CGFloat = 240
+    var defaultSpacing: CGFloat = 40
     
     var alertView: UIView?
     var alertViewContents: UIView?
@@ -33,6 +33,7 @@ public class FCAlertView: UIView {
     var vectorImage: UIImage?
     
     var firstRun = true
+    
     
     //Delegate
     public var delegate: FCAlertViewDelegate?
@@ -119,7 +120,7 @@ public class FCAlertView: UIView {
         }
         
         if cornerRadius == 0 {
-            cornerRadius = 18
+            cornerRadius = 5
         }
         
         if vectorImage != nil {
@@ -544,7 +545,7 @@ public class FCAlertView: UIView {
     
     private func makeAlertTypeCaution() {
         if let path = Bundle(for: FCAlertView.self).path(forResource: "alert-round", ofType: "png") {
-            setTheme(iconPath: path, tintColor: .flatOrange)
+            setTheme(iconPath: path, tintColor: .flatRed)
         }
     }
     
@@ -555,8 +556,8 @@ public class FCAlertView: UIView {
     }
     
     private func setTheme(iconPath path: String, tintColor color: UIColor){
-        vectorImage = UIImage(contentsOfFile: path)
-        alertViewWithVector = 1
+//        vectorImage = UIImage(contentsOfFile: path)
+//        alertViewWithVector = 1
         self.colorScheme = color
     }
     
@@ -605,7 +606,9 @@ public class FCAlertView: UIView {
             self.alpha = 1
             self.alertViewContents?.transform = CGAffineTransform(scaleX: 1, y: 1)
         }) { (finished) in
-            self.perform(#selector(self.dismissAlertView(_:)), with: nil, afterDelay: Double(self.autoHideSeconds))
+            if self.autoHideSeconds > 0 {
+                self.perform(#selector(self.dismissAlertView(_:)), with: nil, afterDelay: Double(self.autoHideSeconds))
+            }
         }
         
     }

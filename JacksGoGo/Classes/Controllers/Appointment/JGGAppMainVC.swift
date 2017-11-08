@@ -49,8 +49,8 @@ class JGGAppMainVC: JGGStartTableVC {
         
     private func initializeTableView() {
         self.tableView.keyboardDismissMode = .onDrag
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 55
+        self.tableView.allowsSelection = true
+
     }
 
     private func addTabNavigationBar() {

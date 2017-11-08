@@ -53,22 +53,14 @@
             </objects>
             <point key="canvasLocation" x="602" y="160"/>
         </scene>
-        <!--App Client Service DetailVC-->
+        <!--App Clinet Service Detail RootVC-->
         <scene sceneID="xPc-FS-mDN">
             <objects>
-                <viewController storyboardIdentifier="JGGAppClientServiceDetailVC" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="TqP-lV-jcI" customClass="JGGAppClientServiceDetailVC" customModule="JacksGoGo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JGGAppClinetServiceDetailRootVC" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="TqP-lV-jcI" customClass="JGGAppClinetServiceDetailRootVC" customModule="JacksGoGo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZVf-JA-LPe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UMk-13-KZL">
-                                <rect key="frame" x="0.0" y="124" width="375" height="543"/>
-                                <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="TqP-lV-jcI" id="rjt-1v-FaL"/>
-                                    <outlet property="delegate" destination="TqP-lV-jcI" id="Dq4-Ha-zci"/>
-                                </connections>
-                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J7K-uc-oXa">
                                 <rect key="frame" x="0.0" y="64" width="375" height="60"/>
                                 <subviews>
@@ -105,16 +97,19 @@
                                     <constraint firstAttribute="height" constant="60" id="zS5-qn-Zbu"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v8i-NN-hb0">
+                                <rect key="frame" x="0.0" y="124" width="375" height="543"/>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="J7K-uc-oXa" firstAttribute="trailing" secondItem="pGc-en-zqi" secondAttribute="trailing" id="5xt-s2-rpU"/>
-                            <constraint firstItem="UMk-13-KZL" firstAttribute="top" secondItem="J7K-uc-oXa" secondAttribute="bottom" id="7lU-tL-jrV"/>
+                            <constraint firstItem="v8i-NN-hb0" firstAttribute="leading" secondItem="pGc-en-zqi" secondAttribute="leading" id="CIf-HY-Zpn"/>
+                            <constraint firstItem="pGc-en-zqi" firstAttribute="trailing" secondItem="v8i-NN-hb0" secondAttribute="trailing" id="IcL-Ke-sk6"/>
+                            <constraint firstItem="pGc-en-zqi" firstAttribute="bottom" secondItem="v8i-NN-hb0" secondAttribute="bottom" id="OyN-Jg-xHL"/>
                             <constraint firstItem="J7K-uc-oXa" firstAttribute="top" secondItem="pGc-en-zqi" secondAttribute="top" id="as5-3d-Rtp"/>
-                            <constraint firstItem="UMk-13-KZL" firstAttribute="trailing" secondItem="pGc-en-zqi" secondAttribute="trailing" id="b19-lj-uOy"/>
-                            <constraint firstItem="UMk-13-KZL" firstAttribute="leading" secondItem="pGc-en-zqi" secondAttribute="leading" id="gWE-Jz-k2u"/>
+                            <constraint firstItem="v8i-NN-hb0" firstAttribute="top" secondItem="J7K-uc-oXa" secondAttribute="bottom" id="gUS-AD-n9i"/>
                             <constraint firstItem="J7K-uc-oXa" firstAttribute="leading" secondItem="pGc-en-zqi" secondAttribute="leading" id="qDW-Da-nwL"/>
-                            <constraint firstItem="UMk-13-KZL" firstAttribute="bottom" secondItem="pGc-en-zqi" secondAttribute="bottom" id="wan-3d-ReG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pGc-en-zqi"/>
                     </view>
@@ -127,10 +122,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="containerView" destination="v8i-NN-hb0" id="yyv-lF-xzw"/>
                         <outlet property="imgviewCategoryIcon" destination="J7K-uc-oXa" id="clT-cG-GFK"/>
                         <outlet property="lblServiceTime" destination="AVZ-dl-Y5K" id="zo3-Zo-Whw"/>
                         <outlet property="lblTitle" destination="t9q-qT-e3R" id="45c-N1-Ia8"/>
-                        <outlet property="tableView" destination="UMk-13-KZL" id="j2Z-NG-0Ms"/>
                         <outlet property="viewTitleBox" destination="J7K-uc-oXa" id="odg-xb-bs3"/>
                     </connections>
                 </viewController>
@@ -189,7 +184,7 @@
                                             <constraint firstAttribute="width" constant="40" id="Vdb-jz-aar"/>
                                         </constraints>
                                         <color key="tintColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" image="button_share_navbar_orange"/>
+                                        <state key="normal" image="icon_share_green"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TB8-id-7dc">
                                         <rect key="frame" x="279" y="0.0" width="40" height="60"/>
@@ -389,9 +384,9 @@
         <image name="button_close_round_orange" width="32" height="32"/>
         <image name="button_location_green" width="32" height="32"/>
         <image name="button_more_orange" width="27" height="27"/>
-        <image name="button_share_navbar_orange" width="27" height="27"/>
         <image name="icon_cat_exploration" width="56" height="56"/>
         <image name="icon_cat_householdchores" width="56" height="56"/>
+        <image name="icon_share_green" width="32" height="32"/>
         <image name="tab_appointment" width="30" height="26"/>
         <image name="tab_appointment_active" width="30" height="26"/>
     </resources>

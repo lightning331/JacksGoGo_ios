@@ -91,11 +91,6 @@ class JGGServiceDetailVC: JGGServicesBaseTableVC {
         registerCell(nibName: "JGGTagListCell")
         registerCell(nibName: "JGGJobBookedInfoCell")
         
-        self.tableView.estimatedRowHeight = 50
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.separatorStyle = .none
-        self.tableView.allowsSelection = false
-        self.tableView.allowsMultipleSelection = false
     }
 
     @objc fileprivate func onPressedFavorite(_ sender: UIBarButtonItem) {

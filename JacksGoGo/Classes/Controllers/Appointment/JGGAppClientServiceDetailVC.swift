@@ -8,14 +8,7 @@
 
 import UIKit
 
-class JGGAppClientServiceDetailVC: JGGAppointmentsBaseVC {
-
-    @IBOutlet weak var tableView: UITableView!
-    
-    @IBOutlet weak var viewTitleBox: UIView!
-    @IBOutlet weak var imgviewCategoryIcon: UIView!
-    @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var lblServiceTime: UILabel!
+class JGGAppClientServiceDetailVC: JGGAppointmentsTableVC {
     
     var jobDetailHeaderView: JGGDetailInfoHeaderView?
     
@@ -25,29 +18,13 @@ class JGGAppClientServiceDetailVC: JGGAppointmentsBaseVC {
     
     fileprivate var isExandedJobDetail = false
     
-    private var menu: AZDropdownMenu!
-    
+
     // MARK: - Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = " "
-        createMenu()
-        showCategoryAndTitle()
         initTableView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.tintColor = UIColor.JGGOrange
-        self.navigationController?.navigationBar.titleTextAttributes =
-            [NSAttributedStringKey.foregroundColor: UIColor.JGGOrange]
-}
-    
-    private func showCategoryAndTitle() {
-        lblTitle.text = "Gardening"
-        lblServiceTime.text = "21 Jul, 2017 10:00 AM - 12:00 PM"
     }
     
     private func initTableView() {
@@ -75,76 +52,16 @@ class JGGAppClientServiceDetailVC: JGGAppointmentsBaseVC {
         registerCell(nibName: "JGGImageCarouselCell")
         registerCell(nibName: "JGGBorderButtonCell")
         
-        self.tableView.estimatedRowHeight = 50
-        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
 
-    // MARK: Create Menu
-    
-    private func createMenu() {
-        var menuDataSource: [AZDropdownMenuItemData] = []
-        menuDataSource.append(AZDropdownMenuItemData(title:LocalizedString("Edit"),
-                                                     icon:UIImage(named: "button_edit_orange")!))
-        menuDataSource.append(AZDropdownMenuItemData(title:LocalizedString("Delete"),
-                                                     icon:UIImage(named: "button_delete_orange")!))
-        
-        let menu = AZDropdownMenu(dataSource: menuDataSource)
-        menu.itemHeight = 60
-        menu.itemFontName = UIFont.JGGListTitle.fontName
-        menu.itemFontSize = 15
-        menu.overlayColor = UIColor.JGGBlack
-        menu.overlayAlpha = 0.5
-        menu.itemAlignment = .left
-        menu.itemImagePosition = .prefix
-        menu.menuSeparatorStyle = .none
-        menu.cellTapHandler = { [weak self] (indexPath: IndexPath) -> Void in
-            if indexPath.row == 0 { // Edit
-                self?.onPressedMenuEdit()
-            } else if indexPath.row == 1 { // Delete
-                self?.onPressedMenuDelete()
-            }
-        }
-        menu.hiddenCompleteHandler = {
-            self.navigationItem.rightBarButtonItem?.image = UIImage(named: "button_more_orange")
-        }
-        self.menu = menu
-    }
-    
-    // MARK: Menu
-    @IBAction func onPressedMenu(_ sender: UIBarButtonItem) -> Void {
-        if self.menu.isDescendant(of: self.view) {
-            self.menu.hideMenu()
-        } else {
-            self.menu.showMenuFromView(self.view, offsetY: self.topLayoutGuide.length) //, offsetY: self.navigationController?.navigationBar.frame.height)
-            sender.image = UIImage(named: "button_more_orange_active")
-        }
-    }
-    
-    private func onPressedMenuEdit() {
-        print("Pressed Edit")
-    }
-    
-    private func onPressedMenuDelete() {
-        print("Pressed Delete")
-        JGGAlertViewController.show(title: LocalizedString("Delete Job?"),
-                                    message: LocalizedString("Deleted jobs can be found in Appointment, under History tab."),
-                                    colorSchema: .red,
-                                    okButtonTitle: LocalizedString("Delete"),
-                                    okAction: {
-                                        print("Delete Job")
-                                    },
-                                    cancelButtonTitle: LocalizedString("Cancel")) {
-                                        
-                                    }
-    }
     
     // MARK: Button actions
     
     /// Open Map
     @objc fileprivate func onPressedMapLocation(_ sender: UIButton) {
-        if let mapLocationVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGLocationMapVC") {
-            self.navigationController?.pushViewController(mapLocationVC, animated: true)
-        }
+        let appointmentStoryboard = UIStoryboard(name: "Appointment", bundle: nil)
+        let mapLocationVC = appointmentStoryboard.instantiateViewController(withIdentifier: "JGGLocationMapVC")
+        self.navigationController?.pushViewController(mapLocationVC, animated: true)
     }
     
     /// View Original Service Post
@@ -154,15 +71,15 @@ class JGGAppClientServiceDetailVC: JGGAppointmentsBaseVC {
     }
 }
 
-extension JGGAppClientServiceDetailVC: UITableViewDataSource, UITableViewDelegate {
+extension JGGAppClientServiceDetailVC { // }: UITableViewDataSource, UITableViewDelegate {
     
     /// Section
-    func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     
     // Header
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == SECTION_PROVIDER {
             return 40
         }
@@ -172,7 +89,7 @@ extension JGGAppClientServiceDetailVC: UITableViewDataSource, UITableViewDelegat
         return 0
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == SECTION_PROVIDER {
             let sectionTitleView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "JGGSectionTitleView") as? JGGSectionTitleView
             sectionTitleView?.title = LocalizedString("Invited service provider:")
@@ -190,7 +107,7 @@ extension JGGAppClientServiceDetailVC: UITableViewDataSource, UITableViewDelegat
     }
     
     // Footer
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if section == SECTION_PROVIDER {
             return 0
         }
@@ -200,7 +117,7 @@ extension JGGAppClientServiceDetailVC: UITableViewDataSource, UITableViewDelegat
         return 0
     }
     
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if section == SECTION_JOB_DETAIL {
             let jobDetailFooterView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "JGGDetailInfoFooterView") as? JGGDetailInfoFooterView
             jobDetailFooterView?.text = "Job posted on 12 Jul, 2017 8:16 PM"
@@ -213,7 +130,7 @@ extension JGGAppClientServiceDetailVC: UITableViewDataSource, UITableViewDelegat
     
     /// Cell
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == SECTION_PROVIDER {
             return 1
         }
@@ -228,7 +145,7 @@ extension JGGAppClientServiceDetailVC: UITableViewDataSource, UITableViewDelegat
         return 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = indexPath.section
         let row = indexPath.row
         if section == SECTION_PROVIDER {

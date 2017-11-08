@@ -1,24 +1,19 @@
 //
-//  JGGTableViewController.swift
+//  JGGEditJobBaseTableVC.swift
 //  JacksGoGo
 //
-//  Created by Hemin Wang on 25/10/2017.
+//  Created by Hemin Wang on 11/8/17.
 //  Copyright © 2017 Hemin Wang. All rights reserved.
 //
 
 import UIKit
 
-class JGGTableViewController: UITableViewController {
+class JGGEditJobBaseTableVC: JGGTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.tableView.estimatedRowHeight = 50
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.separatorStyle = .none
-        self.tableView.allowsSelection = false
-        self.tableView.allowsMultipleSelection = false
 
+        self.tableView.backgroundColor = UIColor.JGGGrey5
     }
 
     override func didReceiveMemoryWarning() {

@@ -18,7 +18,6 @@ class JGGLocationMapVC: JGGAppointmentsBaseVC {
     @IBOutlet weak var btnShare: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

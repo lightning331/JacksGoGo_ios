@@ -46,6 +46,13 @@ class JGGAppMainVC: JGGStartTableVC {
         registerCell()
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.hidesBarsOnSwipe = true
+        
+    }
         
     private func initializeTableView() {
         self.tableView.keyboardDismissMode = .onDrag
@@ -149,7 +156,11 @@ class JGGAppMainVC: JGGStartTableVC {
     
     // MARK: delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         self.performSegue(withIdentifier: "gotoServiceDetail", sender: self)
+        let cell = tableView.cellForRow(at: indexPath) as! JGGAppHistoryListCell
+        if let serviceDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGAppClinetServiceDetailRootVC") as? JGGAppClinetServiceDetailRootVC {
+            serviceDetailVC.selectedAppointment = cell.appointment
+            self.navigationController?.pushViewController(serviceDetailVC, animated: true)
+        }
     }
     
     // MARK: - Should remove on Product

@@ -10,5 +10,9 @@ import UIKit
 
 class JGGServiceModel: JGGAppointmentBaseModel {
 
-    
+    override var type: AppointmentType {
+        get {
+            return .service
+        }
+    }
 }

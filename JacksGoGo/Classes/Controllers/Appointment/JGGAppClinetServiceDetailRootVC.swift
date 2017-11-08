@@ -18,6 +18,8 @@ class JGGAppClinetServiceDetailRootVC: JGGAppointmentsBaseVC {
 
     @IBOutlet weak var containerView: UIView!
     
+    var selectedAppointment: JGGAppointmentBaseModel?
+    
     private var menu: AZDropdownMenu!
     
     private var isEditJobMode: Bool = false
@@ -39,11 +41,18 @@ class JGGAppClinetServiceDetailRootVC: JGGAppointmentsBaseVC {
         self.navigationController?.navigationBar.tintColor = UIColor.JGGOrange
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedStringKey.foregroundColor: UIColor.JGGOrange]
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.hidesBarsOnSwipe = false
     }
 
     private func showCategoryAndTitle() {
         lblTitle.text = "Gardening"
         lblServiceTime.text = "21 Jul, 2017 10:00 AM - 12:00 PM"
+        
+        if selectedAppointment?.type == .jobs {
+            self.navigationItem.rightBarButtonItem = nil
+        }
+        
     }
 
     
@@ -119,6 +128,7 @@ class JGGAppClinetServiceDetailRootVC: JGGAppointmentsBaseVC {
                                     okButtonTitle: LocalizedString("Delete"),
                                     okAction: {
                                         print("Delete Job")
+                                        self.navigationController?.popToRootViewController(animated: true)
         },
                                     cancelButtonTitle: LocalizedString("Cancel")) {
                                         
@@ -146,6 +156,7 @@ class JGGAppClinetServiceDetailRootVC: JGGAppointmentsBaseVC {
     
     fileprivate func loadServiceDetailVC() {
         let serviceDetailVC = JGGAppClientServiceDetailVC()
+        serviceDetailVC.selectedAppointment = self.selectedAppointment
         _ = replaceViewController(to: serviceDetailVC)
     }
     

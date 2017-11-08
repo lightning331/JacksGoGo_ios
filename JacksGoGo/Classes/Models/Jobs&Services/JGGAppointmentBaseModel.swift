@@ -19,6 +19,13 @@ public enum AppointmentStatus {
     case watingForReview
 }
 
+public enum AppointmentType {
+    case jobs
+    case service
+    case event
+    case unknown
+}
+
 class JGGAppointmentBaseModel: JGGBaseModel {
 
     var title: String?
@@ -26,6 +33,11 @@ class JGGAppointmentBaseModel: JGGBaseModel {
     var comment: String?
     var badgeNumber: Int = 0
     var appointmentDate: Date?
+    var type: AppointmentType {
+        get {
+            return .unknown
+        }
+    }
     
     func appointmentDay() -> String? {
         let dateFormatter = DateFormatter()

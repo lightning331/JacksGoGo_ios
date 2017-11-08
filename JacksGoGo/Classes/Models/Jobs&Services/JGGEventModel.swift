@@ -12,5 +12,9 @@ class JGGEventModel: JGGAppointmentBaseModel {
 
     var startTime: Date?
     var endTime: Date?
-    
+    override var type: AppointmentType {
+        get {
+            return .event
+        }
+    }
 }

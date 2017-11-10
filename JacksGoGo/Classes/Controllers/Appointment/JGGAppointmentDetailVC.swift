@@ -197,6 +197,8 @@ extension JGGAppointmentDetailVC { // }: UITableViewDataSource, UITableViewDeleg
                 } else {
                     sectionTitleView?.title = LocalizedString("Bidding service providers:")
                 }
+            } else if let serviceAppointment = self.selectedAppointment as? JGGServiceModel {
+                sectionTitleView?.title = LocalizedString("Waiting for service provider...")
             }
             
             return sectionTitleView
@@ -239,6 +241,9 @@ extension JGGAppointmentDetailVC { // }: UITableViewDataSource, UITableViewDeleg
                 } else {
                     return jobAppointment.biddingProviders.count + 1
                 }
+            } else if let serviceAppointment = self.selectedAppointment as? JGGServiceModel /*,
+                serviceAppointment.invitingClient != nil */ {
+                return 1
             }
         }
         return 0

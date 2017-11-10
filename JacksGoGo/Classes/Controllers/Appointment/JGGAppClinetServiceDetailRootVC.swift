@@ -9,16 +9,9 @@
 import UIKit
 import SnapKit
 
-class JGGAppClinetServiceDetailRootVC: JGGAppointmentsBaseVC {
-
-    @IBOutlet weak var viewTitleBox: UIView!
-    @IBOutlet weak var imgviewCategoryIcon: UIView!
-    @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var lblServiceTime: UILabel!
+class JGGAppClinetServiceDetailRootVC: JGGAppointmentDetailBaseVC {
 
     @IBOutlet weak var containerView: UIView!
-    
-    var selectedAppointment: JGGAppointmentBaseModel?
     
     private var menu: AZDropdownMenu!
     
@@ -31,7 +24,6 @@ class JGGAppClinetServiceDetailRootVC: JGGAppointmentsBaseVC {
 
         self.navigationItem.title = " "
         createMenu()
-        showCategoryAndTitle()
         
         loadServiceDetailVC()
     }
@@ -44,17 +36,6 @@ class JGGAppClinetServiceDetailRootVC: JGGAppointmentsBaseVC {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationController?.hidesBarsOnSwipe = false
     }
-
-    private func showCategoryAndTitle() {
-        lblTitle.text = "Gardening"
-        lblServiceTime.text = "21 Jul, 2017 10:00 AM - 12:00 PM"
-        
-        if selectedAppointment?.type == .service {
-            self.navigationItem.rightBarButtonItem = nil
-        }
-        
-    }
-
     
     // MARK: Create Menu
     
@@ -159,7 +140,9 @@ class JGGAppClinetServiceDetailRootVC: JGGAppointmentsBaseVC {
         
         let serviceDetailVC = JGGAppointmentDetailVC()
         serviceDetailVC.selectedAppointment = self.selectedAppointment
+        serviceDetailVC.automaticallyAdjustsScrollViewInsets = false
         let nav = JGGBaseNC(rootViewController: serviceDetailVC)
+        nav.isToolbarHidden = true
         nav.isNavigationBarHidden = true
         nav.tag = "AppointmentDetailNC"
         _ = replaceViewController(to: nav)

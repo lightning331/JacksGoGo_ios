@@ -29,4 +29,20 @@ extension String {
         
         return ceil(boundingBox.width)
     }
+    
+    static func attributedWith(bold: String?, regular: String?) -> NSAttributedString? {
+        let boldString = bold == nil ? "" : bold!
+        let text = boldString + (regular == nil ? "" : regular!)
+        guard text.count > 0 else {
+            return nil
+        }
+        let attributes = [ NSAttributedStringKey.font : UIFont.JGGListTitle ]
+        let regularAttributes = [ NSAttributedStringKey.font : UIFont.JGGListText ]
+        let attributedString = NSMutableAttributedString(string: text, attributes: attributes)
+        if boldString.count > 0 {
+            let regularRange = NSRange(location: boldString.count, length: text.count - boldString.count)
+            attributedString.addAttributes(regularAttributes, range: regularRange)
+        }
+        return attributedString
+    }
 }

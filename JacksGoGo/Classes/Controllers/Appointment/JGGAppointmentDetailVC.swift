@@ -19,7 +19,7 @@ class JGGAppointmentDetailVC: JGGAppointmentsTableVC {
     fileprivate var sectionNumberForJobDetail = 1
     
     fileprivate var isExandedJobDetail = false
-    
+    fileprivate let appointmentStoryboard = UIStoryboard(name: "Appointment", bundle: nil)
 
     // MARK: - Methods
     
@@ -107,14 +107,16 @@ class JGGAppointmentDetailVC: JGGAppointmentsTableVC {
                 self.tableView.tableFooterView = tableFooterView
             }
         }
+        
+        self.tableView.allowsSelection = true
+        
     }
 
     
     // MARK: Button actions
     /// Open Invite user
     @objc fileprivate func onPressedInviteServiceProviders(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Appointment", bundle: nil)
-        let canInviteUserListVC = storyboard.instantiateViewController(withIdentifier: "JGGCanInviteUserListVC") as! JGGCanInviteUserListVC
+        let canInviteUserListVC = appointmentStoryboard.instantiateViewController(withIdentifier: "JGGCanInviteUserListVC") as! JGGCanInviteUserListVC
         self.navigationController?
             .parent?
             .navigationController?
@@ -123,15 +125,21 @@ class JGGAppointmentDetailVC: JGGAppointmentsTableVC {
     
     /// Open Map
     @objc fileprivate func onPressedMapLocation(_ sender: UIButton) {
-        let appointmentStoryboard = UIStoryboard(name: "Appointment", bundle: nil)
         let mapLocationVC = appointmentStoryboard.instantiateViewController(withIdentifier: "JGGLocationMapVC")
-        self.navigationController?.pushViewController(mapLocationVC, animated: true)
+        self.navigationController?
+            .parent?
+            .navigationController?
+            .pushViewController(mapLocationVC, animated: true)
     }
     
     /// View Original Service Post
     @objc fileprivate func onPressedViewOriginalServicePost(_ sender: UIButton) {
         let vc = JGGServiceDetailVC()
-        self.navigationController?.pushViewController(vc, animated: true)
+        vc.automaticallyAdjustsScrollViewInsets = false
+        self.navigationController?
+            .parent?
+            .navigationController?
+            .pushViewController(vc, animated: true)
     }
     
     /// Reject Job
@@ -243,9 +251,10 @@ extension JGGAppointmentDetailVC { // }: UITableViewDataSource, UITableViewDeleg
             
             if let jobAppointment =  self.selectedAppointment as? JGGJobModel {
                 if section == 0 && jobAppointment.invitedProviders.count > 0 {
-                        let providerCell = tableView.dequeueReusableCell(withIdentifier: "JGGUserAvatarNameRateCell") as! JGGUserAvatarNameRateCell
-                        providerCell.lblUsername.text = "Alan.Tam"
-                        return providerCell
+                    let providerCell = tableView.dequeueReusableCell(withIdentifier: "JGGUserAvatarNameRateCell") as! JGGUserAvatarNameRateCell
+                    providerCell.lblUsername.text = "Alan.Tam"
+                    providerCell.selectionStyle = .default
+                    return providerCell
                 } else {
                     if row < jobAppointment.biddingProviders.count {
                         let providerCell = tableView.dequeueReusableCell(withIdentifier: "JGGAppBiddingProviderCell") as! JGGAppBiddingProviderCell
@@ -255,10 +264,21 @@ extension JGGAppointmentDetailVC { // }: UITableViewDataSource, UITableViewDeleg
                         let borderButtonCell = tableView.dequeueReusableCell(withIdentifier: "JGGBorderButtonCell") as! JGGBorderButtonCell
                         borderButtonCell.btnPrimary.setTitle(LocalizedString("Invite Service Providers"), for: .normal)
                         borderButtonCell.borderColor = UIColor.JGGGreen
-                        borderButtonCell.btnPrimary.addTarget(self, action: #selector(onPressedInviteServiceProviders(_:)), for: .touchUpInside)
+                        borderButtonCell.btnPrimary.removeTarget(self,
+                                                                 action: #selector(onPressedViewOriginalServicePost(_:)),
+                                                                 for: .touchUpInside)
+                        borderButtonCell.btnPrimary.addTarget(self,
+                                                              action: #selector(onPressedInviteServiceProviders(_:)),
+                                                              for: .touchUpInside)
+                        borderButtonCell.selectionStyle = .none
                         return borderButtonCell
                     }
                 }
+            } else if let serviceAppointment = self.selectedAppointment as? JGGServiceModel {
+                let providerCell = tableView.dequeueReusableCell(withIdentifier: "JGGUserAvatarNameRateCell") as! JGGUserAvatarNameRateCell
+                providerCell.lblUsername.text = "Alan.Tam"
+                providerCell.selectionStyle = .default
+                return providerCell
             }
         } else { // if section == sectionNumberForJobDetail
             if row == 0 {
@@ -267,6 +287,7 @@ extension JGGAppointmentDetailVC { // }: UITableViewDataSource, UITableViewDeleg
                 //                carouselViewCell.carouselView.delegate = self
                 //                carouselViewCell.carouselView.type = .normal
                 //                carouselViewCell.carouselView.selectedIndex = 0
+                carouselViewCell.selectionStyle = .none
                 return carouselViewCell
             }
             else if row == 1 || row == 2 || row == 4 {
@@ -283,15 +304,10 @@ extension JGGAppointmentDetailVC { // }: UITableViewDataSource, UITableViewDeleg
                 }
                 else if row == 4 {
                     cell.icon = UIImage(named: "icon_completion")
-                    let requestsString = LocalizedString("Requests:")
-                    let text = requestsString + " " + "Before & After photos"
-                    let attributes = [ NSAttributedStringKey.font : UIFont.JGGListTitle ]
-                    let regularAttributes = [ NSAttributedStringKey.font : UIFont.JGGListText ]
-                    let attributedString = NSMutableAttributedString(string: text, attributes: attributes)
-                    let regularRange = NSRange(location: requestsString.count, length: text.count - requestsString.count)
-                    attributedString.addAttributes(regularAttributes, range: regularRange)
-                    cell.lblTitle.attributedText = attributedString
+                    let content = String.attributedWith(bold: LocalizedString("Requests:"), regular: " " + "Before & After photos")
+                    cell.lblTitle.attributedText = content
                 }
+                cell.selectionStyle = .none
                 return cell
             }
             else if row == 3 {
@@ -299,19 +315,21 @@ extension JGGAppointmentDetailVC { // }: UITableViewDataSource, UITableViewDeleg
                 cell.icon = UIImage(named: "icon_location")
                 cell.title = "2 Jurong West Avenue 5 6437327"
                 cell.lblTitle.font = UIFont.JGGListText
-                if selectedAppointment?.type == .service {
+                if selectedAppointment?.type == .jobs {
                     cell.btnAccessory.addTarget(self,
                                                 action: #selector(onPressedMapLocation(_:)),
                                                 for: .touchUpInside)
                 } else {
                     cell.btnAccessory.isHidden = true
                 }
+                cell.selectionStyle = .none
                 return cell
             }
             else if row == 5 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "JGGDetailInfoCenterAlignCell") as! JGGDetailInfoCenterAlignCell
                 cell.title = LocalizedString("Job reference no:") + " " + "J39482-2934882"
                 cell.subTitle = LocalizedString("Posted on") + " " + "12 Jul, 2017"
+                cell.selectionStyle = .none
                 return cell
             }
             else if row == 6 {
@@ -327,18 +345,48 @@ extension JGGAppointmentDetailVC { // }: UITableViewDataSource, UITableViewDeleg
                     cell.btnPrimary.borderColor = UIColor.JGGPurple
                     cell.btnPrimary.setTitleColor(UIColor.JGGPurple, for: .normal)
                 }
+                cell.btnPrimary.removeTarget(self,
+                                             action: #selector(onPressedInviteServiceProviders(_:)),
+                                             for: .touchUpInside)
                 cell.btnPrimary.addTarget(self,
                                           action: #selector(onPressedViewOriginalServicePost(_:)),
                                           for: .touchUpInside)
+                cell.selectionStyle = .none
                 return cell
             }
         }
         
         return UITableViewCell()
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = indexPath.section
+        let row = indexPath.row
+        if section != sectionNumberForJobDetail {
+            if let jobAppointment =  self.selectedAppointment as? JGGJobModel {
+                if section == 0 && jobAppointment.invitedProviders.count > 0 {
+                    
+                } else {
+                    if row < jobAppointment.biddingProviders.count {
+                        let biddingProvider = jobAppointment.biddingProviders[row]
+                        onPressedBidder(biddingProvider)
+                    }
+                }
+            }
+        }
+    }
 
+    /// Goto Bid Detail
+    fileprivate func onPressedBidder(_ bidder: JGGBiddingProviderModel) {
+        let bidDetailVC = appointmentStoryboard.instantiateViewController(withIdentifier: "JGGBidDetailVC") as! JGGBidDetailVC
+        self.navigationController?
+            .parent?
+            .navigationController?
+            .pushViewController(bidDetailVC, animated: true)
+    }
+    
     /// Expand job detail
-    @objc func onPressExpand(_ sender: Any) {
+    @objc fileprivate func onPressExpand(_ sender: Any) {
         isExandedJobDetail = !isExandedJobDetail
         if let button = sender as? UIButton {
             button.isSelected = isExandedJobDetail

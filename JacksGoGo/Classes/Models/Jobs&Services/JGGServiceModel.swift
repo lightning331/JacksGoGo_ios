@@ -15,4 +15,7 @@ class JGGServiceModel: JGGAppointmentBaseModel {
             return .service
         }
     }
+    
+    var invitingClient: JGGClientUserModel?
+    
 }

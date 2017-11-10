@@ -9,12 +9,7 @@
 import UIKit
 import SnapKit
 
-class JGGCanInviteUserListVC: JGGViewController {
-
-    @IBOutlet weak var viewTitleBox: UIView!
-    @IBOutlet weak var imgviewCategoryIcon: UIView!
-    @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var lblServiceTime: UILabel!
+class JGGCanInviteUserListVC: JGGAppointmentDetailBaseVC {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -23,14 +18,8 @@ class JGGCanInviteUserListVC: JGGViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        showCategoryAndTitle()
         initTableView()
         makeDummyData()
-    }
-
-    private func showCategoryAndTitle() {
-        lblTitle.text = "Gardening"
-        lblServiceTime.text = "21 Jul, 2017 10:00 AM - 12:00 PM"
     }
 
     private func initTableView() {
@@ -65,6 +54,7 @@ class JGGCanInviteUserListVC: JGGViewController {
         self.tableView.separatorStyle = .none
         self.tableView.allowsSelection = false
         self.tableView.allowsMultipleSelection = false
+        self.tableView.backgroundColor = UIColor.JGGGrey5
 
     }
     

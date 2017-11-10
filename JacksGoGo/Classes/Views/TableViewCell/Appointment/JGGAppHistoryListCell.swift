@@ -47,7 +47,7 @@ class JGGAppHistoryListCell: UITableViewCell {
             viewRightSideBadge.isHidden = appointment.badgeNumber == 0
             
             var color = UIColor.JGGCyan
-            if let _ = appointment as? JGGServiceModel {
+            if let _ = appointment as? JGGJobModel {
                 color = UIColor.JGGGreen
             } else if let _ = appointment as? JGGEventModel {
                 color = UIColor.JGGPurple

@@ -10,6 +10,8 @@ import UIKit
 
 class JGGBaseNC: UINavigationController {
 
+    var tag: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

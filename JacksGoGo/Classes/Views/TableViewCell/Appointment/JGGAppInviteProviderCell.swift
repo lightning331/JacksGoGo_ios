@@ -12,6 +12,12 @@ class JGGAppInviteProviderCell: JGGUserAvatarNameRateCell {
 
     @IBOutlet weak var btnInvite: UIButton!
     
+    var user: JGGProviderUserModel? {
+        didSet {
+            showUserInformation()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,6 +27,13 @@ class JGGAppInviteProviderCell: JGGUserAvatarNameRateCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    fileprivate func showUserInformation() {
+        if let user = user {
+            self.lblUsername.text = user.fullname
+            self.ratebarUserRate.rating = user.rate
+        }
     }
     
 }

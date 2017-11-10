@@ -178,30 +178,88 @@ class JGGAppMainVC: JGGStartTableVC {
         servicePack00.comment = "1 slot remaining"
         arrayLoadedServicePackages.append(servicePack00)
         
-        let pendingJob00 = JGGJobModel()
+        let pendingJob00 = JGGServiceModel()
         pendingJob00.title = "Bring My Dog To Her Grooming Apartment"
         pendingJob00.comment = "Needed on 21 Jul, 2017"
         pendingJob00.badgeNumber = 3
         pendingJob00.appointmentDate = Date(timeInterval: 23000, since: Date())
+        
         arrayLoadedPendingJobs.append(pendingJob00)
         
-        let pendingJob01 = JGGServiceModel()
+        let pendingJob01 = JGGJobModel()
         pendingJob01.title = "Maid Needed"
         pendingJob01.comment = "Needed on 18 Jul, 2017"
         pendingJob01.badgeNumber = 1
         pendingJob01.appointmentDate = Date(timeInterval: 127000, since: Date())
+        
+        let bidder00 = JGGBiddingProviderModel()
+        bidder00.price = 100.0
+        bidder00.isNew = true
+        bidder00.status = .pending
+        let bidderUser00 = JGGProviderUserModel()
+        bidderUser00.fullname = "CYYong"
+        bidderUser00.rate = 4.6
+        bidder00.user = bidderUser00
+        pendingJob01.biddingProviders.append(bidder00)
+        
+        let bidder01 = JGGBiddingProviderModel()
+        bidder01.price = 100.0
+        bidder01.isNew = false
+        bidder01.status = .pending
+        let bidderUser01 = JGGProviderUserModel()
+        bidderUser01.fullname = "Christina.P"
+        bidderUser01.rate = 4.8
+        bidder01.user = bidderUser01
+        pendingJob01.biddingProviders.append(bidder01)
+
+        let bidder02 = JGGBiddingProviderModel()
+        bidder02.price = 80.0
+        bidder02.isNew = false
+        bidder02.status = .notResponded
+        let bidderUser02 = JGGProviderUserModel()
+        bidderUser02.fullname = "RenYW"
+        bidderUser02.rate = 4.3
+        bidder02.user = bidderUser02
+        pendingJob01.biddingProviders.append(bidder02)
+
+        let bidder03 = JGGBiddingProviderModel()
+        bidder03.price = 80.0
+        bidder03.isNew = false
+        bidder03.status = .declined
+        let bidderUser03 = JGGProviderUserModel()
+        bidderUser03.fullname = "RositaV"
+        bidderUser03.rate = 4.5
+        bidder03.user = bidderUser03
+        pendingJob01.biddingProviders.append(bidder03)
+
+        let bidder04 = JGGBiddingProviderModel()
+        bidder04.price = 80.0
+        bidder04.isNew = false
+        bidder04.status = .rejected
+        let bidderUser04 = JGGProviderUserModel()
+        bidderUser04.fullname = "Alicia.Leong"
+        bidderUser04.rate = 3.5
+        bidder04.user = bidderUser04
+        pendingJob01.biddingProviders.append(bidder04)
+
         arrayLoadedPendingJobs.append(pendingJob01)
         
-        let pendingJob02 = JGGJobModel()
+        let pendingJob02 = JGGServiceModel()
         pendingJob02.title = "Delivery - Small Parcel"
         pendingJob02.comment = "Needed on 19 Jul, 2017"
         pendingJob02.appointmentDate = Date(timeInterval: 232000, since: Date())
         arrayLoadedPendingJobs.append(pendingJob02)
         
-        let pendingJob03 = JGGEventModel()
+        let pendingJob03 = JGGJobModel()
         pendingJob03.title = "Badminton Gathering"
         pendingJob03.comment = "We love Badminton\nEvent on 19 Jul, 2017 10:00 AM - 12:00 PM"
         pendingJob03.appointmentDate = Date(timeInterval: 339000, since: Date())
+        
+        let bidderUser30 = JGGProviderUserModel()
+        bidderUser30.fullname = "Tal.Ram"
+        bidderUser30.rate = 4.7
+        pendingJob03.invitedProviders.append(bidderUser30)
+
         arrayLoadedPendingJobs.append(pendingJob03)
         
         let pendingJob04 = JGGJobModel()

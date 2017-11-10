@@ -49,7 +49,7 @@ class JGGAppClinetServiceDetailRootVC: JGGAppointmentsBaseVC {
         lblTitle.text = "Gardening"
         lblServiceTime.text = "21 Jul, 2017 10:00 AM - 12:00 PM"
         
-        if selectedAppointment?.type == .jobs {
+        if selectedAppointment?.type == .service {
             self.navigationItem.rightBarButtonItem = nil
         }
         
@@ -137,32 +137,38 @@ class JGGAppClinetServiceDetailRootVC: JGGAppointmentsBaseVC {
 
     // MARK: - Load Sub ViewControllers
     
-    fileprivate func replaceViewController(to vc: UIViewController) -> Bool{
-        if let currentVC = currentChildViewController {
-            if object_getClass(vc) == object_getClass(currentVC) {
+    fileprivate func replaceViewController(to nc: JGGBaseNC) -> Bool{
+        if let currentVC = currentChildViewController,
+           let nav = currentVC as? JGGBaseNC {
+            if nav.tag == nc.tag {
                 return false
             }
             currentVC.removeFromParentViewController()
             currentVC.view.removeFromSuperview()
         }
-        self.addChildViewController(vc)
-        self.containerView.addSubview(vc.view)
-        vc.view.snp.makeConstraints { (maker) in
+        self.addChildViewController(nc)
+        self.containerView.addSubview(nc.view)
+        nc.view.snp.makeConstraints { (maker) in
             maker.left.top.right.bottom.equalToSuperview()
         }
-        currentChildViewController = vc
+        currentChildViewController = nc
         return true
     }
     
     fileprivate func loadServiceDetailVC() {
-        let serviceDetailVC = JGGAppClientServiceDetailVC()
+        
+        let serviceDetailVC = JGGAppointmentDetailVC()
         serviceDetailVC.selectedAppointment = self.selectedAppointment
-        _ = replaceViewController(to: serviceDetailVC)
+        let nav = JGGBaseNC(rootViewController: serviceDetailVC)
+        nav.isNavigationBarHidden = true
+        nav.tag = "AppointmentDetailNC"
+        _ = replaceViewController(to: nav)
     }
     
     fileprivate func loadEditJobSummaryVC() -> Bool {
         let editJobStoryboard = UIStoryboard(name: "EditJob", bundle: nil)
         if let editJobNC = editJobStoryboard.instantiateInitialViewController() as? JGGEditJobNC {
+            editJobNC.tag = "EditJobNC"
             return replaceViewController(to: editJobNC)
         } else {
             return false

@@ -1,5 +1,5 @@
 //
-//  JGGAppClientServiceDetailVC.swift
+//  JGGAppointmentDetailVC.swift
 //  JacksGoGo
 //
 //  Created by Hemin Wang on 11/3/17.
@@ -9,14 +9,14 @@
 import UIKit
 import SnapKit
 
-class JGGAppClientServiceDetailVC: JGGAppointmentsTableVC {
+class JGGAppointmentDetailVC: JGGAppointmentsTableVC {
     
     var selectedAppointment: JGGAppointmentBaseModel?
     
     fileprivate var jobDetailHeaderView: JGGDetailInfoHeaderView?
     
-    fileprivate let SECTION_PROVIDER: Int = 0
-    fileprivate let SECTION_JOB_DETAIL: Int = 1
+    fileprivate var sectionCount: Int = 2
+    fileprivate var sectionNumberForJobDetail = 1
     
     fileprivate var isExandedJobDetail = false
     
@@ -26,7 +26,20 @@ class JGGAppClientServiceDetailVC: JGGAppointmentsTableVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        parseAppointment()
+
         initTableView()
+        
+    }
+    
+    private func parseAppointment() {
+        if let jobAppointment = self.selectedAppointment as? JGGJobModel {
+            if jobAppointment.biddingProviders.count > 0 &&
+                jobAppointment.invitedProviders.count > 0 {
+                sectionCount = 3
+                sectionNumberForJobDetail = 2
+            }
+        }
     }
     
     private func initTableView() {
@@ -48,6 +61,7 @@ class JGGAppClientServiceDetailVC: JGGAppointmentsTableVC {
         registerHeaderFooterView(nibName: "JGGDetailInfoFooterView")
         
         registerCell(nibName: "JGGUserAvatarNameRateCell")
+        registerCell(nibName: "JGGAppBiddingProviderCell")
         registerCell(nibName: "JGGDetailInfoDescriptionCell")
         registerCell(nibName: "JGGDetailInfoAccessoryButtonCell")
         registerCell(nibName: "JGGDetailInfoCenterAlignCell")
@@ -55,8 +69,9 @@ class JGGAppClientServiceDetailVC: JGGAppointmentsTableVC {
         registerCell(nibName: "JGGBorderButtonCell")
         
         if let appointment = self.selectedAppointment {
-            if appointment.type == .jobs {
+            if appointment.type == .service {
                 
+                // Add Rejct and Accept Job button
                 headerView?.viewLeftGreenBar.backgroundColor = UIColor.JGGCyan
                 headerView?.imgviewIcon.image = UIImage(named: "icon_provider")
                 headerView?.lblTitle.text = "You've invited to a job!"
@@ -96,6 +111,15 @@ class JGGAppClientServiceDetailVC: JGGAppointmentsTableVC {
 
     
     // MARK: Button actions
+    /// Open Invite user
+    @objc fileprivate func onPressedInviteServiceProviders(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Appointment", bundle: nil)
+        let canInviteUserListVC = storyboard.instantiateViewController(withIdentifier: "JGGCanInviteUserListVC") as! JGGCanInviteUserListVC
+        self.navigationController?
+            .parent?
+            .navigationController?
+            .pushViewController(canInviteUserListVC, animated: true)
+    }
     
     /// Open Map
     @objc fileprivate func onPressedMapLocation(_ sender: UIButton) {
@@ -129,58 +153,58 @@ class JGGAppClientServiceDetailVC: JGGAppointmentsTableVC {
     }
 }
 
-extension JGGAppClientServiceDetailVC { // }: UITableViewDataSource, UITableViewDelegate {
+extension JGGAppointmentDetailVC { // }: UITableViewDataSource, UITableViewDelegate {
     
     /// Section
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return sectionCount
     }
     
     // Header
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == SECTION_PROVIDER {
+        if section == sectionNumberForJobDetail {
+            return 70
+        } else {
             return 40
         }
-        else if section == SECTION_JOB_DETAIL {
-            return 70
-        }
-        return 0
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == SECTION_PROVIDER {
-            let sectionTitleView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "JGGSectionTitleView") as? JGGSectionTitleView
-            sectionTitleView?.title = LocalizedString("Invited service provider:")
-            return sectionTitleView
-        }
-        else if section == SECTION_JOB_DETAIL {
+        
+        if section == sectionNumberForJobDetail {
             let jobDetailHeaderView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "JGGDetailInfoHeaderView") as? JGGDetailInfoHeaderView
             jobDetailHeaderView?.btnExpand.isSelected = isExandedJobDetail
             jobDetailHeaderView?.btnExpand.addTarget(self, action: #selector(onPressExpand(_:)), for: .touchUpInside)
-            if selectedAppointment?.type == .jobs {
+            if selectedAppointment?.type == .service {
                 jobDetailHeaderView?.btnExpand.setImage(UIImage(named: "button_showless_cyan"), for: .normal)
                 jobDetailHeaderView?.btnExpand.setImage(UIImage(named: "button_showmore_cyan"), for: .selected)
             }
             self.jobDetailHeaderView = jobDetailHeaderView
             return jobDetailHeaderView
         } else {
-            return nil
+            let sectionTitleView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "JGGSectionTitleView") as? JGGSectionTitleView
+            if let jobAppointment =  self.selectedAppointment as? JGGJobModel {
+                if section == 0 && jobAppointment.invitedProviders.count > 0 {
+                    sectionTitleView?.title = LocalizedString("Invited service provider:")
+                } else {
+                    sectionTitleView?.title = LocalizedString("Bidding service providers:")
+                }
+            }
+            
+            return sectionTitleView
         }
     }
     
     // Footer
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if section == SECTION_PROVIDER {
-            return 0
-        }
-        else if section == SECTION_JOB_DETAIL {
+        if section == sectionNumberForJobDetail {
             return 50
         }
         return 0
     }
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        if section == SECTION_JOB_DETAIL {
+        if section == sectionNumberForJobDetail {
             let jobDetailFooterView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "JGGDetailInfoFooterView") as? JGGDetailInfoFooterView
             jobDetailFooterView?.text = "Job posted on 12 Jul, 2017 8:16 PM"
             return jobDetailFooterView
@@ -193,15 +217,20 @@ extension JGGAppClientServiceDetailVC { // }: UITableViewDataSource, UITableView
     /// Cell
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == SECTION_PROVIDER {
-            return 1
-        }
-        else if section == SECTION_JOB_DETAIL {
+        if section == sectionNumberForJobDetail {
             if let jobDetailHeaderView = jobDetailHeaderView,
                 jobDetailHeaderView.btnExpand.isSelected == true {
                 return 7
             } else {
                 return 0
+            }
+        } else {
+            if let jobAppointment =  self.selectedAppointment as? JGGJobModel {
+                if section == 0 && jobAppointment.invitedProviders.count > 0 {
+                    return jobAppointment.invitedProviders.count
+                } else {
+                    return jobAppointment.biddingProviders.count + 1
+                }
             }
         }
         return 0
@@ -210,18 +239,34 @@ extension JGGAppClientServiceDetailVC { // }: UITableViewDataSource, UITableView
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = indexPath.section
         let row = indexPath.row
-        if section == SECTION_PROVIDER {
-            let providerCell = tableView.dequeueReusableCell(withIdentifier: "JGGUserAvatarNameRateCell") as! JGGUserAvatarNameRateCell
-            providerCell.lblUsername.text = "Alan.Tam"
-            return providerCell
-        }
-        else if section == SECTION_JOB_DETAIL {
+        if section != sectionNumberForJobDetail {
+            
+            if let jobAppointment =  self.selectedAppointment as? JGGJobModel {
+                if section == 0 && jobAppointment.invitedProviders.count > 0 {
+                        let providerCell = tableView.dequeueReusableCell(withIdentifier: "JGGUserAvatarNameRateCell") as! JGGUserAvatarNameRateCell
+                        providerCell.lblUsername.text = "Alan.Tam"
+                        return providerCell
+                } else {
+                    if row < jobAppointment.biddingProviders.count {
+                        let providerCell = tableView.dequeueReusableCell(withIdentifier: "JGGAppBiddingProviderCell") as! JGGAppBiddingProviderCell
+                        providerCell.biddingProvider = jobAppointment.biddingProviders[indexPath.row]
+                        return providerCell
+                    } else {
+                        let borderButtonCell = tableView.dequeueReusableCell(withIdentifier: "JGGBorderButtonCell") as! JGGBorderButtonCell
+                        borderButtonCell.btnPrimary.setTitle(LocalizedString("Invite Service Providers"), for: .normal)
+                        borderButtonCell.borderColor = UIColor.JGGGreen
+                        borderButtonCell.btnPrimary.addTarget(self, action: #selector(onPressedInviteServiceProviders(_:)), for: .touchUpInside)
+                        return borderButtonCell
+                    }
+                }
+            }
+        } else { // if section == sectionNumberForJobDetail
             if row == 0 {
                 let carouselViewCell = tableView.dequeueReusableCell(withIdentifier: "JGGImageCarouselCell") as! JGGImageCarouselCell
                 carouselViewCell.imgviewJobSummary.image = UIImage(named: "carousel01.jpg")
-//                carouselViewCell.carouselView.delegate = self
-//                carouselViewCell.carouselView.type = .normal
-//                carouselViewCell.carouselView.selectedIndex = 0
+                //                carouselViewCell.carouselView.delegate = self
+                //                carouselViewCell.carouselView.type = .normal
+                //                carouselViewCell.carouselView.selectedIndex = 0
                 return carouselViewCell
             }
             else if row == 1 || row == 2 || row == 4 {
@@ -273,11 +318,11 @@ extension JGGAppClientServiceDetailVC { // }: UITableViewDataSource, UITableView
                 let cell = tableView.dequeueReusableCell(withIdentifier: "JGGBorderButtonCell") as! JGGBorderButtonCell
                 cell.buttonTitle = LocalizedString("View Original Servicce Post")
                 if selectedAppointment?.type == .service {
-                    cell.btnPrimary.borderColor = UIColor.JGGGreen
-                    cell.btnPrimary.setTitleColor(UIColor.JGGGreen, for: .normal)
-                } else if selectedAppointment?.type == .jobs {
                     cell.btnPrimary.borderColor = UIColor.JGGCyan
                     cell.btnPrimary.setTitleColor(UIColor.JGGCyan, for: .normal)
+                } else if selectedAppointment?.type == .jobs {
+                    cell.btnPrimary.borderColor = UIColor.JGGGreen
+                    cell.btnPrimary.setTitleColor(UIColor.JGGGreen, for: .normal)
                 } else if selectedAppointment?.type == .event {
                     cell.btnPrimary.borderColor = UIColor.JGGPurple
                     cell.btnPrimary.setTitleColor(UIColor.JGGPurple, for: .normal)
@@ -302,7 +347,7 @@ extension JGGAppClientServiceDetailVC { // }: UITableViewDataSource, UITableView
     }
 }
 
-extension JGGAppClientServiceDetailVC: TGLParallaxCarouselDelegate  {
+extension JGGAppointmentDetailVC: TGLParallaxCarouselDelegate  {
     func numberOfItemsInCarouselView(_ carouselView: TGLParallaxCarousel) -> Int {
         return 3
     }

@@ -15,4 +15,8 @@ class JGGJobModel: JGGAppointmentBaseModel {
             return .jobs
         }
     }
+    
+    var biddingProviders: [JGGBiddingProviderModel] = []
+    var invitedProviders: [JGGProviderUserModel] = []
+    
 }

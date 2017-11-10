@@ -25,67 +25,81 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="222.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Gwu-EZ-gTg" customClass="JGGCircleImageView" customModule="JacksGoGo" customModuleProvider="target">
-                        <rect key="frame" x="24" y="11.5" width="56" height="56"/>
-                        <color key="backgroundColor" red="0.89019607840000003" green="0.94509803920000002" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="Gwu-EZ-gTg" secondAttribute="height" multiplier="1:1" id="EwP-9X-pys"/>
-                            <constraint firstAttribute="width" constant="56" id="crG-FE-jtQ"/>
-                        </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="CYYong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="32u-p9-B6l">
-                        <rect key="frame" x="88" y="21.5" width="54.5" height="17.5"/>
-                        <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fy-Q5-0mp" customClass="CosmosView" customModule="Cosmos">
-                        <rect key="frame" x="88" y="41" width="80" height="15"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hqn-dL-dbg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="222.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Gwu-EZ-gTg" customClass="JGGCircleImageView" customModule="JacksGoGo" customModuleProvider="target">
+                                <rect key="frame" x="24" y="8" width="59" height="59"/>
+                                <color key="backgroundColor" red="0.89019607840000003" green="0.94509803920000002" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Gwu-EZ-gTg" secondAttribute="height" multiplier="1:1" id="EwP-9X-pys"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="CYYong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="32u-p9-B6l">
+                                <rect key="frame" x="91" y="20.5" width="54.5" height="17.5"/>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fy-Q5-0mp" customClass="CosmosView" customModule="Cosmos">
+                                <rect key="frame" x="91" y="40" width="80" height="15"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="0bT-Gw-skU"/>
+                                    <constraint firstAttribute="height" constant="15" id="XEr-CZ-CDN"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                        <color key="value" red="0.78437811140000002" green="0.78115159270000001" blue="0.79996067289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulD-N7-e3n">
+                                <rect key="frame" x="309" y="4" width="50" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="BFh-gg-oeh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                                <state key="normal" title="Invite">
+                                    <color key="titleColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="0bT-Gw-skU"/>
-                            <constraint firstAttribute="height" constant="15" id="XEr-CZ-CDN"/>
+                            <constraint firstItem="Gwu-EZ-gTg" firstAttribute="top" secondItem="Hqn-dL-dbg" secondAttribute="top" constant="8" id="23Y-H1-7L1"/>
+                            <constraint firstItem="8fy-Q5-0mp" firstAttribute="leading" secondItem="32u-p9-B6l" secondAttribute="leading" id="A1J-CT-TuP"/>
+                            <constraint firstItem="32u-p9-B6l" firstAttribute="centerY" secondItem="Hqn-dL-dbg" secondAttribute="centerY" constant="-8.5" id="GEb-wq-oZh"/>
+                            <constraint firstItem="32u-p9-B6l" firstAttribute="leading" secondItem="Gwu-EZ-gTg" secondAttribute="trailing" constant="8" id="M8m-JA-rem"/>
+                            <constraint firstAttribute="trailing" secondItem="ulD-N7-e3n" secondAttribute="trailing" constant="16" id="T0g-Y0-kV9"/>
+                            <constraint firstAttribute="bottom" secondItem="Gwu-EZ-gTg" secondAttribute="bottom" constant="8" id="WmV-6H-bvp"/>
+                            <constraint firstAttribute="height" constant="75" id="fxr-QK-6V6"/>
+                            <constraint firstItem="Gwu-EZ-gTg" firstAttribute="leading" secondItem="Hqn-dL-dbg" secondAttribute="leadingMargin" constant="16" id="jex-9D-Tlf"/>
+                            <constraint firstItem="ulD-N7-e3n" firstAttribute="top" secondItem="Hqn-dL-dbg" secondAttribute="top" constant="4" id="oVm-9O-Ndl"/>
+                            <constraint firstItem="8fy-Q5-0mp" firstAttribute="top" secondItem="32u-p9-B6l" secondAttribute="bottom" constant="2" id="rjs-wr-Asq"/>
+                            <constraint firstAttribute="bottom" secondItem="ulD-N7-e3n" secondAttribute="bottom" constant="4" id="ssq-Ub-htw"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
-                                <real key="value" value="4"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
-                                <integer key="value" value="5"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="starSize">
-                                <real key="value" value="12"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
-                                <color key="value" red="0.78437811140000002" green="0.78115159270000001" blue="0.79996067289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
-                            <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
-                                <real key="value" value="0.0"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulD-N7-e3n">
-                        <rect key="frame" x="317" y="20" width="50" height="40"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="50" id="BFh-gg-oeh"/>
-                            <constraint firstAttribute="height" constant="40" id="pH2-dk-bet"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
-                        <state key="normal" title="Invite">
-                            <color key="titleColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </state>
-                    </button>
                 </subviews>
+                <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstItem="8fy-Q5-0mp" firstAttribute="top" secondItem="32u-p9-B6l" secondAttribute="bottom" constant="2" id="2Fj-bm-8Ly"/>
-                    <constraint firstItem="Gwu-EZ-gTg" firstAttribute="centerY" secondItem="Nda-10-zeg" secondAttribute="centerY" id="A9k-2p-8CL"/>
-                    <constraint firstItem="8fy-Q5-0mp" firstAttribute="leading" secondItem="32u-p9-B6l" secondAttribute="leading" id="M6L-zm-su1"/>
-                    <constraint firstItem="Gwu-EZ-gTg" firstAttribute="leading" secondItem="Nda-10-zeg" secondAttribute="leadingMargin" constant="8" id="OTE-H3-u6b"/>
-                    <constraint firstItem="32u-p9-B6l" firstAttribute="leading" secondItem="Gwu-EZ-gTg" secondAttribute="trailing" constant="8" id="iN3-ik-Las"/>
-                    <constraint firstAttribute="trailing" secondItem="ulD-N7-e3n" secondAttribute="trailing" constant="8" id="nPF-pS-Mf9"/>
-                    <constraint firstItem="ulD-N7-e3n" firstAttribute="centerY" secondItem="Nda-10-zeg" secondAttribute="centerY" id="p5l-8N-uWs"/>
-                    <constraint firstItem="32u-p9-B6l" firstAttribute="centerY" secondItem="Nda-10-zeg" secondAttribute="centerY" constant="-10" id="rlK-Jy-RD6"/>
+                    <constraint firstItem="Hqn-dL-dbg" firstAttribute="leading" secondItem="Nda-10-zeg" secondAttribute="leading" id="SRV-kh-Cha"/>
+                    <constraint firstItem="Hqn-dL-dbg" firstAttribute="top" secondItem="Nda-10-zeg" secondAttribute="top" id="TSf-QF-zZg"/>
+                    <constraint firstAttribute="bottom" secondItem="Hqn-dL-dbg" secondAttribute="bottom" constant="4" id="URw-Oc-4G7"/>
+                    <constraint firstAttribute="trailing" secondItem="Hqn-dL-dbg" secondAttribute="trailing" id="taY-GF-mlj"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -94,7 +108,7 @@
                 <outlet property="lblUsername" destination="32u-p9-B6l" id="8Im-Pu-776"/>
                 <outlet property="ratebarUserRate" destination="8fy-Q5-0mp" id="YP7-M0-Rzk"/>
             </connections>
-            <point key="canvasLocation" x="-89" y="-2"/>
+            <point key="canvasLocation" x="-89.5" y="0.0"/>
         </tableViewCell>
     </objects>
     <resources>

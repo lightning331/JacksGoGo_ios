@@ -31,7 +31,7 @@
                                     <rect key="frame" x="16" y="0.0" width="16" height="54"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Job Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KMs-Bq-YX2">
-                                    <rect key="frame" x="48" y="18" width="80" height="19"/>
+                                    <rect key="frame" x="48" y="18.5" width="80" height="19"/>
                                     <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -77,7 +77,6 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Rky-b9-UcN" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="8PD-Yb-KEg"/>
                 <constraint firstItem="Rky-b9-UcN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="F7e-Qd-F48"/>

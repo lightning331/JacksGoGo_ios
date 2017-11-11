@@ -58,6 +58,15 @@ class JGGBidDetailVC: JGGAppointmentDetailBaseVC {
     }
     
     @IBAction func onPressedAcceptBid(_ sender: Any) {
+        JGGActionSheet.showInteraction(title: LocalizedString("Choose a package:"),
+                                       primaryButtonTitle: LocalizedString("One-Time:") + " $ 100.00",
+                                       secondaryButtonTitle: LocalizedString("Package:") + " $ 800.00 for 10",
+                                       cancelButtonTitle: LocalizedString("Cancel"),
+                                       primaryButtonAction: {
+            
+        }, secondaryButtonAction: {
+            
+        }, cancelButtonAction: nil)
     }
     
 }

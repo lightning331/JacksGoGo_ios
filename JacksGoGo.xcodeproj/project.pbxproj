@@ -85,6 +85,7 @@
 		FF0CA88C1FB1BA3B00A2C98B /* JGGAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF0CA88A1FB1BA3B00A2C98B /* JGGAlertViewController.xib */; };
 		FF0CA88E1FB1CFCD00A2C98B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CA88D1FB1CFCD00A2C98B /* String.swift */; };
 		FF0CA8901FB205F600A2C98B /* JGGLocationMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CA88F1FB205F600A2C98B /* JGGLocationMapVC.swift */; };
+		FF10743B1FB67AD100C8BFE3 /* JGGActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF10743A1FB67AD100C8BFE3 /* JGGActionSheet.swift */; };
 		FF21FAE21FAB5525004D0ADA /* JGGImageCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAE11FAB5525004D0ADA /* JGGImageCarouselCell.swift */; };
 		FF21FAE41FAB5535004D0ADA /* JGGImageCarouselCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF21FAE31FAB5535004D0ADA /* JGGImageCarouselCell.xib */; };
 		FF21FAE61FAB5588004D0ADA /* JGGDetailInfoFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAE51FAB5588004D0ADA /* JGGDetailInfoFooterView.swift */; };
@@ -145,6 +146,7 @@
 		FFA21F6E1FABC33400F5A6DA /* JGGJobBookedInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA21F6C1FABC33400F5A6DA /* JGGJobBookedInfoCell.xib */; };
 		FFA21F711FABC57F00F5A6DA /* JGGTagListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA21F6F1FABC57F00F5A6DA /* JGGTagListCell.swift */; };
 		FFA21F721FABC57F00F5A6DA /* JGGTagListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA21F701FABC57F00F5A6DA /* JGGTagListCell.xib */; };
+		FFB64BB11FB765190028B77B /* JGGActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB64BB01FB765190028B77B /* JGGActionSheet.xib */; };
 		FFFC213B1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFC213A1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift */; };
 		FFFC213D1FB5BFFA00AAA6F7 /* JGGAppointmentDetailBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFC213C1FB5BFFA00AAA6F7 /* JGGAppointmentDetailBaseVC.swift */; };
 		FFFC213F1FB5C0AA00AAA6F7 /* JGGBidDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFC213E1FB5C0AA00AAA6F7 /* JGGBidDetailVC.swift */; };
@@ -234,6 +236,7 @@
 		FF0CA88A1FB1BA3B00A2C98B /* JGGAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGAlertViewController.xib; sourceTree = "<group>"; };
 		FF0CA88D1FB1CFCD00A2C98B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		FF0CA88F1FB205F600A2C98B /* JGGLocationMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGLocationMapVC.swift; sourceTree = "<group>"; };
+		FF10743A1FB67AD100C8BFE3 /* JGGActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGActionSheet.swift; sourceTree = "<group>"; };
 		FF21FAE11FAB5525004D0ADA /* JGGImageCarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGImageCarouselCell.swift; sourceTree = "<group>"; };
 		FF21FAE31FAB5535004D0ADA /* JGGImageCarouselCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGImageCarouselCell.xib; sourceTree = "<group>"; };
 		FF21FAE51FAB5588004D0ADA /* JGGDetailInfoFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGDetailInfoFooterView.swift; sourceTree = "<group>"; };
@@ -294,6 +297,7 @@
 		FFA21F6C1FABC33400F5A6DA /* JGGJobBookedInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGJobBookedInfoCell.xib; sourceTree = "<group>"; };
 		FFA21F6F1FABC57F00F5A6DA /* JGGTagListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGTagListCell.swift; sourceTree = "<group>"; };
 		FFA21F701FABC57F00F5A6DA /* JGGTagListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGTagListCell.xib; sourceTree = "<group>"; };
+		FFB64BB01FB765190028B77B /* JGGActionSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGActionSheet.xib; sourceTree = "<group>"; };
 		FFFC213A1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGCanInviteUserListVC.swift; sourceTree = "<group>"; };
 		FFFC213C1FB5BFFA00AAA6F7 /* JGGAppointmentDetailBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppointmentDetailBaseVC.swift; sourceTree = "<group>"; };
 		FFFC213E1FB5C0AA00AAA6F7 /* JGGBidDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGBidDetailVC.swift; sourceTree = "<group>"; };
@@ -489,6 +493,7 @@
 		63BE91B91FA0257D00D40C07 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FF1074391FB671C200C8BFE3 /* ActionSheet */,
 				FF0CA8881FB1BA1C00A2C98B /* AlertView */,
 				63BE91C41FA025F100D40C07 /* Base */,
 				63955EE01FA0641800D825B2 /* View */,
@@ -665,6 +670,15 @@
 				FF0CA88A1FB1BA3B00A2C98B /* JGGAlertViewController.xib */,
 			);
 			path = AlertView;
+			sourceTree = "<group>";
+		};
+		FF1074391FB671C200C8BFE3 /* ActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				FF10743A1FB67AD100C8BFE3 /* JGGActionSheet.swift */,
+				FFB64BB01FB765190028B77B /* JGGActionSheet.xib */,
+			);
+			path = ActionSheet;
 			sourceTree = "<group>";
 		};
 		FF21FAF11FAB6387004D0ADA /* AZDropDownMenu */ = {
@@ -852,6 +866,7 @@
 				63BE91DF1FA0263C00D40C07 /* Muli-Italic.ttf in Resources */,
 				FF9E9E6E1FAC52C600F32283 /* JGGUserAvatarNameRateCell.xib in Resources */,
 				FFA21F6A1FABC20000F5A6DA /* JGGTotalReviewCell.xib in Resources */,
+				FFB64BB11FB765190028B77B /* JGGActionSheet.xib in Resources */,
 				FFA21F5E1FAB87D600F5A6DA /* JGGBorderButtonCell.xib in Resources */,
 				FFA061B61FAB4C2D00185C56 /* 222.jpg in Resources */,
 				63BE91E11FA0263C00D40C07 /* Muli-LightItalic.ttf in Resources */,
@@ -1074,6 +1089,7 @@
 				631EF2A51FA875D8001D2915 /* JGGBiddingProviderModel.swift in Sources */,
 				63955EDA1FA0599400D825B2 /* UIButton.swift in Sources */,
 				63B755EC1FA1BF020032B4F1 /* JGGJobModel.swift in Sources */,
+				FF10743B1FB67AD100C8BFE3 /* JGGActionSheet.swift in Sources */,
 				FFFC21411FB6005F00AAA6F7 /* JGGAppointmentNC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

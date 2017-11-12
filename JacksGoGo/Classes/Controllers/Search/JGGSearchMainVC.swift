@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JGGServiceMainVC: JGGTableViewController {
+class JGGSearchMainVC: JGGStartTableVC {
 
     @IBOutlet weak var lblTotalServiceCounts: UILabel!
     @IBOutlet weak var lblNewServiceCounts: UILabel!
@@ -85,12 +85,12 @@ class JGGServiceMainVC: JGGTableViewController {
     }
 
     private func addTabNavigationBar() {
-        if let view = UINib(nibName: "JGGAppHomeTabView", bundle: nil).instantiate(withOwner: self, options: nil).first as? JGGAppHomeTabView {
+        if let view = UINib(nibName: "JGGSearchHomeTabView", bundle: nil).instantiate(withOwner: self, options: nil).first as? JGGSearchHomeTabView {
             let size = self.navigationController!.navigationBar.bounds.size
             let frame = CGRect(origin: CGPoint.zero, size: size)
             view.frame = frame
             self.navigationItem.titleView = view
-//            view.delegate = self
+            view.delegate = self
         }
     }
     
@@ -103,8 +103,8 @@ class JGGServiceMainVC: JGGTableViewController {
     }
     
     private func initCollectionView() {
-        self.clsviewAllCategories.register(UINib(nibName: "JGGServiceCategorySelectCell", bundle: nil),
-                                           forCellWithReuseIdentifier: "JGGServiceCategorySelectCell")
+        self.clsviewAllCategories.register(UINib(nibName: "JGGSearchCategorySelectCell", bundle: nil),
+                                           forCellWithReuseIdentifier: "JGGSearchCategorySelectCell")
         self.clsviewAllCategories.dataSource = self
         self.clsviewAllCategories.delegate = self
     }
@@ -120,7 +120,13 @@ class JGGServiceMainVC: JGGTableViewController {
     
 }
 
-extension JGGServiceMainVC: UICollectionViewDataSource, UICollectionViewDelegate {
+extension JGGSearchMainVC: JGGSearchHomeTabViewDelegate {
+    func searchHomeTabView(_ view: JGGSearchHomeTabView, selectedButton: SearchTabButton) {
+        
+    }
+}
+
+extension JGGSearchMainVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if categories.count > 9 {
             return 9
@@ -130,7 +136,7 @@ extension JGGServiceMainVC: UICollectionViewDataSource, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "JGGServiceCategorySelectCell", for: indexPath) as! JGGServiceCategorySelectCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "JGGSearchCategorySelectCell", for: indexPath) as! JGGSearchCategorySelectCell
         if indexPath.row == 8 && categories.count > 9 {
             cell.lblTitle.text = LocalizedString("Other Professions")
             cell.imgviewIcon.image = UIImage(named: "icon_cat_other")
@@ -147,7 +153,7 @@ extension JGGServiceMainVC: UICollectionViewDataSource, UICollectionViewDelegate
     }
 }
 
-extension JGGServiceMainVC { // UITableViewDataSource, UITableViewDelegate
+extension JGGSearchMainVC { // UITableViewDataSource, UITableViewDelegate
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

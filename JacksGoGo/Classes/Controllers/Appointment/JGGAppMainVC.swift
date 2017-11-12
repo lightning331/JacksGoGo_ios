@@ -33,7 +33,7 @@ class JGGAppMainVC: JGGStartTableVC {
 
     fileprivate var selectedTab: AppointmentTabButton = .pending
     
-    
+    // MARK: -
     
     override func viewDidLoad() {
         super.viewDidLoad()

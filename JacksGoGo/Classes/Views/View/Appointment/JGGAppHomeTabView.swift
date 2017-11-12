@@ -61,6 +61,9 @@ class JGGAppHomeTabView: UIView {
 
     @IBAction func onPressButton(_ sender: UIButton) {
 
+        if selectedTabButton == sender {
+            return
+        }
         if sender == btnFilter {
             delegate?.appointmentHomeTabView(self, selectedButton: .filter)
         } else {
@@ -88,6 +91,7 @@ class JGGAppHomeTabView: UIView {
                 btnHistory.setTitleColor(UIColor.JGGOrange, for: .normal)
                 viewHistoryDot.isHidden = false
             }
+            selectedTabButton = sender
         }
     }
 }

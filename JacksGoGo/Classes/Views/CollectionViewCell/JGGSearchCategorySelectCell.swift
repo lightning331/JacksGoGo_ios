@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JGGServiceCategorySelectCell: UICollectionViewCell {
+class JGGSearchCategorySelectCell: UICollectionViewCell {
 
     @IBOutlet weak var imgviewIcon: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!

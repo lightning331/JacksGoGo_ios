@@ -33,3 +33,18 @@ class JGGViewController: UIViewController {
     */
 
 }
+
+extension UIViewController {
+    func updateConstraint(_ animate: Bool = true) -> Void {
+        if animate == true {
+            self.view.setNeedsUpdateConstraints()
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                self.view.layoutIfNeeded()
+            }, completion: { (complete) in
+                
+            })
+        } else {
+            updateViewConstraints()
+        }
+    }
+}

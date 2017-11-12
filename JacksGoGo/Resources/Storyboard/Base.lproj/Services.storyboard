@@ -20,7 +20,7 @@
         <!--Services-->
         <scene sceneID="Wys-aB-MNr">
             <objects>
-                <tableViewController storyboardIdentifier="JGGServiceMainVC" id="E6Q-HR-uYC" customClass="JGGServiceMainVC" customModule="JacksGoGo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="JGGSearchMainVC" id="E6Q-HR-uYC" customClass="JGGSearchMainVC" customModule="JacksGoGo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sFh-RS-IgW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -221,7 +221,7 @@
         <!--Search-->
         <scene sceneID="GLQ-Ip-xe7">
             <objects>
-                <navigationController id="D7p-Pt-t9i" sceneMemberID="viewController">
+                <navigationController id="D7p-Pt-t9i" customClass="JGGSearchNC" customModule="JacksGoGo" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" image="tab_search" selectedImage="tab_search_active" id="Y4G-vP-e3K"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="H2T-bF-qDE">

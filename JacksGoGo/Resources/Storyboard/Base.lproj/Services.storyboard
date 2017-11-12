@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -25,9 +24,9 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sFh-RS-IgW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="U6U-j3-5QE">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="536"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zdq-Pl-vBP">
@@ -83,6 +82,9 @@
                                                     <state key="normal" title="View My Services">
                                                         <color key="titleColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="onPressedViewMyServices:" destination="E6Q-HR-uYC" eventType="touchUpInside" id="zoa-WM-fq9"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_tick_round_green" translatesAutoresizingMaskIntoConstraints="NO" id="ZBE-4w-sdC">
                                                     <rect key="frame" x="50" y="16" width="40" height="40"/>
@@ -94,6 +96,9 @@
                                                     <state key="normal" title="View All">
                                                         <color key="titleColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="onPressedViewAll:" destination="E6Q-HR-uYC" eventType="touchUpInside" id="Hbt-8l-F4M"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_viewall_round_green" translatesAutoresizingMaskIntoConstraints="NO" id="Xz3-sM-w3Z">
                                                     <rect key="frame" x="170" y="16" width="40" height="40"/>
@@ -105,6 +110,9 @@
                                                     <state key="normal" title="Post New">
                                                         <color key="titleColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="onPressedPostNew:" destination="E6Q-HR-uYC" eventType="touchUpInside" id="g7c-Fx-EWM"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_addnew_round_green" translatesAutoresizingMaskIntoConstraints="NO" id="mRE-ii-eOb">
                                                     <rect key="frame" x="280" y="16" width="40" height="40"/>
@@ -155,51 +163,19 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cBa-rU-cfE">
-                                    <rect key="frame" x="37.5" y="211.5" width="300" height="300"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <rect key="frame" x="37.5" y="211.5" width="300" height="340"/>
+                                    <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="300" id="dmP-Qc-1uW"/>
+                                        <constraint firstAttribute="height" constant="340" id="dmP-Qc-1uW"/>
                                         <constraint firstAttribute="width" constant="300" id="pdo-Xm-AAL"/>
                                     </constraints>
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="nlZ-g7-OQc">
-                                        <size key="itemSize" width="94" height="94"/>
+                                        <size key="itemSize" width="94" height="105"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </collectionViewFlowLayout>
-                                    <cells>
-                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Kfy-PU-Wzu">
-                                            <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourited Services" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6e-eS-xhm">
-                                                        <rect key="frame" x="8" y="55.5" width="78" height="30.5"/>
-                                                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_cat_favourites" translatesAutoresizingMaskIntoConstraints="NO" id="Aha-8I-cRF">
-                                                        <rect key="frame" x="8" y="8" width="78" height="40"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="aoF-qI-TMK"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                </subviews>
-                                            </view>
-                                            <constraints>
-                                                <constraint firstItem="Aha-8I-cRF" firstAttribute="leading" secondItem="Kfy-PU-Wzu" secondAttribute="leadingMargin" id="4px-86-yG6"/>
-                                                <constraint firstAttribute="trailing" secondItem="h6e-eS-xhm" secondAttribute="trailing" constant="8" id="A8Z-Wc-fjr"/>
-                                                <constraint firstItem="h6e-eS-xhm" firstAttribute="top" secondItem="Aha-8I-cRF" secondAttribute="bottom" constant="7.5" id="GGf-fU-CKg"/>
-                                                <constraint firstAttribute="bottom" secondItem="h6e-eS-xhm" secondAttribute="bottom" constant="8" id="Mfk-Rm-tOZ"/>
-                                                <constraint firstItem="h6e-eS-xhm" firstAttribute="leading" secondItem="Kfy-PU-Wzu" secondAttribute="leading" constant="8" id="Wuw-iE-2I3"/>
-                                                <constraint firstItem="Aha-8I-cRF" firstAttribute="trailing" secondItem="Kfy-PU-Wzu" secondAttribute="trailingMargin" id="qau-9d-XgC"/>
-                                                <constraint firstItem="Aha-8I-cRF" firstAttribute="top" secondItem="Kfy-PU-Wzu" secondAttribute="topMargin" id="xQN-cv-ggg"/>
-                                            </constraints>
-                                        </collectionViewCell>
-                                    </cells>
+                                    <cells/>
                                 </collectionView>
                             </subviews>
                             <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -215,7 +191,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="51Z-VA-99E">
-                                <rect key="frame" x="0.0" y="564" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="581" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="51Z-VA-99E" id="8aR-bt-vkW">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -229,6 +205,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Services" id="yvN-VB-Pxr"/>
+                    <connections>
+                        <outlet property="btnPostNew" destination="a4x-aQ-WlD" id="TPH-km-Hvf"/>
+                        <outlet property="btnViewAll" destination="mQv-RQ-9gD" id="hQ0-IP-eS6"/>
+                        <outlet property="btnViewMyServices" destination="J3X-yc-Svp" id="BLL-Oz-EMC"/>
+                        <outlet property="clsviewAllCategories" destination="cBa-rU-cfE" id="btN-ee-lN9"/>
+                        <outlet property="lblNewServiceCounts" destination="tuI-0f-5RV" id="8fo-qS-9Ei"/>
+                        <outlet property="lblTotalServiceCounts" destination="LnN-Ei-kBl" id="SOW-Ql-Fgc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K1O-aB-wfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -257,7 +241,6 @@
         <image name="button_addnew_round_green" width="40" height="40"/>
         <image name="button_tick_round_green" width="40" height="40"/>
         <image name="button_viewall_round_green" width="40" height="40"/>
-        <image name="icon_cat_favourites" width="56" height="56"/>
         <image name="tab_search" width="30" height="26"/>
         <image name="tab_search_active" width="30" height="26"/>
     </resources>

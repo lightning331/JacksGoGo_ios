@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Regular.ttf">
+            <string>Muli-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="mjM-Yq-W7u" customClass="JGGServiceCategorySelectCell" customModule="JacksGoGo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourited Services" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qxg-2a-NhU">
+                        <rect key="frame" x="8" y="55.5" width="78" height="30.5"/>
+                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_cat_favourites" translatesAutoresizingMaskIntoConstraints="NO" id="78V-LU-aMa">
+                        <rect key="frame" x="16" y="8" width="62" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="u0w-iT-kih"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="78V-LU-aMa" firstAttribute="trailing" secondItem="mjM-Yq-W7u" secondAttribute="trailingMargin" id="1Be-ne-qLT"/>
+                <constraint firstItem="Qxg-2a-NhU" firstAttribute="top" secondItem="78V-LU-aMa" secondAttribute="bottom" constant="7.5" id="5or-cV-W1Y"/>
+                <constraint firstAttribute="trailing" secondItem="Qxg-2a-NhU" secondAttribute="trailing" constant="8" id="QBG-wT-CYB"/>
+                <constraint firstItem="Qxg-2a-NhU" firstAttribute="leading" secondItem="mjM-Yq-W7u" secondAttribute="leading" constant="8" id="WVw-XL-Ryh"/>
+                <constraint firstItem="78V-LU-aMa" firstAttribute="leading" secondItem="mjM-Yq-W7u" secondAttribute="leadingMargin" id="kEV-Xf-5ur"/>
+                <constraint firstItem="78V-LU-aMa" firstAttribute="top" secondItem="mjM-Yq-W7u" secondAttribute="topMargin" constant="8" id="tgf-jq-D2r"/>
+                <constraint firstAttribute="bottom" secondItem="Qxg-2a-NhU" secondAttribute="bottom" constant="8" id="xmO-62-9eK"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="2hU-nR-Hxw"/>
+            <connections>
+                <outlet property="imgviewIcon" destination="78V-LU-aMa" id="myG-jU-tbE"/>
+                <outlet property="lblTitle" destination="Qxg-2a-NhU" id="OA4-NQ-Xj8"/>
+            </connections>
+            <point key="canvasLocation" x="-214" y="-47"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icon_cat_favourites" width="56" height="56"/>
+    </resources>
+</document>

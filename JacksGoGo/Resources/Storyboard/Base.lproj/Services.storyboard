@@ -6,9 +6,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
         <array key="Muli-Bold.ttf">
             <string>Muli-Bold</string>
         </array>
@@ -84,10 +88,11 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="onPressedViewMyServices:" destination="E6Q-HR-uYC" eventType="touchUpInside" id="zoa-WM-fq9"/>
+                                                        <segue destination="DmS-2k-BsB" kind="show" id="QTn-VN-Xuz"/>
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_tick_round_green" translatesAutoresizingMaskIntoConstraints="NO" id="ZBE-4w-sdC">
-                                                    <rect key="frame" x="50" y="16" width="40" height="40"/>
+                                                    <rect key="frame" x="49.5" y="16" width="40" height="40"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQv-RQ-9gD">
                                                     <rect key="frame" x="138.5" y="0.0" width="102.5" height="92"/>
@@ -98,6 +103,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="onPressedViewAll:" destination="E6Q-HR-uYC" eventType="touchUpInside" id="Hbt-8l-F4M"/>
+                                                        <segue destination="tIL-c8-2QP" kind="show" id="kld-Il-OLI"/>
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_viewall_round_green" translatesAutoresizingMaskIntoConstraints="NO" id="Xz3-sM-w3Z">
@@ -115,7 +121,7 @@
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_addnew_round_green" translatesAutoresizingMaskIntoConstraints="NO" id="mRE-ii-eOb">
-                                                    <rect key="frame" x="280" y="16" width="40" height="40"/>
+                                                    <rect key="frame" x="279.5" y="16" width="40" height="40"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -204,7 +210,9 @@
                             <outlet property="delegate" destination="E6Q-HR-uYC" id="Fi0-Z6-v0V"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Services" id="yvN-VB-Pxr"/>
+                    <navigationItem key="navigationItem" title="Services" id="yvN-VB-Pxr">
+                        <barButtonItem key="backBarButtonItem" title=" " id="c9i-xP-pLu"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="btnPostNew" destination="a4x-aQ-WlD" id="TPH-km-Hvf"/>
                         <outlet property="btnViewAll" destination="mQv-RQ-9gD" id="hQ0-IP-eS6"/>
@@ -218,10 +226,61 @@
             </objects>
             <point key="canvasLocation" x="581.60000000000002" y="158.77061469265368"/>
         </scene>
+        <!--Service Listing-->
+        <scene sceneID="cJQ-bz-NfW">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="DmS-2k-BsB" customClass="JGGServiceListingVC" customModule="JacksGoGo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w28-cE-V5p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tNq-Uk-DCP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="DmS-2k-BsB" id="wJz-78-pVt"/>
+                                    <outlet property="delegate" destination="DmS-2k-BsB" id="c1i-Rq-ICv"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Pa-If-6Kh">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8fM-pL-Wbs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                                <state key="normal" title="Post New Service">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tNq-Uk-DCP" firstAttribute="trailing" secondItem="1Gi-KG-whF" secondAttribute="trailing" id="AbI-bU-ePv"/>
+                            <constraint firstItem="5Pa-If-6Kh" firstAttribute="trailing" secondItem="1Gi-KG-whF" secondAttribute="trailing" id="Gcb-84-Yyx"/>
+                            <constraint firstItem="tNq-Uk-DCP" firstAttribute="leading" secondItem="1Gi-KG-whF" secondAttribute="leading" id="Nzd-Hl-aBl"/>
+                            <constraint firstItem="5Pa-If-6Kh" firstAttribute="leading" secondItem="1Gi-KG-whF" secondAttribute="leading" id="Ou9-Tb-UBc"/>
+                            <constraint firstItem="5Pa-If-6Kh" firstAttribute="top" secondItem="tNq-Uk-DCP" secondAttribute="bottom" id="VDT-1z-3G3"/>
+                            <constraint firstItem="5Pa-If-6Kh" firstAttribute="bottom" secondItem="1Gi-KG-whF" secondAttribute="bottom" id="cNA-cd-r08"/>
+                            <constraint firstItem="tNq-Uk-DCP" firstAttribute="top" secondItem="w28-cE-V5p" secondAttribute="top" id="jXT-8P-gfu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1Gi-KG-whF"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Service Listing" id="asU-Z9-g2L"/>
+                    <connections>
+                        <outlet property="btnPostNewService" destination="5Pa-If-6Kh" id="e8o-WL-kjV"/>
+                        <outlet property="constraintBottomSpaceOfBottomView" destination="cNA-cd-r08" id="Myb-LN-cCx"/>
+                        <outlet property="tableView" destination="tNq-Uk-DCP" id="8PT-09-r8B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aOy-0z-9oU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1412" y="159"/>
+        </scene>
         <!--Search-->
         <scene sceneID="GLQ-Ip-xe7">
             <objects>
-                <navigationController id="D7p-Pt-t9i" customClass="JGGSearchNC" customModule="JacksGoGo" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController hidesBarsOnSwipe="YES" id="D7p-Pt-t9i" customClass="JGGSearchNC" customModule="JacksGoGo" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" image="tab_search" selectedImage="tab_search_active" id="Y4G-vP-e3K"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="H2T-bF-qDE">
@@ -236,9 +295,130 @@
             </objects>
             <point key="canvasLocation" x="-369" y="159"/>
         </scene>
+        <!--Active Services Around-->
+        <scene sceneID="XEi-hE-TuU">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="tIL-c8-2QP" customClass="JGGActiveServicesAroundVC" customModule="JacksGoGo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hSf-6u-sLy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ylo-mV-NFP">
+                                <rect key="frame" x="0.0" y="124" width="375" height="493"/>
+                                <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="tIL-c8-2QP" id="Nna-dl-27A"/>
+                                    <outlet property="delegate" destination="tIL-c8-2QP" id="HaA-nj-vbg"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dP1-wY-wx2">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="QEX-eU-CTA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                                <state key="normal" title="Post New Service">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ce3-Kn-IPX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="60"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V8n-M3-BA1">
+                                        <rect key="frame" x="0.0" y="58" width="375" height="2"/>
+                                        <color key="backgroundColor" red="0.91757661099999999" green="0.91768664119999999" blue="0.91753917929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="cdv-uc-Go0"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVp-k7-FWr">
+                                        <rect key="frame" x="16" y="8" width="86" height="42"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="By Distance">
+                                            <color key="titleColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIK-XT-os9">
+                                        <rect key="frame" x="118" y="8" width="78" height="42"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="By Ratings">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPj-Uc-9rT">
+                                        <rect key="frame" x="322" y="8" width="45" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="9w7-2D-noK"/>
+                                        </constraints>
+                                        <state key="normal" image="button_mapview_green">
+                                            <color key="titleColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4NX-zb-6x3">
+                                        <rect key="frame" x="269" y="8" width="45" height="42"/>
+                                        <state key="normal" image="button_filter_green">
+                                            <color key="titleColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="V8n-M3-BA1" firstAttribute="top" secondItem="BPj-Uc-9rT" secondAttribute="bottom" constant="8" id="31J-9k-BPr"/>
+                                    <constraint firstItem="V8n-M3-BA1" firstAttribute="top" secondItem="OVp-k7-FWr" secondAttribute="bottom" constant="8" id="4b1-eD-r8W"/>
+                                    <constraint firstItem="4NX-zb-6x3" firstAttribute="top" secondItem="BPj-Uc-9rT" secondAttribute="top" id="6t9-2I-0pk"/>
+                                    <constraint firstItem="BPj-Uc-9rT" firstAttribute="leading" secondItem="4NX-zb-6x3" secondAttribute="trailing" constant="8" id="7qK-gY-oAs"/>
+                                    <constraint firstItem="BPj-Uc-9rT" firstAttribute="top" secondItem="Ce3-Kn-IPX" secondAttribute="top" constant="8" id="DaY-tA-f6x"/>
+                                    <constraint firstItem="dIK-XT-os9" firstAttribute="bottom" secondItem="OVp-k7-FWr" secondAttribute="bottom" id="IAx-4H-6m0"/>
+                                    <constraint firstItem="4NX-zb-6x3" firstAttribute="bottom" secondItem="BPj-Uc-9rT" secondAttribute="bottom" id="Lfo-kk-Cho"/>
+                                    <constraint firstItem="OVp-k7-FWr" firstAttribute="top" secondItem="Ce3-Kn-IPX" secondAttribute="top" constant="8" id="Pzr-hR-Bhc"/>
+                                    <constraint firstItem="dIK-XT-os9" firstAttribute="top" secondItem="OVp-k7-FWr" secondAttribute="top" id="aYz-S9-dW1"/>
+                                    <constraint firstAttribute="trailing" secondItem="V8n-M3-BA1" secondAttribute="trailing" id="bBX-Km-X7w"/>
+                                    <constraint firstAttribute="height" constant="60" id="bZt-JD-Aaq"/>
+                                    <constraint firstItem="OVp-k7-FWr" firstAttribute="leading" secondItem="Ce3-Kn-IPX" secondAttribute="leading" constant="16" id="fok-Tm-99X"/>
+                                    <constraint firstAttribute="bottom" secondItem="V8n-M3-BA1" secondAttribute="bottom" id="hg6-Y4-uie"/>
+                                    <constraint firstItem="V8n-M3-BA1" firstAttribute="leading" secondItem="Ce3-Kn-IPX" secondAttribute="leading" id="i7j-h9-Owa"/>
+                                    <constraint firstAttribute="trailing" secondItem="BPj-Uc-9rT" secondAttribute="trailing" constant="8" id="jEn-0j-VaL"/>
+                                    <constraint firstItem="4NX-zb-6x3" firstAttribute="width" secondItem="BPj-Uc-9rT" secondAttribute="width" id="qy6-9a-yXQ"/>
+                                    <constraint firstItem="dIK-XT-os9" firstAttribute="leading" secondItem="OVp-k7-FWr" secondAttribute="trailing" constant="16" id="uED-Kk-a9g"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dP1-wY-wx2" firstAttribute="leading" secondItem="LRw-pO-COb" secondAttribute="leading" id="3MC-0r-Er8"/>
+                            <constraint firstItem="ylo-mV-NFP" firstAttribute="leading" secondItem="LRw-pO-COb" secondAttribute="leading" id="Ka5-fM-5wz"/>
+                            <constraint firstItem="Ce3-Kn-IPX" firstAttribute="trailing" secondItem="LRw-pO-COb" secondAttribute="trailing" id="NGV-34-Ty6"/>
+                            <constraint firstItem="Ce3-Kn-IPX" firstAttribute="top" secondItem="LRw-pO-COb" secondAttribute="top" id="YC5-NS-LMw"/>
+                            <constraint firstItem="dP1-wY-wx2" firstAttribute="bottom" secondItem="LRw-pO-COb" secondAttribute="bottom" id="Zal-BL-4XF"/>
+                            <constraint firstItem="ylo-mV-NFP" firstAttribute="trailing" secondItem="LRw-pO-COb" secondAttribute="trailing" id="g1K-jQ-92I"/>
+                            <constraint firstItem="ylo-mV-NFP" firstAttribute="top" secondItem="Ce3-Kn-IPX" secondAttribute="bottom" id="gCW-9S-M9m"/>
+                            <constraint firstItem="dP1-wY-wx2" firstAttribute="top" secondItem="ylo-mV-NFP" secondAttribute="bottom" id="j9W-gy-OKR"/>
+                            <constraint firstItem="Ce3-Kn-IPX" firstAttribute="leading" secondItem="LRw-pO-COb" secondAttribute="leading" id="tqH-Ua-E4h"/>
+                            <constraint firstItem="dP1-wY-wx2" firstAttribute="trailing" secondItem="LRw-pO-COb" secondAttribute="trailing" id="xev-5g-ImP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LRw-pO-COb"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Active Services Around" id="riz-fo-ETp"/>
+                    <connections>
+                        <outlet property="btnByDistance" destination="OVp-k7-FWr" id="CaS-Fl-Wf4"/>
+                        <outlet property="btnByRatings" destination="dIK-XT-os9" id="785-Q4-gEV"/>
+                        <outlet property="btnFilter" destination="4NX-zb-6x3" id="73S-fh-Hw8"/>
+                        <outlet property="btnMapView" destination="BPj-Uc-9rT" id="tMc-tn-881"/>
+                        <outlet property="btnPostNewService" destination="dP1-wY-wx2" id="eOn-t0-OMm"/>
+                        <outlet property="constraintBottomSpaceOfBottomView" destination="Zal-BL-4XF" id="mSd-Fh-BKx"/>
+                        <outlet property="tableView" destination="ylo-mV-NFP" id="N7T-i0-KDd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q1C-Uw-daD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2224.8000000000002" y="158.77061469265368"/>
+        </scene>
     </scenes>
     <resources>
         <image name="button_addnew_round_green" width="40" height="40"/>
+        <image name="button_filter_green" width="32" height="32"/>
+        <image name="button_mapview_green" width="32" height="32"/>
         <image name="button_tick_round_green" width="40" height="40"/>
         <image name="button_viewall_round_green" width="40" height="40"/>
         <image name="tab_search" width="30" height="26"/>

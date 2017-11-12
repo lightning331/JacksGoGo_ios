@@ -18,21 +18,16 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
-            <connections>
-                <outlet property="btnExpand" destination="sQ6-hC-pPw" id="0cG-db-AKS"/>
-                <outlet property="imgviewCategoryIcon" destination="rF9-I9-jo8" id="kwg-fr-xyv"/>
-                <outlet property="lblCategoryName" destination="ypd-el-K1i" id="LP3-Kw-VWd"/>
-                <outlet property="lblJobCompleted" destination="yYu-6A-Wn3" id="J2V-kL-GPI"/>
-                <outlet property="lblTotalListedServices" destination="uDr-H4-Ax9" id="yAQ-ta-JzT"/>
-                <outlet property="lblVerifiedDate" destination="3LB-yi-mvt" id="buD-cY-WHX"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="JGGCategoryDetailHeaderView" customModule="JacksGoGo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EHT-he-c0w">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
+                    <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AcZ-k7-hUy">
                     <rect key="frame" x="0.0" y="16" width="375" height="4"/>
                     <color key="backgroundColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -184,14 +179,17 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="EHT-he-c0w" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="AQd-s8-oZL"/>
                 <constraint firstItem="BMN-2u-AoD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="BpP-6f-lby"/>
                 <constraint firstItem="Kty-HA-bxe" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="EKI-Vw-eLO"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Kty-HA-bxe" secondAttribute="bottom" constant="2" id="EYX-2f-Ot4"/>
                 <constraint firstItem="AcZ-k7-hUy" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="Hod-sb-QlS"/>
+                <constraint firstItem="EHT-he-c0w" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="LI2-HW-X9P"/>
+                <constraint firstItem="EHT-he-c0w" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="NR2-TU-402"/>
                 <constraint firstItem="AcZ-k7-hUy" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Wbg-HF-cmR"/>
                 <constraint firstItem="BMN-2u-AoD" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Xhg-Ma-1UG"/>
+                <constraint firstItem="EHT-he-c0w" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="kV2-qj-m3e"/>
                 <constraint firstItem="Kty-HA-bxe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="mbb-5a-Yux"/>
                 <constraint firstItem="AcZ-k7-hUy" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="pAO-Df-fKJ"/>
                 <constraint firstItem="Kty-HA-bxe" firstAttribute="top" secondItem="BMN-2u-AoD" secondAttribute="bottom" id="tzo-Ry-4z0"/>
@@ -199,6 +197,14 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="btnExpand" destination="sQ6-hC-pPw" id="Xdt-Mx-6XA"/>
+                <outlet property="imgviewCategoryIcon" destination="rF9-I9-jo8" id="yU3-BV-YTR"/>
+                <outlet property="lblCategoryName" destination="ypd-el-K1i" id="dOf-CL-gd0"/>
+                <outlet property="lblJobCompleted" destination="yYu-6A-Wn3" id="apQ-RX-ZK1"/>
+                <outlet property="lblTotalListedServices" destination="uDr-H4-Ax9" id="sM3-Gd-f1J"/>
+                <outlet property="lblVerifiedDate" destination="3LB-yi-mvt" id="iuG-Pb-5Eb"/>
+            </connections>
             <point key="canvasLocation" x="25.5" y="-181"/>
         </view>
     </objects>

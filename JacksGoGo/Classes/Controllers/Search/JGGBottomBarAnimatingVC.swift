@@ -26,15 +26,25 @@ class JGGBottomBarAnimatingVC: JGGServicesBaseVC {
         // Dispose of any resources that can be recreated.
     }
     
+    internal func shouldHideNavigationBarManually() -> Bool {
+        return false
+    }
+    
 }
 
 extension JGGBottomBarAnimatingVC: UITableViewDataSource, UITableViewDelegate {
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
         if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0 {
             self.changeTabBar(hidden: true, animated: true)
+            if shouldHideNavigationBarManually() {
+                self.navigationController?.setNavigationBarHidden(true, animated: true)
+            }
         }
         else{
             self.changeTabBar(hidden: false, animated: true)
+            if shouldHideNavigationBarManually() {
+                self.navigationController?.setNavigationBarHidden(false, animated: true)
+            }
         }
     }
     
@@ -45,7 +55,7 @@ extension JGGBottomBarAnimatingVC: UITableViewDataSource, UITableViewDelegate {
             }
             isShowBottomBar = !hidden
             if hidden {
-                constraint.constant = -50
+                constraint.constant = 50
             } else {
                 constraint.constant = 0
             }

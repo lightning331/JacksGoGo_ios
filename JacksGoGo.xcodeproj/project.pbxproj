@@ -101,6 +101,8 @@
 		FF21FB001FAB67E5004D0ADA /* FCAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAFD1FAB67E5004D0ADA /* FCAlertView.swift */; };
 		FF21FB011FAB67E5004D0ADA /* FCAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAFE1FAB67E5004D0ADA /* FCAlertViewDelegate.swift */; };
 		FF21FB021FAB67E5004D0ADA /* FCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAFF1FAB67E5004D0ADA /* FCColors.swift */; };
+		FF36F1681FB8CE920055674F /* JGGServiceListingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36F1671FB8CE920055674F /* JGGServiceListingVC.swift */; };
+		FF36F16A1FB8D4C60055674F /* JGGActiveServicesAroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36F1691FB8D4C60055674F /* JGGActiveServicesAroundVC.swift */; };
 		FF7C991F1FB3180800A2E5E4 /* JGGAppClinetServiceDetailRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C991E1FB3180800A2E5E4 /* JGGAppClinetServiceDetailRootVC.swift */; };
 		FF7C99221FB3316D00A2E5E4 /* JGGJobDetailStepHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C99211FB3316D00A2E5E4 /* JGGJobDetailStepHeaderView.swift */; };
 		FF7C99241FB3317700A2E5E4 /* JGGJobDetailStepHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF7C99231FB3317700A2E5E4 /* JGGJobDetailStepHeaderView.xib */; };
@@ -265,6 +267,8 @@
 		FF21FAFD1FAB67E5004D0ADA /* FCAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCAlertView.swift; sourceTree = "<group>"; };
 		FF21FAFE1FAB67E5004D0ADA /* FCAlertViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCAlertViewDelegate.swift; sourceTree = "<group>"; };
 		FF21FAFF1FAB67E5004D0ADA /* FCColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCColors.swift; sourceTree = "<group>"; };
+		FF36F1671FB8CE920055674F /* JGGServiceListingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceListingVC.swift; sourceTree = "<group>"; };
+		FF36F1691FB8D4C60055674F /* JGGActiveServicesAroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGActiveServicesAroundVC.swift; sourceTree = "<group>"; };
 		FF7C991E1FB3180800A2E5E4 /* JGGAppClinetServiceDetailRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppClinetServiceDetailRootVC.swift; sourceTree = "<group>"; };
 		FF7C99211FB3316D00A2E5E4 /* JGGJobDetailStepHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGJobDetailStepHeaderView.swift; sourceTree = "<group>"; };
 		FF7C99231FB3317700A2E5E4 /* JGGJobDetailStepHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGJobDetailStepHeaderView.xib; sourceTree = "<group>"; };
@@ -612,6 +616,8 @@
 				FF9E9E691FAC3F4B00F32283 /* JGGServiceDetailVC.swift */,
 				FFB64BB21FB7B03C0028B77B /* JGGSearchMainVC.swift */,
 				FF9E5A421FB842B2006C4B50 /* JGGBottomBarAnimatingVC.swift */,
+				FF36F1671FB8CE920055674F /* JGGServiceListingVC.swift */,
+				FF36F1691FB8D4C60055674F /* JGGActiveServicesAroundVC.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -1111,6 +1117,7 @@
 				FFB64BB31FB7B03C0028B77B /* JGGSearchMainVC.swift in Sources */,
 				632E78271FA2F92D00CFFB24 /* JGGAppFilterVC.swift in Sources */,
 				FF7C992E1FB3436600A2E5E4 /* JGGEditJobSummaryVC.swift in Sources */,
+				FF36F1681FB8CE920055674F /* JGGServiceListingVC.swift in Sources */,
 				FF7C992C1FB3434500A2E5E4 /* JGGEditJobBaseTableVC.swift in Sources */,
 				FF0CA88E1FB1CFCD00A2C98B /* String.swift in Sources */,
 				FF7C991F1FB3180800A2E5E4 /* JGGAppClinetServiceDetailRootVC.swift in Sources */,
@@ -1144,6 +1151,7 @@
 				63955EE21FA0643000D825B2 /* JGGAppSearchHeaderView.swift in Sources */,
 				FF9E5A331FB82656006C4B50 /* JGGSearchCategorySelectCell.swift in Sources */,
 				63955EDD1FA05C0B00D825B2 /* JGGAppHistoryListCell.swift in Sources */,
+				FF36F16A1FB8D4C60055674F /* JGGActiveServicesAroundVC.swift in Sources */,
 				63B755E41FA1BCCD0032B4F1 /* JGGServicePackageModel.swift in Sources */,
 				63B755EA1FA1BEA10032B4F1 /* JGGServiceModel.swift in Sources */,
 				63955ED61FA0594300D825B2 /* JGGTextField.swift in Sources */,

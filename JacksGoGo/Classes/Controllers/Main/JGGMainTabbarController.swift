@@ -16,7 +16,7 @@ class JGGMainTabbarController: UITabBarController {
         loadViewControllers()
         self.hidesBottomBarWhenPushed = true
         
-        self.selectedIndex = 2
+        self.selectedIndex = 1
     }
     
     fileprivate func loadViewControllers() {

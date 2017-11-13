@@ -107,6 +107,7 @@ class JGGSearchMainVC: JGGStartTableVC {
                                            forCellWithReuseIdentifier: "JGGSearchCategorySelectCell")
         self.clsviewAllCategories.dataSource = self
         self.clsviewAllCategories.delegate = self
+        
     }
     
     @IBAction func onPressedViewMyServices(_ sender: Any) {

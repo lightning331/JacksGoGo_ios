@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Bold.ttf">
+            <string>Muli-Bold</string>
+        </array>
+        <array key="Muli-Regular.ttf">
+            <string>Muli-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Gcn-Na-tz9" customClass="JGGSelectSkillHeaderView" customModule="JacksGoGo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="474"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WFM-ob-Dfs">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="386"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sDc-wa-3ce">
+                            <rect key="frame" x="120" y="30" width="80" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="Azh-j2-FqS"/>
+                                <constraint firstAttribute="height" constant="80" id="ylY-Ve-9Kg"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gls-hU-oUL">
+                            <rect key="frame" x="20" y="135" width="280" height="105.5"/>
+                            <string key="text">Join JacksGoGo!
+Start listing your services with us now!</string>
+                            <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why Should You Verify Your Skills With Us?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bhJ-d3-4ai">
+                            <rect key="frame" x="20" y="256.5" width="280" height="19"/>
+                            <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By verifying your skills, you will be listed as a verified service provider on our list." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgI-NN-kCn">
+                            <rect key="frame" x="20" y="283" width="280" height="38"/>
+                            <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose to verify from a category below:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPg-9z-8yb">
+                            <rect key="frame" x="20" y="351" width="280" height="19"/>
+                            <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="cgI-NN-kCn" secondAttribute="trailing" constant="20" id="4yQ-8J-obl"/>
+                        <constraint firstItem="cgI-NN-kCn" firstAttribute="top" secondItem="bhJ-d3-4ai" secondAttribute="bottom" constant="8" id="95A-3E-kmn"/>
+                        <constraint firstAttribute="trailing" secondItem="TPg-9z-8yb" secondAttribute="trailing" constant="20" id="ADY-pk-cVl"/>
+                        <constraint firstItem="TPg-9z-8yb" firstAttribute="top" secondItem="cgI-NN-kCn" secondAttribute="bottom" constant="30" id="BGe-LZ-3bj"/>
+                        <constraint firstItem="sDc-wa-3ce" firstAttribute="top" secondItem="WFM-ob-Dfs" secondAttribute="top" constant="30" id="Bx5-xj-ZGH"/>
+                        <constraint firstItem="cgI-NN-kCn" firstAttribute="leading" secondItem="WFM-ob-Dfs" secondAttribute="leading" constant="20" id="DxF-69-c9l"/>
+                        <constraint firstItem="bhJ-d3-4ai" firstAttribute="top" secondItem="Gls-hU-oUL" secondAttribute="bottom" constant="16" id="EPs-eg-zFD"/>
+                        <constraint firstItem="bhJ-d3-4ai" firstAttribute="leading" secondItem="WFM-ob-Dfs" secondAttribute="leading" constant="20" id="NgO-Ue-ZU0"/>
+                        <constraint firstItem="TPg-9z-8yb" firstAttribute="leading" secondItem="WFM-ob-Dfs" secondAttribute="leading" constant="20" id="PQ9-hc-8eg"/>
+                        <constraint firstItem="sDc-wa-3ce" firstAttribute="centerX" secondItem="WFM-ob-Dfs" secondAttribute="centerX" id="RnT-w1-C89"/>
+                        <constraint firstItem="Gls-hU-oUL" firstAttribute="top" secondItem="sDc-wa-3ce" secondAttribute="bottom" constant="25" id="U0w-b0-8ib"/>
+                        <constraint firstItem="Gls-hU-oUL" firstAttribute="leading" secondItem="WFM-ob-Dfs" secondAttribute="leading" constant="20" id="Wvu-Rq-bPe"/>
+                        <constraint firstAttribute="trailing" secondItem="Gls-hU-oUL" secondAttribute="trailing" constant="20" id="lgg-Fq-rNE"/>
+                        <constraint firstAttribute="trailing" secondItem="bhJ-d3-4ai" secondAttribute="trailing" constant="20" id="sSE-PB-Smt"/>
+                        <constraint firstAttribute="bottom" secondItem="TPg-9z-8yb" secondAttribute="bottom" constant="16" id="sod-Wd-Ht4"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kbd-yl-0OA">
+                    <rect key="frame" x="0.0" y="385" width="375" height="88"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can post a service in the categories you have already verified." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTu-AT-UcN">
+                            <rect key="frame" x="20" y="30" width="280" height="38"/>
+                            <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="OTu-AT-UcN" secondAttribute="bottom" constant="20" id="SZI-gT-ayn"/>
+                        <constraint firstAttribute="trailing" secondItem="OTu-AT-UcN" secondAttribute="trailing" constant="20" id="X8k-en-Xcr"/>
+                        <constraint firstItem="OTu-AT-UcN" firstAttribute="top" secondItem="kbd-yl-0OA" secondAttribute="top" constant="30" id="r6A-Tt-Fjj"/>
+                        <constraint firstItem="OTu-AT-UcN" firstAttribute="leading" secondItem="kbd-yl-0OA" secondAttribute="leading" constant="20" id="tck-8D-aXa"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="WFM-ob-Dfs" firstAttribute="trailing" secondItem="8hD-Vs-hkm" secondAttribute="trailing" id="RyX-ei-MQn"/>
+                <constraint firstItem="kbd-yl-0OA" firstAttribute="top" secondItem="8hD-Vs-hkm" secondAttribute="top" id="bVv-ig-4wX"/>
+                <constraint firstItem="WFM-ob-Dfs" firstAttribute="leading" secondItem="8hD-Vs-hkm" secondAttribute="leading" id="fwf-HY-QEj"/>
+                <constraint firstItem="kbd-yl-0OA" firstAttribute="leading" secondItem="8hD-Vs-hkm" secondAttribute="leading" id="i9g-N2-YRU"/>
+                <constraint firstItem="WFM-ob-Dfs" firstAttribute="top" secondItem="8hD-Vs-hkm" secondAttribute="top" id="vff-ec-xrg"/>
+                <constraint firstItem="kbd-yl-0OA" firstAttribute="trailing" secondItem="8hD-Vs-hkm" secondAttribute="trailing" id="xPY-0o-o70"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="8hD-Vs-hkm"/>
+            <connections>
+                <outlet property="viewFirstDescription" destination="WFM-ob-Dfs" id="asn-OM-4Ex"/>
+                <outlet property="viewSecondDescription" destination="kbd-yl-0OA" id="ncz-4D-qk9"/>
+            </connections>
+            <point key="canvasLocation" x="505.5" y="12"/>
+        </collectionReusableView>
+    </objects>
+</document>

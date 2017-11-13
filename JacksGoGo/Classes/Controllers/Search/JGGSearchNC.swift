@@ -14,6 +14,11 @@ class JGGSearchNC: JGGBaseNC {
         super.viewDidLoad()
 
         self.hidesBarsOnSwipe = true
+        
+        self.navigationBar.tintColor = UIColor.JGGGreen
+        self.navigationBar.titleTextAttributes =
+            [NSAttributedStringKey.foregroundColor: UIColor.JGGGreen]
+
     }
 
     override func didReceiveMemoryWarning() {

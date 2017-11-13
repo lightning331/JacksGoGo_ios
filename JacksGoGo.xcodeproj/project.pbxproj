@@ -160,6 +160,11 @@
 		FFA21F6E1FABC33400F5A6DA /* JGGJobBookedInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA21F6C1FABC33400F5A6DA /* JGGJobBookedInfoCell.xib */; };
 		FFA21F711FABC57F00F5A6DA /* JGGTagListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA21F6F1FABC57F00F5A6DA /* JGGTagListCell.swift */; };
 		FFA21F721FABC57F00F5A6DA /* JGGTagListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA21F701FABC57F00F5A6DA /* JGGTagListCell.xib */; };
+		FFA956001FBA332C00E89197 /* JGGSelectSkillHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA955FF1FBA332C00E89197 /* JGGSelectSkillHeaderView.swift */; };
+		FFA956021FBA336200E89197 /* JGGSelectSkillHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA956011FBA336200E89197 /* JGGSelectSkillHeaderView.xib */; };
+		FFA956051FBA368800E89197 /* JGGSelectSkillFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA956031FBA368800E89197 /* JGGSelectSkillFooterView.swift */; };
+		FFA956061FBA368800E89197 /* JGGSelectSkillFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA956041FBA368800E89197 /* JGGSelectSkillFooterView.xib */; };
+		FFA956081FBA3D1400E89197 /* JGGSelectSkillVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA956071FBA3D1400E89197 /* JGGSelectSkillVC.swift */; };
 		FFB64BB11FB765190028B77B /* JGGActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB64BB01FB765190028B77B /* JGGActionSheet.xib */; };
 		FFB64BB31FB7B03C0028B77B /* JGGSearchMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB64BB21FB7B03C0028B77B /* JGGSearchMainVC.swift */; };
 		FFFC213B1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFC213A1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift */; };
@@ -326,6 +331,11 @@
 		FFA21F6C1FABC33400F5A6DA /* JGGJobBookedInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGJobBookedInfoCell.xib; sourceTree = "<group>"; };
 		FFA21F6F1FABC57F00F5A6DA /* JGGTagListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGTagListCell.swift; sourceTree = "<group>"; };
 		FFA21F701FABC57F00F5A6DA /* JGGTagListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGTagListCell.xib; sourceTree = "<group>"; };
+		FFA955FF1FBA332C00E89197 /* JGGSelectSkillHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSelectSkillHeaderView.swift; sourceTree = "<group>"; };
+		FFA956011FBA336200E89197 /* JGGSelectSkillHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGSelectSkillHeaderView.xib; sourceTree = "<group>"; };
+		FFA956031FBA368800E89197 /* JGGSelectSkillFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSelectSkillFooterView.swift; sourceTree = "<group>"; };
+		FFA956041FBA368800E89197 /* JGGSelectSkillFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGSelectSkillFooterView.xib; sourceTree = "<group>"; };
+		FFA956071FBA3D1400E89197 /* JGGSelectSkillVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSelectSkillVC.swift; sourceTree = "<group>"; };
 		FFB64BB01FB765190028B77B /* JGGActionSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGActionSheet.xib; sourceTree = "<group>"; };
 		FFB64BB21FB7B03C0028B77B /* JGGSearchMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSearchMainVC.swift; sourceTree = "<group>"; };
 		FFFC213A1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGCanInviteUserListVC.swift; sourceTree = "<group>"; };
@@ -618,6 +628,7 @@
 				FF9E5A421FB842B2006C4B50 /* JGGBottomBarAnimatingVC.swift */,
 				FF36F1671FB8CE920055674F /* JGGServiceListingVC.swift */,
 				FF36F1691FB8D4C60055674F /* JGGActiveServicesAroundVC.swift */,
+				FFA956071FBA3D1400E89197 /* JGGSelectSkillVC.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -783,6 +794,10 @@
 				FF9E5A3B1FB83CB0006C4B50 /* JGGServiceDetailListCell.xib */,
 				FF9E5A3E1FB83D64006C4B50 /* JGGCategoryDetailHeaderView.swift */,
 				FF9E5A401FB83D85006C4B50 /* JGGCategoryDetailHeaderView.xib */,
+				FFA955FF1FBA332C00E89197 /* JGGSelectSkillHeaderView.swift */,
+				FFA956011FBA336200E89197 /* JGGSelectSkillHeaderView.xib */,
+				FFA956031FBA368800E89197 /* JGGSelectSkillFooterView.swift */,
+				FFA956041FBA368800E89197 /* JGGSelectSkillFooterView.xib */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -933,10 +948,12 @@
 				FF21FAF01FAB5E1C004D0ADA /* JGGNextStepTitleView.xib in Resources */,
 				63BE91DC1FA0263C00D40C07 /* Muli-ExtraBoldItalic.ttf in Resources */,
 				63955EDF1FA05C1F00D825B2 /* JGGAppHistoryListCell.xib in Resources */,
+				FFA956061FBA368800E89197 /* JGGSelectSkillFooterView.xib in Resources */,
 				FF21FAE81FAB5597004D0ADA /* JGGDetailInfoFooterView.xib in Resources */,
 				FF9E5A411FB83D85006C4B50 /* JGGCategoryDetailHeaderView.xib in Resources */,
 				63BE91DF1FA0263C00D40C07 /* Muli-Italic.ttf in Resources */,
 				FF9E9E6E1FAC52C600F32283 /* JGGUserAvatarNameRateCell.xib in Resources */,
+				FFA956021FBA336200E89197 /* JGGSelectSkillHeaderView.xib in Resources */,
 				FFA21F6A1FABC20000F5A6DA /* JGGTotalReviewCell.xib in Resources */,
 				FFB64BB11FB765190028B77B /* JGGActionSheet.xib in Resources */,
 				FF9E5A3D1FB83CB0006C4B50 /* JGGServiceDetailListCell.xib in Resources */,
@@ -1091,8 +1108,10 @@
 				63B8DC3E1FA19FEE003C6EBF /* JGGBaseNC.swift in Sources */,
 				FF7C993C1FB356D600A2E5E4 /* JGGEditJobStepRootVC.swift in Sources */,
 				FFA21F651FABC0A400F5A6DA /* JGGTimeSlotsAvailableCell.swift in Sources */,
+				FFA956051FBA368800E89197 /* JGGSelectSkillFooterView.swift in Sources */,
 				FF21FAEA1FAB5B2A004D0ADA /* JGGDetailInfoHeaderView.swift in Sources */,
 				631EF29D1FA8744F001D2915 /* JGGUserBaseModel.swift in Sources */,
+				FFA956081FBA3D1400E89197 /* JGGSelectSkillVC.swift in Sources */,
 				FF21FAF91FAB6387004D0ADA /* AZDropdownMenuBaseCell.swift in Sources */,
 				FF21FAFA1FAB6387004D0ADA /* AZDropdownMenuConfig.swift in Sources */,
 				FF9E5A451FB89C2B006C4B50 /* JGGSearchNC.swift in Sources */,
@@ -1156,6 +1175,7 @@
 				63B755EA1FA1BEA10032B4F1 /* JGGServiceModel.swift in Sources */,
 				63955ED61FA0594300D825B2 /* JGGTextField.swift in Sources */,
 				FF9E5A371FB826EA006C4B50 /* JGGServiceListCell.swift in Sources */,
+				FFA956001FBA332C00E89197 /* JGGSelectSkillHeaderView.swift in Sources */,
 				FF7C99361FB3569900A2E5E4 /* JGGEditJobTimeVC.swift in Sources */,
 				63955ED81FA0598800D825B2 /* UITextField.swift in Sources */,
 				FF7C993A1FB356B000A2E5E4 /* JGGEditJobReportVC.swift in Sources */,

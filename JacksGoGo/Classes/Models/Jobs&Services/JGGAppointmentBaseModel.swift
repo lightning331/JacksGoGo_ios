@@ -28,7 +28,7 @@ public enum AppointmentType {
 
 class JGGAppointmentBaseModel: JGGBaseModel {
 
-    var title: String?
+    var name: String?
     var status: AppointmentStatus = .none
     var comment: String?
     var badgeNumber: Int = 0

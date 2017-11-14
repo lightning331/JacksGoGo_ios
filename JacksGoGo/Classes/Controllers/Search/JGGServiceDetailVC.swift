@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JGGServiceDetailVC: JGGServicesBaseTableVC {
+class JGGServiceDetailVC: JGGSearchBaseTableVC {
     
     fileprivate var imgviewServiceAvatar: UIImageView!
     fileprivate var btnRequestAQuotation: UIButton!

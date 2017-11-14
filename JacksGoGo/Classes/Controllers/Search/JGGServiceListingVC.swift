@@ -8,9 +8,13 @@
 
 import UIKit
 
-class JGGServiceListingVC: JGGBottomBarAnimatingVC {
-
+class JGGServiceListingVC: JGGSearchBaseVC, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var constraintBottomSpaceOfBottomView: NSLayoutConstraint?
+    @IBOutlet weak var tableView: UITableView?
     @IBOutlet weak var btnPostNewService: UIButton!
+
+    fileprivate var isShowBottomBar: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +36,8 @@ class JGGServiceListingVC: JGGBottomBarAnimatingVC {
 
     }
 
+    // MARK: - UITableViewDataSource
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
@@ -46,11 +52,11 @@ class JGGServiceListingVC: JGGBottomBarAnimatingVC {
         return headerView
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JGGServiceDetailListCell") as! JGGServiceDetailListCell
         if indexPath.row == 0 {
             cell.imgviewShadow.isHidden = false
@@ -59,4 +65,30 @@ class JGGServiceListingVC: JGGBottomBarAnimatingVC {
         }
         return cell
     }
+    
+    // MARK: ScrollView delegate
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0 {
+            self.changeTabBar(hidden: true, animated: true)
+        }
+        else{
+            self.changeTabBar(hidden: false, animated: true)
+        }
+    }
+    
+    private func changeTabBar(hidden: Bool, animated: Bool) {
+        if let constraint = self.constraintBottomSpaceOfBottomView {
+            if (!hidden && isShowBottomBar) || (hidden && !isShowBottomBar) {
+                return
+            }
+            isShowBottomBar = !hidden
+            if hidden {
+                constraint.constant = 50
+            } else {
+                constraint.constant = 0
+            }
+            updateConstraint()
+        }
+    }
+
 }

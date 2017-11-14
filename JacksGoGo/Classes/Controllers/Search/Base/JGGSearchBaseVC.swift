@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JGGServicesBaseVC: JGGViewController {
+class JGGSearchBaseVC: JGGViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

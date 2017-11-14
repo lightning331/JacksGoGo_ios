@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JGGServicesBaseTableVC: JGGTableViewController {
+class JGGSearchBaseTableVC: JGGTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

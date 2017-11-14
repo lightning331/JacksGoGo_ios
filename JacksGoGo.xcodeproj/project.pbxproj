@@ -71,8 +71,8 @@
 		63BE91E31FA0263C00D40C07 /* Muli-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63BE91D51FA0263C00D40C07 /* Muli-SemiBold.ttf */; };
 		63BE91E41FA0263C00D40C07 /* Muli-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63BE91D61FA0263C00D40C07 /* Muli-SemiBoldItalic.ttf */; };
 		63BE91E71FA0274600D40C07 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BE91E61FA0274600D40C07 /* MapKit.framework */; };
-		63BE91F01FA0283600D40C07 /* JGGServicesBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91EF1FA0283600D40C07 /* JGGServicesBaseVC.swift */; };
-		63BE91F21FA0285200D40C07 /* JGGServicesBaseTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91F11FA0285200D40C07 /* JGGServicesBaseTableVC.swift */; };
+		63BE91F01FA0283600D40C07 /* JGGSearchBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91EF1FA0283600D40C07 /* JGGSearchBaseVC.swift */; };
+		63BE91F21FA0285200D40C07 /* JGGSearchBaseTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91F11FA0285200D40C07 /* JGGSearchBaseTableVC.swift */; };
 		63BE91F51FA0286C00D40C07 /* JGGAppointmentsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91F41FA0286C00D40C07 /* JGGAppointmentsTableVC.swift */; };
 		63BE91F71FA0287E00D40C07 /* JGGAppointmentsBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91F61FA0287E00D40C07 /* JGGAppointmentsBaseVC.swift */; };
 		63BE91F91FA0289D00D40C07 /* JGGMainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE91F81FA0289D00D40C07 /* JGGMainTabbarController.swift */; };
@@ -126,7 +126,6 @@
 		FF9E5A3D1FB83CB0006C4B50 /* JGGServiceDetailListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9E5A3B1FB83CB0006C4B50 /* JGGServiceDetailListCell.xib */; };
 		FF9E5A3F1FB83D64006C4B50 /* JGGCategoryDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E5A3E1FB83D64006C4B50 /* JGGCategoryDetailHeaderView.swift */; };
 		FF9E5A411FB83D85006C4B50 /* JGGCategoryDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9E5A401FB83D85006C4B50 /* JGGCategoryDetailHeaderView.xib */; };
-		FF9E5A431FB842B2006C4B50 /* JGGBottomBarAnimatingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E5A421FB842B2006C4B50 /* JGGBottomBarAnimatingVC.swift */; };
 		FF9E5A451FB89C2B006C4B50 /* JGGSearchNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E5A441FB89C2B006C4B50 /* JGGSearchNC.swift */; };
 		FF9E5A481FB89C94006C4B50 /* JGGSearchHomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E5A471FB89C94006C4B50 /* JGGSearchHomeTabView.swift */; };
 		FF9E5A4A1FB89CAE006C4B50 /* JGGSearchHomeTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9E5A491FB89CAE006C4B50 /* JGGSearchHomeTabView.xib */; };
@@ -165,6 +164,10 @@
 		FFA956051FBA368800E89197 /* JGGSelectSkillFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA956031FBA368800E89197 /* JGGSelectSkillFooterView.swift */; };
 		FFA956061FBA368800E89197 /* JGGSelectSkillFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA956041FBA368800E89197 /* JGGSelectSkillFooterView.xib */; };
 		FFA956081FBA3D1400E89197 /* JGGSelectSkillVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA956071FBA3D1400E89197 /* JGGSelectSkillVC.swift */; };
+		FFAD88B91FBB321E0001F423 /* JGGCallOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAD88B81FBB321E0001F423 /* JGGCallOutView.swift */; };
+		FFAD88BB1FBB324E0001F423 /* JGGServiceAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAD88BA1FBB324E0001F423 /* JGGServiceAnnotationView.swift */; };
+		FFAD88BD1FBB39520001F423 /* JGGServiceCallOutContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFAD88BC1FBB39520001F423 /* JGGServiceCallOutContentView.xib */; };
+		FFAD88BF1FBB3BBE0001F423 /* JGGServiceCallOutContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAD88BE1FBB3BBE0001F423 /* JGGServiceCallOutContentView.swift */; };
 		FFB64BB11FB765190028B77B /* JGGActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB64BB01FB765190028B77B /* JGGActionSheet.xib */; };
 		FFB64BB31FB7B03C0028B77B /* JGGSearchMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB64BB21FB7B03C0028B77B /* JGGSearchMainVC.swift */; };
 		FFFC213B1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFC213A1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift */; };
@@ -241,8 +244,8 @@
 		63BE91D51FA0263C00D40C07 /* Muli-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-SemiBold.ttf"; sourceTree = "<group>"; };
 		63BE91D61FA0263C00D40C07 /* Muli-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		63BE91E61FA0274600D40C07 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		63BE91EF1FA0283600D40C07 /* JGGServicesBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServicesBaseVC.swift; sourceTree = "<group>"; };
-		63BE91F11FA0285200D40C07 /* JGGServicesBaseTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServicesBaseTableVC.swift; sourceTree = "<group>"; };
+		63BE91EF1FA0283600D40C07 /* JGGSearchBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSearchBaseVC.swift; sourceTree = "<group>"; };
+		63BE91F11FA0285200D40C07 /* JGGSearchBaseTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSearchBaseTableVC.swift; sourceTree = "<group>"; };
 		63BE91F41FA0286C00D40C07 /* JGGAppointmentsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppointmentsTableVC.swift; sourceTree = "<group>"; };
 		63BE91F61FA0287E00D40C07 /* JGGAppointmentsBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppointmentsBaseVC.swift; sourceTree = "<group>"; };
 		63BE91F81FA0289D00D40C07 /* JGGMainTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGMainTabbarController.swift; sourceTree = "<group>"; };
@@ -297,7 +300,6 @@
 		FF9E5A3B1FB83CB0006C4B50 /* JGGServiceDetailListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGServiceDetailListCell.xib; sourceTree = "<group>"; };
 		FF9E5A3E1FB83D64006C4B50 /* JGGCategoryDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGCategoryDetailHeaderView.swift; sourceTree = "<group>"; };
 		FF9E5A401FB83D85006C4B50 /* JGGCategoryDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGCategoryDetailHeaderView.xib; sourceTree = "<group>"; };
-		FF9E5A421FB842B2006C4B50 /* JGGBottomBarAnimatingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGBottomBarAnimatingVC.swift; sourceTree = "<group>"; };
 		FF9E5A441FB89C2B006C4B50 /* JGGSearchNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSearchNC.swift; sourceTree = "<group>"; };
 		FF9E5A471FB89C94006C4B50 /* JGGSearchHomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSearchHomeTabView.swift; sourceTree = "<group>"; };
 		FF9E5A491FB89CAE006C4B50 /* JGGSearchHomeTabView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGSearchHomeTabView.xib; sourceTree = "<group>"; };
@@ -336,6 +338,10 @@
 		FFA956031FBA368800E89197 /* JGGSelectSkillFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSelectSkillFooterView.swift; sourceTree = "<group>"; };
 		FFA956041FBA368800E89197 /* JGGSelectSkillFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGSelectSkillFooterView.xib; sourceTree = "<group>"; };
 		FFA956071FBA3D1400E89197 /* JGGSelectSkillVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSelectSkillVC.swift; sourceTree = "<group>"; };
+		FFAD88B81FBB321E0001F423 /* JGGCallOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGCallOutView.swift; sourceTree = "<group>"; };
+		FFAD88BA1FBB324E0001F423 /* JGGServiceAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceAnnotationView.swift; sourceTree = "<group>"; };
+		FFAD88BC1FBB39520001F423 /* JGGServiceCallOutContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGServiceCallOutContentView.xib; sourceTree = "<group>"; };
+		FFAD88BE1FBB3BBE0001F423 /* JGGServiceCallOutContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceCallOutContentView.swift; sourceTree = "<group>"; };
 		FFB64BB01FB765190028B77B /* JGGActionSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGActionSheet.xib; sourceTree = "<group>"; };
 		FFB64BB21FB7B03C0028B77B /* JGGSearchMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSearchMainVC.swift; sourceTree = "<group>"; };
 		FFFC213A1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGCanInviteUserListVC.swift; sourceTree = "<group>"; };
@@ -415,6 +421,7 @@
 		63955EE01FA0641800D825B2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FFAD88B71FBB31310001F423 /* CallOut */,
 				FF7C99201FB3313A00A2E5E4 /* JobDetailStepHeaderView */,
 				63955EE51FA0661F00D825B2 /* Appointment */,
 				FF9E5A461FB89C70006C4B50 /* Search */,
@@ -625,7 +632,6 @@
 				FF9E5A441FB89C2B006C4B50 /* JGGSearchNC.swift */,
 				FF9E9E691FAC3F4B00F32283 /* JGGServiceDetailVC.swift */,
 				FFB64BB21FB7B03C0028B77B /* JGGSearchMainVC.swift */,
-				FF9E5A421FB842B2006C4B50 /* JGGBottomBarAnimatingVC.swift */,
 				FF36F1671FB8CE920055674F /* JGGServiceListingVC.swift */,
 				FF36F1691FB8D4C60055674F /* JGGActiveServicesAroundVC.swift */,
 				FFA956071FBA3D1400E89197 /* JGGSelectSkillVC.swift */,
@@ -669,8 +675,8 @@
 		63BE91EE1FA0281F00D40C07 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				63BE91EF1FA0283600D40C07 /* JGGServicesBaseVC.swift */,
-				63BE91F11FA0285200D40C07 /* JGGServicesBaseTableVC.swift */,
+				63BE91EF1FA0283600D40C07 /* JGGSearchBaseVC.swift */,
+				63BE91F11FA0285200D40C07 /* JGGSearchBaseTableVC.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -867,6 +873,17 @@
 			path = JobDetail;
 			sourceTree = "<group>";
 		};
+		FFAD88B71FBB31310001F423 /* CallOut */ = {
+			isa = PBXGroup;
+			children = (
+				FFAD88B81FBB321E0001F423 /* JGGCallOutView.swift */,
+				FFAD88BA1FBB324E0001F423 /* JGGServiceAnnotationView.swift */,
+				FFAD88BE1FBB3BBE0001F423 /* JGGServiceCallOutContentView.swift */,
+				FFAD88BC1FBB39520001F423 /* JGGServiceCallOutContentView.xib */,
+			);
+			path = CallOut;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -974,6 +991,7 @@
 				FF9E5A4A1FB89CAE006C4B50 /* JGGSearchHomeTabView.xib in Resources */,
 				FFA21F661FABC0A400F5A6DA /* JGGTimeSlotsAvailableCell.xib in Resources */,
 				63955EC91FA058E600D825B2 /* Login.storyboard in Resources */,
+				FFAD88BD1FBB39520001F423 /* JGGServiceCallOutContentView.xib in Resources */,
 				FFA21F6E1FABC33400F5A6DA /* JGGJobBookedInfoCell.xib in Resources */,
 				63B8DC301FA17F1B003C6EBF /* Favorite.storyboard in Resources */,
 				FF9E9E741FAC633500F32283 /* carousel01.jpg in Resources */,
@@ -1103,6 +1121,7 @@
 				631EF2A31FA874A0001D2915 /* JGGEventUserModel.swift in Sources */,
 				FFA21F691FABC20000F5A6DA /* JGGTotalReviewCell.swift in Sources */,
 				FF21FB021FAB67E5004D0ADA /* FCColors.swift in Sources */,
+				FFAD88B91FBB321E0001F423 /* JGGCallOutView.swift in Sources */,
 				FFA21F6D1FABC33400F5A6DA /* JGGJobBookedInfoCell.swift in Sources */,
 				632E78291FA2FC3A00CFFB24 /* JGGAppFilterOptionCell.swift in Sources */,
 				63B8DC3E1FA19FEE003C6EBF /* JGGBaseNC.swift in Sources */,
@@ -1115,6 +1134,7 @@
 				FF21FAF91FAB6387004D0ADA /* AZDropdownMenuBaseCell.swift in Sources */,
 				FF21FAFA1FAB6387004D0ADA /* AZDropdownMenuConfig.swift in Sources */,
 				FF9E5A451FB89C2B006C4B50 /* JGGSearchNC.swift in Sources */,
+				FFAD88BB1FBB324E0001F423 /* JGGServiceAnnotationView.swift in Sources */,
 				FF21FAE21FAB5525004D0ADA /* JGGImageCarouselCell.swift in Sources */,
 				63BE91C01FA025D100D40C07 /* JGGAppManager.swift in Sources */,
 				631EF2971FA87022001D2915 /* JGGAppBiddingProviderCell.swift in Sources */,
@@ -1149,7 +1169,7 @@
 				FF7C99261FB33AF600A2E5E4 /* JGGJobDetailStepLineImageView.swift in Sources */,
 				FF21FAE61FAB5588004D0ADA /* JGGDetailInfoFooterView.swift in Sources */,
 				FF7C99381FB356A500A2E5E4 /* JGGEditJobAddressVC.swift in Sources */,
-				63BE91F01FA0283600D40C07 /* JGGServicesBaseVC.swift in Sources */,
+				63BE91F01FA0283600D40C07 /* JGGSearchBaseVC.swift in Sources */,
 				63BE91C31FA025ED00D40C07 /* JGGBaseModel.swift in Sources */,
 				FFFC213D1FB5BFFA00AAA6F7 /* JGGAppointmentDetailBaseVC.swift in Sources */,
 				63DBC8AF1FA02E7800AAECA8 /* UIColor.swift in Sources */,
@@ -1170,6 +1190,7 @@
 				63955EE21FA0643000D825B2 /* JGGAppSearchHeaderView.swift in Sources */,
 				FF9E5A331FB82656006C4B50 /* JGGSearchCategorySelectCell.swift in Sources */,
 				63955EDD1FA05C0B00D825B2 /* JGGAppHistoryListCell.swift in Sources */,
+				FFAD88BF1FBB3BBE0001F423 /* JGGServiceCallOutContentView.swift in Sources */,
 				FF36F16A1FB8D4C60055674F /* JGGActiveServicesAroundVC.swift in Sources */,
 				63B755E41FA1BCCD0032B4F1 /* JGGServicePackageModel.swift in Sources */,
 				63B755EA1FA1BEA10032B4F1 /* JGGServiceModel.swift in Sources */,
@@ -1182,11 +1203,10 @@
 				FF9E5A3C1FB83CB0006C4B50 /* JGGServiceDetailListCell.swift in Sources */,
 				631EF2A91FA87C7B001D2915 /* Double.swift in Sources */,
 				FF7C99311FB3511B00A2E5E4 /* JGGTimeSlotCell.swift in Sources */,
-				FF9E5A431FB842B2006C4B50 /* JGGBottomBarAnimatingVC.swift in Sources */,
 				63B8DC361FA18AD5003C6EBF /* JGGSectionTitleView.swift in Sources */,
 				FF7C99221FB3316D00A2E5E4 /* JGGJobDetailStepHeaderView.swift in Sources */,
 				63B8DC2A1FA17C8E003C6EBF /* JGGMainStartNC.swift in Sources */,
-				63BE91F21FA0285200D40C07 /* JGGServicesBaseTableVC.swift in Sources */,
+				63BE91F21FA0285200D40C07 /* JGGSearchBaseTableVC.swift in Sources */,
 				FFA21F611FABBE8A00F5A6DA /* JGGDetailCategoryTitleCell.swift in Sources */,
 				63B755E81FA1BE230032B4F1 /* JGGEventModel.swift in Sources */,
 				FF7C99341FB3568C00A2E5E4 /* JGGEditJobDescribeVC.swift in Sources */,

@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import MapKit
 
-class JGGServiceModel: JGGAppointmentBaseModel {
-
+class JGGServiceModel: JGGAppointmentBaseModel, MKAnnotation {
+    
     override var type: AppointmentType {
         get {
             return .service
@@ -18,4 +19,19 @@ class JGGServiceModel: JGGAppointmentBaseModel {
     
     var invitingClient: JGGClientUserModel?
     
+    var coordinate: CLLocationCoordinate2D
+    
+    var title: String?
+    
+    var subtitle: String?
+    
+    override var name: String? {
+        didSet {
+            self.title = name
+        }
+    }
+    
+    override init() {
+        coordinate = CLLocationCoordinate2DMake(0, 0)
+    }
 }

@@ -40,7 +40,7 @@ class JGGAppHistoryListCell: UITableViewCell {
         if let appointment = appointment {
             lblDay.text = appointment.appointmentDay()
             lblMonth.text = appointment.appointmentMonth()
-            lblTitle.text = appointment.title
+            lblTitle.text = appointment.name
             lblDescription.text = appointment.comment
             lblCountBadge.text = String(appointment.badgeNumber)
             viewCountBadge.isHidden = appointment.badgeNumber == 0

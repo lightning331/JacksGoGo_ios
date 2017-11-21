@@ -29,6 +29,7 @@ class JGGLocationMapVC: JGGAppointmentsBaseVC {
         self.navigationController?.navigationBar.tintColor = UIColor.JGGGreen
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedStringKey.foregroundColor: UIColor.JGGGreen]
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
 

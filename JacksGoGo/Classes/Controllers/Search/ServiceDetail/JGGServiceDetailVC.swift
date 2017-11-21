@@ -10,6 +10,8 @@ import UIKit
 
 class JGGServiceDetailVC: JGGSearchBaseTableVC {
     
+    var isCanBuyService: Bool = false
+    
     fileprivate var imgviewServiceAvatar: UIImageView!
     fileprivate var btnRequestAQuotation: UIButton!
     fileprivate var btnFavorite: UIBarButtonItem!
@@ -27,6 +29,7 @@ class JGGServiceDetailVC: JGGSearchBaseTableVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.tintColor = UIColor.JGGGreen
+        
     }
     
     private func initNavigationBar() {
@@ -43,11 +46,12 @@ class JGGServiceDetailVC: JGGSearchBaseTableVC {
         let btnMenu = UIBarButtonItem(image: UIImage(named: "button_more_orange"),
                                       style: .plain,
                                       target: self,
-                                      action: #selector(onPressedFavorite(_:)))
+                                      action: #selector(onPressedMenu(_:)))
         btnMenu.tintColor = UIColor.JGGGreen
         self.btnMenu = btnMenu
         
         self.navigationItem.rightBarButtonItems = [btnMenu, btnFavorite]
+        self.hidesBottomBarWhenPushed = true
     }
     
     private func initTableView() {
@@ -68,7 +72,11 @@ class JGGServiceDetailVC: JGGSearchBaseTableVC {
         btnRequestAQuotation.titleLabel?.font = UIFont.JGGButton
         btnRequestAQuotation.backgroundColor = UIColor.JGGGreen
         btnRequestAQuotation.setTitleColor(UIColor.JGGWhite, for: .normal)
-        btnRequestAQuotation.setTitle(LocalizedString("Request A Quotation"), for: .normal)
+        if isCanBuyService {
+            btnRequestAQuotation.setTitle(LocalizedString("Buy Service"), for: .normal)
+        } else {
+            btnRequestAQuotation.setTitle(LocalizedString("Request A Quotation"), for: .normal)
+        }
         btnRequestAQuotation.addTarget(self,
                                        action: #selector(onPressedRequestAQuotation(_:)),
                                        for: .touchUpInside)
@@ -85,13 +93,16 @@ class JGGServiceDetailVC: JGGSearchBaseTableVC {
         
         registerCell(nibName: "JGGDetailCategoryTitleCell")
         registerCell(nibName: "JGGDetailInfoDescriptionCell")
+        registerCell(nibName: "JGGDetailInfoAccessoryButtonCell")
         registerCell(nibName: "JGGTimeSlotsAvailableCell")
         registerCell(nibName: "JGGTotalReviewCell")
-        registerCell(nibName: "JGGUserAvatarNameRateCell")
+        registerCell(nibName: "JGGAppInviteProviderCell")
         registerCell(nibName: "JGGTagListCell")
         registerCell(nibName: "JGGJobBookedInfoCell")
         
     }
+    
+    // MARK: - Button actions
 
     @objc fileprivate func onPressedFavorite(_ sender: UIBarButtonItem) {
         isFavorited = !isFavorited
@@ -107,7 +118,9 @@ class JGGServiceDetailVC: JGGSearchBaseTableVC {
     }
     
     @objc fileprivate func onPressedViewTimeSlots(_ sender: UIButton) {
-        
+        let serviceStroyboard = UIStoryboard(name: "Services", bundle: nil)
+        let timeSlotsVC = serviceStroyboard.instantiateViewController(withIdentifier: "JGGServiceDetailTimeSlotsVC") as! JGGServiceDetailTimeSlotsVC
+        self.navigationController?.pushViewController(timeSlotsVC, animated: true)
     }
     
     @objc fileprivate func onPressedSeeAllReviews(_ sender: UIButton) {
@@ -115,7 +128,23 @@ class JGGServiceDetailVC: JGGSearchBaseTableVC {
     }
     
     @objc fileprivate func onPressedRequestAQuotation(_ sender: UIButton) {
-        
+        if isCanBuyService {
+            
+        } else {
+            
+        }
+    }
+    
+    @objc fileprivate func onPressedLocation(_ sender: UIButton) {
+        let appointmentStroyboard = UIStoryboard(name: "Appointment", bundle: nil)
+        let locationMapVC = appointmentStroyboard.instantiateViewController(withIdentifier: "JGGLocationMapVC") as! JGGLocationMapVC
+        self.navigationController?.pushViewController(locationMapVC, animated: true)
+    }
+    
+    @objc fileprivate func onPressedViewAllServices(_ sender: UIButton) {
+        let serviceStroyboard = UIStoryboard(name: "Services", bundle: nil)
+        let allServicesVC = serviceStroyboard.instantiateViewController(withIdentifier: "JGGActiveServicesAroundVC") as! JGGActiveServicesAroundVC
+        self.navigationController?.pushViewController(allServicesVC, animated: true)
     }
 }
 
@@ -135,7 +164,7 @@ extension JGGServiceDetailVC {
             let cell = tableView.dequeueReusableCell(withIdentifier: "JGGDetailCategoryTitleCell") as! JGGDetailCategoryTitleCell
             
             return cell
-        case 1, 2, 3:
+        case 1, 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "JGGDetailInfoDescriptionCell") as! JGGDetailInfoDescriptionCell
             if indexPath.row == 1 {
                 cell.icon = UIImage(named: "icon_budget")
@@ -147,10 +176,17 @@ extension JGGServiceDetailVC {
                 cell.title = "We are experts at gardening & landscaping. Please state in your quotation: size of your garden, what tasks you need done, and any special requirements."
                 cell.lblTitle.font = UIFont.JGGListText
             }
-            else if indexPath.row == 3 {
-                cell.icon = UIImage(named: "icon_location")
-                cell.title = "Smith Street, 0.4km away"
-                cell.lblTitle.font = UIFont.JGGListText
+                return cell
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "JGGDetailInfoAccessoryButtonCell") as! JGGDetailInfoAccessoryButtonCell
+            cell.icon = UIImage(named: "icon_location")
+            cell.title = "Smith Street, 0.4km away"
+            cell.lblTitle.font = UIFont.JGGListText
+            if isCanBuyService {
+                cell.btnAccessory.isHidden = false
+                cell.btnAccessory.addTarget(self, action: #selector(onPressedLocation(_:)), for: .touchUpInside)
+            } else {
+                cell.btnAccessory.isHidden = true
             }
             return cell
         case 4:
@@ -166,8 +202,13 @@ extension JGGServiceDetailVC {
                                             for: .touchUpInside)
             return cell
         case 6:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "JGGUserAvatarNameRateCell") as! JGGUserAvatarNameRateCell
-            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppInviteProviderCell") as! JGGAppInviteProviderCell
+            if isCanBuyService {
+                cell.btnInvite.setTitle(LocalizedString("View All Services"), for: .normal)
+                cell.btnInvite.addTarget(self, action: #selector(onPressedViewAllServices(_:)), for: .touchUpInside)
+            } else {
+                cell.btnInvite.isHidden = true
+            }
             return cell
         case 7:
             let cell = tableView.dequeueReusableCell(withIdentifier: "JGGTagListCell") as! JGGTagListCell

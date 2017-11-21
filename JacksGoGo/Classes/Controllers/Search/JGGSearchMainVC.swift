@@ -179,4 +179,14 @@ extension JGGSearchMainVC { // UITableViewDataSource, UITableViewDelegate
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        gotoBidDetailVC()
+    }
+    
+    private func gotoBidDetailVC() {
+        let detailVC = JGGServiceDetailVC()
+        detailVC.isCanBuyService = true
+        self.navigationController?
+            .pushViewController(detailVC, animated: true)
+    }
 }

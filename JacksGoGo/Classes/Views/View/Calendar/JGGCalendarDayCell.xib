@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Bold.ttf">
+            <string>Muli-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="JGGCalendarDayCell" customModule="JacksGoGo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LFd-2j-GFp">
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ux-DB-uaY">
+                                <rect key="frame" x="45" y="45" width="30" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ILb-bl-y6D"/>
+                                    <constraint firstAttribute="width" constant="30" id="XIF-Rg-wk9"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tp9-6f-scb">
+                                <rect key="frame" x="52" y="52" width="14.5" height="15.5"/>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Al-VJ-Fky">
+                                <rect key="frame" x="59" y="67.5" width="2" height="2"/>
+                                <color key="backgroundColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="FCg-8w-ARE"/>
+                                    <constraint firstAttribute="width" constant="2" id="P44-gf-YBO"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Ux-DB-uaY" firstAttribute="centerY" secondItem="LFd-2j-GFp" secondAttribute="centerY" id="3dx-H6-Csp"/>
+                            <constraint firstItem="0Al-VJ-Fky" firstAttribute="centerX" secondItem="Tp9-6f-scb" secondAttribute="centerX" id="Ibw-Kc-px3"/>
+                            <constraint firstItem="0Al-VJ-Fky" firstAttribute="top" secondItem="Tp9-6f-scb" secondAttribute="bottom" id="NVO-FE-Ma5"/>
+                            <constraint firstItem="Tp9-6f-scb" firstAttribute="centerY" secondItem="LFd-2j-GFp" secondAttribute="centerY" id="Qwx-g8-Ylc"/>
+                            <constraint firstItem="6Ux-DB-uaY" firstAttribute="centerX" secondItem="LFd-2j-GFp" secondAttribute="centerX" id="Zfq-3s-YHu"/>
+                            <constraint firstItem="Tp9-6f-scb" firstAttribute="centerX" secondItem="LFd-2j-GFp" secondAttribute="centerX" id="vt1-nC-1dA"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="LFd-2j-GFp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Amu-dg-Ea8"/>
+                <constraint firstAttribute="bottom" secondItem="LFd-2j-GFp" secondAttribute="bottom" id="FLA-2a-2Iv"/>
+                <constraint firstItem="LFd-2j-GFp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Mwa-j2-rnK"/>
+                <constraint firstAttribute="trailing" secondItem="LFd-2j-GFp" secondAttribute="trailing" id="dZC-Bo-1ow"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="122" height="124"/>
+            <connections>
+                <outlet property="lblDay" destination="Tp9-6f-scb" id="4QC-xv-Wmk"/>
+                <outlet property="viewBackground" destination="LFd-2j-GFp" id="HWZ-ri-Qx9"/>
+                <outlet property="viewCirlceBorder" destination="6Ux-DB-uaY" id="uIZ-bu-X8b"/>
+                <outlet property="viewGreenDot" destination="0Al-VJ-Fky" id="A5d-Gz-sNu"/>
+            </connections>
+            <point key="canvasLocation" x="-153" y="-17"/>
+        </collectionViewCell>
+    </objects>
+</document>

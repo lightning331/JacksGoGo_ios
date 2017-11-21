@@ -36,13 +36,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="CYYong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="32u-p9-B6l">
-                                <rect key="frame" x="91" y="20.5" width="54.5" height="17.5"/>
+                                <rect key="frame" x="91" y="21" width="54.5" height="17.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fy-Q5-0mp" customClass="CosmosView" customModule="Cosmos">
-                                <rect key="frame" x="91" y="40" width="80" height="15"/>
+                                <rect key="frame" x="91" y="40.5" width="80" height="15"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="0bT-Gw-skU"/>
@@ -68,10 +68,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulD-N7-e3n">
-                                <rect key="frame" x="309" y="4" width="50" height="67"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="BFh-gg-oeh"/>
-                                </constraints>
+                                <rect key="frame" x="323" y="4" width="36" height="67"/>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                 <state key="normal" title="Invite">
                                     <color key="titleColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

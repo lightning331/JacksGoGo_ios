@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Bold.ttf">
+            <string>Muli-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="JGGCalendarView" customModule="JacksGoGo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bY8-AC-L7D">
+                    <rect key="frame" x="20" y="20" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="gbj-1Z-9M7"/>
+                        <constraint firstAttribute="width" constant="40" id="qam-D7-Kmo"/>
+                    </constraints>
+                    <state key="normal" image="button_previous_green"/>
+                    <connections>
+                        <action selector="onPressedPreviousMonth:" destination="iN0-l3-epB" eventType="touchUpInside" id="0Mf-d6-Vej"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFp-Uz-DSp">
+                    <rect key="frame" x="315" y="20" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Fbb-RX-Lti"/>
+                        <constraint firstAttribute="width" constant="40" id="uHd-DN-BUY"/>
+                    </constraints>
+                    <state key="normal" image="button_next_green"/>
+                    <connections>
+                        <action selector="onPressedNextMonth:" destination="iN0-l3-epB" eventType="touchUpInside" id="uxN-f8-WUH"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="July 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWo-oZ-eAo">
+                    <rect key="frame" x="155.5" y="32" width="64.5" height="17.5"/>
+                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v5E-bi-dl4">
+                    <rect key="frame" x="0.0" y="68" width="375" height="40"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="lFl-TM-FPA">
+                            <rect key="frame" x="20" y="0.0" width="335" height="40"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flg-k9-bc7">
+                                    <rect key="frame" x="0.0" y="0.0" width="45.5" height="40"/>
+                                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
+                                    <color key="textColor" red="0.54115974899999997" green="0.54185396429999999" blue="0.56077778339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvy-aZ-qzU">
+                                    <rect key="frame" x="48.5" y="0.0" width="45" height="40"/>
+                                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
+                                    <color key="textColor" red="0.54115974899999997" green="0.54185396429999999" blue="0.56077778339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qlb-11-Oap">
+                                    <rect key="frame" x="96.5" y="0.0" width="45.5" height="40"/>
+                                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
+                                    <color key="textColor" red="0.54115974899999997" green="0.54185396429999999" blue="0.56077778339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fO-vp-iWU">
+                                    <rect key="frame" x="145" y="0.0" width="45" height="40"/>
+                                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
+                                    <color key="textColor" red="0.54115974899999997" green="0.54185396429999999" blue="0.56077778339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFk-0m-keu">
+                                    <rect key="frame" x="193" y="0.0" width="45.5" height="40"/>
+                                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
+                                    <color key="textColor" red="0.54115974899999997" green="0.54185396429999999" blue="0.56077778339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgI-z0-Ed5">
+                                    <rect key="frame" x="241.5" y="0.0" width="45" height="40"/>
+                                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
+                                    <color key="textColor" red="0.54115974899999997" green="0.54185396429999999" blue="0.56077778339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chv-KO-Tx8">
+                                    <rect key="frame" x="289.5" y="0.0" width="45.5" height="40"/>
+                                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
+                                    <color key="textColor" red="0.54115974899999997" green="0.54185396429999999" blue="0.56077778339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="lFl-TM-FPA" firstAttribute="top" secondItem="v5E-bi-dl4" secondAttribute="top" id="0Lb-B5-NaV"/>
+                        <constraint firstItem="lFl-TM-FPA" firstAttribute="leading" secondItem="v5E-bi-dl4" secondAttribute="leading" constant="20" id="RWK-oW-ykn"/>
+                        <constraint firstAttribute="height" constant="40" id="Sup-4R-Jqb"/>
+                        <constraint firstAttribute="bottom" secondItem="lFl-TM-FPA" secondAttribute="bottom" id="qvd-wk-hpV"/>
+                        <constraint firstAttribute="trailing" secondItem="lFl-TM-FPA" secondAttribute="trailing" constant="20" id="uiq-h7-AI3"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="HcP-If-IYD" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
+                    <rect key="frame" x="16" y="108" width="343" height="551"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="2" minimumInteritemSpacing="2" id="DVD-0Y-pjh">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="v5E-bi-dl4" firstAttribute="top" secondItem="bY8-AC-L7D" secondAttribute="bottom" constant="8" id="5q5-YI-0bn"/>
+                <constraint firstItem="HcP-If-IYD" firstAttribute="top" secondItem="v5E-bi-dl4" secondAttribute="bottom" id="DfM-EA-08U"/>
+                <constraint firstItem="hFp-Uz-DSp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="Hax-R5-QAW"/>
+                <constraint firstItem="bY8-AC-L7D" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Qs1-tc-AOv"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="HcP-If-IYD" secondAttribute="trailing" constant="16" id="SZj-4Y-Wup"/>
+                <constraint firstItem="v5E-bi-dl4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="T48-2p-56B"/>
+                <constraint firstItem="CWo-oZ-eAo" firstAttribute="centerY" secondItem="bY8-AC-L7D" secondAttribute="centerY" id="UGJ-e4-0D9"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hFp-Uz-DSp" secondAttribute="trailing" constant="20" id="UxR-3u-3xI"/>
+                <constraint firstItem="CWo-oZ-eAo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cKJ-9v-ToZ"/>
+                <constraint firstItem="v5E-bi-dl4" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="cMI-xv-WN4"/>
+                <constraint firstItem="HcP-If-IYD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="muY-fu-TSC"/>
+                <constraint firstItem="bY8-AC-L7D" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="xUF-VA-UBf"/>
+                <constraint firstAttribute="bottom" secondItem="HcP-If-IYD" secondAttribute="bottom" constant="8" id="zm8-ps-aBO"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="btnBack" destination="bY8-AC-L7D" id="Ifr-Xv-YE3"/>
+                <outlet property="btnForward" destination="hFp-Uz-DSp" id="Y3w-ZS-9MB"/>
+                <outlet property="calendarView" destination="HcP-If-IYD" id="JfC-ec-PcK"/>
+                <outlet property="lblMonthName" destination="CWo-oZ-eAo" id="Zfj-Mt-68J"/>
+            </connections>
+            <point key="canvasLocation" x="-156.5" y="44.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="button_next_green" width="32" height="32"/>
+        <image name="button_previous_green" width="32" height="32"/>
+    </resources>
+</document>

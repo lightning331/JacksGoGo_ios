@@ -119,6 +119,11 @@
 		FF7C993C1FB356D600A2E5E4 /* JGGEditJobStepRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C993B1FB356D600A2E5E4 /* JGGEditJobStepRootVC.swift */; };
 		FF7C993E1FB35DEE00A2E5E4 /* JGGEditJobNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C993D1FB35DEE00A2E5E4 /* JGGEditJobNC.swift */; };
 		FF86D0E11FC3368A00EE70F5 /* JGGServiceFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86D0E01FC3368A00EE70F5 /* JGGServiceFilterVC.swift */; };
+		FF86D1191FC4B78B00EE70F5 /* JGGCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86D1181FC4B78B00EE70F5 /* JGGCalendarView.swift */; };
+		FF86D11B1FC4B87800EE70F5 /* JGGCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF86D11A1FC4B87800EE70F5 /* JGGCalendarView.xib */; };
+		FF86D11E1FC4BCB300EE70F5 /* JGGCalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86D11C1FC4BCB300EE70F5 /* JGGCalendarDayCell.swift */; };
+		FF86D11F1FC4BCB300EE70F5 /* JGGCalendarDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF86D11D1FC4BCB300EE70F5 /* JGGCalendarDayCell.xib */; };
+		FF86D1211FC4D4D000EE70F5 /* JGGServiceDetailTimeSlotsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86D1201FC4D4D000EE70F5 /* JGGServiceDetailTimeSlotsVC.swift */; };
 		FF9E5A331FB82656006C4B50 /* JGGSearchCategorySelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E5A311FB82656006C4B50 /* JGGSearchCategorySelectCell.swift */; };
 		FF9E5A341FB82656006C4B50 /* JGGSearchCategorySelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9E5A321FB82656006C4B50 /* JGGSearchCategorySelectCell.xib */; };
 		FF9E5A371FB826EA006C4B50 /* JGGServiceListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E5A361FB826EA006C4B50 /* JGGServiceListCell.swift */; };
@@ -294,6 +299,11 @@
 		FF7C993B1FB356D600A2E5E4 /* JGGEditJobStepRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGEditJobStepRootVC.swift; sourceTree = "<group>"; };
 		FF7C993D1FB35DEE00A2E5E4 /* JGGEditJobNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGEditJobNC.swift; sourceTree = "<group>"; };
 		FF86D0E01FC3368A00EE70F5 /* JGGServiceFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceFilterVC.swift; sourceTree = "<group>"; };
+		FF86D1181FC4B78B00EE70F5 /* JGGCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGCalendarView.swift; sourceTree = "<group>"; };
+		FF86D11A1FC4B87800EE70F5 /* JGGCalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGCalendarView.xib; sourceTree = "<group>"; };
+		FF86D11C1FC4BCB300EE70F5 /* JGGCalendarDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGCalendarDayCell.swift; sourceTree = "<group>"; };
+		FF86D11D1FC4BCB300EE70F5 /* JGGCalendarDayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGCalendarDayCell.xib; sourceTree = "<group>"; };
+		FF86D1201FC4D4D000EE70F5 /* JGGServiceDetailTimeSlotsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceDetailTimeSlotsVC.swift; sourceTree = "<group>"; };
 		FF9E5A311FB82656006C4B50 /* JGGSearchCategorySelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSearchCategorySelectCell.swift; sourceTree = "<group>"; };
 		FF9E5A321FB82656006C4B50 /* JGGSearchCategorySelectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGSearchCategorySelectCell.xib; sourceTree = "<group>"; };
 		FF9E5A361FB826EA006C4B50 /* JGGServiceListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceListCell.swift; sourceTree = "<group>"; };
@@ -423,6 +433,7 @@
 		63955EE01FA0641800D825B2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FF86D1171FC4B77400EE70F5 /* Calendar */,
 				FFAD88B71FBB31310001F423 /* CallOut */,
 				FF7C99201FB3313A00A2E5E4 /* JobDetailStepHeaderView */,
 				63955EE51FA0661F00D825B2 /* Appointment */,
@@ -632,12 +643,12 @@
 			children = (
 				63BE91EE1FA0281F00D40C07 /* Base */,
 				FF9E5A441FB89C2B006C4B50 /* JGGSearchNC.swift */,
-				FF9E9E691FAC3F4B00F32283 /* JGGServiceDetailVC.swift */,
 				FFB64BB21FB7B03C0028B77B /* JGGSearchMainVC.swift */,
 				FF36F1671FB8CE920055674F /* JGGServiceListingVC.swift */,
 				FF36F1691FB8D4C60055674F /* JGGActiveServicesAroundVC.swift */,
 				FFA956071FBA3D1400E89197 /* JGGSelectSkillVC.swift */,
 				FF86D0E01FC3368A00EE70F5 /* JGGServiceFilterVC.swift */,
+				FF86D1221FC4D4D900EE70F5 /* ServiceDetail */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -783,6 +794,26 @@
 				FF7C99391FB356B000A2E5E4 /* JGGEditJobReportVC.swift */,
 			);
 			path = EditJob;
+			sourceTree = "<group>";
+		};
+		FF86D1171FC4B77400EE70F5 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				FF86D1181FC4B78B00EE70F5 /* JGGCalendarView.swift */,
+				FF86D11A1FC4B87800EE70F5 /* JGGCalendarView.xib */,
+				FF86D11C1FC4BCB300EE70F5 /* JGGCalendarDayCell.swift */,
+				FF86D11D1FC4BCB300EE70F5 /* JGGCalendarDayCell.xib */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		FF86D1221FC4D4D900EE70F5 /* ServiceDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FF9E9E691FAC3F4B00F32283 /* JGGServiceDetailVC.swift */,
+				FF86D1201FC4D4D000EE70F5 /* JGGServiceDetailTimeSlotsVC.swift */,
+			);
+			path = ServiceDetail;
 			sourceTree = "<group>";
 		};
 		FF9E5A301FB82616006C4B50 /* CollectionViewCell */ = {
@@ -979,11 +1010,13 @@
 				FF9E5A3D1FB83CB0006C4B50 /* JGGServiceDetailListCell.xib in Resources */,
 				FFA21F5E1FAB87D600F5A6DA /* JGGBorderButtonCell.xib in Resources */,
 				FFA061B61FAB4C2D00185C56 /* 222.jpg in Resources */,
+				FF86D11F1FC4BCB300EE70F5 /* JGGCalendarDayCell.xib in Resources */,
 				63BE91E11FA0263C00D40C07 /* Muli-LightItalic.ttf in Resources */,
 				631EF2B01FA88CC8001D2915 /* TGLParallaxCarousel.xib in Resources */,
 				63BE91E21FA0263C00D40C07 /* Muli-Regular.ttf in Resources */,
 				FFA21F721FABC57F00F5A6DA /* JGGTagListCell.xib in Resources */,
 				63CA7F131FA8A04A005A44B0 /* JGGAppBiddingProviderCell.xib in Resources */,
+				FF86D11B1FC4B87800EE70F5 /* JGGCalendarView.xib in Resources */,
 				63BE91D91FA0263C00D40C07 /* Muli-Bold.ttf in Resources */,
 				63BE91AD1FA0233300D40C07 /* LaunchScreen.storyboard in Resources */,
 				FF7C99321FB3511B00A2E5E4 /* JGGTimeSlotCell.xib in Resources */,
@@ -1034,6 +1067,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MZAppearance/MZAppearance.framework",
 				"${BUILT_PRODUCTS_DIR}/MZFormSheetPresentationController/MZFormSheetPresentationController.framework",
@@ -1048,6 +1082,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZAppearance.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZFormSheetPresentationController.framework",
@@ -1121,11 +1156,13 @@
 				63BE91FB1FA028B300D40C07 /* JGGLoginBaseVC.swift in Sources */,
 				63BE91C61FA025FD00D40C07 /* UIView.swift in Sources */,
 				FF21FAFB1FAB6387004D0ADA /* AZDropdownMenuDefaultCell.swift in Sources */,
+				FF86D1211FC4D4D000EE70F5 /* JGGServiceDetailTimeSlotsVC.swift in Sources */,
 				631EF2A31FA874A0001D2915 /* JGGEventUserModel.swift in Sources */,
 				FFA21F691FABC20000F5A6DA /* JGGTotalReviewCell.swift in Sources */,
 				FF21FB021FAB67E5004D0ADA /* FCColors.swift in Sources */,
 				FFAD88B91FBB321E0001F423 /* JGGCallOutView.swift in Sources */,
 				FFA21F6D1FABC33400F5A6DA /* JGGJobBookedInfoCell.swift in Sources */,
+				FF86D11E1FC4BCB300EE70F5 /* JGGCalendarDayCell.swift in Sources */,
 				632E78291FA2FC3A00CFFB24 /* JGGAppFilterOptionCell.swift in Sources */,
 				63B8DC3E1FA19FEE003C6EBF /* JGGBaseNC.swift in Sources */,
 				FF7C993C1FB356D600A2E5E4 /* JGGEditJobStepRootVC.swift in Sources */,
@@ -1139,6 +1176,7 @@
 				FF9E5A451FB89C2B006C4B50 /* JGGSearchNC.swift in Sources */,
 				FFAD88BB1FBB324E0001F423 /* JGGServiceAnnotationView.swift in Sources */,
 				FF21FAE21FAB5525004D0ADA /* JGGImageCarouselCell.swift in Sources */,
+				FF86D1191FC4B78B00EE70F5 /* JGGCalendarView.swift in Sources */,
 				63BE91C01FA025D100D40C07 /* JGGAppManager.swift in Sources */,
 				631EF2971FA87022001D2915 /* JGGAppBiddingProviderCell.swift in Sources */,
 				63BE91F91FA0289D00D40C07 /* JGGMainTabbarController.swift in Sources */,

@@ -54,7 +54,7 @@
                         <rect key="frame" x="108" y="8" width="264" height="110"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gardening" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkj-Vn-E43">
-                                <rect key="frame" x="16" y="39" width="232" height="33"/>
+                                <rect key="frame" x="16" y="39.5" width="232" height="33"/>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

@@ -39,7 +39,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 100.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eFU-xd-x2q">
-                                <rect key="frame" x="236" y="23.5" width="90" height="17.5"/>
+                                <rect key="frame" x="236" y="23" width="90" height="17.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="ong-ip-s25"/>
                                 </constraints>
@@ -48,13 +48,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="CYYong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8H1-LD-BZJ">
-                                <rect key="frame" x="82.5" y="19.5" width="145" height="17.5"/>
+                                <rect key="frame" x="82.5" y="19" width="145" height="17.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqm-fd-3ms" customClass="CosmosView" customModule="Cosmos">
-                                <rect key="frame" x="82.5" y="39" width="80" height="15"/>
+                                <rect key="frame" x="82.5" y="38.5" width="80" height="15"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="I1n-1c-pBY"/>
@@ -80,7 +80,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Declined" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OLc-gE-bSb">
-                                <rect key="frame" x="236" y="41" width="47" height="14"/>
+                                <rect key="frame" x="236" y="40.5" width="47" height="14"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

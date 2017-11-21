@@ -118,6 +118,7 @@
 		FF7C993A1FB356B000A2E5E4 /* JGGEditJobReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C99391FB356B000A2E5E4 /* JGGEditJobReportVC.swift */; };
 		FF7C993C1FB356D600A2E5E4 /* JGGEditJobStepRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C993B1FB356D600A2E5E4 /* JGGEditJobStepRootVC.swift */; };
 		FF7C993E1FB35DEE00A2E5E4 /* JGGEditJobNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C993D1FB35DEE00A2E5E4 /* JGGEditJobNC.swift */; };
+		FF86D0E11FC3368A00EE70F5 /* JGGServiceFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86D0E01FC3368A00EE70F5 /* JGGServiceFilterVC.swift */; };
 		FF9E5A331FB82656006C4B50 /* JGGSearchCategorySelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E5A311FB82656006C4B50 /* JGGSearchCategorySelectCell.swift */; };
 		FF9E5A341FB82656006C4B50 /* JGGSearchCategorySelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9E5A321FB82656006C4B50 /* JGGSearchCategorySelectCell.xib */; };
 		FF9E5A371FB826EA006C4B50 /* JGGServiceListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9E5A361FB826EA006C4B50 /* JGGServiceListCell.swift */; };
@@ -292,6 +293,7 @@
 		FF7C99391FB356B000A2E5E4 /* JGGEditJobReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGEditJobReportVC.swift; sourceTree = "<group>"; };
 		FF7C993B1FB356D600A2E5E4 /* JGGEditJobStepRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGEditJobStepRootVC.swift; sourceTree = "<group>"; };
 		FF7C993D1FB35DEE00A2E5E4 /* JGGEditJobNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGEditJobNC.swift; sourceTree = "<group>"; };
+		FF86D0E01FC3368A00EE70F5 /* JGGServiceFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceFilterVC.swift; sourceTree = "<group>"; };
 		FF9E5A311FB82656006C4B50 /* JGGSearchCategorySelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSearchCategorySelectCell.swift; sourceTree = "<group>"; };
 		FF9E5A321FB82656006C4B50 /* JGGSearchCategorySelectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGSearchCategorySelectCell.xib; sourceTree = "<group>"; };
 		FF9E5A361FB826EA006C4B50 /* JGGServiceListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceListCell.swift; sourceTree = "<group>"; };
@@ -635,6 +637,7 @@
 				FF36F1671FB8CE920055674F /* JGGServiceListingVC.swift */,
 				FF36F1691FB8D4C60055674F /* JGGActiveServicesAroundVC.swift */,
 				FFA956071FBA3D1400E89197 /* JGGSelectSkillVC.swift */,
+				FF86D0E01FC3368A00EE70F5 /* JGGServiceFilterVC.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -1211,6 +1214,7 @@
 				63B755E81FA1BE230032B4F1 /* JGGEventModel.swift in Sources */,
 				FF7C99341FB3568C00A2E5E4 /* JGGEditJobDescribeVC.swift in Sources */,
 				631EF2A51FA875D8001D2915 /* JGGBiddingProviderModel.swift in Sources */,
+				FF86D0E11FC3368A00EE70F5 /* JGGServiceFilterVC.swift in Sources */,
 				63955EDA1FA0599400D825B2 /* UIButton.swift in Sources */,
 				63B755EC1FA1BF020032B4F1 /* JGGJobModel.swift in Sources */,
 				FF10743B1FB67AD100C8BFE3 /* JGGActionSheet.swift in Sources */,

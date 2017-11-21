@@ -47,6 +47,10 @@ class JGGSearchHomeTabView: UIView {
 
     }
     
+    override var intrinsicContentSize: CGSize {
+        return UILayoutFittingExpandedSize
+    }
+    
     @IBAction func onPressButton(_ sender: UIButton) {
         
         if selectedTabButton == sender {

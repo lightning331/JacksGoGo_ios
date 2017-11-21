@@ -80,6 +80,10 @@ UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
         self.viewMapFilterBox.isHidden = true
     }
     
+    @IBAction func onPressedFilter(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "gotoFilterVC", sender: self)
+    }
+    
     @IBAction func onPressedUserLocation(_ sender: Any) {
         
     }

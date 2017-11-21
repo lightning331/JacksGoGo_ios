@@ -25,34 +25,47 @@
                 <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourited Services" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qxg-2a-NhU">
-                        <rect key="frame" x="8" y="55.5" width="78" height="30.5"/>
-                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_cat_favourites" translatesAutoresizingMaskIntoConstraints="NO" id="78V-LU-aMa">
-                        <rect key="frame" x="16" y="8" width="62" height="40"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEv-Nk-o7I">
+                        <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourited Services" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qxg-2a-NhU">
+                                <rect key="frame" x="8" y="55" width="78" height="30.5"/>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_cat_favourites" translatesAutoresizingMaskIntoConstraints="NO" id="78V-LU-aMa">
+                                <rect key="frame" x="16" y="8" width="62" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="u0w-iT-kih"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="u0w-iT-kih"/>
+                            <constraint firstItem="78V-LU-aMa" firstAttribute="trailing" secondItem="rEv-Nk-o7I" secondAttribute="trailingMargin" constant="-8" id="Mwk-f6-DoQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Qxg-2a-NhU" secondAttribute="trailing" constant="8" id="OE6-MO-7xE"/>
+                            <constraint firstItem="Qxg-2a-NhU" firstAttribute="leading" secondItem="rEv-Nk-o7I" secondAttribute="leading" constant="8" id="QAc-IW-crT"/>
+                            <constraint firstAttribute="bottom" secondItem="Qxg-2a-NhU" secondAttribute="bottom" constant="8" id="Sf3-8c-YJ0"/>
+                            <constraint firstItem="78V-LU-aMa" firstAttribute="top" secondItem="rEv-Nk-o7I" secondAttribute="topMargin" id="fGO-O1-hSs"/>
+                            <constraint firstItem="78V-LU-aMa" firstAttribute="leading" secondItem="rEv-Nk-o7I" secondAttribute="leadingMargin" constant="8" id="pHf-Q1-6nz"/>
+                            <constraint firstItem="Qxg-2a-NhU" firstAttribute="top" secondItem="78V-LU-aMa" secondAttribute="bottom" constant="7.5" id="r8I-3p-2dK"/>
                         </constraints>
-                    </imageView>
+                    </view>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="78V-LU-aMa" firstAttribute="trailing" secondItem="mjM-Yq-W7u" secondAttribute="trailingMargin" id="1Be-ne-qLT"/>
-                <constraint firstItem="Qxg-2a-NhU" firstAttribute="top" secondItem="78V-LU-aMa" secondAttribute="bottom" constant="7.5" id="5or-cV-W1Y"/>
-                <constraint firstAttribute="trailing" secondItem="Qxg-2a-NhU" secondAttribute="trailing" constant="8" id="QBG-wT-CYB"/>
-                <constraint firstItem="Qxg-2a-NhU" firstAttribute="leading" secondItem="mjM-Yq-W7u" secondAttribute="leading" constant="8" id="WVw-XL-Ryh"/>
-                <constraint firstItem="78V-LU-aMa" firstAttribute="leading" secondItem="mjM-Yq-W7u" secondAttribute="leadingMargin" id="kEV-Xf-5ur"/>
-                <constraint firstItem="78V-LU-aMa" firstAttribute="top" secondItem="mjM-Yq-W7u" secondAttribute="topMargin" constant="8" id="tgf-jq-D2r"/>
-                <constraint firstAttribute="bottom" secondItem="Qxg-2a-NhU" secondAttribute="bottom" constant="8" id="xmO-62-9eK"/>
+                <constraint firstItem="rEv-Nk-o7I" firstAttribute="leading" secondItem="mjM-Yq-W7u" secondAttribute="leading" id="8B5-Go-Xwc"/>
+                <constraint firstAttribute="bottom" secondItem="rEv-Nk-o7I" secondAttribute="bottom" id="CHg-JH-dii"/>
+                <constraint firstItem="rEv-Nk-o7I" firstAttribute="top" secondItem="mjM-Yq-W7u" secondAttribute="top" id="gSR-vJ-w5M"/>
+                <constraint firstAttribute="trailing" secondItem="rEv-Nk-o7I" secondAttribute="trailing" id="w7W-aI-EZ3"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="2hU-nR-Hxw"/>
             <connections>
                 <outlet property="imgviewIcon" destination="78V-LU-aMa" id="myG-jU-tbE"/>
                 <outlet property="lblTitle" destination="Qxg-2a-NhU" id="OA4-NQ-Xj8"/>
+                <outlet property="viewContainer" destination="rEv-Nk-o7I" id="Pi7-a8-L7V"/>
             </connections>
             <point key="canvasLocation" x="-214" y="-47"/>
         </collectionViewCell>

@@ -124,7 +124,9 @@ class JGGServiceDetailVC: JGGSearchBaseTableVC {
     }
     
     @objc fileprivate func onPressedSeeAllReviews(_ sender: UIButton) {
-        
+        let serviceStroyboard = UIStoryboard(name: "Services", bundle: nil)
+        let allReviewsVC = serviceStroyboard.instantiateViewController(withIdentifier: "JGGAllReviewsVC") as! JGGAllReviewsVC
+        self.navigationController?.pushViewController(allReviewsVC, animated: true)
     }
     
     @objc fileprivate func onPressedRequestAQuotation(_ sender: UIButton) {

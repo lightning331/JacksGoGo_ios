@@ -44,7 +44,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="July 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWo-oZ-eAo">
-                    <rect key="frame" x="155.5" y="32" width="64.5" height="17.5"/>
+                    <rect key="frame" x="156" y="31.5" width="64.5" height="17.5"/>
                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>

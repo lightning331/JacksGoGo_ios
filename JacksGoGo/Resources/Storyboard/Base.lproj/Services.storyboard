@@ -11,17 +11,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-        </array>
         <array key="Muli-Bold.ttf">
             <string>Muli-Bold</string>
         </array>
         <array key="Muli-Regular.ttf">
             <string>Muli-Regular</string>
-        </array>
-        <array key="SFUIText.ttf">
-            <string>.SFUIText</string>
         </array>
     </customFonts>
     <scenes>
@@ -51,19 +45,19 @@
                                             <rect key="frame" x="4" y="0.0" width="371" height="50"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="180" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LnN-Ei-kBl">
-                                                    <rect key="frame" x="16" y="14.5" width="50.5" height="35.5"/>
+                                                    <rect key="frame" x="16" y="17" width="47" height="33"/>
                                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                                     <color key="textColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Services" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OL-CJ-eex">
-                                                    <rect key="frame" x="74" y="22.5" width="77.5" height="25.5"/>
+                                                    <rect key="frame" x="70.5" y="24.5" width="76.5" height="23.5"/>
                                                     <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 new since 6 hrs ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuI-0f-5RV">
-                                                    <rect key="frame" x="226.5" y="30.5" width="128.5" height="15.5"/>
+                                                    <rect key="frame" x="230.5" y="32" width="124.5" height="14"/>
                                                     <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -168,13 +162,13 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Dr-k0-MNs">
-                                    <rect key="frame" x="16" y="186" width="100.5" height="19"/>
+                                    <rect key="frame" x="16" y="186" width="93.5" height="17.5"/>
                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cBa-rU-cfE">
-                                    <rect key="frame" x="37.5" y="213" width="300" height="340"/>
+                                    <rect key="frame" x="37.5" y="211.5" width="300" height="340"/>
                                     <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="340" id="dmP-Qc-1uW"/>
@@ -283,16 +277,16 @@
                                 <rect key="frame" x="0.0" y="80" width="375" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Only Services With The Keywords" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdu-wf-PMh">
-                                        <rect key="frame" x="16" y="0.0" width="286.5" height="19"/>
+                                        <rect key="frame" x="16" y="0.0" width="269" height="17.5"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JbQ-P8-49k">
-                                        <rect key="frame" x="16" y="27.5" width="343" height="44.5"/>
+                                        <rect key="frame" x="16" y="26" width="343" height="46"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Service keyword" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kdM-tP-aNj">
-                                                <rect key="frame" x="16" y="13" width="311" height="19"/>
+                                                <rect key="frame" x="16" y="15" width="311" height="18"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -332,16 +326,16 @@
                                 <rect key="frame" x="0.0" y="180" width="375" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5j-my-hwZ">
-                                        <rect key="frame" x="16" y="0.0" width="62" height="19"/>
+                                        <rect key="frame" x="16" y="0.0" width="58.5" height="17.5"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSs-JA-O6t">
-                                        <rect key="frame" x="16" y="27.5" width="343" height="44.5"/>
+                                        <rect key="frame" x="16" y="26" width="343" height="46"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P2c-MP-v8C">
-                                                <rect key="frame" x="16" y="13" width="311" height="19"/>
+                                                <rect key="frame" x="16" y="15" width="311" height="18"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -397,13 +391,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ViB-6k-cbF">
-                                <rect key="frame" x="16" y="336" width="77.5" height="19"/>
+                                <rect key="frame" x="16" y="336" width="73" height="17.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4lq-le-ZkC">
-                                <rect key="frame" x="16" y="363" width="343" height="284"/>
+                                <rect key="frame" x="16" y="361.5" width="343" height="285.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uHF-MX-3B1">
                                     <size key="itemSize" width="88" height="105"/>
@@ -567,14 +561,14 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVp-k7-FWr">
-                                        <rect key="frame" x="16" y="8" width="86" height="42"/>
+                                        <rect key="frame" x="16" y="8" width="81" height="42"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                         <state key="normal" title="By Distance">
                                             <color key="titleColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIK-XT-os9">
-                                        <rect key="frame" x="118" y="8" width="78" height="42"/>
+                                        <rect key="frame" x="113" y="8" width="73" height="42"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                         <state key="normal" title="By Ratings">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -633,19 +627,19 @@
                                         <rect key="frame" x="20" y="453" width="335" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search for services within radius of" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuR-bA-puN">
-                                                <rect key="frame" x="16" y="8" width="194" height="15.5"/>
+                                                <rect key="frame" x="16" y="8" width="188" height="14"/>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.3 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Fp-9V-ItE">
-                                                <rect key="frame" x="218" y="7.5" width="44.5" height="18"/>
+                                                <rect key="frame" x="212" y="7.5" width="43" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="1" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="stR-M9-MUi">
-                                                <rect key="frame" x="14" y="31.5" width="307" height="31"/>
+                                                <rect key="frame" x="14" y="30" width="307" height="31"/>
                                                 <color key="minimumTrackTintColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <action selector="onChangeSearchRadius:" destination="tIL-c8-2QP" eventType="valueChanged" id="qCe-rM-3m4"/>
@@ -716,7 +710,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 Services" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EtL-iS-0n3">
-                                        <rect key="frame" x="16" y="21.5" width="82" height="19"/>
+                                        <rect key="frame" x="16" y="22" width="78.5" height="17.5"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -867,7 +861,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Group Swimming Class" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljS-OA-5vW">
-                                        <rect key="frame" x="40" y="12.5" width="319" height="15.5"/>
+                                        <rect key="frame" x="40" y="14" width="319" height="14"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1104,8 +1098,8 @@
                                                 <rect key="frame" x="16" y="12" width="16" height="16"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Package" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyf-X2-fzV">
-                                                <rect key="frame" x="40" y="12" width="56" height="17"/>
-                                                <fontDescription key="fontDescription" name=".SFUIText" family=".SF UI Text" pointSize="14"/>
+                                                <rect key="frame" x="40" y="12.5" width="54.5" height="16.5"/>
+                                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1121,7 +1115,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="$ 150.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yg0-BZ-ykt">
-                                        <rect key="frame" x="113" y="22" width="54.5" height="16.5"/>
+                                        <rect key="frame" x="111.5" y="22" width="54.5" height="16.5"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1143,12 +1137,12 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HK7-wm-UE4">
-                                <rect key="frame" x="16" y="265" width="343" height="48"/>
+                                <rect key="frame" x="16" y="285.5" width="343" height="48"/>
                                 <color key="backgroundColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="BuI-Bd-zYQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                 <state key="normal" title="Pay by credit card ending in 3792.">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -1159,9 +1153,9 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejL-6f-557">
-                                <rect key="frame" x="16" y="329" width="343" height="48"/>
+                                <rect key="frame" x="16" y="349.5" width="343" height="48"/>
                                 <color key="backgroundColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                 <state key="normal" title="Pay by credit card ending in 3792.">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -1172,11 +1166,11 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNn-j2-Yid">
-                                <rect key="frame" x="16" y="182" width="343" height="67"/>
+                                <rect key="frame" x="16" y="182" width="343" height="87.5"/>
                                 <string key="text">Congratulations on finding a good match!
 
 Next, let's set up a payment methods. The payment will only be released when the service is completed.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>

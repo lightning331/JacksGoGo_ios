@@ -22,6 +22,11 @@ class JGGServiceBuyVC: JGGSearchBaseVC {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     @IBAction func onPressedButton(_ sender: Any) {
         
     }

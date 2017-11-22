@@ -177,6 +177,7 @@
 		FFAFC72D1FC54AD4008E0664 /* JGGUserReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC72B1FC54AD4008E0664 /* JGGUserReviewCell.swift */; };
 		FFAFC72E1FC54AD4008E0664 /* JGGUserReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFAFC72C1FC54AD4008E0664 /* JGGUserReviewCell.xib */; };
 		FFAFC7301FC55050008E0664 /* JGGAllReviewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC72F1FC55050008E0664 /* JGGAllReviewsVC.swift */; };
+		FFAFC7321FC58E45008E0664 /* JGGServiceBuyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC7311FC58E45008E0664 /* JGGServiceBuyVC.swift */; };
 		FFB64BB11FB765190028B77B /* JGGActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB64BB01FB765190028B77B /* JGGActionSheet.xib */; };
 		FFB64BB31FB7B03C0028B77B /* JGGSearchMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB64BB21FB7B03C0028B77B /* JGGSearchMainVC.swift */; };
 		FFFC213B1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFC213A1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift */; };
@@ -360,6 +361,7 @@
 		FFAFC72B1FC54AD4008E0664 /* JGGUserReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGUserReviewCell.swift; sourceTree = "<group>"; };
 		FFAFC72C1FC54AD4008E0664 /* JGGUserReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGUserReviewCell.xib; sourceTree = "<group>"; };
 		FFAFC72F1FC55050008E0664 /* JGGAllReviewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAllReviewsVC.swift; sourceTree = "<group>"; };
+		FFAFC7311FC58E45008E0664 /* JGGServiceBuyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceBuyVC.swift; sourceTree = "<group>"; };
 		FFB64BB01FB765190028B77B /* JGGActionSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGActionSheet.xib; sourceTree = "<group>"; };
 		FFB64BB21FB7B03C0028B77B /* JGGSearchMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSearchMainVC.swift; sourceTree = "<group>"; };
 		FFFC213A1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGCanInviteUserListVC.swift; sourceTree = "<group>"; };
@@ -820,6 +822,7 @@
 				FF9E9E691FAC3F4B00F32283 /* JGGServiceDetailVC.swift */,
 				FF86D1201FC4D4D000EE70F5 /* JGGServiceDetailTimeSlotsVC.swift */,
 				FFAFC72F1FC55050008E0664 /* JGGAllReviewsVC.swift */,
+				FFAFC7311FC58E45008E0664 /* JGGServiceBuyVC.swift */,
 			);
 			path = ServiceDetail;
 			sourceTree = "<group>";
@@ -1226,6 +1229,7 @@
 				631EF29F1FA87462001D2915 /* JGGClientUserModel.swift in Sources */,
 				FFA21F711FABC57F00F5A6DA /* JGGTagListCell.swift in Sources */,
 				FF9E9E761FAC652300F32283 /* JGGCarouselImageView.swift in Sources */,
+				FFAFC7321FC58E45008E0664 /* JGGServiceBuyVC.swift in Sources */,
 				FF7C99261FB33AF600A2E5E4 /* JGGJobDetailStepLineImageView.swift in Sources */,
 				FF21FAE61FAB5588004D0ADA /* JGGDetailInfoFooterView.swift in Sources */,
 				FF7C99381FB356A500A2E5E4 /* JGGEditJobAddressVC.swift in Sources */,

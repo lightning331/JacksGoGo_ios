@@ -18,7 +18,10 @@ class JGGServiceDetailVC: JGGSearchBaseTableVC {
     fileprivate var btnMenu: UIBarButtonItem!
     
     private var isFavorited: Bool = false
-    
+    private var menu: AZDropdownMenu!
+    fileprivate lazy var serviceStroyboard = UIStoryboard(name: "Services", bundle: nil)
+    fileprivate lazy var appointmentStroyboard = UIStoryboard(name: "Appointment", bundle: nil)
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,6 +52,8 @@ class JGGServiceDetailVC: JGGSearchBaseTableVC {
                                       action: #selector(onPressedMenu(_:)))
         btnMenu.tintColor = UIColor.JGGGreen
         self.btnMenu = btnMenu
+        
+        createMenu()
         
         self.navigationItem.rightBarButtonItems = [btnMenu, btnFavorite]
         self.hidesBottomBarWhenPushed = true
@@ -102,6 +107,79 @@ class JGGServiceDetailVC: JGGSearchBaseTableVC {
         
     }
     
+    // MARK: Create Menu
+    
+    private func createMenu() {
+        var menuDataSource: [AZDropdownMenuItemData] = []
+        menuDataSource.append(AZDropdownMenuItemData(title:LocalizedString("Share"),
+                                                     icon:UIImage(named: "icon_share_green")!))
+        menuDataSource.append(AZDropdownMenuItemData(title:LocalizedString("Report Service"),
+                                                     icon:UIImage(named: "icon_flag_green")!))
+        
+        let menu = AZDropdownMenu(dataSource: menuDataSource)
+        menu.itemHeight = 60
+        menu.itemFontName = UIFont.JGGListTitle.fontName
+        menu.itemFontSize = 15
+        menu.overlayColor = UIColor.JGGBlack
+        menu.overlayAlpha = 0.5
+        menu.itemAlignment = .left
+        menu.itemImagePosition = .prefix
+        menu.menuSeparatorStyle = .none
+        menu.cellTapHandler = { [weak self] (indexPath: IndexPath) -> Void in
+            if indexPath.row == 0 { // Edit
+                self?.onPressedMenuShare()
+            } else if indexPath.row == 1 { // Delete
+                self?.onPressedMenuReport()
+            }
+        }
+        menu.hiddenCompleteHandler = {
+            self.navigationItem.rightBarButtonItem?.image = UIImage(named: "button_more_green")
+        }
+        self.menu = menu
+    }
+    
+    // MARK: Menu
+    @objc fileprivate func onPressedMenu(_ sender: UIBarButtonItem) {
+        if self.menu.isDescendant(of: self.view) {
+            self.menu.hideMenu()
+        } else {
+            self.menu.showMenuFromView(self.view)
+            sender.image = UIImage(named: "button_more_active_green")
+        }
+    }
+    
+    private func onPressedMenuShare() {
+        
+        let activityViewController = UIActivityViewController(activityItems: ["Testing url"], applicationActivities: nil)
+        self.navigationController?.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    private func onPressedMenuReport() {
+        print("Pressed Delete")
+        JGGAlertViewController.show(title: LocalizedString("Report Service"),
+                                    message: LocalizedString("Mark this post as inappropriate or offensive."),
+                                    colorSchema: .green,
+                                    okButtonTitle: LocalizedString("Report"),
+                                    okAction: {
+                                        self.perform(#selector(self.showReportThankYouAlert(_:)), with: nil, afterDelay: 0.5)
+        },
+                                    cancelButtonTitle: LocalizedString("Cancel")) {
+                                        
+        }
+    }
+    
+    @objc private func showReportThankYouAlert(_ sender: Any) {
+        JGGAlertViewController.show(title: LocalizedString("Thank You!"),
+                                    message: LocalizedString("Our team will be looking into the matter."),
+                                    colorSchema: .green,
+                                    okButtonTitle: LocalizedString("Done"),
+                                    okAction: {
+                                        
+        },
+                                    cancelButtonTitle: nil,
+                                    cancelAction: nil)
+    }
+
     // MARK: - Button actions
 
     @objc fileprivate func onPressedFavorite(_ sender: UIBarButtonItem) {
@@ -113,38 +191,31 @@ class JGGServiceDetailVC: JGGSearchBaseTableVC {
         }
     }
     
-    @objc fileprivate func onPressedMenu(_ sender: UIBarButtonItem) {
-        
-    }
-    
     @objc fileprivate func onPressedViewTimeSlots(_ sender: UIButton) {
-        let serviceStroyboard = UIStoryboard(name: "Services", bundle: nil)
         let timeSlotsVC = serviceStroyboard.instantiateViewController(withIdentifier: "JGGServiceDetailTimeSlotsVC") as! JGGServiceDetailTimeSlotsVC
         self.navigationController?.pushViewController(timeSlotsVC, animated: true)
     }
     
     @objc fileprivate func onPressedSeeAllReviews(_ sender: UIButton) {
-        let serviceStroyboard = UIStoryboard(name: "Services", bundle: nil)
         let allReviewsVC = serviceStroyboard.instantiateViewController(withIdentifier: "JGGAllReviewsVC") as! JGGAllReviewsVC
         self.navigationController?.pushViewController(allReviewsVC, animated: true)
     }
     
     @objc fileprivate func onPressedRequestAQuotation(_ sender: UIButton) {
         if isCanBuyService {
-            
+            let serviceBuyVC = serviceStroyboard.instantiateViewController(withIdentifier: "JGGServiceBuyVC") as! JGGServiceBuyVC
+            self.navigationController?.pushViewController(serviceBuyVC, animated: true)
         } else {
             
         }
     }
     
     @objc fileprivate func onPressedLocation(_ sender: UIButton) {
-        let appointmentStroyboard = UIStoryboard(name: "Appointment", bundle: nil)
         let locationMapVC = appointmentStroyboard.instantiateViewController(withIdentifier: "JGGLocationMapVC") as! JGGLocationMapVC
         self.navigationController?.pushViewController(locationMapVC, animated: true)
     }
     
     @objc fileprivate func onPressedViewAllServices(_ sender: UIButton) {
-        let serviceStroyboard = UIStoryboard(name: "Services", bundle: nil)
         let allServicesVC = serviceStroyboard.instantiateViewController(withIdentifier: "JGGActiveServicesAroundVC") as! JGGActiveServicesAroundVC
         self.navigationController?.pushViewController(allServicesVC, animated: true)
     }

@@ -10,11 +10,9 @@ import UIKit
 import SnapKit
 import JTAppleCalendar
 
-class JGGServiceDetailTimeSlotsVC: JGGSearchBaseVC {
+class JGGServiceDetailTimeSlotsVC: JGGServiceSubDetailBaseVC {
 
     @IBOutlet weak var btnToday: UIBarButtonItem!
-    @IBOutlet weak var imgviewCategory: UIImageView!
-    @IBOutlet weak var lblCategoryName: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     var calendarView: JGGCalendarView!

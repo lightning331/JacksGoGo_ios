@@ -18,6 +18,8 @@ class JGGEditJobStepRootVC: JGGViewController, JGGJobDetailStepHeaderViewDelegat
     @IBOutlet weak var containerTime: UIView!
     @IBOutlet weak var containerAddress: UIView!
     @IBOutlet weak var containerReport: UIView!
+
+    var isRequestQuotationMode: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +33,17 @@ class JGGEditJobStepRootVC: JGGViewController, JGGJobDetailStepHeaderViewDelegat
         editJobStepView.snp.makeConstraints { (maker) in
             maker.left.top.right.bottom.equalToSuperview()
         }
-        editJobStepView.setCompletedStep(describe: true, time: true, address: true, report: true)
+        if isRequestQuotationMode {
+            editJobStepView.setCompletedStep(describe: false,
+                                             time: false,
+                                             address: false,
+                                             report: false)
+        } else {
+            editJobStepView.setCompletedStep(describe: true,
+                                             time: true,
+                                             address: true,
+                                             report: true)
+        }
         
         mainScrollView.isScrollEnabled = false
     }
@@ -41,18 +53,18 @@ class JGGEditJobStepRootVC: JGGViewController, JGGJobDetailStepHeaderViewDelegat
         // Dispose of any resources that can be recreated.
     }
     
-    func jobDetailStep(selected: JobDetailStep) {
+    func jobDetailStep(selected: Int) {
         switch selected {
-        case .describe:
+        case 0:
             mainScrollView.setContentOffset(CGPoint(x: mainScrollView.frame.width * 0, y: 0), animated: true)
             break
-        case .time:
+        case 1:
             mainScrollView.setContentOffset(CGPoint(x: mainScrollView.frame.width * 1, y: 0), animated: true)
             break
-        case .address:
+        case 2:
             mainScrollView.setContentOffset(CGPoint(x: mainScrollView.frame.width * 2, y: 0), animated: true)
             break
-        case .report:
+        case 3:
             mainScrollView.setContentOffset(CGPoint(x: mainScrollView.frame.width * 3, y: 0), animated: true)
             break
         default:

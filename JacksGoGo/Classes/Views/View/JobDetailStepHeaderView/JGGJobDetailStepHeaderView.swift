@@ -8,101 +8,122 @@
 
 import UIKit
 
-public enum JobDetailStep {
-    case describe
-    case time
-    case address
-    case report
-    case none
-}
-
 class JGGJobDetailStepHeaderView: UIView {
 
     @IBOutlet weak var rootView: UIView!
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var line1DescribeAndTime: JGGJobDetailStepLineImageView!
-    @IBOutlet weak var line2TimeAndAddress: JGGJobDetailStepLineImageView!
-    @IBOutlet weak var line3AddressAndReport: JGGJobDetailStepLineImageView!
+    @IBOutlet weak var line1: JGGJobDetailStepLineImageView!
+    @IBOutlet weak var line2: JGGJobDetailStepLineImageView!
+    @IBOutlet weak var line3: JGGJobDetailStepLineImageView!
     
-    @IBOutlet weak var btnDescribe: UIButton!
-    @IBOutlet weak var btnTime: UIButton!
-    @IBOutlet weak var btnAddress: UIButton!
-    @IBOutlet weak var btnReport: UIButton!
+    @IBOutlet weak var btnFirst: UIButton!
+    @IBOutlet weak var btnSecond: UIButton!
+    @IBOutlet weak var btnThird: UIButton!
+    @IBOutlet weak var btnFourth: UIButton!
     
-    var currentStep: JobDetailStep = .describe
+    var currentStep: Int = 0
+    
     
     var delegate: JGGJobDetailStepHeaderViewDelegate?
     
-    fileprivate var isCompleteTime: Bool = false
-    fileprivate var isCompleteAddress: Bool = false
-    fileprivate var isCompleteReport: Bool = false
+    fileprivate var isCompleteFirst: Bool = false
+    fileprivate var isCompleteSecond: Bool = false
+    fileprivate var isCompleteThird: Bool = false
+    fileprivate var isCompleteFourth: Bool = false
     
     // MARK: - Methods
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        selectButton(btnDescribe)
+        
+    }
+    
+    func setCompletedStep(describe: Bool, price: Bool, time: Bool, address: Bool) -> Void {
+        btnFirst.setTitle(LocalizedString("Describe"), for: .normal)
+        btnSecond.setTitle(LocalizedString("Price"), for: .normal)
+        btnThird.setTitle(LocalizedString("Time"), for: .normal)
+        btnFourth.setTitle(LocalizedString("Address"), for: .normal)
+
+        setCompletedStep(first: describe, second: price, third: time, fourth: address)
+
     }
     
     func setCompletedStep(describe: Bool, time: Bool, address: Bool, report: Bool) -> Void {
-        
-        setIcon(button: btnDescribe, isCompletion: describe)
-        setIcon(button: btnTime,     isCompletion: time)
-        setIcon(button: btnAddress,  isCompletion: address)
-        setIcon(button: btnReport,   isCompletion: report)
-        
-        line1DescribeAndTime.setCompletion(time)
-        line2TimeAndAddress.setCompletion(time)
-        line3AddressAndReport.setCompletion(time)
+        btnFirst.setTitle(LocalizedString("Describe"), for: .normal)
+        btnSecond.setTitle(LocalizedString("Time"), for: .normal)
+        btnThird.setTitle(LocalizedString("Address"), for: .normal)
+        btnFourth.setTitle(LocalizedString("Report"), for: .normal)
 
-        self.isCompleteTime = time
-        self.isCompleteAddress = address
-        self.isCompleteReport = report
+        setCompletedStep(first: describe, second: time, third: address, fourth: report)
+
     }
+    
+    func setCompletedStep(first: Bool, second: Bool, third: Bool, fourth: Bool) -> Void {
+        
+        setIcon(button: btnFirst,   isCompletion: first)
+        setIcon(button: btnSecond,  isCompletion: second)
+        setIcon(button: btnThird,   isCompletion: third)
+        setIcon(button: btnFourth,  isCompletion: fourth)
+        
+        line1.setCompletion(second)
+        line2.setCompletion(third)
+        line3.setCompletion(fourth)
 
+        self.isCompleteFirst = first
+        self.isCompleteSecond = second
+        self.isCompleteThird = third
+        self.isCompleteFourth = fourth
+        
+        btnFirst.isEnabled = true
+        selectButton(btnFirst)
+    }
+    
     fileprivate func setIcon(button: UIButton, isCompletion: Bool) {
         if isCompletion {
             button.setImage(UIImage(named: "counter_greytick"), for: .normal)
             button.setImage(UIImage(named: "counter_greentick"), for: .selected)
+            button.isEnabled = true
         } else {
             button.setImage(UIImage(named: "counter_grey"), for: .normal)
             button.setImage(UIImage(named: "counter_greenactive"), for: .selected)
+            button.isEnabled = false
         }
     }
     
     fileprivate func selectButton(_ button: UIButton) {
-        for b in [btnDescribe, btnTime, btnAddress, btnReport] {
+        for b in [btnFirst, btnSecond, btnThird, btnFourth] {
             if b == button {
                 b?.isSelected = true
-                if b == btnDescribe {
-                    currentStep = .describe
-                    line1DescribeAndTime.setCompletion(isCompleteTime)
-                    line2TimeAndAddress.setCompletion(isCompleteAddress)
-                    line3AddressAndReport.setCompletion(isCompleteReport)
-
-                } else if b == btnTime {
-                    currentStep = .time
+                if b == btnFirst {
+                    currentStep = 0
                     
-                    line1DescribeAndTime.setCompletion()
-                    line2TimeAndAddress.setCompletion(isCompleteAddress)
-                    line3AddressAndReport.setCompletion(isCompleteReport)
+                    line1.setCompletion(isCompleteSecond)
+                    line2.setCompletion(isCompleteThird)
+                    line3.setCompletion(isCompleteFourth)
 
-                } else if b == btnAddress {
-                    currentStep = .address
+                } else if b == btnSecond {
+                    currentStep = 1
                     
-                    line1DescribeAndTime.setCompletion()
-                    line2TimeAndAddress.setCompletion()
-                    line3AddressAndReport.setCompletion(isCompleteReport)
+                    line1.setCompletion()
+                    line2.setCompletion(isCompleteThird)
+                    line3.setCompletion(isCompleteFourth)
 
-                } else if b == btnReport {
-                    currentStep = .report
+                } else if b == btnThird {
+                    currentStep = 2
                     
-                    line1DescribeAndTime.setCompletion()
-                    line2TimeAndAddress.setCompletion()
-                    line3AddressAndReport.setCompletion()
+                    line1.setCompletion()
+                    line2.setCompletion()
+                    line3.setCompletion(isCompleteFourth)
+
+                } else if b == btnFourth {
+                    currentStep = 3
+
+                    line1.setCompletion()
+                    line2.setCompletion()
+                    line3.setCompletion()
 
                 } else {
-                    currentStep = .none
+                    currentStep = -1
                 }
                 self.delegate?.jobDetailStep(selected: currentStep)
             } else {
@@ -115,8 +136,69 @@ class JGGJobDetailStepHeaderView: UIView {
         selectButton(button)
     }
     
+    func completeFirstStep(_ completion: Bool = true) -> Void {
+        setIcon(button: btnFirst, isCompletion: completion)
+        isCompleteFirst = true
+    }
+    
+    func completeSecondStep(_ completion: Bool = true) -> Void {
+        setIcon(button: btnSecond, isCompletion: completion)
+        isCompleteSecond = true
+    }
+    
+    func completeThirdStep(_ completion: Bool = true) -> Void {
+        setIcon(button: btnThird, isCompletion: completion)
+        isCompleteThird = true
+    }
+    
+    func completeFourthStep(_ completion: Bool = true) -> Void {
+        setIcon(button: btnFourth, isCompletion: completion)
+        isCompleteFourth = true
+    }
+    
+    func completeCurrentStep() -> Void {
+        switch currentStep {
+        case 0:
+            completeFirstStep()
+            break
+        case 1:
+            completeSecondStep()
+            break
+        case 2:
+            completeThirdStep()
+            break
+        case 3:
+            completeFourthStep()
+            break
+        default:
+            break
+        }
+    }
+    
+    func nextStep() -> Void {
+        switch currentStep {
+        case 0:
+            btnSecond.isEnabled = true
+            selectButton(btnSecond)
+            break
+        case 1:
+            btnThird.isEnabled = true
+            selectButton(btnThird)
+            break
+        case 2:
+            btnFourth.isEnabled = true
+            selectButton(btnFourth)
+            break
+        case 3:
+            
+            break
+        default:
+            break
+        }
+    }
+    
 }
 
 protocol JGGJobDetailStepHeaderViewDelegate {
-    func jobDetailStep(selected: JobDetailStep) -> Void
+    func jobDetailStep(selected: Int) -> Void
 }

@@ -134,14 +134,14 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="btnAddress" destination="m0d-eM-7pY" id="T9e-9l-MHX"/>
-                <outlet property="btnDescribe" destination="JJr-Vd-W1G" id="Guo-m5-kq7"/>
-                <outlet property="btnReport" destination="vdE-eJ-gX9" id="mJA-ed-TwR"/>
-                <outlet property="btnTime" destination="I4Z-ez-9lL" id="o8d-8r-JbV"/>
+                <outlet property="btnFirst" destination="JJr-Vd-W1G" id="IaN-hL-Pbi"/>
+                <outlet property="btnFourth" destination="vdE-eJ-gX9" id="Pfr-eM-UCU"/>
+                <outlet property="btnSecond" destination="I4Z-ez-9lL" id="kdx-cO-R7E"/>
+                <outlet property="btnThird" destination="m0d-eM-7pY" id="LCX-ll-Zcd"/>
                 <outlet property="containerView" destination="f5Q-Tg-4cN" id="0qr-M6-wpa"/>
-                <outlet property="line1DescribeAndTime" destination="mLJ-gh-eQO" id="FR3-nD-AOx"/>
-                <outlet property="line2TimeAndAddress" destination="cq8-W4-KCv" id="Ptb-Vr-FPA"/>
-                <outlet property="line3AddressAndReport" destination="FcT-ha-vtB" id="iqd-gQ-TNH"/>
+                <outlet property="line1" destination="mLJ-gh-eQO" id="n8U-my-rSo"/>
+                <outlet property="line2" destination="cq8-W4-KCv" id="g3r-Xr-1tp"/>
+                <outlet property="line3" destination="FcT-ha-vtB" id="2X0-Pe-gKS"/>
             </connections>
             <point key="canvasLocation" x="-96" y="-243"/>
         </view>

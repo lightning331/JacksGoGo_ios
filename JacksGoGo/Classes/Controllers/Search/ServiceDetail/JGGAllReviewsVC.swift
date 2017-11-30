@@ -9,10 +9,8 @@
 import UIKit
 import Cosmos
 
-class JGGAllReviewsVC: JGGSearchBaseVC {
+class JGGAllReviewsVC: JGGServiceSubDetailBaseVC {
 
-    @IBOutlet weak var imgviewCategory: UIImageView!
-    @IBOutlet weak var lblCategoryName: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var ratebarTotal: CosmosView!
     

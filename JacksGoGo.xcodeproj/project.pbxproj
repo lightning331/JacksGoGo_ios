@@ -178,6 +178,8 @@
 		FFAFC72E1FC54AD4008E0664 /* JGGUserReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFAFC72C1FC54AD4008E0664 /* JGGUserReviewCell.xib */; };
 		FFAFC7301FC55050008E0664 /* JGGAllReviewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC72F1FC55050008E0664 /* JGGAllReviewsVC.swift */; };
 		FFAFC7321FC58E45008E0664 /* JGGServiceBuyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC7311FC58E45008E0664 /* JGGServiceBuyVC.swift */; };
+		FFB5ED581FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB5ED571FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift */; };
+		FFB5ED5A1FD0207D006ADE49 /* JGGRequestQuotationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB5ED591FD0207D006ADE49 /* JGGRequestQuotationVC.swift */; };
 		FFB64BB11FB765190028B77B /* JGGActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB64BB01FB765190028B77B /* JGGActionSheet.xib */; };
 		FFB64BB31FB7B03C0028B77B /* JGGSearchMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB64BB21FB7B03C0028B77B /* JGGSearchMainVC.swift */; };
 		FFFC213B1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFC213A1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift */; };
@@ -362,6 +364,8 @@
 		FFAFC72C1FC54AD4008E0664 /* JGGUserReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGUserReviewCell.xib; sourceTree = "<group>"; };
 		FFAFC72F1FC55050008E0664 /* JGGAllReviewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAllReviewsVC.swift; sourceTree = "<group>"; };
 		FFAFC7311FC58E45008E0664 /* JGGServiceBuyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceBuyVC.swift; sourceTree = "<group>"; };
+		FFB5ED571FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceSubDetailBaseVC.swift; sourceTree = "<group>"; };
+		FFB5ED591FD0207D006ADE49 /* JGGRequestQuotationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGRequestQuotationVC.swift; sourceTree = "<group>"; };
 		FFB64BB01FB765190028B77B /* JGGActionSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGActionSheet.xib; sourceTree = "<group>"; };
 		FFB64BB21FB7B03C0028B77B /* JGGSearchMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSearchMainVC.swift; sourceTree = "<group>"; };
 		FFFC213A1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGCanInviteUserListVC.swift; sourceTree = "<group>"; };
@@ -820,9 +824,11 @@
 			isa = PBXGroup;
 			children = (
 				FF9E9E691FAC3F4B00F32283 /* JGGServiceDetailVC.swift */,
+				FFB5ED571FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift */,
 				FF86D1201FC4D4D000EE70F5 /* JGGServiceDetailTimeSlotsVC.swift */,
 				FFAFC72F1FC55050008E0664 /* JGGAllReviewsVC.swift */,
 				FFAFC7311FC58E45008E0664 /* JGGServiceBuyVC.swift */,
+				FFB5ED591FD0207D006ADE49 /* JGGRequestQuotationVC.swift */,
 			);
 			path = ServiceDetail;
 			sourceTree = "<group>";
@@ -1095,6 +1101,7 @@
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/TLPhotoPicker/TLPhotoPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/TagListView/TagListView.framework",
 				"${BUILT_PRODUCTS_DIR}/UIColor_Hex_Swift/UIColor_Hex_Swift.framework",
 			);
@@ -1110,6 +1117,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TLPhotoPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TagListView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIColor_Hex_Swift.framework",
 			);
@@ -1207,6 +1215,7 @@
 				FFA061BF1FAB50A000185C56 /* JGGDetailInfoDescriptionCell.swift in Sources */,
 				63BE91A31FA0233300D40C07 /* AppDelegate.swift in Sources */,
 				FFA061C31FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.swift in Sources */,
+				FFB5ED5A1FD0207D006ADE49 /* JGGRequestQuotationVC.swift in Sources */,
 				FFA21F5D1FAB87D600F5A6DA /* JGGBorderButtonCell.swift in Sources */,
 				FF9E9E6C1FAC4B7300F32283 /* JGGAppointmentDetailVC.swift in Sources */,
 				63955EE81FA0668800D825B2 /* JGGAppHomeTabView.swift in Sources */,
@@ -1215,6 +1224,7 @@
 				FFA061C71FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.swift in Sources */,
 				FFFC213B1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift in Sources */,
 				FF7C993E1FB35DEE00A2E5E4 /* JGGEditJobNC.swift in Sources */,
+				FFB5ED581FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift in Sources */,
 				FFFC213F1FB5C0AA00AAA6F7 /* JGGBidDetailVC.swift in Sources */,
 				FFB64BB31FB7B03C0028B77B /* JGGSearchMainVC.swift in Sources */,
 				632E78271FA2F92D00CFFB24 /* JGGAppFilterVC.swift in Sources */,
@@ -1477,7 +1487,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = U32LT75BM4;
 				INFOPLIST_FILE = JacksGoGo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.JacksGoGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1497,7 +1507,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = U32LT75BM4;
 				INFOPLIST_FILE = JacksGoGo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.JacksGoGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

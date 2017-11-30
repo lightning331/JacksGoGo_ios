@@ -8,10 +8,8 @@
 
 import UIKit
 
-class JGGServiceBuyVC: JGGSearchBaseVC {
+class JGGServiceBuyVC: JGGServiceSubDetailBaseVC {
 
-    @IBOutlet weak var imgviewCategory: UIImageView!
-    @IBOutlet weak var lblCategoryName: UILabel!
     @IBOutlet weak var lblPrice: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
     @IBOutlet weak var btnFirst: UIButton!

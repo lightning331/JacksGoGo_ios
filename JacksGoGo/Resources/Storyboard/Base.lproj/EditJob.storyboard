@@ -474,6 +474,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="561"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="xyu-zM-dA4">
+                            <rect key="frame" x="0.0" y="505" width="375" height="80"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJO-Ba-WRo">
+                                    <rect key="frame" x="16" y="16" width="343" height="50"/>
+                                    <color key="backgroundColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="LV1-zA-cCR"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                                    <state key="normal" title="Next"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="onPressedNext:" destination="CkH-W2-Q8W" eventType="touchUpInside" id="CO2-SS-Tid"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="NJO-Ba-WRo" secondAttribute="trailing" constant="16" id="BM7-wf-SuE"/>
+                                <constraint firstItem="NJO-Ba-WRo" firstAttribute="top" secondItem="xyu-zM-dA4" secondAttribute="top" constant="16" id="SNJ-ey-AGz"/>
+                                <constraint firstItem="NJO-Ba-WRo" firstAttribute="leading" secondItem="xyu-zM-dA4" secondAttribute="leading" constant="16" id="sfP-hS-k09"/>
+                            </constraints>
+                        </view>
                         <sections>
                             <tableViewSection id="0mj-UI-Kw3">
                                 <cells>
@@ -688,6 +717,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="btnNext" destination="NJO-Ba-WRo" id="Jll-KT-oPR"/>
                         <outlet property="btnTakePhotos" destination="B7l-Ls-auD" id="f99-6P-dM1"/>
                         <outlet property="collectionPhotos" destination="elZ-br-lWB" id="XiN-L6-w9V"/>
                         <outlet property="txtJobDescribe" destination="pAa-ZL-oGn" id="L2z-7k-NSn"/>
@@ -741,6 +771,35 @@
                                 <constraint firstAttribute="trailing" secondItem="lLw-2I-hXv" secondAttribute="trailing" constant="16" id="scZ-tH-2e7"/>
                             </constraints>
                         </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="Pah-O0-bcR">
+                            <rect key="frame" x="0.0" y="476" width="375" height="80"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiK-Cs-Rzv">
+                                    <rect key="frame" x="16" y="16" width="343" height="50"/>
+                                    <color key="backgroundColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="gOV-s1-hpu"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                                    <state key="normal" title="Next"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="onPressedNext:" destination="dR3-2B-41y" eventType="touchUpInside" id="55w-2S-chn"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="HiK-Cs-Rzv" firstAttribute="top" secondItem="Pah-O0-bcR" secondAttribute="top" constant="16" id="VXa-Ld-89p"/>
+                                <constraint firstItem="HiK-Cs-Rzv" firstAttribute="leading" secondItem="Pah-O0-bcR" secondAttribute="leading" constant="16" id="hmy-Yc-gkg"/>
+                                <constraint firstAttribute="trailing" secondItem="HiK-Cs-Rzv" secondAttribute="trailing" constant="16" id="uZ8-qc-Yh3"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="88" id="upg-fo-1hV">
                                 <rect key="frame" x="0.0" y="388" width="375" height="88"/>
@@ -759,12 +818,13 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="btnNext" destination="HiK-Cs-Rzv" id="uTP-A1-7ik"/>
                         <outlet property="viewCalenarContainer" destination="LR0-gY-oFF" id="D4X-jd-cpy"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3d-kn-fA8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2341.5999999999999" y="1091.6041979010495"/>
+            <point key="canvasLocation" x="2341.5" y="1091.5"/>
         </scene>
         <!--Edit Job AddressVC-->
         <scene sceneID="u5j-T7-Vrj">
@@ -801,6 +861,35 @@
                                 <constraint firstItem="0aE-3p-dwx" firstAttribute="top" secondItem="agG-dP-6Bv" secondAttribute="bottom" constant="16" id="zIj-iI-oME"/>
                             </constraints>
                         </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="mWo-F8-vKG">
+                            <rect key="frame" x="0.0" y="300" width="375" height="80"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBs-BE-VxB">
+                                    <rect key="frame" x="16" y="16" width="343" height="50"/>
+                                    <color key="backgroundColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="eUR-YK-OZw"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                                    <state key="normal" title="Next"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="onPressedNext:" destination="VBR-N7-R3u" eventType="touchUpInside" id="zPo-hx-xNv"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="LBs-BE-VxB" firstAttribute="top" secondItem="mWo-F8-vKG" secondAttribute="top" constant="16" id="KuR-kx-Zgm"/>
+                                <constraint firstItem="LBs-BE-VxB" firstAttribute="leading" secondItem="mWo-F8-vKG" secondAttribute="leading" constant="16" id="jec-vw-WGx"/>
+                                <constraint firstAttribute="trailing" secondItem="LBs-BE-VxB" secondAttribute="trailing" constant="16" id="sfd-3A-Ovz"/>
+                            </constraints>
+                        </view>
                         <sections>
                             <tableViewSection id="p96-ZB-Pad">
                                 <cells>
@@ -815,7 +904,7 @@
                                                     <rect key="frame" x="16" y="11" width="343" height="38"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unit" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Vf-0s-A15">
-                                                            <rect key="frame" x="16" y="9.5" width="90" height="19"/>
+                                                            <rect key="frame" x="16" y="10" width="90" height="19"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="90" id="hS7-Nb-jSF"/>
                                                             </constraints>
@@ -872,7 +961,7 @@
                                                     <rect key="frame" x="16" y="11" width="343" height="38"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjj-Hk-qYZ">
-                                                            <rect key="frame" x="16" y="9.5" width="90" height="19"/>
+                                                            <rect key="frame" x="16" y="10" width="90" height="19"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="90" id="CcL-83-5gF"/>
                                                             </constraints>
@@ -929,7 +1018,7 @@
                                                     <rect key="frame" x="16" y="11" width="343" height="38"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Postcode" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4A-Kq-6Uy">
-                                                            <rect key="frame" x="16" y="9.5" width="90" height="19"/>
+                                                            <rect key="frame" x="16" y="10" width="90" height="19"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="90" id="fsE-cl-aaP"/>
                                                             </constraints>
@@ -984,6 +1073,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="btnNext" destination="LBs-BE-VxB" id="SMC-Pk-amt"/>
                         <outlet property="txtPostCode" destination="N0w-S4-ah4" id="2O4-Bg-taH"/>
                         <outlet property="txtStreet" destination="t9j-9s-gIp" id="1d6-Zn-zRY"/>
                         <outlet property="txtUnits" destination="Cbz-ok-vhk" id="CbO-Ax-Xeu"/>
@@ -1002,7 +1092,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="oKe-Kw-6tn">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="514"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="467"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose how you want to verify the complete work (optional)." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbz-c8-Gye">
@@ -1124,6 +1214,35 @@
                                 <constraint firstAttribute="trailing" secondItem="oSI-X9-5ar" secondAttribute="trailing" constant="16" id="tcU-Eo-adw"/>
                             </constraints>
                         </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="4RW-FS-QCb">
+                            <rect key="frame" x="0.0" y="467" width="375" height="80"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="269-Ih-tBn">
+                                    <rect key="frame" x="16" y="16" width="343" height="50"/>
+                                    <color key="backgroundColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="7AF-T0-1VB"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                                    <state key="normal" title="Go To Summary"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="onPressedNext:" destination="VEx-Qf-h6O" eventType="touchUpInside" id="VNz-aw-JI7"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="269-Ih-tBn" firstAttribute="leading" secondItem="4RW-FS-QCb" secondAttribute="leading" constant="16" id="LQb-Ve-iF1"/>
+                                <constraint firstItem="269-Ih-tBn" firstAttribute="top" secondItem="4RW-FS-QCb" secondAttribute="top" constant="16" id="lxt-5Q-eNC"/>
+                                <constraint firstAttribute="trailing" secondItem="269-Ih-tBn" secondAttribute="trailing" constant="16" id="sai-35-Ivp"/>
+                            </constraints>
+                        </view>
                         <sections>
                             <tableViewSection id="beb-0B-ADV">
                                 <cells/>
@@ -1135,6 +1254,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="btnNext" destination="269-Ih-tBn" id="QVO-Nl-bKV"/>
                         <outlet property="lblBeforeDescription" destination="D2O-cy-SUq" id="TXH-5f-Tk4"/>
                         <outlet property="lblBeforeTitle" destination="5Nt-6B-qfC" id="y6r-Wx-NWj"/>
                         <outlet property="lblGeotrackingDescription" destination="5fe-9Z-o8d" id="Xay-Hh-4MA"/>
@@ -1148,7 +1268,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AHc-Vh-3sb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4028" y="1091.6041979010495"/>
+            <point key="canvasLocation" x="4026.4000000000001" y="1090.704647676162"/>
         </scene>
     </scenes>
     <resources>

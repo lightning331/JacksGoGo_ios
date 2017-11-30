@@ -196,7 +196,7 @@ open class AZDropdownMenu: UIView {
 
     fileprivate func initOverlay() {
         let frame = UIScreen.main.bounds
-        overlay.frame = CGRect(origin: CGPoint(x: frame.origin.x,y :frame.origin.y), size: CGSize(width: frame.size.width, height: frame.size.height))
+        overlay.frame = CGRect(origin: CGPoint(x: frame.origin.x,y :frame.origin.y + 100), size: CGSize(width: frame.size.width, height: frame.size.height))
         overlay.backgroundColor = self.overlayColor
         overlay.accessibilityIdentifier = "OVERLAY"
         overlay.alpha = 0

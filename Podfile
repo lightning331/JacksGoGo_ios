@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+# platform :ios, '9.1'
 
 target 'JacksGoGo' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -18,6 +18,7 @@ pod 'Cosmos', '~> 12.0'
 pod 'TagListView', '~> 1.3.0'
 pod 'MZFormSheetPresentationController', '~> 2.4.1'
 pod 'JTAppleCalendar', '~> 7.1.4'
+pod 'TLPhotoPicker', '~> 1.3.7'
 
 pod 'Fabric'
 pod 'Crashlytics'

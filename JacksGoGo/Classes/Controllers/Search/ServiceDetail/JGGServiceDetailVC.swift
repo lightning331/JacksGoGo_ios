@@ -140,10 +140,12 @@ class JGGServiceDetailVC: JGGSearchBaseTableVC {
     
     // MARK: Menu
     @objc fileprivate func onPressedMenu(_ sender: UIBarButtonItem) {
-        if self.menu.isDescendant(of: self.view) {
+        if self.menu.isDescendant(of: self.navigationController!.view!) {
             self.menu.hideMenu()
         } else {
-            self.menu.showMenuFromView(self.view)
+            let height = UIApplication.shared.statusBarFrame.height +
+                self.navigationController!.navigationBar.frame.height
+            self.menu.showMenuFromView(self.navigationController!.view!, offsetY: height)
             sender.image = UIImage(named: "button_more_active_green")
         }
     }
@@ -206,6 +208,9 @@ class JGGServiceDetailVC: JGGSearchBaseTableVC {
             let serviceBuyVC = serviceStroyboard.instantiateViewController(withIdentifier: "JGGServiceBuyVC") as! JGGServiceBuyVC
             self.navigationController?.pushViewController(serviceBuyVC, animated: true)
         } else {
+            
+            let requestQuotationVC = serviceStroyboard.instantiateViewController(withIdentifier: "JGGRequestQuotationVC") as! JGGRequestQuotationVC
+            self.navigationController?.pushViewController(requestQuotationVC, animated: true)
             
         }
     }

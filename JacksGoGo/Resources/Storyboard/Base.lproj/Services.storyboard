@@ -1214,6 +1214,90 @@ Next, let's set up a payment methods. The payment will only be released when the
             </objects>
             <point key="canvasLocation" x="3037.5999999999999" y="899.10044977511257"/>
         </scene>
+        <!--Request A Quotation-->
+        <scene sceneID="tQA-j2-csv">
+            <objects>
+                <viewController storyboardIdentifier="JGGRequestQuotationVC" id="wKh-Wa-c2h" customClass="JGGRequestQuotationVC" customModule="JacksGoGo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fax-1G-Oyj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wZx-x5-cg3">
+                                <rect key="frame" x="0.0" y="64" width="375" height="40"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_cat_exploration" translatesAutoresizingMaskIntoConstraints="NO" id="gWJ-OI-YAY">
+                                        <rect key="frame" x="8" y="8" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="gWJ-OI-YAY" secondAttribute="height" multiplier="1:1" id="EB9-9A-Xl1"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Group Swimming Class" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTa-zb-C9y">
+                                        <rect key="frame" x="40" y="13.5" width="319" height="14"/>
+                                        <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="gWJ-OI-YAY" firstAttribute="leading" secondItem="wZx-x5-cg3" secondAttribute="leading" constant="8" id="PFk-Ta-9l0"/>
+                                    <constraint firstAttribute="bottom" secondItem="gWJ-OI-YAY" secondAttribute="bottom" constant="8" id="Sgt-Dk-Qod"/>
+                                    <constraint firstAttribute="trailing" secondItem="yTa-zb-C9y" secondAttribute="trailing" constant="16" id="U6x-uJ-0Fm"/>
+                                    <constraint firstItem="gWJ-OI-YAY" firstAttribute="top" secondItem="wZx-x5-cg3" secondAttribute="top" constant="8" id="gjm-A2-41k"/>
+                                    <constraint firstAttribute="height" constant="40" id="nJI-7E-OOI"/>
+                                    <constraint firstItem="yTa-zb-C9y" firstAttribute="centerY" secondItem="wZx-x5-cg3" secondAttribute="centerY" id="njM-BF-fb3"/>
+                                    <constraint firstItem="yTa-zb-C9y" firstAttribute="leading" secondItem="gWJ-OI-YAY" secondAttribute="trailing" constant="8" id="rGo-rH-59k"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XY2-69-ola">
+                                <rect key="frame" x="0.0" y="104" width="375" height="2"/>
+                                <color key="backgroundColor" red="0.91757661099999999" green="0.91768664119999999" blue="0.91753917929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="nly-uS-akj"/>
+                                </constraints>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XEr-0t-HMG">
+                                <rect key="frame" x="0.0" y="106" width="375" height="561"/>
+                                <connections>
+                                    <segue destination="mJS-gv-bQ2" kind="embed" identifier="gotoEditJobStepRootVC" id="eqV-y6-uyi"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XY2-69-ola" firstAttribute="top" secondItem="wZx-x5-cg3" secondAttribute="bottom" id="99c-Ih-pV0"/>
+                            <constraint firstItem="XY2-69-ola" firstAttribute="trailing" secondItem="lCH-ZE-FA4" secondAttribute="trailing" id="CSz-JK-MJg"/>
+                            <constraint firstItem="XY2-69-ola" firstAttribute="leading" secondItem="lCH-ZE-FA4" secondAttribute="leading" id="DBs-I9-Sx8"/>
+                            <constraint firstItem="XEr-0t-HMG" firstAttribute="top" secondItem="XY2-69-ola" secondAttribute="bottom" id="Fjp-UF-YGw"/>
+                            <constraint firstItem="XEr-0t-HMG" firstAttribute="leading" secondItem="lCH-ZE-FA4" secondAttribute="leading" id="MU6-0f-egb"/>
+                            <constraint firstItem="wZx-x5-cg3" firstAttribute="top" secondItem="lCH-ZE-FA4" secondAttribute="top" id="ZTZ-ha-WCI"/>
+                            <constraint firstItem="XEr-0t-HMG" firstAttribute="bottom" secondItem="lCH-ZE-FA4" secondAttribute="bottom" id="ax2-9w-sOV"/>
+                            <constraint firstItem="wZx-x5-cg3" firstAttribute="leading" secondItem="lCH-ZE-FA4" secondAttribute="leading" id="oUf-ft-6ne"/>
+                            <constraint firstItem="XEr-0t-HMG" firstAttribute="trailing" secondItem="lCH-ZE-FA4" secondAttribute="trailing" id="sFN-47-BPo"/>
+                            <constraint firstItem="wZx-x5-cg3" firstAttribute="trailing" secondItem="lCH-ZE-FA4" secondAttribute="trailing" id="sPb-kw-iXd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lCH-ZE-FA4"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Request A Quotation" id="5yI-dy-nwY"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="imgviewCategory" destination="gWJ-OI-YAY" id="2MW-ny-ktP"/>
+                        <outlet property="lblCategoryName" destination="yTa-zb-C9y" id="jti-5n-ZN2"/>
+                        <outlet property="viewContainer" destination="XEr-0t-HMG" id="WFi-D4-wxH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MWu-po-E9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3868" y="899.10044977511257"/>
+        </scene>
+        <!--JGGEditJobStepRootVC-->
+        <scene sceneID="JoW-wb-W3c">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EditJob" referencedIdentifier="JGGEditJobStepRootVC" id="mJS-gv-bQ2" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ORV-wo-Nth" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4545" y="899"/>
+        </scene>
     </scenes>
     <resources>
         <image name="button_addnew_round_green" width="40" height="40"/>

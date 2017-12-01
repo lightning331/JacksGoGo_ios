@@ -43,16 +43,26 @@ class JGGEditJobStepRootVC: JGGViewController, JGGJobDetailStepHeaderViewDelegat
                                              time: true,
                                              address: true,
                                              report: true)
+            
+            if navigationItem.rightBarButtonItem == nil {
+                let tickButton = UIBarButtonItem(image: UIImage(named: "button_tick_green"),
+                                                 style: .done,
+                                                 target: self,
+                                                 action: #selector(onPressedCheck(_:)))
+                tickButton.tintColor = UIColor.JGGGreen
+                self.navigationController?.parent?.navigationItem.rightBarButtonItem = tickButton
+            }
         }
         
         mainScrollView.isScrollEnabled = false
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    @objc fileprivate func onPressedCheck(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
     }
-    
+
     func jobDetailStep(selected: Int) {
         switch selected {
         case 0:
@@ -71,6 +81,12 @@ class JGGEditJobStepRootVC: JGGViewController, JGGJobDetailStepHeaderViewDelegat
             
             break
         }
+    }
+    
+    func gotoSummaryVC() -> Void {
+        let summaryVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGEditJobSummaryVC") as! JGGEditJobSummaryVC
+        summaryVC.isRequestQuotationMode = true
+        self.navigationController?.pushViewController(summaryVC, animated: true)
     }
     
     /*

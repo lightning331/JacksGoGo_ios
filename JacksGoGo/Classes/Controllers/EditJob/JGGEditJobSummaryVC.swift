@@ -26,20 +26,49 @@ class JGGEditJobSummaryVC: JGGEditJobBaseTableVC {
     
     @IBOutlet weak var lblReportType: UILabel!
     
+    var isRequestQuotationMode: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if !isRequestQuotationMode {
+            self.tableView.tableFooterView = nil
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let index = self.navigationController?.viewControllers.index(of: self),
+            index > 0,
+            isRequestQuotationMode == true
+        {
+            let vcs = [self]
+            self.navigationController?.viewControllers = vcs
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
+            self.navigationController?.hidesBarsOnSwipe = false
+        }
     }
 
     @IBAction func onPressedEditJob(_ sender: Any) {
         self.performSegue(withIdentifier: "gotoEditJobRootVC", sender: sender)
     }
     
+    @IBAction func onPressedRequestQuotation(_ sender: UIButton) {
+        
+        JGGAlertViewController.show(title: LocalizedString("Job Posted!"),
+                                    message: LocalizedString("Job reference no.:") + "J38291 - 170721",
+                                    colorSchema: .green,
+                                    okButtonTitle: LocalizedString("View Job"),
+                                    okAction: {
+                                        self.navigationController?
+                                            .parent?
+                                            .navigationController?
+                                            .popToRootViewController(animated: true)
+                                    },
+                                    cancelButtonTitle: nil,
+                                    cancelAction: nil)
+        
+    }
     
     // MARK: - Table view data source
 

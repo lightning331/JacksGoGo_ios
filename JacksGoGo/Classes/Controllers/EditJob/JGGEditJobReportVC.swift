@@ -69,4 +69,10 @@ class JGGEditJobReportVC: JGGEditJobBaseTableVC {
         }
     }
 
+    override func onPressedNext(_ sender: UIButton) {
+        super.onPressedNext(sender)
+        if let parentVC = parent as? JGGEditJobStepRootVC {
+            parentVC.gotoSummaryVC()
+        }
+    }
 }

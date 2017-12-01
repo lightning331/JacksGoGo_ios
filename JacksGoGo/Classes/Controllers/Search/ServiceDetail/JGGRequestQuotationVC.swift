@@ -26,7 +26,8 @@ class JGGRequestQuotationVC: JGGServiceSubDetailBaseVC {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier, identifier == "gotoEditJobStepRootVC",
-            let editJobStepRootVC = segue.destination as? JGGEditJobStepRootVC {
+            let nav = segue.destination as? JGGSearchNC, let
+            editJobStepRootVC = nav.topViewController as? JGGEditJobStepRootVC {
             editJobStepRootVC.isRequestQuotationMode = true
         }
     }

@@ -178,6 +178,19 @@
 		FFAFC72E1FC54AD4008E0664 /* JGGUserReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFAFC72C1FC54AD4008E0664 /* JGGUserReviewCell.xib */; };
 		FFAFC7301FC55050008E0664 /* JGGAllReviewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC72F1FC55050008E0664 /* JGGAllReviewsVC.swift */; };
 		FFAFC7321FC58E45008E0664 /* JGGServiceBuyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAFC7311FC58E45008E0664 /* JGGServiceBuyVC.swift */; };
+		FFB27A241FD19D1B009A2201 /* Lightbox.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FFB27A141FD19D1B009A2201 /* Lightbox.bundle */; };
+		FFB27A251FD19D1B009A2201 /* AssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB27A161FD19D1B009A2201 /* AssetManager.swift */; };
+		FFB27A261FD19D1B009A2201 /* LayoutConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB27A181FD19D1B009A2201 /* LayoutConfigurable.swift */; };
+		FFB27A271FD19D1B009A2201 /* LightboxTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB27A191FD19D1B009A2201 /* LightboxTransition.swift */; };
+		FFB27A281FD19D1B009A2201 /* UIView+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB27A1A1FD19D1B009A2201 /* UIView+Gradient.swift */; };
+		FFB27A291FD19D1B009A2201 /* LightboxConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB27A1B1FD19D1B009A2201 /* LightboxConfig.swift */; };
+		FFB27A2A1FD19D1B009A2201 /* LightboxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB27A1C1FD19D1B009A2201 /* LightboxController.swift */; };
+		FFB27A2B1FD19D1B009A2201 /* LightboxImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB27A1D1FD19D1B009A2201 /* LightboxImage.swift */; };
+		FFB27A2C1FD19D1B009A2201 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB27A1F1FD19D1B009A2201 /* FooterView.swift */; };
+		FFB27A2D1FD19D1B009A2201 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB27A201FD19D1B009A2201 /* HeaderView.swift */; };
+		FFB27A2E1FD19D1B009A2201 /* InfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB27A211FD19D1B009A2201 /* InfoLabel.swift */; };
+		FFB27A2F1FD19D1B009A2201 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB27A221FD19D1B009A2201 /* LoadingIndicator.swift */; };
+		FFB27A301FD19D1B009A2201 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB27A231FD19D1B009A2201 /* PageView.swift */; };
 		FFB5ED581FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB5ED571FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift */; };
 		FFB5ED5A1FD0207D006ADE49 /* JGGRequestQuotationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB5ED591FD0207D006ADE49 /* JGGRequestQuotationVC.swift */; };
 		FFB64BB11FB765190028B77B /* JGGActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB64BB01FB765190028B77B /* JGGActionSheet.xib */; };
@@ -367,6 +380,19 @@
 		FFAFC72C1FC54AD4008E0664 /* JGGUserReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGUserReviewCell.xib; sourceTree = "<group>"; };
 		FFAFC72F1FC55050008E0664 /* JGGAllReviewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAllReviewsVC.swift; sourceTree = "<group>"; };
 		FFAFC7311FC58E45008E0664 /* JGGServiceBuyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceBuyVC.swift; sourceTree = "<group>"; };
+		FFB27A141FD19D1B009A2201 /* Lightbox.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Lightbox.bundle; sourceTree = "<group>"; };
+		FFB27A161FD19D1B009A2201 /* AssetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetManager.swift; sourceTree = "<group>"; };
+		FFB27A181FD19D1B009A2201 /* LayoutConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConfigurable.swift; sourceTree = "<group>"; };
+		FFB27A191FD19D1B009A2201 /* LightboxTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightboxTransition.swift; sourceTree = "<group>"; };
+		FFB27A1A1FD19D1B009A2201 /* UIView+Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Gradient.swift"; sourceTree = "<group>"; };
+		FFB27A1B1FD19D1B009A2201 /* LightboxConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightboxConfig.swift; sourceTree = "<group>"; };
+		FFB27A1C1FD19D1B009A2201 /* LightboxController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightboxController.swift; sourceTree = "<group>"; };
+		FFB27A1D1FD19D1B009A2201 /* LightboxImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightboxImage.swift; sourceTree = "<group>"; };
+		FFB27A1F1FD19D1B009A2201 /* FooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		FFB27A201FD19D1B009A2201 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		FFB27A211FD19D1B009A2201 /* InfoLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoLabel.swift; sourceTree = "<group>"; };
+		FFB27A221FD19D1B009A2201 /* LoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		FFB27A231FD19D1B009A2201 /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		FFB5ED571FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceSubDetailBaseVC.swift; sourceTree = "<group>"; };
 		FFB5ED591FD0207D006ADE49 /* JGGRequestQuotationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGRequestQuotationVC.swift; sourceTree = "<group>"; };
 		FFB64BB01FB765190028B77B /* JGGActionSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGActionSheet.xib; sourceTree = "<group>"; };
@@ -553,6 +579,7 @@
 		63BE91B71FA0257D00D40C07 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				FFB27A121FD19D1B009A2201 /* Lightbox */,
 				FF21FAF11FAB6387004D0ADA /* AZDropDownMenu */,
 				FF21FAFC1FAB67E5004D0ADA /* FCAlertView */,
 				631EF2AA1FA88CC6001D2915 /* TGLParallaxCarousel */,
@@ -951,6 +978,58 @@
 			path = Review;
 			sourceTree = "<group>";
 		};
+		FFB27A121FD19D1B009A2201 /* Lightbox */ = {
+			isa = PBXGroup;
+			children = (
+				FFB27A131FD19D1B009A2201 /* Resources */,
+				FFB27A151FD19D1B009A2201 /* Source */,
+			);
+			path = Lightbox;
+			sourceTree = "<group>";
+		};
+		FFB27A131FD19D1B009A2201 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FFB27A141FD19D1B009A2201 /* Lightbox.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FFB27A151FD19D1B009A2201 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				FFB27A161FD19D1B009A2201 /* AssetManager.swift */,
+				FFB27A171FD19D1B009A2201 /* Library */,
+				FFB27A1B1FD19D1B009A2201 /* LightboxConfig.swift */,
+				FFB27A1C1FD19D1B009A2201 /* LightboxController.swift */,
+				FFB27A1D1FD19D1B009A2201 /* LightboxImage.swift */,
+				FFB27A1E1FD19D1B009A2201 /* Views */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		FFB27A171FD19D1B009A2201 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				FFB27A181FD19D1B009A2201 /* LayoutConfigurable.swift */,
+				FFB27A191FD19D1B009A2201 /* LightboxTransition.swift */,
+				FFB27A1A1FD19D1B009A2201 /* UIView+Gradient.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		FFB27A1E1FD19D1B009A2201 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FFB27A1F1FD19D1B009A2201 /* FooterView.swift */,
+				FFB27A201FD19D1B009A2201 /* HeaderView.swift */,
+				FFB27A211FD19D1B009A2201 /* InfoLabel.swift */,
+				FFB27A221FD19D1B009A2201 /* LoadingIndicator.swift */,
+				FFB27A231FD19D1B009A2201 /* PageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FFF39B741FD16EA20025744E /* CustomPhotoPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -1050,6 +1129,7 @@
 				63BE91DF1FA0263C00D40C07 /* Muli-Italic.ttf in Resources */,
 				FF9E9E6E1FAC52C600F32283 /* JGGUserAvatarNameRateCell.xib in Resources */,
 				FFAFC72E1FC54AD4008E0664 /* JGGUserReviewCell.xib in Resources */,
+				FFB27A241FD19D1B009A2201 /* Lightbox.bundle in Resources */,
 				FFA956021FBA336200E89197 /* JGGSelectSkillHeaderView.xib in Resources */,
 				FFA21F6A1FABC20000F5A6DA /* JGGTotalReviewCell.xib in Resources */,
 				FFB64BB11FB765190028B77B /* JGGActionSheet.xib in Resources */,
@@ -1112,13 +1192,17 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-JacksGoGo/Pods-JacksGoGo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
+				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
+				"${BUILT_PRODUCTS_DIR}/Imaginary/Imaginary.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MZAppearance/MZAppearance.framework",
 				"${BUILT_PRODUCTS_DIR}/MZFormSheetPresentationController/MZFormSheetPresentationController.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftHash/SwiftHash.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TLPhotoPicker/TLPhotoPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/TagListView/TagListView.framework",
@@ -1128,13 +1212,17 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Imaginary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZAppearance.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZFormSheetPresentationController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TLPhotoPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TagListView.framework",
@@ -1216,6 +1304,9 @@
 				FF7C993C1FB356D600A2E5E4 /* JGGEditJobStepRootVC.swift in Sources */,
 				FFA21F651FABC0A400F5A6DA /* JGGTimeSlotsAvailableCell.swift in Sources */,
 				FFA956051FBA368800E89197 /* JGGSelectSkillFooterView.swift in Sources */,
+				FFB27A261FD19D1B009A2201 /* LayoutConfigurable.swift in Sources */,
+				FFB27A281FD19D1B009A2201 /* UIView+Gradient.swift in Sources */,
+				FFB27A271FD19D1B009A2201 /* LightboxTransition.swift in Sources */,
 				FF21FAEA1FAB5B2A004D0ADA /* JGGDetailInfoHeaderView.swift in Sources */,
 				631EF29D1FA8744F001D2915 /* JGGUserBaseModel.swift in Sources */,
 				FFA956081FBA3D1400E89197 /* JGGSelectSkillVC.swift in Sources */,
@@ -1229,6 +1320,8 @@
 				63BE91C01FA025D100D40C07 /* JGGAppManager.swift in Sources */,
 				631EF2971FA87022001D2915 /* JGGAppBiddingProviderCell.swift in Sources */,
 				63BE91F91FA0289D00D40C07 /* JGGMainTabbarController.swift in Sources */,
+				FFB27A2B1FD19D1B009A2201 /* LightboxImage.swift in Sources */,
+				FFB27A2D1FD19D1B009A2201 /* HeaderView.swift in Sources */,
 				FF21FAF81FAB6387004D0ADA /* AZDropdownMenu.swift in Sources */,
 				FFA061BB1FAB4F4200185C56 /* JGGAppInviteProviderCell.swift in Sources */,
 				FFA061BF1FAB50A000185C56 /* JGGDetailInfoDescriptionCell.swift in Sources */,
@@ -1241,15 +1334,19 @@
 				63955EE81FA0668800D825B2 /* JGGAppHomeTabView.swift in Sources */,
 				FF9E9E6A1FAC3F4B00F32283 /* JGGServiceDetailVC.swift in Sources */,
 				FF21FB001FAB67E5004D0ADA /* FCAlertView.swift in Sources */,
+				FFB27A291FD19D1B009A2201 /* LightboxConfig.swift in Sources */,
 				FFA061C71FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.swift in Sources */,
 				FFFC213B1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift in Sources */,
+				FFB27A2C1FD19D1B009A2201 /* FooterView.swift in Sources */,
 				FF7C993E1FB35DEE00A2E5E4 /* JGGEditJobNC.swift in Sources */,
 				FFB5ED581FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift in Sources */,
 				FFFC213F1FB5C0AA00AAA6F7 /* JGGBidDetailVC.swift in Sources */,
 				FFB64BB31FB7B03C0028B77B /* JGGSearchMainVC.swift in Sources */,
 				632E78271FA2F92D00CFFB24 /* JGGAppFilterVC.swift in Sources */,
+				FFB27A2A1FD19D1B009A2201 /* LightboxController.swift in Sources */,
 				FF7C992E1FB3436600A2E5E4 /* JGGEditJobSummaryVC.swift in Sources */,
 				FF36F1681FB8CE920055674F /* JGGServiceListingVC.swift in Sources */,
+				FFB27A251FD19D1B009A2201 /* AssetManager.swift in Sources */,
 				FF7C992C1FB3434500A2E5E4 /* JGGEditJobBaseTableVC.swift in Sources */,
 				FF0CA88E1FB1CFCD00A2C98B /* String.swift in Sources */,
 				FF7C991F1FB3180800A2E5E4 /* JGGAppClinetServiceDetailRootVC.swift in Sources */,
@@ -1257,7 +1354,9 @@
 				63BE91BE1FA025C500D40C07 /* JGGTableViewController.swift in Sources */,
 				63BE91BC1FA025B700D40C07 /* JGGViewController.swift in Sources */,
 				631EF29F1FA87462001D2915 /* JGGClientUserModel.swift in Sources */,
+				FFB27A2F1FD19D1B009A2201 /* LoadingIndicator.swift in Sources */,
 				FFA21F711FABC57F00F5A6DA /* JGGTagListCell.swift in Sources */,
+				FFB27A301FD19D1B009A2201 /* PageView.swift in Sources */,
 				FF9E9E761FAC652300F32283 /* JGGCarouselImageView.swift in Sources */,
 				FFAFC7321FC58E45008E0664 /* JGGServiceBuyVC.swift in Sources */,
 				FF7C99261FB33AF600A2E5E4 /* JGGJobDetailStepLineImageView.swift in Sources */,
@@ -1294,6 +1393,7 @@
 				FFA956001FBA332C00E89197 /* JGGSelectSkillHeaderView.swift in Sources */,
 				FF7C99361FB3569900A2E5E4 /* JGGEditJobTimeVC.swift in Sources */,
 				63955ED81FA0598800D825B2 /* UITextField.swift in Sources */,
+				FFB27A2E1FD19D1B009A2201 /* InfoLabel.swift in Sources */,
 				FF7C993A1FB356B000A2E5E4 /* JGGEditJobReportVC.swift in Sources */,
 				FF9E5A3C1FB83CB0006C4B50 /* JGGServiceDetailListCell.swift in Sources */,
 				631EF2A91FA87C7B001D2915 /* Double.swift in Sources */,

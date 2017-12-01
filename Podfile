@@ -20,6 +20,12 @@ pod 'MZFormSheetPresentationController', '~> 2.4.1'
 pod 'JTAppleCalendar', '~> 7.1.4'
 pod 'TLPhotoPicker', '~> 1.3.7'
 
+# For Lightbox
+pod 'Cache', '~> 4.0.2'
+pod 'Hue', '~> 3.0.0'
+pod 'Imaginary', '~> 3.0.0'
+pod 'SwiftHash', '~> 2.0.0'
+
 pod 'Fabric'
 pod 'Crashlytics'
 

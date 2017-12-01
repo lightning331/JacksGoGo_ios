@@ -1,5 +1,7 @@
 import UIKit
 import Hue
+import IGRPhotoTweaks
+
 
 public protocol LightboxControllerPageDelegate: class {
     
@@ -14,6 +16,14 @@ public protocol LightboxControllerDismissalDelegate: class {
 public protocol LightboxControllerTouchDelegate: class {
     
     func lightboxController(_ controller: LightboxController, didTouch image: LightboxImage, at index: Int)
+}
+
+public protocol LightboxControllerButtonPressDelegate: class {
+    
+    func lightboxControllerDidPressCrop(_ controller: LightboxController)
+    
+    func lightboxControllerDidPressDelete(_ controller: LightboxController)
+    
 }
 
 open class LightboxController: UIViewController {
@@ -137,6 +147,8 @@ open class LightboxController: UIViewController {
     open weak var pageDelegate: LightboxControllerPageDelegate?
     open weak var dismissalDelegate: LightboxControllerDismissalDelegate?
     open weak var imageTouchDelegate: LightboxControllerTouchDelegate?
+    open weak var buttonDelegate: LightboxControllerButtonPressDelegate?
+    
     open internal(set) var presented = false
     open fileprivate(set) var seen = false
     
@@ -427,6 +439,12 @@ extension LightboxController: FooterViewDelegate {
     
     public func footerView(_ footerView: FooterView, clickedCrop button: UIButton) {
         
+        let editJobStoryboard = UIStoryboard(name: "EditJob", bundle: nil)
+        let cropVC = editJobStoryboard.instantiateViewController(withIdentifier: "JGGPhotoCropVC") as! JGGPhotoCropVC
+        cropVC.image = images[currentPage].image
+        cropVC.delegate = self
+        self.present(cropVC, animated: false, completion: nil)
+        
     }
     
     public func footerView(_ footerView: FooterView, clickedDelete button: UIButton) {
@@ -442,3 +460,13 @@ extension LightboxController: FooterViewDelegate {
     }
 }
 
+extension LightboxController: IGRPhotoTweakViewControllerDelegate {
+    public func photoTweaksController(_ controller: IGRPhotoTweakViewController, didFinishWithCroppedImage croppedImage: UIImage) {
+        images[currentPage] = LightboxImage(image: croppedImage)
+        configurePages(images)
+    }
+    
+    public func photoTweaksControllerDidCancel(_ controller: IGRPhotoTweakViewController) {
+        
+    }
+}

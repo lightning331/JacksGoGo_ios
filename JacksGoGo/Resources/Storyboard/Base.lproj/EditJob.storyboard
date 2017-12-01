@@ -11,6 +11,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
         <array key="Muli-Bold.ttf">
             <string>Muli-Bold</string>
         </array>
@@ -77,13 +80,13 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gardening" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6OY-XD-NOd">
-                                                            <rect key="frame" x="76" y="8" width="283" height="17.5"/>
+                                                            <rect key="frame" x="76" y="8" width="283" height="19"/>
                                                             <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Gardening" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6t-pj-KAv">
-                                                            <rect key="frame" x="76" y="30.5" width="283" height="32.5"/>
+                                                            <rect key="frame" x="76" y="32" width="283" height="31"/>
                                                             <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -716,6 +719,78 @@
             </objects>
             <point key="canvasLocation" x="1536.8" y="1091.6041979010495"/>
         </scene>
+        <!--Photo CropVC-->
+        <scene sceneID="ASj-2N-Kmh">
+            <objects>
+                <viewController storyboardIdentifier="JGGPhotoCropVC" id="YqY-RR-gHJ" customClass="JGGPhotoCropVC" customModule="JacksGoGo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KBp-8w-VZB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uYp-Ic-SUw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FO9-Ij-0i0">
+                                <rect key="frame" x="327" y="36" width="32" height="32"/>
+                                <state key="normal" image="button_close_round_green"/>
+                                <connections>
+                                    <action selector="onPressedClose:" destination="YqY-RR-gHJ" eventType="touchUpInside" id="FRU-kn-xQ9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s86-gs-HYP">
+                                <rect key="frame" x="167" y="587" width="40" height="40"/>
+                                <state key="normal" image="button_tick_round_green"/>
+                                <connections>
+                                    <action selector="onPressedCrop:" destination="YqY-RR-gHJ" eventType="touchUpInside" id="GOV-to-jZc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bX-oc-q78">
+                                <rect key="frame" x="20" y="592" width="50" height="30"/>
+                                <color key="backgroundColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="15L-wq-SKk"/>
+                                    <constraint firstAttribute="width" constant="50" id="8bR-B9-BoX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onPressedReset:" destination="YqY-RR-gHJ" eventType="touchUpInside" id="TRU-KX-vhE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uYp-Ic-SUw" firstAttribute="top" secondItem="KBp-8w-VZB" secondAttribute="top" id="8VT-3o-jFh"/>
+                            <constraint firstItem="FO9-Ij-0i0" firstAttribute="top" secondItem="4Ph-dF-FTb" secondAttribute="top" constant="16" id="LGU-uS-ExV"/>
+                            <constraint firstItem="1bX-oc-q78" firstAttribute="centerY" secondItem="s86-gs-HYP" secondAttribute="centerY" id="Psq-Cj-331"/>
+                            <constraint firstItem="s86-gs-HYP" firstAttribute="centerX" secondItem="KBp-8w-VZB" secondAttribute="centerX" id="V3M-m7-iJV"/>
+                            <constraint firstItem="uYp-Ic-SUw" firstAttribute="bottom" secondItem="4Ph-dF-FTb" secondAttribute="bottom" id="WF9-7Q-KRG"/>
+                            <constraint firstItem="4Ph-dF-FTb" firstAttribute="trailing" secondItem="FO9-Ij-0i0" secondAttribute="trailing" constant="16" id="Wgi-gm-pkv"/>
+                            <constraint firstItem="uYp-Ic-SUw" firstAttribute="leading" secondItem="4Ph-dF-FTb" secondAttribute="leading" id="cQ8-1U-fUj"/>
+                            <constraint firstItem="1bX-oc-q78" firstAttribute="leading" secondItem="4Ph-dF-FTb" secondAttribute="leading" constant="20" id="ftf-pM-UgU"/>
+                            <constraint firstItem="uYp-Ic-SUw" firstAttribute="trailing" secondItem="4Ph-dF-FTb" secondAttribute="trailing" id="tHM-Qi-dX9"/>
+                            <constraint firstItem="4Ph-dF-FTb" firstAttribute="bottom" secondItem="s86-gs-HYP" secondAttribute="bottom" constant="40" id="vCy-Dd-u2E"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Ph-dF-FTb"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnClose" destination="FO9-Ij-0i0" id="rz2-iR-J9L"/>
+                        <outlet property="btnCrop" destination="s86-gs-HYP" id="K8X-kO-NUx"/>
+                        <outlet property="btnReset" destination="1bX-oc-q78" id="uMz-G4-dY3"/>
+                        <outlet property="imgviewBackground" destination="uYp-Ic-SUw" id="Mrk-Xo-9tr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dbL-gw-0wi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1536.8" y="1760.8695652173915"/>
+        </scene>
         <!--Edit Job TimeVC-->
         <scene sceneID="HbH-mr-rur">
             <objects>
@@ -892,7 +967,7 @@
                                                     <rect key="frame" x="16" y="11" width="343" height="38"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unit" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Vf-0s-A15">
-                                                            <rect key="frame" x="16" y="9.5" width="90" height="19"/>
+                                                            <rect key="frame" x="16" y="10" width="90" height="19"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="90" id="hS7-Nb-jSF"/>
                                                             </constraints>
@@ -949,7 +1024,7 @@
                                                     <rect key="frame" x="16" y="11" width="343" height="38"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjj-Hk-qYZ">
-                                                            <rect key="frame" x="16" y="9.5" width="90" height="19"/>
+                                                            <rect key="frame" x="16" y="10" width="90" height="19"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="90" id="CcL-83-5gF"/>
                                                             </constraints>
@@ -1006,7 +1081,7 @@
                                                     <rect key="frame" x="16" y="11" width="343" height="38"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Postcode" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4A-Kq-6Uy">
-                                                            <rect key="frame" x="16" y="9.5" width="90" height="19"/>
+                                                            <rect key="frame" x="16" y="10" width="90" height="19"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="90" id="fsE-cl-aaP"/>
                                                             </constraints>
@@ -1260,6 +1335,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="button_close_round_green" width="32" height="32"/>
+        <image name="button_tick_round_green" width="40" height="40"/>
         <image name="counter_greenactive" width="16" height="16"/>
         <image name="icon_photo_green" width="40" height="40"/>
     </resources>

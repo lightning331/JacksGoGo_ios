@@ -193,6 +193,7 @@
 		FFB27A301FD19D1B009A2201 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB27A231FD19D1B009A2201 /* PageView.swift */; };
 		FFB27A331FD1AE42009A2201 /* JGGPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB27A311FD1AE42009A2201 /* JGGPictureCell.swift */; };
 		FFB27A341FD1AE42009A2201 /* JGGPictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB27A321FD1AE42009A2201 /* JGGPictureCell.xib */; };
+		FFB27A361FD1CD3D009A2201 /* JGGPhotoCropVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB27A351FD1CD3D009A2201 /* JGGPhotoCropVC.swift */; };
 		FFB5ED581FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB5ED571FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift */; };
 		FFB5ED5A1FD0207D006ADE49 /* JGGRequestQuotationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB5ED591FD0207D006ADE49 /* JGGRequestQuotationVC.swift */; };
 		FFB64BB11FB765190028B77B /* JGGActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB64BB01FB765190028B77B /* JGGActionSheet.xib */; };
@@ -397,6 +398,7 @@
 		FFB27A231FD19D1B009A2201 /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		FFB27A311FD1AE42009A2201 /* JGGPictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGPictureCell.swift; sourceTree = "<group>"; };
 		FFB27A321FD1AE42009A2201 /* JGGPictureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGPictureCell.xib; sourceTree = "<group>"; };
+		FFB27A351FD1CD3D009A2201 /* JGGPhotoCropVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGPhotoCropVC.swift; sourceTree = "<group>"; };
 		FFB5ED571FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceSubDetailBaseVC.swift; sourceTree = "<group>"; };
 		FFB5ED591FD0207D006ADE49 /* JGGRequestQuotationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGRequestQuotationVC.swift; sourceTree = "<group>"; };
 		FFB64BB01FB765190028B77B /* JGGActionSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGActionSheet.xib; sourceTree = "<group>"; };
@@ -1042,6 +1044,7 @@
 				FFF39B721FD16D2B0025744E /* JGGCustomPhotoPickerVC.swift */,
 				FFF39B701FD16B6F0025744E /* JGGPhotoPickerCustomCell.xib */,
 				FFF39B751FD16EC40025744E /* JGGPhotoPickerCameraCell.xib */,
+				FFB27A351FD1CD3D009A2201 /* JGGPhotoCropVC.swift */,
 			);
 			path = CustomPhotoPicker;
 			sourceTree = "<group>";
@@ -1202,6 +1205,7 @@
 				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
+				"${BUILT_PRODUCTS_DIR}/IGRPhotoTweaks/IGRPhotoTweaks.framework",
 				"${BUILT_PRODUCTS_DIR}/Imaginary/Imaginary.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
@@ -1222,6 +1226,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGRPhotoTweaks.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Imaginary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
@@ -1381,6 +1386,7 @@
 				FF21FB011FAB67E5004D0ADA /* FCAlertViewDelegate.swift in Sources */,
 				63B8DC341FA18852003C6EBF /* JGGAppMainVC.swift in Sources */,
 				FF0CA8901FB205F600A2C98B /* JGGLocationMapVC.swift in Sources */,
+				FFB27A361FD1CD3D009A2201 /* JGGPhotoCropVC.swift in Sources */,
 				63955ED41FA0593400D825B2 /* JGGButton.swift in Sources */,
 				FF0CA88B1FB1BA3B00A2C98B /* JGGAlertViewController.swift in Sources */,
 				63DBC8B11FA0356000AAECA8 /* UIFont.swift in Sources */,

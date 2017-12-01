@@ -10,6 +10,7 @@ PODS:
     - Fabric (~> 1.7.0)
   - Fabric (1.7.0)
   - Hue (3.0.1)
+  - IGRPhotoTweaks (1.0.6)
   - Imaginary (3.0.2):
     - Cache (~> 4.0)
   - JTAppleCalendar (7.1.4)
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - Crashlytics
   - Fabric
   - Hue (~> 3.0.0)
+  - IGRPhotoTweaks (from `https://github.com/IGRSoft/IGRPhotoTweaks.git`)
   - Imaginary (~> 3.0.0)
   - JTAppleCalendar (~> 7.1.4)
   - MBProgressHUD (~> 1.0.0)
@@ -45,10 +47,15 @@ DEPENDENCIES:
   - UIColor_Hex_Swift (from `https://github.com/yeahdongcn/UIColor-Hex-Swift.git`)
 
 EXTERNAL SOURCES:
+  IGRPhotoTweaks:
+    :git: https://github.com/IGRSoft/IGRPhotoTweaks.git
   UIColor_Hex_Swift:
     :git: https://github.com/yeahdongcn/UIColor-Hex-Swift.git
 
 CHECKOUT OPTIONS:
+  IGRPhotoTweaks:
+    :commit: 3f1c7a3795f1f869b0f512da2f2c33c7db36871f
+    :git: https://github.com/IGRSoft/IGRPhotoTweaks.git
   UIColor_Hex_Swift:
     :commit: 84376770f2635bf69653f07d73e4e37b314daaed
     :git: https://github.com/yeahdongcn/UIColor-Hex-Swift.git
@@ -61,6 +68,7 @@ SPEC CHECKSUMS:
   Crashlytics: 64aad5dd97249dd3ff94b979fea140144590cdd3
   Fabric: e6be012366472553807dada21243c5ab8d904151
   Hue: 93e852fa6211ab35922ad8c293f51c43d6c79eb2
+  IGRPhotoTweaks: c9edf0f2bdd4f1faac577675ad5664f7cf51b751
   Imaginary: d675200546110e305d6a26db6267c0622ffe5e6b
   JTAppleCalendar: aaeee95e939e0b0a381fb51eb77738bd26bb10f6
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
@@ -74,6 +82,6 @@ SPEC CHECKSUMS:
   TLPhotoPicker: 5df5d11548fdaeaf43816668a06dbc920d967d35
   UIColor_Hex_Swift: a7b39ce3da75b7c187ede49b1664aeea1d441c20
 
-PODFILE CHECKSUM: a72486d501552a4de2b0dd3caa545a0d4bc75ef1
+PODFILE CHECKSUM: fb170aa48dbc8ec1c1c0146ad9425821d5ea3a1c
 
 COCOAPODS: 1.3.1

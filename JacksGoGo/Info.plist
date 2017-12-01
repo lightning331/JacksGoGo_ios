@@ -38,6 +38,8 @@
 	<string>JacksGoGo will use camera to capture photo for job recording and profile</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>JacksGoGo will use location information to search service near by you.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>JacksGoGo will use photo library to get photo for job recording and profile</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Muli-Black.ttf</string>

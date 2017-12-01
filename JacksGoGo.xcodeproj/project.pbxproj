@@ -182,6 +182,9 @@
 		FFB5ED5A1FD0207D006ADE49 /* JGGRequestQuotationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB5ED591FD0207D006ADE49 /* JGGRequestQuotationVC.swift */; };
 		FFB64BB11FB765190028B77B /* JGGActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB64BB01FB765190028B77B /* JGGActionSheet.xib */; };
 		FFB64BB31FB7B03C0028B77B /* JGGSearchMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB64BB21FB7B03C0028B77B /* JGGSearchMainVC.swift */; };
+		FFF39B711FD16B6F0025744E /* JGGPhotoPickerCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF39B701FD16B6F0025744E /* JGGPhotoPickerCustomCell.xib */; };
+		FFF39B731FD16D2B0025744E /* JGGCustomPhotoPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF39B721FD16D2B0025744E /* JGGCustomPhotoPickerVC.swift */; };
+		FFF39B761FD16EC40025744E /* JGGPhotoPickerCameraCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF39B751FD16EC40025744E /* JGGPhotoPickerCameraCell.xib */; };
 		FFFC213B1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFC213A1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift */; };
 		FFFC213D1FB5BFFA00AAA6F7 /* JGGAppointmentDetailBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFC213C1FB5BFFA00AAA6F7 /* JGGAppointmentDetailBaseVC.swift */; };
 		FFFC213F1FB5C0AA00AAA6F7 /* JGGBidDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFC213E1FB5C0AA00AAA6F7 /* JGGBidDetailVC.swift */; };
@@ -368,6 +371,9 @@
 		FFB5ED591FD0207D006ADE49 /* JGGRequestQuotationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGRequestQuotationVC.swift; sourceTree = "<group>"; };
 		FFB64BB01FB765190028B77B /* JGGActionSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGActionSheet.xib; sourceTree = "<group>"; };
 		FFB64BB21FB7B03C0028B77B /* JGGSearchMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSearchMainVC.swift; sourceTree = "<group>"; };
+		FFF39B701FD16B6F0025744E /* JGGPhotoPickerCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGPhotoPickerCustomCell.xib; sourceTree = "<group>"; };
+		FFF39B721FD16D2B0025744E /* JGGCustomPhotoPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JGGCustomPhotoPickerVC.swift; sourceTree = "<group>"; };
+		FFF39B751FD16EC40025744E /* JGGPhotoPickerCameraCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGPhotoPickerCameraCell.xib; sourceTree = "<group>"; };
 		FFFC213A1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGCanInviteUserListVC.swift; sourceTree = "<group>"; };
 		FFFC213C1FB5BFFA00AAA6F7 /* JGGAppointmentDetailBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppointmentDetailBaseVC.swift; sourceTree = "<group>"; };
 		FFFC213E1FB5C0AA00AAA6F7 /* JGGBidDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGBidDetailVC.swift; sourceTree = "<group>"; };
@@ -805,6 +811,7 @@
 				FF7C99351FB3569900A2E5E4 /* JGGEditJobTimeVC.swift */,
 				FF7C99371FB356A500A2E5E4 /* JGGEditJobAddressVC.swift */,
 				FF7C99391FB356B000A2E5E4 /* JGGEditJobReportVC.swift */,
+				FFF39B741FD16EA20025744E /* CustomPhotoPicker */,
 			);
 			path = EditJob;
 			sourceTree = "<group>";
@@ -944,6 +951,16 @@
 			path = Review;
 			sourceTree = "<group>";
 		};
+		FFF39B741FD16EA20025744E /* CustomPhotoPicker */ = {
+			isa = PBXGroup;
+			children = (
+				FFF39B721FD16D2B0025744E /* JGGCustomPhotoPickerVC.swift */,
+				FFF39B701FD16B6F0025744E /* JGGPhotoPickerCustomCell.xib */,
+				FFF39B751FD16EC40025744E /* JGGPhotoPickerCameraCell.xib */,
+			);
+			path = CustomPhotoPicker;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1017,7 +1034,9 @@
 				FF21FAEC1FAB5BAA004D0ADA /* JGGDetailInfoHeaderView.xib in Resources */,
 				63955EE41FA0643A00D825B2 /* JGGAppSearchHeaderView.xib in Resources */,
 				63BE91E31FA0263C00D40C07 /* Muli-SemiBold.ttf in Resources */,
+				FFF39B711FD16B6F0025744E /* JGGPhotoPickerCustomCell.xib in Resources */,
 				FF9E5A391FB82701006C4B50 /* JGGServiceListCell.xib in Resources */,
+				FFF39B761FD16EC40025744E /* JGGPhotoPickerCameraCell.xib in Resources */,
 				63955ECC1FA058F500D825B2 /* Profile.storyboard in Resources */,
 				FF9E9E731FAC633500F32283 /* carousel02.jpg in Resources */,
 				FF9E5A341FB82656006C4B50 /* JGGSearchCategorySelectCell.xib in Resources */,
@@ -1214,6 +1233,7 @@
 				FFA061BB1FAB4F4200185C56 /* JGGAppInviteProviderCell.swift in Sources */,
 				FFA061BF1FAB50A000185C56 /* JGGDetailInfoDescriptionCell.swift in Sources */,
 				63BE91A31FA0233300D40C07 /* AppDelegate.swift in Sources */,
+				FFF39B731FD16D2B0025744E /* JGGCustomPhotoPickerVC.swift in Sources */,
 				FFA061C31FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.swift in Sources */,
 				FFB5ED5A1FD0207D006ADE49 /* JGGRequestQuotationVC.swift in Sources */,
 				FFA21F5D1FAB87D600F5A6DA /* JGGBorderButtonCell.swift in Sources */,

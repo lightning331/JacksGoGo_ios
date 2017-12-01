@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Bold.ttf">
+            <string>Muli-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="JGGPhotoPickerCameraCell" id="4Ky-vT-mVH" userLabel="CustomCameraCell" customClass="TLPhotoCollectionViewCell" customModule="TLPhotoPicker">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9z-QD-FFX">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_photo_green" translatesAutoresizingMaskIntoConstraints="NO" id="FNP-Vq-WU7">
+                        <rect key="frame" x="24.5" y="27.5" width="50" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="CSk-1d-rYZ"/>
+                            <constraint firstAttribute="height" constant="35" id="X8c-qg-38e"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7v-5X-Trb">
+                        <rect key="frame" x="20" y="62.5" width="60.5" height="14"/>
+                        <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
+                        <color key="textColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="a9z-QD-FFX" secondAttribute="trailing" id="GAy-kh-AA2"/>
+                <constraint firstItem="FNP-Vq-WU7" firstAttribute="centerX" secondItem="KDT-rX-iMH" secondAttribute="centerX" id="LLS-1g-hEk"/>
+                <constraint firstItem="a9z-QD-FFX" firstAttribute="top" secondItem="4Ky-vT-mVH" secondAttribute="top" id="VMi-ss-yz7"/>
+                <constraint firstItem="h7v-5X-Trb" firstAttribute="centerX" secondItem="4Ky-vT-mVH" secondAttribute="centerX" id="Xuo-dq-Kus"/>
+                <constraint firstItem="FNP-Vq-WU7" firstAttribute="centerY" secondItem="KDT-rX-iMH" secondAttribute="centerY" constant="-5" id="aor-fp-Phb"/>
+                <constraint firstItem="a9z-QD-FFX" firstAttribute="leading" secondItem="4Ky-vT-mVH" secondAttribute="leading" id="eMV-0a-5yR"/>
+                <constraint firstAttribute="bottom" secondItem="a9z-QD-FFX" secondAttribute="bottom" id="o78-mz-rLY"/>
+                <constraint firstItem="h7v-5X-Trb" firstAttribute="top" secondItem="FNP-Vq-WU7" secondAttribute="bottom" id="z9H-9c-vG3"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="KDT-rX-iMH"/>
+            <point key="canvasLocation" x="32" y="-10"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icon_photo_green" width="40" height="40"/>
+    </resources>
+</document>

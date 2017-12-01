@@ -47,4 +47,12 @@ extension UIViewController {
             updateViewConstraints()
         }
     }
+    
+    func showAlert(title: String?, message: String?) -> Void {
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: LocalizedString("OK"), style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
 }

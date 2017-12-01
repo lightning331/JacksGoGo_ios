@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TLPhotoPicker
 
 class JGGEditJobDescribeVC: JGGEditJobBaseTableVC {
 
@@ -30,6 +31,18 @@ class JGGEditJobDescribeVC: JGGEditJobBaseTableVC {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func onPressedTakePhoto(_ sender: Any) {
+        
+        let photoPicker = JGGCustomPhotoPickerVC()
+        photoPicker.delegate = self
+        photoPicker.didExceedMaximumNumberOfSelection = { [weak self] (picker) in
+            self?.showAlert(title: LocalizedString("Warning"),
+                            message: LocalizedString("Exceed Maximum Number Of Selection"))
+        }
+
+        present(photoPicker, animated: true, completion: nil)
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -40,5 +53,8 @@ class JGGEditJobDescribeVC: JGGEditJobBaseTableVC {
         return 4
     }
 
+}
 
+extension JGGEditJobDescribeVC: TLPhotosPickerViewControllerDelegate {
+    
 }

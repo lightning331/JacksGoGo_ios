@@ -7,13 +7,15 @@ protocol HeaderViewDelegate: class {
 
 open class HeaderView: UIView {
     open fileprivate(set) lazy var closeButton: UIButton = { [unowned self] in
-        let title = NSAttributedString(
-            string: LightboxConfig.CloseButton.text,
-            attributes: LightboxConfig.CloseButton.textAttributes)
         
-        let button = UIButton(type: .system)
+        let button = UIButton(type: .custom)
         
-        button.setAttributedTitle(title, for: UIControlState())
+        if LightboxConfig.CloseButton.text.count > 0 {
+            let title = NSAttributedString(
+                string: LightboxConfig.CloseButton.text,
+                attributes: LightboxConfig.CloseButton.textAttributes)
+            button.setAttributedTitle(title, for: UIControlState())
+        }
         
         if let image = LightboxConfig.CloseButton.image {
             button.setImage(image, for: .normal)
@@ -38,13 +40,15 @@ open class HeaderView: UIView {
         }()
     
     open fileprivate(set) lazy var deleteButton: UIButton = { [unowned self] in
-        let title = NSAttributedString(
-            string: LightboxConfig.DeleteButton.text,
-            attributes: LightboxConfig.DeleteButton.textAttributes)
         
-        let button = UIButton(type: .system)
+        let button = UIButton(type: .custom)
         
-        button.setAttributedTitle(title, for: .normal)
+        if LightboxConfig.DeleteButton.text.count > 0 {
+            let title = NSAttributedString(
+                string: LightboxConfig.DeleteButton.text,
+                attributes: LightboxConfig.DeleteButton.textAttributes)
+            button.setAttributedTitle(title, for: UIControlState())
+        }
         
         if let image = LightboxConfig.CloseButton.image {
             button.setImage(image, for: .normal)

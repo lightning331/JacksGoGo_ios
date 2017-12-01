@@ -3,6 +3,9 @@ import UIKit
 public protocol FooterViewDelegate: class {
     
     func footerView(_ footerView: FooterView, didExpand expanded: Bool)
+    func footerView(_ footerView: FooterView, clickedDelete button: UIButton)
+    func footerView(_ footerView: FooterView, clickedCrop button: UIButton)
+    
 }
 
 open class FooterView: UIView {
@@ -26,7 +29,21 @@ open class FooterView: UIView {
         return label
         }()
     
+    open fileprivate(set) lazy var deleteButton: UIButton = { [unowned self] in
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "button_delete"), for: .normal)
+        button.sizeToFit()
+        button.addTarget(self, action: #selector(self.onPressedDelete(_:)), for: .touchUpInside)
+        return button
+    }()
     
+    open fileprivate(set) lazy var cropButton: UIButton = { [unowned self] in
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "button_crop"), for: .normal)
+        button.sizeToFit()
+        button.addTarget(self, action: #selector(self.onPressedCrop(_:)), for: .touchUpInside)
+        return button
+        }()
     
     open fileprivate(set) lazy var separatorView: UIView = { [unowned self] in
         let view = UILabel(frame: CGRect.zero)
@@ -47,7 +64,7 @@ open class FooterView: UIView {
         backgroundColor = UIColor.clear
         _ = addGradientLayer(gradientColors)
         
-        [pageLabel, infoLabel, separatorView].forEach { addSubview($0) }
+        [pageLabel, infoLabel, separatorView, cropButton, deleteButton].forEach { addSubview($0) }
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -78,6 +95,14 @@ open class FooterView: UIView {
         }
     }
     
+    @objc fileprivate func onPressedCrop(_ sender: UIButton) {
+        delegate?.footerView(self, clickedCrop: sender)
+    }
+    
+    @objc fileprivate func onPressedDelete(_ sender: UIButton) {
+        delegate?.footerView(self, clickedDelete: sender)
+    }
+    
     open override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -100,6 +125,20 @@ open class FooterView: UIView {
             y: pageLabel.frame.minY - 2.5,
             width: frame.width,
             height: 0.5
+        )
+        
+        cropButton.frame = CGRect(
+            x: frame.midX - cropButton.frame.width - 20,
+            y: separatorView.frame.minY - cropButton.frame.height - 20,
+            width: cropButton.frame.width,
+            height: cropButton.frame.height
+        )
+        
+        deleteButton.frame = CGRect(
+            x: frame.midX + 20,
+            y: cropButton.frame.origin.y,
+            width: deleteButton.frame.width,
+            height: deleteButton.frame.height
         )
         
         infoLabel.frame.origin.y = separatorView.frame.minY - infoLabel.frame.height - 15

@@ -191,6 +191,8 @@
 		FFB27A2E1FD19D1B009A2201 /* InfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB27A211FD19D1B009A2201 /* InfoLabel.swift */; };
 		FFB27A2F1FD19D1B009A2201 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB27A221FD19D1B009A2201 /* LoadingIndicator.swift */; };
 		FFB27A301FD19D1B009A2201 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB27A231FD19D1B009A2201 /* PageView.swift */; };
+		FFB27A331FD1AE42009A2201 /* JGGPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB27A311FD1AE42009A2201 /* JGGPictureCell.swift */; };
+		FFB27A341FD1AE42009A2201 /* JGGPictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB27A321FD1AE42009A2201 /* JGGPictureCell.xib */; };
 		FFB5ED581FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB5ED571FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift */; };
 		FFB5ED5A1FD0207D006ADE49 /* JGGRequestQuotationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB5ED591FD0207D006ADE49 /* JGGRequestQuotationVC.swift */; };
 		FFB64BB11FB765190028B77B /* JGGActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB64BB01FB765190028B77B /* JGGActionSheet.xib */; };
@@ -393,6 +395,8 @@
 		FFB27A211FD19D1B009A2201 /* InfoLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoLabel.swift; sourceTree = "<group>"; };
 		FFB27A221FD19D1B009A2201 /* LoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		FFB27A231FD19D1B009A2201 /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		FFB27A311FD1AE42009A2201 /* JGGPictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGPictureCell.swift; sourceTree = "<group>"; };
+		FFB27A321FD1AE42009A2201 /* JGGPictureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGPictureCell.xib; sourceTree = "<group>"; };
 		FFB5ED571FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceSubDetailBaseVC.swift; sourceTree = "<group>"; };
 		FFB5ED591FD0207D006ADE49 /* JGGRequestQuotationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGRequestQuotationVC.swift; sourceTree = "<group>"; };
 		FFB64BB01FB765190028B77B /* JGGActionSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGActionSheet.xib; sourceTree = "<group>"; };
@@ -872,6 +876,8 @@
 			children = (
 				FF9E5A311FB82656006C4B50 /* JGGSearchCategorySelectCell.swift */,
 				FF9E5A321FB82656006C4B50 /* JGGSearchCategorySelectCell.xib */,
+				FFB27A311FD1AE42009A2201 /* JGGPictureCell.swift */,
+				FFB27A321FD1AE42009A2201 /* JGGPictureCell.xib */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -1155,6 +1161,7 @@
 				63955EC91FA058E600D825B2 /* Login.storyboard in Resources */,
 				FFAD88BD1FBB39520001F423 /* JGGServiceCallOutContentView.xib in Resources */,
 				FFA21F6E1FABC33400F5A6DA /* JGGJobBookedInfoCell.xib in Resources */,
+				FFB27A341FD1AE42009A2201 /* JGGPictureCell.xib in Resources */,
 				63B8DC301FA17F1B003C6EBF /* Favorite.storyboard in Resources */,
 				FF9E9E741FAC633500F32283 /* carousel01.jpg in Resources */,
 				63BE91E41FA0263C00D40C07 /* Muli-SemiBoldItalic.ttf in Resources */,
@@ -1387,6 +1394,7 @@
 				FFAD88BF1FBB3BBE0001F423 /* JGGServiceCallOutContentView.swift in Sources */,
 				FF36F16A1FB8D4C60055674F /* JGGActiveServicesAroundVC.swift in Sources */,
 				63B755E41FA1BCCD0032B4F1 /* JGGServicePackageModel.swift in Sources */,
+				FFB27A331FD1AE42009A2201 /* JGGPictureCell.swift in Sources */,
 				63B755EA1FA1BEA10032B4F1 /* JGGServiceModel.swift in Sources */,
 				63955ED61FA0594300D825B2 /* JGGTextField.swift in Sources */,
 				FF9E5A371FB826EA006C4B50 /* JGGServiceListCell.swift in Sources */,

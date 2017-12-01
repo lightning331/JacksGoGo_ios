@@ -29,7 +29,7 @@ class JGGAlertViewController: UIViewController {
                      cancelButtonTitle: String? = "Cancel",
                      cancelAction: JGGAlertButtonBlock? = nil)
     {
-        let topVC = UIApplication.shared.keyWindow?.rootViewController
+        let topVC = UIApplication.topViewController()
 
         let alertVC = JGGAlertViewController(nibName: "JGGAlertViewController", bundle: nil)
             alertVC.alertTitle = title

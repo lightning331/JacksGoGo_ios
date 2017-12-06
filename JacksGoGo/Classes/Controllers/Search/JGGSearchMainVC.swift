@@ -76,6 +76,7 @@ class JGGSearchMainVC: JGGStartTableVC {
             ],
     ]
     
+    // MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -119,6 +120,17 @@ class JGGSearchMainVC: JGGStartTableVC {
     @IBAction func onPressedPostNew(_ sender: Any) {
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "gotoPostService" {
+                let selectSkillVC = segue.destination as! JGGSelectSkillVC
+                selectSkillVC.verifiedSkills = [
+                    JGGCategoryModel(),
+                    JGGCategoryModel(),
+                ]
+            }
+        }
+    }
 }
 
 extension JGGSearchMainVC: JGGSearchHomeTabViewDelegate {

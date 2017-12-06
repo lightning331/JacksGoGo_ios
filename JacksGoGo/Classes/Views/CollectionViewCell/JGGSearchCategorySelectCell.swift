@@ -13,11 +13,7 @@ class JGGSearchCategorySelectCell: UICollectionViewCell {
     @IBOutlet weak var viewContainer: UIView!
     @IBOutlet weak var imgviewIcon: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
+    @IBOutlet weak var imgviewTickIcon: UIImageView!
     
     override var isSelected: Bool {
         didSet {
@@ -29,4 +25,16 @@ class JGGSearchCategorySelectCell: UICollectionViewCell {
         }
     }
     
+    var isVerified: Bool = false {
+        didSet {
+            if isVerified {
+                self.isSelected = false
+                self.viewContainer.alpha = 0.5
+                self.imgviewTickIcon.isHidden = false
+            } else {
+                self.viewContainer.alpha = 1.0
+                self.imgviewTickIcon.isHidden = true
+            }
+        }
+    }
 }

@@ -9,5 +9,13 @@
 import UIKit
 
 class JGGBaseModel: NSObject {
-
+    
+    var createdBy: String?
+    var createdById: Int?
+    var createdAt: Date?
+    var modifyBy: String?
+    var modifyById: Int?
+    var modifyAt: Date?
+    var id: Int = 0
+    
 }

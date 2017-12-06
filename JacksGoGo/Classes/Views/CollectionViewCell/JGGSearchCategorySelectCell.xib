@@ -52,18 +52,24 @@
                             <constraint firstItem="Qxg-2a-NhU" firstAttribute="top" secondItem="78V-LU-aMa" secondAttribute="bottom" constant="7.5" id="r8I-3p-2dK"/>
                         </constraints>
                     </view>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_tick_green" translatesAutoresizingMaskIntoConstraints="NO" id="S9y-Av-uRC">
+                        <rect key="frame" x="33" y="33" width="27" height="27"/>
+                    </imageView>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="S9y-Av-uRC" firstAttribute="centerY" secondItem="mjM-Yq-W7u" secondAttribute="centerY" id="41G-kw-u8B"/>
                 <constraint firstItem="rEv-Nk-o7I" firstAttribute="leading" secondItem="mjM-Yq-W7u" secondAttribute="leading" id="8B5-Go-Xwc"/>
                 <constraint firstAttribute="bottom" secondItem="rEv-Nk-o7I" secondAttribute="bottom" id="CHg-JH-dii"/>
+                <constraint firstItem="S9y-Av-uRC" firstAttribute="centerX" secondItem="mjM-Yq-W7u" secondAttribute="centerX" id="LjW-xZ-0Xk"/>
                 <constraint firstItem="rEv-Nk-o7I" firstAttribute="top" secondItem="mjM-Yq-W7u" secondAttribute="top" id="gSR-vJ-w5M"/>
                 <constraint firstAttribute="trailing" secondItem="rEv-Nk-o7I" secondAttribute="trailing" id="w7W-aI-EZ3"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="2hU-nR-Hxw"/>
             <connections>
                 <outlet property="imgviewIcon" destination="78V-LU-aMa" id="myG-jU-tbE"/>
+                <outlet property="imgviewTickIcon" destination="S9y-Av-uRC" id="pj1-gI-pas"/>
                 <outlet property="lblTitle" destination="Qxg-2a-NhU" id="OA4-NQ-Xj8"/>
                 <outlet property="viewContainer" destination="rEv-Nk-o7I" id="Pi7-a8-L7V"/>
             </connections>
@@ -71,6 +77,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="button_tick_green" width="27" height="27"/>
         <image name="icon_cat_favourites" width="56" height="56"/>
     </resources>
 </document>

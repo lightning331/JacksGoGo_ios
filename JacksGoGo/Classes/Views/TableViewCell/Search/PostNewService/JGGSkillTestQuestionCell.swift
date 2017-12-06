@@ -1,17 +1,16 @@
 //
-//  JGGTagListCell.swift
+//  JGGSkillTestQuestionCell.swift
 //  JacksGoGo
 //
-//  Created by Hemin Wang on 11/2/17.
+//  Created by Hemin Wang on 12/5/17.
 //  Copyright © 2017 Hemin Wang. All rights reserved.
 //
 
 import UIKit
-import TagListView
 
-class JGGTagListCell: UITableViewCell {
+class JGGSkillTestQuestionCell: UITableViewCell {
 
-    @IBOutlet weak var taglistView: TagListView!
+    @IBOutlet weak var lblQuestion: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,5 +22,5 @@ class JGGTagListCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }

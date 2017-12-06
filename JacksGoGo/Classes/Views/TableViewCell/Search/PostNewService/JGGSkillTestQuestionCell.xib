@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JGGSkillTestQuestionCell" rowHeight="73" id="gKa-TV-lOC" customClass="JGGSkillTestQuestionCell" customModule="JacksGoGo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gKa-TV-lOC" id="YwV-hs-li6">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="72.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUI-ba-IDm">
+                        <rect key="frame" x="16" y="11" width="343" height="51"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="HUI-ba-IDm" secondAttribute="trailing" id="ZsK-DS-q54"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="HUI-ba-IDm" secondAttribute="bottom" id="ab2-7R-raZ"/>
+                    <constraint firstItem="HUI-ba-IDm" firstAttribute="leading" secondItem="YwV-hs-li6" secondAttribute="leadingMargin" id="kPv-uk-F26"/>
+                    <constraint firstItem="HUI-ba-IDm" firstAttribute="top" secondItem="YwV-hs-li6" secondAttribute="topMargin" id="xFu-Pd-10Q"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lblQuestion" destination="HUI-ba-IDm" id="5ey-tP-SMM"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

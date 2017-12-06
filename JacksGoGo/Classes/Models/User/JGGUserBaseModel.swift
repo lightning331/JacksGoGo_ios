@@ -8,9 +8,8 @@
 
 import UIKit
 
-class JGGUserBaseModel: NSObject {
+class JGGUserBaseModel: JGGBaseModel {
 
-    var id: String!
     var username: String!
     var fullname: String!
     var avatarUrl: String?

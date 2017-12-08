@@ -135,7 +135,13 @@ class JGGSearchMainVC: JGGStartTableVC {
 
 extension JGGSearchMainVC: JGGSearchHomeTabViewDelegate {
     func searchHomeTabView(_ view: JGGSearchHomeTabView, selectedButton: SearchTabButton) {
-        
+        if selectedButton == .search {
+            
+            let searchStoryboard = UIStoryboard(name: "Search", bundle: nil)
+            let searchVC = searchStoryboard.instantiateViewController(withIdentifier: "JGGSearchVC") as! JGGSearchVC
+            self.navigationController?.pushViewController(searchVC, animated: true)
+            
+        }
     }
 }
 

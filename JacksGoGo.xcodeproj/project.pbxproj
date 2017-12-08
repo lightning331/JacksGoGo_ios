@@ -215,6 +215,10 @@
 		FFB5940D1FDB079200D12A1F /* carousel01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FFB594091FDB079200D12A1F /* carousel01.jpg */; };
 		FFB5940E1FDB079200D12A1F /* carousel02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FFB5940A1FDB079200D12A1F /* carousel02.jpg */; };
 		FFB5940F1FDB079200D12A1F /* carousel03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FFB5940B1FDB079200D12A1F /* carousel03.jpg */; };
+		FFB594121FDB29DC00D12A1F /* JGGSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB594111FDB29DC00D12A1F /* JGGSearchVC.swift */; };
+		FFB594151FDB310800D12A1F /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB594131FDB310800D12A1F /* Search.storyboard */; };
+		FFB594171FDB3BAE00D12A1F /* JGGJGGAdvancedSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB594161FDB3BAE00D12A1F /* JGGJGGAdvancedSearchVC.swift */; };
+		FFB594191FDB3C8100D12A1F /* JGGSearchAreaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB594181FDB3C8100D12A1F /* JGGSearchAreaVC.swift */; };
 		FFB5ED581FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB5ED571FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift */; };
 		FFB5ED5A1FD0207D006ADE49 /* JGGRequestQuotationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB5ED591FD0207D006ADE49 /* JGGRequestQuotationVC.swift */; };
 		FFB64BB11FB765190028B77B /* JGGActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB64BB01FB765190028B77B /* JGGActionSheet.xib */; };
@@ -441,6 +445,10 @@
 		FFB594091FDB079200D12A1F /* carousel01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = carousel01.jpg; sourceTree = "<group>"; };
 		FFB5940A1FDB079200D12A1F /* carousel02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = carousel02.jpg; sourceTree = "<group>"; };
 		FFB5940B1FDB079200D12A1F /* carousel03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = carousel03.jpg; sourceTree = "<group>"; };
+		FFB594111FDB29DC00D12A1F /* JGGSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSearchVC.swift; sourceTree = "<group>"; };
+		FFB594141FDB310800D12A1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Search.storyboard; sourceTree = "<group>"; };
+		FFB594161FDB3BAE00D12A1F /* JGGJGGAdvancedSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGJGGAdvancedSearchVC.swift; sourceTree = "<group>"; };
+		FFB594181FDB3C8100D12A1F /* JGGSearchAreaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSearchAreaVC.swift; sourceTree = "<group>"; };
 		FFB5ED571FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceSubDetailBaseVC.swift; sourceTree = "<group>"; };
 		FFB5ED591FD0207D006ADE49 /* JGGRequestQuotationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGRequestQuotationVC.swift; sourceTree = "<group>"; };
 		FFB64BB01FB765190028B77B /* JGGActionSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGActionSheet.xib; sourceTree = "<group>"; };
@@ -746,6 +754,7 @@
 				FF86D0E01FC3368A00EE70F5 /* JGGServiceFilterVC.swift */,
 				FF86D1221FC4D4D900EE70F5 /* ServiceDetail */,
 				FFB27A371FD25DF0009A2201 /* PostNewService */,
+				FFB594101FDB299400D12A1F /* Search */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -815,6 +824,7 @@
 				63955ECA1FA058F500D825B2 /* Profile.storyboard */,
 				FF7C99271FB33D4800A2E5E4 /* EditJob.storyboard */,
 				FF849DF71FD707DF003EB83A /* PostService.storyboard */,
+				FFB594131FDB310800D12A1F /* Search.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -1125,6 +1135,16 @@
 			path = temp;
 			sourceTree = "<group>";
 		};
+		FFB594101FDB299400D12A1F /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				FFB594111FDB29DC00D12A1F /* JGGSearchVC.swift */,
+				FFB594161FDB3BAE00D12A1F /* JGGJGGAdvancedSearchVC.swift */,
+				FFB594181FDB3C8100D12A1F /* JGGSearchAreaVC.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		FFF39B741FD16EA20025744E /* CustomPhotoPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -1247,6 +1267,7 @@
 				FF7C99241FB3317700A2E5E4 /* JGGJobDetailStepHeaderView.xib in Resources */,
 				FF0CA88C1FB1BA3B00A2C98B /* JGGAlertViewController.xib in Resources */,
 				63BE91DD1FA0263C00D40C07 /* Muli-ExtraLight.ttf in Resources */,
+				FFB594151FDB310800D12A1F /* Search.storyboard in Resources */,
 				FFA061BC1FAB4F4200185C56 /* JGGAppInviteProviderCell.xib in Resources */,
 				FF9E5A4A1FB89CAE006C4B50 /* JGGSearchHomeTabView.xib in Resources */,
 				FFA21F661FABC0A400F5A6DA /* JGGTimeSlotsAvailableCell.xib in Resources */,
@@ -1424,6 +1445,7 @@
 				FFAD88BB1FBB324E0001F423 /* JGGServiceAnnotationView.swift in Sources */,
 				FF21FAE21FAB5525004D0ADA /* JGGImageCarouselCell.swift in Sources */,
 				FF86D1191FC4B78B00EE70F5 /* JGGCalendarView.swift in Sources */,
+				FFB594171FDB3BAE00D12A1F /* JGGJGGAdvancedSearchVC.swift in Sources */,
 				63BE91C01FA025D100D40C07 /* JGGAppManager.swift in Sources */,
 				631EF2971FA87022001D2915 /* JGGAppBiddingProviderCell.swift in Sources */,
 				63BE91F91FA0289D00D40C07 /* JGGMainTabbarController.swift in Sources */,
@@ -1491,10 +1513,12 @@
 				63B8DC341FA18852003C6EBF /* JGGAppMainVC.swift in Sources */,
 				FF0CA8901FB205F600A2C98B /* JGGLocationMapVC.swift in Sources */,
 				FFB27A361FD1CD3D009A2201 /* JGGPhotoCropVC.swift in Sources */,
+				FFB594191FDB3C8100D12A1F /* JGGSearchAreaVC.swift in Sources */,
 				FF849E081FD7348B003EB83A /* JGGPostServiceTimeSlotsTypeVC.swift in Sources */,
 				63955ED41FA0593400D825B2 /* JGGButton.swift in Sources */,
 				FF0CA88B1FB1BA3B00A2C98B /* JGGAlertViewController.swift in Sources */,
 				63DBC8B11FA0356000AAECA8 /* UIFont.swift in Sources */,
+				FFB594121FDB29DC00D12A1F /* JGGSearchVC.swift in Sources */,
 				63BE91F51FA0286C00D40C07 /* JGGAppointmentsTableVC.swift in Sources */,
 				63B755E61FA1BDB30032B4F1 /* JGGAppointmentBaseModel.swift in Sources */,
 				63BE91F71FA0287E00D40C07 /* JGGAppointmentsBaseVC.swift in Sources */,
@@ -1617,6 +1641,14 @@
 				FF849DF81FD707DF003EB83A /* Base */,
 			);
 			name = PostService.storyboard;
+			sourceTree = "<group>";
+		};
+		FFB594131FDB310800D12A1F /* Search.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFB594141FDB310800D12A1F /* Base */,
+			);
+			name = Search.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

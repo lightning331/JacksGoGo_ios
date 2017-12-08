@@ -26,8 +26,8 @@ class JGGServiceListingVC: JGGSearchBaseVC, UITableViewDataSource, UITableViewDe
     private func initTableView() {
         self.tableView?.register(UINib(nibName: "JGGCategoryDetailHeaderView", bundle: nil),
                                  forHeaderFooterViewReuseIdentifier: "JGGCategoryDetailHeaderView")
-        self.tableView?.register(UINib(nibName: "JGGServiceDetailListCell", bundle: nil),
-                                 forCellReuseIdentifier: "JGGServiceDetailListCell")
+        self.tableView?.register(UINib(nibName: "JGGServiceListCell", bundle: nil),
+                                 forCellReuseIdentifier: "JGGServiceListCell")
         
         self.tableView?.estimatedRowHeight = 100
         self.tableView?.rowHeight = UITableViewAutomaticDimension
@@ -57,12 +57,8 @@ class JGGServiceListingVC: JGGSearchBaseVC, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "JGGServiceDetailListCell") as! JGGServiceDetailListCell
-        if indexPath.row == 0 {
-            cell.imgviewShadow.isHidden = false
-        } else {
-            cell.imgviewShadow.isHidden = true
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "JGGServiceListCell") as! JGGServiceListCell
+        
         return cell
     }
     

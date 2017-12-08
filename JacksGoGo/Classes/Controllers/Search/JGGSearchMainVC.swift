@@ -187,7 +187,13 @@ extension JGGSearchMainVC { // UITableViewDataSource, UITableViewDelegate
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JGGServiceListCell") as! JGGServiceListCell
-        
+        cell.viewAddress.isHidden = (indexPath.row == 2)
+        cell.viewBooked.isHidden = (indexPath.row == 4 || indexPath.row == 8)
+        if indexPath.row == 3 {
+            cell.lblServiceTitle.text = "Tennis Coach - Pricate Lessons 1 on 1 for 2 hours"
+        } else {
+            cell.lblServiceTitle.text = "Lifeguard Training"
+        }
         return cell
     }
 

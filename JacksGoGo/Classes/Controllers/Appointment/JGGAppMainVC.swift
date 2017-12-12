@@ -157,9 +157,14 @@ class JGGAppMainVC: JGGStartTableVC {
     // MARK: delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! JGGAppHistoryListCell
+        /*
         if let serviceDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGAppClinetServiceDetailRootVC") as? JGGAppClinetServiceDetailRootVC {
             serviceDetailVC.selectedAppointment = cell.appointment
             self.navigationController?.pushViewController(serviceDetailVC, animated: true)
+        } */
+        if let appointmentStatusSummary = self.storyboard?.instantiateViewController(withIdentifier: "JGGAppJobStatusSummaryVC") as? JGGAppJobStatusSummaryVC {
+            appointmentStatusSummary.selectedAppointment = cell.appointment
+            self.navigationController?.pushViewController(appointmentStatusSummary, animated: true)
         }
     }
     

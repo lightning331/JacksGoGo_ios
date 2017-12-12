@@ -219,6 +219,16 @@
 		FFB594151FDB310800D12A1F /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB594131FDB310800D12A1F /* Search.storyboard */; };
 		FFB594171FDB3BAE00D12A1F /* JGGJGGAdvancedSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB594161FDB3BAE00D12A1F /* JGGJGGAdvancedSearchVC.swift */; };
 		FFB594191FDB3C8100D12A1F /* JGGSearchAreaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB594181FDB3C8100D12A1F /* JGGSearchAreaVC.swift */; };
+		FFB5941D1FDE670400D12A1F /* JGGAppDetailBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB5941C1FDE670400D12A1F /* JGGAppDetailBaseVC.swift */; };
+		FFB5941F1FDE688300D12A1F /* JGGAppJobStatusSummaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB5941E1FDE688300D12A1F /* JGGAppJobStatusSummaryVC.swift */; };
+		FFB594211FDE6F6300D12A1F /* JGGAppJobStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB594201FDE6F6300D12A1F /* JGGAppJobStatusCell.swift */; };
+		FFB594231FDE762200D12A1F /* JGGAppJobStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB594221FDE762200D12A1F /* JGGAppJobStatusCell.xib */; };
+		FFB594261FDE7DA600D12A1F /* JGGAppJobStatusAccessoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB594241FDE7DA600D12A1F /* JGGAppJobStatusAccessoryCell.swift */; };
+		FFB594271FDE7DA600D12A1F /* JGGAppJobStatusAccessoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB594251FDE7DA600D12A1F /* JGGAppJobStatusAccessoryCell.xib */; };
+		FFB5942C1FDE7EB200D12A1F /* JGGAppJobStatusPromptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB5942A1FDE7EB200D12A1F /* JGGAppJobStatusPromptCell.swift */; };
+		FFB5942D1FDE7EB200D12A1F /* JGGAppJobStatusPromptCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB5942B1FDE7EB200D12A1F /* JGGAppJobStatusPromptCell.xib */; };
+		FFB594301FDE85E700D12A1F /* JGGAppJobStatusButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB5942E1FDE85E700D12A1F /* JGGAppJobStatusButtonCell.swift */; };
+		FFB594311FDE85E700D12A1F /* JGGAppJobStatusButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB5942F1FDE85E700D12A1F /* JGGAppJobStatusButtonCell.xib */; };
 		FFB5ED581FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB5ED571FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift */; };
 		FFB5ED5A1FD0207D006ADE49 /* JGGRequestQuotationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB5ED591FD0207D006ADE49 /* JGGRequestQuotationVC.swift */; };
 		FFB64BB11FB765190028B77B /* JGGActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB64BB01FB765190028B77B /* JGGActionSheet.xib */; };
@@ -449,6 +459,16 @@
 		FFB594141FDB310800D12A1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Search.storyboard; sourceTree = "<group>"; };
 		FFB594161FDB3BAE00D12A1F /* JGGJGGAdvancedSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGJGGAdvancedSearchVC.swift; sourceTree = "<group>"; };
 		FFB594181FDB3C8100D12A1F /* JGGSearchAreaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSearchAreaVC.swift; sourceTree = "<group>"; };
+		FFB5941C1FDE670400D12A1F /* JGGAppDetailBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppDetailBaseVC.swift; sourceTree = "<group>"; };
+		FFB5941E1FDE688300D12A1F /* JGGAppJobStatusSummaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppJobStatusSummaryVC.swift; sourceTree = "<group>"; };
+		FFB594201FDE6F6300D12A1F /* JGGAppJobStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppJobStatusCell.swift; sourceTree = "<group>"; };
+		FFB594221FDE762200D12A1F /* JGGAppJobStatusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGAppJobStatusCell.xib; sourceTree = "<group>"; };
+		FFB594241FDE7DA600D12A1F /* JGGAppJobStatusAccessoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppJobStatusAccessoryCell.swift; sourceTree = "<group>"; };
+		FFB594251FDE7DA600D12A1F /* JGGAppJobStatusAccessoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGAppJobStatusAccessoryCell.xib; sourceTree = "<group>"; };
+		FFB5942A1FDE7EB200D12A1F /* JGGAppJobStatusPromptCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppJobStatusPromptCell.swift; sourceTree = "<group>"; };
+		FFB5942B1FDE7EB200D12A1F /* JGGAppJobStatusPromptCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGAppJobStatusPromptCell.xib; sourceTree = "<group>"; };
+		FFB5942E1FDE85E700D12A1F /* JGGAppJobStatusButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppJobStatusButtonCell.swift; sourceTree = "<group>"; };
+		FFB5942F1FDE85E700D12A1F /* JGGAppJobStatusButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGAppJobStatusButtonCell.xib; sourceTree = "<group>"; };
 		FFB5ED571FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceSubDetailBaseVC.swift; sourceTree = "<group>"; };
 		FFB5ED591FD0207D006ADE49 /* JGGRequestQuotationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGRequestQuotationVC.swift; sourceTree = "<group>"; };
 		FFB64BB01FB765190028B77B /* JGGActionSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGActionSheet.xib; sourceTree = "<group>"; };
@@ -565,6 +585,14 @@
 				63CA7F121FA8A04A005A44B0 /* JGGAppBiddingProviderCell.xib */,
 				FFA061B91FAB4F4200185C56 /* JGGAppInviteProviderCell.swift */,
 				FFA061BA1FAB4F4200185C56 /* JGGAppInviteProviderCell.xib */,
+				FFB594201FDE6F6300D12A1F /* JGGAppJobStatusCell.swift */,
+				FFB594221FDE762200D12A1F /* JGGAppJobStatusCell.xib */,
+				FFB594241FDE7DA600D12A1F /* JGGAppJobStatusAccessoryCell.swift */,
+				FFB594251FDE7DA600D12A1F /* JGGAppJobStatusAccessoryCell.xib */,
+				FFB5942A1FDE7EB200D12A1F /* JGGAppJobStatusPromptCell.swift */,
+				FFB5942B1FDE7EB200D12A1F /* JGGAppJobStatusPromptCell.xib */,
+				FFB5942E1FDE85E700D12A1F /* JGGAppJobStatusButtonCell.swift */,
+				FFB5942F1FDE85E700D12A1F /* JGGAppJobStatusButtonCell.xib */,
 			);
 			path = Appointment;
 			sourceTree = "<group>";
@@ -768,6 +796,7 @@
 				632E78261FA2F92D00CFFB24 /* JGGAppFilterVC.swift */,
 				FF7C991E1FB3180800A2E5E4 /* JGGAppClinetServiceDetailRootVC.swift */,
 				FF9E9E6B1FAC4B7300F32283 /* JGGAppointmentDetailVC.swift */,
+				FFB5941A1FDE66BC00D12A1F /* ClientJobs */,
 				FF0CA88F1FB205F600A2C98B /* JGGLocationMapVC.swift */,
 				FFFC213A1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift */,
 				FFFC213E1FB5C0AA00AAA6F7 /* JGGBidDetailVC.swift */,
@@ -1145,6 +1174,15 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		FFB5941A1FDE66BC00D12A1F /* ClientJobs */ = {
+			isa = PBXGroup;
+			children = (
+				FFB5941C1FDE670400D12A1F /* JGGAppDetailBaseVC.swift */,
+				FFB5941E1FDE688300D12A1F /* JGGAppJobStatusSummaryVC.swift */,
+			);
+			path = ClientJobs;
+			sourceTree = "<group>";
+		};
 		FFF39B741FD16EA20025744E /* CustomPhotoPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -1232,6 +1270,7 @@
 				FF9E5A391FB82701006C4B50 /* JGGServiceListCell.xib in Resources */,
 				FFF39B761FD16EC40025744E /* JGGPhotoPickerCameraCell.xib in Resources */,
 				63955ECC1FA058F500D825B2 /* Profile.storyboard in Resources */,
+				FFB594271FDE7DA600D12A1F /* JGGAppJobStatusAccessoryCell.xib in Resources */,
 				FF9E5A341FB82656006C4B50 /* JGGSearchCategorySelectCell.xib in Resources */,
 				FFB5940D1FDB079200D12A1F /* carousel01.jpg in Resources */,
 				FF7C99291FB33D4800A2E5E4 /* EditJob.storyboard in Resources */,
@@ -1248,6 +1287,7 @@
 				FFAFC72E1FC54AD4008E0664 /* JGGUserReviewCell.xib in Resources */,
 				FFB27A241FD19D1B009A2201 /* Lightbox.bundle in Resources */,
 				FFA956021FBA336200E89197 /* JGGSelectSkillHeaderView.xib in Resources */,
+				FFB5942D1FDE7EB200D12A1F /* JGGAppJobStatusPromptCell.xib in Resources */,
 				FFA21F6A1FABC20000F5A6DA /* JGGTotalReviewCell.xib in Resources */,
 				FFB64BB11FB765190028B77B /* JGGActionSheet.xib in Resources */,
 				FF9E5A3D1FB83CB0006C4B50 /* JGGServiceDetailListCell.xib in Resources */,
@@ -1273,6 +1313,7 @@
 				FFA21F661FABC0A400F5A6DA /* JGGTimeSlotsAvailableCell.xib in Resources */,
 				63955EC91FA058E600D825B2 /* Login.storyboard in Resources */,
 				FFAD88BD1FBB39520001F423 /* JGGServiceCallOutContentView.xib in Resources */,
+				FFB594311FDE85E700D12A1F /* JGGAppJobStatusButtonCell.xib in Resources */,
 				FFA21F6E1FABC33400F5A6DA /* JGGJobBookedInfoCell.xib in Resources */,
 				FFB27A341FD1AE42009A2201 /* JGGPictureCell.xib in Resources */,
 				63B8DC301FA17F1B003C6EBF /* Favorite.storyboard in Resources */,
@@ -1287,6 +1328,7 @@
 				63955ECF1FA0590200D825B2 /* Services.storyboard in Resources */,
 				63955EEA1FA0669B00D825B2 /* JGGAppHomeTabView.xib in Resources */,
 				FFA061C01FAB50A000185C56 /* JGGDetailInfoDescriptionCell.xib in Resources */,
+				FFB594231FDE762200D12A1F /* JGGAppJobStatusCell.xib in Resources */,
 				FFA061C41FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.xib in Resources */,
 				FFA061C81FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.xib in Resources */,
 				63BE91D81FA0263C00D40C07 /* Muli-BlackItalic.ttf in Resources */,
@@ -1409,6 +1451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFB594211FDE6F6300D12A1F /* JGGAppJobStatusCell.swift in Sources */,
 				631EF2AF1FA88CC8001D2915 /* TGLParallaxCarousel.swift in Sources */,
 				FF849E101FD74B54003EB83A /* JGGPostServiceTimeSlotsFinalVC.swift in Sources */,
 				FFA061B81FAB4E9300185C56 /* JGGUserAvatarNameRateCell.swift in Sources */,
@@ -1418,6 +1461,7 @@
 				FF21FAFB1FAB6387004D0ADA /* AZDropdownMenuDefaultCell.swift in Sources */,
 				FF86D1211FC4D4D000EE70F5 /* JGGServiceDetailTimeSlotsVC.swift in Sources */,
 				631EF2A31FA874A0001D2915 /* JGGEventUserModel.swift in Sources */,
+				FFB5942C1FDE7EB200D12A1F /* JGGAppJobStatusPromptCell.swift in Sources */,
 				FF849DF01FD69092003EB83A /* JGGCategoryModel.swift in Sources */,
 				FFA21F691FABC20000F5A6DA /* JGGTotalReviewCell.swift in Sources */,
 				FF21FB021FAB67E5004D0ADA /* FCColors.swift in Sources */,
@@ -1445,6 +1489,7 @@
 				FFAD88BB1FBB324E0001F423 /* JGGServiceAnnotationView.swift in Sources */,
 				FF21FAE21FAB5525004D0ADA /* JGGImageCarouselCell.swift in Sources */,
 				FF86D1191FC4B78B00EE70F5 /* JGGCalendarView.swift in Sources */,
+				FFB594261FDE7DA600D12A1F /* JGGAppJobStatusAccessoryCell.swift in Sources */,
 				FFB594171FDB3BAE00D12A1F /* JGGJGGAdvancedSearchVC.swift in Sources */,
 				63BE91C01FA025D100D40C07 /* JGGAppManager.swift in Sources */,
 				631EF2971FA87022001D2915 /* JGGAppBiddingProviderCell.swift in Sources */,
@@ -1453,6 +1498,7 @@
 				FFB27A2D1FD19D1B009A2201 /* HeaderView.swift in Sources */,
 				FF21FAF81FAB6387004D0ADA /* AZDropdownMenu.swift in Sources */,
 				FFA061BB1FAB4F4200185C56 /* JGGAppInviteProviderCell.swift in Sources */,
+				FFB5941F1FDE688300D12A1F /* JGGAppJobStatusSummaryVC.swift in Sources */,
 				FFA061BF1FAB50A000185C56 /* JGGDetailInfoDescriptionCell.swift in Sources */,
 				FF849E031FD712FE003EB83A /* JGGPostServicePriceVC.swift in Sources */,
 				FF849E141FD75135003EB83A /* JGGDuplicateTimeSlotsPopupVC.swift in Sources */,
@@ -1460,6 +1506,7 @@
 				FFF39B731FD16D2B0025744E /* JGGCustomPhotoPickerVC.swift in Sources */,
 				FFA061C31FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.swift in Sources */,
 				FFB5ED5A1FD0207D006ADE49 /* JGGRequestQuotationVC.swift in Sources */,
+				FFB5941D1FDE670400D12A1F /* JGGAppDetailBaseVC.swift in Sources */,
 				FFA21F5D1FAB87D600F5A6DA /* JGGBorderButtonCell.swift in Sources */,
 				FF9E9E6C1FAC4B7300F32283 /* JGGAppointmentDetailVC.swift in Sources */,
 				63955EE81FA0668800D825B2 /* JGGAppHomeTabView.swift in Sources */,
@@ -1476,6 +1523,7 @@
 				FFFC213F1FB5C0AA00AAA6F7 /* JGGBidDetailVC.swift in Sources */,
 				FF849DF41FD6EFBF003EB83A /* JGGSkillTestQuestionCell.swift in Sources */,
 				FF849DFD1FD708DF003EB83A /* JGGPostServiceBaseTableVC.swift in Sources */,
+				FFB594301FDE85E700D12A1F /* JGGAppJobStatusButtonCell.swift in Sources */,
 				FFB64BB31FB7B03C0028B77B /* JGGSearchMainVC.swift in Sources */,
 				632E78271FA2F92D00CFFB24 /* JGGAppFilterVC.swift in Sources */,
 				FFB27A2A1FD19D1B009A2201 /* LightboxController.swift in Sources */,

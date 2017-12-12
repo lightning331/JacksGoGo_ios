@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Regular.ttf">
+            <string>Muli-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JGGAppJobStatusAccessoryCell" rowHeight="110" id="Xef-47-hhc" customClass="JGGAppJobStatusAccessoryCell" customModule="JacksGoGo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xef-47-hhc" id="qaY-4C-S83">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8yd-Dm-EWt">
+                        <rect key="frame" x="27" y="24" width="2" height="86"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="2" id="CIs-OS-aSS"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_provider_inactive" translatesAutoresizingMaskIntoConstraints="NO" id="TXR-d1-A9b">
+                        <rect key="frame" x="16" y="0.0" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="an3-cH-EGM"/>
+                            <constraint firstAttribute="height" constant="24" id="mMP-0X-ftK"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13 Jul, 2017 4:16 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQu-k4-3Rh">
+                        <rect key="frame" x="55" y="0.0" width="280" height="15.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="fM7-IR-7Ef"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
+                        <color key="textColor" red="0.54115974899999997" green="0.54185396429999999" blue="0.56077778339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appointment confirmed." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rt3-xW-Qei">
+                        <rect key="frame" x="55" y="23" width="280" height="54"/>
+                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_next_green" translatesAutoresizingMaskIntoConstraints="NO" id="fTg-SY-ZDH">
+                        <rect key="frame" x="335" y="35" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="OuB-Uo-svJ"/>
+                            <constraint firstAttribute="height" constant="40" id="g18-7B-IiE"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="AQu-k4-3Rh" firstAttribute="top" secondItem="TXR-d1-A9b" secondAttribute="top" id="Hzg-QY-nfD"/>
+                    <constraint firstItem="TXR-d1-A9b" firstAttribute="top" secondItem="qaY-4C-S83" secondAttribute="top" id="IRE-k6-Gzc"/>
+                    <constraint firstItem="8yd-Dm-EWt" firstAttribute="centerX" secondItem="TXR-d1-A9b" secondAttribute="centerX" id="M2x-Dm-dSA"/>
+                    <constraint firstItem="AQu-k4-3Rh" firstAttribute="leading" secondItem="TXR-d1-A9b" secondAttribute="trailing" constant="15" id="N02-3m-s1C"/>
+                    <constraint firstItem="8yd-Dm-EWt" firstAttribute="top" secondItem="TXR-d1-A9b" secondAttribute="bottom" id="NT2-q8-6qF"/>
+                    <constraint firstItem="rt3-xW-Qei" firstAttribute="leading" secondItem="AQu-k4-3Rh" secondAttribute="leading" id="aTN-cc-JJl"/>
+                    <constraint firstAttribute="bottom" secondItem="8yd-Dm-EWt" secondAttribute="bottom" id="eUg-zh-DfE"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="rt3-xW-Qei" secondAttribute="bottom" constant="22" id="fag-ZD-BID"/>
+                    <constraint firstItem="rt3-xW-Qei" firstAttribute="top" secondItem="AQu-k4-3Rh" secondAttribute="bottom" constant="7.5" id="lhM-5S-cOA"/>
+                    <constraint firstAttribute="trailing" secondItem="fTg-SY-ZDH" secondAttribute="trailing" id="qgb-rn-q3N"/>
+                    <constraint firstItem="fTg-SY-ZDH" firstAttribute="centerY" secondItem="qaY-4C-S83" secondAttribute="centerY" id="ras-di-ih3"/>
+                    <constraint firstAttribute="trailing" secondItem="AQu-k4-3Rh" secondAttribute="trailing" constant="40" id="xBj-ze-FPt"/>
+                    <constraint firstItem="TXR-d1-A9b" firstAttribute="leading" secondItem="qaY-4C-S83" secondAttribute="leading" constant="16" id="zPq-al-Bci"/>
+                    <constraint firstItem="rt3-xW-Qei" firstAttribute="trailing" secondItem="AQu-k4-3Rh" secondAttribute="trailing" id="znj-BS-Gvh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="constraintIconHeight" destination="mMP-0X-ftK" id="FQz-at-jqI"/>
+                <outlet property="imgviewStatus" destination="TXR-d1-A9b" id="qdS-ZJ-ECx"/>
+                <outlet property="lblDescription" destination="rt3-xW-Qei" id="kDN-9P-gPx"/>
+                <outlet property="lblTime" destination="AQu-k4-3Rh" id="Xuk-ki-9j2"/>
+                <outlet property="viewFlowLine" destination="8yd-Dm-EWt" id="W2i-WW-oxw"/>
+            </connections>
+            <point key="canvasLocation" x="-68.5" y="-144"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="button_next_green" width="32" height="32"/>
+        <image name="icon_provider_inactive" width="24" height="24"/>
+    </resources>
+</document>

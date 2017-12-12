@@ -45,4 +45,15 @@ extension String {
         }
         return attributedString
     }
+    
+    func toBold(strings: [String], regularFont: UIFont = UIFont.JGGListText, boldFont: UIFont = UIFont.JGGListTitle) -> NSAttributedString? {
+        let boldAttributes = [ NSAttributedStringKey.font : boldFont ]
+        let regularAttributes = [ NSAttributedStringKey.font : regularFont ]
+        let attributedString = NSMutableAttributedString(string: self, attributes: regularAttributes)
+        for boldString in strings {
+            let boldRange = (self as NSString).range(of: boldString)
+            attributedString.addAttributes(boldAttributes, range: boldRange)
+        }
+        return attributedString
+    }
 }

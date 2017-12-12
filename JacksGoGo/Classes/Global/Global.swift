@@ -19,3 +19,13 @@ public enum BiddingStatus: String {
 public func LocalizedString(_ key: String, comment: String = "") -> String {
     return NSLocalizedString(key, comment: comment)
 }
+
+public func DateString(from date: Date, format: String = "d MMM, yyyy") -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = format
+    return dateFormatter.string(from: date)
+}
+
+public func DateTimeString(from date: Date, format: String = "d MMM, yyyy h:mm a") -> String {
+    return DateString(from: date, format: format)
+}

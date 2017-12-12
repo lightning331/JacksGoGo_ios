@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Regular.ttf">
+            <string>Muli-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JGGAppJobStatusButtonCell" rowHeight="163" id="yrQ-AB-Bpa" customClass="JGGAppJobStatusButtonCell" customModule="JacksGoGo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="163"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yrQ-AB-Bpa" id="eQc-Ax-9KE">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="162.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RGk-Pg-FVw">
+                        <rect key="frame" x="27" y="24" width="2" height="138.5"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="2" id="dhA-o3-cSZ"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_provider_inactive" translatesAutoresizingMaskIntoConstraints="NO" id="2JT-jR-zJG">
+                        <rect key="frame" x="16" y="0.0" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="Vcd-YU-GRB"/>
+                            <constraint firstAttribute="height" constant="24" id="on8-cA-EMe"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13 Jul, 2017 4:16 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwF-NL-uuJ">
+                        <rect key="frame" x="55" y="0.0" width="304" height="15.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="FSm-tG-vjr"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
+                        <color key="textColor" red="0.54115974899999997" green="0.54185396429999999" blue="0.56077778339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appointment confirmed." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcX-bJ-zDx">
+                        <rect key="frame" x="55" y="23" width="304" height="43"/>
+                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juH-ho-znE">
+                        <rect key="frame" x="55" y="82" width="304" height="48"/>
+                        <color key="backgroundColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="48" id="QUq-xh-phU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
+                        <state key="normal" title="View Job Report To Verify">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="RGk-Pg-FVw" firstAttribute="centerX" secondItem="2JT-jR-zJG" secondAttribute="centerX" id="0Vt-2b-Lv6"/>
+                    <constraint firstItem="2JT-jR-zJG" firstAttribute="leading" secondItem="eQc-Ax-9KE" secondAttribute="leading" constant="16" id="2Mi-8G-f52"/>
+                    <constraint firstItem="gcX-bJ-zDx" firstAttribute="top" secondItem="fwF-NL-uuJ" secondAttribute="bottom" constant="7.5" id="H3R-q6-rC7"/>
+                    <constraint firstItem="fwF-NL-uuJ" firstAttribute="top" secondItem="2JT-jR-zJG" secondAttribute="top" id="NUC-6s-18B"/>
+                    <constraint firstItem="gcX-bJ-zDx" firstAttribute="leading" secondItem="fwF-NL-uuJ" secondAttribute="leading" id="PQ7-bV-vZV"/>
+                    <constraint firstItem="juH-ho-znE" firstAttribute="trailing" secondItem="gcX-bJ-zDx" secondAttribute="trailing" id="WdI-C5-k5c"/>
+                    <constraint firstItem="gcX-bJ-zDx" firstAttribute="trailing" secondItem="fwF-NL-uuJ" secondAttribute="trailing" id="doh-C5-XZp"/>
+                    <constraint firstItem="2JT-jR-zJG" firstAttribute="top" secondItem="eQc-Ax-9KE" secondAttribute="top" id="fXn-O4-TVR"/>
+                    <constraint firstAttribute="trailing" secondItem="fwF-NL-uuJ" secondAttribute="trailing" constant="16" id="fet-AL-XE5"/>
+                    <constraint firstItem="juH-ho-znE" firstAttribute="leading" secondItem="gcX-bJ-zDx" secondAttribute="leading" id="g5r-zA-wWH"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="juH-ho-znE" secondAttribute="bottom" constant="22" id="jdS-zt-Hua"/>
+                    <constraint firstItem="RGk-Pg-FVw" firstAttribute="top" secondItem="2JT-jR-zJG" secondAttribute="bottom" id="jeE-3M-Hnt"/>
+                    <constraint firstItem="fwF-NL-uuJ" firstAttribute="leading" secondItem="2JT-jR-zJG" secondAttribute="trailing" constant="15" id="kHB-0d-I32"/>
+                    <constraint firstAttribute="bottom" secondItem="RGk-Pg-FVw" secondAttribute="bottom" id="nu3-nf-TTR"/>
+                    <constraint firstItem="juH-ho-znE" firstAttribute="top" secondItem="gcX-bJ-zDx" secondAttribute="bottom" constant="16" id="pr1-25-x0Z"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="btnViewJob" destination="juH-ho-znE" id="lRh-Za-m4x"/>
+                <outlet property="constraintIconHeight" destination="on8-cA-EMe" id="qqt-ao-Td9"/>
+                <outlet property="imgviewStatus" destination="2JT-jR-zJG" id="T3Z-pm-KJd"/>
+                <outlet property="lblDescription" destination="gcX-bJ-zDx" id="pEG-he-EVi"/>
+                <outlet property="lblTime" destination="fwF-NL-uuJ" id="TkF-0C-WeN"/>
+                <outlet property="viewFlowLine" destination="RGk-Pg-FVw" id="WAH-sg-Dn8"/>
+            </connections>
+            <point key="canvasLocation" x="118.5" y="26.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon_provider_inactive" width="24" height="24"/>
+    </resources>
+</document>

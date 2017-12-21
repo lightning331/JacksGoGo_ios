@@ -241,6 +241,7 @@
 		FFEB45D61FEC134F00F362FF /* JGGSignupSMSVerifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB45D51FEC134F00F362FF /* JGGSignupSMSVerifyVC.swift */; };
 		FFEB45D81FEC216200F362FF /* JGGProfileNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB45D71FEC216200F362FF /* JGGProfileNC.swift */; };
 		FFEB45DA1FEC2A5B00F362FF /* JGGAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB45D91FEC2A5B00F362FF /* JGGAPIManager.swift */; };
+		FFEB45DD1FEC304300F362FF /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB45DC1FEC304300F362FF /* URLManager.swift */; };
 		FFF39B711FD16B6F0025744E /* JGGPhotoPickerCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF39B701FD16B6F0025744E /* JGGPhotoPickerCustomCell.xib */; };
 		FFF39B731FD16D2B0025744E /* JGGCustomPhotoPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF39B721FD16D2B0025744E /* JGGCustomPhotoPickerVC.swift */; };
 		FFF39B761FD16EC40025744E /* JGGPhotoPickerCameraCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF39B751FD16EC40025744E /* JGGPhotoPickerCameraCell.xib */; };
@@ -489,6 +490,7 @@
 		FFEB45D51FEC134F00F362FF /* JGGSignupSMSVerifyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSignupSMSVerifyVC.swift; sourceTree = "<group>"; };
 		FFEB45D71FEC216200F362FF /* JGGProfileNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGProfileNC.swift; sourceTree = "<group>"; };
 		FFEB45D91FEC2A5B00F362FF /* JGGAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAPIManager.swift; sourceTree = "<group>"; };
+		FFEB45DC1FEC304300F362FF /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
 		FFF39B701FD16B6F0025744E /* JGGPhotoPickerCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGPhotoPickerCustomCell.xib; sourceTree = "<group>"; };
 		FFF39B721FD16D2B0025744E /* JGGCustomPhotoPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JGGCustomPhotoPickerVC.swift; sourceTree = "<group>"; };
 		FFF39B751FD16EC40025744E /* JGGPhotoPickerCameraCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGPhotoPickerCameraCell.xib; sourceTree = "<group>"; };
@@ -1219,6 +1221,7 @@
 			isa = PBXGroup;
 			children = (
 				FFEB45D91FEC2A5B00F362FF /* JGGAPIManager.swift */,
+				FFEB45DC1FEC304300F362FF /* URLManager.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1585,6 +1588,7 @@
 				63BE91BC1FA025B700D40C07 /* JGGViewController.swift in Sources */,
 				631EF29F1FA87462001D2915 /* JGGClientUserModel.swift in Sources */,
 				FFB27A2F1FD19D1B009A2201 /* LoadingIndicator.swift in Sources */,
+				FFEB45DD1FEC304300F362FF /* URLManager.swift in Sources */,
 				FFA21F711FABC57F00F5A6DA /* JGGTagListCell.swift in Sources */,
 				FFB27A301FD19D1B009A2201 /* PageView.swift in Sources */,
 				FF9E9E761FAC652300F32283 /* JGGCarouselImageView.swift in Sources */,

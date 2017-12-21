@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 public enum BiddingStatus: String {
     case pending = "pending"
@@ -29,3 +30,7 @@ public func DateString(from date: Date, format: String = "d MMM, yyyy") -> Strin
 public func DateTimeString(from date: Date, format: String = "d MMM, yyyy h:mm a") -> String {
     return DateString(from: date, format: format)
 }
+
+typealias Dictionary = [String: Any]
+
+typealias DefaultResponse = (JSON?, Error?) -> Void

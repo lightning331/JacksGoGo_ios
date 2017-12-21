@@ -53,34 +53,52 @@ public final class AZDropdownMenuDefaultCell: AZDropdownMenuBaseCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    fileprivate func constraintsForLeftAlignment(_ viewBindings: [String:AnyObject]) -> [NSLayoutConstraint] {
+    fileprivate func constraintsForLeftAlignment(_ viewBindings: [String: Any]) -> [NSLayoutConstraint] {
         switch config.itemImagePosition {
             case .prefix:
-                return NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[icon]-10-[title]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewBindings)
+                return NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[icon]-10-[title]",
+                                                      options: NSLayoutFormatOptions(rawValue: 0),
+                                                      metrics: nil,
+                                                      views: viewBindings)
             case .postfix:
-                return NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[title]-10-[icon]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewBindings)
+                return NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[title]-10-[icon]",
+                                                      options: NSLayoutFormatOptions(rawValue: 0),
+                                                      metrics: nil,
+                                                      views: viewBindings)
         }
         
     }
 
-    fileprivate func constraintsForRightAlignment(_ viewBindings: [String:AnyObject]) -> [NSLayoutConstraint] {
+    fileprivate func constraintsForRightAlignment(_ viewBindings: [String: Any]) -> [NSLayoutConstraint] {
         switch config.itemImagePosition {
         case .prefix:
-            return NSLayoutConstraint.constraints(withVisualFormat: "H:[title]-10-[icon]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewBindings)
+            return NSLayoutConstraint.constraints(withVisualFormat: "H:[title]-10-[icon]-|",
+                                                  options: NSLayoutFormatOptions(rawValue: 0),
+                                                  metrics: nil,
+                                                  views: viewBindings)
         case .postfix:
-            return NSLayoutConstraint.constraints(withVisualFormat: "H:[title]-10-[icon]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewBindings)
+            return NSLayoutConstraint.constraints(withVisualFormat: "H:[title]-10-[icon]-|",
+                                                  options: NSLayoutFormatOptions(rawValue: 0),
+                                                  metrics: nil,
+                                                  views: viewBindings)
         }
         
         
     }
 
-    fileprivate func constraintsForCenterAlignment(_ viewBindings: [String:AnyObject]) -> [NSLayoutConstraint] {
+    fileprivate func constraintsForCenterAlignment(_ viewBindings: [String: Any]) -> [NSLayoutConstraint] {
         var constraints:[NSLayoutConstraint]
         switch config.itemImagePosition {
             case .prefix:
-                constraints = NSLayoutConstraint.constraints(withVisualFormat: "H:[icon]-10-[title]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewBindings)
+                constraints = NSLayoutConstraint.constraints(withVisualFormat: "H:[icon]-10-[title]",
+                                                             options: NSLayoutFormatOptions(rawValue: 0),
+                                                             metrics: nil,
+                                                             views: viewBindings)
             case .postfix:
-                constraints = NSLayoutConstraint.constraints(withVisualFormat: "H:[title]-10-[icon]", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewBindings)
+                constraints = NSLayoutConstraint.constraints(withVisualFormat: "H:[title]-10-[icon]",
+                                                             options: NSLayoutFormatOptions(rawValue: 0),
+                                                             metrics: nil,
+                                                             views: viewBindings)
         }
         
         

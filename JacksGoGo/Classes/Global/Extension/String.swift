@@ -36,8 +36,8 @@ extension String {
         guard text.count > 0 else {
             return nil
         }
-        let attributes = [ NSAttributedStringKey.font : UIFont.JGGListTitle ]
-        let regularAttributes = [ NSAttributedStringKey.font : UIFont.JGGListText ]
+        let attributes: [NSAttributedStringKey: Any] = [ .font : UIFont.JGGListTitle ]
+        let regularAttributes: [NSAttributedStringKey: Any] = [ .font : UIFont.JGGListText ]
         let attributedString = NSMutableAttributedString(string: text, attributes: attributes)
         if boldString.count > 0 {
             let regularRange = NSRange(location: boldString.count, length: text.count - boldString.count)
@@ -47,8 +47,8 @@ extension String {
     }
     
     func toBold(strings: [String], regularFont: UIFont = UIFont.JGGListText, boldFont: UIFont = UIFont.JGGListTitle) -> NSAttributedString? {
-        let boldAttributes = [ NSAttributedStringKey.font : boldFont ]
-        let regularAttributes = [ NSAttributedStringKey.font : regularFont ]
+        let boldAttributes: [NSAttributedStringKey: Any] = [ .font : boldFont ]
+        let regularAttributes: [NSAttributedStringKey: Any] = [ .font : regularFont ]
         let attributedString = NSMutableAttributedString(string: self, attributes: regularAttributes)
         for boldString in strings {
             let boldRange = (self as NSString).range(of: boldString)

@@ -9,7 +9,7 @@ target 'JacksGoGo' do
 
 pod 'UIColor_Hex_Swift', :git => 'https://github.com/yeahdongcn/UIColor-Hex-Swift.git'
 # pod 'UIColor_Hex_Swift', '~> 4.0.0'
-pod 'Alamofire', '~> 4.5.1'
+pod 'Alamofire', '~> 4.6.0'
 pod 'AlamofireObjectMapper', '~> 5.0.0'
 pod 'SwiftyJSON'
 pod 'SnapKit', '~> 4.0.0'

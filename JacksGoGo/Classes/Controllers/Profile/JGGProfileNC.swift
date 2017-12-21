@@ -1,24 +1,29 @@
 //
-//  JGGLoginBaseVC.swift
+//  JGGProfileNC.swift
 //  JacksGoGo
 //
-//  Created by Hemin Wang on 25/10/2017.
+//  Created by Chris Lin on 12/22/17.
 //  Copyright © 2017 Hemin Wang. All rights reserved.
 //
 
 import UIKit
 
-class JGGLoginBaseVC: JGGViewController {
+class JGGProfileNC: JGGBaseNC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if true {
+            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGLoginVC") as! JGGLoginVC
+            self.viewControllers = [loginVC]
+        } else {
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
 

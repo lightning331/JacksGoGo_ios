@@ -229,10 +229,18 @@
 		FFB5942D1FDE7EB200D12A1F /* JGGAppJobStatusPromptCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB5942B1FDE7EB200D12A1F /* JGGAppJobStatusPromptCell.xib */; };
 		FFB594301FDE85E700D12A1F /* JGGAppJobStatusButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB5942E1FDE85E700D12A1F /* JGGAppJobStatusButtonCell.swift */; };
 		FFB594311FDE85E700D12A1F /* JGGAppJobStatusButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB5942F1FDE85E700D12A1F /* JGGAppJobStatusButtonCell.xib */; };
+		FFB594361FE292C700D12A1F /* JGGRescheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB594351FE292C700D12A1F /* JGGRescheduleVC.swift */; };
 		FFB5ED581FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB5ED571FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift */; };
 		FFB5ED5A1FD0207D006ADE49 /* JGGRequestQuotationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB5ED591FD0207D006ADE49 /* JGGRequestQuotationVC.swift */; };
 		FFB64BB11FB765190028B77B /* JGGActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB64BB01FB765190028B77B /* JGGActionSheet.xib */; };
 		FFB64BB31FB7B03C0028B77B /* JGGSearchMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB64BB21FB7B03C0028B77B /* JGGSearchMainVC.swift */; };
+		FFEB45CE1FEC128300F362FF /* JGGLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB45CD1FEC128300F362FF /* JGGLoginVC.swift */; };
+		FFEB45D01FEC132A00F362FF /* JGGSignupSelectRegionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB45CF1FEC132A00F362FF /* JGGSignupSelectRegionVC.swift */; };
+		FFEB45D21FEC133A00F362FF /* JGGSignupEmailPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB45D11FEC133A00F362FF /* JGGSignupEmailPasswordVC.swift */; };
+		FFEB45D41FEC134400F362FF /* JGGSignupPhoneNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB45D31FEC134400F362FF /* JGGSignupPhoneNumberVC.swift */; };
+		FFEB45D61FEC134F00F362FF /* JGGSignupSMSVerifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB45D51FEC134F00F362FF /* JGGSignupSMSVerifyVC.swift */; };
+		FFEB45D81FEC216200F362FF /* JGGProfileNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB45D71FEC216200F362FF /* JGGProfileNC.swift */; };
+		FFEB45DA1FEC2A5B00F362FF /* JGGAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB45D91FEC2A5B00F362FF /* JGGAPIManager.swift */; };
 		FFF39B711FD16B6F0025744E /* JGGPhotoPickerCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF39B701FD16B6F0025744E /* JGGPhotoPickerCustomCell.xib */; };
 		FFF39B731FD16D2B0025744E /* JGGCustomPhotoPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF39B721FD16D2B0025744E /* JGGCustomPhotoPickerVC.swift */; };
 		FFF39B761FD16EC40025744E /* JGGPhotoPickerCameraCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF39B751FD16EC40025744E /* JGGPhotoPickerCameraCell.xib */; };
@@ -469,10 +477,18 @@
 		FFB5942B1FDE7EB200D12A1F /* JGGAppJobStatusPromptCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGAppJobStatusPromptCell.xib; sourceTree = "<group>"; };
 		FFB5942E1FDE85E700D12A1F /* JGGAppJobStatusButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppJobStatusButtonCell.swift; sourceTree = "<group>"; };
 		FFB5942F1FDE85E700D12A1F /* JGGAppJobStatusButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGAppJobStatusButtonCell.xib; sourceTree = "<group>"; };
+		FFB594351FE292C700D12A1F /* JGGRescheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGRescheduleVC.swift; sourceTree = "<group>"; };
 		FFB5ED571FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceSubDetailBaseVC.swift; sourceTree = "<group>"; };
 		FFB5ED591FD0207D006ADE49 /* JGGRequestQuotationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGRequestQuotationVC.swift; sourceTree = "<group>"; };
 		FFB64BB01FB765190028B77B /* JGGActionSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGActionSheet.xib; sourceTree = "<group>"; };
 		FFB64BB21FB7B03C0028B77B /* JGGSearchMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSearchMainVC.swift; sourceTree = "<group>"; };
+		FFEB45CD1FEC128300F362FF /* JGGLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGLoginVC.swift; sourceTree = "<group>"; };
+		FFEB45CF1FEC132A00F362FF /* JGGSignupSelectRegionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSignupSelectRegionVC.swift; sourceTree = "<group>"; };
+		FFEB45D11FEC133A00F362FF /* JGGSignupEmailPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSignupEmailPasswordVC.swift; sourceTree = "<group>"; };
+		FFEB45D31FEC134400F362FF /* JGGSignupPhoneNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSignupPhoneNumberVC.swift; sourceTree = "<group>"; };
+		FFEB45D51FEC134F00F362FF /* JGGSignupSMSVerifyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSignupSMSVerifyVC.swift; sourceTree = "<group>"; };
+		FFEB45D71FEC216200F362FF /* JGGProfileNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGProfileNC.swift; sourceTree = "<group>"; };
+		FFEB45D91FEC2A5B00F362FF /* JGGAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAPIManager.swift; sourceTree = "<group>"; };
 		FFF39B701FD16B6F0025744E /* JGGPhotoPickerCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGPhotoPickerCustomCell.xib; sourceTree = "<group>"; };
 		FFF39B721FD16D2B0025744E /* JGGCustomPhotoPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JGGCustomPhotoPickerVC.swift; sourceTree = "<group>"; };
 		FFF39B751FD16EC40025744E /* JGGPhotoPickerCameraCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGPhotoPickerCameraCell.xib; sourceTree = "<group>"; };
@@ -643,10 +659,10 @@
 			children = (
 				63BE91BA1FA025A400D40C07 /* Base */,
 				63BE91EA1FA0279A00D40C07 /* Main */,
-				63BE91EB1FA0279F00D40C07 /* Login */,
 				FF7C992A1FB3407600A2E5E4 /* EditJob */,
 				63BE91E91FA0279200D40C07 /* Appointment */,
 				63BE91E81FA0278D00D40C07 /* Search */,
+				FFEB45CC1FEC11DB00F362FF /* Profile */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -657,6 +673,7 @@
 				63DBC8AD1FA02E6600AAECA8 /* Extension */,
 				63BE91BF1FA025D100D40C07 /* JGGAppManager.swift */,
 				631EF2A61FA87848001D2915 /* Global.swift */,
+				FFEB45DB1FEC2A6300F362FF /* API */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -817,6 +834,11 @@
 			isa = PBXGroup;
 			children = (
 				63BE91FA1FA028B300D40C07 /* JGGLoginBaseVC.swift */,
+				FFEB45CD1FEC128300F362FF /* JGGLoginVC.swift */,
+				FFEB45CF1FEC132A00F362FF /* JGGSignupSelectRegionVC.swift */,
+				FFEB45D11FEC133A00F362FF /* JGGSignupEmailPasswordVC.swift */,
+				FFEB45D31FEC134400F362FF /* JGGSignupPhoneNumberVC.swift */,
+				FFEB45D51FEC134F00F362FF /* JGGSignupSMSVerifyVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1179,8 +1201,26 @@
 			children = (
 				FFB5941C1FDE670400D12A1F /* JGGAppDetailBaseVC.swift */,
 				FFB5941E1FDE688300D12A1F /* JGGAppJobStatusSummaryVC.swift */,
+				FFB594351FE292C700D12A1F /* JGGRescheduleVC.swift */,
 			);
 			path = ClientJobs;
+			sourceTree = "<group>";
+		};
+		FFEB45CC1FEC11DB00F362FF /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FFEB45D71FEC216200F362FF /* JGGProfileNC.swift */,
+				63BE91EB1FA0279F00D40C07 /* Login */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		FFEB45DB1FEC2A6300F362FF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FFEB45D91FEC2A5B00F362FF /* JGGAPIManager.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		FFF39B741FD16EA20025744E /* CustomPhotoPicker */ = {
@@ -1462,6 +1502,7 @@
 				FF86D1211FC4D4D000EE70F5 /* JGGServiceDetailTimeSlotsVC.swift in Sources */,
 				631EF2A31FA874A0001D2915 /* JGGEventUserModel.swift in Sources */,
 				FFB5942C1FDE7EB200D12A1F /* JGGAppJobStatusPromptCell.swift in Sources */,
+				FFEB45DA1FEC2A5B00F362FF /* JGGAPIManager.swift in Sources */,
 				FF849DF01FD69092003EB83A /* JGGCategoryModel.swift in Sources */,
 				FFA21F691FABC20000F5A6DA /* JGGTotalReviewCell.swift in Sources */,
 				FF21FB021FAB67E5004D0ADA /* FCColors.swift in Sources */,
@@ -1486,18 +1527,21 @@
 				FF21FAFA1FAB6387004D0ADA /* AZDropdownMenuConfig.swift in Sources */,
 				FF9E5A451FB89C2B006C4B50 /* JGGSearchNC.swift in Sources */,
 				FFAFC7301FC55050008E0664 /* JGGAllReviewsVC.swift in Sources */,
+				FFEB45D01FEC132A00F362FF /* JGGSignupSelectRegionVC.swift in Sources */,
 				FFAD88BB1FBB324E0001F423 /* JGGServiceAnnotationView.swift in Sources */,
 				FF21FAE21FAB5525004D0ADA /* JGGImageCarouselCell.swift in Sources */,
 				FF86D1191FC4B78B00EE70F5 /* JGGCalendarView.swift in Sources */,
 				FFB594261FDE7DA600D12A1F /* JGGAppJobStatusAccessoryCell.swift in Sources */,
 				FFB594171FDB3BAE00D12A1F /* JGGJGGAdvancedSearchVC.swift in Sources */,
 				63BE91C01FA025D100D40C07 /* JGGAppManager.swift in Sources */,
+				FFEB45CE1FEC128300F362FF /* JGGLoginVC.swift in Sources */,
 				631EF2971FA87022001D2915 /* JGGAppBiddingProviderCell.swift in Sources */,
 				63BE91F91FA0289D00D40C07 /* JGGMainTabbarController.swift in Sources */,
 				FFB27A2B1FD19D1B009A2201 /* LightboxImage.swift in Sources */,
 				FFB27A2D1FD19D1B009A2201 /* HeaderView.swift in Sources */,
 				FF21FAF81FAB6387004D0ADA /* AZDropdownMenu.swift in Sources */,
 				FFA061BB1FAB4F4200185C56 /* JGGAppInviteProviderCell.swift in Sources */,
+				FFEB45D21FEC133A00F362FF /* JGGSignupEmailPasswordVC.swift in Sources */,
 				FFB5941F1FDE688300D12A1F /* JGGAppJobStatusSummaryVC.swift in Sources */,
 				FFA061BF1FAB50A000185C56 /* JGGDetailInfoDescriptionCell.swift in Sources */,
 				FF849E031FD712FE003EB83A /* JGGPostServicePriceVC.swift in Sources */,
@@ -1509,12 +1553,14 @@
 				FFB5941D1FDE670400D12A1F /* JGGAppDetailBaseVC.swift in Sources */,
 				FFA21F5D1FAB87D600F5A6DA /* JGGBorderButtonCell.swift in Sources */,
 				FF9E9E6C1FAC4B7300F32283 /* JGGAppointmentDetailVC.swift in Sources */,
+				FFEB45D41FEC134400F362FF /* JGGSignupPhoneNumberVC.swift in Sources */,
 				63955EE81FA0668800D825B2 /* JGGAppHomeTabView.swift in Sources */,
 				FF9E9E6A1FAC3F4B00F32283 /* JGGServiceDetailVC.swift in Sources */,
 				FF21FB001FAB67E5004D0ADA /* FCAlertView.swift in Sources */,
 				FFB27A291FD19D1B009A2201 /* LightboxConfig.swift in Sources */,
 				FFA061C71FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.swift in Sources */,
 				FFFC213B1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift in Sources */,
+				FFEB45D61FEC134F00F362FF /* JGGSignupSMSVerifyVC.swift in Sources */,
 				FF849E161FD75D2C003EB83A /* JGGPostServiceAddressVC.swift in Sources */,
 				FFB27A2C1FD19D1B009A2201 /* FooterView.swift in Sources */,
 				FF7C993E1FB35DEE00A2E5E4 /* JGGEditJobNC.swift in Sources */,
@@ -1522,6 +1568,7 @@
 				FFB5ED581FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift in Sources */,
 				FFFC213F1FB5C0AA00AAA6F7 /* JGGBidDetailVC.swift in Sources */,
 				FF849DF41FD6EFBF003EB83A /* JGGSkillTestQuestionCell.swift in Sources */,
+				FFEB45D81FEC216200F362FF /* JGGProfileNC.swift in Sources */,
 				FF849DFD1FD708DF003EB83A /* JGGPostServiceBaseTableVC.swift in Sources */,
 				FFB594301FDE85E700D12A1F /* JGGAppJobStatusButtonCell.swift in Sources */,
 				FFB64BB31FB7B03C0028B77B /* JGGSearchMainVC.swift in Sources */,
@@ -1545,6 +1592,7 @@
 				FF7C99261FB33AF600A2E5E4 /* JGGJobDetailStepLineImageView.swift in Sources */,
 				FF21FAE61FAB5588004D0ADA /* JGGDetailInfoFooterView.swift in Sources */,
 				FF7C99381FB356A500A2E5E4 /* JGGEditJobAddressVC.swift in Sources */,
+				FFB594361FE292C700D12A1F /* JGGRescheduleVC.swift in Sources */,
 				63BE91F01FA0283600D40C07 /* JGGSearchBaseVC.swift in Sources */,
 				63BE91C31FA025ED00D40C07 /* JGGBaseModel.swift in Sources */,
 				FFFC213D1FB5BFFA00AAA6F7 /* JGGAppointmentDetailBaseVC.swift in Sources */,

@@ -58,6 +58,7 @@ class JGGAlertViewController: UIViewController {
     
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblMessage: UILabel!
+    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var btnCancel: UIButton!
     @IBOutlet weak var btnOK: UIButton!
     

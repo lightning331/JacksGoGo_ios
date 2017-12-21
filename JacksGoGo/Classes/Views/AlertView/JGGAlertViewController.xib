@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,7 +46,7 @@
                             <color key="backgroundColor" red="0.79507212400000005" green="0.93322943650000001" blue="0.79997090530000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                             <state key="normal" title="Cancel">
-                                <color key="titleColor" red="0.90196078431372551" green="0.96862745098039216" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
                                 <action selector="onPressedCancel:" destination="-1" eventType="touchUpInside" id="lTa-eA-OcE"/>
@@ -78,24 +78,36 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Deleted jobs can be found in Appointment, under History tab." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPu-Uo-PhG">
-                    <rect key="frame" x="20" y="88" width="335" height="504"/>
+                    <rect key="frame" x="20" y="88" width="335" height="435"/>
                     <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qE2-mt-ywQ">
+                    <rect key="frame" x="20" y="539" width="335" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="otu-8m-zp6"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="nd6-Fc-SEg" firstAttribute="top" secondItem="BPu-Uo-PhG" secondAttribute="bottom" constant="25" id="0Ib-bW-QSn"/>
                 <constraint firstItem="nd6-Fc-SEg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="19V-ib-WSu"/>
                 <constraint firstItem="BPu-Uo-PhG" firstAttribute="top" secondItem="6Fw-kj-43R" secondAttribute="bottom" constant="15" id="3L1-Mi-qTl"/>
                 <constraint firstItem="6Fw-kj-43R" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="90I-d8-iHd"/>
                 <constraint firstItem="nd6-Fc-SEg" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="GNq-cL-KfU"/>
                 <constraint firstItem="nd6-Fc-SEg" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="HtM-ck-HqG"/>
                 <constraint firstItem="6Fw-kj-43R" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="NwM-GI-Ujm"/>
+                <constraint firstItem="qE2-mt-ywQ" firstAttribute="top" secondItem="BPu-Uo-PhG" secondAttribute="bottom" constant="16" id="O7o-qd-2Za"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BPu-Uo-PhG" secondAttribute="trailing" constant="20" id="OaB-Z4-ZDs"/>
                 <constraint firstItem="BPu-Uo-PhG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="e1e-Tf-aAE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6Fw-kj-43R" secondAttribute="trailing" constant="30" id="fAT-6f-4hU"/>
+                <constraint firstItem="qE2-mt-ywQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="qdl-yc-GeY"/>
+                <constraint firstItem="nd6-Fc-SEg" firstAttribute="top" secondItem="qE2-mt-ywQ" secondAttribute="bottom" constant="30" id="so8-pv-NIw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qE2-mt-ywQ" secondAttribute="trailing" constant="20" id="u3V-Rp-DnJ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="25.5" y="51.5"/>

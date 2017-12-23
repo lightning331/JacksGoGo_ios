@@ -11,7 +11,13 @@ import Foundation
 class URLManager: NSObject {
     
     fileprivate static func fullPath(for endPoint: String) -> String {
-        return "http://www.meridians2.com/JGG/api" + endPoint
+//        return "http://www.meridians2.com/JGG/api" + endPoint
+        return "http://192.168.0.30:50370/api" + endPoint
+    }
+    
+    static var oauthToken: String {
+//        return "http://www.meridians2.com/JGG/oauth/Token"
+        return "http://192.168.0.30:50370/oauth/Token"
     }
     
     // MARK: - Account
@@ -31,6 +37,10 @@ class URLManager: NSObject {
         
         static var Login: String {
             return fullPath(for: "/Login")
+        }
+        
+        static var Register: String {
+            return fullPath(for: "/Register")
         }
         
         static var UploadPhoto: String {
@@ -53,6 +63,41 @@ class URLManager: NSObject {
             return fullPath(for: "/AddExternalLogin")
         }
         
+    }
+    
+    class Job: NSObject {
+        
+        private static func fullPath(for endPoint: String) -> String {
+            return URLManager.fullPath(for: "/Job" + endPoint)
+        }
+
+        static var PostJob: String {
+            return fullPath(for: "/PostJob")
+        }
+        
+        static var DeleteJob: String {
+            return fullPath(for: "/DeleteJob")
+        }
+        
+        static var EditJob: String {
+            return fullPath(for: "/EditJob")
+        }
+        
+        static var SearchJob: String {
+            return fullPath(for: "/SearchJob")
+        }
+        
+        static var GetJobsByUser: String {
+            return fullPath(for: "/GetJobsByUser")
+        }
+        
+        static var GetJobsByCategory: String {
+            return fullPath(for: "/GetJobsByCategory")
+        }
+        
+        static var GetJobByID: String {
+            return fullPath(for: "/GetJobByID")
+        }
     }
     
     class Proposal: NSObject {
@@ -145,4 +190,90 @@ class URLManager: NSObject {
         }
         
     }
+    
+    class System: NSObject {
+        private static func fullPath(for endPoint: String) -> String {
+            return URLManager.fullPath(for: endPoint)
+        }
+
+        static var AddCategory: String {
+            return fullPath(for: "/Category/AddCategory")
+        }
+        
+        static var EditCategory: String {
+            return fullPath(for: "/Category/EditCategory")
+        }
+        
+        static var DeleteCategory: String {
+            return fullPath(for: "/Category/DeleteCategory")
+        }
+        
+        static var GetAllCategories: String {
+            return fullPath(for: "/Category/GetAllCategories")
+        }
+        
+        static var AddCountry: String {
+            return fullPath(for: "/Country/AddCountry")
+        }
+        
+        static var EditCountry: String {
+            return fullPath(for: "/Country/EditCountry")
+        }
+        
+        static var DeleteCountry: String {
+            return fullPath(for: "/Country/DeleteCountry")
+        }
+        
+        static var GetCountries: String {
+            return fullPath(for: "/Country/GetCountries")
+        }
+        
+        static var AddCurrency: String {
+            return fullPath(for: "/Currency/AddCurrency")
+        }
+        
+        static var EditCurrency: String {
+            return fullPath(for: "/Currency/EditCurrency")
+        }
+        
+        static var GetCurrencies: String {
+            return fullPath(for: "/Currency/GetCurrencies")
+        }
+        
+        static var AddLanguage: String {
+            return fullPath(for: "/Language/AddLanguage")
+        }
+        
+        static var EditLanguage: String {
+            return fullPath(for: "/Language/EditLanguage")
+        }
+        
+        static var DeleteLanguage: String {
+            return fullPath(for: "/Language/DeleteLanguage")
+        }
+        
+        static var GetLanguages: String {
+            return fullPath(for: "/Language/GetLanguages")
+        }
+        
+        static var AddRegion: String {
+            return fullPath(for: "/Region/AddRegion")
+        }
+        
+        static var EditRegion: String {
+            return fullPath(for: "/Region/AddRegion")
+        }
+        
+        static var DeleteRegion: String {
+            return fullPath(for: "/Region/DeleteRegion")
+        }
+        
+        static var GetRegions: String {
+            return fullPath(for: "/Region/GetRegions")
+        }
+        
+        
+    }
+    
+    
 }

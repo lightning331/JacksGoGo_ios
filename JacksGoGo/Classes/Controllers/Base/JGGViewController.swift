@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class JGGViewController: UIViewController {
 
@@ -35,6 +36,15 @@ class JGGViewController: UIViewController {
 }
 
 extension UIViewController {
+    
+    var APIManager: JGGAPIManager {
+        return JGGAPIManager.sharedManager
+    }
+    
+    var appManager: JGGAppManager {
+        return JGGAppManager.sharedManager
+    }
+    
     func updateConstraint(_ animate: Bool = true) -> Void {
         if animate == true {
             self.view.setNeedsUpdateConstraints()
@@ -56,5 +66,14 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    func showHUD(text: String? = nil, to targetView: UIView? = nil) -> Void {
+        let hud = MBProgressHUD.showAdded(to: targetView ?? self.view, animated: true)
+        if let text = text {
+            hud.label.text = text
+        }
+    }
     
+    func hideHUD(from targetView: UIView? = nil) -> Void {
+        MBProgressHUD.hide(for: targetView ?? self.view, animated: true)
+    }
 }

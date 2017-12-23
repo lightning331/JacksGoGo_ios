@@ -15,8 +15,6 @@ class JGGAPIManager: NSObject {
 
     private let HEADER_AUTHORIZATION         = "Authorization"
     private let HEADER_VALUE_PREFIX          = "Bearer"
-
-    var token: String?
     
     static let sharedManager : JGGAPIManager = {
         let instance = JGGAPIManager()
@@ -37,7 +35,7 @@ class JGGAPIManager: NSObject {
                  hasHeader: Bool = true) -> DataRequest
     {
         var header: [String: String]?
-        if let token = self.token, hasHeader == true {
+        if let token = self.getToken(), hasHeader == true {
             header = [
                 HEADER_AUTHORIZATION : HEADER_VALUE_PREFIX + " " + token,
             ]
@@ -134,7 +132,195 @@ class JGGAPIManager: NSObject {
     }
     
     // MARK: - Token
+    func oauthToken(user: String, password: String, grantType: String = "password", complete: @escaping BoolStringClosure) -> Void {
+        let params: Dictionary = [
+            "username": user,
+            "password": password,
+            "grant_type": grantType
+        ]
+        request(url: URLManager.oauthToken,
+                method: .post,
+                params: params,
+                encoding: URLEncoding.httpBody,
+                hasHeader: false).responseJSON { (response) in
+                    
+            switch response.result {
+            case .success(let data):
+                let result = JSON(data)
+                print(result)
+                if let _ = result["error"].string {
+                    complete(false, result["error_description"].stringValue)
+                } else {
+                    let accessToken = result["access_token"].stringValue
+                    let expiresIn = result["expires_in"].doubleValue
+                    self.save(token: accessToken, expiresIn: expiresIn)
+                    complete(true, nil)
+                }
+                break
+            case .failure(let error):
+                print(error)
+                complete(false, error.localizedDescription)
+                break
+            }
+        }
+    }
+    
+    let TOKEN_KEY = "TOKEN"
+    let EXPIRE_KEY = "EXPIRE"
+    
+    func save(token: String, expiresIn: Double) -> Void {
+        let expiresDate = Date(timeIntervalSinceNow: expiresIn)
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(token, forKey: TOKEN_KEY)
+        userDefaults.set(expiresDate, forKey: EXPIRE_KEY)
+        userDefaults.synchronize()
+    }
+    
+    func getToken() -> String? {
+        let userDefaults = UserDefaults.standard
+        if let token = userDefaults.string(forKey: TOKEN_KEY),
+           let expiresDate = userDefaults.object(forKey: EXPIRE_KEY) as? Date
+        {
+            if expiresDate > Date() {
+                return token
+            }
+        }
+        return nil
+    }
     
     // MARK: - Account
+    func accountLogin(email: String, password: String, complete: @escaping UserModelResponse) -> Void {
+        let body = [
+            "email": email,
+            "password": password,
+        ]
+        POST(url: URLManager.Account.Login, body: body) { (json, error) in
+            if let response = json {
+                let success = response["Success"].boolValue
+                if success {
+                    let user = JGGUserBaseModel(json: response["Value"])
+                    complete(user, nil)
+                } else {
+                    let errorMessage = response["Message"].stringValue
+                    complete(nil, errorMessage)
+                }
+            } else if let error = error {
+                print(error)
+                complete(nil, error.localizedDescription)
+            } else {
+                complete(nil, LocalizedString("Unknown request error."))
+            }
+        }
+    }
+    
+    func accountRegister(email: String, password: String, complete: @escaping BoolStringClosure) -> Void {
+        let body = [
+            "email": email,
+            "password": password,
+            ]
+        POST(url: URLManager.Account.Register, body: body) { (json, error) in
+            if let response = json {
+                let success = response["Success"].boolValue
+                
+                if success {
+                    self.oauthToken(user: email, password: password, complete: complete)
+                } else {
+                    let message = response["Message"].stringValue
+                    complete(success, message)
+                }
+                
+            } else if let error = error {
+                print(error)
+                complete(false, error.localizedDescription)
+            } else {
+                complete(false, LocalizedString("Unknown request error."))
+            }
+        }
+    }
+    
+    func accountAddPhone(_ phoneNumber: String, complete: @escaping BoolStringClosure) -> Void {
+        let body = [
+            "Number": phoneNumber
+        ]
+        POST(url: URLManager.Account.AddPhoneNumber, body: body) { (json, error) in
+            if let response = json {
+                let success = response["Success"].boolValue
+                let message = response["Message"].stringValue
+                complete(success, message)
+            } else if let error = error {
+                print(error)
+                complete(false, error.localizedDescription)
+            } else {
+                complete(false, LocalizedString("Unknown request error."))
+            }
+        }
+    }
+    
+    func verifyPhoneNumber(_ phoneNumber: String, code: String, complete: @escaping UserModelResponse) -> Void {
+        let body = [
+            "Provider": phoneNumber,
+            "Code": code
+        ]
+        POST(url: URLManager.Account.VerifyCode, body: body) { (json, error) in
+            if let response = json {
+                let success = response["Success"].boolValue
+                if success {
+                    let user = JGGUserBaseModel(json: response["Value"])
+                    complete(user, nil)
+                } else {
+                    let errorMessage = response["Message"].stringValue
+                    complete(nil, errorMessage)
+                }
+            } else if let error = error {
+                print(error)
+                complete(nil, error.localizedDescription)
+            } else {
+                complete(nil, LocalizedString("Unknown request error."))
+            }
+        }
+    }
+    
+    // MARK: - User
+    func userEditProfile(email: String, regionId: String, data: JSON, complete: @escaping BoolStringClosure) -> Void {
+        if var body = data.dictionaryObject {
+            body["Email"] = email
+            body["RegionID"] = regionId
+            POST(url: URLManager.User.EditProfile, body: body) { (json, error) in
+                if let response = json {
+                    let success = response["Success"].boolValue
+                    let message = response["Message"].stringValue
+                    complete(success, message)
+                } else if let error = error {
+                    print(error)
+                    complete(false, error.localizedDescription)
+                } else {
+                    complete(false, LocalizedString("Unknown request error."))
+                }
+            }
+        } else {
+            complete(false, "No changed information.")
+        }
+    }
+    
+    // MARK: - System
+    func getRegions(_ complete: @escaping RegionListBlock) -> Void {
+        GET(url: URLManager.System.GetRegions, params: nil) { (json, error) in
+            if let response = json {
+                let success = response["Success"].boolValue
+                if success {
+                    var regions: [JGGRegionModel] = []
+                    for jsonRegion in response["Value"].arrayValue {
+                        let region = JGGRegionModel(json: jsonRegion)
+                        regions.append(region)
+                    }
+                    complete(regions)
+                    return
+                }
+            }
+            complete([])
+            
+        }
+    }
+    
 }
 

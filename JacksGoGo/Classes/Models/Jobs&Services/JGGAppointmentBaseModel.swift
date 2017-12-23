@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 public enum AppointmentStatus {
     case none
@@ -39,6 +40,15 @@ class JGGAppointmentBaseModel: JGGBaseModel {
         }
     }
     
+    override init(json: JSON) {
+        super.init(json: json)
+        
+    }
+    
+    override init() {
+        super.init()
+    }
+
     func appointmentDay() -> String? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "d"

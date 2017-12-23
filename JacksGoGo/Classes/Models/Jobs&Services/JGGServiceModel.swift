@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import SwiftyJSON
 
 class JGGServiceModel: JGGAppointmentBaseModel, MKAnnotation {
     
@@ -31,7 +32,14 @@ class JGGServiceModel: JGGAppointmentBaseModel, MKAnnotation {
         }
     }
     
+    override init(json: JSON) {
+        coordinate = CLLocationCoordinate2DMake(0, 0)
+        super.init(json: json)
+        
+    }
+    
     override init() {
         coordinate = CLLocationCoordinate2DMake(0, 0)
+        super.init()
     }
 }

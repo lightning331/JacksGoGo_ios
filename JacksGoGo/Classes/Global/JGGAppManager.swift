@@ -15,4 +15,6 @@ class JGGAppManager: NSObject {
         return instance
     }()
     
+    var currentUser: JGGUserBaseModel?
+    
 }

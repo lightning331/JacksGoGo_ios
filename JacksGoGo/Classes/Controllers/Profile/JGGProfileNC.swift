@@ -10,14 +10,16 @@ import UIKit
 
 class JGGProfileNC: JGGBaseNC {
 
+    var selectedRegion: JGGRegionModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hidesBottomBarWhenPushed = true
+        
         if true {
-            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGLoginVC") as! JGGLoginVC
-            self.viewControllers = [loginVC]
+            loggedOut()
         } else {
-            
+            loggedIn()
         }
     }
 
@@ -26,6 +28,15 @@ class JGGProfileNC: JGGBaseNC {
         
     }
     
+    func loggedIn() -> Void {
+        let profileMainVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGProfileMainVC") as! JGGProfileMainVC
+        self.viewControllers = [profileMainVC]
+    }
+    
+    func loggedOut() -> Void {
+        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGLoginVC") as! JGGLoginVC
+        self.viewControllers = [loginVC]
+    }
 
     /*
     // MARK: - Navigation

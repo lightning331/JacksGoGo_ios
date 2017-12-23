@@ -31,6 +31,27 @@ public func DateTimeString(from date: Date, format: String = "d MMM, yyyy h:mm a
     return DateString(from: date, format: format)
 }
 
+func solidButton(_ button: UIButton,
+                 enable: Bool,
+                 enableColor: UIColor = UIColor.JGGOrange,
+                 enableTextColor: UIColor = UIColor.JGGWhite,
+                 disableColor: UIColor = UIColor.JGGGrey3,
+                 disableTextColor: UIColor = UIColor.JGGWhite
+    )
+{
+    button.isEnabled = enable
+    if enable {
+        button.backgroundColor = enableColor
+        button.setTitleColor(enableTextColor, for: .normal)
+    } else {
+        button.backgroundColor = disableColor
+        button.setTitleColor(disableTextColor, for: .normal)
+    }
+}
+
 typealias Dictionary = [String: Any]
 
 typealias DefaultResponse = (JSON?, Error?) -> Void
+typealias BoolStringClosure = (Bool, String?) -> Void
+typealias UserModelResponse = (JGGUserBaseModel?, String?) -> Void
+typealias RegionListBlock = ([JGGRegionModel]) -> Void

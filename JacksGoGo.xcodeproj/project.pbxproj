@@ -170,6 +170,9 @@
 		FFA061C41FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA061C21FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.xib */; };
 		FFA061C71FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA061C51FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.swift */; };
 		FFA061C81FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA061C61FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.xib */; };
+		FFA14B161FEDA8AD00186657 /* JGGRegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA14B151FEDA8AD00186657 /* JGGRegionModel.swift */; };
+		FFA14B191FEDE58100186657 /* JGGProfileBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA14B181FEDE58100186657 /* JGGProfileBaseVC.swift */; };
+		FFA14B1B1FEDE5A000186657 /* JGGProfileMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA14B1A1FEDE5A000186657 /* JGGProfileMainVC.swift */; };
 		FFA21F5D1FAB87D600F5A6DA /* JGGBorderButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA21F5B1FAB87D600F5A6DA /* JGGBorderButtonCell.swift */; };
 		FFA21F5E1FAB87D600F5A6DA /* JGGBorderButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA21F5C1FAB87D600F5A6DA /* JGGBorderButtonCell.xib */; };
 		FFA21F611FABBE8A00F5A6DA /* JGGDetailCategoryTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA21F5F1FABBE8A00F5A6DA /* JGGDetailCategoryTitleCell.swift */; };
@@ -419,6 +422,9 @@
 		FFA061C21FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGDetailInfoAccessoryButtonCell.xib; sourceTree = "<group>"; };
 		FFA061C51FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGDetailInfoCenterAlignCell.swift; sourceTree = "<group>"; };
 		FFA061C61FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGDetailInfoCenterAlignCell.xib; sourceTree = "<group>"; };
+		FFA14B151FEDA8AD00186657 /* JGGRegionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGRegionModel.swift; sourceTree = "<group>"; };
+		FFA14B181FEDE58100186657 /* JGGProfileBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGProfileBaseVC.swift; sourceTree = "<group>"; };
+		FFA14B1A1FEDE5A000186657 /* JGGProfileMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGProfileMainVC.swift; sourceTree = "<group>"; };
 		FFA21F5B1FAB87D600F5A6DA /* JGGBorderButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGBorderButtonCell.swift; sourceTree = "<group>"; };
 		FFA21F5C1FAB87D600F5A6DA /* JGGBorderButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGBorderButtonCell.xib; sourceTree = "<group>"; };
 		FFA21F5F1FABBE8A00F5A6DA /* JGGDetailCategoryTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGDetailCategoryTitleCell.swift; sourceTree = "<group>"; };
@@ -695,6 +701,7 @@
 			isa = PBXGroup;
 			children = (
 				63BE91C11FA025E200D40C07 /* Base */,
+				FFA14B141FEDA88400186657 /* System */,
 				631EF29B1FA8743E001D2915 /* User */,
 				631EF29A1FA87429001D2915 /* Jobs&Services */,
 				631EF2A41FA875D8001D2915 /* JGGBiddingProviderModel.swift */,
@@ -1061,6 +1068,23 @@
 			path = JobDetail;
 			sourceTree = "<group>";
 		};
+		FFA14B141FEDA88400186657 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				FFA14B151FEDA8AD00186657 /* JGGRegionModel.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		FFA14B171FEDE55E00186657 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FFA14B181FEDE58100186657 /* JGGProfileBaseVC.swift */,
+				FFA14B1A1FEDE5A000186657 /* JGGProfileMainVC.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		FFAD88B71FBB31310001F423 /* CallOut */ = {
 			isa = PBXGroup;
 			children = (
@@ -1213,6 +1237,7 @@
 			children = (
 				FFEB45D71FEC216200F362FF /* JGGProfileNC.swift */,
 				63BE91EB1FA0279F00D40C07 /* Login */,
+				FFA14B171FEDE55E00186657 /* Profile */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1400,6 +1425,8 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
+				"${BUILT_PRODUCTS_DIR}/CountryPickerSwift/CountryPicker.framework",
+				"${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
 				"${BUILT_PRODUCTS_DIR}/IGRPhotoTweaks/IGRPhotoTweaks.framework",
 				"${BUILT_PRODUCTS_DIR}/Imaginary/Imaginary.framework",
@@ -1421,6 +1448,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CountryPicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESPullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGRPhotoTweaks.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Imaginary.framework",
@@ -1514,6 +1543,7 @@
 				FF86D11E1FC4BCB300EE70F5 /* JGGCalendarDayCell.swift in Sources */,
 				632E78291FA2FC3A00CFFB24 /* JGGAppFilterOptionCell.swift in Sources */,
 				63B8DC3E1FA19FEE003C6EBF /* JGGBaseNC.swift in Sources */,
+				FFA14B161FEDA8AD00186657 /* JGGRegionModel.swift in Sources */,
 				FF992A9B1FD763A900B72CAE /* JGGPostServiceRootVC.swift in Sources */,
 				FF7C993C1FB356D600A2E5E4 /* JGGEditJobStepRootVC.swift in Sources */,
 				FF992A9D1FD767A700B72CAE /* JGGPopupBaseVC.swift in Sources */,
@@ -1525,6 +1555,7 @@
 				FFB27A271FD19D1B009A2201 /* LightboxTransition.swift in Sources */,
 				FF21FAEA1FAB5B2A004D0ADA /* JGGDetailInfoHeaderView.swift in Sources */,
 				631EF29D1FA8744F001D2915 /* JGGUserBaseModel.swift in Sources */,
+				FFA14B1B1FEDE5A000186657 /* JGGProfileMainVC.swift in Sources */,
 				FFA956081FBA3D1400E89197 /* JGGSelectSkillVC.swift in Sources */,
 				FF21FAF91FAB6387004D0ADA /* AZDropdownMenuBaseCell.swift in Sources */,
 				FF21FAFA1FAB6387004D0ADA /* AZDropdownMenuConfig.swift in Sources */,
@@ -1551,6 +1582,7 @@
 				FF849E141FD75135003EB83A /* JGGDuplicateTimeSlotsPopupVC.swift in Sources */,
 				63BE91A31FA0233300D40C07 /* AppDelegate.swift in Sources */,
 				FFF39B731FD16D2B0025744E /* JGGCustomPhotoPickerVC.swift in Sources */,
+				FFA14B191FEDE58100186657 /* JGGProfileBaseVC.swift in Sources */,
 				FFA061C31FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.swift in Sources */,
 				FFB5ED5A1FD0207D006ADE49 /* JGGRequestQuotationVC.swift in Sources */,
 				FFB5941D1FDE670400D12A1F /* JGGAppDetailBaseVC.swift in Sources */,

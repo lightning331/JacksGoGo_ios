@@ -14,6 +14,7 @@ public enum JGGAlertColorSchema {
     case red
     case green
     case cyan
+    case orange
 }
 
 public typealias JGGAlertButtonBlock = (() -> Void)
@@ -95,6 +96,13 @@ class JGGAlertViewController: UIViewController {
             btnCancel.backgroundColor = UIColor.JGGGreen10Percent
             btnCancel.setTitleColor(UIColor.JGGGreen, for: .normal)
             break
+        case .orange:
+            btnOK.backgroundColor = UIColor.JGGOrange
+            btnOK.setTitleColor(UIColor.JGGWhite, for: .normal)
+            btnCancel.backgroundColor = UIColor.JGGOrange10Percent
+            btnCancel.setTitleColor(UIColor.JGGOrange, for: .normal)
+            break
+
         }
         
         if cancelButtonTitle == nil {

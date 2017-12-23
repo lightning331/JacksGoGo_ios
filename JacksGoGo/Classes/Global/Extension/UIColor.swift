@@ -16,6 +16,12 @@ extension UIColor {
             return UIColor("#F26513")
         }
     }
+    static public var JGGOrange10Percent: UIColor {
+        get {
+            return UIColor("#FEEFE7")
+//            return UIColor(hex3: UInt16("F26513", radix: 16)!, alpha: 0.1)
+        }
+    }
     
     static public var JGGGreen: UIColor {
         get {

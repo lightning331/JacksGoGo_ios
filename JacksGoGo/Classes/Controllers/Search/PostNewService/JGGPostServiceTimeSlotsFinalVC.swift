@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JGGPostServiceTimeSlotsFinalVC: JGGPostServiceBaseTableVC {
+class JGGPostServiceTimeSlotsFinalVC: JGGPostAppointmentBaseTableVC {
 
     @IBOutlet weak var btnTimeSlotsType: JGGYellowSelectingButton!
     @IBOutlet weak var btnViewTimeSlots: UIButton!

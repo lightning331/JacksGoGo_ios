@@ -7,10 +7,21 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class JGGCategoryModel: JGGBaseModel {
 
     var code: String?
     var name: String?
+    
+    override init() {
+        super.init()
+    }
+    
+    override init(json: JSON) {
+        super.init(json: json)
+        code = json["Code"].string
+        name = json["Name"].string
+    }
     
 }

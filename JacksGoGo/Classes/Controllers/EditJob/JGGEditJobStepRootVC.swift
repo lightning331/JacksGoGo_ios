@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class JGGEditJobStepRootVC: JGGViewController, JGGJobDetailStepHeaderViewDelegate {
+class JGGEditJobStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderViewDelegate {
 
     @IBOutlet weak var editJobStepViewContainer: UIView!
     var editJobStepView: JGGJobDetailStepHeaderView!

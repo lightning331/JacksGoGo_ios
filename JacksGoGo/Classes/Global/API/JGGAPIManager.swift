@@ -322,5 +322,25 @@ class JGGAPIManager: NSObject {
         }
     }
     
+    // Job
+    func getCategories(_ complete: @escaping CategoryListBlock) -> Void {
+        GET(url: URLManager.System.GetAllCategories, params: nil) { (json, error) in
+            if let response = json {
+                let success = response["Success"].boolValue
+                if success {
+                    var categories: [JGGCategoryModel] = []
+                    for jsonCategory in response["Value"].arrayValue {
+                        let category = JGGCategoryModel(json: jsonCategory)
+                        categories.append(category)
+                    }
+                    complete(categories)
+                    return
+                }
+            }
+            complete([])
+        }
+
+    }
+    
 }
 

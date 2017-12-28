@@ -18,6 +18,8 @@ class JGGYellowSelectingButton: JGGButton {
     }
     */
     
+    var defaultColor: UIColor = UIColor.JGGGreen
+    
     private var _isSelected: Bool = false
         
     func select(_ select: Bool) -> Void {
@@ -28,9 +30,9 @@ class JGGYellowSelectingButton: JGGButton {
             borderColor = nil
             borderWidth = 0
         } else {
-            setTitleColor(UIColor.JGGGreen, for: .normal)
+            setTitleColor(defaultColor, for: .normal)
             backgroundColor = UIColor.clear
-            borderColor = UIColor.JGGGreen
+            borderColor = defaultColor
             borderWidth = 1
         }
     }

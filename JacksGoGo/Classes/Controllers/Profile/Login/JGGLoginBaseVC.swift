@@ -13,6 +13,7 @@ class JGGLoginBaseVC: JGGTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tableView.keyboardDismissMode = .onDrag
     }
 
     override func didReceiveMemoryWarning() {

@@ -12,7 +12,7 @@ import JTAppleCalendar
 
 import MZFormSheetPresentationController
 
-class JGGPostServiceTimeSlotsDetailVC: JGGPostServiceBaseTableVC {
+class JGGPostServiceTimeSlotsDetailVC: JGGPostAppointmentBaseTableVC {
 
     var calendarView: JGGCalendarView!
 

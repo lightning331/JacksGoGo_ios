@@ -25,7 +25,7 @@ class JGGBaseModel: NSObject {
         createdById = json["Aud_CreateByID"].string
         modifyBy = json["Aud_ModifyBy"].string
         modifyById = json["Aud_ModifyByID"].string
-        id = json["Id"].stringValue
+        id = json["ID"].stringValue
     }
     
     override init() {

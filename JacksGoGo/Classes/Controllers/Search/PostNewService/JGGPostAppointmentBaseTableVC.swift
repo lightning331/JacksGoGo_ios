@@ -1,5 +1,5 @@
 //
-//  JGGPostServiceBaseTableVC.swift
+//  JGGPostAppointmentBaseTableVC.swift
 //  JacksGoGo
 //
 //  Created by Hemin Wang on 12/5/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JGGPostServiceBaseTableVC: JGGTableViewController {
+class JGGPostAppointmentBaseTableVC: JGGTableViewController {
 
     @IBOutlet weak var btnNext: UIButton!
     
@@ -31,6 +31,9 @@ class JGGPostServiceBaseTableVC: JGGTableViewController {
         if let parentVC = parent as? JGGPostServiceStepRootVC {
             parentVC.postServiceStepView.completeCurrentStep()
             parentVC.postServiceStepView.nextStep()
+        } else if let parentVC = parent as? JGGPostJobStepRootVC {
+            parentVC.postJobStepView.completeCurrentStep()
+            parentVC.postJobStepView.nextStep()
         }
     }
     

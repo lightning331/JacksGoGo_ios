@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JGGPostServiceAddressVC: JGGPostServiceBaseTableVC {
+class JGGPostServiceAddressVC: JGGPostAppointmentBaseTableVC {
 
     @IBOutlet weak var txtUnits: UITextField!
     @IBOutlet weak var txtStreet: UITextField!

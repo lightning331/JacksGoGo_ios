@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Regular.ttf">
+            <string>Muli-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="bPr-IQ-YTK" customClass="JGGJobPostStepHeaderView" customModule="JacksGoGo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vc3-4P-j9C">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line_full" translatesAutoresizingMaskIntoConstraints="NO" id="LMo-l0-12L" customClass="JGGJobDetailStepLineImageView" customModule="JacksGoGo" customModuleProvider="target">
+                            <rect key="frame" x="41" y="23" width="51" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line_full" translatesAutoresizingMaskIntoConstraints="NO" id="YDW-Qu-oVT" customClass="JGGJobDetailStepLineImageView" customModule="JacksGoGo" customModuleProvider="target">
+                            <rect key="frame" x="105" y="23" width="51" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line_full" translatesAutoresizingMaskIntoConstraints="NO" id="kuW-y8-qIC" customClass="JGGJobDetailStepLineImageView" customModule="JacksGoGo" customModuleProvider="target">
+                            <rect key="frame" x="170" y="23" width="51" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line_full" translatesAutoresizingMaskIntoConstraints="NO" id="lyf-rd-bKN" customClass="JGGJobDetailStepLineImageView" customModule="JacksGoGo" customModuleProvider="target">
+                            <rect key="frame" x="234" y="23" width="51" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEN-dx-gb3">
+                            <rect key="frame" x="0.0" y="0.0" width="64" height="80"/>
+                            <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
+                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
+                            <inset key="titleEdgeInsets" minX="-10" minY="30" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="25" minY="0.0" maxX="11" maxY="10"/>
+                            <state key="normal" title="Describe" image="counter_greentick">
+                                <color key="titleColor" red="0.399966985" green="0.40001851319999998" blue="0.39994949099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="onPressStep:" destination="bPr-IQ-YTK" eventType="touchUpInside" id="aah-mN-Wez"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxT-OU-TJ9">
+                            <rect key="frame" x="64" y="0.0" width="64" height="80"/>
+                            <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
+                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
+                            <inset key="titleEdgeInsets" minX="-10" minY="30" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="25" minY="0.0" maxX="10" maxY="10"/>
+                            <state key="normal" title="Time" image="counter_greytick">
+                                <color key="titleColor" red="0.399966985" green="0.40001851319999998" blue="0.39994949099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="onPressStep:" destination="bPr-IQ-YTK" eventType="touchUpInside" id="IiH-Sb-r62"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyo-tc-NNM">
+                            <rect key="frame" x="128" y="0.0" width="64" height="80"/>
+                            <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
+                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
+                            <inset key="titleEdgeInsets" minX="-10" minY="30" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="25" minY="0.0" maxX="10" maxY="10"/>
+                            <state key="normal" title="Address" image="counter_greytick">
+                                <color key="titleColor" red="0.399966985" green="0.40001851319999998" blue="0.39994949099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="onPressStep:" destination="bPr-IQ-YTK" eventType="touchUpInside" id="drU-tf-5vJ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsD-Xf-q93">
+                            <rect key="frame" x="192" y="0.0" width="64" height="80"/>
+                            <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
+                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
+                            <inset key="titleEdgeInsets" minX="-10" minY="30" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="25" minY="0.0" maxX="10" maxY="10"/>
+                            <state key="normal" title="Budget" image="counter_greytick">
+                                <color key="titleColor" red="0.399966985" green="0.40001851319999998" blue="0.39994949099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="onPressStep:" destination="bPr-IQ-YTK" eventType="touchUpInside" id="gLw-ik-S6B"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfu-tX-s2i">
+                            <rect key="frame" x="256" y="0.0" width="64" height="80"/>
+                            <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
+                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
+                            <inset key="titleEdgeInsets" minX="-10" minY="30" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="25" minY="0.0" maxX="10" maxY="10"/>
+                            <state key="normal" title="Report" image="counter_greytick">
+                                <color key="titleColor" red="0.399966985" green="0.40001851319999998" blue="0.39994949099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="onPressStep:" destination="bPr-IQ-YTK" eventType="touchUpInside" id="w8Y-yI-Dga"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="lfu-tX-s2i" firstAttribute="top" secondItem="AEN-dx-gb3" secondAttribute="top" id="0Is-yD-0qS"/>
+                        <constraint firstItem="rsD-Xf-q93" firstAttribute="leading" secondItem="qyo-tc-NNM" secondAttribute="trailing" id="3f0-FR-CWT"/>
+                        <constraint firstItem="AEN-dx-gb3" firstAttribute="leading" secondItem="vc3-4P-j9C" secondAttribute="leading" id="43Y-UZ-cLG"/>
+                        <constraint firstItem="lfu-tX-s2i" firstAttribute="bottom" secondItem="AEN-dx-gb3" secondAttribute="bottom" id="4FT-Ty-Y58"/>
+                        <constraint firstAttribute="height" constant="80" id="6jk-Kh-zaY"/>
+                        <constraint firstItem="dxT-OU-TJ9" firstAttribute="width" secondItem="AEN-dx-gb3" secondAttribute="width" id="7Op-hg-F0V"/>
+                        <constraint firstItem="rsD-Xf-q93" firstAttribute="bottom" secondItem="AEN-dx-gb3" secondAttribute="bottom" id="Cei-Gl-Lgz"/>
+                        <constraint firstItem="qyo-tc-NNM" firstAttribute="bottom" secondItem="AEN-dx-gb3" secondAttribute="bottom" id="CsQ-6Q-TBF"/>
+                        <constraint firstAttribute="bottom" secondItem="AEN-dx-gb3" secondAttribute="bottom" id="DWr-pA-M0i"/>
+                        <constraint firstItem="lfu-tX-s2i" firstAttribute="leading" secondItem="rsD-Xf-q93" secondAttribute="trailing" id="L68-D0-jcV"/>
+                        <constraint firstItem="lfu-tX-s2i" firstAttribute="width" secondItem="AEN-dx-gb3" secondAttribute="width" id="Nzt-c9-LHR"/>
+                        <constraint firstItem="dxT-OU-TJ9" firstAttribute="leading" secondItem="AEN-dx-gb3" secondAttribute="trailing" id="O64-bZ-0SR"/>
+                        <constraint firstItem="rsD-Xf-q93" firstAttribute="top" secondItem="AEN-dx-gb3" secondAttribute="top" id="QsB-dh-73O"/>
+                        <constraint firstItem="dxT-OU-TJ9" firstAttribute="bottom" secondItem="AEN-dx-gb3" secondAttribute="bottom" id="UBZ-Dx-STu"/>
+                        <constraint firstItem="qyo-tc-NNM" firstAttribute="leading" secondItem="dxT-OU-TJ9" secondAttribute="trailing" id="WYF-YA-8H2"/>
+                        <constraint firstAttribute="trailing" secondItem="lfu-tX-s2i" secondAttribute="trailing" id="XLG-gq-smo"/>
+                        <constraint firstItem="rsD-Xf-q93" firstAttribute="width" secondItem="AEN-dx-gb3" secondAttribute="width" id="bQF-5O-5pG"/>
+                        <constraint firstAttribute="width" constant="320" id="f9W-6u-9yd"/>
+                        <constraint firstItem="dxT-OU-TJ9" firstAttribute="top" secondItem="AEN-dx-gb3" secondAttribute="top" id="m66-4w-GJD"/>
+                        <constraint firstItem="qyo-tc-NNM" firstAttribute="width" secondItem="AEN-dx-gb3" secondAttribute="width" id="n41-Ro-j9l"/>
+                        <constraint firstItem="qyo-tc-NNM" firstAttribute="top" secondItem="AEN-dx-gb3" secondAttribute="top" id="nEk-sk-6GW"/>
+                        <constraint firstItem="AEN-dx-gb3" firstAttribute="top" secondItem="vc3-4P-j9C" secondAttribute="top" id="qnm-mz-uVZ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vc3-4P-j9C" firstAttribute="centerX" secondItem="bPr-IQ-YTK" secondAttribute="centerX" id="4Zo-hJ-4C5"/>
+                <constraint firstAttribute="bottom" secondItem="AEN-dx-gb3" secondAttribute="bottom" id="KXf-lz-w33"/>
+                <constraint firstItem="AEN-dx-gb3" firstAttribute="top" secondItem="bPr-IQ-YTK" secondAttribute="top" id="ft7-0W-3GZ"/>
+                <constraint firstItem="vc3-4P-j9C" firstAttribute="centerY" secondItem="bPr-IQ-YTK" secondAttribute="centerY" id="xuo-Sq-tuv"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="GoV-qP-5xp"/>
+            <connections>
+                <outlet property="btnFifth" destination="lfu-tX-s2i" id="CHz-K9-ZJc"/>
+                <outlet property="btnFirst" destination="AEN-dx-gb3" id="Qd8-ab-yEO"/>
+                <outlet property="btnFourth" destination="rsD-Xf-q93" id="XfT-C3-rQD"/>
+                <outlet property="btnSecond" destination="dxT-OU-TJ9" id="1Ri-N1-Fj6"/>
+                <outlet property="btnThird" destination="qyo-tc-NNM" id="cfy-fO-ecm"/>
+                <outlet property="containerView" destination="vc3-4P-j9C" id="l2F-ED-2b6"/>
+                <outlet property="line1" destination="LMo-l0-12L" id="h13-pV-8hJ"/>
+                <outlet property="line2" destination="YDW-Qu-oVT" id="gyD-ax-q1r"/>
+                <outlet property="line3" destination="kuW-y8-qIC" id="II0-BG-6DX"/>
+                <outlet property="line4" destination="lyf-rd-bKN" id="P9i-BC-HWQ"/>
+            </connections>
+            <point key="canvasLocation" x="-96" y="-243"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="counter_greentick" width="16" height="16"/>
+        <image name="counter_greytick" width="16" height="16"/>
+        <image name="line_full" width="50" height="2"/>
+    </resources>
+</document>

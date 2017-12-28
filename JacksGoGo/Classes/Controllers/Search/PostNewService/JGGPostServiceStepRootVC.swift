@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JGGPostServiceStepRootVC: JGGViewController, JGGJobDetailStepHeaderViewDelegate {
+class JGGPostServiceStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderViewDelegate {
 
     @IBOutlet weak var postServiceStepViewContainer: UIView!
     var postServiceStepView: JGGJobDetailStepHeaderView!

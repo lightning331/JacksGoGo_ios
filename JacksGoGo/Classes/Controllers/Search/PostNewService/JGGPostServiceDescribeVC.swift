@@ -9,7 +9,7 @@
 import UIKit
 import TLPhotoPicker
 
-class JGGPostServiceDescribeVC: JGGPostServiceBaseTableVC {
+class JGGPostServiceDescribeVC: JGGPostAppointmentBaseTableVC {
 
     @IBOutlet weak var txtServiceTitle: UITextField!
     @IBOutlet weak var txtServiceDescribe: UITextView!

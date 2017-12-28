@@ -26,6 +26,7 @@ class JGGSignupPhoneNumberVC: JGGViewController, CountryPickerDelegate, UITextFi
         txtPhoneNumber.addTarget(self, action: #selector(textFieldDidChanged(_:)), for: .editingChanged)
         initCountryPicker()
         let _ = checkValidCreditional()
+        
 
     }
     

@@ -22,7 +22,8 @@ class JGGEditJobReportVC: JGGEditJobBaseTableVC {
     @IBOutlet weak var lblPinCodeTitle: UILabel!
     @IBOutlet weak var lblPinCodeDescription: UILabel!
     
-    fileprivate var selectedView: UIView?
+    fileprivate var selectedViews: [UIView] = []
+    internal lazy var defaultColor: UIColor = UIColor.JGGGreen
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,30 +42,30 @@ class JGGEditJobReportVC: JGGEditJobBaseTableVC {
     
     fileprivate func resetButtons() {
         for label in [lblBeforeTitle, lblGeotrackingTitle, lblPinCodeTitle] {
-            label?.textColor = UIColor.JGGGreen
+            label?.textColor = defaultColor
+            label?.tag = 120
         }
         for v in [viewBeforeAndAfterPhoto, viewGeotracking, viewPinCode] {
-            v?.borderColor = UIColor.JGGGreen
+            v?.borderColor = defaultColor
             v?.borderWidth = 1
             v?.backgroundColor = UIColor.JGGGrey5
         }
     }
 
     @objc fileprivate func onPressReportType(_ sender: UITapGestureRecognizer) {
-        resetButtons()
-        if selectedView == sender.view {
-            selectedView = nil
-        } else {
-            selectedView = sender.view
-            selectedView?.borderColor = nil
-            selectedView?.borderWidth = 0
-            selectedView?.backgroundColor = UIColor.JGGYellow
-            if selectedView == viewBeforeAndAfterPhoto {
-                lblBeforeTitle.textColor = UIColor.JGGBlack
-            } else if selectedView == viewGeotracking {
-                lblGeotrackingTitle.textColor = UIColor.JGGBlack
-            } else if selectedView == viewPinCode {
-                lblPinCodeTitle.textColor = UIColor.JGGBlack
+        if let view = sender.view {
+            if let index = selectedViews.index(of: view) {
+                view.borderColor = defaultColor
+                view.borderWidth = 1
+                view.backgroundColor = UIColor.JGGGrey5
+                (view.viewWithTag(120) as? UILabel)?.textColor = defaultColor
+                selectedViews.remove(at: index)
+            } else {
+                view.borderColor = nil
+                view.borderWidth = 0
+                view.backgroundColor = UIColor.JGGYellow
+                (view.viewWithTag(120) as? UILabel)?.textColor = UIColor.JGGBlack
+                selectedViews.append(view)
             }
         }
     }

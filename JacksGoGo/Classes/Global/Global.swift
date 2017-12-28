@@ -55,3 +55,4 @@ typealias DefaultResponse = (JSON?, Error?) -> Void
 typealias BoolStringClosure = (Bool, String?) -> Void
 typealias UserModelResponse = (JGGUserBaseModel?, String?) -> Void
 typealias RegionListBlock = ([JGGRegionModel]) -> Void
+typealias CategoryListBlock = ([JGGCategoryModel]) -> Void

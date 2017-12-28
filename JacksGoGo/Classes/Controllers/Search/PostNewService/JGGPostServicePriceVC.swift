@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JGGPostServicePriceVC: JGGPostServiceBaseTableVC {
+class JGGPostServicePriceVC: JGGPostAppointmentBaseTableVC {
     
     fileprivate var selectedPriceType: Int = 0
     
@@ -72,6 +72,11 @@ class JGGPostServicePriceTypeCell: UITableViewCell {
     @IBOutlet weak var btnPackageService: JGGYellowSelectingButton!
     
     var selectingHandler: ((Int) -> Void)!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+    }
     
     @IBAction fileprivate func onPressedButton(_ sender: JGGYellowSelectingButton) {
         sender.select(!sender.selected())

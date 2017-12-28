@@ -10,11 +10,19 @@ import UIKit
 
 class JGGSearchMainVC: JGGStartTableVC {
 
+    @IBOutlet weak var viewJobSummary: UIView!
+    @IBOutlet weak var lblTotalJobsCount: UILabel!
+    @IBOutlet weak var lblNewJobsCount: UILabel!
+    @IBOutlet weak var btnViewAllJobs: UIButton!
+    @IBOutlet weak var btnPostNewJob: UIButton!
+    
+    
+    @IBOutlet weak var viewServiceSummary: UIView!
     @IBOutlet weak var lblTotalServiceCounts: UILabel!
     @IBOutlet weak var lblNewServiceCounts: UILabel!
     @IBOutlet weak var btnViewMyServices: UIButton!
-    @IBOutlet weak var btnViewAll: UIButton!
-    @IBOutlet weak var btnPostNew: UIButton!
+    @IBOutlet weak var btnViewAllServices: UIButton!
+    @IBOutlet weak var btnPostNewService: UIButton!
     @IBOutlet weak var clsviewAllCategories: UICollectionView!
     
     fileprivate let categories: [[String: String]] = [
@@ -76,6 +84,8 @@ class JGGSearchMainVC: JGGStartTableVC {
             ],
     ]
     
+    private var selectedTab: SearchTabButton = .services
+    
     // MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +93,9 @@ class JGGSearchMainVC: JGGStartTableVC {
         addTabNavigationBar()
         initTableView()
         initCollectionView()
+        self.viewServiceSummary.isHidden = false
+        self.viewJobSummary.isHidden = true
+        
     }
 
     private func addTabNavigationBar() {
@@ -115,9 +128,11 @@ class JGGSearchMainVC: JGGStartTableVC {
     }
     
     @IBAction func onPressedViewAll(_ sender: Any) {
+        
     }
     
     @IBAction func onPressedPostNew(_ sender: Any) {
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -140,8 +155,18 @@ extension JGGSearchMainVC: JGGSearchHomeTabViewDelegate {
             let searchStoryboard = UIStoryboard(name: "Search", bundle: nil)
             let searchVC = searchStoryboard.instantiateViewController(withIdentifier: "JGGSearchVC") as! JGGSearchVC
             self.navigationController?.pushViewController(searchVC, animated: true)
+            return
+        } else if selectedButton == .services {
+            self.viewServiceSummary.isHidden = false
+            self.viewJobSummary.isHidden = true
             
+        } else if selectedButton == .jobs {
+            self.viewServiceSummary.isHidden = true
+            self.viewJobSummary.isHidden = false
         }
+        self.selectedTab = selectedButton;
+        self.tableView.reloadData()
+        self.clsviewAllCategories.reloadData()
     }
 }
 
@@ -193,6 +218,11 @@ extension JGGSearchMainVC { // UITableViewDataSource, UITableViewDelegate
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JGGServiceListCell") as! JGGServiceListCell
+        if self.selectedTab == .services {
+            cell.imgviewAccessory.image = UIImage(named: "button_next_green")
+        } else if self.selectedTab == .jobs {
+            cell.imgviewAccessory.image = UIImage(named: "button_next_cyan")
+        }
         cell.viewAddress.isHidden = (indexPath.row == 2)
         cell.viewBooked.isHidden = (indexPath.row == 4 || indexPath.row == 8)
         if indexPath.row == 3 {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JGGPostServiceTimeSlotsTypeVC: JGGPostServiceBaseTableVC {
+class JGGPostServiceTimeSlotsTypeVC: JGGPostAppointmentBaseTableVC {
 
     fileprivate var selectedTimeType: Int = 0
     

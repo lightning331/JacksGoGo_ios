@@ -9,7 +9,7 @@
 import UIKit
 import TagListView
 
-class JGGServiceSummaryVC: JGGPostServiceBaseTableVC {
+class JGGServiceSummaryVC: JGGPostAppointmentBaseTableVC {
 
     @IBOutlet weak var btnDescribe: UIButton!
     @IBOutlet weak var btnPrice: UIButton!

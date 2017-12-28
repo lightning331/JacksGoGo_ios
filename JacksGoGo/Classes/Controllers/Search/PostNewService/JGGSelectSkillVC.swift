@@ -124,6 +124,18 @@ class JGGSelectSkillVC: UICollectionViewController, UICollectionViewDelegateFlow
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.JGGGreen
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedStringKey.foregroundColor: UIColor.JGGGreen]
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.largeTitleTextAttributes =
+                [NSAttributedStringKey.foregroundColor: UIColor.JGGGreen]
+        }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         

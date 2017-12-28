@@ -24,12 +24,12 @@ class JGGJobDetailStepHeaderView: UIView {
     var currentStep: Int = 0
     
     
-    var delegate: JGGJobDetailStepHeaderViewDelegate?
+    var delegate: JGGAppointmentDetailStepHeaderViewDelegate?
     
-    fileprivate var isCompleteFirst: Bool = false
-    fileprivate var isCompleteSecond: Bool = false
-    fileprivate var isCompleteThird: Bool = false
-    fileprivate var isCompleteFourth: Bool = false
+    internal var isCompleteFirst: Bool = false
+    internal var isCompleteSecond: Bool = false
+    internal var isCompleteThird: Bool = false
+    internal var isCompleteFourth: Bool = false
     
     // MARK: - Methods
     
@@ -78,7 +78,7 @@ class JGGJobDetailStepHeaderView: UIView {
         selectButton(btnFirst)
     }
     
-    fileprivate func setIcon(button: UIButton, isCompletion: Bool) {
+    internal func setIcon(button: UIButton, isCompletion: Bool) {
         if isCompletion {
             button.setImage(UIImage(named: "counter_greytick"), for: .normal)
             button.setImage(UIImage(named: "counter_greentick"), for: .selected)
@@ -90,7 +90,7 @@ class JGGJobDetailStepHeaderView: UIView {
         }
     }
     
-    fileprivate func selectButton(_ button: UIButton) {
+    internal func selectButton(_ button: UIButton) {
         for b in [btnFirst, btnSecond, btnThird, btnFourth] {
             if b == button {
                 b?.isSelected = true
@@ -199,6 +199,6 @@ class JGGJobDetailStepHeaderView: UIView {
     
 }
 
-protocol JGGJobDetailStepHeaderViewDelegate {
+protocol JGGAppointmentDetailStepHeaderViewDelegate {
     func jobDetailStep(selected: Int) -> Void
 }

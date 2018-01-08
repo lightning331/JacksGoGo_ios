@@ -16,18 +16,13 @@ class JGGProfileNC: JGGBaseNC {
         super.viewDidLoad()
         self.hidesBottomBarWhenPushed = true
         
-        if true {
-            loggedOut()
-        } else {
+        if let _ = appManager.currentUser {
             loggedIn()
+        } else {
+            loggedOut()
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
-    
     func loggedIn() -> Void {
         let profileMainVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGProfileMainVC") as! JGGProfileMainVC
         self.viewControllers = [profileMainVC]

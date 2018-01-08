@@ -135,6 +135,24 @@ class JGGSearchMainVC: JGGStartTableVC {
         
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "gotoPostJob" || identifier == "gotoPostService" {
+            guard let _ = appManager.currentUser else {
+                JGGAlertViewController.show(title: LocalizedString("Information"),
+                                            message: LocalizedString("You can't perform this action because didn't login. Would you login to proceed this?"),
+                                            colorSchema: .orange,
+                                            okButtonTitle: LocalizedString("Login"),
+                                            okAction: {
+                                                self.navigationController?.tabBarController?.selectedIndex = 4
+                                            },
+                                            cancelButtonTitle: LocalizedString("Cancel"),
+                                            cancelAction: nil)
+                return false
+            }
+        }
+        return true
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             if identifier == "gotoPostService" {

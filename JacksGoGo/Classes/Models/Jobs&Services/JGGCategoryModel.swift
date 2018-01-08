@@ -13,6 +13,7 @@ class JGGCategoryModel: JGGBaseModel {
 
     var code: String?
     var name: String?
+    var image: String?
     
     override init() {
         super.init()
@@ -22,6 +23,7 @@ class JGGCategoryModel: JGGBaseModel {
         super.init(json: json)
         code = json["Code"].string
         name = json["Name"].string
+        image = json["Image"].string
     }
     
 }

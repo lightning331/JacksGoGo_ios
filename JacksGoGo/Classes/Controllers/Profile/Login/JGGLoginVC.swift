@@ -29,7 +29,7 @@ class JGGLoginVC: JGGLoginBaseVC, UITextFieldDelegate {
         txtPassword.delegate = self
         
         txtEmail.text = "tester01@ios.com"
-        txtPassword.text = "Tester01@"
+        txtPassword.text = "Tester01!"
         
         let _ = checkValidCreditional()
     }
@@ -56,6 +56,7 @@ class JGGLoginVC: JGGLoginBaseVC, UITextFieldDelegate {
                         if user.phoneNumberVerified {
                             let nav = self.navigationController as! JGGProfileNC
                             nav.loggedIn()
+                            self.appManager.save(username: email, password: password)
                         } else {
                             JGGAlertViewController.show(title: LocalizedString("Warning"),
                                                         message: LocalizedString("You have not verified account. Would you verify with your phone number?"),

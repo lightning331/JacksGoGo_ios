@@ -280,6 +280,12 @@ class JGGAPIManager: NSObject {
         }
     }
     
+    func accountLogout(_ complete: @escaping BoolStringClosure) -> Void {
+        POST(url: URLManager.Account.Logout, body: nil) { (response, error) in
+            complete(true, nil)
+        }
+    }
+    
     // MARK: - User
     func userEditProfile(email: String, regionId: String, data: JSON, complete: @escaping BoolStringClosure) -> Void {
         if var body = data.dictionaryObject {

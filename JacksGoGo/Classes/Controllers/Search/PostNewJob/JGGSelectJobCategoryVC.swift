@@ -10,6 +10,12 @@ import UIKit
 
 class JGGSelectJobCategoryVC: UICollectionViewController {
 
+    fileprivate lazy var categories: [JGGCategoryModel] = []
+    
+    private var loadingIndicatorView: UIActivityIndicatorView?
+    private var isLoadingCategories: Bool = false
+    
+    /*
     fileprivate lazy var categories: [[String: String]] = [
         [
             "title": LocalizedString("Favourited Services"),
@@ -68,7 +74,7 @@ class JGGSelectJobCategoryVC: UICollectionViewController {
             "imageName": "icon_cat_gardening",
             ],
         ]
-    
+    */
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,6 +88,8 @@ class JGGSelectJobCategoryVC: UICollectionViewController {
 
         self.navigationController?.hidesBarsOnSwipe = false
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        loadCategories()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -108,6 +116,27 @@ class JGGSelectJobCategoryVC: UICollectionViewController {
         self.navigationItem.title = " "
     }
     
+    private func loadCategories() {
+        
+        func reloadCategories() {
+            self.categories = appManager.categories
+            self.collectionView?.reloadData()
+            loadingIndicatorView?.stopAnimating()
+        }
+        
+        if appManager.categories.count == 0 {
+            isLoadingCategories = true
+            loadingIndicatorView?.startAnimating()
+            APIManager.getCategories { (result) in
+                self.isLoadingCategories = false
+                self.appManager.categories = result
+                reloadCategories()
+            }
+        } else {
+            reloadCategories()
+        }
+        
+    }
 
     // MARK: - Navigation
 
@@ -128,8 +157,16 @@ class JGGSelectJobCategoryVC: UICollectionViewController {
         return categories.count
     }
     
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "descriptionHeader", for: indexPath)
+    override func collectionView(_ collectionView: UICollectionView,
+                                 viewForSupplementaryElementOfKind kind: String,
+                                 at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "descriptionHeader", for: indexPath) as! JGGCategoryHeaderDescriptionView
+        if isLoadingCategories {
+            headerView.loadingIndicatorView.startAnimating()
+        } else {
+            headerView.loadingIndicatorView.stopAnimating()
+        }
+        return headerView
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -137,9 +174,7 @@ class JGGSelectJobCategoryVC: UICollectionViewController {
                                                       for: indexPath) as! JGGSearchCategorySelectCell
 
         let category = categories[indexPath.row]
-        cell.lblTitle.text = category["title"]
-        cell.imgviewIcon.image = UIImage(named: category["imageName"]!)
-
+        cell.category = category
         return cell
     }
 
@@ -180,4 +215,12 @@ class JGGSelectJobCategoryVC: UICollectionViewController {
     }
     */
 
+}
+
+class JGGCategoryHeaderDescriptionView: UICollectionReusableView {
+    
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var loadingIndicatorView: UIActivityIndicatorView!
+    
+    
 }

@@ -17,12 +17,13 @@ extension View {
       option.imageDisplayer.display(placeholder: placeholder, onto: self)
     }
 
-    if let imageFetcher = imageFetcher {
-      imageFetcher.cancel()
-      self.imageFetcher = nil
-    }
+    cancelImageFetch()
 
-    self.imageFetcher = option.fetcherMaker()
+    self.imageFetcher = ImageFetcher(
+      downloader: option.downloaderMaker(),
+      storage: option.storageMaker()
+    )
+
     self.imageFetcher?.fetch(url: url, completion: { [weak self] result in
       guard let `self` = self else {
         return
@@ -31,6 +32,14 @@ extension View {
       self.handle(url: url, result: result,
                   option: option, completion: completion)
     })
+  }
+
+  /// Cancel active image fetch
+  public func cancelImageFetch() {
+    if let imageFetcher = imageFetcher {
+      imageFetcher.cancel()
+      self.imageFetcher = nil
+    }
   }
 
   private func handle(url: URL, result: Result,

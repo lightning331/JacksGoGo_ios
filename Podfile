@@ -11,6 +11,7 @@ pod 'UIColor_Hex_Swift', :git => 'https://github.com/yeahdongcn/UIColor-Hex-Swif
 # pod 'UIColor_Hex_Swift', '~> 4.0.0'
 pod 'Alamofire', '~> 4.6.0'
 pod 'AlamofireObjectMapper', '~> 5.0.0'
+pod 'AlamofireImage', '~> 3.3'
 pod 'SwiftyJSON'
 pod 'SnapKit', '~> 4.0.0'
 pod 'MBProgressHUD', '~> 1.0.0'

@@ -12,7 +12,8 @@ class URLManager: NSObject {
     
     fileprivate static func fullPath(for endPoint: String) -> String {
 #if DEBUG
-        return "http://192.168.0.30:50370/api" + endPoint
+    return "http://www.meridians2.com/JGGdev/api" + endPoint
+//        return "http://192.168.0.30:50370/api" + endPoint
 #else
         return "http://www.meridians2.com/JGG/api" + endPoint
 #endif
@@ -20,7 +21,9 @@ class URLManager: NSObject {
     
     static var oauthToken: String {
 #if DEBUG
-        return "http://192.168.0.30:50370/oauth/Token"
+//        return "http://192.168.0.30:50370/oauth/Token"
+    return "http://www.meridians2.com/JGGdev/oauth/Token"
+
 #else
         return "http://www.meridians2.com/JGG/oauth/Token"
 #endif

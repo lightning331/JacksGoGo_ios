@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class JGGSearchCategorySelectCell: UICollectionViewCell {
 
@@ -14,6 +15,12 @@ class JGGSearchCategorySelectCell: UICollectionViewCell {
     @IBOutlet weak var imgviewIcon: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var imgviewTickIcon: UIImageView!
+    
+    var category: JGGCategoryModel? {
+        didSet {
+            showCategoryInfo()
+        }
+    }
     
     override var isSelected: Bool {
         didSet {
@@ -35,6 +42,13 @@ class JGGSearchCategorySelectCell: UICollectionViewCell {
                 self.viewContainer.alpha = 1.0
                 self.imgviewTickIcon.isHidden = true
             }
+        }
+    }
+    
+    private func showCategoryInfo() {
+        lblTitle.text = category?.name
+        if let urlString = category?.image, let url = URL(string: urlString) {
+            imgviewIcon.af_setImage(withURL: url)
         }
     }
 }

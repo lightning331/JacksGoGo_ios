@@ -42,6 +42,7 @@ class JGGSignupEmailPasswordVC: JGGLoginBaseVC, UITextFieldDelegate {
         APIManager.accountRegister(email: email, password: password) { (success, errorMessage) in
             self.hideHUD(from: self.navigationController?.tabBarController?.view)
             if success {
+                self.appManager.save(username: email, password: password)
                 self.performSegue(withIdentifier: "gotoPhoneNumberVC", sender: self)
             } else {
                 self.showAlert(title: LocalizedString("Error"), message: errorMessage)

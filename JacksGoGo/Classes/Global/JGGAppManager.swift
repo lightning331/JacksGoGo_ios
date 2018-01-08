@@ -17,4 +17,47 @@ class JGGAppManager: NSObject {
     
     var currentUser: JGGUserBaseModel?
     
+    var categories: [JGGCategoryModel] = []
+    
+    var regions: [JGGRegionModel] = []
+    
+    var currentRegion : JGGRegionModel? {
+        get {
+            let userDefaults = UserDefaults.standard
+            if let regionId = userDefaults.string(forKey: "region") {
+                return regions.filter { $0.id == regionId }.first
+            } else {
+                return regions.first
+            }
+        }
+        set {
+            let userDefaults = UserDefaults.standard
+            if let newRegion = newValue {
+                userDefaults.set(newRegion.id, forKey: "region")
+            } else {
+                userDefaults.removeObject(forKey: "region")
+            }
+            userDefaults.synchronize()
+        }
+    }
+    
+    var isAuthorized: Bool {
+        return JGGAPIManager.sharedManager.getToken() != nil
+    }
+    
+    private let USERNAME_KEY = "username"
+    private let PASSWORD_KEY = "password"
+    
+    func save(username: String, password: String) {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(username, forKey: USERNAME_KEY)
+        userDefaults.set(password, forKey: PASSWORD_KEY)
+        userDefaults.synchronize()
+    }
+    
+    func getUsernamePassword() -> (String?, String?) {
+        let userDefaults = UserDefaults.standard
+        return (userDefaults.string(forKey: USERNAME_KEY), userDefaults.string(forKey: PASSWORD_KEY))
+    }
+    
 }

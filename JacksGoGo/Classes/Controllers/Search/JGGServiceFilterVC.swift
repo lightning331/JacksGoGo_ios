@@ -16,6 +16,9 @@ class JGGServiceFilterVC: JGGSearchBaseVC {
     @IBOutlet weak var btnCurrentLocation: UIButton!
     @IBOutlet weak var clsviewAllCategories: UICollectionView!
 
+    fileprivate lazy var categories: [JGGCategoryModel] = []
+    
+    /*
     fileprivate lazy var categories: [[String: String]] = [
         [
             "title": LocalizedString("Favourited Services"),
@@ -78,7 +81,7 @@ class JGGServiceFilterVC: JGGSearchBaseVC {
             "imageName": "icon_cat_other",
             ],
         ]
-
+*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,8 +123,7 @@ extension JGGServiceFilterVC: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "JGGSearchCategorySelectCell", for: indexPath) as! JGGSearchCategorySelectCell
         let category = categories[indexPath.row]
-        cell.lblTitle.text = category["title"]
-        cell.imgviewIcon.image = UIImage(named: category["imageName"]!)
+        cell.category = category
         return cell
     }
     

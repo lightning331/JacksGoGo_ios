@@ -247,6 +247,8 @@
 		FFB5ED5A1FD0207D006ADE49 /* JGGRequestQuotationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB5ED591FD0207D006ADE49 /* JGGRequestQuotationVC.swift */; };
 		FFB64BB11FB765190028B77B /* JGGActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB64BB01FB765190028B77B /* JGGActionSheet.xib */; };
 		FFB64BB31FB7B03C0028B77B /* JGGSearchMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB64BB21FB7B03C0028B77B /* JGGSearchMainVC.swift */; };
+		FFB8662F2003992F005901DB /* JGGSplashLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB8662E2003992F005901DB /* JGGSplashLoadingView.swift */; };
+		FFB8663120039941005901DB /* JGGSplashLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB8663020039941005901DB /* JGGSplashLoadingView.xib */; };
 		FFEB45CE1FEC128300F362FF /* JGGLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB45CD1FEC128300F362FF /* JGGLoginVC.swift */; };
 		FFEB45D01FEC132A00F362FF /* JGGSignupSelectRegionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB45CF1FEC132A00F362FF /* JGGSignupSelectRegionVC.swift */; };
 		FFEB45D21FEC133A00F362FF /* JGGSignupEmailPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB45D11FEC133A00F362FF /* JGGSignupEmailPasswordVC.swift */; };
@@ -512,6 +514,8 @@
 		FFB5ED591FD0207D006ADE49 /* JGGRequestQuotationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGRequestQuotationVC.swift; sourceTree = "<group>"; };
 		FFB64BB01FB765190028B77B /* JGGActionSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGActionSheet.xib; sourceTree = "<group>"; };
 		FFB64BB21FB7B03C0028B77B /* JGGSearchMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSearchMainVC.swift; sourceTree = "<group>"; };
+		FFB8662E2003992F005901DB /* JGGSplashLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSplashLoadingView.swift; sourceTree = "<group>"; };
+		FFB8663020039941005901DB /* JGGSplashLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGSplashLoadingView.xib; sourceTree = "<group>"; };
 		FFEB45CD1FEC128300F362FF /* JGGLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGLoginVC.swift; sourceTree = "<group>"; };
 		FFEB45CF1FEC132A00F362FF /* JGGSignupSelectRegionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSignupSelectRegionVC.swift; sourceTree = "<group>"; };
 		FFEB45D11FEC133A00F362FF /* JGGSignupEmailPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSignupEmailPasswordVC.swift; sourceTree = "<group>"; };
@@ -863,6 +867,8 @@
 			children = (
 				63B8DC291FA17C8E003C6EBF /* JGGMainStartNC.swift */,
 				63BE91F81FA0289D00D40C07 /* JGGMainTabbarController.swift */,
+				FFB8662E2003992F005901DB /* JGGSplashLoadingView.swift */,
+				FFB8663020039941005901DB /* JGGSplashLoadingView.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1407,6 +1413,7 @@
 				FFA956061FBA368800E89197 /* JGGSelectSkillFooterView.xib in Resources */,
 				FF21FAE81FAB5597004D0ADA /* JGGDetailInfoFooterView.xib in Resources */,
 				FF9E5A411FB83D85006C4B50 /* JGGCategoryDetailHeaderView.xib in Resources */,
+				FFB8663120039941005901DB /* JGGSplashLoadingView.xib in Resources */,
 				63BE91DF1FA0263C00D40C07 /* Muli-Italic.ttf in Resources */,
 				FF9E9E6E1FAC52C600F32283 /* JGGUserAvatarNameRateCell.xib in Resources */,
 				FFAFC72E1FC54AD4008E0664 /* JGGUserReviewCell.xib in Resources */,
@@ -1480,6 +1487,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-JacksGoGo/Pods-JacksGoGo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
@@ -1503,6 +1511,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
@@ -1659,6 +1668,7 @@
 				FFFC213B1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift in Sources */,
 				FFEB45D61FEC134F00F362FF /* JGGSignupSMSVerifyVC.swift in Sources */,
 				FF849E161FD75D2C003EB83A /* JGGPostServiceAddressVC.swift in Sources */,
+				FFB8662F2003992F005901DB /* JGGSplashLoadingView.swift in Sources */,
 				FFB27A2C1FD19D1B009A2201 /* FooterView.swift in Sources */,
 				FF7C993E1FB35DEE00A2E5E4 /* JGGEditJobNC.swift in Sources */,
 				FF849E0A1FD734A2003EB83A /* JGGPostServiceTimeSlotsDetailVC.swift in Sources */,

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,27 +29,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourited Services" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qxg-2a-NhU">
-                                <rect key="frame" x="8" y="55" width="78" height="30.5"/>
+                                <rect key="frame" x="8" y="58" width="78" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="Eae-vA-r9k"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_cat_favourites" translatesAutoresizingMaskIntoConstraints="NO" id="78V-LU-aMa">
-                                <rect key="frame" x="16" y="8" width="62" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="u0w-iT-kih"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_cat_favourites" translatesAutoresizingMaskIntoConstraints="NO" id="78V-LU-aMa">
+                                <rect key="frame" x="8" y="4" width="78" height="54"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="78V-LU-aMa" firstAttribute="trailing" secondItem="rEv-Nk-o7I" secondAttribute="trailingMargin" constant="-8" id="Mwk-f6-DoQ"/>
+                            <constraint firstItem="78V-LU-aMa" firstAttribute="trailing" secondItem="rEv-Nk-o7I" secondAttribute="trailingMargin" id="Mwk-f6-DoQ"/>
                             <constraint firstAttribute="trailing" secondItem="Qxg-2a-NhU" secondAttribute="trailing" constant="8" id="OE6-MO-7xE"/>
                             <constraint firstItem="Qxg-2a-NhU" firstAttribute="leading" secondItem="rEv-Nk-o7I" secondAttribute="leading" constant="8" id="QAc-IW-crT"/>
-                            <constraint firstAttribute="bottom" secondItem="Qxg-2a-NhU" secondAttribute="bottom" constant="8" id="Sf3-8c-YJ0"/>
-                            <constraint firstItem="78V-LU-aMa" firstAttribute="top" secondItem="rEv-Nk-o7I" secondAttribute="topMargin" id="fGO-O1-hSs"/>
-                            <constraint firstItem="78V-LU-aMa" firstAttribute="leading" secondItem="rEv-Nk-o7I" secondAttribute="leadingMargin" constant="8" id="pHf-Q1-6nz"/>
-                            <constraint firstItem="Qxg-2a-NhU" firstAttribute="top" secondItem="78V-LU-aMa" secondAttribute="bottom" constant="7.5" id="r8I-3p-2dK"/>
+                            <constraint firstAttribute="bottom" secondItem="Qxg-2a-NhU" secondAttribute="bottom" constant="4" id="Sf3-8c-YJ0"/>
+                            <constraint firstItem="78V-LU-aMa" firstAttribute="top" secondItem="rEv-Nk-o7I" secondAttribute="top" constant="4" id="fvQ-Nb-67E"/>
+                            <constraint firstItem="78V-LU-aMa" firstAttribute="leading" secondItem="rEv-Nk-o7I" secondAttribute="leadingMargin" id="pHf-Q1-6nz"/>
+                            <constraint firstItem="Qxg-2a-NhU" firstAttribute="top" secondItem="78V-LU-aMa" secondAttribute="bottom" id="r8I-3p-2dK"/>
                         </constraints>
                     </view>
                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_tick_green" translatesAutoresizingMaskIntoConstraints="NO" id="S9y-Av-uRC">

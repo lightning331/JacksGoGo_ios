@@ -10,6 +10,19 @@ import UIKit
 
 class JGGProfileMainVC: JGGProfileBaseVC {
 
+    @IBOutlet weak var imgviewProfileBanner: UIImageView!
+    @IBOutlet weak var viewCredit: UIView!
+    @IBOutlet weak var lblCreditAmount: UILabel!
+    @IBOutlet weak var viewPoints: UIView!
+    @IBOutlet weak var lblPoints: UILabel!
+    @IBOutlet weak var viewUsername: UIView!
+    @IBOutlet weak var imgviewUserAvatar: UIImageView!
+    @IBOutlet weak var lblUsername: UILabel!
+    @IBOutlet weak var viewRegion: UIView!
+    @IBOutlet weak var imgviewCountryFlag: UIImageView!
+    @IBOutlet weak var lblRegionName: UILabel!
+    @IBOutlet weak var btnChangeRegion: UIButton!
+    
     fileprivate let options: [[String]] = [
         [
             LocalizedString("Joined GoClubs"),

@@ -164,7 +164,7 @@ UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
     private func addDummyPin() {
         let service00 = JGGServiceModel()
         service00.coordinate = CLLocationCoordinate2DMake(1.0008, 103.3545)
-        service00.name = "Tennis Coach"
+        service00.title = "Tennis Coach"
         let client00 = JGGClientUserModel()
         client00.fullname = "Alan.Tam"
         service00.invitingClient = client00
@@ -172,7 +172,7 @@ UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
         
         let service01 = JGGServiceModel()
         service01.coordinate = CLLocationCoordinate2DMake(2.0038, 114.4545)
-        service01.name = "Gardening"
+        service01.title = "Gardening"
         let client01 = JGGClientUserModel()
         client01.fullname = "SeanYong"
         service01.invitingClient = client01

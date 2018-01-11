@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toaster
 
 class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
 
@@ -17,6 +18,14 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
         super.viewDidLoad()
 
         btnNext.isHidden = false
+    }
+    
+    override func onPressedNext(_ sender: UIButton) {
+        if selectedTimeType == 0 {
+            Toast(text: LocalizedString("Select one"), delay: 0, duration: 3).show()
+        } else {
+            super.onPressedNext(sender)
+        }
     }
     
     // MARK: - Table view data source
@@ -43,7 +52,7 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
                     self.tableView.endUpdates()
                 }
                 cell.dateTapHandler = {
-                    
+                    self.showDatePopup()
                 }
                 cell.timeTapHandler =  {
                     
@@ -56,7 +65,7 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
                     self.tableView.endUpdates()
                 }
                 cell.dayTapHandler = {
-                    
+                    self.showDatePopup()
                 }
                 cell.clearDaysHandler = {
                     
@@ -65,6 +74,15 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
             }
         }
         return UITableViewCell()
+    }
+    
+    private func showDatePopup() {
+        let datePopupVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGDatePickerPopupVC") as! JGGDatePickerPopupVC
+        datePopupVC.themeColorType = .cyan
+        datePopupVC.isAbleToMultipleSelect = false
+        datePopupVC.doneButtonTitle = LocalizedString("Done")
+        showPopup(viewController: datePopupVC, transitionStyle: .slideFromBottom)
+        
     }
 }
 

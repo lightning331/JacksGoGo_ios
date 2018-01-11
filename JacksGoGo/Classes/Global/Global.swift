@@ -49,10 +49,20 @@ func solidButton(_ button: UIButton,
     }
 }
 
+public enum JGGColorSchema {
+    case red
+    case green
+    case cyan
+    case orange
+    case purple
+}
+
 typealias Dictionary = [String: Any]
 
 typealias DefaultResponse = (JSON?, Error?) -> Void
 typealias BoolStringClosure = (Bool, String?) -> Void
 typealias UserModelResponse = (JGGUserBaseModel?, String?) -> Void
-typealias RegionListBlock = ([JGGRegionModel]) -> Void
-typealias CategoryListBlock = ([JGGCategoryModel]) -> Void
+typealias RegionListClosure = ([JGGRegionModel]) -> Void
+typealias CategoryListClosure = ([JGGCategoryModel]) -> Void
+typealias StringStringClosure = (String?, String?) -> Void
+typealias ProgressClosure = (Float) -> Void

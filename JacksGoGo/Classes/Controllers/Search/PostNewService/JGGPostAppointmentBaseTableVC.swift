@@ -16,7 +16,7 @@ class JGGPostAppointmentBaseTableVC: JGGTableViewController {
         super.viewDidLoad()
         
         self.tableView.backgroundColor = UIColor.JGGGrey5
-        
+        self.tableView.keyboardDismissMode = .onDrag
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -70,7 +70,7 @@ class JGGCallOutView: UIView {
         
         layer.insertSublayer(bubbleLayer, at: 0)
         
-        contentView.lblServiceTitle.text = serviceModel.name
+        contentView.lblServiceTitle.text = serviceModel.title
         contentView.lblPrice.text = String(format: "$ %.02f", 50.0)
         contentView.ratebar.rating = 4.6
         contentView.lblUsername.text = serviceModel.invitingClient?.fullname

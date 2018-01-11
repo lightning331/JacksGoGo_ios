@@ -39,6 +39,43 @@ class JGGCalendarView: UIView {
         return _df
     }
     
+    var themeColorType: JGGColorSchema {
+        set {
+            _themColorType = newValue
+            var backName = "button_previous_green"
+            var nextName = "button_next_green"
+            switch newValue {
+            case .green:
+                backName = "button_previous_green"
+                nextName = "button_next_green"
+                break
+            case .cyan:
+                backName = "button_previous_cyan"
+                nextName = "button_next_cyan"
+                break
+            case .orange:
+                backName = "button_previous_orange"
+                nextName = "button_next_orange"
+                break
+            case .purple:
+                backName = "button_previous_purple"
+                nextName = "button_next_purple"
+                break
+            default:
+                backName = "button_previous_green"
+                nextName = "button_next_green"
+                break
+            }
+            btnBack.setImage(UIImage(named: backName), for: .normal)
+            btnForward.setImage(UIImage(named: nextName), for: .normal)
+        }
+        get {
+            return _themColorType
+        }
+    }
+    
+    fileprivate var _themColorType: JGGColorSchema = .green
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.calendarView.register(UINib(nibName: "JGGCalendarDayCell", bundle: nil),
@@ -53,7 +90,7 @@ class JGGCalendarView: UIView {
         moveMonth(to: 1)
     }
     
-    private func moveMonth(to arrow: Int) {
+    func moveMonth(to arrow: Int) {
         let currentMonth = self.calendarView.visibleDates().monthDates.first!.date
         guard let targetMonth = Calendar.current.date(byAdding: .month, value: arrow, to: currentMonth) else { return }
         self.calendarView.scrollToDate(targetMonth)

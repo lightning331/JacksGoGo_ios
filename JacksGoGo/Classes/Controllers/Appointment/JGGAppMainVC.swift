@@ -171,6 +171,7 @@ class JGGAppMainVC: JGGStartTableVC {
     // MARK: - Should remove on Product
     
     private func makeTemporaryData() {
+        /*
         let quickJob00 = JGGJobModel()
         quickJob00.name = "Fast Food Delivery"
         quickJob00.status = .pending
@@ -304,7 +305,7 @@ class JGGAppMainVC: JGGStartTableVC {
         pendingJob09.comment = "Needed on 21 Jul, 2017"
         pendingJob09.appointmentDate = Date(timeInterval: 999000, since: Date())
         arrayLoadedPendingJobs.append(pendingJob09)
-        
+        */
     }
 }
 
@@ -367,20 +368,20 @@ extension JGGAppMainVC: UISearchBarDelegate {
         isSearchMode = true
         searchResultQuickJobs = arrayLoadedQuickJobs.filter {
             queryText == nil ||
-                $0.name?
+                $0.title?
                     .lowercased()
                     .range(of: queryText!.lowercased()) != nil
         }
             
         searchResultServicePackages = arrayLoadedServicePackages.filter {
             queryText == nil ||
-                $0.name?
+                $0.title?
                     .lowercased()
                     .range(of: queryText!.lowercased()) != nil
         }
         searchResultPendingJobs = arrayLoadedPendingJobs.filter {
             queryText == nil ||
-                $0.name?
+                $0.title?
                     .lowercased()
                     .range(of: queryText!.lowercased()) != nil
         }

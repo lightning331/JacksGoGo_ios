@@ -21,6 +21,8 @@ pod 'MZFormSheetPresentationController', '~> 2.4.1'
 pod 'JTAppleCalendar', '~> 7.1.4'
 pod 'TLPhotoPicker', '~> 1.3.7'
 pod 'IGRPhotoTweaks', :git => 'https://github.com/IGRSoft/IGRPhotoTweaks.git'
+pod 'Toaster'
+pod 'AFDateHelper', '~> 4.2.7'
 
 # For Lightbox
 pod 'Cache', '~> 4.0.2'

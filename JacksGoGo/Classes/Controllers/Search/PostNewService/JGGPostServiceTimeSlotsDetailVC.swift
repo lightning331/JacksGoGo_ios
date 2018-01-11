@@ -89,20 +89,12 @@ class JGGPostServiceTimeSlotsDetailVC: JGGPostAppointmentBaseTableVC {
     
     fileprivate func showAddTimeSlotsPopup() {
         let timeSlotsPopupVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGAddTimeSlotsPopupVC") as! JGGAddTimeSlotsPopupVC
-        showPopup(timeSlotsPopupVC)
+        showPopup(viewController: timeSlotsPopupVC, transitionStyle: .bounce)
     }
     
     fileprivate func showCalendarPopup() {
-        let timeSlotsPopupVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGDuplicateTimeSlotsPopupVC") as! JGGDuplicateTimeSlotsPopupVC
-        showPopup(timeSlotsPopupVC)
-    }
-    
-    private func showPopup(_ vc: JGGPopupBaseVC) {
-        
-        let mzformSheetVC = MZFormSheetPresentationViewController(contentViewController: vc)
-        mzformSheetVC.contentViewControllerTransitionStyle = .bounce
-        self.present(mzformSheetVC, animated: true, completion: nil)
-        
+        let timeSlotsPopupVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGDatePickerPopupVC") as! JGGDatePickerPopupVC
+        showPopup(viewController: timeSlotsPopupVC, transitionStyle: .bounce)
     }
     
 }

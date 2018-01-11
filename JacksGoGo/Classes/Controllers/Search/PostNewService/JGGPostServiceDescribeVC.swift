@@ -8,10 +8,13 @@
 
 import UIKit
 import TLPhotoPicker
+import Toaster
 
 class JGGPostServiceDescribeVC: JGGPostAppointmentBaseTableVC {
 
+    @IBOutlet weak var lblServiceTitle: UILabel!
     @IBOutlet weak var txtServiceTitle: UITextField!
+    @IBOutlet weak var lblServiceDescribe: UILabel!
     @IBOutlet weak var txtServiceDescribe: UITextView!
     @IBOutlet weak var txtTags: UITextField!
     @IBOutlet weak var collectionPhotos: UICollectionView!
@@ -37,6 +40,12 @@ class JGGPostServiceDescribeVC: JGGPostAppointmentBaseTableVC {
         collectionPhotos.isHidden = true
         btnTakePhotos.isHidden = false
         iconTakePhoto.isHidden = false
+        
+        txtServiceTitle.addTarget(self, action: #selector(textFieldDidChanged(_:)), for: .editingChanged)
+        txtServiceDescribe.delegate = self
+        
+        txtServiceTitle.text = "Test"
+        txtServiceDescribe.text = "Temporary description"
     }
     
     @IBAction func onPressedTakePhoto(_ sender: Any) {
@@ -50,6 +59,29 @@ class JGGPostServiceDescribeVC: JGGPostAppointmentBaseTableVC {
         }
         
         present(photoPicker, animated: true, completion: nil)
+    }
+    
+    override func onPressedNext(_ sender: UIButton) {
+        if checkRequiredFields() {
+            super.onPressedNext(sender)
+        } else {
+            Toast(text: LocalizedString("Input all required fields."), delay: 0, duration: 3).show()
+        }
+    }
+    
+    private func checkRequiredFields() -> Bool {
+        var isAvailable = true
+        if let title = txtServiceTitle.text, title.count == 0 {
+            isAvailable = false
+            txtServiceTitle.superview?.borderColor = UIColor.JGGRed
+            lblServiceTitle.textColor = UIColor.JGGRed
+        }
+        if txtServiceDescribe.text.count == 0 {
+            isAvailable = false
+            txtServiceDescribe.superview?.borderColor = UIColor.JGGRed
+            lblServiceDescribe.textColor = UIColor.JGGRed
+        }
+        return isAvailable
     }
     
     // MARK: - Table view data source
@@ -75,6 +107,24 @@ class JGGPostServiceDescribeVC: JGGPostAppointmentBaseTableVC {
             }
         } else {
             return super.tableView(tableView, heightForRowAt: indexPath)
+        }
+    }
+    
+}
+
+extension JGGPostServiceDescribeVC: UITextFieldDelegate, UITextViewDelegate {
+    
+    @objc func textFieldDidChanged(_ textField: UITextField) {
+        textField.superview?.borderColor = UIColor.JGGGrey3
+        if textField == txtServiceTitle {
+            lblServiceTitle.textColor = UIColor.JGGBlack
+        }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        textView.superview?.borderColor = UIColor.JGGGrey3
+        if textView == txtServiceDescribe {
+            lblServiceDescribe.textColor = UIColor.JGGBlack
         }
     }
     

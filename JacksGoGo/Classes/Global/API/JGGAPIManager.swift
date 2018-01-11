@@ -47,6 +47,38 @@ class JGGAPIManager: NSObject {
                                  headers: header)
     }
     
+    func upload(url: String, data: Data, progressClosure: ProgressClosure? = nil, complete: @escaping StringStringClosure) {
+        var header: [String: String]?
+        if let token = self.getToken() {
+            header = [
+                HEADER_AUTHORIZATION : HEADER_VALUE_PREFIX + " " + token,
+            ]
+        }
+        Alamofire
+            .upload(data, to: url, method: .post, headers: header)
+            .uploadProgress(closure: { (progress) in
+                if let progressClosure = progressClosure {
+                    let percent = Float(progress.completedUnitCount) / Float(progress.totalUnitCount)
+                    progressClosure(percent)
+                }
+            })
+            .responseJSON(completionHandler: { (response) in
+                switch response.result {
+                case .success(let data):
+                    let result = JSON(data)
+                    if let success = result["Success"].bool, success == true {
+                        complete(result["Value"].string, nil)
+                    } else {
+                        complete(nil, result["Message"].string)
+                    }
+                    break
+                case .failure(let error):
+                    complete(nil, error.localizedDescription)
+                    break
+                }
+            })
+    }
+    
     /**
      *  POST request
      */
@@ -309,7 +341,7 @@ class JGGAPIManager: NSObject {
     }
     
     // MARK: - System
-    func getRegions(_ complete: @escaping RegionListBlock) -> Void {
+    func getRegions(_ complete: @escaping RegionListClosure) -> Void {
         GET(url: URLManager.System.GetRegions, params: nil) { (json, error) in
             if let response = json {
                 let success = response["Success"].boolValue
@@ -328,8 +360,44 @@ class JGGAPIManager: NSObject {
         }
     }
     
+    private func upload(image: UIImage,
+                        url: String,
+                        progressClosure: ProgressClosure? = nil,
+                        complete: @escaping StringStringClosure)
+    {
+        if let imageData = UIImageJPEGRepresentation(image, 0.7) {
+            upload(url: url,
+                   data: imageData,
+                   progressClosure: progressClosure,
+                   complete: complete)
+        } else {
+            complete(nil, LocalizedString("Wrong type image"))
+        }
+    }
+    
+    func upload(attachmentImage: UIImage, progressClosure: ProgressClosure? = nil, complete: @escaping StringStringClosure) -> Void {
+        upload(image: attachmentImage,
+               url: URLManager.System.UploadAttachmentFile,
+               progressClosure: progressClosure,
+               complete: complete)
+    }
+    
+    func upload(profileImage: UIImage, progressClosure: ProgressClosure? = nil, complete: @escaping StringStringClosure) -> Void {
+        upload(image: profileImage,
+               url: URLManager.System.UploadProfileImage,
+               progressClosure: progressClosure,
+               complete: complete)
+    }
+    
+    func upload(systemImage: UIImage, progressClosure: ProgressClosure? = nil, complete: @escaping StringStringClosure) -> Void {
+        upload(image: systemImage,
+               url: URLManager.System.UploadSystemFile,
+               progressClosure: progressClosure,
+               complete: complete)
+    }
+    
     // Job
-    func getCategories(_ complete: @escaping CategoryListBlock) -> Void {
+    func getCategories(_ complete: @escaping CategoryListClosure) -> Void {
         GET(url: URLManager.System.GetAllCategories, params: nil) { (json, error) in
             if let response = json {
                 let success = response["Success"].boolValue
@@ -345,7 +413,26 @@ class JGGAPIManager: NSObject {
             }
             complete([])
         }
-
+    }
+    
+    func postJob(userId: String,
+                 regionId: String,
+                 categoryId: String,
+                 currencyCode: String,
+                 title: String?,
+                 description _description: String?,
+                 attachmentsImages: [UIImage]?,
+                 serviceType: Int,
+                 budgetFrom: Double?,
+                 budgetTo: Double?,
+                 budget: Double?,
+                 address: JGGAddressModel?,
+                 timeSlots: [JGGTimeSlotModel]?,
+                 tags: String?,
+                 reportType: Int) -> Void
+    {
+        var body = JSON()
+        
     }
     
 }

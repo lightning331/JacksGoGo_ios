@@ -870,7 +870,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 Services" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EtL-iS-0n3">
-                                        <rect key="frame" x="16" y="21" width="82" height="19"/>
+                                        <rect key="frame" x="16" y="20.5" width="82" height="19"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1204,7 +1204,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Group Swimming Class" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wb-BV-vTp">
-                                        <rect key="frame" x="40" y="12.5" width="319" height="15.5"/>
+                                        <rect key="frame" x="40" y="13" width="319" height="15.5"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1503,7 +1503,7 @@ Next, let's set up a payment methods. The payment will only be released when the
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a category for your job:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFT-7s-tlb">
-                                    <rect key="frame" x="16" y="29.5" width="212" height="17.5"/>
+                                    <rect key="frame" x="16" y="28" width="216" height="19"/>
                                     <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -1767,7 +1767,7 @@ Next, let's set up a payment methods. The payment will only be released when the
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UIa-mF-YoV">
                                 <rect key="frame" x="0.0" y="106" width="375" height="512"/>
                                 <connections>
-                                    <segue destination="2bt-xp-QJn" kind="embed" id="k4P-Hl-yXF"/>
+                                    <segue destination="2bt-xp-QJn" kind="embed" identifier="gotoPostJobStepRootVC" id="k4P-Hl-yXF"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -1786,9 +1786,16 @@ Next, let's set up a payment methods. The payment will only be released when the
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UN9-Xh-glk"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Post A Job" id="uOY-Ba-dYb"/>
+                    <navigationItem key="navigationItem" title="Post A Job" id="uOY-Ba-dYb">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="button_backarrow_cyan" id="TUa-0b-0CP">
+                            <connections>
+                                <action selector="onPressedBack:" destination="taG-gQ-fhu" id="TRF-MF-Yx2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="btnBack" destination="TUa-0b-0CP" id="Ux5-n4-kI9"/>
                         <outlet property="imgviewCategory" destination="wzj-yd-kUp" id="pCi-uB-72c"/>
                         <outlet property="lblCategoryName" destination="AyF-Ka-QKp" id="llA-El-kod"/>
                         <outlet property="viewContainer" destination="UIa-mF-YoV" id="sg4-3H-gtB"/>
@@ -1810,6 +1817,7 @@ Next, let's set up a payment methods. The payment will only be released when the
     <resources>
         <image name="button_addnew_round_cyan" width="40" height="40"/>
         <image name="button_addnew_round_green" width="40" height="40"/>
+        <image name="button_backarrow_cyan" width="27" height="27"/>
         <image name="button_close_round_green" width="32" height="32"/>
         <image name="button_filter_green" width="32" height="32"/>
         <image name="button_listview_green" width="32" height="32"/>

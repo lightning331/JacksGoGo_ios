@@ -10,13 +10,6 @@ import UIKit
 import SnapKit
 import MZFormSheetPresentationController
 
-public enum JGGAlertColorSchema {
-    case red
-    case green
-    case cyan
-    case orange
-}
-
 public typealias JGGAlertButtonBlock = (() -> Void)
 
 class JGGAlertViewController: UIViewController {
@@ -24,7 +17,8 @@ class JGGAlertViewController: UIViewController {
     // MARK: - Class methods to show alert
     static func show(title: String?,
                      message: String?,
-                     colorSchema: JGGAlertColorSchema = .green,
+                     colorSchema: JGGColorSchema = .green,
+                     cancelColorSchema: JGGColorSchema? = nil,
                      okButtonTitle: String = "OK",
                      okAction: JGGAlertButtonBlock? = nil,
                      cancelButtonTitle: String? = "Cancel",
@@ -36,6 +30,7 @@ class JGGAlertViewController: UIViewController {
             alertVC.alertTitle = title
             alertVC.alertMessage = message
             alertVC.colorSchema = colorSchema
+            alertVC.cancelColor = cancelColorSchema
             alertVC.okButtonTitle = okButtonTitle
             alertVC.okAction = okAction
             alertVC.cancelButtonTitle = cancelButtonTitle
@@ -49,7 +44,8 @@ class JGGAlertViewController: UIViewController {
     // MARK: - Properties
     var alertTitle: String?
     var alertMessage: String?
-    var colorSchema: JGGAlertColorSchema = .green
+    var colorSchema: JGGColorSchema = .green
+    var cancelColor: JGGColorSchema?
     var okButtonTitle: String = "OK"
     var okAction: JGGAlertButtonBlock?
     var cancelButtonTitle: String?
@@ -81,28 +77,69 @@ class JGGAlertViewController: UIViewController {
         case .green:
             btnOK.backgroundColor = UIColor.JGGGreen
             btnOK.setTitleColor(UIColor.JGGWhite, for: .normal)
-            btnCancel.backgroundColor = UIColor.JGGGreen10Percent
-            btnCancel.setTitleColor(UIColor.JGGGreen, for: .normal)
+            if cancelColor == nil {
+                btnCancel.backgroundColor = UIColor.JGGGreen10Percent
+                btnCancel.setTitleColor(UIColor.JGGGreen, for: .normal)
+            }
             break
         case .cyan:
             btnOK.backgroundColor = UIColor.JGGCyan
             btnOK.setTitleColor(UIColor.JGGWhite, for: .normal)
-            btnCancel.backgroundColor = UIColor.JGGCyan10Percent
-            btnCancel.setTitleColor(UIColor.JGGCyan, for: .normal)
+            if cancelColor == nil {
+                btnCancel.backgroundColor = UIColor.JGGCyan10Percent
+                btnCancel.setTitleColor(UIColor.JGGCyan, for: .normal)
+            }
             break
         case .red:
             btnOK.backgroundColor = UIColor.JGGRed
             btnOK.setTitleColor(UIColor.JGGWhite, for: .normal)
-            btnCancel.backgroundColor = UIColor.JGGGreen10Percent
-            btnCancel.setTitleColor(UIColor.JGGGreen, for: .normal)
+            if cancelColor == nil {
+                btnCancel.backgroundColor = UIColor.JGGGreen10Percent
+                btnCancel.setTitleColor(UIColor.JGGGreen, for: .normal)
+            }
             break
         case .orange:
             btnOK.backgroundColor = UIColor.JGGOrange
             btnOK.setTitleColor(UIColor.JGGWhite, for: .normal)
-            btnCancel.backgroundColor = UIColor.JGGOrange10Percent
-            btnCancel.setTitleColor(UIColor.JGGOrange, for: .normal)
+            if cancelColor == nil {
+                btnCancel.backgroundColor = UIColor.JGGOrange10Percent
+                btnCancel.setTitleColor(UIColor.JGGOrange, for: .normal)
+            }
+            break
+        case .purple:
+            btnOK.backgroundColor = UIColor.JGGPurple
+            btnOK.setTitleColor(UIColor.JGGWhite, for: .normal)
+            if cancelColor == nil {
+                btnCancel.backgroundColor = UIColor.JGGPurple10Percent
+                btnCancel.setTitleColor(UIColor.JGGPurple, for: .normal)
+            }
             break
 
+        }
+        
+        if let cancelColor = cancelColor {
+            switch cancelColor {
+            case .green:
+                btnCancel.backgroundColor = UIColor.JGGGreen10Percent
+                btnCancel.setTitleColor(UIColor.JGGGreen, for: .normal)
+                break
+            case .cyan:
+                btnCancel.backgroundColor = UIColor.JGGCyan10Percent
+                btnCancel.setTitleColor(UIColor.JGGCyan, for: .normal)
+                break
+            case .red:
+                btnCancel.backgroundColor = UIColor.JGGRed10Percecnt
+                btnCancel.setTitleColor(UIColor.JGGRed, for: .normal)
+                break
+            case .orange:
+                btnCancel.backgroundColor = UIColor.JGGOrange10Percent
+                btnCancel.setTitleColor(UIColor.JGGOrange, for: .normal)
+                break
+            case .purple:
+                btnCancel.backgroundColor = UIColor.JGGPurple10Percent
+                btnCancel.setTitleColor(UIColor.JGGPurple, for: .normal)
+                break
+            }
         }
         
         if cancelButtonTitle == nil {

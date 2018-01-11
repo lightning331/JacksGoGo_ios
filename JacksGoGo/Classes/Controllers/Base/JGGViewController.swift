@@ -8,6 +8,7 @@
 
 import UIKit
 import MBProgressHUD
+import MZFormSheetPresentationController
 
 class JGGViewController: UIViewController {
 
@@ -75,5 +76,11 @@ extension UIViewController {
     
     func hideHUD(from targetView: UIView? = nil) -> Void {
         MBProgressHUD.hide(for: targetView ?? self.view, animated: true)
+    }
+    
+    internal func showPopup(viewController: JGGPopupBaseVC, transitionStyle: MZFormSheetPresentationTransitionStyle = .fade) {
+        let mzformSheetVC = MZFormSheetPresentationViewController(contentViewController: viewController)
+        mzformSheetVC.contentViewControllerTransitionStyle = transitionStyle
+        self.present(mzformSheetVC, animated: true, completion: nil)
     }
 }

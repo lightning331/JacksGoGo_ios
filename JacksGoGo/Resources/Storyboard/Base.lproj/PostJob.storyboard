@@ -271,7 +271,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BjN-y9-JAd">
                                                     <rect key="frame" x="16" y="46" width="343" height="86"/>
                                                     <subviews>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipi" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eKu-zn-QQv">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eKu-zn-QQv">
                                                             <rect key="frame" x="8" y="8" width="327" height="70"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
@@ -329,7 +329,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mEq-jb-C0y">
                                                     <rect key="frame" x="16" y="47" width="343" height="40"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nPv-Qq-8t0">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Seperate by comma" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nPv-Qq-8t0">
                                                             <rect key="frame" x="8" y="0.0" width="327" height="40"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -454,6 +454,8 @@
                         <outlet property="btnTakePhotos" destination="Nd8-Ha-PzV" id="9BA-dN-iEo"/>
                         <outlet property="collectionPhotos" destination="Dig-hy-ut3" id="Lbu-6I-ncJ"/>
                         <outlet property="iconTakePhoto" destination="75B-vG-QO7" id="kMB-qB-8Ol"/>
+                        <outlet property="lblServiceDescribe" destination="dWm-Wf-jAy" id="RH3-i8-Guo"/>
+                        <outlet property="lblServiceTitle" destination="M0l-jV-FVZ" id="sd5-Cw-g6n"/>
                         <outlet property="txtServiceDescribe" destination="eKu-zn-QQv" id="RR4-gz-g4K"/>
                         <outlet property="txtServiceTitle" destination="IEf-XH-Iyb" id="F1M-nn-CnF"/>
                         <outlet property="txtTags" destination="nPv-Qq-8t0" id="vDu-0c-Zc1"/>
@@ -943,8 +945,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IYm-n7-yIu">
                                                 <rect key="frame" x="16" y="59.5" width="343" height="140"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set slot start time:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZm-IN-jHE">
-                                                        <rect key="frame" x="0.0" y="0.0" width="131.5" height="19"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set start time:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZm-IN-jHE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="19"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -957,7 +959,9 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="35" id="c5b-PG-GMR"/>
                                                                 </constraints>
-                                                                <state key="normal" image="button_showmore_cyan"/>
+                                                                <state key="normal" image="button_showmore_cyan">
+                                                                    <color key="titleColor" red="0.95294117647058818" green="0.93725490196078431" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="onPressedChangeTime:" destination="c83-ss-ae3" eventType="touchUpInside" id="bOM-rO-6SN"/>
                                                                 </connections>
@@ -1035,7 +1039,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgK-g7-0Ni">
-                                                        <rect key="frame" x="127" y="78" width="4" height="19"/>
+                                                        <rect key="frame" x="127" y="78.5" width="4" height="19"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1128,8 +1132,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCG-TO-3x7">
                                                 <rect key="frame" x="16" y="60" width="343" height="140"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set slot end time:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A50-OM-7L7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="123.5" height="19"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set end time:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A50-OM-7L7">
+                                                        <rect key="frame" x="0.0" y="0.0" width="93.5" height="19"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1220,7 +1224,7 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OxW-aV-XcO">
-                                                        <rect key="frame" x="127" y="78" width="4" height="19"/>
+                                                        <rect key="frame" x="127" y="78.5" width="4" height="19"/>
                                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1303,7 +1307,7 @@
                                         <rect key="frame" x="0.0" y="519" width="375" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No. Of Pax:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWF-0N-1kM">
-                                                <rect key="frame" x="16" y="31" width="80.5" height="19"/>
+                                                <rect key="frame" x="16" y="31.5" width="80.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1550,10 +1554,10 @@
             </objects>
             <point key="canvasLocation" x="528.79999999999995" y="2266.4167916041979"/>
         </scene>
-        <!--Duplicate Time Slots PopupVC-->
+        <!--Date Picker PopupVC-->
         <scene sceneID="4cE-2i-VX7">
             <objects>
-                <viewController storyboardIdentifier="JGGDuplicateTimeSlotsPopupVC" id="8gs-3I-mf5" customClass="JGGDuplicateTimeSlotsPopupVC" customModule="JacksGoGo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JGGDatePickerPopupVC" id="8gs-3I-mf5" customClass="JGGDatePickerPopupVC" customModule="JacksGoGo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JLj-Cr-t0s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1597,7 +1601,7 @@
                                     <constraint firstItem="GGj-UI-JmY" firstAttribute="top" secondItem="CPx-Gw-C0n" secondAttribute="top" id="vdu-VE-F83"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duplicate Time Slots to these days:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxD-bH-4Vg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick the date:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxD-bH-4Vg">
                                 <rect key="frame" x="30" y="50" width="329" height="19"/>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                 <nil key="textColor"/>

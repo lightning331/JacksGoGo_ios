@@ -28,8 +28,8 @@ class JGGLoginVC: JGGLoginBaseVC, UITextFieldDelegate {
         txtEmail.delegate = self
         txtPassword.delegate = self
         
-        txtEmail.text = "tester01@ios.com"
-        txtPassword.text = "Tester01!"
+        txtEmail.text = "rose.lim@jgg.co"
+        txtPassword.text = "abc123Q!@#"
         
         let _ = checkValidCreditional()
     }

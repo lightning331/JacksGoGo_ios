@@ -11,24 +11,22 @@ import SwiftyJSON
 
 class JGGBaseModel: NSObject {
     
-    var createdBy: String?
-    var createdById: String?
-    var createdAt: Date?
-    var modifyBy: String?
-    var modifyById: String?
-    var modifyAt: Date?
-    var id: String!
+//    var aud: JGGModifyInfoModel?
+    var id: String?
     
     init(json: JSON) {
         super.init()
-        createdBy = json["Aud_CeateBy"].string
-        createdById = json["Aud_CreateByID"].string
-        modifyBy = json["Aud_ModifyBy"].string
-        modifyById = json["Aud_ModifyByID"].string
-        id = json["ID"].stringValue
+//        aud = JGGModifyInfoModel(json: json["Aud"])
+        id = json["ID"].string
     }
     
     override init() {
         super.init()
+    }
+    
+    func json() -> JSON {
+        var json = JSON()
+        json["ID"].string = id
+        return json
     }
 }

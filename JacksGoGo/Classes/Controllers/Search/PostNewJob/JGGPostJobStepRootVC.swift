@@ -19,6 +19,8 @@ class JGGPostJobStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderVie
     @IBOutlet weak var containerBudget: UIView!
     @IBOutlet weak var containerReport: UIView!
 
+    var selectedCategory: JGGCategoryModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

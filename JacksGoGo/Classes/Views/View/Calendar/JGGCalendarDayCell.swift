@@ -16,6 +16,16 @@ class JGGCalendarDayCell: JTAppleCell {
     @IBOutlet weak var lblDay: UILabel!
     @IBOutlet weak var viewGreenDot: UIView!
     
+    var color: UIColor? {
+        set {
+            viewCirlceBorder.borderColor = newValue
+            viewGreenDot.backgroundColor = newValue
+        }
+        get {
+            return viewCirlceBorder.borderColor
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

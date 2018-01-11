@@ -74,18 +74,27 @@ class URLManager: NSObject {
         
     }
     
-    class Job: NSObject {
+    class Appointment: NSObject {
         
         private static func fullPath(for endPoint: String) -> String {
-            return URLManager.fullPath(for: "/Job" + endPoint)
+            return URLManager.fullPath(for: "/Appointment" + endPoint)
+        }
+        
+        // Jobs
+        static func ApproveAppointment(id: String) -> String {
+            return fullPath(for: "/ApproveAppointment?ID=\(id)")
         }
 
         static var PostJob: String {
             return fullPath(for: "/PostJob")
         }
         
-        static var DeleteJob: String {
-            return fullPath(for: "/DeleteJob")
+        static var SendQuotation: String {
+            return fullPath(for: "/SendQuotation")
+        }
+        
+        static func DeleteJob(id: String) -> String {
+            return fullPath(for: "/DeleteJob?ID=\(id)")
         }
         
         static var EditJob: String {
@@ -104,9 +113,59 @@ class URLManager: NSObject {
             return fullPath(for: "/GetJobsByCategory")
         }
         
+        static var GetJobsByRegion: String {
+            return fullPath(for: "/GetJobsByRegion")
+        }
+        
+        static var GetAllJobs: String {
+            return fullPath(for: "/GetAllJobs")
+        }
+        
         static var GetJobByID: String {
             return fullPath(for: "/GetJobByID")
         }
+        
+        // Service
+        static var PostService: String {
+            return fullPath(for: "/PostService")
+        }
+        
+        static func DeleteService(id: String) -> String {
+            return fullPath(for: "/DeleteService?ID=\(id)")
+        }
+        
+        static var EditService: String {
+            return fullPath(for: "/EditService")
+        }
+        
+        static func SendReschedulingRequest(id: String) -> String {
+            return fullPath(for: "/SendReschedulingRequest?ID=\(id)")
+        }
+        
+        static func DeclineReschedulingRequest(id: String) -> String {
+            return fullPath(for: "/DeclineReschedulingRequest?ID=\(id)")
+        }
+        
+        static func AgreeReschedulingRequest(id: String) -> String {
+            return fullPath(for: "/AgreeReschedulingRequest?ID=\(id)")
+        }
+        
+        static var SearchService: String {
+            return fullPath(for: "/SearchService")
+        }
+        
+        static var GetServicesByUser: String {
+            return fullPath(for: "/GetServicesByUser")
+        }
+        
+        static var GetServicesByCategory: String {
+            return fullPath(for: "/GetServicesByCategory")
+        }
+        
+        static var GetServiceByID: String {
+            return fullPath(for: "/GetServiceByID")
+        }
+
     }
     
     class Proposal: NSObject {
@@ -170,39 +229,24 @@ class URLManager: NSObject {
             return URLManager.fullPath(for: "/Service" + endPoint)
         }
         
-        static var PostService: String {
-            return fullPath(for: "/PostService")
-        }
-        
-        static var DeleteService: String {
-            return fullPath(for: "/DeleteService")
-        }
-        
-        static var EditService: String {
-            return fullPath(for: "/EditService")
-        }
-        
-        static var SearchService: String {
-            return fullPath(for: "/SearchService")
-        }
-        
-        static var GetServicesByUser: String {
-            return fullPath(for: "/GetServicesByUser")
-        }
-        
-        static var GetServicesByCategory: String {
-            return fullPath(for: "/GetServicesByCategory")
-        }
-        
-        static var GetServiceByID: String {
-            return fullPath(for: "/GetServiceByID")
-        }
         
     }
     
     class System: NSObject {
         private static func fullPath(for endPoint: String) -> String {
             return URLManager.fullPath(for: endPoint)
+        }
+        
+        static var UploadAttachmentFile: String {
+            return fullPath(for: "/UpLoad/UploadAttachmentFile")
+        }
+        
+        static var UploadProfileImage: String {
+            return fullPath(for: "/UpLoad/UploadProfileImage")
+        }
+        
+        static var UploadSystemFile: String {
+            return fullPath(for: "/UpLoad/UploadSystemFile")
         }
 
         static var AddCategory: String {

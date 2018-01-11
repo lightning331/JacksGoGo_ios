@@ -22,15 +22,7 @@ class JGGServiceModel: JGGAppointmentBaseModel, MKAnnotation {
     
     var coordinate: CLLocationCoordinate2D
     
-    var title: String?
-    
     var subtitle: String?
-    
-    override var name: String? {
-        didSet {
-            self.title = name
-        }
-    }
     
     override init(json: JSON) {
         coordinate = CLLocationCoordinate2DMake(0, 0)

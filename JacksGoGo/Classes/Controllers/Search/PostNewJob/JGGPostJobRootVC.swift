@@ -7,24 +7,49 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class JGGPostJobRootVC: JGGSearchBaseVC {
 
     @IBOutlet weak var imgviewCategory: UIImageView!
     @IBOutlet weak var lblCategoryName: UILabel!
     @IBOutlet weak var viewContainer: UIView!
+    @IBOutlet weak var btnBack: UIBarButtonItem!
+    
+    var selectedCategory: JGGCategoryModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.lblCategoryName.text = selectedCategory.name
+        if let urlString = selectedCategory.image,
+            let iconUrl = URL(string: urlString) {
+            self.imgviewCategory.af_setImage(withURL: iconUrl)
+        }
+        
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
     
+    @IBAction func onPressedBack(_ sender: Any) {
+        JGGAlertViewController.show(title: LocalizedString("Quit Posting A New Job?"),
+                                    message: LocalizedString("All info will be lost."),
+                                    colorSchema: .red,
+                                    cancelColorSchema: .cyan,
+                                    okButtonTitle: LocalizedString("Quit"),
+                                    okAction: {
+                                        self.navigationController?.popViewController(animated: true)
+                                    },
+                                    cancelButtonTitle: LocalizedString("Cancel"),
+                                    cancelAction: nil)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let identifier = segue.identifier, identifier == "gotoEditJobStepRootVC",
-            let nav = segue.destination as? JGGSearchNC,
-            let editJobStepRootVC = nav.topViewController as? JGGEditJobStepRootVC
+        if let identifier = segue.identifier, identifier == "gotoPostJobStepRootVC",
+            let nav = segue.destination as? UINavigationController,
+            let postJobStepRootVC = nav.topViewController as? JGGPostJobStepRootVC
         {
-            
+            postJobStepRootVC.selectedCategory = self.selectedCategory
         }
     }
 

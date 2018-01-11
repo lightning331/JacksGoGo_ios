@@ -40,11 +40,11 @@ class JGGAppHistoryListCell: UITableViewCell {
         if let appointment = appointment {
             lblDay.text = appointment.appointmentDay()
             lblMonth.text = appointment.appointmentMonth()
-            lblTitle.text = appointment.name
-            lblDescription.text = appointment.comment
-            lblCountBadge.text = String(appointment.badgeNumber)
-            viewCountBadge.isHidden = appointment.badgeNumber == 0
-            viewRightSideBadge.isHidden = appointment.badgeNumber == 0
+            lblTitle.text = appointment.title
+            lblDescription.text = appointment.description_
+            lblCountBadge.text = String(3)
+            viewCountBadge.isHidden = 3 == 0
+            viewRightSideBadge.isHidden = 3 == 0
             
             var color = UIColor.JGGCyan
             if let _ = appointment as? JGGJobModel {
@@ -55,12 +55,14 @@ class JGGAppHistoryListCell: UITableViewCell {
             lblDay.textColor = color
             lblMonth.textColor = color
             
+            lblStatus.isHidden = true
+            /*
             if appointment.status == .cancelled {
                 lblStatus.isHidden = false
                 lblStatus.text = "Cancelled"
             } else {
                 lblStatus.isHidden = true
-            }
+            } */
         }
     }
 }

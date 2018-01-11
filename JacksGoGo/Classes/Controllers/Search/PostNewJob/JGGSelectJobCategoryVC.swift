@@ -15,72 +15,8 @@ class JGGSelectJobCategoryVC: UICollectionViewController {
     private var loadingIndicatorView: UIActivityIndicatorView?
     private var isLoadingCategories: Bool = false
     
-    /*
-    fileprivate lazy var categories: [[String: String]] = [
-        [
-            "title": LocalizedString("Favourited Services"),
-            "imageName": "icon_cat_favourites",
-            ],
-        [
-            "title": LocalizedString("Cooking & Baking"),
-            "imageName": "icon_cat_cooking&baking",
-            ],
-        [
-            "title": LocalizedString("Education"),
-            "imageName": "icon_cat_education",
-            ],
-        [
-            "title": LocalizedString("Handyman"),
-            "imageName": "icon_cat_handyman",
-            ],
-        [
-            "title": LocalizedString("Household Chores"),
-            "imageName": "icon_cat_householdchores",
-            ],
-        [
-            "title": LocalizedString("Messenger"),
-            "imageName": "icon_cat_messenger",
-            ],
-        [
-            "title": LocalizedString("Running Man"),
-            "imageName": "icon_cat_runningman",
-            ],
-        [
-            "title": LocalizedString("Leisure"),
-            "imageName": "icon_cat_leisure",
-            ],
-        [
-            "title": LocalizedString("Social"),
-            "imageName": "icon_cat_social",
-            ],
-        [
-            "title": LocalizedString("Sports"),
-            "imageName": "icon_cat_runningman",
-            ],
-        [
-            "title": LocalizedString("Event"),
-            "imageName": "icon_cat_event",
-            ],
-        [
-            "title": LocalizedString("Exploration"),
-            "imageName": "icon_cat_exploration",
-            ],
-        [
-            "title": LocalizedString("Family"),
-            "imageName": "icon_cat_family",
-            ],
-        [
-            "title": LocalizedString("Gardening"),
-            "imageName": "icon_cat_gardening",
-            ],
-        ]
-    */
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
         self.collectionView!.register(UINib(nibName: "JGGSearchCategorySelectCell", bundle: nil),
@@ -108,7 +44,7 @@ class JGGSelectJobCategoryVC: UICollectionViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationItem.title = LocalizedString("Post A Job")
-
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -180,40 +116,12 @@ class JGGSelectJobCategoryVC: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let serviceStoryboard = UIStoryboard(name: "Services", bundle: nil)
-        let postJobRootStepVC = serviceStoryboard.instantiateViewController(withIdentifier: "JGGPostJobRootVC") as! JGGPostJobRootVC
-        self.navigationController?.pushViewController(postJobRootStepVC, animated: true)
+        let postJobRootVC = serviceStoryboard.instantiateViewController(withIdentifier: "JGGPostJobRootVC") as! JGGPostJobRootVC
+        postJobRootVC.selectedCategory = categories[indexPath.row]
+        self.navigationController?.pushViewController(postJobRootVC, animated: true)
     }
     
     // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
 
 }
 
@@ -221,6 +129,5 @@ class JGGCategoryHeaderDescriptionView: UICollectionReusableView {
     
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var loadingIndicatorView: UIActivityIndicatorView!
-    
     
 }

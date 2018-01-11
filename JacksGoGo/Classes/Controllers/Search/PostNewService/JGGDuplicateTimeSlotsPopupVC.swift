@@ -1,5 +1,5 @@
 //
-//  JGGDuplicateTimeSlotsPopupVC.swift
+//  JGGDatePickerPopupVC.swift
 //  JacksGoGo
 //
 //  Created by Hemin Wang on 12/5/17.
@@ -11,14 +11,42 @@ import SnapKit
 import JTAppleCalendar
 import MZFormSheetPresentationController
 
-class JGGDuplicateTimeSlotsPopupVC: JGGPopupBaseVC {
+class JGGDatePickerPopupVC: JGGPopupBaseVC {
 
     @IBOutlet weak var viewCalendarContainer: UIView!
     @IBOutlet weak var btnCancel: UIButton!
     @IBOutlet weak var btnDuplicate: UIButton!
     
-    var calendarView: JGGCalendarView!
-
+    var themeColorType: JGGColorSchema {
+        set {
+            _themColorType = newValue
+            switch newValue {
+            case .green:
+                _themColor = UIColor.JGGGreen
+                break
+            case .cyan:
+                _themColor = UIColor.JGGCyan
+                break
+            case .red:
+                _themColor = UIColor.JGGRed
+                break
+            case .orange:
+                _themColor = UIColor.JGGOrange
+                break
+            case .purple:
+                _themColor = UIColor.JGGPurple
+                break
+            }
+        }
+        get {
+            return _themColorType
+        }
+    }
+    
+    fileprivate var calendarView: JGGCalendarView!
+    fileprivate var _themColor: UIColor = UIColor.JGGGreen
+    fileprivate var _themColorType: JGGColorSchema = .green
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +57,7 @@ class JGGDuplicateTimeSlotsPopupVC: JGGPopupBaseVC {
         }
         calendarView.dataSource = self
         calendarView.delegate = self
+        calendarView.themeColorType = themeColorType
         self.calendarView = calendarView
 
     }
@@ -59,7 +88,7 @@ class JGGDuplicateTimeSlotsPopupVC: JGGPopupBaseVC {
 
 }
 
-extension JGGDuplicateTimeSlotsPopupVC: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
+extension JGGDatePickerPopupVC: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
     
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
@@ -76,6 +105,7 @@ extension JGGDuplicateTimeSlotsPopupVC: JTAppleCalendarViewDataSource, JTAppleCa
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "JGGCalendarDayCell", for: indexPath) as! JGGCalendarDayCell
         cell.lblDay.text = cellState.text
+        cell.color = _themColor
         if cellState.dateBelongsTo == .thisMonth {
             cell.alpha = 1.0
         } else {

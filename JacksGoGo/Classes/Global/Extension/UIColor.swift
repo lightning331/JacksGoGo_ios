@@ -53,6 +53,12 @@ extension UIColor {
         }
     }
     
+    static public var JGGPurple10Percent: UIColor {
+        get {
+            return UIColor("#F3EFF8")
+        }
+    }
+
     static public var JGGYellow: UIColor {
         get {
             return UIColor("#FFE63E")

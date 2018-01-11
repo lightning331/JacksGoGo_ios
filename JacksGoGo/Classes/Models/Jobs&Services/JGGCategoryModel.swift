@@ -26,4 +26,11 @@ class JGGCategoryModel: JGGBaseModel {
         image = json["Image"].string
     }
     
+    override func json() -> JSON {
+        var json = super.json()
+        json["Code"].string = code
+        json["Name"].string = name
+        json["Image"].string = image
+        return json
+    }
 }

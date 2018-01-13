@@ -8,6 +8,7 @@
 
 import UIKit
 import MZFormSheetPresentationController
+import Toaster
 
 class JGGAddTimeSlotsPopupVC: JGGPopupBaseVC {
 
@@ -20,6 +21,9 @@ class JGGAddTimeSlotsPopupVC: JGGPopupBaseVC {
     @IBOutlet weak var btnStartTimeAM: UIButton!
     @IBOutlet weak var btnStartTimePM: UIButton!
     
+    @IBOutlet weak var btnSetEndTime: UIButton!
+    @IBOutlet weak var viewEndTimeBox: UIView!
+    @IBOutlet weak var btnEndTimeClose: UIButton!
     @IBOutlet weak var btnEndTimeHourIncrease: UIButton!
     @IBOutlet weak var btnEndTimeHourDecrease: UIButton!
     @IBOutlet weak var btnEndTimeMinuteIncrease: UIButton!
@@ -37,6 +41,12 @@ class JGGAddTimeSlotsPopupVC: JGGPopupBaseVC {
     @IBOutlet weak var btnPaxDecrease: UIButton!
     @IBOutlet weak var txtNumberOfPax: UITextField!
     
+    var doneButtonTitle: String?
+    var showEndTime: Bool = true
+    var selectedStartTime: Date?
+    var selectedEndTime: Date?
+    var selectTimeHandler: ((Date?, Date?, Int?) -> Void)?
+    
     fileprivate var startHour: Int = 0
     fileprivate var startMinute: Int = 0
     fileprivate var startAM: Bool = true
@@ -48,11 +58,61 @@ class JGGAddTimeSlotsPopupVC: JGGPopupBaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        txtStartTimeHour.text = "12"
+        txtEndTimeHour.text = "12"
+        
         btnStartTimeAM.isSelected = true
         btnStartTimePM.isSelected = false
         btnEndTimeAM.isSelected = true
         btnEndTimePM.isSelected = false
         
+        viewNumberOfPax.isHidden = true
+        if showEndTime || selectedEndTime != nil {
+            btnSetEndTime.isHidden = true
+            btnEndTimeClose.isHidden = false
+            viewEndTimeBox.isHidden = false
+        } else {
+            btnSetEndTime.isHidden = false
+            btnEndTimeClose.isHidden = false
+            viewEndTimeBox.isHidden = true
+        }
+        if let doneButtonTitle = doneButtonTitle {
+            btnAdd.setTitle(doneButtonTitle, for: .normal)
+        }
+        
+        func parseTime(_ time: Date?, textFieldHour: UITextField, textFieldMinute: UITextField, buttonPeriodAM: UIButton, buttonPeriodPM: UIButton) {
+            if let time = time {
+                var isPeriod: Bool = true
+                var hour = time.component(.hour)!
+                if hour == 12 {
+                    isPeriod = false
+                }
+                else if hour == 0 {
+                    hour = 12
+                }
+                else if hour > 12 {
+                    hour -= 12
+                    isPeriod = false
+                }
+                let minute = time.component(.minute)!
+                textFieldHour.text = String(format: "%02d", hour)
+                textFieldMinute.text = String(format: "%02d", minute)
+                buttonPeriodAM.isSelected = isPeriod
+                buttonPeriodPM.isSelected = !isPeriod
+            }
+        }
+        
+        parseTime(selectedStartTime,
+                  textFieldHour: txtStartTimeHour,
+                  textFieldMinute: txtStartTimeMinute,
+                  buttonPeriodAM: btnStartTimeAM,
+                  buttonPeriodPM: btnStartTimePM)
+
+        parseTime(selectedEndTime,
+                  textFieldHour: txtEndTimeHour,
+                  textFieldMinute: txtEndTimeMinute,
+                  buttonPeriodAM: btnEndTimeAM,
+                  buttonPeriodPM: btnEndTimePM)
     }
     
     override func contentViewFrame(for presentationController: MZFormSheetPresentationController!, currentFrame: CGRect) -> CGRect {
@@ -96,13 +156,9 @@ class JGGAddTimeSlotsPopupVC: JGGPopupBaseVC {
         
         startAM = btnStartTimeAM.isSelected
         if startHour < 1 {
-//            startHour = 12
-//            startAM = !startAM
-            startHour = 1
-        } else if startHour > 12 {
-//            startHour = 1
-//            startAM = !startAM
             startHour = 12
+        } else if startHour > 12 {
+            startHour = 1
         }
         if startMinute < 0 {
             startMinute = 0
@@ -114,9 +170,9 @@ class JGGAddTimeSlotsPopupVC: JGGPopupBaseVC {
         
         endAM = btnEndTimeAM.isSelected
         if endHour < 1 {
-            endHour = 1
-        } else if endHour > 12 {
             endHour = 12
+        } else if endHour > 12 {
+            endHour = 1
         }
         if endMinute < 0 {
             endMinute = 0
@@ -140,11 +196,44 @@ class JGGAddTimeSlotsPopupVC: JGGPopupBaseVC {
         txtNumberOfPax.text = String(numberOfPax)
     }
     
+    @IBAction private func onPressedSetEndTime(_ sender: UIButton) {
+        btnSetEndTime.isHidden = true
+        btnEndTimeClose.isHidden = false
+        viewEndTimeBox.isHidden = false
+    }
+    
+    @IBAction private func onPressedCloseEndTime(_ sender: UIButton) {
+        btnSetEndTime.isHidden = false
+        viewEndTimeBox.isHidden = true
+    }
+    
+    
     @IBAction func onPressedCancel(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func onPressedAdd(_ sender: UIButton) {
+        
+        if let selectTimeHandler = selectTimeHandler {
+            let startTime = Date(hour: Int(txtStartTimeHour.text!)!,
+                                 minute: Int(txtStartTimeMinute.text!)!,
+                                 isAM: btnStartTimeAM.isSelected)
+            var endTime: Date? = nil
+            if viewEndTimeBox.isHidden == false {
+                endTime = Date(hour: Int(txtEndTimeHour.text!)!,
+                               minute: Int(txtEndTimeMinute.text!)!,
+                               isAM: btnEndTimeAM.isSelected)
+                if let startTime = startTime, let endTime = endTime,
+                   startTime.compare(.isLater(than: endTime))
+                {
+                    Toast(text: LocalizedString("Please set end time later than start time."),
+                          delay: 0,
+                          duration: 5).show()
+                    return
+                }
+            }
+            selectTimeHandler(startTime, endTime, nil)
+        }
         self.dismiss(animated: true, completion: nil)
     }
     

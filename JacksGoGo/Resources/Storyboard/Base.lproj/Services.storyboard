@@ -870,7 +870,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 Services" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EtL-iS-0n3">
-                                        <rect key="frame" x="16" y="20.5" width="82" height="19"/>
+                                        <rect key="frame" x="16" y="21" width="82" height="19"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

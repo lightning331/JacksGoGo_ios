@@ -95,6 +95,10 @@ class JGGCalendarView: UIView {
         guard let targetMonth = Calendar.current.date(byAdding: .month, value: arrow, to: currentMonth) else { return }
         self.calendarView.scrollToDate(targetMonth)
         
-        self.lblMonthName.text = dateFormatter.string(from: targetMonth)
+//        showMonthName(for: targetMonth)
+    }
+    
+    func showMonthName(for date: Date) -> Void {
+        self.lblMonthName.text = dateFormatter.string(from: date)
     }
 }

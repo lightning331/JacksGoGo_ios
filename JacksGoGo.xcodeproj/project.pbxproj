@@ -143,6 +143,7 @@
 		FF86D11E1FC4BCB300EE70F5 /* JGGCalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86D11C1FC4BCB300EE70F5 /* JGGCalendarDayCell.swift */; };
 		FF86D11F1FC4BCB300EE70F5 /* JGGCalendarDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF86D11D1FC4BCB300EE70F5 /* JGGCalendarDayCell.xib */; };
 		FF86D1211FC4D4D000EE70F5 /* JGGServiceDetailTimeSlotsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86D1201FC4D4D000EE70F5 /* JGGServiceDetailTimeSlotsVC.swift */; };
+		FF86FA34200A110900CF580B /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86FA33200A110900CF580B /* Date.swift */; };
 		FF9381931FF493DE005699C3 /* Jobs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9381911FF493DE005699C3 /* Jobs.storyboard */; };
 		FF9381951FF494D4005699C3 /* JGGSelectJobCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9381941FF494D4005699C3 /* JGGSelectJobCategoryVC.swift */; };
 		FF9381971FF494ED005699C3 /* JGGPostJobRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9381961FF494ED005699C3 /* JGGPostJobRootVC.swift */; };
@@ -418,6 +419,7 @@
 		FF86D11C1FC4BCB300EE70F5 /* JGGCalendarDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGCalendarDayCell.swift; sourceTree = "<group>"; };
 		FF86D11D1FC4BCB300EE70F5 /* JGGCalendarDayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGCalendarDayCell.xib; sourceTree = "<group>"; };
 		FF86D1201FC4D4D000EE70F5 /* JGGServiceDetailTimeSlotsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceDetailTimeSlotsVC.swift; sourceTree = "<group>"; };
+		FF86FA33200A110900CF580B /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		FF9381921FF493DE005699C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Jobs.storyboard; sourceTree = "<group>"; };
 		FF9381941FF494D4005699C3 /* JGGSelectJobCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSelectJobCategoryVC.swift; sourceTree = "<group>"; };
 		FF9381961FF494ED005699C3 /* JGGPostJobRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGPostJobRootVC.swift; sourceTree = "<group>"; };
@@ -952,6 +954,7 @@
 				FF0CA88D1FB1CFCD00A2C98B /* String.swift */,
 				FFEE43FC200645E200B07A7B /* DateFormatter.swift */,
 				FFEE43FE20064CDA00B07A7B /* JSON.swift */,
+				FF86FA33200A110900CF580B /* Date.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1769,6 +1772,7 @@
 				FF849E061FD71577003EB83A /* JGGYellowSelectingButton.swift in Sources */,
 				FFAFC72D1FC54AD4008E0664 /* JGGUserReviewCell.swift in Sources */,
 				FF9E5A331FB82656006C4B50 /* JGGSearchCategorySelectCell.swift in Sources */,
+				FF86FA34200A110900CF580B /* Date.swift in Sources */,
 				63955EDD1FA05C0B00D825B2 /* JGGAppHistoryListCell.swift in Sources */,
 				FFAD88BF1FBB3BBE0001F423 /* JGGServiceCallOutContentView.swift in Sources */,
 				FF36F16A1FB8D4C60055674F /* JGGActiveServicesAroundVC.swift in Sources */,

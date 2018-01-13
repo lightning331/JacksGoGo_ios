@@ -43,14 +43,15 @@ class JGGDatePickerPopupVC: JGGPopupBaseVC {
             return _themColorType
         }
     }
+    var selectedDates: [Date] = []
     var isAbleToMultipleSelect: Bool = false
     var doneButtonTitle: String?
+    var selectDateHandler: (([Date]) -> Void)?
     
     fileprivate var calendarView: JGGCalendarView!
     fileprivate var _themColor: UIColor = UIColor.JGGGreen
     fileprivate var _themColorType: JGGColorSchema = .green
     
-    fileprivate var selectedDate: Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +64,7 @@ class JGGDatePickerPopupVC: JGGPopupBaseVC {
         calendarView.dataSource = self
         calendarView.delegate = self
         calendarView.themeColorType = themeColorType
+        calendarView.showMonthName(for: Date())
         self.calendarView = calendarView
 
         if let doneButtonTitle = doneButtonTitle {
@@ -81,6 +83,9 @@ class JGGDatePickerPopupVC: JGGPopupBaseVC {
     }
     
     @IBAction func onPressedDuplicate(_ sender: UIButton) {
+        if let selectDateHandler = selectDateHandler {
+            selectDateHandler(selectedDates)
+        }
         self.dismiss(animated: true, completion: nil)
     }
 
@@ -107,7 +112,7 @@ extension JGGDatePickerPopupVC: JTAppleCalendarViewDataSource, JTAppleCalendarVi
     }
     
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
-
+	
     }
     
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
@@ -124,44 +129,57 @@ extension JGGDatePickerPopupVC: JTAppleCalendarViewDataSource, JTAppleCalendarVi
             cell.alpha = 1.0
             cell.viewGreenDot.isHidden = true
         }
-        if let selectedDate = selectedDate,
-            date.compare(.isSameDay(as: selectedDate)) {
-            cell.viewCirlceBorder.isHidden = false
-        } else {
-            cell.viewCirlceBorder.isHidden = true
+        cell.viewCirlceBorder.isHidden = true
+        for selectedDate in selectedDates {
+            if date.compare(.isSameDay(as: selectedDate)) {
+                cell.viewCirlceBorder.isHidden = false
+            }
         }
+        
         return cell
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        if let selectedDate = selectedDate {
-            calendar.deselect(dates: [selectedDate])
-        }
-        if let cell = cell as? JGGCalendarDayCell {
-            cell.viewCirlceBorder.isHidden = false
-        }
-        selectedDate = date
-
-        if cellState.dateBelongsTo == .previousMonthWithinBoundary {
-            calendarView.moveMonth(to: -1)
-        } else if cellState.dateBelongsTo == .followingMonthWithinBoundary {
-            calendarView.moveMonth(to: 1)
+        
+        if isAbleToMultipleSelect {
+            
+        } else {
+            
+            if let selectedDate = selectedDates.first {
+                calendar.deselect(dates: [selectedDate])
+            }
+            if let cell = cell as? JGGCalendarDayCell {
+                cell.viewCirlceBorder.isHidden = false
+            }
+            selectedDates.removeAll()
+            selectedDates.append(date)
+            
+            if cellState.dateBelongsTo == .previousMonthWithinBoundary {
+                calendarView.moveMonth(to: -1)
+                calendarView.calendarView.reloadData()
+            } else if cellState.dateBelongsTo == .followingMonthWithinBoundary {
+                calendarView.moveMonth(to: 1)
+                calendarView.calendarView.reloadData()
+            }
+            calendar.reloadData()
         }
         
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        if let cell = cell as? JGGCalendarDayCell {
-            cell.viewCirlceBorder.isHidden = true
+        if !isAbleToMultipleSelect {
+            if let cell = cell as? JGGCalendarDayCell {
+                cell.viewCirlceBorder.isHidden = true
+            }
+        }
+        
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
+        if let currentMonth = visibleDates.monthDates.first?.date {
+            calendarView.showMonthName(for: currentMonth)
         }
     }
     
-    func calendarDidScroll(_ calendar: JTAppleCalendarView) {
-        print(#function)
-    }
-    
-    func scrollDidEndDecelerating(for calendar: JTAppleCalendarView) {
-        print(#function)
-    }
     
 }

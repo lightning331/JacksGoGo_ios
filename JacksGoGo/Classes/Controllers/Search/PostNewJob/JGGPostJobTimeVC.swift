@@ -8,11 +8,15 @@
 
 import UIKit
 import Toaster
+import AFDateHelper
 
 class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
 
     
     fileprivate var selectedTimeType: Int = 0
+    fileprivate var selectedDate: Date?
+    fileprivate var selectedStartTime: Date?
+    fileprivate var selectedEndTime: Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,10 +56,10 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
                     self.tableView.endUpdates()
                 }
                 cell.dateTapHandler = {
-                    self.showDatePopup()
+                    self.showDatePopup(with: cell.btnDate)
                 }
                 cell.timeTapHandler =  {
-                    
+                    self.showTimePopup(with: cell.btnTime)
                 }
                 return cell
             } else if selectedTimeType == 2 {
@@ -65,7 +69,8 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
                     self.tableView.endUpdates()
                 }
                 cell.dayTapHandler = {
-                    self.showDatePopup()
+
+
                 }
                 cell.clearDaysHandler = {
                     
@@ -76,13 +81,45 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
         return UITableViewCell()
     }
     
-    private func showDatePopup() {
+    private func showDatePopup(with dateButton: UIButton) {
         let datePopupVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGDatePickerPopupVC") as! JGGDatePickerPopupVC
         datePopupVC.themeColorType = .cyan
         datePopupVC.isAbleToMultipleSelect = false
         datePopupVC.doneButtonTitle = LocalizedString("Done")
+        if let selectedDate = selectedDate {
+            datePopupVC.selectedDates = [selectedDate]
+        }
+        datePopupVC.selectDateHandler = { (selectedDates) in
+            if let selectedDate = selectedDates.first {
+                self.selectedDate = selectedDate
+                dateButton.setTitle(selectedDate.toString(format: .custom("MMM d")), for: .normal)
+                dateButton.setTitleColor(UIColor.JGGBlack, for: .normal)
+            }
+        }
         showPopup(viewController: datePopupVC, transitionStyle: .slideFromBottom)
-        
+    }
+    
+    private func showTimePopup(with timeButton: UIButton) {
+        let timePopupVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGAddTimeSlotsPopupVC") as! JGGAddTimeSlotsPopupVC
+        timePopupVC.doneButtonTitle = LocalizedString("Done")
+        timePopupVC.showEndTime = false
+        timePopupVC.selectedStartTime = self.selectedStartTime
+        timePopupVC.selectedEndTime = self.selectedEndTime
+        timePopupVC.selectTimeHandler = { (startTime, endTime, count) in
+            self.selectedStartTime = startTime
+            self.selectedEndTime = endTime
+            var timeString: String = ""
+            if let startTime = startTime {
+                timeString = startTime.timeForJacks()
+            }
+            if let endTime = endTime {
+                timeString.append(" - ")
+                timeString.append(endTime.timeForJacks())
+            }
+            timeButton.setTitle(timeString, for: .normal)
+            timeButton.setTitleColor(UIColor.JGGBlack, for: .normal)
+        }
+        showPopup(viewController: timePopupVC, transitionStyle: .slideFromBottom)
     }
 }
 

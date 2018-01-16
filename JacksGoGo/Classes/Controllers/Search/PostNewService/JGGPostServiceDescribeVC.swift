@@ -42,6 +42,7 @@ class JGGPostServiceDescribeVC: JGGPostAppointmentBaseTableVC {
         iconTakePhoto.isHidden = false
         
         txtServiceTitle.addTarget(self, action: #selector(textFieldDidChanged(_:)), for: .editingChanged)
+        txtServiceTitle.delegate = self
         txtServiceDescribe.delegate = self
         
         txtServiceTitle.text = "Test"
@@ -126,6 +127,13 @@ extension JGGPostServiceDescribeVC: UITextFieldDelegate, UITextViewDelegate {
         if textView == txtServiceDescribe {
             lblServiceDescribe.textColor = UIColor.JGGBlack
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == txtServiceTitle {
+            txtServiceDescribe.becomeFirstResponder()
+        }
+        return true
     }
     
 }

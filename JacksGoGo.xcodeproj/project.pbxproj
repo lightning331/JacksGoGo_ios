@@ -144,6 +144,8 @@
 		FF86D11F1FC4BCB300EE70F5 /* JGGCalendarDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF86D11D1FC4BCB300EE70F5 /* JGGCalendarDayCell.xib */; };
 		FF86D1211FC4D4D000EE70F5 /* JGGServiceDetailTimeSlotsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86D1201FC4D4D000EE70F5 /* JGGServiceDetailTimeSlotsVC.swift */; };
 		FF86FA34200A110900CF580B /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86FA33200A110900CF580B /* Date.swift */; };
+		FF86FA36200A91BE00CF580B /* JGGWeeklySelectPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86FA35200A91BE00CF580B /* JGGWeeklySelectPickerVC.swift */; };
+		FF86FA38200A9B6200CF580B /* JGGMonthlySelectPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86FA37200A9B6200CF580B /* JGGMonthlySelectPickerVC.swift */; };
 		FF9381931FF493DE005699C3 /* Jobs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9381911FF493DE005699C3 /* Jobs.storyboard */; };
 		FF9381951FF494D4005699C3 /* JGGSelectJobCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9381941FF494D4005699C3 /* JGGSelectJobCategoryVC.swift */; };
 		FF9381971FF494ED005699C3 /* JGGPostJobRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9381961FF494ED005699C3 /* JGGPostJobRootVC.swift */; };
@@ -420,6 +422,8 @@
 		FF86D11D1FC4BCB300EE70F5 /* JGGCalendarDayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGCalendarDayCell.xib; sourceTree = "<group>"; };
 		FF86D1201FC4D4D000EE70F5 /* JGGServiceDetailTimeSlotsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceDetailTimeSlotsVC.swift; sourceTree = "<group>"; };
 		FF86FA33200A110900CF580B /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		FF86FA35200A91BE00CF580B /* JGGWeeklySelectPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGWeeklySelectPickerVC.swift; sourceTree = "<group>"; };
+		FF86FA37200A9B6200CF580B /* JGGMonthlySelectPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGMonthlySelectPickerVC.swift; sourceTree = "<group>"; };
 		FF9381921FF493DE005699C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Jobs.storyboard; sourceTree = "<group>"; };
 		FF9381941FF494D4005699C3 /* JGGSelectJobCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSelectJobCategoryVC.swift; sourceTree = "<group>"; };
 		FF9381961FF494ED005699C3 /* JGGPostJobRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGPostJobRootVC.swift; sourceTree = "<group>"; };
@@ -1337,6 +1341,8 @@
 				FF9381A01FF54C20005699C3 /* JGGPostJobPriceVC.swift */,
 				FF9381A21FF55AF4005699C3 /* JGGPostJobReportVC.swift */,
 				FF9381A41FF55C94005699C3 /* JGGPostJobSummaryVC.swift */,
+				FF86FA35200A91BE00CF580B /* JGGWeeklySelectPickerVC.swift */,
+				FF86FA37200A9B6200CF580B /* JGGMonthlySelectPickerVC.swift */,
 			);
 			path = PostNewJob;
 			sourceTree = "<group>";
@@ -1708,6 +1714,7 @@
 				FFB27A2C1FD19D1B009A2201 /* FooterView.swift in Sources */,
 				FF7C993E1FB35DEE00A2E5E4 /* JGGEditJobNC.swift in Sources */,
 				FF849E0A1FD734A2003EB83A /* JGGPostServiceTimeSlotsDetailVC.swift in Sources */,
+				FF86FA38200A9B6200CF580B /* JGGMonthlySelectPickerVC.swift in Sources */,
 				FFB5ED581FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift in Sources */,
 				FFFC213F1FB5C0AA00AAA6F7 /* JGGBidDetailVC.swift in Sources */,
 				FF849DF41FD6EFBF003EB83A /* JGGSkillTestQuestionCell.swift in Sources */,
@@ -1764,6 +1771,7 @@
 				63DBC8B11FA0356000AAECA8 /* UIFont.swift in Sources */,
 				FFEE43FD200645E200B07A7B /* DateFormatter.swift in Sources */,
 				FFB594121FDB29DC00D12A1F /* JGGSearchVC.swift in Sources */,
+				FF86FA36200A91BE00CF580B /* JGGWeeklySelectPickerVC.swift in Sources */,
 				63BE91F51FA0286C00D40C07 /* JGGAppointmentsTableVC.swift in Sources */,
 				FF9381A11FF54C20005699C3 /* JGGPostJobPriceVC.swift in Sources */,
 				63B755E61FA1BDB30032B4F1 /* JGGAppointmentBaseModel.swift in Sources */,

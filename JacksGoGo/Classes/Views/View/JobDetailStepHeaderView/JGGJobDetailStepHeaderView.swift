@@ -197,6 +197,24 @@ class JGGJobDetailStepHeaderView: UIView {
         }
     }
     
+    func selectStep(index: Int) {
+        switch index {
+        case 0:
+            selectButton(btnFirst)
+            break
+        case 1:
+            selectButton(btnSecond)
+            break
+        case 2:
+            selectButton(btnThird)
+            break
+        case 3:
+            selectButton(btnFourth)
+            break
+        default:
+            break
+        }
+    }
 }
 
 protocol JGGAppointmentDetailStepHeaderViewDelegate {

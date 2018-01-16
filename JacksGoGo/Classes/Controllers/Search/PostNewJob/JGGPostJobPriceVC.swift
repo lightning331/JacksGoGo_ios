@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toaster
 
 class JGGPostJobPriceVC: JGGPostAppointmentBaseTableVC {
 
@@ -37,6 +38,29 @@ class JGGPostJobPriceVC: JGGPostAppointmentBaseTableVC {
         viewRangeMaxAmount.isHidden = true
 
         btnNext.isHidden = false
+    }
+    
+    override func onPressedNext(_ sender: UIButton) {
+        if selectedPriceType == 0 {
+            Toast(text: LocalizedString("Please set job budget."), delay: 0, duration: 3).show()
+            return
+        } else {
+            if selectedPriceType == 2 {
+                guard let fixedAmountString = txtFixedAmount.text, let _ = Double(fixedAmountString) else {
+                    Toast(text: LocalizedString("Please enter correct amount for fixed job."), delay: 0, duration: 3).show()
+                    return
+                }
+            }
+            else if selectedPriceType == 3 {
+                guard let minAmountString = txtRangeMinAmount.text, let minAmount = Double(minAmountString),
+                    let maxAmountString = txtRangeMaxAmount.text, let maxAmount = Double(maxAmountString),
+                    minAmount <= maxAmount else {
+                    Toast(text: LocalizedString("Please enter correct amount for flexible job."), delay: 0, duration: 3).show()
+                    return
+                }
+            }
+        }
+        super.onPressedNext(sender)
     }
     
     @IBAction private func onPressedPriceType(_ sender: JGGYellowSelectingButton) {

@@ -50,4 +50,21 @@ extension Date {
             return toString(dateStyle: .none, timeStyle: .short)
         }
     }
+    
+    static func weekname(for number: Int) -> String? {
+        let days = [
+            LocalizedString("Sunday"),
+            LocalizedString("Monday"),
+            LocalizedString("Tuesday"),
+            LocalizedString("Wednesday"),
+            LocalizedString("Thursday"),
+            LocalizedString("Friday"),
+            LocalizedString("Saturday")
+        ]
+        if 0 <= number && number < days.count {
+            return days[number]
+        } else {
+            return nil
+        }
+    }
 }

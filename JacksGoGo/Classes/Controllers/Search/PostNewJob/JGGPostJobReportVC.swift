@@ -17,6 +17,7 @@ class JGGPostJobReportVC: JGGEditJobReportVC {
     
     override func onPressedNext(_ sender: UIButton) {
         if let parentVC = parent as? JGGPostJobStepRootVC {
+            parentVC.postJobStepView.completeCurrentStep()
             parentVC.gotoSummaryVC()
         }
     }

@@ -127,4 +127,12 @@ class JGGJobPostStepHeaderView: JGGJobDetailStepHeaderView {
             super.nextStep()
         }
     }
+    
+    override func selectStep(index: Int) {
+        if index == 4 {
+            selectButton(btnFifth)
+        } else {
+            super.selectStep(index: index)
+        }
+    }
 }

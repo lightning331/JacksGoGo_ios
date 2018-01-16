@@ -47,6 +47,7 @@ class JGGAddTimeSlotsPopupVC: JGGPopupBaseVC {
     var selectedEndTime: Date?
     var selectTimeHandler: ((Date?, Date?, Int?) -> Void)?
     
+    // MARK: Private properties
     fileprivate var startHour: Int = 0
     fileprivate var startMinute: Int = 0
     fileprivate var startAM: Bool = true
@@ -54,6 +55,8 @@ class JGGAddTimeSlotsPopupVC: JGGPopupBaseVC {
     fileprivate var endMinute: Int = 0
     fileprivate var endAM: Bool = true
     fileprivate var numberOfPax: Int = 1
+    
+    // MARK: - Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()

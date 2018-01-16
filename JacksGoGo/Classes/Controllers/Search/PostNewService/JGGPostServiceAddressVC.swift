@@ -13,16 +13,19 @@ class JGGPostServiceAddressVC: JGGPostAppointmentBaseTableVC {
     @IBOutlet weak var txtUnits: UITextField!
     @IBOutlet weak var txtStreet: UITextField!
     @IBOutlet weak var txtPostcode: UITextField!
-    @IBOutlet weak var btnDontShowFullAddress: UIButton!
+    @IBOutlet weak var btnDontShowFullAddress: UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        txtUnits.delegate = self
+        txtStreet.delegate = self
+        txtPostcode.delegate = self
+        
+        txtUnits.text = nil
+        txtStreet.text = nil
+        txtPostcode.text = nil
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     @IBAction func onPressedDontShowMyFullAddress(_ sender: UIButton) {
@@ -43,4 +46,20 @@ class JGGPostServiceAddressVC: JGGPostAppointmentBaseTableVC {
     }
 
     
+}
+
+extension JGGPostServiceAddressVC: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField ==  txtUnits {
+            txtStreet.becomeFirstResponder()
+        }
+        else if textField == txtStreet {
+            txtPostcode.becomeFirstResponder()
+        }
+        else if textField == txtPostcode {
+            txtPostcode.resignFirstResponder()
+        }
+        return true
+    }
 }

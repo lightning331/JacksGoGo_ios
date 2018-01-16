@@ -20,6 +20,7 @@ class JGGPostJobStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderVie
     @IBOutlet weak var containerReport: UIView!
 
     var selectedCategory: JGGCategoryModel!
+    lazy var creatingJob: JGGJobModel = JGGJobModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,7 @@ class JGGPostJobStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderVie
         }
         postJobStepView.setCompletedStep(describe: false, time: false, address: false, budget: false, report: false)
 
+        mainScrollView.isScrollEnabled = false
     }
     
     func jobDetailStep(selected: Int) {

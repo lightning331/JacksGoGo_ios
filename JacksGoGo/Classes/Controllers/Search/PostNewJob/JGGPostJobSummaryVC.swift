@@ -32,14 +32,28 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     @IBAction func onPressedStep(_ sender: UIButton) {
+        if let stepRootVC = self.navigationController?.viewControllers.first as? JGGPostJobStepRootVC {
+            var index: Int = 0
+            if sender == btnDescribe {
+                index = 0
+            }
+            else if sender == btnTime {
+                index = 1
+            }
+            else if sender == btnAddress {
+                index = 2
+            }
+            else if sender == btnBudget {
+                index = 3
+            }
+            else if sender == btnReport {
+                index = 4
+            }
+            stepRootVC.postJobStepView.selectStep(index: index)
+        }
         self.navigationController?.popViewController(animated: true)
     }
     

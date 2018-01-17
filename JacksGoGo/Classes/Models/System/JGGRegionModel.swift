@@ -17,7 +17,10 @@ class JGGRegionModel: JGGBaseModel {
     var image: String?
     var currency: JGGCurrencyModel?
     
-    override init(json: JSON) {
+    override init?(json: JSON?) {
+        guard let json = json else {
+            return nil
+        }
         super.init(json: json)
         name         = json["RegionName"].stringValue
         currencyCode = json["CurrencyCode"].stringValue

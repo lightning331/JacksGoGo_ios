@@ -21,15 +21,28 @@ class JGGPostServiceDescribeVC: JGGPostAppointmentBaseTableVC {
     @IBOutlet weak var btnTakePhotos: UIButton!
     @IBOutlet weak var iconTakePhoto: UIImageView!
     
-    fileprivate var selectedImages: [TLPHAsset] = []
+    internal var selectedImages: [(TLPHAsset, UIImage?)] = []
     var originalImages: [URL] = []
+    
+    private var isChangedImage: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initUI()
+        
+        if SHOW_TEMP_DATA {
+            showTemporaryData()
+        }
     }
     
+    private func showTemporaryData() {
+        txtServiceTitle.text = "Test"
+        txtServiceDescribe.text = "Temporary description"
+        txtTags.text = "cooking, meats"
+    }
+    
+
     private func initUI() {
         
         collectionPhotos.register(UINib(nibName: "JGGPictureCell", bundle: nil),
@@ -45,15 +58,13 @@ class JGGPostServiceDescribeVC: JGGPostAppointmentBaseTableVC {
         txtServiceTitle.delegate = self
         txtServiceDescribe.delegate = self
         
-        txtServiceTitle.text = "Test"
-        txtServiceDescribe.text = "Temporary description"
     }
     
     @IBAction func onPressedTakePhoto(_ sender: Any) {
         
         let photoPicker = JGGCustomPhotoPickerVC()
         photoPicker.delegate = self
-        photoPicker.selectedAssets = self.selectedImages
+        photoPicker.selectedAssets = self.selectedImages.flatMap { $0.0 }
         photoPicker.didExceedMaximumNumberOfSelection = { [weak self] (picker) in
             self?.showAlert(title: LocalizedString("Warning"),
                             message: LocalizedString("Exceed Maximum Number Of Selection"))
@@ -140,7 +151,7 @@ extension JGGPostServiceDescribeVC: UITextFieldDelegate, UITextViewDelegate {
 
 extension JGGPostServiceDescribeVC: TLPhotosPickerViewControllerDelegate {
     func dismissPhotoPicker(withTLPHAssets: [TLPHAsset]) {
-        self.selectedImages = withTLPHAssets
+        self.selectedImages = withTLPHAssets.flatMap { ($0, $0.fullResolutionImage) }
         if withTLPHAssets.count > 0 {
             collectionPhotos.isHidden = false
             btnTakePhotos.isHidden = true
@@ -164,7 +175,7 @@ extension JGGPostServiceDescribeVC: UICollectionViewDataSource, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "JGGPictureCell", for: indexPath) as! JGGPictureCell
         if indexPath.row < selectedImages.count {
-            cell.imageView.image = selectedImages[indexPath.row].fullResolutionImage
+            cell.imageView.image = selectedImages[indexPath.row].1
         } else {
             cell.imageView.image = UIImage(named: "icon_add_photo_green")
         }
@@ -176,8 +187,8 @@ extension JGGPostServiceDescribeVC: UICollectionViewDataSource, UICollectionView
         if indexPath.row < selectedImages.count {
             let images =
                 self.selectedImages
-                    .filter { $0.fullResolutionImage != nil }
-                    .map { LightboxImage(image: $0.fullResolutionImage!, text: "") }
+                    .filter { $0.1 != nil }
+                    .map { LightboxImage(image: $0.1!, text: "") }
             
             LightboxConfig.CloseButton.image = UIImage(named: "button_close_round_green")
             LightboxConfig.CloseButton.text = ""
@@ -186,6 +197,7 @@ extension JGGPostServiceDescribeVC: UICollectionViewDataSource, UICollectionView
             controller.pageDelegate = self
             controller.dismissalDelegate = self
             controller.dynamicBackground = true
+            isChangedImage = false
             
             present(controller, animated: true, completion: nil)
         } else {
@@ -206,8 +218,15 @@ extension JGGPostServiceDescribeVC: LightboxControllerPageDelegate, LightboxCont
         
     }
     
+    func lightboxController(_ controller: LightboxController, didChange image: UIImage?, of page: Int) {
+        isChangedImage = true
+        selectedImages[page].1 = image
+    }
+    
     func lightboxControllerWillDismiss(_ controller: LightboxController) {
-        
+        if isChangedImage {
+            self.collectionPhotos.reloadData()
+        }
     }
 }
 

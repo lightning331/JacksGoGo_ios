@@ -219,4 +219,10 @@ class JGGJobDetailStepHeaderView: UIView {
 
 protocol JGGAppointmentDetailStepHeaderViewDelegate {
     func jobDetailStep(selected: Int) -> Void
+    func jobDetailStepWillGotoNext(_ nextIndex: Int) -> Bool
+}
+
+extension JGGAppointmentDetailStepHeaderViewDelegate {
+    func jobDetailStep(selected: Int) -> Void { }
+    func jobDetailStepWillGotoNext(_ nextIndex: Int) -> Bool { return true }
 }

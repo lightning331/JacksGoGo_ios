@@ -12,13 +12,15 @@ class JGGPostJobDescribeVC: JGGPostServiceDescribeVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
 
+    override func updateData(_ sender: Any) {
+        if let parentVC = parent as? JGGPostJobStepRootVC {
+            let creatingJob = parentVC.creatingJob
+            creatingJob.title = txtServiceTitle.text
+            creatingJob.description_ = txtServiceDescribe.text
+            creatingJob.tags = txtTags.text
+            creatingJob.attachmentImages = selectedImages.flatMap { $0.1 }
+        }
+    }
 }

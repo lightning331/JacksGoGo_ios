@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+public enum JGGJobType: Int {
+    case none = -1
+    case repeating = 0
+    case oneTime = 1
+}
+
+public enum JGGRepetitionType: Int {
+    case none = -1
+    case weekly = 0
+    case monthly = 1
+}

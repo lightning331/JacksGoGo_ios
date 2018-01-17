@@ -24,7 +24,10 @@ class JGGServiceModel: JGGAppointmentBaseModel, MKAnnotation {
     
     var subtitle: String?
     
-    override init(json: JSON) {
+    override init?(json: JSON?) {
+        guard let json = json else {
+            return nil
+        }
         coordinate = CLLocationCoordinate2DMake(0, 0)
         super.init(json: json)
         

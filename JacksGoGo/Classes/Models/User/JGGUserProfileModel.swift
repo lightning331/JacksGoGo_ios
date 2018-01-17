@@ -97,7 +97,10 @@ class JGGUserProfileModel: JGGBaseModel {
     var billingMobileNoNumber : String?
     var billingMobileNoExtension : String?
 
-    override init(json: JSON) {
+    override init?(json: JSON?) {
+        guard let json = json else {
+            return nil
+        }
         super.init(json: json)
         region                      = JGGRegionModel(json: json[Region])
         user                        = JGGUserBaseModel(json: json[User])

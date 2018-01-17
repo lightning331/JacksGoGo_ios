@@ -77,7 +77,10 @@ class JGGUserBaseModel: JGGBaseModel {
         super.init()
     }
     
-    override init(json: JSON) {
+    override init?(json: JSON?) {
+        guard let json = json else {
+            return nil
+        }
         super.init(json: json)
         surName             = json[Surname].string
         givenName           = json[GivenName].string

@@ -38,15 +38,23 @@ class JGGPostJobPriceVC: JGGPostAppointmentBaseTableVC {
         viewRangeMaxAmount.isHidden = true
 
         btnNext.isHidden = false
+        if SHOW_TEMP_DATA {
+            showTemporaryData()
+        }
     }
     
+    private func showTemporaryData() {
+        selectedPriceType = 2
+        txtFixedAmount.text = "50.5"
+    }
+
     override func onPressedNext(_ sender: UIButton) {
         if selectedPriceType == 0 {
             Toast(text: LocalizedString("Please set job budget."), delay: 0, duration: 3).show()
             return
         } else {
             if selectedPriceType == 2 {
-                guard let fixedAmountString = txtFixedAmount.text, let _ = Double(fixedAmountString) else {
+                guard let fixedAmountString = txtFixedAmount.text, let amount = Double(fixedAmountString), amount > 0 else {
                     Toast(text: LocalizedString("Please enter correct amount for fixed job."), delay: 0, duration: 3).show()
                     return
                 }
@@ -54,13 +62,31 @@ class JGGPostJobPriceVC: JGGPostAppointmentBaseTableVC {
             else if selectedPriceType == 3 {
                 guard let minAmountString = txtRangeMinAmount.text, let minAmount = Double(minAmountString),
                     let maxAmountString = txtRangeMaxAmount.text, let maxAmount = Double(maxAmountString),
-                    minAmount <= maxAmount else {
+                    ((maxAmount > 0) && (minAmount <= maxAmount)) else {
                     Toast(text: LocalizedString("Please enter correct amount for flexible job."), delay: 0, duration: 3).show()
                     return
                 }
             }
         }
+        
         super.onPressedNext(sender)
+
+    }
+    
+    override func updateData(_ sender: Any) {
+        if let parentVC = parent as? JGGPostJobStepRootVC {
+            let creatingJob = parentVC.creatingJob
+            creatingJob.budget = nil
+            creatingJob.budgetFrom = nil
+            creatingJob.budgetTo = nil
+            if selectedPriceType == 2 {
+                creatingJob.budget = Double(txtFixedAmount.text ?? "0")
+            }
+            else if selectedPriceType == 3 {
+                creatingJob.budgetFrom = Double(txtRangeMinAmount.text ?? "0")
+                creatingJob.budgetTo = Double(txtRangeMaxAmount.text ?? "0")
+            }
+        }
     }
     
     @IBAction private func onPressedPriceType(_ sender: JGGYellowSelectingButton) {

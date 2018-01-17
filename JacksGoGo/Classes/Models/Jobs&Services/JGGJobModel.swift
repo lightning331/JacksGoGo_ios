@@ -21,6 +21,10 @@ class JGGJobModel: JGGAppointmentBaseModel {
     internal let ExpiredOn = "ExpiredOn"
     internal let ReportType = "ReportType"
     internal let IsRescheduled = "IsRescheduled"
+    internal let JobType = "JobType"
+    internal let RepetitionType = "RepetitionType"
+    internal let Repetition = "Repetition"
+    internal let JobTime = "Repetition"
     
     var categoryId: String!
     var isRequest: Bool?
@@ -32,6 +36,10 @@ class JGGJobModel: JGGAppointmentBaseModel {
     var expiredOn: Date?
     var reportType: Int = 0
     var isRescheduled: Bool?
+    var jobType: JGGJobType = .none
+    var jobTime: JGGJobTimeModel?
+    var repetitionType: JGGRepetitionType = .none
+    var repetition: String?
     
     override var type: AppointmentType {
         return .jobs
@@ -44,7 +52,10 @@ class JGGJobModel: JGGAppointmentBaseModel {
         super.init()
     }
     
-    override init(json: JSON) {
+    override init?(json: JSON?) {
+        guard let json = json else {
+            return nil
+        }
         super.init(json: json)
         categoryId = json[JobCategoryID].stringValue
         isRequest = json[IsRequest].bool
@@ -56,6 +67,10 @@ class JGGJobModel: JGGAppointmentBaseModel {
         expiredOn = json[ExpiredOn].dateObject
         reportType = json[ReportType].intValue
         isRescheduled = json[IsRescheduled].bool
+        jobType = JGGJobType(rawValue: json[JobType].intValue) ?? .none
+        jobTime = JGGJobTimeModel(json: json[JobTime])
+        repetitionType = JGGRepetitionType(rawValue: json[RepetitionType].intValue) ?? .none
+        repetition = json[Repetition].string
     }
     
     override func json() -> JSON {
@@ -70,6 +85,38 @@ class JGGJobModel: JGGAppointmentBaseModel {
         json[ExpiredOn].dateObject = expiredOn
         json[ReportType].intValue = reportType
         json[IsRescheduled].bool = isRescheduled
+        json[JobType].intValue = jobType.rawValue
+        if let jobTime = jobTime {
+            json[JobTime] = jobTime.json()
+        }
+        json[RepetitionType].intValue = repetitionType.rawValue
+        json[Repetition].string = repetition
         return json
     }
+    
+    var reportTypeName: String? {
+        switch reportType {
+        case 1:
+            return LocalizedString("Before & After Photo")
+        case 2:
+            return LocalizedString("Geotracking")
+        case 3:
+            return LocalizedString("Before & After Photo") + ", " + LocalizedString("Geotracking")
+        case 4:
+            return LocalizedString("PIN Code")
+        case 5:
+            return LocalizedString("Before & After Photo") + ", " + LocalizedString("PIN Code")
+        case 6:
+            return LocalizedString("Geotracking") + ", " + LocalizedString("PIN Code")
+        case 7:
+            return LocalizedString("Before & After Photo") + ", " + LocalizedString("Geotracking") + ", " + LocalizedString("PIN Code")
+        default:
+            return LocalizedString("No set")
+        }
+    }
+}
+
+class JGGCreateJobModel: JGGJobModel {
+    var attachmentImages: [UIImage]?
+    
 }

@@ -19,7 +19,10 @@ class JGGModifyInfoModel: NSObject {
     var modifyAt: Date?
     var isActive: Bool?
     
-    init(json: JSON) {
+    init?(json: JSON?) {
+        guard let json = json else {
+            return nil
+        }
         super.init()
         createdBy = json["CeateBy"].string
         createdById = json["CreateByID"].string

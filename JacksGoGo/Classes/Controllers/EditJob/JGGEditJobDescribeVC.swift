@@ -151,6 +151,10 @@ extension JGGEditJobDescribeVC: LightboxControllerPageDelegate, LightboxControll
         
     }
     
+    func lightboxController(_ controller: LightboxController, didChange image: UIImage?, of page: Int) {
+        
+    }
+    
     func lightboxControllerWillDismiss(_ controller: LightboxController) {
         
     }

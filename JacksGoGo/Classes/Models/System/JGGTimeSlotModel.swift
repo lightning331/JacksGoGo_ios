@@ -23,7 +23,10 @@ class JGGTimeSlotModel: NSObject {
         super.init()
     }
     
-    init(json: JSON) {
+    init?(json: JSON?) {
+        guard let json = json else {
+            return nil
+        }
         super.init()
         sessionStartOn = json[SessionStartOn].dateObject
         sessionEndOn   = json[SessionEndOn].dateObject

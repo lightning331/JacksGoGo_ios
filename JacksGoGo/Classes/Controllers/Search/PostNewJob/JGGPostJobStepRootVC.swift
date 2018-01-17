@@ -20,11 +20,16 @@ class JGGPostJobStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderVie
     @IBOutlet weak var containerReport: UIView!
 
     var selectedCategory: JGGCategoryModel!
-    lazy var creatingJob: JGGJobModel = JGGJobModel()
+    lazy var creatingJob: JGGCreateJobModel = JGGCreateJobModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        creatingJob.categoryId = selectedCategory.id
+        creatingJob.userProfileId = appManager.currentUser?.id
+        creatingJob.regionId = appManager.currentRegion?.id
+        creatingJob.currencyCode = appManager.currentRegion?.currencyCode
+        
         postJobStepView =
             UINib(nibName: "JGGJobPostStepHeaderView", bundle: nil)
                 .instantiate(withOwner: nil, options: nil)
@@ -64,6 +69,7 @@ class JGGPostJobStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderVie
     
     func gotoSummaryVC() -> Void {
         let summaryVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGPostJobSummaryVC") as! JGGPostJobSummaryVC
+        summaryVC.creatingJob = self.creatingJob
         self.navigationController?.pushViewController(summaryVC, animated: true)
     }
 

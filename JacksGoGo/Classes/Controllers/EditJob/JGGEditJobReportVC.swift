@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JGGEditJobReportVC: JGGEditJobBaseTableVC {
+class JGGEditJobReportVC: JGGPostAppointmentBaseTableVC {
 
     @IBOutlet weak var viewBeforeAndAfterPhoto: UIView!
     @IBOutlet weak var lblBeforeTitle: UILabel!
@@ -22,7 +22,7 @@ class JGGEditJobReportVC: JGGEditJobBaseTableVC {
     @IBOutlet weak var lblPinCodeTitle: UILabel!
     @IBOutlet weak var lblPinCodeDescription: UILabel!
     
-    fileprivate var selectedViews: [UIView] = []
+    internal lazy var selectedViews: [UIView] = []
     internal lazy var defaultColor: UIColor = UIColor.JGGGreen
     
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class JGGEditJobReportVC: JGGEditJobBaseTableVC {
         resetButtons()
     }
     
-    fileprivate func resetButtons() {
+    internal func resetButtons() {
         for label in [lblBeforeTitle, lblGeotrackingTitle, lblPinCodeTitle] {
             label?.textColor = defaultColor
             label?.tag = 120
@@ -52,7 +52,7 @@ class JGGEditJobReportVC: JGGEditJobBaseTableVC {
         }
     }
 
-    @objc fileprivate func onPressReportType(_ sender: UITapGestureRecognizer) {
+    @objc internal func onPressReportType(_ sender: UITapGestureRecognizer) {
         if let view = sender.view {
             if let index = selectedViews.index(of: view) {
                 view.borderColor = defaultColor

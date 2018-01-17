@@ -25,9 +25,16 @@ class JGGPostAppointmentBaseTableVC: JGGTableViewController {
             parentVC.isEditMode == false {
 //            self.tableView.tableFooterView = nil
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(updateData(_:)), name: NSNotification.Name(rawValue: "UpdateData"), object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "UpdateData"), object: nil)
     }
     
     @IBAction func onPressedNext(_ sender: UIButton) {
+        updateData(self)
         if let parentVC = parent as? JGGPostServiceStepRootVC {
             parentVC.postServiceStepView.completeCurrentStep()
             parentVC.postServiceStepView.nextStep()
@@ -35,6 +42,10 @@ class JGGPostAppointmentBaseTableVC: JGGTableViewController {
             parentVC.postJobStepView.completeCurrentStep()
             parentVC.postJobStepView.nextStep()
         }
+    }
+    
+    @objc internal func updateData(_ sender: Any) {
+        
     }
     
     // MARK: - Table view data source

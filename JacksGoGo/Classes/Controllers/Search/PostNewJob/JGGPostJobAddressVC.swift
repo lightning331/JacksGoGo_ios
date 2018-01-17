@@ -20,8 +20,18 @@ class JGGPostJobAddressVC: JGGPostServiceAddressVC {
         
         txtPlaceName.delegate = self
         
+        if SHOW_TEMP_DATA {
+            showTemporaryData()
+        }
     }
     
+    private func showTemporaryData() {
+        txtPlaceName.text = "My home"
+        txtUnits.text = "20"
+        txtStreet.text = "wanchingru 200"
+        txtPostcode.text = "118000"
+    }
+
     override func onPressedNext(_ sender: UIButton) {
         if let unit = txtUnits.text, let street = txtStreet.text, let postalCode = txtPostcode.text {
             if unit.count > 0 && street.count > 0 && postalCode.count > 0 {
@@ -30,6 +40,19 @@ class JGGPostJobAddressVC: JGGPostServiceAddressVC {
             }
         }
         Toast(text: LocalizedString("Please enter where do you need the service."), delay: 0, duration: 3).show()
+    }
+    
+    override func updateData(_ sender: Any) {
+        if let parentVC = parent as? JGGPostJobStepRootVC {
+            let addressModel = JGGAddressModel()
+            addressModel.unit = txtUnits.text
+            addressModel.floor = txtPlaceName.text
+            addressModel.address = txtStreet.text
+            addressModel.postalCode = txtPostcode.text
+            
+            let creatingJob = parentVC.creatingJob
+            creatingJob.address = addressModel
+        }
     }
     
     override func textFieldShouldReturn(_ textField: UITextField) -> Bool {

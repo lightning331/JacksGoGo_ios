@@ -35,7 +35,10 @@ class JGGAddressModel: NSObject {
         super.init()
     }
     
-    init(json: JSON) {
+    init?(json: JSON?) {
+        guard let json = json else {
+            return nil
+        }
         super.init()
         unit        = json[Unit].string
         floor       = json[Floor].string
@@ -60,6 +63,29 @@ class JGGAddressModel: NSObject {
         json[Longitude].double  = lon
         json[CountryCode].string = countryCode
         return json
+    }
+    
+    var fullName: String {
+        var fullName: String = ""
+        if let unit = unit {
+            fullName += unit + " "
+        }
+        if let floor = floor {
+            fullName += floor + " "
+        }
+        if let address = address {
+            fullName += address + ", "
+        }
+        if let city = city {
+            fullName += city + ", "
+        }
+        if let state = state {
+            fullName += state + ", "
+        }
+        if let postalCode = postalCode {
+            fullName += postalCode
+        }
+        return fullName
     }
     
 }

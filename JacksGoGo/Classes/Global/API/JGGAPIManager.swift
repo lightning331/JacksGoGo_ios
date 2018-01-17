@@ -11,10 +11,15 @@ import Alamofire
 import AlamofireObjectMapper
 import SwiftyJSON
 
+private let SUCCESS_KEY                  = "Success"
+private let VALUE_KEY                    = "Value"
+private let MESSAGE_KEY                  = "Message"
+
 class JGGAPIManager: NSObject {
 
     private let HEADER_AUTHORIZATION         = "Authorization"
     private let HEADER_VALUE_PREFIX          = "Bearer"
+    
     
     static let sharedManager : JGGAPIManager = {
         let instance = JGGAPIManager()
@@ -48,35 +53,47 @@ class JGGAPIManager: NSObject {
     }
     
     func upload(url: String, data: Data, progressClosure: ProgressClosure? = nil, complete: @escaping StringStringClosure) {
-        var header: [String: String]?
-        if let token = self.getToken() {
-            header = [
-                HEADER_AUTHORIZATION : HEADER_VALUE_PREFIX + " " + token,
-            ]
-        }
-        Alamofire
-            .upload(data, to: url, method: .post, headers: header)
-            .uploadProgress(closure: { (progress) in
-                if let progressClosure = progressClosure {
-                    let percent = Float(progress.completedUnitCount) / Float(progress.totalUnitCount)
-                    progressClosure(percent)
-                }
-            })
-            .responseJSON(completionHandler: { (response) in
-                switch response.result {
-                case .success(let data):
-                    let result = JSON(data)
-                    if let success = result["Success"].bool, success == true {
-                        complete(result["Value"].string, nil)
-                    } else {
-                        complete(nil, result["Message"].string)
+//        var header: [String: String]?
+//        if let token = self.getToken() {
+//            header = [
+//                HEADER_AUTHORIZATION : HEADER_VALUE_PREFIX + " " + token,
+//            ]
+//        }
+        
+        
+        Alamofire.upload(multipartFormData: { (formData) in
+            formData.append(data, withName: "image", mimeType: "image/jpg")
+        }, to: url) { (result) in
+            switch result {
+            case .success(let upload, _, _):
+                
+                upload.uploadProgress(closure: { (progress) in
+                    if let progressClosure = progressClosure {
+                        let percent = Float(progress.completedUnitCount) / Float(progress.totalUnitCount)
+                        progressClosure(percent)
                     }
-                    break
-                case .failure(let error):
-                    complete(nil, error.localizedDescription)
-                    break
+                })
+                
+                upload.responseJSON { response in
+                    switch response.result {
+                    case .success(let data):
+                        let result = JSON(data)
+                        if let success = result[SUCCESS_KEY].bool, success == true {
+                            complete(result[VALUE_KEY].string, nil)
+                        } else {
+                            complete(nil, result[MESSAGE_KEY].string)
+                        }
+                        break
+                    case .failure(let error):
+                        complete(nil, error.localizedDescription)
+                        break
+                    }
                 }
-            })
+                
+            case .failure(let encodingError):
+                complete(nil, encodingError.localizedDescription)
+            }
+        }
     }
     
     /**
@@ -228,12 +245,12 @@ class JGGAPIManager: NSObject {
         ]
         POST(url: URLManager.Account.Login, body: body) { (json, error) in
             if let response = json {
-                let success = response["Success"].boolValue
+                let success = response[SUCCESS_KEY].boolValue
                 if success {
-                    let user = JGGUserBaseModel(json: response["Value"])
+                    let user = JGGUserBaseModel(json: response[VALUE_KEY])
                     complete(user, nil)
                 } else {
-                    let errorMessage = response["Message"].stringValue
+                    let errorMessage = response[MESSAGE_KEY].stringValue
                     complete(nil, errorMessage)
                 }
             } else if let error = error {
@@ -252,12 +269,12 @@ class JGGAPIManager: NSObject {
             ]
         POST(url: URLManager.Account.Register, body: body) { (json, error) in
             if let response = json {
-                let success = response["Success"].boolValue
+                let success = response[SUCCESS_KEY].boolValue
                 
                 if success {
                     self.oauthToken(user: email, password: password, complete: complete)
                 } else {
-                    let message = response["Message"].stringValue
+                    let message = response[MESSAGE_KEY].stringValue
                     complete(success, message)
                 }
                 
@@ -276,8 +293,8 @@ class JGGAPIManager: NSObject {
         ]
         POST(url: URLManager.Account.AddPhoneNumber, body: body) { (json, error) in
             if let response = json {
-                let success = response["Success"].boolValue
-                let message = response["Message"].stringValue
+                let success = response[SUCCESS_KEY].boolValue
+                let message = response[MESSAGE_KEY].stringValue
                 complete(success, message)
             } else if let error = error {
                 print(error)
@@ -295,12 +312,12 @@ class JGGAPIManager: NSObject {
         ]
         POST(url: URLManager.Account.VerifyCode, body: body) { (json, error) in
             if let response = json {
-                let success = response["Success"].boolValue
+                let success = response[SUCCESS_KEY].boolValue
                 if success {
-                    let user = JGGUserBaseModel(json: response["Value"])
+                    let user = JGGUserBaseModel(json: response[VALUE_KEY])
                     complete(user, nil)
                 } else {
-                    let errorMessage = response["Message"].stringValue
+                    let errorMessage = response[MESSAGE_KEY].stringValue
                     complete(nil, errorMessage)
                 }
             } else if let error = error {
@@ -325,8 +342,8 @@ class JGGAPIManager: NSObject {
             body["RegionID"] = regionId
             POST(url: URLManager.User.EditProfile, body: body) { (json, error) in
                 if let response = json {
-                    let success = response["Success"].boolValue
-                    let message = response["Message"].stringValue
+                    let success = response[SUCCESS_KEY].boolValue
+                    let message = response[MESSAGE_KEY].stringValue
                     complete(success, message)
                 } else if let error = error {
                     print(error)
@@ -344,12 +361,13 @@ class JGGAPIManager: NSObject {
     func getRegions(_ complete: @escaping RegionListClosure) -> Void {
         GET(url: URLManager.System.GetRegions, params: nil) { (json, error) in
             if let response = json {
-                let success = response["Success"].boolValue
+                let success = response[SUCCESS_KEY].boolValue
                 if success {
                     var regions: [JGGRegionModel] = []
-                    for jsonRegion in response["Value"].arrayValue {
-                        let region = JGGRegionModel(json: jsonRegion)
-                        regions.append(region)
+                    for jsonRegion in response[VALUE_KEY].arrayValue {
+                        if let region = JGGRegionModel(json: jsonRegion) {
+                            regions.append(region)
+                        }
                     }
                     complete(regions)
                     return
@@ -400,12 +418,13 @@ class JGGAPIManager: NSObject {
     func getCategories(_ complete: @escaping CategoryListClosure) -> Void {
         GET(url: URLManager.System.GetAllCategories, params: nil) { (json, error) in
             if let response = json {
-                let success = response["Success"].boolValue
+                let success = response[SUCCESS_KEY].boolValue
                 if success {
                     var categories: [JGGCategoryModel] = []
-                    for jsonCategory in response["Value"].arrayValue {
-                        let category = JGGCategoryModel(json: jsonCategory)
-                        categories.append(category)
+                    for jsonCategory in response[VALUE_KEY].arrayValue {
+                        if let category = JGGCategoryModel(json: jsonCategory) {
+                            categories.append(category)
+                        }
                     }
                     complete(categories)
                     return
@@ -415,23 +434,23 @@ class JGGAPIManager: NSObject {
         }
     }
     
-    func postJob(userId: String,
-                 regionId: String,
-                 categoryId: String,
-                 currencyCode: String,
-                 title: String?,
-                 description _description: String?,
-                 attachmentsImages: [UIImage]?,
-                 serviceType: Int,
-                 budgetFrom: Double?,
-                 budgetTo: Double?,
-                 budget: Double?,
-                 address: JGGAddressModel?,
-                 timeSlots: [JGGTimeSlotModel]?,
-                 tags: String?,
-                 reportType: Int) -> Void
+    func postJob(_ job: JGGCreateJobModel, complete: @escaping StringStringClosure) -> Void
     {
-        var body = JSON()
+        POST(url: URLManager.Appointment.PostJob, body: job.json().dictionaryObject) { (json, error) in
+            if let response = json {
+                let success = response[SUCCESS_KEY].boolValue
+                if success {
+                    complete(response[VALUE_KEY].stringValue, nil)
+                } else {
+                    complete(nil, response[MESSAGE_KEY].stringValue)
+                }
+            } else if let error = error {
+                complete(nil, error.localizedDescription)
+            } else {
+                complete(nil, LocalizedString("Unknown request error."))
+            }
+            
+        }
         
     }
     

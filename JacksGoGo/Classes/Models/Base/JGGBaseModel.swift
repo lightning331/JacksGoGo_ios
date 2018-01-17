@@ -14,7 +14,10 @@ class JGGBaseModel: NSObject {
 //    var aud: JGGModifyInfoModel?
     var id: String?
     
-    init(json: JSON) {
+    init?(json: JSON?) {
+        guard let json = json else {
+            return nil
+        }
         super.init()
 //        aud = JGGModifyInfoModel(json: json["Aud"])
         id = json["ID"].string

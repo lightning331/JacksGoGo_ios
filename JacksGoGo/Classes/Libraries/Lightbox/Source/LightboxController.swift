@@ -6,6 +6,8 @@ import IGRPhotoTweaks
 public protocol LightboxControllerPageDelegate: class {
     
     func lightboxController(_ controller: LightboxController, didMoveToPage page: Int)
+    
+    func lightboxController(_ controller: LightboxController, didChange image: UIImage?, of page: Int)
 }
 
 public protocol LightboxControllerDismissalDelegate: class {
@@ -464,6 +466,7 @@ extension LightboxController: IGRPhotoTweakViewControllerDelegate {
     public func photoTweaksController(_ controller: IGRPhotoTweakViewController, didFinishWithCroppedImage croppedImage: UIImage) {
         images[currentPage] = LightboxImage(image: croppedImage)
         configurePages(images)
+        pageDelegate?.lightboxController(self, didChange: croppedImage, of: currentPage)
     }
     
     public func photoTweaksControllerDidCancel(_ controller: IGRPhotoTweakViewController) {

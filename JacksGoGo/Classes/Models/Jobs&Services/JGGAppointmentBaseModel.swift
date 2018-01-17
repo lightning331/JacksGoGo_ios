@@ -40,6 +40,7 @@ class JGGAppointmentBaseModel: JGGBaseModel {
     internal let UserProfile = "UserProfile"
     internal let PostOn = "PostOn"
     internal let Status = "Status"
+    internal let Address = "Address"
     
     var title: String?
     var description_: String?
@@ -48,10 +49,11 @@ class JGGAppointmentBaseModel: JGGBaseModel {
     var region: JGGRegionModel?
     var currency: JGGCurrencyModel?
     var currencyCode: String?
-    var userProfileId: String!
+    var userProfileId: String?
     var userProfile: JGGUserProfileModel?
     var postOn: Date?
     var status: Int = 0
+    var address: JGGAddressModel?
     
     var type: AppointmentType {
         get {
@@ -63,18 +65,22 @@ class JGGAppointmentBaseModel: JGGBaseModel {
         super.init()
     }
 
-    override init(json: JSON) {
+    override init?(json: JSON?) {
+        guard let json = json else {
+            return nil
+        }
         super.init(json: json)
-        title = json[Title].string
-        description_ = json[Description].string
-        tags = json[Tags].string
-        regionId = json[RegionID].stringValue
-        region = JGGRegionModel(json: json[Region])
-        currency = JGGCurrencyModel(json: json[Currency])
-        currencyCode = json[CurrencyCode].string
-        userProfileId = json[UserProfileID].stringValue
-        userProfile = JGGUserProfileModel(json: json[UserProfile])
-        postOn = json[PostOn].dateObject
+        title           = json[Title].string
+        description_    = json[Description].string
+        tags            = json[Tags].string
+        regionId        = json[RegionID].stringValue
+        region          = JGGRegionModel(json: json[Region])
+        currency        = JGGCurrencyModel(json: json[Currency])
+        currencyCode    = json[CurrencyCode].string
+        userProfileId   = json[UserProfileID].string
+        userProfile     = JGGUserProfileModel(json: json[UserProfile])
+        postOn          = json[PostOn].dateObject
+        address         = JGGAddressModel(json: json[Address])
     }
     
     override func json() -> JSON {
@@ -90,12 +96,14 @@ class JGGAppointmentBaseModel: JGGBaseModel {
             json[Currency] = currency.json()
         }
         json[CurrencyCode].string = currencyCode
-        json[UserProfileID].stringValue = userProfileId
+        json[UserProfileID].string = userProfileId
         if let userProfile = userProfile {
             json[UserProfile] = userProfile.json()
         }
         json[PostOn].dateObject = postOn
-
+        if let address = address {
+            json[Address] = address.json()
+        }
         return json
     }
     

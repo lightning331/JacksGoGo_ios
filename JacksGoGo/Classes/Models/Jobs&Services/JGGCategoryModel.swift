@@ -19,7 +19,10 @@ class JGGCategoryModel: JGGBaseModel {
         super.init()
     }
     
-    override init(json: JSON) {
+    override init?(json: JSON?) {
+        guard let json = json else {
+            return nil
+        }
         super.init(json: json)
         code = json["Code"].string
         name = json["Name"].string

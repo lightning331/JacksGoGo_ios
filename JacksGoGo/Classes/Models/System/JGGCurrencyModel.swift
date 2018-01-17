@@ -19,7 +19,10 @@ class JGGCurrencyModel: JGGBaseModel {
     var currencyName: String?
     var symbol: String?
     
-    override init(json: JSON) {
+    override init?(json: JSON?) {
+        guard let json = json else {
+            return nil
+        }
         super.init(json: json)
         currencyCode = json[CurrencyCode].string
         currencyName = json[CurrencyName].string

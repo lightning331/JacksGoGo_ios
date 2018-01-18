@@ -26,10 +26,10 @@ class JGGMainTabbarController: UITabBarController {
     }
     
     private func autoAuthorize() {
-        let loginCompletion: UserModelResponse = { (user, errorMessage) in
+        let loginCompletion: UserProfileModelResponse = { (userProfile, errorMessage) in
             self.loadingView?.progressbar.setProgress(2 / self.totalLoadingCount, animated: true)
-            if let user = user {
-                self.appManager.currentUser = user
+            if let userProfile = userProfile {
+                self.appManager.currentUser = userProfile
             }
             self.hideLoadingIndicator()
             self.addViewControllers()

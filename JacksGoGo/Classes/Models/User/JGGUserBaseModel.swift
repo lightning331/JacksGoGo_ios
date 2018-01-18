@@ -82,6 +82,7 @@ class JGGUserBaseModel: JGGBaseModel {
             return nil
         }
         super.init(json: json)
+        id                  = json["Id"].string
         surName             = json[Surname].string
         givenName           = json[GivenName].string
         gender              = json[Gender].bool

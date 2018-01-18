@@ -991,27 +991,31 @@
                                     <rect key="frame" x="120" y="10" width="80" height="80"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To Jacks Go Go!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPe-v8-5ci">
-                                    <rect key="frame" x="39.5" y="110" width="242" height="25.5"/>
+                                    <rect key="frame" x="42.5" y="110" width="236.5" height="23.5"/>
                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="748" text="Where are you located?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qz-gC-LdF">
-                                    <rect key="frame" x="16" y="151.5" width="288" height="16.5"/>
+                                    <rect key="frame" x="16" y="149.5" width="138" height="18.5"/>
                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ezE-LY-AH2">
+                                    <rect key="frame" x="284" y="148" width="20" height="20"/>
+                                </activityIndicatorView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="tPe-v8-5ci" firstAttribute="top" secondItem="mfV-CB-OK7" secondAttribute="bottom" constant="20" id="21B-Cg-q0h"/>
                                 <constraint firstItem="2Qz-gC-LdF" firstAttribute="top" secondItem="tPe-v8-5ci" secondAttribute="bottom" constant="16" id="4f3-AH-2PX"/>
-                                <constraint firstAttribute="trailing" secondItem="2Qz-gC-LdF" secondAttribute="trailing" constant="16" id="DIG-vx-cJh"/>
+                                <constraint firstAttribute="trailing" secondItem="ezE-LY-AH2" secondAttribute="trailing" constant="16" id="EWS-cm-CEn"/>
                                 <constraint firstItem="2Qz-gC-LdF" firstAttribute="leading" secondItem="5fs-NW-zg1" secondAttribute="leading" constant="16" id="O1G-FA-8Px"/>
                                 <constraint firstAttribute="bottom" secondItem="2Qz-gC-LdF" secondAttribute="bottom" constant="8" id="Oet-LM-1Xr"/>
                                 <constraint firstItem="mfV-CB-OK7" firstAttribute="centerX" secondItem="5fs-NW-zg1" secondAttribute="centerX" id="fib-9Z-XJr"/>
                                 <constraint firstItem="tPe-v8-5ci" firstAttribute="centerX" secondItem="5fs-NW-zg1" secondAttribute="centerX" id="sSm-T1-O8o"/>
+                                <constraint firstAttribute="bottom" secondItem="ezE-LY-AH2" secondAttribute="bottom" constant="8" id="xp7-qx-hHK"/>
                                 <constraint firstItem="mfV-CB-OK7" firstAttribute="top" secondItem="5fs-NW-zg1" secondAttribute="top" constant="10" id="ygr-ky-tuS"/>
                             </constraints>
                         </view>
@@ -1106,6 +1110,7 @@
                     </tableView>
                     <connections>
                         <outlet property="btnSign" destination="gtI-FX-m4a" id="HvZ-c9-i4F"/>
+                        <outlet property="loadingIndicator" destination="ezE-LY-AH2" id="5iu-Vc-vbB"/>
                         <segue destination="J1o-Hx-wBV" kind="show" identifier="gotoEmailPasswordVC" id="wXz-qa-iSH"/>
                     </connections>
                 </tableViewController>

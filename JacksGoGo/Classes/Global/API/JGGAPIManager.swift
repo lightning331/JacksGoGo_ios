@@ -62,7 +62,7 @@ class JGGAPIManager: NSObject {
         
         
         Alamofire.upload(multipartFormData: { (formData) in
-            formData.append(data, withName: "image", mimeType: "image/jpg")
+            formData.append(data, withName: "image", fileName: "attachment.jpg", mimeType: "image/jpg")
         }, to: url) { (result) in
             switch result {
             case .success(let upload, _, _):
@@ -94,6 +94,31 @@ class JGGAPIManager: NSObject {
                 complete(nil, encodingError.localizedDescription)
             }
         }
+        
+        /*
+        Alamofire
+            .upload(data, to: url, method: .post, headers: nil)
+            .uploadProgress(closure: { (progress) in
+                if let progressClosure = progressClosure {
+                    let percent = Float(progress.completedUnitCount) / Float(progress.totalUnitCount)
+                    progressClosure(percent)
+                }
+            })
+            .responseJSON(completionHandler: { (response) in
+                switch response.result {
+                case .success(let data):
+                    let result = JSON(data)
+                    if let success = result["Success"].bool, success == true {
+                        complete(result["Value"].string, nil)
+                    } else {
+                        complete(nil, result["Message"].string)
+                    }
+                    break
+                case .failure(let error):
+                    complete(nil, error.localizedDescription)
+                    break
+                }
+            }) */
     }
     
     /**
@@ -238,7 +263,7 @@ class JGGAPIManager: NSObject {
     }
     
     // MARK: - Account
-    func accountLogin(email: String, password: String, complete: @escaping UserModelResponse) -> Void {
+    func accountLogin(email: String, password: String, complete: @escaping UserProfileModelResponse) -> Void {
         let body = [
             "email": email,
             "password": password,
@@ -246,9 +271,9 @@ class JGGAPIManager: NSObject {
         POST(url: URLManager.Account.Login, body: body) { (json, error) in
             if let response = json {
                 let success = response[SUCCESS_KEY].boolValue
-                if success {
-                    let user = JGGUserBaseModel(json: response[VALUE_KEY])
-                    complete(user, nil)
+                if success == true,
+                    let userProfile = JGGUserProfileModel(json: response[VALUE_KEY]) {
+                    complete(userProfile, nil)
                 } else {
                     let errorMessage = response[MESSAGE_KEY].stringValue
                     complete(nil, errorMessage)
@@ -305,7 +330,7 @@ class JGGAPIManager: NSObject {
         }
     }
     
-    func verifyPhoneNumber(_ phoneNumber: String, code: String, complete: @escaping UserModelResponse) -> Void {
+    func verifyPhoneNumber(_ phoneNumber: String, code: String, complete: @escaping UserProfileModelResponse) -> Void {
         let body = [
             "Provider": phoneNumber,
             "Code": code
@@ -313,9 +338,10 @@ class JGGAPIManager: NSObject {
         POST(url: URLManager.Account.VerifyCode, body: body) { (json, error) in
             if let response = json {
                 let success = response[SUCCESS_KEY].boolValue
-                if success {
-                    let user = JGGUserBaseModel(json: response[VALUE_KEY])
-                    complete(user, nil)
+                if success == true,
+                    let userProfile = JGGUserProfileModel(json: response[VALUE_KEY])
+                {
+                    complete(userProfile, nil)
                 } else {
                     let errorMessage = response[MESSAGE_KEY].stringValue
                     complete(nil, errorMessage)

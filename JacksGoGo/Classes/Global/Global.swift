@@ -11,7 +11,7 @@ import SwiftyJSON
 
 // MARK: - Option
 
-public let SHOW_TEMP_DATA: Bool = true
+public let SHOW_TEMP_DATA: Bool = false
 
 // Public constants
 
@@ -68,6 +68,7 @@ typealias Dictionary = [String: Any]
 typealias DefaultResponse = (JSON?, Error?) -> Void
 typealias BoolStringClosure = (Bool, String?) -> Void
 typealias UserModelResponse = (JGGUserBaseModel?, String?) -> Void
+typealias UserProfileModelResponse = (JGGUserProfileModel?, String?) -> Void
 typealias RegionListClosure = ([JGGRegionModel]) -> Void
 typealias CategoryListClosure = ([JGGCategoryModel]) -> Void
 typealias StringStringClosure = (String?, String?) -> Void

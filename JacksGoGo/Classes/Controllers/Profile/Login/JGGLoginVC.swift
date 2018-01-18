@@ -49,11 +49,11 @@ class JGGLoginVC: JGGLoginBaseVC, UITextFieldDelegate {
         APIManager.oauthToken(user: email, password: password) { (success, errorString) in
             if success {
                 
-                self.APIManager.accountLogin(email: email, password: password, complete: { (user, errorMessage) in
+                self.APIManager.accountLogin(email: email, password: password, complete: { (userProfile, errorMessage) in
                     self.hideHUD(from: self.navigationController?.tabBarController?.view)
-                    if let user = user {
-                        self.appManager.currentUser = user
-                        if user.phoneNumberVerified {
+                    if let userProfile = userProfile {
+                        self.appManager.currentUser = userProfile
+                        if userProfile.user.phoneNumberVerified {
                             let nav = self.navigationController as! JGGProfileNC
                             nav.loggedIn()
                             self.appManager.save(username: email, password: password)

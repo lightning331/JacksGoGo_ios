@@ -15,7 +15,7 @@ class JGGAppManager: NSObject {
         return instance
     }()
     
-    var currentUser: JGGUserBaseModel?
+    var currentUser: JGGUserProfileModel?
     
     var categories: [JGGCategoryModel] = []
     

@@ -12,6 +12,7 @@ import ESPullToRefresh
 class JGGSignupSelectRegionVC: JGGLoginBaseVC {
 
     @IBOutlet weak var btnSign: UIButton!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
 //    private lazy var regions: [[String: String]] = [
 //        ["icon": "icon_singapore",
@@ -28,10 +29,12 @@ class JGGSignupSelectRegionVC: JGGLoginBaseVC {
         self.hidesBottomBarWhenPushed = true
         
         self.tableView.es.addPullToRefresh {
+            self.loadingIndicator.startAnimating()
             self.APIManager.getRegions { (regions) in
                 self.regions = regions
                 self.tableView.reloadData()
                 self.tableView.es.stopPullToRefresh()
+                self.loadingIndicator.stopAnimating()
             }
         }
         self.tableView.es.startPullToRefresh()

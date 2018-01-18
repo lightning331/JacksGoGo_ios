@@ -134,30 +134,18 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
     @IBAction func onPressedPostNewJob(_ sender: UIButton) {
         if let creatingJob = creatingJob {
             hud = MBProgressHUD.showAdded(to: self.parent!.parent!.parent!.view, animated: true)
-            hud.mode = .annularDeterminate
-            hud.label.text = LocalizedString("Uploading photos")
-            hud.show(animated: true)
-            uploadPhotos(creatingJob.attachmentImages ?? [], index: 0) {
-                
-                self.hud.mode = .indeterminate
-                self.hud.label.text = LocalizedString("Posting Job")
-                
-                creatingJob.attachmentUrl = self.imageDownloadURLs
-                self.APIManager.postJob(creatingJob, complete: { (jobId, errorMessage) in
-                    if let jobID = jobId {
-                        creatingJob.id = jobID
-                        let message = String(format: "%@: %@", LocalizedString("Job reference no."), jobID)
-                        JGGAlertViewController.show(title: LocalizedString("Job Posted!"), message: message, colorSchema: .cyan, okButtonTitle: LocalizedString("View Job"), okAction: {
-                            
-                        }, cancelButtonTitle: nil, cancelAction: nil)
-                    } else {
-                        JGGAlertViewController.show(title: LocalizedString("Error!"), message: errorMessage, colorSchema: .red, okButtonTitle: LocalizedString("Close"), okAction: {
-                            
-                        }, cancelButtonTitle: nil, cancelAction: nil)
-                    }
-                })
-                
+            
+            if self.imageDownloadURLs.count == 0 {
+                hud.mode = .annularDeterminate
+                hud.label.text = LocalizedString("Uploading photos")
+                hud.show(animated: true)
+                uploadPhotos(creatingJob.attachmentImages ?? [], index: 0) {
+                    self.postJob(creatingJob)
+                }
+            } else {
+                self.postJob(creatingJob)
             }
+            
         }
     }
     
@@ -165,7 +153,7 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
         if index < photos.count {
             let image = photos[index]
             APIManager.upload(attachmentImage: image, progressClosure: { (percent) in
-                print (index, percent)
+//                print (index, percent)
                 self.hud.progress = (Float(index) + percent) / Float(photos.count)
             }, complete: { (downloadUrl, errorMessage) in
                 if let url = downloadUrl {
@@ -176,6 +164,27 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
         } else {
             complete()
         }
+    }
+    
+    private func postJob(_ creatingJob: JGGCreateJobModel) {
+        self.hud.mode = .indeterminate
+        self.hud.label.text = LocalizedString("Posting Job")
+
+        creatingJob.attachmentUrl = self.imageDownloadURLs
+        self.APIManager.postJob(creatingJob, complete: { (jobId, errorMessage) in
+            if let jobID = jobId {
+                creatingJob.id = jobID
+                let message = String(format: LocalizedString("Job reference no.: %@\n\nGood luck!"), jobID)
+                JGGAlertViewController.show(title: LocalizedString("Job Posted!"), message: message, colorSchema: .cyan, okButtonTitle: LocalizedString("View Job"), okAction: {
+                    self.parent?.navigationController?.popToRootViewController(animated: true)
+                }, cancelButtonTitle: nil, cancelAction: nil)
+            } else {
+                JGGAlertViewController.show(title: LocalizedString("Error!"), message: errorMessage, colorSchema: .red, okButtonTitle: LocalizedString("Close"), okAction: {
+                    
+                }, cancelButtonTitle: nil, cancelAction: nil)
+            }
+            self.hud.hide(animated: true)
+        })
     }
     
     // MARK: - Table view data source

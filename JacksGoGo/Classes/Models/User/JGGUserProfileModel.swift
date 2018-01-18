@@ -53,6 +53,7 @@ class JGGUserProfileModel: JGGBaseModel {
     internal let BillingMobileNo_AreaCode = "BillingMobileNo_AreaCode"
     internal let BillingMobileNo_Number = "BillingMobileNo_Number"
     internal let BillingMobileNo_Extension = "BillingMobileNo_Extension"
+    internal let IsActive = "IsActive"
     
     var region: JGGRegionModel?
     var user: JGGUserBaseModel!
@@ -96,6 +97,7 @@ class JGGUserProfileModel: JGGBaseModel {
     var billingMobileNoAreaCode : String?
     var billingMobileNoNumber : String?
     var billingMobileNoExtension : String?
+    var isActive: Bool = true
 
     override init?(json: JSON?) {
         guard let json = json else {
@@ -144,7 +146,7 @@ class JGGUserProfileModel: JGGBaseModel {
         billingMobileNoAreaCode     = json[BillingMobileNo_AreaCode].string
         billingMobileNoNumber       = json[BillingMobileNo_Number].string
         billingMobileNoExtension    = json[BillingMobileNo_Extension].string
-
+        isActive                    = json[IsActive].boolValue
     }
     
     override func json() -> JSON {
@@ -195,7 +197,7 @@ class JGGUserProfileModel: JGGBaseModel {
         json[BillingMobileNo_AreaCode].string       = billingMobileNoAreaCode
         json[BillingMobileNo_Number].string         = billingMobileNoNumber
         json[BillingMobileNo_Extension].string      = billingMobileNoExtension
-
+        json[IsActive].boolValue                    = isActive
         return json
     }
 }

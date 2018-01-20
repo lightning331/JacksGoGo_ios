@@ -20,8 +20,23 @@ class JGGPostServiceStepRootVC: JGGViewController, JGGAppointmentDetailStepHeade
     
     var isEditMode: Bool = false
     
+    var selectedCategory: JGGCategoryModel!
+    var creatingJob: JGGCreateJobModel?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if creatingJob == nil {
+            isEditMode = false
+            creatingJob = JGGCreateJobModel()
+            creatingJob!.categoryId = selectedCategory.id
+            creatingJob!.userProfileId = appManager.currentUser?.id
+            creatingJob!.regionId = appManager.currentRegion?.id
+            creatingJob!.currencyCode = appManager.currentRegion?.currencyCode
+
+        } else {
+            isEditMode = true
+        }
         
         postServiceStepView =
             UINib(nibName: "JGGJobDetailStepHeaderView", bundle: nil)
@@ -32,6 +47,7 @@ class JGGPostServiceStepRootVC: JGGViewController, JGGAppointmentDetailStepHeade
         postServiceStepView.snp.makeConstraints { (maker) in
             maker.left.top.right.bottom.equalToSuperview()
         }
+
         if isEditMode {
             postServiceStepView.setCompletedStep(describe: true,
                                                  price: true,

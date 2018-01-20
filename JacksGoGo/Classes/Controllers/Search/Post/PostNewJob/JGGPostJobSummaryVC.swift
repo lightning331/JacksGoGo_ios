@@ -175,13 +175,29 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
             if let jobID = jobId {
                 creatingJob.id = jobID
                 let message = String(format: LocalizedString("Job reference no.: %@\n\nGood luck!"), jobID)
-                JGGAlertViewController.show(title: LocalizedString("Job Posted!"), message: message, colorSchema: .cyan, okButtonTitle: LocalizedString("View Job"), okAction: {
-                    self.parent?.navigationController?.popToRootViewController(animated: true)
-                }, cancelButtonTitle: nil, cancelAction: nil)
+                JGGAlertViewController.show(
+                    title: LocalizedString("Job Posted!"),
+                    message: message,
+                    colorSchema: .cyan,
+                    okButtonTitle: LocalizedString("View Job"),
+                    okAction: {
+                        self.parent?.navigationController?.popToRootViewController(animated: true)
+                    },
+                    cancelButtonTitle: nil,
+                    cancelAction: nil
+                )
             } else {
-                JGGAlertViewController.show(title: LocalizedString("Error!"), message: errorMessage, colorSchema: .red, okButtonTitle: LocalizedString("Close"), okAction: {
+                JGGAlertViewController.show(
+                    title: LocalizedString("Error!"),
+                    message: errorMessage,
+                    colorSchema: .red,
+                    okButtonTitle: LocalizedString("Close"),
+                    okAction: {
                     
-                }, cancelButtonTitle: nil, cancelAction: nil)
+                    },
+                    cancelButtonTitle: nil,
+                    cancelAction: nil
+                )
             }
             self.hud.hide(animated: true)
         })

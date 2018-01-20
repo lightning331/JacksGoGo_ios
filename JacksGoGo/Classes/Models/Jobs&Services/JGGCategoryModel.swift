@@ -14,6 +14,7 @@ class JGGCategoryModel: JGGBaseModel {
     var code: String?
     var name: String?
     var image: String?
+    var isQuickJob: Bool = false
     
     override init() {
         super.init()

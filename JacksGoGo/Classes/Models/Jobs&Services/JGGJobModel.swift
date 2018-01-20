@@ -24,10 +24,11 @@ class JGGJobModel: JGGAppointmentBaseModel {
     internal let JobType = "JobType"
     internal let RepetitionType = "RepetitionType"
     internal let Repetition = "Repetition"
-    internal let JobTime = "Repetition"
+    internal let JobTime = "JobTime"
+    internal let IsQuickJob = "IsQuickJob"
     
     var categoryId: String!
-    var isRequest: Bool?
+    var isRequest: Bool = true
     var serviceType: Int = 0
     var attachmentUrl: [String]?
     var budgetFrom: Double?
@@ -40,6 +41,7 @@ class JGGJobModel: JGGAppointmentBaseModel {
     var jobTime: JGGJobTimeModel?
     var repetitionType: JGGRepetitionType = .none
     var repetition: String?
+    var isQuickJob: Bool = false
     
     override var type: AppointmentType {
         return .jobs
@@ -58,7 +60,7 @@ class JGGJobModel: JGGAppointmentBaseModel {
         }
         super.init(json: json)
         categoryId = json[CategoryID].stringValue
-        isRequest = json[IsRequest].bool
+        isRequest = json[IsRequest].boolValue
         serviceType = json[ServiceType].intValue
         attachmentUrl = json[AttachmentURL].arrayObject as? [String]
         budgetFrom = json[BudgetFrom].double
@@ -71,12 +73,13 @@ class JGGJobModel: JGGAppointmentBaseModel {
         jobTime = JGGJobTimeModel(json: json[JobTime])
         repetitionType = JGGRepetitionType(rawValue: json[RepetitionType].intValue) ?? .none
         repetition = json[Repetition].string
+        isQuickJob = json[IsQuickJob].boolValue
     }
     
     override func json() -> JSON {
         var json = super.json()
         json[CategoryID].stringValue = categoryId
-        json[IsRequest].bool = isRequest
+        json[IsRequest].boolValue = isRequest
         json[ServiceType].intValue = serviceType
         json[AttachmentURL].arrayObject = attachmentUrl
         json[BudgetFrom].double = budgetFrom
@@ -91,6 +94,7 @@ class JGGJobModel: JGGAppointmentBaseModel {
         }
         json[RepetitionType].intValue = repetitionType.rawValue
         json[Repetition].string = repetition
+        json[IsQuickJob].boolValue = isQuickJob
         return json
     }
     

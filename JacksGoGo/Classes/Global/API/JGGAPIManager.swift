@@ -94,31 +94,6 @@ class JGGAPIManager: NSObject {
                 complete(nil, encodingError.localizedDescription)
             }
         }
-        
-        /*
-        Alamofire
-            .upload(data, to: url, method: .post, headers: nil)
-            .uploadProgress(closure: { (progress) in
-                if let progressClosure = progressClosure {
-                    let percent = Float(progress.completedUnitCount) / Float(progress.totalUnitCount)
-                    progressClosure(percent)
-                }
-            })
-            .responseJSON(completionHandler: { (response) in
-                switch response.result {
-                case .success(let data):
-                    let result = JSON(data)
-                    if let success = result["Success"].bool, success == true {
-                        complete(result["Value"].string, nil)
-                    } else {
-                        complete(nil, result["Message"].string)
-                    }
-                    break
-                case .failure(let error):
-                    complete(nil, error.localizedDescription)
-                    break
-                }
-            }) */
     }
     
     /**
@@ -440,7 +415,28 @@ class JGGAPIManager: NSObject {
                complete: complete)
     }
     
-    // Job
+    // MARK: - Appointments
+    func getPendingJobs(_ complete: @escaping AppointmentsClosure) -> Void {
+        GET(url: URLManager.Appointment.GetPendingAppointments(), params: nil) { (json, error) in
+            if let response = json {
+                let success = response[SUCCESS_KEY].boolValue
+                if success {
+                    var jobs: [JGGJobModel] = []
+                    for jsonJob in response[VALUE_KEY].arrayValue {
+                        if let job = JGGJobModel(json: jsonJob) {
+                            jobs.append(job)
+                        }
+                    }
+                    complete(jobs)
+                    return
+                }
+            }
+            complete([])
+        }
+    }
+    
+    
+    // MARK: - Job
     func getCategories(_ complete: @escaping CategoryListClosure) -> Void {
         GET(url: URLManager.System.GetAllCategories, params: nil) { (json, error) in
             if let response = json {

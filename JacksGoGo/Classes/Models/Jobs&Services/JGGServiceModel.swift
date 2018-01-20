@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import SwiftyJSON
 
-class JGGServiceModel: JGGAppointmentBaseModel, MKAnnotation {
+class JGGServiceModel: JGGAppointmentBaseModel {
     
     override var type: AppointmentType {
         get {
@@ -20,21 +20,15 @@ class JGGServiceModel: JGGAppointmentBaseModel, MKAnnotation {
     
     var invitingClient: JGGClientUserModel?
     
-    var coordinate: CLLocationCoordinate2D
-    
-    var subtitle: String?
-    
     override init?(json: JSON?) {
         guard let json = json else {
             return nil
         }
-        coordinate = CLLocationCoordinate2DMake(0, 0)
         super.init(json: json)
         
     }
     
     override init() {
-        coordinate = CLLocationCoordinate2DMake(0, 0)
         super.init()
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JGGPostServiceTimeSlotsTypeVC: JGGPostAppointmentBaseTableVC {
+class JGGPostServiceTimeSlotsTypeVC: JGGPostServiceTimeSlotsBaseVC {
 
     fileprivate var selectedTimeType: Int = 0
     
@@ -55,6 +55,18 @@ class JGGPostServiceTimeSlotsTypeVC: JGGPostAppointmentBaseTableVC {
             return cell
         }
         return UITableViewCell()
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier, identifier == "gotoAddTimeSlotsVC" {
+            if self.selectedTimeType == 2 {
+                self.navController.selectedPeopleType = 0 // One person
+            } else if self.selectedTimeType == 3 {
+                self.navController.selectedPeopleType = 1 // Multiple people
+            }
+        }
     }
 
 }

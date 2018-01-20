@@ -1683,7 +1683,7 @@ Next, let's set up a payment methods. The payment will only be released when the
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cvb-gQ-NEX">
                                 <rect key="frame" x="0.0" y="106" width="375" height="512"/>
                                 <connections>
-                                    <segue destination="ZAA-13-pyc" kind="embed" id="A0A-Vn-qWy"/>
+                                    <segue destination="ZAA-13-pyc" kind="embed" identifier="gotoPostServiceStepRootVC" id="A0A-Vn-qWy"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -1702,7 +1702,14 @@ Next, let's set up a payment methods. The payment will only be released when the
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kkc-Zz-p17"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Post A Service" id="sct-q4-uVQ"/>
+                    <navigationItem key="navigationItem" title="Post A Service" id="sct-q4-uVQ">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="button_backarrow_green" id="d4a-KD-4QB">
+                            <color key="tintColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="onPressedBack:" destination="f2y-zu-rP4" id="zYD-s5-W7E"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="imgviewCategory" destination="6qf-BI-HrO" id="TNU-Kt-dGp"/>
@@ -1818,6 +1825,7 @@ Next, let's set up a payment methods. The payment will only be released when the
         <image name="button_addnew_round_cyan" width="40" height="40"/>
         <image name="button_addnew_round_green" width="40" height="40"/>
         <image name="button_backarrow_cyan" width="27" height="27"/>
+        <image name="button_backarrow_green" width="27" height="27"/>
         <image name="button_close_round_green" width="32" height="32"/>
         <image name="button_filter_green" width="32" height="32"/>
         <image name="button_listview_green" width="32" height="32"/>

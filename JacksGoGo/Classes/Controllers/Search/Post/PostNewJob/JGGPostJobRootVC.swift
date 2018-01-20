@@ -22,8 +22,9 @@ class JGGPostJobRootVC: JGGSearchBaseVC {
         super.viewDidLoad()
         
         self.lblCategoryName.text = selectedCategory.name
-        if let urlString = selectedCategory.image,
-            let iconUrl = URL(string: urlString) {
+        if selectedCategory.isQuickJob {
+            self.imgviewCategory.image = UIImage(named: selectedCategory.image!)
+        } else if let urlString = selectedCategory.image, let iconUrl = URL(string: urlString) {
             self.imgviewCategory.af_setImage(withURL: iconUrl)
         }
         

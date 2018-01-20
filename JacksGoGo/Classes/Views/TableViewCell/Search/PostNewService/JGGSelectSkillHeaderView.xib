@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,9 +25,9 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WFM-ob-Dfs">
-                    <rect key="frame" x="0.0" y="20" width="320" height="386"/>
+                    <rect key="frame" x="0.0" y="20" width="320" height="410"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sDc-wa-3ce">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_small" translatesAutoresizingMaskIntoConstraints="NO" id="sDc-wa-3ce">
                             <rect key="frame" x="120" y="30" width="80" height="80"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="Azh-j2-FqS"/>
@@ -60,6 +60,9 @@ Start listing your services with us now!</string>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="An2-Kr-CQN">
+                            <rect key="frame" x="150" y="378" width="20" height="20"/>
+                        </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -70,18 +73,20 @@ Start listing your services with us now!</string>
                         <constraint firstItem="sDc-wa-3ce" firstAttribute="top" secondItem="WFM-ob-Dfs" secondAttribute="top" constant="30" id="Bx5-xj-ZGH"/>
                         <constraint firstItem="cgI-NN-kCn" firstAttribute="leading" secondItem="WFM-ob-Dfs" secondAttribute="leading" constant="20" id="DxF-69-c9l"/>
                         <constraint firstItem="bhJ-d3-4ai" firstAttribute="top" secondItem="Gls-hU-oUL" secondAttribute="bottom" constant="16" id="EPs-eg-zFD"/>
+                        <constraint firstAttribute="bottom" secondItem="An2-Kr-CQN" secondAttribute="bottom" constant="12" id="Ndp-Rr-mtJ"/>
                         <constraint firstItem="bhJ-d3-4ai" firstAttribute="leading" secondItem="WFM-ob-Dfs" secondAttribute="leading" constant="20" id="NgO-Ue-ZU0"/>
                         <constraint firstItem="TPg-9z-8yb" firstAttribute="leading" secondItem="WFM-ob-Dfs" secondAttribute="leading" constant="20" id="PQ9-hc-8eg"/>
                         <constraint firstItem="sDc-wa-3ce" firstAttribute="centerX" secondItem="WFM-ob-Dfs" secondAttribute="centerX" id="RnT-w1-C89"/>
                         <constraint firstItem="Gls-hU-oUL" firstAttribute="top" secondItem="sDc-wa-3ce" secondAttribute="bottom" constant="25" id="U0w-b0-8ib"/>
                         <constraint firstItem="Gls-hU-oUL" firstAttribute="leading" secondItem="WFM-ob-Dfs" secondAttribute="leading" constant="20" id="Wvu-Rq-bPe"/>
                         <constraint firstAttribute="trailing" secondItem="Gls-hU-oUL" secondAttribute="trailing" constant="20" id="lgg-Fq-rNE"/>
+                        <constraint firstItem="An2-Kr-CQN" firstAttribute="top" secondItem="TPg-9z-8yb" secondAttribute="bottom" constant="8" id="mtO-Kv-0Me"/>
                         <constraint firstAttribute="trailing" secondItem="bhJ-d3-4ai" secondAttribute="trailing" constant="20" id="sSE-PB-Smt"/>
-                        <constraint firstAttribute="bottom" secondItem="TPg-9z-8yb" secondAttribute="bottom" constant="16" id="sod-Wd-Ht4"/>
+                        <constraint firstItem="An2-Kr-CQN" firstAttribute="centerX" secondItem="WFM-ob-Dfs" secondAttribute="centerX" id="w8t-Ew-2sr"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kbd-yl-0OA">
-                    <rect key="frame" x="0.0" y="385" width="375" height="88"/>
+                    <rect key="frame" x="0.0" y="410" width="375" height="88"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can post a service in the categories you have already verified." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTu-AT-UcN">
                             <rect key="frame" x="20" y="30" width="280" height="38"/>
@@ -139,6 +144,7 @@ Start listing your services with us now!</string>
             </constraints>
             <viewLayoutGuide key="safeArea" id="8hD-Vs-hkm"/>
             <connections>
+                <outlet property="loadingIndicator" destination="An2-Kr-CQN" id="cql-Bo-STQ"/>
                 <outlet property="viewFirstDescription" destination="WFM-ob-Dfs" id="asn-OM-4Ex"/>
                 <outlet property="viewSecondDescription" destination="kbd-yl-0OA" id="ncz-4D-qk9"/>
                 <outlet property="viewThirdDescription" destination="yYf-kB-DJf" id="uM4-Gi-A4a"/>
@@ -146,4 +152,7 @@ Start listing your services with us now!</string>
             <point key="canvasLocation" x="243" y="36"/>
         </collectionReusableView>
     </objects>
+    <resources>
+        <image name="logo_small" width="80" height="80"/>
+    </resources>
 </document>

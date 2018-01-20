@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import MapKit
 
 public enum AppointmentStatus {
     case none
@@ -27,7 +28,7 @@ public enum AppointmentType {
     case unknown
 }
 
-class JGGAppointmentBaseModel: JGGBaseModel {
+class JGGAppointmentBaseModel: JGGBaseModel, MKAnnotation {
 
     internal let Title = "Title"
     internal let Description = "Description"
@@ -41,6 +42,8 @@ class JGGAppointmentBaseModel: JGGBaseModel {
     internal let PostOn = "PostOn"
     internal let Status = "Status"
     internal let Address = "Address"
+    internal let DAddress = "DAddress"
+    internal let Sessions = "Sessions"
     
     var title: String?
     var description_: String?
@@ -54,7 +57,12 @@ class JGGAppointmentBaseModel: JGGBaseModel {
     var postOn: Date?
     var status: Int = 0
     var address: JGGAddressModel?
+    var addressDropIn: JGGAddressModel?
+    var sessions: [JGGJobTimeModel]?
     
+    var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(0, 0)
+    var subtitle: String?
+
     var type: AppointmentType {
         get {
             return .unknown
@@ -81,6 +89,15 @@ class JGGAppointmentBaseModel: JGGBaseModel {
         userProfile     = JGGUserProfileModel(json: json[UserProfile])
         postOn          = json[PostOn].dateObject
         address         = JGGAddressModel(json: json[Address])
+        addressDropIn   = JGGAddressModel(json: json[DAddress])
+        if let jsonSessions = json[Sessions].array {
+            sessions = []
+            for jsonSession in jsonSessions {
+                if let session = JGGJobTimeModel(json: jsonSession) {
+                    sessions!.append(session)
+                }
+            }
+        }
     }
     
     override func json() -> JSON {
@@ -104,26 +121,24 @@ class JGGAppointmentBaseModel: JGGBaseModel {
         if let address = address {
             json[Address] = address.json()
         }
+        if let addressDropin = addressDropIn {
+            json[DAddress] = addressDropin.json()
+        }
+        if let sessions = sessions {
+            var jsonSessions: [JSON] = []
+            for session in sessions {
+                jsonSessions.append(session.json())
+            }
+            json[Sessions].arrayObject = jsonSessions
+        }
         return json
     }
     
     func appointmentDay() -> String? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d"
-        if let date = self.postOn {
-            return dateFormatter.string(from: date)
-        } else {
-            return nil
-        }
+        return postOn?.toString(format: .custom("d"))
     }
     
     func appointmentMonth() -> String? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM"
-        if let date = self.postOn {
-            return dateFormatter.string(from: date)
-        } else {
-            return nil
-        }
+        return postOn?.toString(format: .custom("MMM"))
     }
 }

@@ -14,7 +14,8 @@ extension JSON {
         get {
             switch self.type {
             case .string:
-                return DateFormatter.defaultFormatter.date(from: self.object as? String ?? "")
+                let dateString = self.stringValue.prefix(19)
+                return DateFormatter.defaultFormatter.date(from: String(dateString))
             default:
                 return nil
             }

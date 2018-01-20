@@ -11,6 +11,7 @@ import UIKit
 class JGGSelectSkillHeaderView: UICollectionReusableView {
 
     @IBOutlet weak var viewFirstDescription: UIView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var viewSecondDescription: UIView!
     @IBOutlet weak var viewThirdDescription: UIView!
     

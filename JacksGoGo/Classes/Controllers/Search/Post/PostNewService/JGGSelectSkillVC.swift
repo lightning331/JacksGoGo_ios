@@ -18,6 +18,10 @@ class JGGSelectSkillVC: UICollectionViewController, UICollectionViewDelegateFlow
     var isShowAllSkills: Bool = false
     var verifiedSkills: [JGGCategoryModel] = []
     
+    fileprivate lazy var categories: [JGGCategoryModel] = []
+    fileprivate lazy var isLoadingCategory: Bool = false
+    
+    /*
     fileprivate lazy var categories: [[String: String]] = [
         [
             "title": LocalizedString("Favourited Services"),
@@ -76,8 +80,9 @@ class JGGSelectSkillVC: UICollectionViewController, UICollectionViewDelegateFlow
             "imageName": "icon_cat_gardening",
             ],
         ]
-
-    private var headerType: Int = 1 // 0 : no verified skills of user,
+*/
+    
+    private var headerType: Int = 0 // 0 : no verified skills of user,
                                     // 1 : some verfied skill,
                                     // 2 : show all categories
     
@@ -90,6 +95,8 @@ class JGGSelectSkillVC: UICollectionViewController, UICollectionViewDelegateFlow
         initCollectionView()
         
         initUI()
+        
+        loadCategories()
     }
 
     private func initCollectionView() {
@@ -109,6 +116,10 @@ class JGGSelectSkillVC: UICollectionViewController, UICollectionViewDelegateFlow
         self.navigationController?.hidesBarsOnSwipe = false
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         
+        headerType = 0
+        self.navigationItem.title = LocalizedString("Post A Service")
+
+        /*
         if isShowAllSkills == false && verifiedSkills.count == 0 {
             //  No verified Skills of user
             headerType = 0
@@ -121,7 +132,7 @@ class JGGSelectSkillVC: UICollectionViewController, UICollectionViewDelegateFlow
             // Show All categories
             headerType = 2
             self.navigationItem.title = LocalizedString("Verify New Skills")
-        }
+        } */
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -151,6 +162,26 @@ class JGGSelectSkillVC: UICollectionViewController, UICollectionViewDelegateFlow
         super.viewWillDisappear(animated)
         self.navigationItem.title = " "
     }
+    
+    private func loadCategories() {
+        
+        func reloadCategories() {
+            self.categories = appManager.categories
+            self.collectionView?.reloadData()
+            self.isLoadingCategory = false
+        }
+        
+        if appManager.categories.count == 0 {
+            isLoadingCategory = true
+            APIManager.getCategories { (result) in
+                self.appManager.categories = result
+                reloadCategories()
+            }
+        } else {
+            reloadCategories()
+        }
+        
+    }
 
     // MARK: UICollectionViewDataSource
 
@@ -161,10 +192,8 @@ class JGGSelectSkillVC: UICollectionViewController, UICollectionViewDelegateFlow
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForHeaderInSection section: Int) -> CGSize {
-        var height: CGFloat = 386
-        if headerType == 0 {
-            height = 386
-        } else if headerType == 1 {
+        var height: CGFloat = 410
+        if headerType == 1 {
             height = 88
         } else if headerType == 2 {
             height = 155
@@ -190,7 +219,14 @@ class JGGSelectSkillVC: UICollectionViewController, UICollectionViewDelegateFlow
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader,
                                                                              withReuseIdentifier: "header",
                                                                              for: indexPath) as! JGGSelectSkillHeaderView
-            if      headerType == 0 { headerView.viewFirstDescription.isHidden = false }
+            if      headerType == 0 {
+                headerView.viewFirstDescription.isHidden = false
+                if isLoadingCategory {
+                    headerView.loadingIndicator.startAnimating()
+                } else {
+                    headerView.loadingIndicator.stopAnimating()
+                }
+            }
             else if headerType == 1 { headerView.viewSecondDescription.isHidden = false }
             else if headerType == 2 { headerView.viewThirdDescription.isHidden = false }
             
@@ -219,6 +255,8 @@ class JGGSelectSkillVC: UICollectionViewController, UICollectionViewDelegateFlow
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "JGGSearchCategorySelectCell",
                                                       for: indexPath) as! JGGSearchCategorySelectCell
+        cell.category = categories[indexPath.row]
+        /*
         if headerType == 1 {
             let category = categories[indexPath.row]
             cell.lblTitle.text = category["title"]
@@ -235,15 +273,21 @@ class JGGSelectSkillVC: UICollectionViewController, UICollectionViewDelegateFlow
                     cell.isVerified = false
                 }
             }
-        }
+        } */
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        var canVerifySkill = true
+//        var canVerifySkill = true
         if headerType == 0 {
             
-        } else if headerType == 1 {
+            let postServiceVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGPostServiceRootVC") as! JGGPostServiceRootVC
+            postServiceVC.selectedCategory = categories[indexPath.row]
+            self.navigationController?.pushViewController(postServiceVC, animated: true)
+            
+        }
+        /*
+        else if headerType == 1 {
             canVerifySkill = false
         } else if headerType == 2 {
             let cell = collectionView.cellForItem(at: indexPath) as! JGGSearchCategorySelectCell
@@ -254,9 +298,9 @@ class JGGSelectSkillVC: UICollectionViewController, UICollectionViewDelegateFlow
             let skillTestVC = serviceStoryboard.instantiateViewController(withIdentifier: "JGGSkillTestVC") as! JGGSkillTestVC
             self.navigationController?.pushViewController(skillTestVC, animated: true)
         } else {
-            onPressedSkill(self)
+//            onPressedSkill(self)
 
-        }
+        } */
     }
 
     // MARK: - Actions

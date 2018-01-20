@@ -21,7 +21,7 @@ class JGGPostServiceDescribeVC: JGGPostAppointmentBaseTableVC {
     @IBOutlet weak var btnTakePhotos: UIButton!
     @IBOutlet weak var iconTakePhoto: UIImageView!
     
-    internal var selectedImages: [(TLPHAsset, UIImage?)] = []
+    internal var selectedImages: [(TLPHAsset?, UIImage?)] = []
     var originalImages: [URL] = []
     
     private var isChangedImage: Bool = false
@@ -60,11 +60,29 @@ class JGGPostServiceDescribeVC: JGGPostAppointmentBaseTableVC {
         
     }
     
+    private func showOriginalServiceData() {
+        if let parent = self.parent as? JGGPostServiceStepRootVC {
+            txtServiceTitle.text = parent.creatingJob?.title
+            txtServiceDescribe.text = parent.creatingJob?.description_
+            txtTags.text = parent.creatingJob?.tags
+        }
+    }
+    
+    override func updateData(_ sender: Any) {
+        if let parentVC = parent as? JGGPostServiceStepRootVC {
+            let creatingJob = parentVC.creatingJob!
+            creatingJob.title = txtServiceTitle.text
+            creatingJob.description_ = txtServiceDescribe.text
+            creatingJob.tags = txtTags.text
+            creatingJob.attachmentImages = selectedImages.flatMap { $0.1 }
+        }
+    }
+    
     @IBAction func onPressedTakePhoto(_ sender: Any) {
         
         let photoPicker = JGGCustomPhotoPickerVC()
         photoPicker.delegate = self
-        photoPicker.selectedAssets = self.selectedImages.flatMap { $0.0 }
+        photoPicker.selectedAssets = self.selectedImages.filter { $0.0 != nil }.flatMap { $0.0 }
         photoPicker.didExceedMaximumNumberOfSelection = { [weak self] (picker) in
             self?.showAlert(title: LocalizedString("Warning"),
                             message: LocalizedString("Exceed Maximum Number Of Selection"))
@@ -144,7 +162,7 @@ extension JGGPostServiceDescribeVC: UITextFieldDelegate, UITextViewDelegate {
         if textField == txtServiceTitle {
             txtServiceDescribe.becomeFirstResponder()
         }
-        return true
+        return false
     }
     
 }
@@ -169,6 +187,7 @@ extension JGGPostServiceDescribeVC: TLPhotosPickerViewControllerDelegate {
 
 extension JGGPostServiceDescribeVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return selectedImages.count + 1
     }
     

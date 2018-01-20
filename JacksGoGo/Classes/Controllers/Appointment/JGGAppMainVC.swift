@@ -7,27 +7,30 @@
 //
 
 import UIKit
+import ESPullToRefresh
 
 class JGGAppMainVC: JGGStartTableVC {
 
     fileprivate var searchbar: JGGAppSearchHeaderView?
     
+    fileprivate lazy var arrayAllPendingJobs: [JGGJobModel] = []
+    
     fileprivate lazy var arrayLoadedQuickJobs: [JGGJobModel] = []
-    fileprivate lazy var arrayLoadedServicePackages: [JGGServicePackageModel] = []
-    fileprivate lazy var arrayLoadedPendingJobs: [JGGAppointmentBaseModel] = []
+    fileprivate lazy var arrayLoadedServicePackages: [JGGJobModel] = []
+    fileprivate lazy var arrayLoadedPendingJobs: [JGGJobModel] = []
     
     fileprivate lazy var searchResultQuickJobs: [JGGJobModel] = []
-    fileprivate lazy var searchResultServicePackages: [JGGServicePackageModel] = []
-    fileprivate lazy var searchResultPendingJobs: [JGGAppointmentBaseModel] = []
+    fileprivate lazy var searchResultServicePackages: [JGGJobModel] = []
+    fileprivate lazy var searchResultPendingJobs: [JGGJobModel] = []
     fileprivate var isSearchMode: Bool = false
     
     fileprivate var arrayQuickJobs: [JGGJobModel] {
         return isSearchMode == true ? searchResultQuickJobs : arrayLoadedQuickJobs
     }
-    fileprivate var arrayServicePackages: [JGGServicePackageModel] {
+    fileprivate var arrayServicePackages: [JGGJobModel] {
         return isSearchMode == true ? searchResultServicePackages : arrayLoadedServicePackages
     }
-    fileprivate var arrayPendingJobs: [JGGAppointmentBaseModel] {
+    fileprivate var arrayPendingJobs: [JGGJobModel] {
         return isSearchMode == true ? searchResultPendingJobs : arrayLoadedPendingJobs
     }
 
@@ -38,13 +41,14 @@ class JGGAppMainVC: JGGStartTableVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        makeTemporaryData()
+//        makeTemporaryData()
 
         initializeTableView()
         addTabNavigationBar()
         addSearchField()
         registerCell()
         
+        self.tableView.es.startPullToRefresh()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,7 +61,15 @@ class JGGAppMainVC: JGGStartTableVC {
     private func initializeTableView() {
         self.tableView.keyboardDismissMode = .onDrag
         self.tableView.allowsSelection = true
-
+        self.tableView.es.addPullToRefresh {
+            self.APIManager.getPendingJobs { (response) in
+                self.resetData()
+                self.arrayAllPendingJobs.append(contentsOf: response)
+                self.filterJobs(response)
+                self.tableView.reloadData()
+                self.tableView.es.stopPullToRefresh()
+            }
+        }
     }
 
     private func addTabNavigationBar() {
@@ -87,6 +99,40 @@ class JGGAppMainVC: JGGStartTableVC {
                                 forHeaderFooterViewReuseIdentifier: "JGGSectionTitleView")
     }
     
+    // MARK: - Load and filter jobs
+    fileprivate func resetData() {
+        arrayAllPendingJobs.removeAll()
+        arrayLoadedQuickJobs.removeAll()
+        arrayLoadedServicePackages.removeAll()
+        arrayLoadedPendingJobs.removeAll()
+        searchResultQuickJobs.removeAll()
+        searchResultServicePackages.removeAll()
+        searchResultPendingJobs.removeAll()
+    }
+    
+    fileprivate func loadJobs() {
+        APIManager.getPendingJobs { (response) in
+            self.arrayAllPendingJobs.append(contentsOf: response)
+            self.filterJobs(response)
+            if response.count > 0 {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    fileprivate func filterJobs(_ jobs: [JGGJobModel]) {
+        for job in jobs {
+            if job.isQuickJob {
+                arrayLoadedQuickJobs.append(job)
+            } else if job.isRequest == false && job.serviceType > 1 {
+                arrayLoadedServicePackages.append(job)
+            } else {
+                arrayLoadedPendingJobs.append(job)
+            }
+        }
+        
+    }
+    
     // MARK: - UITableView Data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         if selectedTab == .pending {
@@ -98,6 +144,15 @@ class JGGAppMainVC: JGGStartTableVC {
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if selectedTab == .pending {
+            if section == 0 {
+                if arrayQuickJobs.count == 0 {
+                    return 0
+                }
+            } else if section == 1 {
+                if arrayServicePackages.count == 0 {
+                    return 0
+                }
+            }
             return 50
         } else {
             return 0
@@ -141,15 +196,15 @@ class JGGAppMainVC: JGGStartTableVC {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppHistoryListCell") as! JGGAppHistoryListCell
         if indexPath.section == 0 {
             if selectedTab == .pending {
-                cell.appointment = arrayQuickJobs[indexPath.row];
+                cell.job = arrayQuickJobs[indexPath.row];
             } else {
                 let index = Int(arc4random_uniform(UInt32(indexPath.row)))
-                cell.appointment = arrayPendingJobs[index];
+                cell.job = arrayPendingJobs[index];
             }
         } else if indexPath.section == 1 {
-            cell.appointment = arrayServicePackages[indexPath.row];
+            cell.job = arrayServicePackages[indexPath.row];
         } else if indexPath.section == 2 {
-            cell.appointment = arrayPendingJobs[indexPath.row];
+            cell.job = arrayPendingJobs[indexPath.row];
         }
         return cell
     }
@@ -163,7 +218,7 @@ class JGGAppMainVC: JGGStartTableVC {
             self.navigationController?.pushViewController(serviceDetailVC, animated: true)
         } */
         if let appointmentStatusSummary = self.storyboard?.instantiateViewController(withIdentifier: "JGGAppJobStatusSummaryVC") as? JGGAppJobStatusSummaryVC {
-            appointmentStatusSummary.selectedAppointment = cell.appointment
+            appointmentStatusSummary.selectedAppointment = cell.job
             self.navigationController?.pushViewController(appointmentStatusSummary, animated: true)
         }
     }

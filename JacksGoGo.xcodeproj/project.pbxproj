@@ -253,6 +253,8 @@
 		FFB64BB31FB7B03C0028B77B /* JGGSearchMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB64BB21FB7B03C0028B77B /* JGGSearchMainVC.swift */; };
 		FFB8662F2003992F005901DB /* JGGSplashLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB8662E2003992F005901DB /* JGGSplashLoadingView.swift */; };
 		FFB8663120039941005901DB /* JGGSplashLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB8663020039941005901DB /* JGGSplashLoadingView.xib */; };
+		FFC5C75020127E7100F5834F /* JGGPostServiceTimeSlotsNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC5C74F20127E7100F5834F /* JGGPostServiceTimeSlotsNC.swift */; };
+		FFC5C752201283CF00F5834F /* JGGPostServiceTimeSlotsBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC5C751201283CF00F5834F /* JGGPostServiceTimeSlotsBaseVC.swift */; };
 		FFEB45CE1FEC128300F362FF /* JGGLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB45CD1FEC128300F362FF /* JGGLoginVC.swift */; };
 		FFEB45D01FEC132A00F362FF /* JGGSignupSelectRegionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB45CF1FEC132A00F362FF /* JGGSignupSelectRegionVC.swift */; };
 		FFEB45D21FEC133A00F362FF /* JGGSignupEmailPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB45D11FEC133A00F362FF /* JGGSignupEmailPasswordVC.swift */; };
@@ -532,6 +534,8 @@
 		FFB64BB21FB7B03C0028B77B /* JGGSearchMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSearchMainVC.swift; sourceTree = "<group>"; };
 		FFB8662E2003992F005901DB /* JGGSplashLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSplashLoadingView.swift; sourceTree = "<group>"; };
 		FFB8663020039941005901DB /* JGGSplashLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGSplashLoadingView.xib; sourceTree = "<group>"; };
+		FFC5C74F20127E7100F5834F /* JGGPostServiceTimeSlotsNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGPostServiceTimeSlotsNC.swift; sourceTree = "<group>"; };
+		FFC5C751201283CF00F5834F /* JGGPostServiceTimeSlotsBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGPostServiceTimeSlotsBaseVC.swift; sourceTree = "<group>"; };
 		FFEB45CD1FEC128300F362FF /* JGGLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGLoginVC.swift; sourceTree = "<group>"; };
 		FFEB45CF1FEC132A00F362FF /* JGGSignupSelectRegionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSignupSelectRegionVC.swift; sourceTree = "<group>"; };
 		FFEB45D11FEC133A00F362FF /* JGGSignupEmailPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSignupEmailPasswordVC.swift; sourceTree = "<group>"; };
@@ -864,8 +868,7 @@
 				FF36F1691FB8D4C60055674F /* JGGActiveServicesAroundVC.swift */,
 				FF86D0E01FC3368A00EE70F5 /* JGGServiceFilterVC.swift */,
 				FF86D1221FC4D4D900EE70F5 /* ServiceDetail */,
-				FFFEFE201FF1D736003A2B94 /* PostNewJob */,
-				FFB27A371FD25DF0009A2201 /* PostNewService */,
+				FFC5C74C201249B600F5834F /* Post */,
 				FFB594101FDB299400D12A1F /* Search */,
 			);
 			path = Search;
@@ -1233,16 +1236,11 @@
 				FF849DF11FD6EF53003EB83A /* JGGSkillTestVC.swift */,
 				FF992A9A1FD763A900B72CAE /* JGGPostServiceRootVC.swift */,
 				FF849DFA1FD70853003EB83A /* JGGPostServiceStepRootVC.swift */,
-				FF849DFC1FD708DF003EB83A /* JGGPostAppointmentBaseTableVC.swift */,
-				FF849DFE1FD70941003EB83A /* JGGServiceSummaryVC.swift */,
 				FF849E001FD70B31003EB83A /* JGGPostServiceDescribeVC.swift */,
 				FF849E021FD712FE003EB83A /* JGGPostServicePriceVC.swift */,
-				FF849E071FD7348B003EB83A /* JGGPostServiceTimeSlotsTypeVC.swift */,
-				FF849E091FD734A2003EB83A /* JGGPostServiceTimeSlotsDetailVC.swift */,
-				FF849E0F1FD74B53003EB83A /* JGGPostServiceTimeSlotsFinalVC.swift */,
-				FF849E111FD7511F003EB83A /* JGGAddTimeSlotsPopupVC.swift */,
-				FF849E131FD75135003EB83A /* JGGDatePickerPopupVC.swift */,
+				FFC5C74E20127E2800F5834F /* ServiceTime */,
 				FF849E151FD75D2C003EB83A /* JGGPostServiceAddressVC.swift */,
+				FF849DFE1FD70941003EB83A /* JGGServiceSummaryVC.swift */,
 			);
 			path = PostNewService;
 			sourceTree = "<group>";
@@ -1301,6 +1299,40 @@
 			path = ClientJobs;
 			sourceTree = "<group>";
 		};
+		FFC5C74C201249B600F5834F /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				FFC5C74D201249DA00F5834F /* Picker */,
+				FF849DFC1FD708DF003EB83A /* JGGPostAppointmentBaseTableVC.swift */,
+				FFFEFE201FF1D736003A2B94 /* PostNewJob */,
+				FFB27A371FD25DF0009A2201 /* PostNewService */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		FFC5C74D201249DA00F5834F /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				FF849E111FD7511F003EB83A /* JGGAddTimeSlotsPopupVC.swift */,
+				FF86FA35200A91BE00CF580B /* JGGWeeklySelectPickerVC.swift */,
+				FF86FA37200A9B6200CF580B /* JGGMonthlySelectPickerVC.swift */,
+				FF849E131FD75135003EB83A /* JGGDatePickerPopupVC.swift */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		FFC5C74E20127E2800F5834F /* ServiceTime */ = {
+			isa = PBXGroup;
+			children = (
+				FFC5C74F20127E7100F5834F /* JGGPostServiceTimeSlotsNC.swift */,
+				FFC5C751201283CF00F5834F /* JGGPostServiceTimeSlotsBaseVC.swift */,
+				FF849E071FD7348B003EB83A /* JGGPostServiceTimeSlotsTypeVC.swift */,
+				FF849E091FD734A2003EB83A /* JGGPostServiceTimeSlotsDetailVC.swift */,
+				FF849E0F1FD74B53003EB83A /* JGGPostServiceTimeSlotsFinalVC.swift */,
+			);
+			path = ServiceTime;
+			sourceTree = "<group>";
+		};
 		FFEB45CC1FEC11DB00F362FF /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -1344,8 +1376,6 @@
 				FF9381A01FF54C20005699C3 /* JGGPostJobPriceVC.swift */,
 				FF9381A21FF55AF4005699C3 /* JGGPostJobReportVC.swift */,
 				FF9381A41FF55C94005699C3 /* JGGPostJobSummaryVC.swift */,
-				FF86FA35200A91BE00CF580B /* JGGWeeklySelectPickerVC.swift */,
-				FF86FA37200A9B6200CF580B /* JGGMonthlySelectPickerVC.swift */,
 			);
 			path = PostNewJob;
 			sourceTree = "<group>";
@@ -1665,6 +1695,7 @@
 				FFB27A281FD19D1B009A2201 /* UIView+Gradient.swift in Sources */,
 				FF93819D1FF4A655005699C3 /* JGGPostJobTimeVC.swift in Sources */,
 				FFB27A271FD19D1B009A2201 /* LightboxTransition.swift in Sources */,
+				FFC5C752201283CF00F5834F /* JGGPostServiceTimeSlotsBaseVC.swift in Sources */,
 				FF21FAEA1FAB5B2A004D0ADA /* JGGDetailInfoHeaderView.swift in Sources */,
 				631EF29D1FA8744F001D2915 /* JGGUserBaseModel.swift in Sources */,
 				FFA14B1B1FEDE5A000186657 /* JGGProfileMainVC.swift in Sources */,
@@ -1692,6 +1723,7 @@
 				FFA061BB1FAB4F4200185C56 /* JGGAppInviteProviderCell.swift in Sources */,
 				FFEB45D21FEC133A00F362FF /* JGGSignupEmailPasswordVC.swift in Sources */,
 				FFB5941F1FDE688300D12A1F /* JGGAppJobStatusSummaryVC.swift in Sources */,
+				FFC5C75020127E7100F5834F /* JGGPostServiceTimeSlotsNC.swift in Sources */,
 				FFA061BF1FAB50A000185C56 /* JGGDetailInfoDescriptionCell.swift in Sources */,
 				FF849E031FD712FE003EB83A /* JGGPostServicePriceVC.swift in Sources */,
 				FF849E141FD75135003EB83A /* JGGDatePickerPopupVC.swift in Sources */,

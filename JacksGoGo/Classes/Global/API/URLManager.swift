@@ -80,11 +80,24 @@ class URLManager: NSObject {
             return URLManager.fullPath(for: "/Appointment" + endPoint)
         }
         
-        // Jobs
+        // Appointment
         static func ApproveAppointment(id: String) -> String {
             return fullPath(for: "/ApproveAppointment?ID=\(id)")
         }
-
+        
+        static func GetPendingAppointments() -> String {
+            return fullPath(for: "/GetPendingAppointments")
+        }
+        
+        static func GetConfirmedAppointments(id: String) -> String {
+            return fullPath(for: "/GetConfirmedAppointments?ID=\(id)")
+        }
+        
+        static func GetAppointmentHistory(id: String) -> String {
+            return fullPath(for: "/GetAppointmentHistory?ID=\(id)")
+        }
+        
+        // Jobs
         static var PostJob: String {
             return fullPath(for: "/PostJob")
         }

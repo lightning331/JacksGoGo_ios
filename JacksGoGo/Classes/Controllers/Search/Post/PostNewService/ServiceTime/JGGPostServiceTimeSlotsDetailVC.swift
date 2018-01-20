@@ -12,7 +12,7 @@ import JTAppleCalendar
 
 import MZFormSheetPresentationController
 
-class JGGPostServiceTimeSlotsDetailVC: JGGPostAppointmentBaseTableVC {
+class JGGPostServiceTimeSlotsDetailVC: JGGPostServiceTimeSlotsBaseVC {
 
     var calendarView: JGGCalendarView!
 
@@ -39,6 +39,15 @@ class JGGPostServiceTimeSlotsDetailVC: JGGPostAppointmentBaseTableVC {
 
     }
     
+    private var arrayTimeSlots : [JGGTimeSlotModel] {
+        if self.navController.selectedPeopleType == 0 {
+            return self.navController.onePersonTimeSlots
+        } else if self.navController.selectedPeopleType == 1 {
+            return self.navController.multiplePeopleTimeSlots
+        } else {
+            return []
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -54,12 +63,13 @@ class JGGPostServiceTimeSlotsDetailVC: JGGPostAppointmentBaseTableVC {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1 + 1
+        return arrayTimeSlots.count + 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row < 1 {
+        if indexPath.row < arrayTimeSlots.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "JGGTimeSlotsEditCell") as! JGGTimeSlotsEditCell
+            cell.timeSlots = arrayTimeSlots[indexPath.row]
             cell.editTimeHandler = { timeSlotCell in
                 self.showAddTimeSlotsPopup()
             }
@@ -87,12 +97,13 @@ class JGGPostServiceTimeSlotsDetailVC: JGGPostAppointmentBaseTableVC {
         }, cancelButtonTitle: LocalizedString("Cancel"), cancelAction: nil)
     }
     
-    fileprivate func showAddTimeSlotsPopup() {
+    fileprivate func showAddTimeSlotsPopup(with time: Date? = nil) {
         let timeSlotsPopupVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGAddTimeSlotsPopupVC") as! JGGAddTimeSlotsPopupVC
+        
         showPopup(viewController: timeSlotsPopupVC, transitionStyle: .bounce)
     }
     
-    fileprivate func showCalendarPopup() {
+    fileprivate func showCalendarPopup(with date: Date? = nil) {
         let timeSlotsPopupVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGDatePickerPopupVC") as! JGGDatePickerPopupVC
         showPopup(viewController: timeSlotsPopupVC, transitionStyle: .bounce)
     }

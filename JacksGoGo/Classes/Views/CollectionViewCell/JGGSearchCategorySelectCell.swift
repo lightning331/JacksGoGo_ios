@@ -46,9 +46,14 @@ class JGGSearchCategorySelectCell: UICollectionViewCell {
     }
     
     private func showCategoryInfo() {
-        lblTitle.text = category?.name
-        if let urlString = category?.image, let url = URL(string: urlString) {
-            imgviewIcon.af_setImage(withURL: url)
+        if let category = category {
+            lblTitle.text = category.name
+            if let urlString = category.image, let url = URL(string: urlString) {
+                imgviewIcon.af_setImage(withURL: url)
+            }
+        } else {
+            lblTitle.text = nil
+            imgviewIcon.image = nil
         }
     }
 }

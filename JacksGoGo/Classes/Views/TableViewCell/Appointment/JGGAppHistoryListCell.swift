@@ -20,7 +20,7 @@ class JGGAppHistoryListCell: UITableViewCell {
     @IBOutlet weak var viewCountBadge: UIView!
     @IBOutlet weak var lblCountBadge: UILabel!
     
-    var appointment: JGGAppointmentBaseModel? {
+    var job: JGGJobModel? {
         didSet {
             updateValue()
         }
@@ -37,7 +37,7 @@ class JGGAppHistoryListCell: UITableViewCell {
     }
 
     fileprivate func updateValue() {
-        if let appointment = appointment {
+        if let appointment = job {
             lblDay.text = appointment.appointmentDay()
             lblMonth.text = appointment.appointmentMonth()
             lblTitle.text = appointment.title
@@ -46,23 +46,18 @@ class JGGAppHistoryListCell: UITableViewCell {
             viewCountBadge.isHidden = 3 == 0
             viewRightSideBadge.isHidden = 3 == 0
             
+//            if let urlString = appointment.attachmentUrl?.first, let url = URL(string: urlString) {
+            
+//            }
+            
             var color = UIColor.JGGCyan
-            if let _ = appointment as? JGGJobModel {
+            if appointment.isRequest == false {
                 color = UIColor.JGGGreen
-            } else if let _ = appointment as? JGGEventModel {
-                color = UIColor.JGGPurple
             }
             lblDay.textColor = color
             lblMonth.textColor = color
             
             lblStatus.isHidden = true
-            /*
-            if appointment.status == .cancelled {
-                lblStatus.isHidden = false
-                lblStatus.text = "Cancelled"
-            } else {
-                lblStatus.isHidden = true
-            } */
         }
     }
 }

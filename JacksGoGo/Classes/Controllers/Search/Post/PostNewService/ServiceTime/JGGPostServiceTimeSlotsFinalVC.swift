@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JGGPostServiceTimeSlotsFinalVC: JGGPostAppointmentBaseTableVC {
+class JGGPostServiceTimeSlotsFinalVC: JGGPostServiceTimeSlotsBaseVC {
 
     @IBOutlet weak var btnTimeSlotsType: JGGYellowSelectingButton!
     @IBOutlet weak var btnViewTimeSlots: UIButton!
@@ -27,6 +27,10 @@ class JGGPostServiceTimeSlotsFinalVC: JGGPostAppointmentBaseTableVC {
         }
     }
 
+    @IBAction func  onPressedType(_ sender: UIButton) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     @IBAction func onPressedViewTimeSlots(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }

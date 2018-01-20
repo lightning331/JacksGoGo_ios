@@ -16,6 +16,11 @@ class JGGTimeSlotsEditCell: UITableViewCell {
     
     var editTimeHandler: ((JGGTimeSlotsEditCell) -> Void)!
     var deleteTimeHandler: ((JGGTimeSlotsEditCell) -> Void)!
+    var timeSlots: JGGTimeSlotModel! {
+        didSet {
+            showTimeSlots()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,4 +41,13 @@ class JGGTimeSlotsEditCell: UITableViewCell {
         deleteTimeHandler(self)
     }
     
+    private func showTimeSlots() {
+        if let startTime = timeSlots.startOn?.timeForJacks(),
+            let endTime = timeSlots.endOn?.timeForJacks() {
+            let timeString = String(format: "%@ - %@", startTime, endTime)
+            lblTime.text = timeString
+        } else {
+            lblTime.text = nil
+        }
+    }
 }

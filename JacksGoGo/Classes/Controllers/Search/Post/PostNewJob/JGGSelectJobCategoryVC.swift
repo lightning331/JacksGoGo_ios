@@ -11,6 +11,7 @@ import UIKit
 class JGGSelectJobCategoryVC: UICollectionViewController {
 
     fileprivate lazy var categories: [JGGCategoryModel] = []
+    fileprivate lazy var quickJobModel: JGGCategoryModel = JGGCategoryModel()
     
     private var loadingIndicatorView: UIActivityIndicatorView?
     private var isLoadingCategories: Bool = false
@@ -54,6 +55,10 @@ class JGGSelectJobCategoryVC: UICollectionViewController {
     
     private func loadCategories() {
         
+        quickJobModel.name = LocalizedString("Quick Job")
+        quickJobModel.image = "icon_cat_quickjob"
+        quickJobModel.isQuickJob = true
+        
         func reloadCategories() {
             self.categories = appManager.categories
             self.collectionView?.reloadData()
@@ -90,7 +95,7 @@ class JGGSelectJobCategoryVC: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
+        return categories.count + 1
     }
     
     override func collectionView(_ collectionView: UICollectionView,
@@ -108,16 +113,24 @@ class JGGSelectJobCategoryVC: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "JGGSearchCategorySelectCell",
                                                       for: indexPath) as! JGGSearchCategorySelectCell
-
-        let category = categories[indexPath.row]
-        cell.category = category
+        if indexPath.row == 0 {
+            cell.lblTitle.text = quickJobModel.name
+            cell.imgviewIcon.image = UIImage(named: quickJobModel.image!)
+        } else {
+            let category = categories[indexPath.row - 1]
+            cell.category = category
+        }
         return cell
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let serviceStoryboard = UIStoryboard(name: "Services", bundle: nil)
         let postJobRootVC = serviceStoryboard.instantiateViewController(withIdentifier: "JGGPostJobRootVC") as! JGGPostJobRootVC
-        postJobRootVC.selectedCategory = categories[indexPath.row]
+        if indexPath.row == 0 {
+            postJobRootVC.selectedCategory = quickJobModel
+        } else {
+            postJobRootVC.selectedCategory = categories[indexPath.row]
+        }
         self.navigationController?.pushViewController(postJobRootVC, animated: true)
     }
     

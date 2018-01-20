@@ -74,6 +74,7 @@ typealias CategoryListClosure = ([JGGCategoryModel]) -> Void
 typealias StringStringClosure = (String?, String?) -> Void
 typealias ProgressClosure = (Float) -> Void
 typealias VoidClosure = () -> Void
+typealias AppointmentsClosure = ([JGGJobModel]) -> Void
 
 public var weekNames: [String] = [
     LocalizedString("Sunday"),

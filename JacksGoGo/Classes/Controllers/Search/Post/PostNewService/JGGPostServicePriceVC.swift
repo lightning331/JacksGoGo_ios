@@ -7,19 +7,77 @@
 //
 
 import UIKit
+import Toaster
 
 class JGGPostServicePriceVC: JGGPostAppointmentBaseTableVC {
     
-    fileprivate var selectedPriceType: Int = 0
+    fileprivate var selectedServiceType: Int = 0 // 0: No selected, 1: One-time, 2: Package
+    fileprivate var priceType: Int = 0
+    fileprivate var fixedPrice: Double = 0
+    fileprivate var minPrice: Double = 0
+    fileprivate var maxPrice: Double = 0
+    fileprivate var packageNo: Int = 0
+    fileprivate var packagePrice: Double = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         btnNext.isHidden = false
+        
     }
 
+    override func onPressedNext(_ sender: UIButton) {
+        var errorMessage: String? = nil
+        
+        if selectedServiceType == 0 {
+            errorMessage = LocalizedString("Please select a price type.")
+        } else if selectedServiceType == 1 {
+            if priceType == 1 {
+                if fixedPrice == 0 {
+                    errorMessage = LocalizedString("Please enter greater fixed price than 0.")
+                }
+            } else if priceType == 2 {
+                if minPrice > maxPrice {
+                    errorMessage = LocalizedString("Please enter less min price than max price.")
+                }
+            } else {
+                errorMessage = LocalizedString("Please enter price.")
+            }
+        } else if selectedServiceType == 2 {
+            if packageNo < 2 || packagePrice == 0 {
+                errorMessage = LocalizedString("Please enter package no. 2+ and price")
+            }
+        }
+        if errorMessage == nil {
+            super.onPressedNext(sender)
+        } else {
+            Toast(text: errorMessage, delay: 0, duration: 3).show()
+        }
+    }
+    
+    override func updateData(_ sender: Any) {
+        if let parentVC = parent as? JGGPostServiceStepRootVC {
+            let creatingService = parentVC.creatingJob!
+            creatingService.budget = nil
+            creatingService.budgetFrom = nil
+            creatingService.budgetTo = nil
+            if selectedServiceType == 1 {
+                creatingService.serviceType = 1
+                if priceType == 1 {
+                    creatingService.budget = fixedPrice
+                } else if priceType == 2 {
+                    creatingService.budgetFrom = minPrice
+                    creatingService.budgetTo = maxPrice
+                }
+            } else if selectedServiceType == 2 {
+                creatingService.serviceType = self.packageNo
+                creatingService.budget = self.packagePrice
+            }
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if selectedPriceType > 0 {
+        if selectedServiceType > 0 {
             return 2
         }
         return 1
@@ -28,33 +86,43 @@ class JGGPostServicePriceVC: JGGPostAppointmentBaseTableVC {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "JGGPostServicePriceTypeCell") as! JGGPostServicePriceTypeCell
-            cell.selectingHandler = { index in
-                self.selectedPriceType = index
+            cell.changedTypeHandler = { index in
+                self.selectedServiceType = index
                 self.tableView.reloadData()
             }
             return cell
         } else if indexPath.row == 1 {
             
-            if selectedPriceType == 1 {
+            if selectedServiceType == 1 { // One-Time
                 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "JGGPostServicePriceOneTimeCell") as! JGGPostServicePriceOneTimeCell
                 cell.priceChangedHandler = { (type, price, maxPrice) in
-                    
+                    if type == 1 {
+                        self.fixedPrice = price
+                        self.minPrice = 0
+                        self.maxPrice = 0
+                    } else if type == 2 {
+                        self.fixedPrice = 0
+                        self.minPrice = price
+                        self.maxPrice = maxPrice
+                    }
+                    self.priceType = type
                 }
-                cell.changedTypeHandler = {
+                cell.changedTypeHandler = { (type) in
+                    self.priceType = type
                     self.tableView.beginUpdates()
                     self.tableView.endUpdates()
                 }
                 return cell
                 
-            } else if selectedPriceType == 2 {
+            } else if selectedServiceType == 2 {  // package
                 
                 let cell = tableView.dequeueReusableCell(withIdentifier: "JGGPostServicePricePackageCell") as! JGGPostServicePricePackageCell
                 cell.changedNumberOfServiceHandler = { number in
-                    
+                    self.packageNo = number
                 }
                 cell.changedAmountHandler = { amount in
-                    
+                    self.packagePrice = amount
                 }
                 return cell
                 
@@ -71,7 +139,7 @@ class JGGPostServicePriceTypeCell: UITableViewCell {
     @IBOutlet weak var btnOneTimeService: JGGYellowSelectingButton!
     @IBOutlet weak var btnPackageService: JGGYellowSelectingButton!
     
-    var selectingHandler: ((Int) -> Void)!
+    var changedTypeHandler: ((Int) -> Void)!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -96,7 +164,7 @@ class JGGPostServicePriceTypeCell: UITableViewCell {
             btnOneTimeService.isHidden = false
             btnPackageService.isHidden = false
         }
-        selectingHandler(index)
+        changedTypeHandler(index)
     }
 }
 
@@ -112,8 +180,8 @@ class JGGPostServicePriceOneTimeCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var viewMaxPrice: UIView!
     @IBOutlet weak var txtMaxPrice: UITextField!
 
-    var priceChangedHandler: ((Int, Float, Float) -> Void)!
-    var changedTypeHandler: (() -> Void)!
+    var priceChangedHandler: ((Int, Double, Double) -> Void)!
+    var changedTypeHandler: ((Int) -> Void)!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -135,18 +203,21 @@ class JGGPostServicePriceOneTimeCell: UITableViewCell, UITextFieldDelegate {
     
     @IBAction fileprivate func onPressedButton(_ sender: JGGYellowSelectingButton) {
         sender.select(!sender.selected())
+        var priceType: Int = 0
         if sender.selected() {
             if sender == btnFixedAmount {
                 viewFixedAmount.isHidden = false
                 btnRangeAmount.isHidden = true
                 viewMinPrice.isHidden = true
                 viewMaxPrice.isHidden = true
+                priceType = 1
             }
             else if sender == btnRangeAmount {
                 viewFixedAmount.isHidden = true
                 btnFixedAmount.isHidden = true
                 viewMinPrice.isHidden = false
                 viewMaxPrice.isHidden = false
+                priceType = 2
             }
         } else {
             btnFixedAmount.isHidden = false
@@ -155,7 +226,7 @@ class JGGPostServicePriceOneTimeCell: UITableViewCell, UITextFieldDelegate {
             viewMinPrice.isHidden = true
             viewMaxPrice.isHidden = true
         }
-        changedTypeHandler()
+        changedTypeHandler(priceType)
     }
     
     @objc func textfieldDidChanged(_ textfield: UITextField) {
@@ -167,10 +238,10 @@ class JGGPostServicePriceOneTimeCell: UITableViewCell, UITextFieldDelegate {
         }
         if selectedType > 0 {
             if selectedType == 1 && textfield == txtFixedAmount {
-                priceChangedHandler(selectedType, Float(textfield.text!) ?? 0, 0)
+                priceChangedHandler(selectedType, Double(textfield.text!) ?? 0, 0)
             }
             else {
-                priceChangedHandler(selectedType, Float(txtMinPrice.text!) ?? 0, Float(txtMaxPrice.text!) ?? 0)
+                priceChangedHandler(selectedType, Double(txtMinPrice.text!) ?? 0, Double(txtMaxPrice.text!) ?? 0)
             }
         }
     }
@@ -182,7 +253,7 @@ class JGGPostServicePricePackageCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var txtAmount: UITextField!
     
     var changedNumberOfServiceHandler: ((Int) -> Void)!
-    var changedAmountHandler:((Float) -> Void)!
+    var changedAmountHandler:((Double) -> Void)!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -198,7 +269,7 @@ class JGGPostServicePricePackageCell: UITableViewCell, UITextFieldDelegate {
         if textfield == txtNumberOfService {
             changedNumberOfServiceHandler(Int(txtNumberOfService.text!) ?? 0)
         } else if textfield == txtAmount {
-            changedAmountHandler(Float(txtAmount.text!) ?? 0)
+            changedAmountHandler(Double(txtAmount.text!) ?? 0)
         }
     }
 }

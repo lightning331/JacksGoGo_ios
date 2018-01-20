@@ -11,12 +11,12 @@ import SwiftyJSON
 
 class JGGTimeSlotModel: NSObject {
 
-    internal let SessionStartOn = "SessionStartOn"
-    internal let SessionEndOn   = "SessionEndOn"
+    internal let StartOn = "StartOn"
+    internal let EndOn   = "EndOn"
     internal let Peoples        = "Peoples"
     
-    var sessionStartOn: Date?
-    var sessionEndOn: Date?
+    var startOn: Date?
+    var endOn: Date?
     var peoples: Int?
     
     override init() {
@@ -28,15 +28,15 @@ class JGGTimeSlotModel: NSObject {
             return nil
         }
         super.init()
-        sessionStartOn = json[SessionStartOn].dateObject
-        sessionEndOn   = json[SessionEndOn].dateObject
-        peoples        = json[Peoples].int
+        startOn = json[StartOn].dateObject
+        endOn   = json[EndOn].dateObject
+        peoples = json[Peoples].int
     }
     
     func json() -> JSON {
         var json = JSON()
-        json[SessionStartOn].dateObject = sessionStartOn
-        json[SessionEndOn].dateObject   = sessionEndOn
+        json[StartOn].dateObject = startOn
+        json[EndOn].dateObject   = endOn
         json[Peoples].int = peoples
         return json
     }

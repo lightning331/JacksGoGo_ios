@@ -43,9 +43,12 @@ class JGGAddTimeSlotsPopupVC: JGGPopupBaseVC {
     
     var doneButtonTitle: String?
     var showEndTime: Bool = true
+    var isHideCloseEndTimeButton: Bool = true
     var selectedStartTime: Date?
     var selectedEndTime: Date?
+    var selectedPaxNo: Int?
     var selectTimeHandler: ((Date?, Date?, Int?) -> Void)?
+    var isHideNumberOfPax: Bool = true
     
     // MARK: Private properties
     fileprivate var startHour: Int = 0
@@ -69,7 +72,7 @@ class JGGAddTimeSlotsPopupVC: JGGPopupBaseVC {
         btnEndTimeAM.isSelected = true
         btnEndTimePM.isSelected = false
         
-        viewNumberOfPax.isHidden = true
+        viewNumberOfPax.isHidden = isHideNumberOfPax
         if showEndTime || selectedEndTime != nil {
             btnSetEndTime.isHidden = true
             btnEndTimeClose.isHidden = false
@@ -82,6 +85,7 @@ class JGGAddTimeSlotsPopupVC: JGGPopupBaseVC {
         if let doneButtonTitle = doneButtonTitle {
             btnAdd.setTitle(doneButtonTitle, for: .normal)
         }
+        btnEndTimeClose.isHidden = isHideCloseEndTimeButton
         
         func parseTime(_ time: Date?, textFieldHour: UITextField, textFieldMinute: UITextField, buttonPeriodAM: UIButton, buttonPeriodPM: UIButton) {
             if let time = time {
@@ -116,6 +120,12 @@ class JGGAddTimeSlotsPopupVC: JGGPopupBaseVC {
                   textFieldMinute: txtEndTimeMinute,
                   buttonPeriodAM: btnEndTimeAM,
                   buttonPeriodPM: btnEndTimePM)
+        
+        startHour = Int(txtStartTimeHour.text!) ?? 0
+        startMinute = Int(txtStartTimeMinute.text!) ?? 0
+        endHour = Int(txtEndTimeHour.text!) ?? 0
+        endMinute = Int(txtEndTimeMinute.text!) ?? 0
+        
     }
     
     override func contentViewFrame(for presentationController: MZFormSheetPresentationController!, currentFrame: CGRect) -> CGRect {
@@ -235,7 +245,17 @@ class JGGAddTimeSlotsPopupVC: JGGPopupBaseVC {
                     return
                 }
             }
-            selectTimeHandler(startTime, endTime, nil)
+            var numberOfPax: Int? = nil
+            if isHideNumberOfPax == false {
+                guard let n = Int(txtNumberOfPax.text ?? ""), n > 0 else {
+                    Toast(text: LocalizedString("Please input number of pax."),
+                          delay: 0,
+                          duration: 5).show()
+                    return
+                }
+                numberOfPax = n
+            }
+            selectTimeHandler(startTime, endTime, numberOfPax)
         }
         self.dismiss(animated: true, completion: nil)
     }

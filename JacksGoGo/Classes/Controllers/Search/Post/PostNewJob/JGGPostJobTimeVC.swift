@@ -65,15 +65,15 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
             let creatingJob = parentVC.creatingJob
             creatingJob.jobType = selectedJobType
             if let selectedDate = selectedDate, let selectedStartTime = selectedStartTime, let isSpecific = isSpecificDate {
-                let dateString = selectedDate.toString(format: .custom("yyyy-MM-dd"))
-                let startTimeString = selectedStartTime.toString(format: .custom("HH:mm:ss"))
+                let dateString = selectedDate.toString(format: DateOnly)
+                let startTimeString = selectedStartTime.toString(format: TimeOnly)
                 let startFullTimeString = String(format: "%@T%@", dateString, startTimeString)
-                let startTime = Date(fromString: startFullTimeString, format: .custom("yyyy-MM-dd'T'HH:mm:ss"))
+                let startTime = Date(fromString: startFullTimeString, format: FullDate)
                 var endTime: Date? = nil
                 if let selectedEndTime = selectedEndTime {
-                    let endTimeString = selectedEndTime.toString(format: .custom("HH:mm:ss"))
+                    let endTimeString = selectedEndTime.toString(format: TimeOnly)
                     let endFullTimeString = String(format: "%@T%@", dateString, endTimeString)
-                    endTime = Date(fromString: endFullTimeString, format: .custom("yyyy-MM-dd'T'HH:mm:ss"))
+                    endTime = Date(fromString: endFullTimeString, format: FullDate)
                 }
                 creatingJob.jobTime = JGGJobTimeModel(startOn: startTime, endOn: endTime, isSpecific: isSpecific)
             }
@@ -190,6 +190,7 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
         let timePopupVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGAddTimeSlotsPopupVC") as! JGGAddTimeSlotsPopupVC
         timePopupVC.doneButtonTitle = LocalizedString("Done")
         timePopupVC.showEndTime = false
+        timePopupVC.isHideCloseEndTimeButton = false
         timePopupVC.selectedStartTime = self.selectedStartTime
         timePopupVC.selectedEndTime = self.selectedEndTime
         timePopupVC.selectTimeHandler = { (startTime, endTime, count) in

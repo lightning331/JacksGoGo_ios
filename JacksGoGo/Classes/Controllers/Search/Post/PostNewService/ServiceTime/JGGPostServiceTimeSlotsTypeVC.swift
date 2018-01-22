@@ -35,7 +35,10 @@ class JGGPostServiceTimeSlotsTypeVC: JGGPostServiceTimeSlotsBaseVC {
             cell.selectingHandler = { index in
                 if index == 1 {
                     
-                    // TODO: Go to service summary screen
+                    if let parentVC = self.navigationController?.parent as? JGGPostServiceStepRootVC {
+                        parentVC.postServiceStepView.completeCurrentStep()
+                        parentVC.postServiceStepView.nextStep()
+                    }
                     
                 } else {
                     self.selectedTimeType = index
@@ -49,8 +52,10 @@ class JGGPostServiceTimeSlotsTypeVC: JGGPostServiceTimeSlotsBaseVC {
                 
             }
             cell.selectedLaterHandler = {
-                // TODO: Go to service summary screen
-
+                if let parentVC = self.navigationController?.parent as? JGGPostServiceStepRootVC {
+                    parentVC.postServiceStepView.completeCurrentStep()
+                    parentVC.postServiceStepView.nextStep()
+                }
             }
             return cell
         }
@@ -62,9 +67,9 @@ class JGGPostServiceTimeSlotsTypeVC: JGGPostServiceTimeSlotsBaseVC {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier, identifier == "gotoAddTimeSlotsVC" {
             if self.selectedTimeType == 2 {
-                self.navController.selectedPeopleType = 0 // One person
+                self.navController.selectedPeopleType = .onePerson // One person
             } else if self.selectedTimeType == 3 {
-                self.navController.selectedPeopleType = 1 // Multiple people
+                self.navController.selectedPeopleType = .multiplePeople // Multiple people
             }
         }
     }

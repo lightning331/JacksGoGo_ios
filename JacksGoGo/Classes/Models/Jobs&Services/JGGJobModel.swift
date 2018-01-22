@@ -26,6 +26,7 @@ class JGGJobModel: JGGAppointmentBaseModel {
     internal let Repetition = "Repetition"
     internal let JobTime = "JobTime"
     internal let IsQuickJob = "IsQuickJob"
+    internal let TimeSlots = "TimeSlots"
     
     var categoryId: String!
     var isRequest: Bool = true
@@ -42,6 +43,7 @@ class JGGJobModel: JGGAppointmentBaseModel {
     var repetitionType: JGGRepetitionType = .none
     var repetition: String?
     var isQuickJob: Bool = false
+    var timeSlots: [JGGTimeSlotModel]?
     
     override var type: AppointmentType {
         return .jobs
@@ -74,6 +76,14 @@ class JGGJobModel: JGGAppointmentBaseModel {
         repetitionType = JGGRepetitionType(rawValue: json[RepetitionType].intValue) ?? .none
         repetition = json[Repetition].string
         isQuickJob = json[IsQuickJob].boolValue
+        if let jsonTimeSlots = json[TimeSlots].array {
+            timeSlots = []
+            for jsonTimeSlot in jsonTimeSlots {
+                if let timeSlot = JGGTimeSlotModel(json: jsonTimeSlot) {
+                    timeSlots!.append(timeSlot)
+                }
+            }
+        }
     }
     
     override func json() -> JSON {
@@ -95,6 +105,13 @@ class JGGJobModel: JGGAppointmentBaseModel {
         json[RepetitionType].intValue = repetitionType.rawValue
         json[Repetition].string = repetition
         json[IsQuickJob].boolValue = isQuickJob
+        if let timeSlots = timeSlots {
+            var jsonTimeSlots: [JSON] = []
+            for timeSlot in timeSlots {
+                jsonTimeSlots.append(timeSlot.json())
+            }
+            json[TimeSlots].arrayObject = jsonTimeSlots
+        }
         return json
     }
     

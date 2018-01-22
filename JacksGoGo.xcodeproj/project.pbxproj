@@ -184,6 +184,7 @@
 		FFA061C41FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA061C21FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.xib */; };
 		FFA061C71FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA061C51FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.swift */; };
 		FFA061C81FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFA061C61FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.xib */; };
+		FFA0B16D2015E43E007D4825 /* JGGDuplicateDatePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0B16C2015E43E007D4825 /* JGGDuplicateDatePickerVC.swift */; };
 		FFA14B161FEDA8AD00186657 /* JGGRegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA14B151FEDA8AD00186657 /* JGGRegionModel.swift */; };
 		FFA14B191FEDE58100186657 /* JGGProfileBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA14B181FEDE58100186657 /* JGGProfileBaseVC.swift */; };
 		FFA14B1B1FEDE5A000186657 /* JGGProfileMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA14B1A1FEDE5A000186657 /* JGGProfileMainVC.swift */; };
@@ -465,6 +466,7 @@
 		FFA061C21FAB51BA00185C56 /* JGGDetailInfoAccessoryButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGDetailInfoAccessoryButtonCell.xib; sourceTree = "<group>"; };
 		FFA061C51FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGDetailInfoCenterAlignCell.swift; sourceTree = "<group>"; };
 		FFA061C61FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGDetailInfoCenterAlignCell.xib; sourceTree = "<group>"; };
+		FFA0B16C2015E43E007D4825 /* JGGDuplicateDatePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGDuplicateDatePickerVC.swift; sourceTree = "<group>"; };
 		FFA14B151FEDA8AD00186657 /* JGGRegionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGRegionModel.swift; sourceTree = "<group>"; };
 		FFA14B181FEDE58100186657 /* JGGProfileBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGProfileBaseVC.swift; sourceTree = "<group>"; };
 		FFA14B1A1FEDE5A000186657 /* JGGProfileMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGProfileMainVC.swift; sourceTree = "<group>"; };
@@ -1329,6 +1331,7 @@
 				FF849E071FD7348B003EB83A /* JGGPostServiceTimeSlotsTypeVC.swift */,
 				FF849E091FD734A2003EB83A /* JGGPostServiceTimeSlotsDetailVC.swift */,
 				FF849E0F1FD74B53003EB83A /* JGGPostServiceTimeSlotsFinalVC.swift */,
+				FFA0B16C2015E43E007D4825 /* JGGDuplicateDatePickerVC.swift */,
 			);
 			path = ServiceTime;
 			sourceTree = "<group>";
@@ -1757,6 +1760,7 @@
 				FFEB45D81FEC216200F362FF /* JGGProfileNC.swift in Sources */,
 				FF849DFD1FD708DF003EB83A /* JGGPostAppointmentBaseTableVC.swift in Sources */,
 				FFB594301FDE85E700D12A1F /* JGGAppJobStatusButtonCell.swift in Sources */,
+				FFA0B16D2015E43E007D4825 /* JGGDuplicateDatePickerVC.swift in Sources */,
 				FFB64BB31FB7B03C0028B77B /* JGGSearchMainVC.swift in Sources */,
 				632E78271FA2F92D00CFFB24 /* JGGAppFilterVC.swift in Sources */,
 				FFB27A2A1FD19D1B009A2201 /* LightboxController.swift in Sources */,

@@ -21,19 +21,19 @@ class JGGPostServiceStepRootVC: JGGViewController, JGGAppointmentDetailStepHeade
     var isEditMode: Bool = false
     
     var selectedCategory: JGGCategoryModel!
-    var creatingJob: JGGCreateJobModel?
+    var creatingService: JGGCreateJobModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if creatingJob == nil {
+        if creatingService == nil {
             isEditMode = false
-            creatingJob = JGGCreateJobModel()
-            creatingJob!.categoryId = selectedCategory.id
-            creatingJob!.userProfileId = appManager.currentUser?.id
-            creatingJob!.regionId = appManager.currentRegion?.id
-            creatingJob!.currencyCode = appManager.currentRegion?.currencyCode
-
+            creatingService = JGGCreateJobModel()
+            creatingService!.categoryId = selectedCategory.id
+            creatingService!.userProfileId = appManager.currentUser?.id
+            creatingService!.regionId = appManager.currentRegion?.id
+            creatingService!.currencyCode = appManager.currentRegion?.currencyCode
+            creatingService!.isRequest = false
         } else {
             isEditMode = true
         }
@@ -70,6 +70,9 @@ class JGGPostServiceStepRootVC: JGGViewController, JGGAppointmentDetailStepHeade
     }
     
     func jobDetailStep(selected: Int) {
+        if selected != 2 {
+            (self.navigationController?.parent as? JGGPostServiceRootVC)?.removeTodayButton()
+        }
         switch selected {
         case 0:
             mainScrollView.setContentOffset(CGPoint(x: mainScrollView.frame.width * 0, y: 0), animated: true)
@@ -91,7 +94,8 @@ class JGGPostServiceStepRootVC: JGGViewController, JGGAppointmentDetailStepHeade
     
     func gotoSummaryVC() -> Void {
         let summaryVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGServiceSummaryVC") as! JGGServiceSummaryVC
-        summaryVC.isRequestQuotationMode = true
+//        summaryVC.isRequestQuotationMode = true
+        summaryVC.creatingService = self.creatingService
         self.navigationController?.pushViewController(summaryVC, animated: true)
     }
 

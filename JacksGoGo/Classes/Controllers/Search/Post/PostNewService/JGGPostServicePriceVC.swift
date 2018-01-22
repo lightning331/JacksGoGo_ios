@@ -57,7 +57,7 @@ class JGGPostServicePriceVC: JGGPostAppointmentBaseTableVC {
     
     override func updateData(_ sender: Any) {
         if let parentVC = parent as? JGGPostServiceStepRootVC {
-            let creatingService = parentVC.creatingJob!
+            let creatingService = parentVC.creatingService!
             creatingService.budget = nil
             creatingService.budgetFrom = nil
             creatingService.budgetTo = nil
@@ -261,8 +261,8 @@ class JGGPostServicePricePackageCell: UITableViewCell, UITextFieldDelegate {
         txtAmount.delegate = self
         txtNumberOfService.addTarget(self, action: #selector(textfieldDidChanged(_:)), for: .editingChanged)
         txtAmount.addTarget(self, action: #selector(textfieldDidChanged(_:)), for: .editingChanged)
-        txtNumberOfService.keyboardType = .numbersAndPunctuation
-        txtAmount.keyboardType = .numbersAndPunctuation
+        txtNumberOfService.keyboardType = .decimalPad
+        txtAmount.keyboardType = .decimalPad
     }
     
     @objc func textfieldDidChanged(_ textfield: UITextField) {
@@ -271,5 +271,14 @@ class JGGPostServicePricePackageCell: UITableViewCell, UITextFieldDelegate {
         } else if textfield == txtAmount {
             changedAmountHandler(Double(txtAmount.text!) ?? 0)
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == txtNumberOfService {
+            txtAmount.becomeFirstResponder()
+        } else if textField == txtAmount {
+            txtAmount.resignFirstResponder()
+        }
+        return false
     }
 }

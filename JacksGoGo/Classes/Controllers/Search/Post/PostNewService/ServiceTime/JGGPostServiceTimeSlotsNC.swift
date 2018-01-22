@@ -8,9 +8,15 @@
 
 import UIKit
 
+public enum JGGTimeSlotPeopleType {
+    case onePerson
+    case multiplePeople
+    case noSlots
+}
+
 class JGGPostServiceTimeSlotsNC: UINavigationController {
 
-    var selectedPeopleType: Int = 0
+    var selectedPeopleType: JGGTimeSlotPeopleType = .noSlots
     lazy var onePersonTimeSlots: [JGGTimeSlotModel] = []
     lazy var multiplePeopleTimeSlots: [ JGGTimeSlotModel] = []
     

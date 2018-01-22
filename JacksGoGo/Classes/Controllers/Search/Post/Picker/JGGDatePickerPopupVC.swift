@@ -12,7 +12,7 @@ import JTAppleCalendar
 import MZFormSheetPresentationController
 import AFDateHelper
 
-class JGGDatePickerPopupVC: JGGPopupBaseVC {
+class JGGDatePickerPopupVC: JGGPopupBaseVC, JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
 
     @IBOutlet weak var viewCalendarContainer: UIView!
     @IBOutlet weak var btnCancel: UIButton!
@@ -47,10 +47,11 @@ class JGGDatePickerPopupVC: JGGPopupBaseVC {
     var isAbleToMultipleSelect: Bool = false
     var doneButtonTitle: String?
     var selectDateHandler: (([Date]) -> Void)?
+    var isDuplicateMode: Bool = false
     
-    fileprivate var calendarView: JGGCalendarView!
-    fileprivate var _themColor: UIColor = UIColor.JGGGreen
-    fileprivate var _themColorType: JGGColorSchema = .green
+    internal var calendarView: JGGCalendarView!
+    internal var _themColor: UIColor = UIColor.JGGGreen
+    internal var _themColorType: JGGColorSchema = .green
     
     
     override func viewDidLoad() {
@@ -99,9 +100,9 @@ class JGGDatePickerPopupVC: JGGPopupBaseVC {
     }
     */
 
-}
-
-extension JGGDatePickerPopupVC: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
+//}
+//
+//extension JGGDatePickerPopupVC: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
     
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {

@@ -30,6 +30,7 @@ class JGGAddressModel: NSObject {
     var lat: Double?
     var lon: Double?
     var countryCode: String?
+    var isDontShowFullAddress: Bool = false
     
     override init() {
         super.init()

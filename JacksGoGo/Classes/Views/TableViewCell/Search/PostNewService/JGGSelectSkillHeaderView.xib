@@ -25,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WFM-ob-Dfs">
-                    <rect key="frame" x="0.0" y="20" width="320" height="410"/>
+                    <rect key="frame" x="0.0" y="20" width="320" height="319.5"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_small" translatesAutoresizingMaskIntoConstraints="NO" id="sDc-wa-3ce">
                             <rect key="frame" x="120" y="30" width="80" height="80"/>
@@ -42,34 +42,34 @@ Start listing your services with us now!</string>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why Should You Verify Your Skills With Us?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bhJ-d3-4ai">
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why Should You Verify Your Skills With Us?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bhJ-d3-4ai">
                             <rect key="frame" x="20" y="256.5" width="280" height="19"/>
                             <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By verifying your skills, you will be listed as a verified service provider on our list." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgI-NN-kCn">
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By verifying your skills, you will be listed as a verified service provider on our list." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgI-NN-kCn">
                             <rect key="frame" x="20" y="283" width="280" height="38"/>
                             <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose to verify from a category below:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPg-9z-8yb">
-                            <rect key="frame" x="20" y="351" width="280" height="19"/>
+                            <rect key="frame" x="20" y="260.5" width="280" height="19"/>
                             <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="An2-Kr-CQN">
-                            <rect key="frame" x="150" y="378" width="20" height="20"/>
+                            <rect key="frame" x="150" y="287.5" width="20" height="20"/>
                         </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstItem="TPg-9z-8yb" firstAttribute="top" secondItem="Gls-hU-oUL" secondAttribute="bottom" constant="20" id="3TP-VC-VZi"/>
                         <constraint firstAttribute="trailing" secondItem="cgI-NN-kCn" secondAttribute="trailing" constant="20" id="4yQ-8J-obl"/>
                         <constraint firstItem="cgI-NN-kCn" firstAttribute="top" secondItem="bhJ-d3-4ai" secondAttribute="bottom" constant="8" id="95A-3E-kmn"/>
                         <constraint firstAttribute="trailing" secondItem="TPg-9z-8yb" secondAttribute="trailing" constant="20" id="ADY-pk-cVl"/>
-                        <constraint firstItem="TPg-9z-8yb" firstAttribute="top" secondItem="cgI-NN-kCn" secondAttribute="bottom" constant="30" id="BGe-LZ-3bj"/>
                         <constraint firstItem="sDc-wa-3ce" firstAttribute="top" secondItem="WFM-ob-Dfs" secondAttribute="top" constant="30" id="Bx5-xj-ZGH"/>
                         <constraint firstItem="cgI-NN-kCn" firstAttribute="leading" secondItem="WFM-ob-Dfs" secondAttribute="leading" constant="20" id="DxF-69-c9l"/>
                         <constraint firstItem="bhJ-d3-4ai" firstAttribute="top" secondItem="Gls-hU-oUL" secondAttribute="bottom" constant="16" id="EPs-eg-zFD"/>

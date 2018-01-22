@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,8 +25,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00 AM - 12:00 PM" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woI-vz-xSK">
-                        <rect key="frame" x="16" y="14" width="247" height="17.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="10:00 AM - 12:00 PM" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woI-vz-xSK">
+                        <rect key="frame" x="16" y="12.5" width="192.5" height="19"/>
                         <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -51,25 +51,35 @@
                             <action selector="onPressedEdit:" destination="apo-aM-zQY" eventType="touchUpInside" id="tgb-MJ-1fe"/>
                         </connections>
                     </button>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 pax" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCY-NE-HOf">
+                        <rect key="frame" x="224" y="12" width="39" height="19"/>
+                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="pOf-0Y-XR5" firstAttribute="leading" secondItem="cCY-NE-HOf" secondAttribute="trailing" constant="8" id="2IE-So-1BQ"/>
                     <constraint firstItem="dvC-IO-FvO" firstAttribute="top" secondItem="MMc-KK-uEj" secondAttribute="top" id="Pli-Ml-veL"/>
                     <constraint firstItem="woI-vz-xSK" firstAttribute="centerY" secondItem="MMc-KK-uEj" secondAttribute="centerY" id="Q6d-Ex-Jxc"/>
                     <constraint firstItem="woI-vz-xSK" firstAttribute="leading" secondItem="MMc-KK-uEj" secondAttribute="leadingMargin" id="QrZ-4V-ysu"/>
                     <constraint firstAttribute="bottom" secondItem="dvC-IO-FvO" secondAttribute="bottom" id="YhD-LV-Z7g"/>
                     <constraint firstAttribute="bottom" secondItem="pOf-0Y-XR5" secondAttribute="bottom" id="ahF-O1-TMz"/>
                     <constraint firstItem="pOf-0Y-XR5" firstAttribute="top" secondItem="MMc-KK-uEj" secondAttribute="top" id="e8l-He-RLk"/>
+                    <constraint firstItem="cCY-NE-HOf" firstAttribute="leading" secondItem="woI-vz-xSK" secondAttribute="trailing" constant="16" id="eYK-Kg-EQW"/>
                     <constraint firstItem="dvC-IO-FvO" firstAttribute="leading" secondItem="pOf-0Y-XR5" secondAttribute="trailing" constant="8" id="o2e-uR-bI4"/>
                     <constraint firstAttribute="trailing" secondItem="dvC-IO-FvO" secondAttribute="trailing" constant="16" id="qIF-S5-T41"/>
-                    <constraint firstItem="pOf-0Y-XR5" firstAttribute="leading" secondItem="woI-vz-xSK" secondAttribute="trailing" constant="8" id="u59-NI-xiP"/>
+                    <constraint firstItem="cCY-NE-HOf" firstAttribute="centerY" secondItem="MMc-KK-uEj" secondAttribute="centerY" id="zFO-zN-1ei"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="izA-o5-Hzg"/>
             <connections>
                 <outlet property="btnDelete" destination="dvC-IO-FvO" id="0DD-D3-7gG"/>
                 <outlet property="btnEdit" destination="pOf-0Y-XR5" id="OXx-A9-OD6"/>
+                <outlet property="lblPaxs" destination="cCY-NE-HOf" id="KMg-uM-zif"/>
                 <outlet property="lblTime" destination="woI-vz-xSK" id="ocp-1M-qN2"/>
             </connections>
+            <point key="canvasLocation" x="24.5" y="52"/>
         </tableViewCell>
     </objects>
     <resources>

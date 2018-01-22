@@ -11,26 +11,12 @@ import Toaster
 
 class JGGPostJobAddressVC: JGGPostServiceAddressVC {
 
-    @IBOutlet weak var txtPlaceName: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        txtPlaceName.text = nil
-        
-        txtPlaceName.delegate = self
-        
-        if SHOW_TEMP_DATA {
-            showTemporaryData()
-        }
+                
     }
     
-    private func showTemporaryData() {
-        txtPlaceName.text = "My home"
-        txtUnits.text = "20"
-        txtStreet.text = "wanchingru 200"
-        txtPostcode.text = "118000"
-    }
 
     override func onPressedNext(_ sender: UIButton) {
         if let unit = txtUnits.text, let street = txtStreet.text, let postalCode = txtPostcode.text {
@@ -55,12 +41,4 @@ class JGGPostJobAddressVC: JGGPostServiceAddressVC {
         }
     }
     
-    override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == txtPlaceName {
-            txtUnits.becomeFirstResponder()
-            return true
-        } else {
-            return super.textFieldShouldReturn(textField)
-        }
-    }
 }

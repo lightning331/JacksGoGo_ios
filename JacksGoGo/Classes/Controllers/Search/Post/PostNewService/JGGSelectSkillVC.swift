@@ -20,68 +20,7 @@ class JGGSelectSkillVC: UICollectionViewController, UICollectionViewDelegateFlow
     
     fileprivate lazy var categories: [JGGCategoryModel] = []
     fileprivate lazy var isLoadingCategory: Bool = false
-    
-    /*
-    fileprivate lazy var categories: [[String: String]] = [
-        [
-            "title": LocalizedString("Favourited Services"),
-            "imageName": "icon_cat_favourites",
-            ],
-        [
-            "title": LocalizedString("Cooking & Baking"),
-            "imageName": "icon_cat_cooking&baking",
-            ],
-        [
-            "title": LocalizedString("Education"),
-            "imageName": "icon_cat_education",
-            ],
-        [
-            "title": LocalizedString("Handyman"),
-            "imageName": "icon_cat_handyman",
-            ],
-        [
-            "title": LocalizedString("Household Chores"),
-            "imageName": "icon_cat_householdchores",
-            ],
-        [
-            "title": LocalizedString("Messenger"),
-            "imageName": "icon_cat_messenger",
-            ],
-        [
-            "title": LocalizedString("Running Man"),
-            "imageName": "icon_cat_runningman",
-            ],
-        [
-            "title": LocalizedString("Leisure"),
-            "imageName": "icon_cat_leisure",
-            ],
-        [
-            "title": LocalizedString("Social"),
-            "imageName": "icon_cat_social",
-            ],
-        [
-            "title": LocalizedString("Sports"),
-            "imageName": "icon_cat_runningman",
-            ],
-        [
-            "title": LocalizedString("Event"),
-            "imageName": "icon_cat_event",
-            ],
-        [
-            "title": LocalizedString("Exploration"),
-            "imageName": "icon_cat_exploration",
-            ],
-        [
-            "title": LocalizedString("Family"),
-            "imageName": "icon_cat_family",
-            ],
-        [
-            "title": LocalizedString("Gardening"),
-            "imageName": "icon_cat_gardening",
-            ],
-        ]
-*/
-    
+
     private var headerType: Int = 0 // 0 : no verified skills of user,
                                     // 1 : some verfied skill,
                                     // 2 : show all categories
@@ -192,7 +131,7 @@ class JGGSelectSkillVC: UICollectionViewController, UICollectionViewDelegateFlow
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForHeaderInSection section: Int) -> CGSize {
-        var height: CGFloat = 410
+        var height: CGFloat = 320
         if headerType == 1 {
             height = 88
         } else if headerType == 2 {

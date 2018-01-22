@@ -25,7 +25,20 @@ class JGGPostServiceRootVC: JGGSearchBaseVC {
         }
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
+    
+    func addTodayButton() -> Void {
+        let btnToday = UIBarButtonItem(image: UIImage(named: "button_today_green"), style: .plain, target: self, action: #selector(onPressedToday(_:)))
+        self.navigationItem.rightBarButtonItem = btnToday
+    }
+    
+    func removeTodayButton() -> Void {
+        self.navigationItem.rightBarButtonItem = nil
+    }
 
+    @objc func onPressedToday(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: JGGNotificationShowToday), object: nil)
+    }
+    
     @IBAction func onPressedBack(_ sender: Any) {
         JGGAlertViewController.show(
             title: LocalizedString("Quit Posting A New Service?"),

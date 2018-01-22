@@ -11,6 +11,7 @@ import UIKit
 class JGGTimeSlotsEditCell: UITableViewCell {
 
     @IBOutlet weak var lblTime: UILabel!
+    @IBOutlet weak var lblPaxs: UILabel!
     @IBOutlet weak var btnEdit: UIButton!
     @IBOutlet weak var btnDelete: UIButton!
     
@@ -48,6 +49,12 @@ class JGGTimeSlotsEditCell: UITableViewCell {
             lblTime.text = timeString
         } else {
             lblTime.text = nil
+        }
+        if let paxs = timeSlots.peoples {
+            lblPaxs.isHidden = false
+            lblPaxs.text = String(format: "%d pax", paxs)
+        } else {
+            lblPaxs.isHidden = true
         }
     }
 }

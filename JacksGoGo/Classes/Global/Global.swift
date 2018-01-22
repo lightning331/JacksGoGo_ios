@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import AFDateHelper
 
 // MARK: - Option
 
@@ -55,6 +56,10 @@ func solidButton(_ button: UIButton,
     }
 }
 
+public let DateOnly: DateFormatType = .custom("yyyy-MM-dd")
+public let TimeOnly: DateFormatType = .custom("HH:mm:ss")
+public let FullDate: DateFormatType = .custom("yyyy-MM-dd'T'HH:mm:ss")
+
 public enum JGGColorSchema {
     case red
     case green
@@ -91,3 +96,5 @@ public var dayNames: [String] = [
     "11th", "12th", "13th", "14th", "15th", "16th", "17th", "18th", "19th", "20th",
     "21st", "22nd", "23rd", "24th", "25th", "26th", "27th", "28th", "29th", "30th", "31st",
 ]
+
+public let JGGNotificationShowToday: String = "com.jacksgogo.shotToday"

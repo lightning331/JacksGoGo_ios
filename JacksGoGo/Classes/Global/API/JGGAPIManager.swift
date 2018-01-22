@@ -458,8 +458,11 @@ class JGGAPIManager: NSObject {
     
     func postJob(_ job: JGGCreateJobModel, complete: @escaping StringStringClosure) -> Void
     {
+        print(URLManager.Appointment.PostJob)
+        print(job.json())
         POST(url: URLManager.Appointment.PostJob, body: job.json().dictionaryObject) { (json, error) in
             if let response = json {
+                print("response: ", response)
                 let success = response[SUCCESS_KEY].boolValue
                 if success {
                     complete(response[VALUE_KEY].stringValue, nil)
@@ -476,5 +479,28 @@ class JGGAPIManager: NSObject {
         
     }
     
+    // MARK: - Service
+    func postService(_ service: JGGCreateJobModel, complete: @escaping StringStringClosure) -> Void
+    {
+        print(URLManager.Appointment.PostService)
+        print(service.json())
+        POST(url: URLManager.Appointment.PostService, body: service.json().dictionaryObject) { (json, error) in
+            if let response = json {
+                print("response: ", response)
+                let success = response[SUCCESS_KEY].boolValue
+                if success {
+                    complete(response[VALUE_KEY].stringValue, nil)
+                } else {
+                    complete(nil, response[MESSAGE_KEY].stringValue)
+                }
+            } else if let error = error {
+                complete(nil, error.localizedDescription)
+            } else {
+                complete(nil, LocalizedString("Unknown request error."))
+            }
+            
+        }
+        
+    }
 }
 

@@ -62,15 +62,15 @@ class JGGPostServiceDescribeVC: JGGPostAppointmentBaseTableVC {
     
     private func showOriginalServiceData() {
         if let parent = self.parent as? JGGPostServiceStepRootVC {
-            txtServiceTitle.text = parent.creatingJob?.title
-            txtServiceDescribe.text = parent.creatingJob?.description_
-            txtTags.text = parent.creatingJob?.tags
+            txtServiceTitle.text = parent.creatingService?.title
+            txtServiceDescribe.text = parent.creatingService?.description_
+            txtTags.text = parent.creatingService?.tags
         }
     }
     
     override func updateData(_ sender: Any) {
         if let parentVC = parent as? JGGPostServiceStepRootVC {
-            let creatingJob = parentVC.creatingJob!
+            let creatingJob = parentVC.creatingService!
             creatingJob.title = txtServiceTitle.text
             creatingJob.description_ = txtServiceDescribe.text
             creatingJob.tags = txtTags.text

@@ -2,7 +2,7 @@
 //  JGGProfileNC.swift
 //  JacksGoGo
 //
-//  Created by Chris Lin on 12/22/17.
+//  Created by Hemin Wang on 12/22/17.
 //  Copyright © 2017 Hemin Wang. All rights reserved.
 //
 
@@ -11,6 +11,7 @@ import UIKit
 class JGGProfileNC: JGGBaseNC {
 
     var selectedRegion: JGGRegionModel?
+    var shouldDismiss: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +25,12 @@ class JGGProfileNC: JGGBaseNC {
     }
 
     func loggedIn() -> Void {
-        let profileMainVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGProfileMainVC") as! JGGProfileMainVC
-        self.viewControllers = [profileMainVC]
+        if shouldDismiss {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            let profileMainVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGProfileMainVC") as! JGGProfileMainVC
+            self.viewControllers = [profileMainVC]
+        }
     }
     
     func loggedOut() -> Void {

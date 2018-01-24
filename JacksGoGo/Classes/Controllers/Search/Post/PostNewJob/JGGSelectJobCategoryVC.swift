@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JGGSelectJobCategoryVC: UICollectionViewController {
+class JGGSelectJobCategoryVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     fileprivate lazy var categories: [JGGCategoryModel] = []
     fileprivate lazy var quickJobModel: JGGCategoryModel = JGGCategoryModel()
@@ -134,6 +134,9 @@ class JGGSelectJobCategoryVC: UICollectionViewController {
         self.navigationController?.pushViewController(postJobRootVC, animated: true)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return categoryCellSize(for: collectionView.frame.width - 32, margin: 10)
+    }
     // MARK: UICollectionViewDelegate
 
 }

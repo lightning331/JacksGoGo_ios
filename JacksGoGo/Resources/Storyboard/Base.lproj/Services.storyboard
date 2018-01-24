@@ -49,19 +49,19 @@
                                             <rect key="frame" x="4" y="0.0" width="371" height="50"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="180" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LnN-Ei-kBl">
-                                                    <rect key="frame" x="16" y="14.5" width="50.5" height="35.5"/>
+                                                    <rect key="frame" x="16" y="17" width="47" height="33"/>
                                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                                     <color key="textColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Services" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OL-CJ-eex">
-                                                    <rect key="frame" x="74" y="22.5" width="77.5" height="25.5"/>
+                                                    <rect key="frame" x="70.5" y="24.5" width="76.5" height="23.5"/>
                                                     <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 new since 6 hrs ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuI-0f-5RV">
-                                                    <rect key="frame" x="226.5" y="30.5" width="128.5" height="15.5"/>
+                                                    <rect key="frame" x="230.5" y="32" width="124.5" height="14"/>
                                                     <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -179,19 +179,19 @@
                                             <rect key="frame" x="4" y="0.0" width="371" height="50"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="180" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e13-SX-bcW">
-                                                    <rect key="frame" x="16" y="14.5" width="50.5" height="35.5"/>
+                                                    <rect key="frame" x="16" y="17" width="47" height="33"/>
                                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="28"/>
                                                     <color key="textColor" red="0.078738220040000001" green="0.69248288869999997" blue="0.97351557020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jobs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jN-wg-pN2">
-                                                    <rect key="frame" x="74" y="22.5" width="40" height="26"/>
+                                                    <rect key="frame" x="70.5" y="25" width="44" height="23.5"/>
                                                     <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="20"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 new since 6 hrs ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSl-4c-yW1">
-                                                    <rect key="frame" x="226.5" y="30.5" width="128.5" height="15.5"/>
+                                                    <rect key="frame" x="230.5" y="32" width="124.5" height="14"/>
                                                     <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -276,23 +276,22 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Dr-k0-MNs">
-                                    <rect key="frame" x="16" y="186" width="100.5" height="19"/>
+                                    <rect key="frame" x="16" y="186" width="93.5" height="17.5"/>
                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cBa-rU-cfE">
-                                    <rect key="frame" x="37.5" y="213" width="300" height="340"/>
+                                    <rect key="frame" x="0.0" y="211.5" width="375" height="340"/>
                                     <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="340" id="dmP-Qc-1uW"/>
-                                        <constraint firstAttribute="width" constant="300" id="pdo-Xm-AAL"/>
                                     </constraints>
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="nlZ-g7-OQc">
                                         <size key="itemSize" width="94" height="105"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                                     </collectionViewFlowLayout>
                                     <cells/>
                                 </collectionView>
@@ -300,10 +299,11 @@
                             <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="0Dr-k0-MNs" firstAttribute="top" secondItem="Zdq-Pl-vBP" secondAttribute="bottom" constant="20" id="20c-rv-bOv"/>
+                                <constraint firstItem="UPZ-tN-i7G" firstAttribute="trailing" secondItem="cBa-rU-cfE" secondAttribute="trailing" id="2Zx-g6-qSm"/>
                                 <constraint firstAttribute="trailing" secondItem="Zdq-Pl-vBP" secondAttribute="trailing" id="3IA-wO-Shv"/>
                                 <constraint firstItem="NSz-Xe-KmO" firstAttribute="trailing" secondItem="Zdq-Pl-vBP" secondAttribute="trailing" id="B3I-dr-7gk"/>
+                                <constraint firstItem="cBa-rU-cfE" firstAttribute="leading" secondItem="UPZ-tN-i7G" secondAttribute="leading" id="SIg-Hm-LpI"/>
                                 <constraint firstItem="NSz-Xe-KmO" firstAttribute="top" secondItem="Zdq-Pl-vBP" secondAttribute="top" id="UaA-aK-Lbx"/>
-                                <constraint firstItem="cBa-rU-cfE" firstAttribute="centerX" secondItem="U6U-j3-5QE" secondAttribute="centerX" id="Ulh-Bf-Pf7"/>
                                 <constraint firstItem="Zdq-Pl-vBP" firstAttribute="top" secondItem="U6U-j3-5QE" secondAttribute="top" constant="16" id="X9T-h0-fBV"/>
                                 <constraint firstItem="0Dr-k0-MNs" firstAttribute="leading" secondItem="U6U-j3-5QE" secondAttribute="leading" constant="16" id="Xz2-5R-tlT"/>
                                 <constraint firstItem="NSz-Xe-KmO" firstAttribute="bottom" secondItem="Zdq-Pl-vBP" secondAttribute="bottom" id="czV-J3-JgM"/>
@@ -338,6 +338,7 @@
                         <outlet property="btnViewAllServices" destination="mQv-RQ-9gD" id="JFb-wF-EF3"/>
                         <outlet property="btnViewMyServices" destination="J3X-yc-Svp" id="BLL-Oz-EMC"/>
                         <outlet property="clsviewAllCategories" destination="cBa-rU-cfE" id="btN-ee-lN9"/>
+                        <outlet property="constraintCategoriesHeight" destination="dmP-Qc-1uW" id="vmW-O3-XfU"/>
                         <outlet property="lblNewJobsCount" destination="rSl-4c-yW1" id="inh-7x-9dg"/>
                         <outlet property="lblNewServiceCounts" destination="tuI-0f-5RV" id="8fo-qS-9Ei"/>
                         <outlet property="lblTotalJobsCount" destination="e13-SX-bcW" id="9Yf-vi-PaY"/>
@@ -969,11 +970,11 @@
                             <size key="itemSize" width="94" height="105"/>
                             <size key="headerReferenceSize" width="320" height="474"/>
                             <size key="footerReferenceSize" width="320" height="130"/>
-                            <inset key="sectionInset" minX="9" minY="0.0" maxX="9" maxY="10"/>
+                            <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ijl-gU-eFc">
-                                <rect key="frame" x="9" y="474" width="94" height="105"/>
+                                <rect key="frame" x="16" y="474" width="94" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="94" height="105"/>

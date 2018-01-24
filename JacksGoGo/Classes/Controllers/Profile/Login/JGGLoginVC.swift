@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Crashlytics
 
 class JGGLoginVC: JGGLoginBaseVC, UITextFieldDelegate {
 
@@ -16,6 +17,7 @@ class JGGLoginVC: JGGLoginBaseVC, UITextFieldDelegate {
     @IBOutlet weak var btnSignin: UIButton!
     @IBOutlet weak var btnSigninFacebook: UIButton!
     @IBOutlet weak var btnSignup: UIButton!
+    @IBOutlet weak var btnClose: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,9 @@ class JGGLoginVC: JGGLoginBaseVC, UITextFieldDelegate {
         
         txtEmail.text = "rose.lim@jgg.co"
         txtPassword.text = "abc123Q!@#"
+        
+        let nav = self.navigationController as! JGGProfileNC
+        btnClose.isHidden = !nav.shouldDismiss
         
         let _ = checkValidCreditional()
     }
@@ -81,7 +86,7 @@ class JGGLoginVC: JGGLoginBaseVC, UITextFieldDelegate {
     }
     
     @IBAction func onPressedFacebook(_ sender: UIButton) {
-    
+        Crashlytics.sharedInstance().crash()
     }
     
     
@@ -95,6 +100,11 @@ class JGGLoginVC: JGGLoginBaseVC, UITextFieldDelegate {
         solidButton(btnSignin, enable: false)
         return false
     }
+    
+    @IBAction func onPressedClose(_ sender: UIButton) {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
     
     // MARK: - UITextField delegate
     @objc private func textFieldDidChanged(_ textField: UITextField) {

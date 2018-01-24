@@ -2,7 +2,7 @@
 //  JGGSplashLoadingView.swift
 //  JacksGoGo
 //
-//  Created by Chris Lin on 1/8/18.
+//  Created by Hemin Wang on 1/8/18.
 //  Copyright © 2018 Hemin Wang. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  URLManager.swift
 //  JacksGoGo
 //
-//  Created by Chris Lin on 12/22/17.
+//  Created by Hemin Wang on 12/22/17.
 //  Copyright © 2017 Hemin Wang. All rights reserved.
 //
 
@@ -15,7 +15,7 @@ class URLManager: NSObject {
     return "http://www.meridians2.com/JGGdev/api" + endPoint
 //        return "http://192.168.0.30:50370/api" + endPoint
 #else
-        return "http://www.meridians2.com/JGG/api" + endPoint
+        return "http://www.meridians2.com/JGGdev/api" + endPoint
 #endif
     }
     
@@ -25,7 +25,7 @@ class URLManager: NSObject {
     return "http://www.meridians2.com/JGGdev/oauth/Token"
 
 #else
-        return "http://www.meridians2.com/JGG/oauth/Token"
+        return "http://www.meridians2.com/JGGdev/oauth/Token"
 #endif
     }
     

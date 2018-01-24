@@ -24,65 +24,9 @@ class JGGSearchMainVC: JGGStartTableVC {
     @IBOutlet weak var btnViewAllServices: UIButton!
     @IBOutlet weak var btnPostNewService: UIButton!
     @IBOutlet weak var clsviewAllCategories: UICollectionView!
+    @IBOutlet weak var constraintCategoriesHeight: NSLayoutConstraint!
     
-    fileprivate let categories: [[String: String]] = [
-        [
-            "title": LocalizedString("Favourited Services"),
-            "imageName": "icon_cat_favourites",
-            ],
-        [
-            "title": LocalizedString("Cooking & Baking"),
-            "imageName": "icon_cat_cooking&baking",
-            ],
-        [
-            "title": LocalizedString("Education"),
-            "imageName": "icon_cat_education",
-            ],
-        [
-            "title": LocalizedString("Handyman"),
-            "imageName": "icon_cat_handyman",
-            ],
-        [
-            "title": LocalizedString("Household Chores"),
-            "imageName": "icon_cat_householdchores",
-            ],
-        [
-            "title": LocalizedString("Messenger"),
-            "imageName": "icon_cat_messenger",
-            ],
-        [
-            "title": LocalizedString("Running Man"),
-            "imageName": "icon_cat_runningman",
-            ],
-        [
-            "title": LocalizedString("Leisure"),
-            "imageName": "icon_cat_leisure",
-            ],
-        [
-            "title": LocalizedString("Social"),
-            "imageName": "icon_cat_social",
-            ],
-        [
-            "title": LocalizedString("Sports"),
-            "imageName": "icon_cat_runningman",
-            ],
-        [
-            "title": LocalizedString("Event"),
-            "imageName": "icon_cat_event",
-            ],
-        [
-            "title": LocalizedString("Exploration"),
-            "imageName": "icon_cat_exploration",
-            ],
-        [
-            "title": LocalizedString("Family"),
-            "imageName": "icon_cat_family",
-            ],
-        [
-            "title": LocalizedString("Gardening"),
-            "imageName": "icon_cat_gardening",
-            ],
-    ]
+    fileprivate lazy var categories: [JGGCategoryModel] = []
     
     private var selectedTab: SearchTabButton = .services
     
@@ -90,12 +34,16 @@ class JGGSearchMainVC: JGGStartTableVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        categories = appManager.categories
         addTabNavigationBar()
         initTableView()
         initCollectionView()
         self.viewServiceSummary.isHidden = false
         self.viewJobSummary.isHidden = true
-        
+    }
+    
+    override func showLoginVCIfNeed() -> Bool {
+        return false
     }
 
     private func addTabNavigationBar() {
@@ -114,6 +62,20 @@ class JGGSearchMainVC: JGGStartTableVC {
         self.tableView.register(UINib(nibName: "JGGServiceListCell", bundle: nil),
                                 forCellReuseIdentifier: "JGGServiceListCell")
         self.tableView.allowsSelection = true
+        
+        let cellSize = categoryCellSize(for: UIScreen.main.bounds.size.width - 32, margin: 8)
+        var rowCount = 0
+        if UIScreen.main.bounds.size.width <= 375 {
+            rowCount = (categories.count + 2) / 3
+        } else {
+            rowCount = (categories.count + 3) / 4
+        }
+        let headerHeight = self.clsviewAllCategories.frame.origin.y + ((cellSize.height + 8) * CGFloat(rowCount))
+        self.constraintCategoriesHeight.constant = headerHeight - self.clsviewAllCategories.frame.origin.y
+        var frame = self.tableView.tableHeaderView!.frame
+        frame.size.height = headerHeight
+        self.tableView.tableHeaderView?.frame = frame
+        
     }
     
     private func initCollectionView() {
@@ -188,30 +150,24 @@ extension JGGSearchMainVC: JGGSearchHomeTabViewDelegate {
     }
 }
 
-extension JGGSearchMainVC: UICollectionViewDataSource, UICollectionViewDelegate {
+extension JGGSearchMainVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if categories.count > 9 {
-            return 9
-        } else {
-            return categories.count
-        }
+        return categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "JGGSearchCategorySelectCell", for: indexPath) as! JGGSearchCategorySelectCell
-        if indexPath.row == 8 && categories.count > 9 {
-            cell.lblTitle.text = LocalizedString("Other Professions")
-            cell.imgviewIcon.image = UIImage(named: "icon_cat_other")
-        } else {
-            let category = categories[indexPath.row]
-            cell.lblTitle.text = category["title"]
-            cell.imgviewIcon.image = UIImage(named: category["imageName"]!)
-        }
+        cell.category = categories[indexPath.row]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellSize = categoryCellSize(for: collectionView.frame.width - 32, margin: 8)
+        return cellSize
     }
 }
 

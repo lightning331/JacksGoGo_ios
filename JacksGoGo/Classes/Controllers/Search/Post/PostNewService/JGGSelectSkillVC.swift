@@ -242,6 +242,10 @@ class JGGSelectSkillVC: UICollectionViewController, UICollectionViewDelegateFlow
         } */
     }
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return categoryCellSize(for: collectionView.frame.width - 32, margin: 10)
+    }
+    
     // MARK: - Actions
     
     @objc fileprivate func onPressedVerifyNewSkill(_ sender: Any) {

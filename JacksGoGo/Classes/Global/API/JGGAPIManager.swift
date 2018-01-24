@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import AlamofireObjectMapper
 import SwiftyJSON
+import Crashlytics
 
 private let SUCCESS_KEY                  = "Success"
 private let VALUE_KEY                    = "Value"
@@ -182,6 +183,9 @@ class JGGAPIManager: NSObject {
     
     // MARK: - Token
     func oauthToken(user: String, password: String, grantType: String = "password", complete: @escaping BoolStringClosure) -> Void {
+        
+        CLS_LOG_SWIFT(format: "Auth token user: %@, password: %@", [user, password])
+        
         let params: Dictionary = [
             "username": user,
             "password": password,
@@ -192,6 +196,7 @@ class JGGAPIManager: NSObject {
                 params: params,
                 encoding: URLEncoding.httpBody,
                 hasHeader: false).responseJSON { (response) in
+                    CLS_LOG_SWIFT(format: "Auth token response: %@", [response.description])
                     
             switch response.result {
             case .success(let data):
@@ -225,6 +230,13 @@ class JGGAPIManager: NSObject {
         userDefaults.synchronize()
     }
     
+    func clearToken() {
+        let userDefaults = UserDefaults.standard
+        userDefaults.removeObject(forKey: TOKEN_KEY)
+        userDefaults.removeObject(forKey: EXPIRE_KEY)
+        userDefaults.synchronize()
+    }
+    
     func getToken() -> String? {
         let userDefaults = UserDefaults.standard
         if let token = userDefaults.string(forKey: TOKEN_KEY),
@@ -243,7 +255,13 @@ class JGGAPIManager: NSObject {
             "email": email,
             "password": password,
         ]
+        
+        CLS_LOG_SWIFT(format: "Login url: %@ \nbody: %@", [URLManager.Account.Login, body])
+        
         POST(url: URLManager.Account.Login, body: body) { (json, error) in
+            
+            CLS_LOG_SWIFT(format: "Login response: %@", [json?.description ?? ""])
+            
             if let response = json {
                 let success = response[SUCCESS_KEY].boolValue
                 if success == true,
@@ -332,6 +350,7 @@ class JGGAPIManager: NSObject {
     
     func accountLogout(_ complete: @escaping BoolStringClosure) -> Void {
         POST(url: URLManager.Account.Logout, body: nil) { (response, error) in
+            self.clearToken()
             complete(true, nil)
         }
     }
@@ -360,7 +379,13 @@ class JGGAPIManager: NSObject {
     
     // MARK: - System
     func getRegions(_ complete: @escaping RegionListClosure) -> Void {
+        
+        CLS_LOG_SWIFT(format: "Get regions")
+        
         GET(url: URLManager.System.GetRegions, params: nil) { (json, error) in
+            
+            CLS_LOG_SWIFT(format: "Get region response: %@", [json?.description ?? ""])
+            
             if let response = json {
                 let success = response[SUCCESS_KEY].boolValue
                 if success {

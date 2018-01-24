@@ -91,6 +91,15 @@ class JGGProfileMainVC: JGGProfileBaseVC {
         cell.lblTitle.text = options[indexPath.section][indexPath.row]
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? JGGProfileMainOptionCell {
+            let optionTitle = cell.lblTitle.text
+            if optionTitle == LocalizedString("Sign Out") {
+                
+            }
+        }
+    }
 }
 
 class JGGProfileMainOptionCell: UITableViewCell {

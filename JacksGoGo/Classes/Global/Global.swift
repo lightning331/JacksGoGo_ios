@@ -9,6 +9,7 @@
 import Foundation
 import SwiftyJSON
 import AFDateHelper
+import Crashlytics
 
 // MARK: - Option
 
@@ -22,6 +23,17 @@ public enum BiddingStatus: String {
     case rejected = "rejected"
     case declined = "declined"
     case notResponded = "notResponded"
+}
+
+func CLS_LOG_SWIFT(format: String = "", _ args: [CVarArg] = [], file: String = #file, function: String = #function, line: Int = #line)
+{
+    let filename = URL(string: file)?.lastPathComponent.components(separatedBy: ".").first
+
+    #if DEBUG
+        CLSNSLogv("\(String(describing: filename)).\(function) line \(line) $ \(format)", getVaList(args))
+    #else
+        CLSLogv("\(String(describing: filename)).\(function) line \(line) $ \(format)", getVaList(args))
+    #endif
 }
 
 public func LocalizedString(_ key: String, comment: String = "") -> String {
@@ -54,6 +66,17 @@ func solidButton(_ button: UIButton,
         button.backgroundColor = disableColor
         button.setTitleColor(disableTextColor, for: .normal)
     }
+}
+
+func categoryCellSize(for viewWidth: CGFloat, margin: CGFloat) -> CGSize {
+    var w: CGFloat = 0
+    if viewWidth <= 375 {
+        w = (viewWidth - margin * 2) / 3 - 1
+    } else {
+        w = (viewWidth - margin * 3) / 4 - 1
+    }
+    let h = w * 1.16667
+    return CGSize(width: w, height: h)
 }
 
 public let DateOnly: DateFormatType = .custom("yyyy-MM-dd")
@@ -98,3 +121,5 @@ public var dayNames: [String] = [
 ]
 
 public let JGGNotificationShowToday: String = "com.jacksgogo.shotToday"
+public let JGGNotificationLoggedIn: String  = "com.jacksgogo.loggedin"
+public let JGGNotificationLoggedOut: String  = "com.jacksgogo.loggedout"

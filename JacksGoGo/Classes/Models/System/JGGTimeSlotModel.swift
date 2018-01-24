@@ -13,7 +13,7 @@ class JGGTimeSlotModel: NSObject {
 
     internal let StartOn = "StartOn"
     internal let EndOn   = "EndOn"
-    internal let Peoples        = "Peoples"
+    internal let Peoples = "Peoples"
     
     var startOn: Date?
     var endOn: Date?

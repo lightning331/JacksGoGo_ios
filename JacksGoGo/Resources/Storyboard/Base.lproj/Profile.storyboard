@@ -444,11 +444,27 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KX0-iI-5FU">
+                                    <rect key="frame" x="262" y="0.0" width="50" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="2Q5-zQ-33N"/>
+                                        <constraint firstAttribute="width" constant="50" id="8af-QM-sVg"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="14"/>
+                                    <state key="normal" title="Close">
+                                        <color key="titleColor" red="0.95005923510000001" green="0.39661446210000001" blue="0.073047049340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onPressedClose:" destination="4Rd-Op-PjX" eventType="touchUpInside" id="eLS-CA-KKG"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="KX0-iI-5FU" secondAttribute="trailing" constant="8" id="2Wj-xM-sg0"/>
                                 <constraint firstItem="hxf-tb-Q3o" firstAttribute="top" secondItem="RF2-qu-fsi" secondAttribute="bottom" constant="20" id="6Ah-3b-PK6"/>
                                 <constraint firstItem="hxf-tb-Q3o" firstAttribute="centerX" secondItem="Ndm-pP-dMM" secondAttribute="centerX" id="Jxf-SA-F29"/>
+                                <constraint firstItem="KX0-iI-5FU" firstAttribute="top" secondItem="Ndm-pP-dMM" secondAttribute="top" id="Ptg-Nq-8wn"/>
                                 <constraint firstItem="RF2-qu-fsi" firstAttribute="top" secondItem="Ndm-pP-dMM" secondAttribute="top" constant="10" id="g6O-rR-3Jf"/>
                                 <constraint firstItem="RF2-qu-fsi" firstAttribute="centerX" secondItem="Ndm-pP-dMM" secondAttribute="centerX" id="mzT-wA-y5u"/>
                             </constraints>
@@ -665,6 +681,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="btnClose" destination="KX0-iI-5FU" id="vXE-M7-aK9"/>
                         <outlet property="btnForgotPassword" destination="RSD-6k-X4t" id="4ZI-6n-QtX"/>
                         <outlet property="btnSignin" destination="yWl-4C-Mld" id="peR-Yi-q4N"/>
                         <outlet property="btnSigninFacebook" destination="drl-Cl-CEO" id="Lu0-JT-pR0"/>
@@ -991,13 +1008,13 @@
                                     <rect key="frame" x="120" y="10" width="80" height="80"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To Jacks Go Go!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPe-v8-5ci">
-                                    <rect key="frame" x="42.5" y="110" width="236.5" height="23.5"/>
+                                    <rect key="frame" x="40" y="110" width="242" height="25.5"/>
                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="748" text="Where are you located?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qz-gC-LdF">
-                                    <rect key="frame" x="16" y="149.5" width="138" height="18.5"/>
+                                    <rect key="frame" x="16" y="151.5" width="147" height="16.5"/>
                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="13"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>

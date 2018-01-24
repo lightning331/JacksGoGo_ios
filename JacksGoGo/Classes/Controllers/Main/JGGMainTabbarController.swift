@@ -12,7 +12,7 @@ import SnapKit
 class JGGMainTabbarController: UITabBarController {
 
     fileprivate var loadingView: JGGSplashLoadingView?
-    fileprivate let totalLoadingCount: Float = 2
+    fileprivate let totalLoadingCount: Float = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class JGGMainTabbarController: UITabBarController {
     
     private func autoAuthorize() {
         let loginCompletion: UserProfileModelResponse = { (userProfile, errorMessage) in
-            self.loadingView?.progressbar.setProgress(2 / self.totalLoadingCount, animated: true)
+            self.loadingView?.progressbar.setProgress(3 / self.totalLoadingCount, animated: true)
             if let userProfile = userProfile {
                 self.appManager.currentUser = userProfile
             }
@@ -61,6 +61,15 @@ class JGGMainTabbarController: UITabBarController {
         APIManager.getRegions { (result) in
             self.appManager.regions = result
             self.loadingView?.progressbar.setProgress(1 / self.totalLoadingCount, animated: true)
+            self.getCategories()
+        }
+    }
+    
+    private func getCategories() {
+        self.loadingView?.loadingDescription.text = LocalizedString("Loading categories...")
+        APIManager.getCategories { (result) in
+            self.appManager.categories = result
+            self.loadingView?.progressbar.setProgress(2 / self.totalLoadingCount, animated: true)
             self.autoAuthorize()
         }
     }

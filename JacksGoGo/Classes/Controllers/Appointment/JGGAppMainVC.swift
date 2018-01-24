@@ -36,19 +36,21 @@ class JGGAppMainVC: JGGStartTableVC {
 
     fileprivate var selectedTab: AppointmentTabButton = .pending
     
+    
     // MARK: -
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
 //        makeTemporaryData()
-
+        
+        
         initializeTableView()
         addTabNavigationBar()
         addSearchField()
         registerCell()
         
-        self.tableView.es.startPullToRefresh()
+//        self.tableView.es.startPullToRefresh()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,19 +59,27 @@ class JGGAppMainVC: JGGStartTableVC {
         self.navigationController?.hidesBarsOnSwipe = true
         
     }
-        
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if isLoggedIn {
+            self.tableView.es.addPullToRefresh {
+                self.APIManager.getPendingJobs { (response) in
+                    self.resetData()
+                    self.arrayAllPendingJobs.append(contentsOf: response)
+                    self.filterJobs(response)
+                    self.tableView.reloadData()
+                    self.tableView.es.stopPullToRefresh()
+                }
+            }
+            self.tableView.es.startPullToRefresh()
+        }
+    }
+    
     private func initializeTableView() {
         self.tableView.keyboardDismissMode = .onDrag
         self.tableView.allowsSelection = true
-        self.tableView.es.addPullToRefresh {
-            self.APIManager.getPendingJobs { (response) in
-                self.resetData()
-                self.arrayAllPendingJobs.append(contentsOf: response)
-                self.filterJobs(response)
-                self.tableView.reloadData()
-                self.tableView.es.stopPullToRefresh()
-            }
-        }
+        
     }
 
     private func addTabNavigationBar() {
@@ -135,91 +145,131 @@ class JGGAppMainVC: JGGStartTableVC {
     
     // MARK: - UITableView Data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if selectedTab == .pending {
-            return 3
+        if isLoggedIn {
+            if selectedTab == .pending {
+                return 3
+            } else {
+                return 1
+            }
         } else {
             return 1
         }
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if selectedTab == .pending {
-            if section == 0 {
-                if arrayQuickJobs.count == 0 {
-                    return 0
+        if isLoggedIn {
+            if selectedTab == .pending {
+                if section == 0 {
+                    if arrayQuickJobs.count == 0 {
+                        return 0
+                    }
+                } else if section == 1 {
+                    if arrayServicePackages.count == 0 {
+                        return 0
+                    }
+                } else if section == 2 {
+                    if arrayQuickJobs.count == 0 && arrayServicePackages.count == 0 {
+                        return 0
+                    }
                 }
-            } else if section == 1 {
-                if arrayServicePackages.count == 0 {
-                    return 0
-                }
+                return 50
+            } else {
+                return 0
             }
-            return 50
         } else {
             return 0
         }
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let sectionTitleView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "JGGSectionTitleView") as? JGGSectionTitleView
-        if section == 0 {
-            sectionTitleView?.title = LocalizedString("Quick Jobs")
+        if isLoggedIn {
+            let sectionTitleView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "JGGSectionTitleView") as? JGGSectionTitleView
+            if section == 0 {
+                sectionTitleView?.title = LocalizedString("Quick Jobs")
+            }
+            else if section == 1 {
+                sectionTitleView?.title = LocalizedString("Service Packages")
+            }
+            else if section == 2 {
+                sectionTitleView?.title = LocalizedString("Pending Jobs")
+            }
+            return sectionTitleView
+        } else {
+            return nil
         }
-        else if section == 1 {
-            sectionTitleView?.title = LocalizedString("Service Packages")
-        }
-        else if section == 2 {
-            sectionTitleView?.title = LocalizedString("Pending Jobs")
-        }
-        return sectionTitleView
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            if selectedTab == .pending {
-                return arrayQuickJobs.count
-            } else {
+        if isLoggedIn {
+            if section == 0 {
+                if selectedTab == .pending {
+                    return arrayQuickJobs.count
+                } else {
+                    return arrayPendingJobs.count
+                }
+            }
+            else if section == 1 {
+                return arrayServicePackages.count
+            }
+            else if section == 2 {
                 return arrayPendingJobs.count
             }
-        }
-        else if section == 1 {
-            return arrayServicePackages.count
-        }
-        else if section == 2 {
-            return arrayPendingJobs.count
-        }
-        else {
-            return 0
+            else {
+                return 0
+            }
+        } else {
+            return 1
         }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppHistoryListCell") as! JGGAppHistoryListCell
-        if indexPath.section == 0 {
-            if selectedTab == .pending {
-                cell.job = arrayQuickJobs[indexPath.row];
-            } else {
-                let index = Int(arc4random_uniform(UInt32(indexPath.row)))
-                cell.job = arrayPendingJobs[index];
+        if isLoggedIn {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppHistoryListCell") as! JGGAppHistoryListCell
+            if indexPath.section == 0 {
+                if selectedTab == .pending {
+                    cell.job = arrayQuickJobs[indexPath.row];
+                } else {
+                    let index = Int(arc4random_uniform(UInt32(indexPath.row)))
+                    cell.job = arrayPendingJobs[index];
+                }
+            } else if indexPath.section == 1 {
+                cell.job = arrayServicePackages[indexPath.row];
+            } else if indexPath.section == 2 {
+                cell.job = arrayPendingJobs[indexPath.row];
             }
-        } else if indexPath.section == 1 {
-            cell.job = arrayServicePackages[indexPath.row];
-        } else if indexPath.section == 2 {
-            cell.job = arrayPendingJobs[indexPath.row];
+            return cell
+        } else {
+            return super.tableView(tableView, cellForRowAt: indexPath)
         }
-        return cell
     }
     
     // MARK: delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! JGGAppHistoryListCell
-        /*
-        if let serviceDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGAppClinetServiceDetailRootVC") as? JGGAppClinetServiceDetailRootVC {
-            serviceDetailVC.selectedAppointment = cell.appointment
-            self.navigationController?.pushViewController(serviceDetailVC, animated: true)
-        } */
-        if let appointmentStatusSummary = self.storyboard?.instantiateViewController(withIdentifier: "JGGAppJobStatusSummaryVC") as? JGGAppJobStatusSummaryVC {
-            appointmentStatusSummary.selectedAppointment = cell.job
-            self.navigationController?.pushViewController(appointmentStatusSummary, animated: true)
+        if isLoggedIn {
+            let cell = tableView.cellForRow(at: indexPath) as! JGGAppHistoryListCell
+            
+            var ownJob: Bool = false
+            if let currentUser = appManager.currentUser {
+                if currentUser.id == cell.job?.userProfileId {
+                    ownJob = true
+                }
+            }
+            if ownJob {
+                
+            } else {
+                
+            }
+            /*
+            if let serviceDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGAppClinetServiceDetailRootVC") as? JGGAppClinetServiceDetailRootVC {
+                serviceDetailVC.selectedAppointment = cell.appointment
+                self.navigationController?.pushViewController(serviceDetailVC, animated: true)
+            } */
+            if let appointmentStatusSummary = self.storyboard?.instantiateViewController(withIdentifier: "JGGAppJobStatusSummaryVC") as? JGGAppJobStatusSummaryVC {
+                appointmentStatusSummary.selectedAppointment = cell.job
+                self.navigationController?.pushViewController(appointmentStatusSummary, animated: true)
+            }
+        } else {
+            
         }
     }
     

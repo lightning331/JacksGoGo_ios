@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MBProgressHUD
 
-class JGGProfileMainVC: JGGProfileBaseVC {
+class JGGProfileMainVC: JGGStartTableVC {
 
     @IBOutlet weak var imgviewProfileBanner: UIImageView!
     @IBOutlet weak var viewCredit: UIView!
@@ -44,11 +45,7 @@ class JGGProfileMainVC: JGGProfileBaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.tableView.allowsSelection = true
     }
 
 
@@ -96,7 +93,31 @@ class JGGProfileMainVC: JGGProfileBaseVC {
         if let cell = tableView.cellForRow(at: indexPath) as? JGGProfileMainOptionCell {
             let optionTitle = cell.lblTitle.text
             if optionTitle == LocalizedString("Sign Out") {
-                
+                let hud = MBProgressHUD(view: (self.tabBarController?.view)!)
+                hud.show(animated: true)
+                APIManager.accountLogout({ (success, errorMessage) in
+                    if success {
+                        self.appManager.currentUser = nil
+                        NotificationCenter
+                            .default
+                            .post(
+                                name: NSNotification.Name(rawValue: JGGNotificationLoggedOut),
+                                object: nil
+                        )
+                        (self.navigationController as? JGGProfileNC)?.loggedOut()
+                    } else {
+                        JGGAlertViewController.show(
+                            title: LocalizedString("Error"),
+                            message: errorMessage,
+                            colorSchema: .red,
+                            okButtonTitle: LocalizedString("OK"),
+                            okAction: nil,
+                            cancelButtonTitle: nil,
+                            cancelAction: nil
+                        )
+                    }
+                    hud.hide(animated: true)
+                })
             }
         }
     }

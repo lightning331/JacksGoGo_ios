@@ -19,9 +19,11 @@ class JGGStartTableVC: JGGTableViewController {
         if let _ = appManager.currentUser {
             isLoggedIn = true
         }
-        
+
         self.tableView.register(UINib(nibName: "JGGNotLoggedinCell", bundle: nil),
                                 forCellReuseIdentifier: "JGGNotLoggedinCell")
+        
+        addLogInOutNotifications()
     }
     
     internal func showLoginVCIfNeed() -> Bool {
@@ -30,12 +32,23 @@ class JGGStartTableVC: JGGTableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         if !isPromptedLoginVC && !isLoggedIn && showLoginVCIfNeed() {
             isPromptedLoginVC = true
             presentLoginVC()
         }
     }
+        
+    override func loggedInHandler(_ sender: Any) {
+        isLoggedIn = true
+        self.tableView.reloadData()
+    }
     
+    override func loggedOutHandler(_ sender: Any) {
+        isLoggedIn = false
+        self.navigationController?.popToRootViewController(animated: false)
+        self.tableView.reloadData()
+    }
     
     override func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
         if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0 {
@@ -84,7 +97,7 @@ class JGGStartTableVC: JGGTableViewController {
             }
             return cell
         } else {
-            return super.tableView(tableView, cellForRowAt: indexPath)
+            return UITableViewCell()
         }
     }
 }

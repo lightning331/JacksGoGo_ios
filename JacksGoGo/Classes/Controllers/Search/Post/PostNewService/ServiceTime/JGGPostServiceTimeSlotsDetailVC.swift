@@ -17,11 +17,10 @@ class JGGPostServiceTimeSlotsDetailVC: JGGPostServiceTimeSlotsBaseVC {
 
     var calendarView: JGGCalendarView!
 
-    fileprivate lazy var filteredDates: [String: Array<JGGTimeSlotModel>] = [:]
+    fileprivate lazy var filteredDates: [String: [JGGTimeSlotModel]] = [:]
     fileprivate var selectedDate: Date = Date(fromString: Date().toString(format: DateOnly),
                                               format: DateOnly)!
     fileprivate var selectedDates: [Date] = []
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,10 +75,10 @@ class JGGPostServiceTimeSlotsDetailVC: JGGPostServiceTimeSlotsBaseVC {
         if let parentVC = self.navController.parent as? JGGPostServiceStepRootVC {
             if self.navController.selectedPeopleType == .onePerson {
                 self.navController.onePersonTimeSlots = filteredDates.flatMap { $1 }
-                parentVC.creatingService?.timeSlots = self.navController.onePersonTimeSlots
+                parentVC.creatingService?.sessions = self.navController.onePersonTimeSlots
             } else if self.navController.selectedPeopleType == .multiplePeople {
                 self.navController.multiplePeopleTimeSlots = filteredDates.flatMap { $1 }
-                parentVC.creatingService?.timeSlots = self.navController.multiplePeopleTimeSlots
+                parentVC.creatingService?.sessions = self.navController.multiplePeopleTimeSlots
             }
             
         }
@@ -145,7 +144,7 @@ class JGGPostServiceTimeSlotsDetailVC: JGGPostServiceTimeSlotsBaseVC {
     
     fileprivate var selectedDateTimeSlots: [JGGTimeSlotModel] {
         let dateString = selectedDate.toString(format: DateOnly)
-        return filteredDates[dateString] ?? Array()
+        return filteredDates[dateString] ?? []
     }
     
     fileprivate func addTimeSlot(_ timeSlot: JGGTimeSlotModel) {
@@ -153,7 +152,7 @@ class JGGPostServiceTimeSlotsDetailVC: JGGPostServiceTimeSlotsBaseVC {
             let dateString = startTime.toString(format: DateOnly)
             var slots = filteredDates[dateString]
             if slots == nil {
-                slots = Array()
+                slots = []
                 filteredDates[dateString] = slots!
             }
             slots!.append(timeSlot)

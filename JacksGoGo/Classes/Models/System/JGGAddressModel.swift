@@ -20,6 +20,7 @@ class JGGAddressModel: NSObject {
     internal let Latitude = "Lat"
     internal let Longitude = "Lon"
     internal let CountryCode = "CountryCode"
+    internal let IsDrop = "IsDrop"
 
     var unit: String?
     var floor: String?
@@ -50,6 +51,7 @@ class JGGAddressModel: NSObject {
         lat         = json[Latitude].double
         lon         = json[Longitude].double
         countryCode = json[CountryCode].string
+        isDontShowFullAddress = json[IsDrop].boolValue
     }
     
     func json() -> JSON {
@@ -63,6 +65,7 @@ class JGGAddressModel: NSObject {
         json[Latitude].double   = lat
         json[Longitude].double  = lon
         json[CountryCode].string = countryCode
+        json[IsDrop].boolValue = isDontShowFullAddress
         return json
     }
     

@@ -53,29 +53,6 @@ class JGGAppMainVC: JGGStartTableVC {
 //        self.tableView.es.startPullToRefresh()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.navigationController?.hidesBarsOnSwipe = true
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if isLoggedIn {
-            self.tableView.es.addPullToRefresh {
-                self.APIManager.getPendingJobs { (response) in
-                    self.resetData()
-                    self.arrayAllPendingJobs.append(contentsOf: response)
-                    self.filterJobs(response)
-                    self.tableView.reloadData()
-                    self.tableView.es.stopPullToRefresh()
-                }
-            }
-            self.tableView.es.startPullToRefresh()
-        }
-    }
-    
     private func initializeTableView() {
         self.tableView.keyboardDismissMode = .onDrag
         self.tableView.allowsSelection = true
@@ -109,6 +86,29 @@ class JGGAppMainVC: JGGStartTableVC {
                                 forHeaderFooterViewReuseIdentifier: "JGGSectionTitleView")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.hidesBarsOnSwipe = true
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if isLoggedIn {
+            reloadJobWithPullRefresh()
+        }
+    }
+    
+    override func loggedInHandler(_ sender: Any) {
+        reloadJobWithPullRefresh()
+    }
+    
+    override func loggedOutHandler(_ sender: Any) {
+        self.tableView.es.removeRefreshHeader()
+        self.tableView.reloadData()
+    }
+    
     // MARK: - Load and filter jobs
     fileprivate func resetData() {
         arrayAllPendingJobs.removeAll()
@@ -118,6 +118,19 @@ class JGGAppMainVC: JGGStartTableVC {
         searchResultQuickJobs.removeAll()
         searchResultServicePackages.removeAll()
         searchResultPendingJobs.removeAll()
+    }
+    
+    fileprivate func reloadJobWithPullRefresh() {
+        self.tableView.es.addPullToRefresh {
+            self.APIManager.getPendingJobs { (response) in
+                self.resetData()
+                self.arrayAllPendingJobs.append(contentsOf: response)
+                self.filterJobs(response)
+                self.tableView.reloadData()
+                self.tableView.es.stopPullToRefresh()
+            }
+        }
+        self.tableView.es.startPullToRefresh()
     }
     
     fileprivate func loadJobs() {

@@ -73,7 +73,8 @@ class JGGSignupSMSVerifyVC: JGGLoginBaseVC, UITextFieldDelegate {
             self.hideHUD()
             if let user = user {
                 self.appManager.currentUser = user
-                (self.navigationController as! JGGProfileNC).loggedIn()
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: JGGNotificationLoggedIn), object: nil)
+                (self.navigationController as? JGGProfileNC)?.loggedIn()
             } else {
                 self.showAlert(title: LocalizedString("Error"), message: errorMessage)
             }

@@ -110,9 +110,15 @@ class JGGAPIManager: NSObject {
             switch response.result {
             case .success(let data):
                 let result = JSON(data)
+                
+                CLS_LOG_SWIFT(format: ">>>> POST RESPONSE: %@\n%@", [url, result.description])
+                
                 complete(result, nil)
                 break
             case .failure(let error):
+                
+                CLS_LOG_SWIFT(format: ">>>> POST ERROR RESPONSE: %@\n%@", [url, error.localizedDescription])
+                
                 complete(nil, error)
                 break
             }
@@ -132,9 +138,15 @@ class JGGAPIManager: NSObject {
             switch response.result {
             case .success(let data):
                 let result = JSON(data)
+                
+                CLS_LOG_SWIFT(format: ">>>> GET RESPONSE: %@\n%@", [url, result.description])
+                
                 complete(result, nil)
                 break
             case .failure(let error):
+                
+                CLS_LOG_SWIFT(format: ">>>> GET ERROR RESPONSE: %@\n%@", [url, error.localizedDescription])
+                
                 complete(nil, error)
                 break
             }
@@ -172,9 +184,15 @@ class JGGAPIManager: NSObject {
             switch response.result {
             case .success(let data):
                 let result = JSON(data)
+                
+                CLS_LOG_SWIFT(format: ">>>> DELETE RESPONSE: %@\n%@", [url, result.description])
+                
                 complete(result, nil)
                 break
             case .failure(let error):
+                
+                CLS_LOG_SWIFT(format: ">>>> DELETE ERROR RESPONSE: %@\n%@", [url, error.localizedDescription])
+                
                 complete(nil, error)
                 break
             }
@@ -260,8 +278,6 @@ class JGGAPIManager: NSObject {
         
         POST(url: URLManager.Account.Login, body: body) { (json, error) in
             
-            CLS_LOG_SWIFT(format: "Login response: %@", [json?.description ?? ""])
-            
             if let response = json {
                 let success = response[SUCCESS_KEY].boolValue
                 if success == true,
@@ -285,6 +301,9 @@ class JGGAPIManager: NSObject {
             "email": email,
             "password": password,
             ]
+        
+        CLS_LOG_SWIFT(format: "Register url: %@ \nbody: %@", [URLManager.Account.Register, body])
+        
         POST(url: URLManager.Account.Register, body: body) { (json, error) in
             if let response = json {
                 let success = response[SUCCESS_KEY].boolValue
@@ -309,6 +328,9 @@ class JGGAPIManager: NSObject {
         let body = [
             "Number": phoneNumber
         ]
+        
+        CLS_LOG_SWIFT(format: "accountAddPhone url: %@ \nbody: %@", [URLManager.Account.AddPhoneNumber, body])
+
         POST(url: URLManager.Account.AddPhoneNumber, body: body) { (json, error) in
             if let response = json {
                 let success = response[SUCCESS_KEY].boolValue
@@ -328,6 +350,8 @@ class JGGAPIManager: NSObject {
             "Provider": phoneNumber,
             "Code": code
         ]
+        CLS_LOG_SWIFT(format: "verifyPhoneNumber url: %@ \nbody: %@", [URLManager.Account.VerifyCode, body])
+
         POST(url: URLManager.Account.VerifyCode, body: body) { (json, error) in
             if let response = json {
                 let success = response[SUCCESS_KEY].boolValue
@@ -360,6 +384,9 @@ class JGGAPIManager: NSObject {
         if var body = data.dictionaryObject {
             body["Email"] = email
             body["RegionID"] = regionId
+            
+            CLS_LOG_SWIFT(format: "userEditProfile url: %@ \nbody: %@", [URLManager.User.EditProfile, body])
+            
             POST(url: URLManager.User.EditProfile, body: body) { (json, error) in
                 if let response = json {
                     let success = response[SUCCESS_KEY].boolValue
@@ -442,6 +469,9 @@ class JGGAPIManager: NSObject {
     
     // MARK: - Appointments
     func getPendingJobs(_ complete: @escaping AppointmentsClosure) -> Void {
+        
+        CLS_LOG_SWIFT(format: "getPendingJobs url: %@", [URLManager.Appointment.GetPendingAppointments()])
+
         GET(url: URLManager.Appointment.GetPendingAppointments(), params: nil) { (json, error) in
             if let response = json {
                 let success = response[SUCCESS_KEY].boolValue
@@ -463,6 +493,7 @@ class JGGAPIManager: NSObject {
     
     // MARK: - Job
     func getCategories(_ complete: @escaping CategoryListClosure) -> Void {
+        CLS_LOG_SWIFT(format: "getCategories url: %@", [URLManager.System.GetAllCategories])
         GET(url: URLManager.System.GetAllCategories, params: nil) { (json, error) in
             if let response = json {
                 let success = response[SUCCESS_KEY].boolValue
@@ -483,8 +514,7 @@ class JGGAPIManager: NSObject {
     
     func postJob(_ job: JGGCreateJobModel, complete: @escaping StringStringClosure) -> Void
     {
-        print(URLManager.Appointment.PostJob)
-        print(job.json())
+        CLS_LOG_SWIFT(format: "postJob url: %@\nBODY: %@", [URLManager.Appointment.PostJob, job.json().description])
         POST(url: URLManager.Appointment.PostJob, body: job.json().dictionaryObject) { (json, error) in
             if let response = json {
                 print("response: ", response)
@@ -507,11 +537,9 @@ class JGGAPIManager: NSObject {
     // MARK: - Service
     func postService(_ service: JGGCreateJobModel, complete: @escaping StringStringClosure) -> Void
     {
-        print(URLManager.Appointment.PostService)
-        print(service.json())
+        CLS_LOG_SWIFT(format: "postService url: %@\nBODY: %@", [URLManager.Appointment.PostService, service.json().description])
         POST(url: URLManager.Appointment.PostService, body: service.json().dictionaryObject) { (json, error) in
             if let response = json {
-                print("response: ", response)
                 let success = response[SUCCESS_KEY].boolValue
                 if success {
                     complete(response[VALUE_KEY].stringValue, nil)

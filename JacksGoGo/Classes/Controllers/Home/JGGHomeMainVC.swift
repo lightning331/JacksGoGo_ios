@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Crashlytics
 
 class JGGHomeMainVC: JGGStartTableVC {
 
@@ -18,6 +19,10 @@ class JGGHomeMainVC: JGGStartTableVC {
         return false
     }
 
+    @IBAction func onPressedCrash(_ sender: UIButton) {
+        Crashlytics.sharedInstance().crash()
+    }
+    
     // MARK: - Table view data source
 
 }

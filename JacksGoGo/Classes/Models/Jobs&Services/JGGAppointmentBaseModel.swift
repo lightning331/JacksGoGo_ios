@@ -43,7 +43,6 @@ class JGGAppointmentBaseModel: JGGBaseModel, MKAnnotation {
     internal let Status = "Status"
     internal let Address = "Address"
     internal let DAddress = "DAddress"
-    internal let Sessions = "Sessions"
     
     var title: String?
     var description_: String?
@@ -58,7 +57,6 @@ class JGGAppointmentBaseModel: JGGBaseModel, MKAnnotation {
     var status: Int = 0
     var address: JGGAddressModel?
     var addressDropIn: JGGAddressModel?
-    var sessions: [JGGJobTimeModel]?
     
     var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(0, 0)
     var subtitle: String?
@@ -90,14 +88,6 @@ class JGGAppointmentBaseModel: JGGBaseModel, MKAnnotation {
         postOn          = json[PostOn].dateObject
         address         = JGGAddressModel(json: json[Address])
         addressDropIn   = JGGAddressModel(json: json[DAddress])
-        if let jsonSessions = json[Sessions].array {
-            sessions = []
-            for jsonSession in jsonSessions {
-                if let session = JGGJobTimeModel(json: jsonSession) {
-                    sessions!.append(session)
-                }
-            }
-        }
     }
     
     override func json() -> JSON {
@@ -123,13 +113,6 @@ class JGGAppointmentBaseModel: JGGBaseModel, MKAnnotation {
         }
         if let addressDropin = addressDropIn {
             json[DAddress] = addressDropin.json()
-        }
-        if let sessions = sessions {
-            var jsonSessions: [JSON] = []
-            for session in sessions {
-                jsonSessions.append(session.json())
-            }
-            json[Sessions].arrayObject = jsonSessions
         }
         return json
     }

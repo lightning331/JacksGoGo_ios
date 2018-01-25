@@ -79,6 +79,10 @@ func categoryCellSize(for viewWidth: CGFloat, margin: CGFloat) -> CGSize {
     return CGSize(width: w, height: h)
 }
 
+func appRootViewController() -> UIViewController {
+    return UIApplication.shared.delegate!.window!!.rootViewController!
+}
+
 public let DateOnly: DateFormatType = .custom("yyyy-MM-dd")
 public let TimeOnly: DateFormatType = .custom("HH:mm:ss")
 public let FullDate: DateFormatType = .custom("yyyy-MM-dd'T'HH:mm:ss")

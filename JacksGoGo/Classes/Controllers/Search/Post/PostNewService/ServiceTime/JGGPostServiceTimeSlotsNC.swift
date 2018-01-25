@@ -18,7 +18,7 @@ class JGGPostServiceTimeSlotsNC: UINavigationController {
 
     var selectedPeopleType: JGGTimeSlotPeopleType = .noSlots
     lazy var onePersonTimeSlots: [JGGTimeSlotModel] = []
-    lazy var multiplePeopleTimeSlots: [ JGGTimeSlotModel] = []
+    lazy var multiplePeopleTimeSlots: [JGGTimeSlotModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

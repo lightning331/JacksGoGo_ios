@@ -22,8 +22,18 @@ class JGGProfileNC: JGGBaseNC {
         } else {
             loggedOut()
         }
+        
+        addLogInOutNotifications()
     }
 
+    override func loggedInHandler(_ sender: Any) {
+        loggedIn()
+    }
+    
+    override func loggedOutHandler(_ sender: Any) {
+        loggedOut()
+    }
+    
     func loggedIn() -> Void {
         if shouldDismiss {
             self.dismiss(animated: true, completion: nil)

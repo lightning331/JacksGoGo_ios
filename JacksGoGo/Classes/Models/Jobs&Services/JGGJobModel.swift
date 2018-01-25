@@ -26,7 +26,8 @@ class JGGJobModel: JGGAppointmentBaseModel {
     internal let Repetition = "Repetition"
     internal let JobTime = "JobTime"
     internal let IsQuickJob = "IsQuickJob"
-    internal let TimeSlots = "TimeSlots"
+    internal let ViewCount = "ViewCount"
+    internal let Sessions = "Sessions"
     
     var categoryId: String!
     var isRequest: Bool = true
@@ -43,7 +44,9 @@ class JGGJobModel: JGGAppointmentBaseModel {
     var repetitionType: JGGRepetitionType = .none
     var repetition: String?
     var isQuickJob: Bool = false
-    var timeSlots: [JGGTimeSlotModel]?
+    var sessions: [JGGTimeSlotModel]?
+    var viewCount: Int = 0
+    var proposal: JGGProposalModel?
     
     override var type: AppointmentType {
         return .jobs
@@ -76,14 +79,16 @@ class JGGJobModel: JGGAppointmentBaseModel {
         repetitionType = JGGRepetitionType(rawValue: json[RepetitionType].intValue) ?? .none
         repetition = json[Repetition].string
         isQuickJob = json[IsQuickJob].boolValue
-        if let jsonTimeSlots = json[TimeSlots].array {
-            timeSlots = []
-            for jsonTimeSlot in jsonTimeSlots {
-                if let timeSlot = JGGTimeSlotModel(json: jsonTimeSlot) {
-                    timeSlots!.append(timeSlot)
+        if let jsonSessions = json[Sessions].array {
+            sessions = []
+            for jsonSession in jsonSessions {
+                if let timeSlot = JGGTimeSlotModel(json: jsonSession) {
+                    sessions!.append(timeSlot)
                 }
             }
         }
+        
+        viewCount = json[ViewCount].intValue
     }
     
     override func json() -> JSON {
@@ -105,13 +110,14 @@ class JGGJobModel: JGGAppointmentBaseModel {
         json[RepetitionType].intValue = repetitionType.rawValue
         json[Repetition].string = repetition
         json[IsQuickJob].boolValue = isQuickJob
-        if let timeSlots = timeSlots {
-            var jsonTimeSlots: [JSON] = []
-            for timeSlot in timeSlots {
-                jsonTimeSlots.append(timeSlot.json())
+        if let sessions = sessions {
+            var jsonSessions: [JSON] = []
+            for timeSlot in sessions {
+                jsonSessions.append(timeSlot.json())
             }
-            json[TimeSlots].arrayObject = jsonTimeSlots
+            json[Sessions].arrayObject = jsonSessions
         }
+        json[ViewCount].intValue = viewCount
         return json
     }
     

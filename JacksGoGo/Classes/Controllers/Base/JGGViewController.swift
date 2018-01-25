@@ -83,4 +83,51 @@ extension UIViewController {
         mzformSheetVC.contentViewControllerTransitionStyle = transitionStyle
         self.present(mzformSheetVC, animated: true, completion: nil)
     }
+    
+    internal func addLogInOutNotifications() {
+        
+        let defaultNotifyCenter = NotificationCenter.default
+        
+        defaultNotifyCenter
+            .addObserver(
+                self,
+                selector: #selector(loggedInHandler(_:)),
+                name: NSNotification.Name(rawValue: JGGNotificationLoggedIn),
+                object: nil
+        )
+        
+        defaultNotifyCenter
+            .addObserver(
+                self,
+                selector: #selector(loggedOutHandler(_:)),
+                name: NSNotification.Name(rawValue: JGGNotificationLoggedOut),
+                object: nil
+        )
+    }
+    
+    internal func removeLogInNotifications() {
+        let defaultNotifyCenter = NotificationCenter.default
+        
+        defaultNotifyCenter
+            .removeObserver(
+                self,
+                name: NSNotification.Name(rawValue: JGGNotificationLoggedIn),
+                object: nil
+        )
+        
+        defaultNotifyCenter
+            .removeObserver(
+                self,
+                name: NSNotification.Name(rawValue: JGGNotificationLoggedOut),
+                object: nil
+        )
+    }
+
+    @objc internal func loggedInHandler(_ sender: Any) {
+
+    }
+    
+    @objc internal func loggedOutHandler(_ sender: Any) {
+
+    }
 }

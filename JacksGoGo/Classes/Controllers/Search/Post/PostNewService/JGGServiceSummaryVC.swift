@@ -141,8 +141,9 @@ class JGGServiceSummaryVC: JGGPostAppointmentBaseTableVC {
         if index < photos.count {
             let image = photos[index]
             APIManager.upload(attachmentImage: image, progressClosure: { (percent) in
-                //                print (index, percent)
-                self.hud.progress = (Float(index) + percent) / Float(photos.count)
+                let totalPercent = (Float(index) + percent) / Float(photos.count)
+                print (percent, totalPercent)
+                self.hud.progress = totalPercent
             }, complete: { (downloadUrl, errorMessage) in
                 if let url = downloadUrl {
                     self.imageDownloadURLs.append(url)

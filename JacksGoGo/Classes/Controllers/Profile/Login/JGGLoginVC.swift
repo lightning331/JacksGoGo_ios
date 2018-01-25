@@ -37,6 +37,22 @@ class JGGLoginVC: JGGLoginBaseVC, UITextFieldDelegate {
         btnClose.isHidden = !nav.shouldDismiss
         
         let _ = checkValidCreditional()
+        
+        showTabBar()
+    }
+    
+    private func showTabBar(){
+        if let tabBar = self.tabBarController?.tabBar {
+            if tabBar.isHidden == false { return }
+            let frame = tabBar.frame
+            let offset = -(frame.size.height)
+            let duration: TimeInterval = 0.2
+            tabBar.isHidden = false
+            UIView.animate(withDuration: duration,
+                           animations: { tabBar.frame = frame.offsetBy(dx: 0, dy: offset) },
+                           completion: { if $0 {tabBar.isHidden = false} })
+            
+        }
     }
     
     //MARK: - Button Actions
@@ -59,8 +75,10 @@ class JGGLoginVC: JGGLoginBaseVC, UITextFieldDelegate {
                     if let userProfile = userProfile {
                         self.appManager.currentUser = userProfile
                         if userProfile.user.phoneNumberVerified {
-                            let nav = self.navigationController as! JGGProfileNC
-                            nav.loggedIn()
+                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: JGGNotificationLoggedIn), object: nil)
+                            if let nav = self.navigationController as? JGGProfileNC {
+                                nav.loggedIn()
+                            }
                             self.appManager.save(username: email, password: password)
                         } else {
                             JGGAlertViewController.show(title: LocalizedString("Warning"),
@@ -86,7 +104,7 @@ class JGGLoginVC: JGGLoginBaseVC, UITextFieldDelegate {
     }
     
     @IBAction func onPressedFacebook(_ sender: UIButton) {
-        Crashlytics.sharedInstance().crash()
+        
     }
     
     

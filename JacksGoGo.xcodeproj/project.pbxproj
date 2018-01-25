@@ -81,6 +81,7 @@
 		63DBC8AF1FA02E7800AAECA8 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DBC8AE1FA02E7800AAECA8 /* UIColor.swift */; };
 		63DBC8B11FA0356000AAECA8 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DBC8B01FA0356000AAECA8 /* UIFont.swift */; };
 		F7862BF9654B02B90CFE4900 /* Pods_JacksGoGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781CEC96D6051F4CC98B1136 /* Pods_JacksGoGo.framework */; };
+		FF002DE52019DF790078B486 /* JGGProposalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF002DE42019DF790078B486 /* JGGProposalModel.swift */; };
 		FF049193200E4CD900632100 /* JGGJobTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF049192200E4CD900632100 /* JGGJobTimeModel.swift */; };
 		FF0CA88B1FB1BA3B00A2C98B /* JGGAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CA8891FB1BA3B00A2C98B /* JGGAlertViewController.swift */; };
 		FF0CA88C1FB1BA3B00A2C98B /* JGGAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF0CA88A1FB1BA3B00A2C98B /* JGGAlertViewController.xib */; };
@@ -367,6 +368,7 @@
 		63DBC8B01FA0356000AAECA8 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		781CEC96D6051F4CC98B1136 /* Pods_JacksGoGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JacksGoGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DDBAF2BE302FE617614219B /* Pods-JacksGoGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JacksGoGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JacksGoGo/Pods-JacksGoGo.release.xcconfig"; sourceTree = "<group>"; };
+		FF002DE42019DF790078B486 /* JGGProposalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGProposalModel.swift; sourceTree = "<group>"; };
 		FF049192200E4CD900632100 /* JGGJobTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGJobTimeModel.swift; sourceTree = "<group>"; };
 		FF0CA8891FB1BA3B00A2C98B /* JGGAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAlertViewController.swift; sourceTree = "<group>"; };
 		FF0CA88A1FB1BA3B00A2C98B /* JGGAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGAlertViewController.xib; sourceTree = "<group>"; };
@@ -773,6 +775,7 @@
 				FFA14B141FEDA88400186657 /* System */,
 				631EF29B1FA8743E001D2915 /* User */,
 				631EF29A1FA87429001D2915 /* Jobs&Services */,
+				FF002DE32019DF480078B486 /* Proposal */,
 				631EF2A41FA875D8001D2915 /* JGGBiddingProviderModel.swift */,
 			);
 			path = Models;
@@ -975,6 +978,14 @@
 				FF86FA33200A110900CF580B /* Date.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		FF002DE32019DF480078B486 /* Proposal */ = {
+			isa = PBXGroup;
+			children = (
+				FF002DE42019DF790078B486 /* JGGProposalModel.swift */,
+			);
+			path = Proposal;
 			sourceTree = "<group>";
 		};
 		FF0CA8881FB1BA1C00A2C98B /* AlertView */ = {
@@ -1778,6 +1789,7 @@
 				FFB5941D1FDE670400D12A1F /* JGGAppDetailBaseVC.swift in Sources */,
 				FFA21F5D1FAB87D600F5A6DA /* JGGBorderButtonCell.swift in Sources */,
 				FF9E9E6C1FAC4B7300F32283 /* JGGAppointmentDetailVC.swift in Sources */,
+				FF002DE52019DF790078B486 /* JGGProposalModel.swift in Sources */,
 				FFEB45D41FEC134400F362FF /* JGGSignupPhoneNumberVC.swift in Sources */,
 				63955EE81FA0668800D825B2 /* JGGAppHomeTabView.swift in Sources */,
 				FF9E9E6A1FAC3F4B00F32283 /* JGGServiceDetailVC.swift in Sources */,

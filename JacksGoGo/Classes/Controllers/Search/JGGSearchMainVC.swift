@@ -104,7 +104,7 @@ class JGGSearchMainVC: JGGStartTableVC {
                                             message: LocalizedString("You can't perform this action because didn't login. Would you login to proceed this?"),
                                             colorSchema: .orange,
                                             okButtonTitle: LocalizedString("Login"),
-                                            okAction: {
+                                            okAction: { text in
                                                 self.navigationController?.tabBarController?.selectedIndex = 4
                                             },
                                             cancelButtonTitle: LocalizedString("Cancel"),

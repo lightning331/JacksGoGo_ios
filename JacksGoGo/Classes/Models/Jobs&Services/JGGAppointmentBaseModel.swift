@@ -10,15 +10,10 @@ import UIKit
 import SwiftyJSON
 import MapKit
 
-public enum AppointmentStatus {
-    case none
-    case pending
-    case workInProgress
-    case rejected
-    case cancelled
-    case withdrawn
-    case completed
-    case watingForReview
+public enum JGGAppointmentStatus: Int {
+    case open = 0
+    case closed = 1
+    case confirmed = 2
 }
 
 public enum AppointmentType {
@@ -54,7 +49,7 @@ class JGGAppointmentBaseModel: JGGBaseModel, MKAnnotation {
     var userProfileId: String?
     var userProfile: JGGUserProfileModel?
     var postOn: Date?
-    var status: Int = 0
+    var status: JGGAppointmentStatus = .open
     var address: JGGAddressModel?
     var addressDropIn: JGGAddressModel?
     
@@ -88,6 +83,7 @@ class JGGAppointmentBaseModel: JGGBaseModel, MKAnnotation {
         postOn          = json[PostOn].dateObject
         address         = JGGAddressModel(json: json[Address])
         addressDropIn   = JGGAddressModel(json: json[DAddress])
+        status          = JGGAppointmentStatus(rawValue: json[Status].intValue) ?? .open
     }
     
     override func json() -> JSON {
@@ -114,6 +110,7 @@ class JGGAppointmentBaseModel: JGGBaseModel, MKAnnotation {
         if let addressDropin = addressDropIn {
             json[DAddress] = addressDropin.json()
         }
+        json[Status].intValue = status.rawValue
         return json
     }
     

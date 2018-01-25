@@ -269,6 +269,9 @@ class JGGAPIManager: NSObject {
     
     // MARK: - Account
     func accountLogin(email: String, password: String, complete: @escaping UserProfileModelResponse) -> Void {
+        
+        print("TOKEN", self.getToken() ?? "NOTHING")
+        
         let body = [
             "email": email,
             "password": password,
@@ -551,9 +554,35 @@ class JGGAPIManager: NSObject {
             } else {
                 complete(nil, LocalizedString("Unknown request error."))
             }
+        }
+    }
+    
+    // MARK: - Proposal
+    func postProposal() -> Void {
+        
+    }
+    
+    func editProposal() -> Void {
+        
+    }
+    
+    func sendInvite() -> Void {
+        
+    }
+    
+    func approveProposal() -> Void {
+        
+    }
+    
+    func rejectProposal(id: String) -> Void {
+        
+    }
+    
+    func getProposalsBy(jobId: String, pageIndex: Int = 0, pageSize: Int = 20, complete: @escaping ProposalsClosure) -> Void {
+        let url = URLManager.Proposal.GetProposalsByJob(id: jobId, pageIndex: pageIndex, pageSize: pageSize)
+        GET(url: url, params: nil) { (response, error) in
             
         }
-        
     }
 }
 

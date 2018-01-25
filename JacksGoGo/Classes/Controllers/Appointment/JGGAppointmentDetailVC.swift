@@ -148,7 +148,7 @@ class JGGAppointmentDetailVC: JGGAppointmentsTableVC {
                                     message: nil,
                                     colorSchema: .cyan,
                                     okButtonTitle: LocalizedString("Reject"),
-                                    okAction: {
+                                    okAction: { text in
             self.parent?.navigationController?.popToRootViewController(animated: true)
         },
                                     cancelButtonTitle: LocalizedString("Cancel"),

@@ -59,7 +59,7 @@ class JGGEditJobSummaryVC: JGGEditJobBaseTableVC {
                                     message: LocalizedString("Job reference no.:") + "J38291 - 170721",
                                     colorSchema: .green,
                                     okButtonTitle: LocalizedString("View Job"),
-                                    okAction: {
+                                    okAction: { text in
                                         self.navigationController?
                                             .parent?
                                             .navigationController?

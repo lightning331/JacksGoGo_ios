@@ -27,6 +27,8 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
     
     private var cellCount: Int = 9
 
+    var job: JGGJobModel!
+    
     /**
      * 0: Just posted,
      * 1: confirmed appointment,
@@ -39,11 +41,24 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
      **/
     private var currentJobStatus: Int = 0
 
+    // MARK: -
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.tintColor = UIColor.JGGOrange
+
         initTableView()
 
+        showJobInformation()
+        
+        if job.status == .open {
+            
+        } else if job.status == .confirmed {
+            
+        } else if job.status == .closed {
+            
+        }
     }
 
     private func initTableView() {
@@ -57,6 +72,38 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
         self.tableView.register(UINib(nibName: "JGGAppJobStatusPromptCell", bundle: nil),
                                 forCellReuseIdentifier: "JGGAppJobStatusPromptCell")
     }
+    
+    private func showJobInformation() {
+        if let category = job.category {
+            if let urlString = category.image, let url = URL(string: urlString) {
+                self.imgviewCategory.af_setImage(withURL: url, placeholderImage: nil)
+            }
+        }
+        self.lblTitle.text = job.title
+//        var timeString: String = ""
+        
+    }
+    
+    override func onPressedMenuEdit() {
+        
+    }
+    
+    override func onPressedMenuDelete() {
+        print("Pressed Delete")
+        JGGAlertViewController.show(title: LocalizedString("Delete Job?"),
+                                    message: LocalizedString("Let the providers know why you are cancelling the job."),
+                                    colorSchema: .red,
+                                    textFieldPlaceholder: LocalizedString("Reason"),
+                                    okButtonTitle: LocalizedString("Delete"),
+                                    okAction: { text in
+                                        print("Delete Job")
+                                        self.navigationController?.popToRootViewController(animated: true)
+                                    },
+                                    cancelButtonTitle: LocalizedString("Cancel"))
+    }
+    
+    // MARK: - API request
+    
     
     // MARK: - UITableView datasource
     

@@ -37,7 +37,7 @@ class JGGPostJobRootVC: JGGSearchBaseVC {
                                     colorSchema: .red,
                                     cancelColorSchema: .cyan,
                                     okButtonTitle: LocalizedString("Quit"),
-                                    okAction: {
+                                    okAction: { text in
                                         self.navigationController?.popViewController(animated: true)
                                     },
                                     cancelButtonTitle: LocalizedString("Cancel"),

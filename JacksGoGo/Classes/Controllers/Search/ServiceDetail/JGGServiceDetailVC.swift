@@ -162,10 +162,10 @@ class JGGServiceDetailVC: JGGSearchBaseTableVC {
                                     message: LocalizedString("Mark this post as inappropriate or offensive."),
                                     colorSchema: .green,
                                     okButtonTitle: LocalizedString("Report"),
-                                    okAction: {
+                                    okAction: { text in
                                         self.perform(#selector(self.showReportThankYouAlert(_:)), with: nil, afterDelay: 0.5)
         },
-                                    cancelButtonTitle: LocalizedString("Cancel")) {
+                                    cancelButtonTitle: LocalizedString("Cancel")) { text in
                                         
         }
     }
@@ -175,7 +175,7 @@ class JGGServiceDetailVC: JGGSearchBaseTableVC {
                                     message: LocalizedString("Our team will be looking into the matter."),
                                     colorSchema: .green,
                                     okButtonTitle: LocalizedString("Done"),
-                                    okAction: {
+                                    okAction: { text in
                                         
         },
                                     cancelButtonTitle: nil,

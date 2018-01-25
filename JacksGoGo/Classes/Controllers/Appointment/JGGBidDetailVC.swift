@@ -50,7 +50,7 @@ class JGGBidDetailVC: JGGAppointmentDetailBaseVC {
                                     message: nil,
                                     colorSchema: .green,
                                     okButtonTitle: LocalizedString("Reject"),
-                                    okAction: {
+                                    okAction: { text in
             
         },
                                     cancelButtonTitle: LocalizedString("Cancel"),

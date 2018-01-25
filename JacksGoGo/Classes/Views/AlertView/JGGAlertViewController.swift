@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import MZFormSheetPresentationController
 
-public typealias JGGAlertButtonBlock = (() -> Void)
+public typealias JGGAlertButtonBlock = ((String?) -> Void)
 
 class JGGAlertViewController: UIViewController {
 
@@ -19,6 +19,7 @@ class JGGAlertViewController: UIViewController {
                      message: String?,
                      colorSchema: JGGColorSchema = .green,
                      cancelColorSchema: JGGColorSchema? = nil,
+                     textFieldPlaceholder: String? = nil,
                      okButtonTitle: String = "OK",
                      okAction: JGGAlertButtonBlock? = nil,
                      cancelButtonTitle: String? = "Cancel",
@@ -31,6 +32,7 @@ class JGGAlertViewController: UIViewController {
             alertVC.alertMessage = message
             alertVC.colorSchema = colorSchema
             alertVC.cancelColor = cancelColorSchema
+            alertVC.textfieldPlaceholder = textFieldPlaceholder
             alertVC.okButtonTitle = okButtonTitle
             alertVC.okAction = okAction
             alertVC.cancelButtonTitle = cancelButtonTitle
@@ -46,6 +48,7 @@ class JGGAlertViewController: UIViewController {
     var alertMessage: String?
     var colorSchema: JGGColorSchema = .green
     var cancelColor: JGGColorSchema?
+    var textfieldPlaceholder: String? = nil
     var okButtonTitle: String = "OK"
     var okAction: JGGAlertButtonBlock?
     var cancelButtonTitle: String?
@@ -55,6 +58,7 @@ class JGGAlertViewController: UIViewController {
     
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblMessage: UILabel!
+    @IBOutlet weak var viewReason: UIView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var btnCancel: UIButton!
     @IBOutlet weak var btnOK: UIButton!
@@ -70,6 +74,12 @@ class JGGAlertViewController: UIViewController {
         
         self.lblTitle.text = alertTitle
         self.lblMessage.text = alertMessage
+        if let textfieldPlaceholder = textfieldPlaceholder {
+            self.viewReason.isHidden = false
+            self.textField.placeholder = textfieldPlaceholder
+        } else {
+            self.viewReason.isHidden = true
+        }
         self.btnOK.setTitle(okButtonTitle, for: .normal)
         self.btnCancel.setTitle(cancelButtonTitle, for: .normal)
         
@@ -152,15 +162,22 @@ class JGGAlertViewController: UIViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !viewReason.isHidden {
+            textField.becomeFirstResponder()
+        }
+    }
+    
     @IBAction func onPressedCancel(_ sender: Any) {
         self.dismiss(animated: true) {
-            self.cancelAction?()
+            self.cancelAction?(self.textField.text)
         }
     }
     
     @IBAction func onPressedOK(_ sender: Any) {
         self.dismiss(animated: true) {
-            self.okAction?()
+            self.okAction?(self.textField.text)
         }
     }
     
@@ -182,10 +199,17 @@ extension JGGAlertViewController: MZFormSheetPresentationContentSizing {
         if let alertMessage = alertMessage {
             messageHeight = alertMessage.height(withConstrainedWidth: screenSize.width - 80, font: lblMessage.font)
         }
+        var textfieldHeight: CGFloat = 64
+        if viewReason.isHidden {
+            textfieldHeight = 0
+        }
         let resultFrameSize = CGSize(width: screenSize.width - 30,
-                                     height: 120 + titleHeight + messageHeight)
-        let resultOrigin = CGPoint(x: currentFrame.origin.x,
+                                     height: 120 + titleHeight + messageHeight + textfieldHeight)
+        var resultOrigin = CGPoint(x: currentFrame.origin.x,
                                    y: (screenSize.height - resultFrameSize.height) / 2)
+        if !viewReason.isHidden {
+            resultOrigin.y -= 100
+        }
         return CGRect(origin: resultOrigin, size: resultFrameSize)
     }
     

@@ -9,6 +9,13 @@
 import UIKit
 import SwiftyJSON
 
+public enum JGGProposalStatus: Int {
+    case open = 0
+    case rejected = 1
+    case confirmed = 2
+    case withdrawed = 3
+}
+
 class JGGProposalModel: JGGBaseModel {
 
     let Appointment = "Appointment"
@@ -54,7 +61,7 @@ class JGGProposalModel: JGGBaseModel {
     var isInvited: Bool = false
     var submitOn: Date?
     var expireOn: Date?
-    var status: Int = 0
+    var status: JGGProposalStatus = .open
     var isViewed: Bool?
     
     override init() {
@@ -86,7 +93,7 @@ class JGGProposalModel: JGGBaseModel {
         isInvited           = json[IsInvited].boolValue
         submitOn            = json[SubmitOn].dateObject
         expireOn            = json[ExpireOn].dateObject
-        status              = json[Status].intValue
+        status              = JGGProposalStatus(rawValue: json[Status].intValue) ?? .open
         isViewed            = json[IsViewed].bool
     }
     
@@ -118,7 +125,7 @@ class JGGProposalModel: JGGBaseModel {
         json[IsInvited].boolValue   = isInvited
         json[SubmitOn].dateObject   = submitOn
         json[ExpireOn].dateObject   = expireOn
-        json[Status].intValue       = status
+        json[Status].intValue       = status.rawValue
         json[IsViewed].bool         = isViewed
 
         return json

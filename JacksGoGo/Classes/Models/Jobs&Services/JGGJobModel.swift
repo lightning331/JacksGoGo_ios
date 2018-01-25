@@ -12,6 +12,7 @@ import SwiftyJSON
 class JGGJobModel: JGGAppointmentBaseModel {
 
     internal let CategoryID = "CategoryID"
+    internal let Category = "Category"
     internal let IsRequest = "IsRequest"
     internal let ServiceType = "ServiceType"
     internal let AttachmentURL = "AttachmentURLs"
@@ -30,6 +31,7 @@ class JGGJobModel: JGGAppointmentBaseModel {
     internal let Sessions = "Sessions"
     
     var categoryId: String!
+    var category: JGGCategoryModel?
     var isRequest: Bool = true
     var serviceType: Int = 0
     var attachmentUrl: [String]?
@@ -65,6 +67,7 @@ class JGGJobModel: JGGAppointmentBaseModel {
         }
         super.init(json: json)
         categoryId = json[CategoryID].stringValue
+        category = JGGCategoryModel(json: json[Category])
         isRequest = json[IsRequest].boolValue
         serviceType = json[ServiceType].intValue
         attachmentUrl = json[AttachmentURL].arrayObject as? [String]
@@ -94,6 +97,9 @@ class JGGJobModel: JGGAppointmentBaseModel {
     override func json() -> JSON {
         var json = super.json()
         json[CategoryID].stringValue = categoryId
+        if let category = category {
+            json[Category] = category.json()
+        }
         json[IsRequest].boolValue = isRequest
         json[ServiceType].intValue = serviceType
         json[AttachmentURL].arrayObject = attachmentUrl

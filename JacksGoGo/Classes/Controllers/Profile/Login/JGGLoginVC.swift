@@ -85,7 +85,7 @@ class JGGLoginVC: JGGLoginBaseVC, UITextFieldDelegate {
                                                         message: LocalizedString("You have not verified account. Would you verify with your phone number?"),
                                                         colorSchema: .orange,
                                                         okButtonTitle: LocalizedString("Verify"),
-                                                        okAction: {
+                                                        okAction: { text in
                                                             self.performSegue(withIdentifier: "gotoPhoneVerifyVC", sender: self)
                                                         },
                                                         cancelButtonTitle: LocalizedString("Cancel"),

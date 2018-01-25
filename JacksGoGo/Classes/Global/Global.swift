@@ -107,6 +107,7 @@ typealias StringStringClosure = (String?, String?) -> Void
 typealias ProgressClosure = (Float) -> Void
 typealias VoidClosure = () -> Void
 typealias AppointmentsClosure = ([JGGJobModel]) -> Void
+typealias ProposalsClosure = ([JGGProposalModel]) -> Void
 
 public var weekNames: [String] = [
     LocalizedString("Sunday"),

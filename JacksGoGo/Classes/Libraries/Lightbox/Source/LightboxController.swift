@@ -454,7 +454,7 @@ extension LightboxController: FooterViewDelegate {
                                     message: LocalizedString("Are you sure delete this photo?"),
                                     colorSchema: .red,
                                     okButtonTitle: LocalizedString("Delete"),
-                                    okAction: {
+                                    okAction: { text in
             
                                     },
                                     cancelButtonTitle: LocalizedString("Cancel"),

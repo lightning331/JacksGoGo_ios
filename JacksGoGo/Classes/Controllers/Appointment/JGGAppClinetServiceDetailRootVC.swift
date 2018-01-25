@@ -107,11 +107,11 @@ class JGGAppClinetServiceDetailRootVC: JGGAppointmentDetailBaseVC {
                                     message: LocalizedString("Deleted jobs can be found in Appointment, under History tab."),
                                     colorSchema: .red,
                                     okButtonTitle: LocalizedString("Delete"),
-                                    okAction: {
+                                    okAction: { text in
                                         print("Delete Job")
                                         self.navigationController?.popToRootViewController(animated: true)
         },
-                                    cancelButtonTitle: LocalizedString("Cancel")) {
+                                    cancelButtonTitle: LocalizedString("Cancel")) { text in
                                         
         }
     }

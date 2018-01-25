@@ -25,7 +25,7 @@ class JGGSkillTestVC: JGGSearchBaseTableVC {
     }
 
     @IBAction func onPressedSubmit(_ sender: Any) {
-        JGGAlertViewController.show(title: LocalizedString("Submission Sent!"), message: LocalizedString("Thank you for verifying! Out team will contact you shourtly."), colorSchema: .green, okButtonTitle: LocalizedString("Back To Service Listing"), okAction: {
+        JGGAlertViewController.show(title: LocalizedString("Submission Sent!"), message: LocalizedString("Thank you for verifying! Out team will contact you shourtly."), colorSchema: .green, okButtonTitle: LocalizedString("Back To Service Listing"), okAction: { text in
             self.navigationController?.popToRootViewController(animated: true)
         }, cancelButtonTitle: nil, cancelAction: nil)
     }

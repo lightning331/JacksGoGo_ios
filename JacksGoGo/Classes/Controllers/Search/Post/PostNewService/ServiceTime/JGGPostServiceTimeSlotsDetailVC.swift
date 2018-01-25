@@ -237,7 +237,7 @@ class JGGPostServiceTimeSlotsDetailVC: JGGPostServiceTimeSlotsBaseVC {
     // MARK: - Show Popup
     
     fileprivate func deleteTimeSlots() {
-        JGGAlertViewController.show(title: LocalizedString("Remove Time Slots?"), message: LocalizedString("Would you remove a time slots?"), colorSchema: .red, okButtonTitle: LocalizedString("Remove"), okAction: {
+        JGGAlertViewController.show(title: LocalizedString("Remove Time Slots?"), message: LocalizedString("Would you remove a time slots?"), colorSchema: .red, okButtonTitle: LocalizedString("Remove"), okAction: { text in
             
         }, cancelButtonTitle: LocalizedString("Cancel"), cancelAction: nil)
     }

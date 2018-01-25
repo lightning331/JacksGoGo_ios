@@ -23,7 +23,7 @@ class JGGRescheduleVC: JGGAppDetailBaseVC {
                                     message: String(format: LocalizedString("%@ will be notified of the rescheduling, and be asked to respond."), "catherinedesilva"),
                                     colorSchema: .green,
                                     okButtonTitle: LocalizedString("OK"),
-                                    okAction: {
+                                    okAction: { text in
                                         self.navigationController?.popViewController(animated: true)
                                     },
                                     cancelButtonTitle: nil,

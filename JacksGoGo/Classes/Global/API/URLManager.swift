@@ -195,8 +195,32 @@ class URLManager: NSObject {
             return fullPath(for: "/EditProposal")
         }
         
-        static var DeleteProposal: String {
-            return fullPath(for: "/DeleteProposal")
+        static var SendInvite: String {
+            return fullPath(for: "/SendInvite")
+        }
+        
+        static var ApproveProposal: String {
+            return fullPath(for: "/ApproveProposal")
+        }
+        
+        static func RejectProposal(id: String) -> String {
+            return fullPath(for: "/RejectProposal?ID=\(id)")
+        }
+        
+        static func WithdrawProposal(id: String) -> String {
+            return fullPath(for: "/WithdrawProposal?ID=\(id)")
+        }
+        
+        static func DeleteProposal(id: String) -> String {
+            return fullPath(for: "/DeleteProposal?ID=\(id)")
+        }
+        
+        static func GetProposalsByJob(id: String, pageIndex: Int = 0, pageSize: Int = 20) -> String {
+            return fullPath(for: String(format: "/GetProposalsByJob?ID=\(id)&pageIndex=\(pageIndex)&pageSize=\(pageSize))"))
+        }
+        
+        static func GetProposalsByUser(id: String, pageIndex: Int = 0, pageSize: Int = 20) -> String {
+            return fullPath(for: String(format: "/GetProposalsByUser?ID=\(id)&pageIndex=\(pageIndex)&pageSize=\(pageSize))"))
         }
     }
     

@@ -10,15 +10,18 @@ import UIKit
 
 class JGGStartTableVC: JGGTableViewController {
     
-    internal var isLoggedIn: Bool = false
+    internal var isLoggedIn: Bool {
+        if let _ = appManager.currentUser {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     internal var isPromptedLoginVC: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let _ = appManager.currentUser {
-            isLoggedIn = true
-        }
 
         self.tableView.register(UINib(nibName: "JGGNotLoggedinCell", bundle: nil),
                                 forCellReuseIdentifier: "JGGNotLoggedinCell")
@@ -40,12 +43,10 @@ class JGGStartTableVC: JGGTableViewController {
     }
         
     override func loggedInHandler(_ sender: Any) {
-        isLoggedIn = true
         self.tableView.reloadData()
     }
     
     override func loggedOutHandler(_ sender: Any) {
-        isLoggedIn = false
         self.navigationController?.popToRootViewController(animated: false)
         self.tableView.reloadData()
     }

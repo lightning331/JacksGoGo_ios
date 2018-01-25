@@ -180,7 +180,7 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
                     message: message,
                     colorSchema: .cyan,
                     okButtonTitle: LocalizedString("View Job"),
-                    okAction: {
+                    okAction: { text in
                         self.parent?.navigationController?.popToRootViewController(animated: true)
                     },
                     cancelButtonTitle: nil,
@@ -192,7 +192,7 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
                     message: errorMessage,
                     colorSchema: .red,
                     okButtonTitle: LocalizedString("Close"),
-                    okAction: {
+                    okAction: { text in
                     
                     },
                     cancelButtonTitle: nil,

@@ -23,6 +23,7 @@ class JGGAppMainVC: JGGStartTableVC {
     fileprivate lazy var searchResultServicePackages: [JGGJobModel] = []
     fileprivate lazy var searchResultPendingJobs: [JGGJobModel] = []
     fileprivate var isSearchMode: Bool = false
+    fileprivate var isLoading: Bool = false
     
     fileprivate var arrayQuickJobs: [JGGJobModel] {
         return isSearchMode == true ? searchResultQuickJobs : arrayLoadedQuickJobs
@@ -95,7 +96,7 @@ class JGGAppMainVC: JGGStartTableVC {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if isLoggedIn {
+        if isLoggedIn && self.arrayAllPendingJobs.count == 0 {
             reloadJobWithPullRefresh()
         }
     }
@@ -122,12 +123,16 @@ class JGGAppMainVC: JGGStartTableVC {
     
     fileprivate func reloadJobWithPullRefresh() {
         self.tableView.es.addPullToRefresh {
-            self.APIManager.getPendingJobs { (response) in
-                self.resetData()
-                self.arrayAllPendingJobs.append(contentsOf: response)
-                self.filterJobs(response)
-                self.tableView.reloadData()
-                self.tableView.es.stopPullToRefresh()
+            if !self.isLoading {
+                self.APIManager.getPendingJobs { (response) in
+                    self.resetData()
+                    self.arrayAllPendingJobs.append(contentsOf: response)
+                    self.filterJobs(response)
+                    self.tableView.reloadData()
+                    self.tableView.es.stopPullToRefresh()
+                    self.isLoading = false
+                }
+                self.isLoading = true
             }
         }
         self.tableView.es.startPullToRefresh()
@@ -268,7 +273,15 @@ class JGGAppMainVC: JGGStartTableVC {
                 }
             }
             if ownJob {
-                
+                if cell.job!.isRequest {
+                    if let appointmentStatusSummary = self.storyboard?.instantiateViewController(withIdentifier: "JGGAppJobStatusSummaryVC") as? JGGAppJobStatusSummaryVC
+                    {
+                        appointmentStatusSummary.job = cell.job!
+                        self.navigationController?.pushViewController(appointmentStatusSummary, animated: true)
+                    }
+                } else {
+                    
+                }
             } else {
                 
             }
@@ -277,10 +290,7 @@ class JGGAppMainVC: JGGStartTableVC {
                 serviceDetailVC.selectedAppointment = cell.appointment
                 self.navigationController?.pushViewController(serviceDetailVC, animated: true)
             } */
-            if let appointmentStatusSummary = self.storyboard?.instantiateViewController(withIdentifier: "JGGAppJobStatusSummaryVC") as? JGGAppJobStatusSummaryVC {
-                appointmentStatusSummary.selectedAppointment = cell.job
-                self.navigationController?.pushViewController(appointmentStatusSummary, animated: true)
-            }
+            
         } else {
             
         }

@@ -518,6 +518,7 @@ class JGGAPIManager: NSObject {
     func postJob(_ job: JGGCreateJobModel, complete: @escaping StringStringClosure) -> Void
     {
         CLS_LOG_SWIFT(format: "postJob url: %@\nBODY: %@", [URLManager.Appointment.PostJob, job.json().description])
+        print(job.json().description)
         POST(url: URLManager.Appointment.PostJob, body: job.json().dictionaryObject) { (json, error) in
             if let response = json {
                 print("response: ", response)
@@ -581,7 +582,15 @@ class JGGAPIManager: NSObject {
     func getProposalsBy(jobId: String, pageIndex: Int = 0, pageSize: Int = 20, complete: @escaping ProposalsClosure) -> Void {
         let url = URLManager.Proposal.GetProposalsByJob(id: jobId, pageIndex: pageIndex, pageSize: pageSize)
         GET(url: url, params: nil) { (response, error) in
-            
+            if let json = response {
+                var proposals: [JGGProposalModel] = []
+                for jsonProposal in json.arrayValue {
+                    if let proposal = JGGProposalModel(json: jsonProposal) {
+                        proposals.append(proposal)
+                    }
+                }
+                complete(proposals)
+            }
         }
     }
 }

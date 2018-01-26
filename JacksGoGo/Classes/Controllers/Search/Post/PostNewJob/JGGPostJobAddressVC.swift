@@ -29,14 +29,15 @@ class JGGPostJobAddressVC: JGGPostServiceAddressVC {
     }
     
     override func updateData(_ sender: Any) {
-        if let parentVC = parent as? JGGPostJobStepRootVC {
+        if let parentVC = parent as? JGGPostJobStepRootVC,
+            let creatingJob = parentVC.creatingJob
+        {
             let addressModel = JGGAddressModel()
             addressModel.unit = txtUnits.text
             addressModel.floor = txtPlaceName.text
             addressModel.address = txtStreet.text
             addressModel.postalCode = txtPostcode.text
             
-            let creatingJob = parentVC.creatingJob
             creatingJob.address = addressModel
         }
     }

@@ -32,4 +32,9 @@ class JGGBaseModel: NSObject {
         json["ID"].string = id
         return json
     }
+    
+    func clone() -> JGGBaseModel? {
+        let clone = JGGBaseModel(json: self.json())
+        return clone
+    }
 }

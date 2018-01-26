@@ -28,6 +28,9 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
     private var cellCount: Int = 9
 
     var job: JGGJobModel!
+
+    fileprivate var isLoadingProviders: Bool = false
+    fileprivate lazy var providers: [JGGProposalModel] = []
     
     /**
      * 0: Just posted,
@@ -85,6 +88,11 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
     }
     
     override func onPressedMenuEdit() {
+        let serviceStoryboard = UIStoryboard(name: "Services", bundle: nil)
+        if let editJobVC = serviceStoryboard.instantiateViewController(withIdentifier: "JGGPostJobRootVC") as? JGGPostJobRootVC {
+            editJobVC.editJob = job
+            self.navigationController?.pushViewController(editJobVC, animated: true)
+        }
         
     }
     
@@ -104,6 +112,14 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
     
     // MARK: - API request
     
+    private func loadProviders() {
+        isLoadingProviders = true
+        APIManager.getProposalsBy(jobId: job!.id!) { (proposals) in
+            self.isLoadingProviders = false
+            self.providers = proposals
+            
+        }
+    }
     
     // MARK: - UITableView datasource
     

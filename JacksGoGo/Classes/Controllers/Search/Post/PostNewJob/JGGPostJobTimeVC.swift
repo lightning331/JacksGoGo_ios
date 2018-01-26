@@ -18,7 +18,7 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
     fileprivate var selectedStartTime: Date?
     fileprivate var selectedEndTime: Date?
     fileprivate var isSpecificDate: Bool?
-    fileprivate var selectedRepeatingType: JGGRepetitionType = .none
+    fileprivate var selectedRepeatingType: JGGRepetitionType?
     fileprivate lazy var selectedRepeatingDays: [Int] = []
     
     override func viewDidLoad() {
@@ -62,24 +62,25 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
     
     override func updateData(_ sender: Any) {
         if let parentVC = parent as? JGGPostJobStepRootVC {
-            let creatingJob = parentVC.creatingJob
-            creatingJob.jobType = selectedJobType
-            if let selectedDate = selectedDate, let selectedStartTime = selectedStartTime, let isSpecific = isSpecificDate {
-                let dateString = selectedDate.toString(format: DateOnly)
-                let startTimeString = selectedStartTime.toString(format: TimeOnly)
-                let startFullTimeString = String(format: "%@T%@", dateString, startTimeString)
-                let startTime = Date(fromString: startFullTimeString, format: FullDate)
-                var endTime: Date? = nil
-                if let selectedEndTime = selectedEndTime {
-                    let endTimeString = selectedEndTime.toString(format: TimeOnly)
-                    let endFullTimeString = String(format: "%@T%@", dateString, endTimeString)
-                    endTime = Date(fromString: endFullTimeString, format: FullDate)
+            if let creatingJob = parentVC.creatingJob {
+                creatingJob.jobType = selectedJobType
+                if let selectedDate = selectedDate, let selectedStartTime = selectedStartTime, let isSpecific = isSpecificDate {
+                    let dateString = selectedDate.toString(format: DateOnly)
+                    let startTimeString = selectedStartTime.toString(format: TimeOnly)
+                    let startFullTimeString = String(format: "%@T%@", dateString, startTimeString)
+                    let startTime = Date(fromString: startFullTimeString, format: FullDate)
+                    var endTime: Date? = nil
+                    if let selectedEndTime = selectedEndTime {
+                        let endTimeString = selectedEndTime.toString(format: TimeOnly)
+                        let endFullTimeString = String(format: "%@T%@", dateString, endTimeString)
+                        endTime = Date(fromString: endFullTimeString, format: FullDate)
+                    }
+                    creatingJob.jobTime = JGGJobTimeModel(startOn: startTime, endOn: endTime, isSpecific: isSpecific)
                 }
-                creatingJob.jobTime = JGGJobTimeModel(startOn: startTime, endOn: endTime, isSpecific: isSpecific)
-            }
-            else if selectedRepeatingType != .none && selectedRepeatingDays.count > 0 {
-                creatingJob.repetitionType = selectedRepeatingType
-                creatingJob.repetition = selectedRepeatingDays.flatMap { String($0) }.joined(separator: ",")
+                else if selectedRepeatingType != .none && selectedRepeatingDays.count > 0 {
+                    creatingJob.repetitionType = selectedRepeatingType
+                    creatingJob.repetition = selectedRepeatingDays.flatMap { String($0) }.joined(separator: ",")
+                }
             }
         }
     }
@@ -210,7 +211,7 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
         showPopup(viewController: timePopupVC, transitionStyle: .slideFromBottom)
     }
     
-    private func showMonthlyPopup(repeatingType: JGGRepetitionType) {
+    private func showMonthlyPopup(repeatingType: JGGRepetitionType?) {
         if repeatingType == .monthly {
             let dayPopupVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGMonthlySelectPickerVC") as! JGGMonthlySelectPickerVC
             dayPopupVC.selectedDates = selectedRepeatingDays
@@ -342,7 +343,7 @@ class JGGPostJobTimeRepeatingCell: UITableViewCell {
     @IBOutlet weak var btnWeekly: JGGYellowSelectingButton!
     @IBOutlet weak var btnMonthly: JGGYellowSelectingButton!
 
-    var changedTypeHandler: ((JGGRepetitionType) -> Void)!
+    var changedTypeHandler: ((JGGRepetitionType?) -> Void)!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -352,7 +353,7 @@ class JGGPostJobTimeRepeatingCell: UITableViewCell {
     
     @IBAction private func onPressedType(_ sender: JGGYellowSelectingButton) {
         sender.select(!sender.selected())
-        var repetitionType: JGGRepetitionType = .none
+        var repetitionType: JGGRepetitionType? = nil
         if sender.selected() {
             if sender == btnWeekly {
                 repetitionType = .weekly

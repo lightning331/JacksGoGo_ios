@@ -50,7 +50,7 @@ class JGGPostJobReportVC: JGGEditJobReportVC {
                     reportType += 4
                 }
             }
-            parentVC.creatingJob.reportType = reportType
+            parentVC.creatingJob?.reportType = reportType
             
         }
     }

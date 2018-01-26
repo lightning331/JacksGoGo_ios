@@ -129,7 +129,7 @@ class JGGSelectJobCategoryVC: UICollectionViewController, UICollectionViewDelega
         if indexPath.row == 0 {
             postJobRootVC.selectedCategory = quickJobModel
         } else {
-            postJobRootVC.selectedCategory = categories[indexPath.row]
+            postJobRootVC.selectedCategory = categories[indexPath.row - 1]
         }
         self.navigationController?.pushViewController(postJobRootVC, animated: true)
     }

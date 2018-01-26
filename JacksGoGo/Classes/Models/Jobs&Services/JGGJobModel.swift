@@ -11,24 +11,24 @@ import SwiftyJSON
 
 class JGGJobModel: JGGAppointmentBaseModel {
 
-    internal let CategoryID = "CategoryID"
-    internal let Category = "Category"
-    internal let IsRequest = "IsRequest"
-    internal let ServiceType = "ServiceType"
-    internal let AttachmentURL = "AttachmentURLs"
-    internal let BudgetFrom = "BudgetFrom"
-    internal let BudgetTo = "BudgetTo"
-    internal let Budget = "Budget"
-    internal let ExpiredOn = "ExpiredOn"
-    internal let ReportType = "ReportType"
-    internal let IsRescheduled = "IsRescheduled"
-    internal let JobType = "JobType"
+    internal let CategoryID     = "CategoryID"
+    internal let Category       = "Category"
+    internal let IsRequest      = "IsRequest"
+    internal let ServiceType    = "ServiceType"
+    internal let AttachmentURL  = "AttachmentURLs"
+    internal let BudgetFrom     = "BudgetFrom"
+    internal let BudgetTo       = "BudgetTo"
+    internal let Budget         = "Budget"
+    internal let ExpiredOn      = "ExpiredOn"
+    internal let ReportType     = "ReportType"
+    internal let IsRescheduled  = "IsRescheduled"
+    internal let JobType        = "JobType"
     internal let RepetitionType = "RepetitionType"
-    internal let Repetition = "Repetition"
-    internal let JobTime = "JobTime"
-    internal let IsQuickJob = "IsQuickJob"
-    internal let ViewCount = "ViewCount"
-    internal let Sessions = "Sessions"
+    internal let Repetition     = "Repetition"
+    internal let JobTime        = "JobTime"
+    internal let IsQuickJob     = "IsQuickJob"
+    internal let ViewCount      = "ViewCount"
+    internal let Sessions       = "Sessions"
     
     var categoryId: String!
     var category: JGGCategoryModel?
@@ -43,7 +43,7 @@ class JGGJobModel: JGGAppointmentBaseModel {
     var isRescheduled: Bool?
     var jobType: JGGJobType = .none
     var jobTime: JGGJobTimeModel?
-    var repetitionType: JGGRepetitionType = .none
+    var repetitionType: JGGRepetitionType?
     var repetition: String?
     var isQuickJob: Bool = false
     var sessions: [JGGTimeSlotModel]?
@@ -79,7 +79,9 @@ class JGGJobModel: JGGAppointmentBaseModel {
         isRescheduled = json[IsRescheduled].bool
         jobType = JGGJobType(rawValue: json[JobType].intValue) ?? .none
         jobTime = JGGJobTimeModel(json: json[JobTime])
-        repetitionType = JGGRepetitionType(rawValue: json[RepetitionType].intValue) ?? .none
+        if let value = json[RepetitionType].int {
+            repetitionType = JGGRepetitionType(rawValue: value) ?? .none
+        }
         repetition = json[Repetition].string
         isQuickJob = json[IsQuickJob].boolValue
         if let jsonSessions = json[Sessions].array {
@@ -113,7 +115,7 @@ class JGGJobModel: JGGAppointmentBaseModel {
         if let jobTime = jobTime {
             json[JobTime] = jobTime.json()
         }
-        json[RepetitionType].intValue = repetitionType.rawValue
+        json[RepetitionType].int = repetitionType?.rawValue
         json[Repetition].string = repetition
         json[IsQuickJob].boolValue = isQuickJob
         if let sessions = sessions {
@@ -146,6 +148,11 @@ class JGGJobModel: JGGAppointmentBaseModel {
         default:
             return LocalizedString("No set")
         }
+    }
+    
+    override func clone() -> JGGJobModel? {
+        let clone = JGGJobModel(json: self.json())
+        return clone
     }
 }
 

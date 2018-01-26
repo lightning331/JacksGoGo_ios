@@ -17,10 +17,10 @@ class JGGPostJobDescribeVC: JGGPostServiceDescribeVC {
     override func updateData(_ sender: Any) {
         if let parentVC = parent as? JGGPostJobStepRootVC {
             let creatingJob = parentVC.creatingJob
-            creatingJob.title = txtServiceTitle.text
-            creatingJob.description_ = txtServiceDescribe.text
-            creatingJob.tags = txtTags.text
-            creatingJob.attachmentImages = selectedImages.flatMap { $0.1 }
+            creatingJob?.title = txtServiceTitle.text
+            creatingJob?.description_ = txtServiceDescribe.text
+            creatingJob?.tags = txtTags.text
+            creatingJob?.attachmentImages = selectedImages.flatMap { $0.1 }
         }
     }
 }

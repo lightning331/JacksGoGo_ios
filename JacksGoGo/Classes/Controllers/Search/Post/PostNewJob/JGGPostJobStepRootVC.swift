@@ -20,15 +20,23 @@ class JGGPostJobStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderVie
     @IBOutlet weak var containerReport: UIView!
 
     var selectedCategory: JGGCategoryModel!
-    lazy var creatingJob: JGGCreateJobModel = JGGCreateJobModel()
+    var creatingJob: JGGCreateJobModel?
+    var editingJob: JGGJobModel?
+    fileprivate var isEditMode: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        creatingJob.categoryId = selectedCategory.id
-        creatingJob.userProfileId = appManager.currentUser?.id
-        creatingJob.regionId = appManager.currentRegion?.id
-        creatingJob.currencyCode = appManager.currentRegion?.currencyCode
+        if let nav = self.navigationController as? JGGPostJobNC, let editJob = nav.editJob {
+            editingJob = editJob
+            isEditMode = true
+        } else {
+            creatingJob = JGGCreateJobModel()
+            creatingJob?.categoryId = selectedCategory.id
+            creatingJob?.userProfileId = appManager.currentUser?.id
+            creatingJob?.regionId = appManager.currentRegion?.id
+            creatingJob?.currencyCode = appManager.currentRegion?.currencyCode
+        }
         
         postJobStepView =
             UINib(nibName: "JGGJobPostStepHeaderView", bundle: nil)
@@ -39,7 +47,13 @@ class JGGPostJobStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderVie
         postJobStepView.snp.makeConstraints { (maker) in
             maker.left.top.right.bottom.equalToSuperview()
         }
-        postJobStepView.setCompletedStep(describe: false, time: false, address: false, budget: false, report: false)
+        postJobStepView.setCompletedStep(
+            describe: isEditMode,
+            time: isEditMode,
+            address: isEditMode,
+            budget: isEditMode,
+            report: isEditMode
+        )
 
         mainScrollView.isScrollEnabled = false
     }
@@ -69,7 +83,11 @@ class JGGPostJobStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderVie
     
     func gotoSummaryVC() -> Void {
         let summaryVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGPostJobSummaryVC") as! JGGPostJobSummaryVC
-        summaryVC.creatingJob = self.creatingJob
+        if let editJob = editingJob {
+            summaryVC.editingJob = editJob
+        } else {
+            summaryVC.creatingJob = self.creatingJob
+        }
         self.navigationController?.pushViewController(summaryVC, animated: true)
     }
 

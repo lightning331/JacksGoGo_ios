@@ -15,7 +15,6 @@ public enum JGGJobType: Int {
 }
 
 public enum JGGRepetitionType: Int {
-    case none = -1
     case weekly = 0
     case monthly = 1
 }

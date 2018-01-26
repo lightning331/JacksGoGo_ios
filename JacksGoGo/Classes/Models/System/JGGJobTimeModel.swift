@@ -11,8 +11,8 @@ import SwiftyJSON
 
 class JGGJobTimeModel: NSObject {
 
-    internal let JobStartOn = "JobStartOn"
-    internal let JobEndOn   = "JobEndOn"
+    internal let StartOn = "StartOn"
+    internal let EndOn   = "EndOn"
     internal let IsSpecific = "IsSpecific"
     internal let Peoples    = "Peoples"
     
@@ -30,8 +30,8 @@ class JGGJobTimeModel: NSObject {
             return nil
         }
         super.init()
-        jobStartOn  = json[JobStartOn].dateObject
-        jobEndOn    = json[JobEndOn].dateObject
+        jobStartOn  = json[StartOn].dateObject
+        jobEndOn    = json[EndOn].dateObject
         isSpecific  = json[IsSpecific].boolValue
         peoples     = json[Peoples].int
     }
@@ -46,8 +46,8 @@ class JGGJobTimeModel: NSObject {
     
     func json() -> JSON {
         var json = JSON()
-        json[JobStartOn].dateObject = jobStartOn
-        json[JobEndOn].dateObject = jobEndOn
+        json[StartOn].dateObject = jobStartOn
+        json[EndOn].dateObject = jobEndOn
         json[IsSpecific].boolValue   = isSpecific
         json[Peoples].int = peoples
         return json

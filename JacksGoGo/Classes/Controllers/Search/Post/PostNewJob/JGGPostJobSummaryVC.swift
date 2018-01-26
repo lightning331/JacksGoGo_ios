@@ -30,6 +30,16 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
     @IBOutlet weak var lblReport: UILabel!
     
     var creatingJob: JGGCreateJobModel?
+    var editingJob: JGGJobModel? {
+        set {
+            creatingJob = newValue as? JGGCreateJobModel
+            isEditMode = true
+        }
+        get {
+            return creatingJob
+        }
+    }
+    fileprivate var isEditMode: Bool = false
     
     private var hud: MBProgressHUD!
     private lazy var imageDownloadURLs: [String] = []
@@ -79,6 +89,7 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
                 }
             }
             lblTime.text = timeString
+            
             // Address
             lblAddress.text = creatingJob.address?.fullName
             

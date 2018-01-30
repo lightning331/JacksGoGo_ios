@@ -35,12 +35,9 @@ class JGGPostAppointmentBaseTableVC: JGGTableViewController {
     
     @IBAction func onPressedNext(_ sender: UIButton) {
         updateData(self)
-        if let parentVC = parent as? JGGPostServiceStepRootVC {
-            parentVC.postServiceStepView.completeCurrentStep()
-            parentVC.postServiceStepView.nextStep()
-        } else if let parentVC = parent as? JGGPostJobStepRootVC {
-            parentVC.postJobStepView.completeCurrentStep()
-            parentVC.postJobStepView.nextStep()
+        if let parentVC = parent as? JGGPostStepRootBaseVC {
+            parentVC.stepView.completeCurrentStep()
+            parentVC.stepView.nextStep()
         }
     }
     

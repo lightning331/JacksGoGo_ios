@@ -515,7 +515,7 @@ class JGGAPIManager: NSObject {
         }
     }
     
-    func postJob(_ job: JGGCreateJobModel, complete: @escaping StringStringClosure) -> Void
+    func postJob(_ job: JGGJobModel, complete: @escaping StringStringClosure) -> Void
     {
         CLS_LOG_SWIFT(format: "postJob url: %@\nBODY: %@", [URLManager.Appointment.PostJob, job.json().description])
         print(job.json().description)
@@ -534,6 +534,31 @@ class JGGAPIManager: NSObject {
                 complete(nil, LocalizedString("Unknown request error."))
             }
             
+        }
+        
+    }
+    
+    func deleteJob(_ job: JGGJobModel, reason: String?, complete: @escaping BoolStringClosure) -> Void {
+        
+        if let jobId = job.id {
+            
+            GET(
+                url: URLManager.Appointment.DeleteJob,
+                params: ["id": jobId],
+                complete: { (json, error) in
+                    if let response = json {
+                        print("DELETE response: ", response)
+                        complete(response[SUCCESS_KEY].boolValue, response[MESSAGE_KEY].string)
+                    } else if let error = error {
+                        complete(false, error.localizedDescription)
+                    } else {
+                        complete(false, LocalizedString("Unknown request error."))
+                    }
+                }
+            )
+            
+        } else {
+            complete(false, LocalizedString("Can't know Job ID"))
         }
         
     }

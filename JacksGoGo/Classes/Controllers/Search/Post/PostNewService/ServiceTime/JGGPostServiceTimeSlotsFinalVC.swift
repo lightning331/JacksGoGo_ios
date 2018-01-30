@@ -22,8 +22,8 @@ class JGGPostServiceTimeSlotsFinalVC: JGGPostServiceTimeSlotsBaseVC {
 
     override func onPressedNext(_ sender: UIButton) {
         if let parentVC = self.navigationController?.parent as? JGGPostServiceStepRootVC {
-            parentVC.postServiceStepView.completeCurrentStep()
-            parentVC.postServiceStepView.nextStep()
+            parentVC.stepView.completeCurrentStep()
+            parentVC.stepView.nextStep()
         }
     }
 

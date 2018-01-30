@@ -22,6 +22,15 @@ class JGGPostJobReportVC: JGGEditJobReportVC {
         onPressReportType(viewPinCode.gestureRecognizers?.first as! UITapGestureRecognizer)
     }
 
+    override func showOriginalInfo() {
+        if let parent = self.parent as? JGGPostStepRootBaseVC,
+            let editingJob = parent.editingJob
+        {
+            let reportType = editingJob.reportType
+            setReportType(reportType)
+        }
+    }
+    
     override func onPressedNext(_ sender: UIButton) {
         if let parentVC = parent as? JGGPostJobStepRootVC {
             
@@ -29,7 +38,7 @@ class JGGPostJobReportVC: JGGEditJobReportVC {
             
             NotificationCenter.default.post(name: NSNotification.Name("UpdateData"), object: nil)
             
-            parentVC.postJobStepView.completeCurrentStep()
+            parentVC.stepView.completeCurrentStep()
             parentVC.gotoSummaryVC()
 
         }

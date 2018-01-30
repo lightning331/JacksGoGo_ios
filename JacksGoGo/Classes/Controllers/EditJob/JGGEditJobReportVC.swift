@@ -38,6 +38,52 @@ class JGGEditJobReportVC: JGGPostAppointmentBaseTableVC {
         viewPinCode.addGestureRecognizer(tapPinCode)
 
         resetButtons()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        showOriginalInfo()
+        
+    }
+
+    internal func showOriginalInfo() {
+        setReportType(0)
+    }
+    
+    internal func setReportType(_ type: Int) {
+        switch type {
+        case 1:
+            selectedViews = [viewBeforeAndAfterPhoto]
+            break
+        case 2:
+            selectedViews = [viewGeotracking]
+            break
+        case 3:
+            selectedViews = [viewBeforeAndAfterPhoto, viewGeotracking]
+            break
+        case 4:
+            selectedViews = [viewPinCode]
+            break
+        case 5:
+            selectedViews = [viewBeforeAndAfterPhoto, viewPinCode]
+            break
+        case 6:
+            selectedViews = [viewGeotracking, viewPinCode]
+            break
+        case 7:
+            selectedViews = [viewBeforeAndAfterPhoto, viewGeotracking, viewPinCode]
+            break
+        default:
+            selectedViews = []
+        }
+        for view in selectedViews {
+            view.borderColor = nil
+            view.borderWidth = 0
+            view.backgroundColor = UIColor.JGGYellow
+            (view.viewWithTag(120) as? UILabel)?.textColor = UIColor.JGGBlack
+        }
     }
     
     internal func resetButtons() {

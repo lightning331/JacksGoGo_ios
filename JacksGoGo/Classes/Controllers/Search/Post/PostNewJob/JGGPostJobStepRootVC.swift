@@ -8,23 +8,21 @@
 
 import UIKit
 
-class JGGPostJobStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderViewDelegate {
+class JGGPostJobStepRootVC: JGGPostStepRootBaseVC {
 
-    @IBOutlet weak var postJobStepViewContainer: UIView!
-    var postJobStepView: JGGJobPostStepHeaderView!
-    @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var containerDescribe: UIView!
     @IBOutlet weak var containerTime: UIView!
     @IBOutlet weak var containerAddress: UIView!
     @IBOutlet weak var containerBudget: UIView!
     @IBOutlet weak var containerReport: UIView!
-
-    var selectedCategory: JGGCategoryModel!
-    var creatingJob: JGGCreateJobModel?
-    var editingJob: JGGJobModel?
-    fileprivate var isEditMode: Bool = false
     
     override func viewDidLoad() {
+        
+        stepView =
+            UINib(nibName: "JGGJobPostStepHeaderView", bundle: nil)
+                .instantiate(withOwner: nil, options: nil)
+                .first as! JGGJobPostStepHeaderView
+        
         super.viewDidLoad()
 
         if let nav = self.navigationController as? JGGPostJobNC, let editJob = nav.editJob {
@@ -38,16 +36,8 @@ class JGGPostJobStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderVie
             creatingJob?.currencyCode = appManager.currentRegion?.currencyCode
         }
         
-        postJobStepView =
-            UINib(nibName: "JGGJobPostStepHeaderView", bundle: nil)
-                .instantiate(withOwner: nil, options: nil)
-                .first as! JGGJobPostStepHeaderView
-        postJobStepView.delegate = self
-        postJobStepViewContainer.addSubview(postJobStepView)
-        postJobStepView.snp.makeConstraints { (maker) in
-            maker.left.top.right.bottom.equalToSuperview()
-        }
-        postJobStepView.setCompletedStep(
+        
+        (stepView as! JGGJobPostStepHeaderView).setCompletedStep(
             describe: isEditMode,
             time: isEditMode,
             address: isEditMode,
@@ -55,10 +45,9 @@ class JGGPostJobStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderVie
             report: isEditMode
         )
 
-        mainScrollView.isScrollEnabled = false
     }
     
-    func jobDetailStep(selected: Int) {
+    override func jobDetailStep(selected: Int) {
         switch selected {
         case 0:
             mainScrollView.setContentOffset(CGPoint(x: mainScrollView.frame.width * 0, y: 0), animated: true)
@@ -81,7 +70,7 @@ class JGGPostJobStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderVie
         }
     }
     
-    func gotoSummaryVC() -> Void {
+    override func gotoSummaryVC() -> Void {
         let summaryVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGPostJobSummaryVC") as! JGGPostJobSummaryVC
         if let editJob = editingJob {
             summaryVC.editingJob = editJob

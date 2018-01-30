@@ -143,7 +143,7 @@
                         <outlet property="containerReport" destination="jx9-sY-ibh" id="tbN-EJ-AKb"/>
                         <outlet property="containerTime" destination="bBu-oe-jYE" id="U92-jK-uIW"/>
                         <outlet property="mainScrollView" destination="ahN-1I-tPd" id="0rx-2R-ta9"/>
-                        <outlet property="postJobStepViewContainer" destination="DG1-aT-4JG" id="u08-yz-LE0"/>
+                        <outlet property="stepViewContainer" destination="DG1-aT-4JG" id="bHm-Q6-Qrm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="989-Vj-WtL" userLabel="First Responder" sceneMemberID="firstResponder"/>

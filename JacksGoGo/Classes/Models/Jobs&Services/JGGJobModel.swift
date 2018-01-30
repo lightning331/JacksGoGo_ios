@@ -42,7 +42,7 @@ class JGGJobModel: JGGAppointmentBaseModel {
     var reportType: Int = 0
     var isRescheduled: Bool?
     var jobType: JGGJobType = .none
-    var jobTime: JGGJobTimeModel?
+    var jobTime: JGGTimeSlotModel?
     var repetitionType: JGGRepetitionType?
     var repetition: String?
     var isQuickJob: Bool = false
@@ -78,7 +78,7 @@ class JGGJobModel: JGGAppointmentBaseModel {
         reportType = json[ReportType].intValue
         isRescheduled = json[IsRescheduled].bool
         jobType = JGGJobType(rawValue: json[JobType].intValue) ?? .none
-        jobTime = JGGJobTimeModel(json: json[JobTime])
+        jobTime = JGGTimeSlotModel(json: json[Sessions].array?.first)
         if let value = json[RepetitionType].int {
             repetitionType = JGGRepetitionType(rawValue: value) ?? .none
         }

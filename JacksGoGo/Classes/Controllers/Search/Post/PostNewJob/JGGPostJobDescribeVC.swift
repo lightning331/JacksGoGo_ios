@@ -20,7 +20,22 @@ class JGGPostJobDescribeVC: JGGPostServiceDescribeVC {
             creatingJob?.title = txtServiceTitle.text
             creatingJob?.description_ = txtServiceDescribe.text
             creatingJob?.tags = txtTags.text
-            creatingJob?.attachmentImages = selectedImages.flatMap { $0.1 }
+            
+            var images: [UIImage] = []
+            let localImages: [UIImage]
+                = selectedImages?.filter { $0.1 != nil }.map { $0.1! } ?? []
+            let urlImages: [UIImage]
+                = originalImages?.filter { $0.1 != nil }.map { $0.1! } ?? []
+            images.append(contentsOf: localImages)
+            images.append(contentsOf: urlImages)
+            
+            creatingJob?.attachmentImages = images
+            if let originalImages = originalImages {
+                creatingJob?.attachmentUrl =
+                    originalImages
+                        .filter { $0.0 != nil }
+                        .map { $0.0!.absoluteString }
+            }
         }
     }
 }

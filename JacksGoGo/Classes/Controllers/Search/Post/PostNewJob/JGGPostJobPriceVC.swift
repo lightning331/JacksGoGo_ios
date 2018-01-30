@@ -38,16 +38,46 @@ class JGGPostJobPriceVC: JGGPostAppointmentBaseTableVC {
         viewRangeMaxAmount.isHidden = true
 
         btnNext.isHidden = false
+                
         if SHOW_TEMP_DATA {
             showTemporaryData()
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        showOriginalInfo()
+        
+    }
+
     private func showTemporaryData() {
         selectedPriceType = 2
         txtFixedAmount.text = "50.5"
     }
 
+    private func showOriginalInfo() {
+        if let parent = self.parent as? JGGPostStepRootBaseVC,
+            let editingJob = parent.editingJob
+        {
+            if let fixedBudget = editingJob.budget {
+                txtFixedAmount.text = String(format: "%.2f", fixedBudget)
+                btnFixedAmount.select(false)
+                onPressedPriceType(btnFixedAmount)
+            } else if let minAmount = editingJob.budgetFrom,
+                let maxAmount = editingJob.budgetTo
+            {
+                txtRangeMaxAmount.text = String(format: "%.2f", maxAmount)
+                txtRangeMinAmount.text = String(format: "%.2f", minAmount)
+                btnRangeAmount.select(false)
+                onPressedPriceType(btnRangeAmount)
+            } else {
+                btnNoLimits.select(false)
+                onPressedPriceType(btnNoLimits)
+            }
+        }
+    }
+    
     override func onPressedNext(_ sender: UIButton) {
         if selectedPriceType == 0 {
             Toast(text: LocalizedString("Please set job budget."), delay: 0, duration: 3).show()

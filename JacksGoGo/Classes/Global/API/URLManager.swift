@@ -106,8 +106,8 @@ class URLManager: NSObject {
             return fullPath(for: "/SendQuotation")
         }
         
-        static func DeleteJob(id: String) -> String {
-            return fullPath(for: "/DeleteJob?ID=\(id)")
+        static var DeleteJob: String {
+            return fullPath(for: "/DeleteJob")
         }
         
         static var EditJob: String {

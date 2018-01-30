@@ -75,10 +75,10 @@ class JGGPostServiceTimeSlotsDetailVC: JGGPostServiceTimeSlotsBaseVC {
         if let parentVC = self.navController.parent as? JGGPostServiceStepRootVC {
             if self.navController.selectedPeopleType == .onePerson {
                 self.navController.onePersonTimeSlots = filteredDates.flatMap { $1 }
-                parentVC.creatingService?.sessions = self.navController.onePersonTimeSlots
+                parentVC.creatingJob?.sessions = self.navController.onePersonTimeSlots
             } else if self.navController.selectedPeopleType == .multiplePeople {
                 self.navController.multiplePeopleTimeSlots = filteredDates.flatMap { $1 }
-                parentVC.creatingService?.sessions = self.navController.multiplePeopleTimeSlots
+                parentVC.creatingJob?.sessions = self.navController.multiplePeopleTimeSlots
             }
             
         }

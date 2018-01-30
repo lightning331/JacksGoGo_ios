@@ -21,19 +21,29 @@ class JGGPostServiceDescribeVC: JGGPostAppointmentBaseTableVC {
     @IBOutlet weak var btnTakePhotos: UIButton!
     @IBOutlet weak var iconTakePhoto: UIImageView!
     
-    internal var selectedImages: [(TLPHAsset?, UIImage?)] = []
-    var originalImages: [URL] = []
+    internal var selectedImages: [(TLPHAsset?, UIImage?)]?
+    internal var originalImages: [(URL?, UIImage?)]?
     
     private var isChangedImage: Bool = false
+    
+    // MARK: -
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initUI()
         
+        
         if SHOW_TEMP_DATA {
             showTemporaryData()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        showOriginalInfo()
+
     }
     
     private func showTemporaryData() {
@@ -60,21 +70,47 @@ class JGGPostServiceDescribeVC: JGGPostAppointmentBaseTableVC {
         
     }
     
-    private func showOriginalServiceData() {
-        if let parent = self.parent as? JGGPostServiceStepRootVC {
-            txtServiceTitle.text = parent.creatingService?.title
-            txtServiceDescribe.text = parent.creatingService?.description_
-            txtTags.text = parent.creatingService?.tags
+    private func showOriginalInfo() {
+        if let parent = self.parent as? JGGPostStepRootBaseVC,
+            let editingJob = parent.editingJob
+        {
+            txtServiceTitle.text = editingJob.title
+            txtServiceDescribe.text = editingJob.description_
+            txtTags.text = editingJob.tags
+            originalImages =
+                editingJob
+                    .attachmentUrl?
+                    .flatMap { URL(string: $0) }
+                    .map { ($0, nil) }
+                    .filter { ($0.0 != nil && $0.1 != nil) }
+            
+            if totalImageCount() > 0 {
+                collectionPhotos.isHidden = false
+                btnTakePhotos.isHidden = true
+                iconTakePhoto.isHidden = true
+            }
         }
     }
     
     override func updateData(_ sender: Any) {
         if let parentVC = parent as? JGGPostServiceStepRootVC {
-            let creatingJob = parentVC.creatingService!
+            let creatingJob = parentVC.creatingJob!
             creatingJob.title = txtServiceTitle.text
             creatingJob.description_ = txtServiceDescribe.text
             creatingJob.tags = txtTags.text
-            creatingJob.attachmentImages = selectedImages.flatMap { $0.1 }
+            
+            var images: [UIImage] = []
+            let localImages: [UIImage]
+                = selectedImages?.filter { $0.1 != nil }.map { $0.1! } ?? []
+            let urlImages: [UIImage]
+                = originalImages?.filter { $0.1 != nil }.map { $0.1! } ?? []
+            images.append(contentsOf: localImages)
+            images.append(contentsOf: urlImages)
+            
+            creatingJob.attachmentImages = images
+            if let originalImages = originalImages {
+                creatingJob.attachmentUrl = originalImages.filter { $0.0 != nil }.map { $0.0!.absoluteString }
+            }
         }
     }
     
@@ -82,7 +118,9 @@ class JGGPostServiceDescribeVC: JGGPostAppointmentBaseTableVC {
         
         let photoPicker = JGGCustomPhotoPickerVC()
         photoPicker.delegate = self
-        photoPicker.selectedAssets = self.selectedImages.filter { $0.0 != nil }.flatMap { $0.0 }
+        if let selectedImages = selectedImages {
+            photoPicker.selectedAssets = selectedImages.filter { $0.0 != nil }.flatMap { $0.0 }
+        }
         photoPicker.didExceedMaximumNumberOfSelection = { [weak self] (picker) in
             self?.showAlert(title: LocalizedString("Warning"),
                             message: LocalizedString("Exceed Maximum Number Of Selection"))
@@ -114,6 +152,10 @@ class JGGPostServiceDescribeVC: JGGPostAppointmentBaseTableVC {
         return isAvailable
     }
     
+    fileprivate func totalImageCount() -> Int {
+        return (originalImages?.count ?? 0) + (selectedImages?.count ?? 0)
+    }
+    
     // MARK: - Table view data source
        
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -122,7 +164,7 @@ class JGGPostServiceDescribeVC: JGGPostAppointmentBaseTableVC {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 3 {
-            var imageCount = selectedImages.count
+            var imageCount = totalImageCount()
             if imageCount == 0 {
                 return 80
             } else {
@@ -187,14 +229,21 @@ extension JGGPostServiceDescribeVC: TLPhotosPickerViewControllerDelegate {
 
 extension JGGPostServiceDescribeVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return selectedImages.count + 1
+        return totalImageCount() + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "JGGPictureCell", for: indexPath) as! JGGPictureCell
-        if indexPath.row < selectedImages.count {
-            cell.imageView.image = selectedImages[indexPath.row].1
+        if indexPath.row < (originalImages?.count ?? 0) {
+            if let url = originalImages?[indexPath.row].0 {
+                cell.imageView.af_setImage(withURL: url, placeholderImage: nil)
+            } else if let image = originalImages?[indexPath.row].1 {
+                cell.imageView.image = image
+            }
+        }
+        else if (originalImages?.count ?? 0) <= indexPath.row &&
+            indexPath.row < (selectedImages?.count ?? 0) {
+            cell.imageView.image = selectedImages?[indexPath.row - (originalImages?.count ?? 0)].1
         } else {
             cell.imageView.image = UIImage(named: "icon_add_photo_green")
         }
@@ -203,11 +252,24 @@ extension JGGPostServiceDescribeVC: UICollectionViewDataSource, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row < selectedImages.count {
-            let images =
-                self.selectedImages
+        if indexPath.row < totalImageCount() {
+            var images: [LightboxImage] = []
+            
+            let localImages = self.selectedImages?
                     .filter { $0.1 != nil }
-                    .map { LightboxImage(image: $0.1!, text: "") }
+                    .map { LightboxImage(image: $0.1!, text: "") } ?? []
+            images.append(contentsOf: localImages)
+            
+            let urlImagges = self.originalImages?.map({ (obj) -> LightboxImage? in
+                if let url = obj.0 {
+                    return LightboxImage(imageURL: url)
+                } else if let image = obj.1 {
+                    return LightboxImage(image: image)
+                } else {
+                    return nil
+                }
+            }).filter { $0 != nil } ?? []
+            images.append(contentsOf: urlImagges as! [LightboxImage])
             
             LightboxConfig.CloseButton.image = UIImage(named: "button_close_round_green")
             LightboxConfig.CloseButton.text = ""
@@ -239,7 +301,13 @@ extension JGGPostServiceDescribeVC: LightboxControllerPageDelegate, LightboxCont
     
     func lightboxController(_ controller: LightboxController, didChange image: UIImage?, of page: Int) {
         isChangedImage = true
-        selectedImages[page].1 = image
+        if page < originalImages?.count ?? 0 {
+            originalImages![page].0 = nil
+            originalImages![page].1 = image
+        } else if originalImages?.count ?? 0 <= page && page < totalImageCount() {
+            selectedImages![page - (originalImages?.count ?? 0)].1 = image
+        }
+        
     }
     
     func lightboxControllerWillDismiss(_ controller: LightboxController) {

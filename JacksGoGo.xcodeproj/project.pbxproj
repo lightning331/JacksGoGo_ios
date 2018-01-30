@@ -88,6 +88,7 @@
 		FF0CA88E1FB1CFCD00A2C98B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CA88D1FB1CFCD00A2C98B /* String.swift */; };
 		FF0CA8901FB205F600A2C98B /* JGGLocationMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CA88F1FB205F600A2C98B /* JGGLocationMapVC.swift */; };
 		FF10743B1FB67AD100C8BFE3 /* JGGActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF10743A1FB67AD100C8BFE3 /* JGGActionSheet.swift */; };
+		FF12131C2020CFAF00FBA64F /* JGGPostStepRootBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF12131B2020CFAF00FBA64F /* JGGPostStepRootBaseVC.swift */; };
 		FF21FAE21FAB5525004D0ADA /* JGGImageCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAE11FAB5525004D0ADA /* JGGImageCarouselCell.swift */; };
 		FF21FAE41FAB5535004D0ADA /* JGGImageCarouselCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF21FAE31FAB5535004D0ADA /* JGGImageCarouselCell.xib */; };
 		FF21FAE61FAB5588004D0ADA /* JGGDetailInfoFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAE51FAB5588004D0ADA /* JGGDetailInfoFooterView.swift */; };
@@ -376,6 +377,7 @@
 		FF0CA88D1FB1CFCD00A2C98B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		FF0CA88F1FB205F600A2C98B /* JGGLocationMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGLocationMapVC.swift; sourceTree = "<group>"; };
 		FF10743A1FB67AD100C8BFE3 /* JGGActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGActionSheet.swift; sourceTree = "<group>"; };
+		FF12131B2020CFAF00FBA64F /* JGGPostStepRootBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGPostStepRootBaseVC.swift; sourceTree = "<group>"; };
 		FF21FAE11FAB5525004D0ADA /* JGGImageCarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGImageCarouselCell.swift; sourceTree = "<group>"; };
 		FF21FAE31FAB5535004D0ADA /* JGGImageCarouselCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGImageCarouselCell.xib; sourceTree = "<group>"; };
 		FF21FAE51FAB5588004D0ADA /* JGGDetailInfoFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGDetailInfoFooterView.swift; sourceTree = "<group>"; };
@@ -1355,6 +1357,7 @@
 			children = (
 				FFC5C74D201249DA00F5834F /* Picker */,
 				FF849DFC1FD708DF003EB83A /* JGGPostAppointmentBaseTableVC.swift */,
+				FF12131B2020CFAF00FBA64F /* JGGPostStepRootBaseVC.swift */,
 				FFFEFE201FF1D736003A2B94 /* PostNewJob */,
 				FFB27A371FD25DF0009A2201 /* PostNewService */,
 			);
@@ -1810,6 +1813,7 @@
 				FF849E0A1FD734A2003EB83A /* JGGPostServiceTimeSlotsDetailVC.swift in Sources */,
 				FF86FA38200A9B6200CF580B /* JGGMonthlySelectPickerVC.swift in Sources */,
 				FFB5ED581FD02041006ADE49 /* JGGServiceSubDetailBaseVC.swift in Sources */,
+				FF12131C2020CFAF00FBA64F /* JGGPostStepRootBaseVC.swift in Sources */,
 				FFFC213F1FB5C0AA00AAA6F7 /* JGGBidDetailVC.swift in Sources */,
 				FF849DF41FD6EFBF003EB83A /* JGGSkillTestQuestionCell.swift in Sources */,
 				FFEB45D81FEC216200F362FF /* JGGProfileNC.swift in Sources */,

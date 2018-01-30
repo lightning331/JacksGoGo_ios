@@ -110,7 +110,7 @@ class JGGServiceSummaryVC: JGGPostAppointmentBaseTableVC {
             else if sender == btnAddress {
                 index = 3
             }
-            stepRootVC.postServiceStepView.selectStep(index: index)
+            stepRootVC.stepView.selectStep(index: index)
         }
         self.navigationController?.popViewController(animated: true)
     }

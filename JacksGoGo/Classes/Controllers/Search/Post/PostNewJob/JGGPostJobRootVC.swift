@@ -46,6 +46,7 @@ class JGGPostJobRootVC: JGGSearchBaseVC {
             navigationItem.title = LocalizedString("Post A Job")
         }
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        
     }
     
     @IBAction func onPressedBack(_ sender: Any) {
@@ -69,7 +70,6 @@ class JGGPostJobRootVC: JGGSearchBaseVC {
                                     cancelButtonTitle: LocalizedString("Cancel"),
                                     cancelAction: nil)
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier, identifier == "gotoPostJobStepRootVC",

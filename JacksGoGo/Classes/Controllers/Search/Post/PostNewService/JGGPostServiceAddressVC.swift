@@ -29,11 +29,17 @@ class JGGPostServiceAddressVC: JGGPostAppointmentBaseTableVC {
         txtUnits.text = nil
         txtStreet.text = nil
         txtPostcode.text = nil
-
+        
         if SHOW_TEMP_DATA {
             showTemporaryData()
         }
+    }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        showOriginalInfo()
+        
     }
 
     private func showTemporaryData() {
@@ -41,6 +47,21 @@ class JGGPostServiceAddressVC: JGGPostAppointmentBaseTableVC {
         txtUnits.text = "20"
         txtStreet.text = "wanchingru 200"
         txtPostcode.text = "118000"
+    }
+    
+    private func showOriginalInfo() {
+        if let parent = self.parent as? JGGPostStepRootBaseVC,
+            let editingJob = parent.editingJob
+        {
+            let addressModel = editingJob.address
+            txtUnits.text = addressModel?.unit
+            txtPlaceName.text = addressModel?.floor
+            txtStreet.text = addressModel?.address
+            txtPostcode.text = addressModel?.postalCode
+            if let btnDontShowFullAddress = btnDontShowFullAddress {
+                btnDontShowFullAddress.isSelected = addressModel?.isDontShowFullAddress ?? false
+            }
+        }
     }
 
     override func updateData(_ sender: Any) {
@@ -53,7 +74,7 @@ class JGGPostServiceAddressVC: JGGPostAppointmentBaseTableVC {
             if let btnDontShowFullAddress = btnDontShowFullAddress {
                 addressModel.isDontShowFullAddress = btnDontShowFullAddress.isSelected
             }
-            let creatingService = parentVC.creatingService
+            let creatingService = parentVC.creatingJob
             creatingService?.address = addressModel
         }
     }

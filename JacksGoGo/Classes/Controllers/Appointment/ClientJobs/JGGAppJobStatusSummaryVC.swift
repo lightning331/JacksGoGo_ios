@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MBProgressHUD
+
 
 class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
 
@@ -90,7 +92,7 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
     override func onPressedMenuEdit() {
         let serviceStoryboard = UIStoryboard(name: "Services", bundle: nil)
         if let editJobVC = serviceStoryboard.instantiateViewController(withIdentifier: "JGGPostJobRootVC") as? JGGPostJobRootVC {
-            editJobVC.editJob = job
+            editJobVC.editJob = job.clone()
             self.navigationController?.pushViewController(editJobVC, animated: true)
         }
         
@@ -105,7 +107,7 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
                                     okButtonTitle: LocalizedString("Delete"),
                                     okAction: { text in
                                         print("Delete Job")
-                                        self.navigationController?.popToRootViewController(animated: true)
+                                        self.deleteJob(with: text)
                                     },
                                     cancelButtonTitle: LocalizedString("Cancel"))
     }
@@ -118,6 +120,29 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
             self.isLoadingProviders = false
             self.providers = proposals
             
+        }
+    }
+    
+    private func deleteJob(with reason: String?) {
+        let hud = MBProgressHUD.showAdded(to: self.navigationController!.view, animated: true)
+        hud.label.text = LocalizedString("Deleting Job...")
+        APIManager.deleteJob(self.job, reason: reason) { (success, errorMessage) in
+            hud.hide(animated: true)
+            if success {
+                self.navigationController?.popToRootViewController(animated: true)
+            } else {
+                JGGAlertViewController.show(
+                    title: LocalizedString("Error"),
+                    message: errorMessage,
+                    colorSchema: .red,
+                    okButtonTitle: LocalizedString("Close"),
+                    okAction: { (text) in
+                    
+                    },
+                    cancelButtonTitle: nil,
+                    cancelAction: nil
+                )
+            }
         }
     }
     

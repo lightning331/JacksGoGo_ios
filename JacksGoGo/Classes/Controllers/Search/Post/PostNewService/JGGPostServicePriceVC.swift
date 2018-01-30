@@ -57,7 +57,7 @@ class JGGPostServicePriceVC: JGGPostAppointmentBaseTableVC {
     
     override func updateData(_ sender: Any) {
         if let parentVC = parent as? JGGPostServiceStepRootVC {
-            let creatingService = parentVC.creatingService!
+            let creatingService = parentVC.creatingJob!
             creatingService.budget = nil
             creatingService.budgetFrom = nil
             creatingService.budgetTo = nil

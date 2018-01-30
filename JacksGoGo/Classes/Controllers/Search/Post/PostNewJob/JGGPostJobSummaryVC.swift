@@ -29,10 +29,10 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
     @IBOutlet weak var btnReport: UIButton!
     @IBOutlet weak var lblReport: UILabel!
     
-    var creatingJob: JGGCreateJobModel?
+    var creatingJob: JGGJobModel?
     var editingJob: JGGJobModel? {
         set {
-            creatingJob = newValue as? JGGCreateJobModel
+            creatingJob = newValue
             isEditMode = true
         }
         get {
@@ -56,20 +56,25 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
             
             // Time
             var timeString: String = ""
-            if let jobTime = creatingJob.jobTime {
-                let startTime = jobTime.jobStartOn
+            var jobTime: JGGTimeSlotModel?
+            if isEditMode {
+                jobTime = creatingJob.sessions?.first
+            } else {
+                jobTime = creatingJob.jobTime
+            }
+            if let jobTime = jobTime {
+                let startTime = jobTime.startOn
                 if jobTime.isSpecific == true {
                     timeString = "on "
                 } else {
                     timeString = "any time until "
                 }
                 timeString += ((startTime?.toString(format: .custom("d MMM, yyyy")) ?? "") + " " + (startTime?.timeForJacks() ?? ""))
-                if let endTime = creatingJob.jobTime?.jobEndOn {
+                if let endTime = jobTime.endOn {
                     timeString += (" - " + endTime.timeForJacks())
                 }
-                lblTime.text = timeString
             }
-            else if creatingJob.repetitionType != .none {
+            else if creatingJob.repetitionType != nil {
                 if creatingJob.repetitionType == .weekly {
                     let days =
                         creatingJob
@@ -137,13 +142,13 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
             else if sender == btnReport {
                 index = 4
             }
-            stepRootVC.postJobStepView.selectStep(index: index)
+            stepRootVC.stepView.selectStep(index: index)
         }
         self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func onPressedPostNewJob(_ sender: UIButton) {
-        if let creatingJob = creatingJob {
+        if let creatingJob = creatingJob as? JGGCreateJobModel {
             hud = MBProgressHUD.showAdded(to: self.parent!.parent!.parent!.view, animated: true)
             
             if self.imageDownloadURLs.count == 0 {
@@ -156,6 +161,7 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
             } else {
                 self.postJob(creatingJob)
             }
+        } else if let editingJob = creatingJob {
             
         }
     }
@@ -177,7 +183,7 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
         }
     }
     
-    private func postJob(_ creatingJob: JGGCreateJobModel) {
+    private func postJob(_ creatingJob: JGGJobModel) {
         self.hud.mode = .indeterminate
         self.hud.label.text = LocalizedString("Posting Job")
 

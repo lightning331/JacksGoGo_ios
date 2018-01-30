@@ -36,8 +36,8 @@ class JGGPostServiceTimeSlotsTypeVC: JGGPostServiceTimeSlotsBaseVC {
                 if index == 1 {
                     
                     if let parentVC = self.navigationController?.parent as? JGGPostServiceStepRootVC {
-                        parentVC.postServiceStepView.completeCurrentStep()
-                        parentVC.postServiceStepView.nextStep()
+                        parentVC.stepView.completeCurrentStep()
+                        parentVC.stepView.nextStep()
                     }
                     
                 } else {
@@ -53,8 +53,8 @@ class JGGPostServiceTimeSlotsTypeVC: JGGPostServiceTimeSlotsBaseVC {
             }
             cell.selectedLaterHandler = {
                 if let parentVC = self.navigationController?.parent as? JGGPostServiceStepRootVC {
-                    parentVC.postServiceStepView.completeCurrentStep()
-                    parentVC.postServiceStepView.nextStep()
+                    parentVC.stepView.completeCurrentStep()
+                    parentVC.stepView.nextStep()
                 }
             }
             return cell

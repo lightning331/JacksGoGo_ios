@@ -17,7 +17,7 @@ class JGGPostStepRootBaseVC: JGGViewController, JGGAppointmentDetailStepHeaderVi
     var isEditMode: Bool = false
     
     var selectedCategory: JGGCategoryModel!
-    var creatingJob: JGGCreateJobModel?
+    var creatingJob: JGGJobModel?
     var editingJob: JGGJobModel?
 
     

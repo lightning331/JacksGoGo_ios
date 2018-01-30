@@ -59,8 +59,11 @@ class JGGPostJobReportVC: JGGEditJobReportVC {
                     reportType += 4
                 }
             }
-            parentVC.creatingJob?.reportType = reportType
-            
+            if let editingJob = parentVC.editingJob {
+                editingJob.reportType = reportType
+            } else {
+                parentVC.creatingJob?.reportType = reportType
+            }
         }
     }
     

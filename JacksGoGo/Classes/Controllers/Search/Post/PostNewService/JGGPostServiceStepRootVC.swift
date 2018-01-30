@@ -26,7 +26,7 @@ class JGGPostServiceStepRootVC: JGGPostStepRootBaseVC {
         
         if creatingJob == nil {
             isEditMode = false
-            creatingJob = JGGCreateJobModel()
+            creatingJob = JGGJobModel()
             creatingJob!.categoryId = selectedCategory.id
             creatingJob!.userProfileId = appManager.currentUser?.id
             creatingJob!.regionId = appManager.currentRegion?.id

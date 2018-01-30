@@ -16,7 +16,12 @@ class JGGPostJobDescribeVC: JGGPostServiceDescribeVC {
 
     override func updateData(_ sender: Any) {
         if let parentVC = parent as? JGGPostJobStepRootVC {
-            let creatingJob = parentVC.creatingJob
+            let creatingJob: JGGJobModel?
+            if parentVC.editingJob != nil {
+                creatingJob = parentVC.editingJob
+            } else {
+                creatingJob = parentVC.creatingJob
+            }
             creatingJob?.title = txtServiceTitle.text
             creatingJob?.description_ = txtServiceDescribe.text
             creatingJob?.tags = txtTags.text
@@ -36,6 +41,7 @@ class JGGPostJobDescribeVC: JGGPostServiceDescribeVC {
                         .filter { $0.0 != nil }
                         .map { $0.0!.absoluteString }
             }
+                
         }
     }
 }

@@ -89,7 +89,13 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
     
     override func updateData(_ sender: Any) {
         if let parentVC = parent as? JGGPostJobStepRootVC {
-            if let creatingJob = parentVC.creatingJob {
+            var creatingJob: JGGJobModel?
+            if parentVC.editingJob != nil {
+                creatingJob = parentVC.editingJob
+            } else {
+                creatingJob = parentVC.creatingJob
+            }
+            if let creatingJob = creatingJob {
                 creatingJob.jobType = selectedJobType
                 if let selectedDate = selectedDate, let selectedStartTime = selectedStartTime, let isSpecific = isSpecifiedDate {
                     let dateString = selectedDate.toString(format: DateOnly)

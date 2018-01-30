@@ -564,7 +564,7 @@ class JGGAPIManager: NSObject {
     }
     
     // MARK: - Service
-    func postService(_ service: JGGCreateJobModel, complete: @escaping StringStringClosure) -> Void
+    func postService(_ service: JGGJobModel, complete: @escaping StringStringClosure) -> Void
     {
         CLS_LOG_SWIFT(format: "postService url: %@\nBODY: %@", [URLManager.Appointment.PostService, service.json().description])
         POST(url: URLManager.Appointment.PostService, body: service.json().dictionaryObject) { (json, error) in

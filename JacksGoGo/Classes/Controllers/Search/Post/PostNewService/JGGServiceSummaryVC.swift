@@ -27,7 +27,7 @@ class JGGServiceSummaryVC: JGGPostAppointmentBaseTableVC {
     
     @IBOutlet weak var lblAddress: UILabel!
     
-    var creatingService: JGGCreateJobModel?
+    var creatingService: JGGJobModel?
 
     private var hud: MBProgressHUD!
     private lazy var imageDownloadURLs: [String] = []
@@ -155,7 +155,7 @@ class JGGServiceSummaryVC: JGGPostAppointmentBaseTableVC {
         }
     }
     
-    private func postService(_ creatingService: JGGCreateJobModel) {
+    private func postService(_ creatingService: JGGJobModel) {
         self.hud.mode = .indeterminate
         self.hud.label.text = LocalizedString("Posting Service")
         

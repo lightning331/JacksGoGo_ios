@@ -29,7 +29,7 @@ class JGGPostJobStepRootVC: JGGPostStepRootBaseVC {
             editingJob = editJob
             isEditMode = true
         } else {
-            creatingJob = JGGCreateJobModel()
+            creatingJob = JGGJobModel()
             creatingJob?.categoryId = selectedCategory.id
             creatingJob?.userProfileId = appManager.currentUser?.id
             creatingJob?.regionId = appManager.currentRegion?.id

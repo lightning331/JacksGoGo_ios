@@ -49,6 +49,7 @@ class JGGJobModel: JGGAppointmentBaseModel {
     var sessions: [JGGTimeSlotModel]?
     var viewCount: Int = 0
     var proposal: JGGProposalModel?
+    var attachmentImages: [UIImage]?
     
     override var type: AppointmentType {
         return .jobs
@@ -154,9 +155,4 @@ class JGGJobModel: JGGAppointmentBaseModel {
         let clone = JGGJobModel(json: self.json())
         return clone
     }
-}
-
-class JGGCreateJobModel: JGGJobModel {
-    var attachmentImages: [UIImage]?
-    
 }

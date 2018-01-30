@@ -148,7 +148,7 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
     }
     
     @IBAction func onPressedPostNewJob(_ sender: UIButton) {
-        if let creatingJob = creatingJob as? JGGCreateJobModel {
+        if let creatingJob = creatingJob {
             hud = MBProgressHUD.showAdded(to: self.parent!.parent!.parent!.view, animated: true)
             
             if self.imageDownloadURLs.count == 0 {
@@ -161,8 +161,6 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
             } else {
                 self.postJob(creatingJob)
             }
-        } else if let editingJob = creatingJob {
-            
         }
     }
     
@@ -185,39 +183,45 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
     
     private func postJob(_ creatingJob: JGGJobModel) {
         self.hud.mode = .indeterminate
-        self.hud.label.text = LocalizedString("Posting Job")
+        
+        if !isEditMode {
+            
+            self.hud.label.text = LocalizedString("Posting Job")
 
-        creatingJob.attachmentUrl = self.imageDownloadURLs
-        self.APIManager.postJob(creatingJob, complete: { (jobId, errorMessage) in
-            if let jobID = jobId {
-                creatingJob.id = jobID
-                let message = String(format: LocalizedString("Job reference no.: %@\n\nGood luck!"), jobID)
-                JGGAlertViewController.show(
-                    title: LocalizedString("Job Posted!"),
-                    message: message,
-                    colorSchema: .cyan,
-                    okButtonTitle: LocalizedString("View Job"),
-                    okAction: { text in
-                        self.parent?.navigationController?.popToRootViewController(animated: true)
-                    },
-                    cancelButtonTitle: nil,
-                    cancelAction: nil
-                )
-            } else {
-                JGGAlertViewController.show(
-                    title: LocalizedString("Error!"),
-                    message: errorMessage,
-                    colorSchema: .red,
-                    okButtonTitle: LocalizedString("Close"),
-                    okAction: { text in
-                    
-                    },
-                    cancelButtonTitle: nil,
-                    cancelAction: nil
-                )
-            }
-            self.hud.hide(animated: true)
-        })
+            creatingJob.attachmentUrl = self.imageDownloadURLs
+            self.APIManager.postJob(creatingJob, complete: { (jobId, errorMessage) in
+                if let jobID = jobId {
+                    creatingJob.id = jobID
+                    let message = String(format: LocalizedString("Job reference no.: %@\n\nGood luck!"), jobID)
+                    JGGAlertViewController.show(
+                        title: LocalizedString("Job Posted!"),
+                        message: message,
+                        colorSchema: .cyan,
+                        okButtonTitle: LocalizedString("View Job"),
+                        okAction: { text in
+                            self.parent?.navigationController?.popToRootViewController(animated: true)
+                        },
+                        cancelButtonTitle: nil,
+                        cancelAction: nil
+                    )
+                } else {
+                    JGGAlertViewController.show(
+                        title: LocalizedString("Error!"),
+                        message: errorMessage,
+                        colorSchema: .red,
+                        okButtonTitle: LocalizedString("Close"),
+                        okAction: { text in
+                        
+                        },
+                        cancelButtonTitle: nil,
+                        cancelAction: nil
+                    )
+                }
+                self.hud.hide(animated: true)
+            })
+        } else {
+            
+        }
     }
     
     // MARK: - Table view data source

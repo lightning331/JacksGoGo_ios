@@ -104,18 +104,24 @@ class JGGPostJobPriceVC: JGGPostAppointmentBaseTableVC {
     }
     
     override func updateData(_ sender: Any) {
-        if let parentVC = parent as? JGGPostJobStepRootVC,
-            let creatingJob = parentVC.creatingJob
-        {
-            creatingJob.budget = nil
-            creatingJob.budgetFrom = nil
-            creatingJob.budgetTo = nil
-            if selectedPriceType == 2 {
-                creatingJob.budget = Double(txtFixedAmount.text ?? "0")
+        if let parentVC = parent as? JGGPostJobStepRootVC {
+            var creatingJob: JGGJobModel?
+            if parentVC.editingJob != nil {
+                creatingJob = parentVC.editingJob
+            } else {
+                creatingJob = parentVC.creatingJob
             }
-            else if selectedPriceType == 3 {
-                creatingJob.budgetFrom = Double(txtRangeMinAmount.text ?? "0")
-                creatingJob.budgetTo = Double(txtRangeMaxAmount.text ?? "0")
+            if let creatingJob = creatingJob {
+                creatingJob.budget = nil
+                creatingJob.budgetFrom = nil
+                creatingJob.budgetTo = nil
+                if selectedPriceType == 2 {
+                    creatingJob.budget = Double(txtFixedAmount.text ?? "0")
+                }
+                else if selectedPriceType == 3 {
+                    creatingJob.budgetFrom = Double(txtRangeMinAmount.text ?? "0")
+                    creatingJob.budgetTo = Double(txtRangeMaxAmount.text ?? "0")
+                }
             }
         }
     }

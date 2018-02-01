@@ -538,6 +538,29 @@ class JGGAPIManager: NSObject {
         
     }
     
+    func editJob(_ job: JGGJobModel, complete: @escaping StringStringClosure) -> Void
+    {
+        CLS_LOG_SWIFT(format: "editJob url: %@\nBODY: %@", [URLManager.Appointment.PostJob, job.json().description])
+        print(job.json().description)
+        POST(url: URLManager.Appointment.EditJob, body: job.json().dictionaryObject) { (json, error) in
+            if let response = json {
+                print("response: ", response)
+                let success = response[SUCCESS_KEY].boolValue
+                if success {
+                    complete(response[VALUE_KEY].stringValue, nil)
+                } else {
+                    complete(nil, response[MESSAGE_KEY].stringValue)
+                }
+            } else if let error = error {
+                complete(nil, error.localizedDescription)
+            } else {
+                complete(nil, LocalizedString("Unknown request error."))
+            }
+            
+        }
+        
+    }
+    
     func deleteJob(_ job: JGGJobModel, reason: String?, complete: @escaping BoolStringClosure) -> Void {
         
         if let jobId = job.id {

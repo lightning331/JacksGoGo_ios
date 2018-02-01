@@ -741,16 +741,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Q0R-wJ-ey5">
-                                            <rect key="frame" x="8" y="11" width="359" height="339"/>
+                                            <rect key="frame" x="0.0" y="11" width="0.0" height="339"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When do you need this job done?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXI-wj-Ixp">
-                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="227"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="227"/>
                                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9T-4G-gMY" customClass="JGGYellowSelectingButton" customModule="JacksGoGo" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="235" width="359" height="48"/>
+                                                    <rect key="frame" x="0.0" y="235" width="0.0" height="48"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="48" id="ho4-pE-vCV"/>
                                                     </constraints>
@@ -775,7 +775,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3u5-Bw-cSp" customClass="JGGYellowSelectingButton" customModule="JacksGoGo" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="291" width="359" height="48"/>
+                                                    <rect key="frame" x="0.0" y="291" width="0.0" height="48"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="48" id="Jij-oh-bxZ"/>
                                                     </constraints>
@@ -2697,7 +2697,6 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
-                                        <action selector="onPressedNext:" destination="ejH-KW-D2l" eventType="touchUpInside" id="ITl-KP-5CX"/>
                                         <action selector="onPressedPostNewJob:" destination="ejH-KW-D2l" eventType="touchUpInside" id="FOz-Rb-8Xt"/>
                                     </connections>
                                 </button>

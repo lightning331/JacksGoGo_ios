@@ -25,7 +25,6 @@ class JGGJobModel: JGGAppointmentBaseModel {
     internal let JobType        = "JobType"
     internal let RepetitionType = "RepetitionType"
     internal let Repetition     = "Repetition"
-    internal let JobTime        = "JobTime"
     internal let IsQuickJob     = "IsQuickJob"
     internal let ViewCount      = "ViewCount"
     internal let Sessions       = "Sessions"
@@ -42,7 +41,6 @@ class JGGJobModel: JGGAppointmentBaseModel {
     var reportType: Int = 0
     var isRescheduled: Bool?
     var jobType: JGGJobType = .none
-    var jobTime: JGGTimeSlotModel?
     var repetitionType: JGGRepetitionType?
     var repetition: String?
     var isQuickJob: Bool = false
@@ -79,7 +77,6 @@ class JGGJobModel: JGGAppointmentBaseModel {
         reportType = json[ReportType].intValue
         isRescheduled = json[IsRescheduled].bool
         jobType = JGGJobType(rawValue: json[JobType].intValue) ?? .none
-        jobTime = JGGTimeSlotModel(json: json[Sessions].array?.first)
         if let value = json[RepetitionType].int {
             repetitionType = JGGRepetitionType(rawValue: value) ?? .none
         }
@@ -113,9 +110,6 @@ class JGGJobModel: JGGAppointmentBaseModel {
         json[ReportType].intValue = reportType
         json[IsRescheduled].bool = isRescheduled
         json[JobType].intValue = jobType.rawValue
-        if let jobTime = jobTime {
-            json[JobTime] = jobTime.json()
-        }
         json[RepetitionType].int = repetitionType?.rawValue
         json[Repetition].string = repetition
         json[IsQuickJob].boolValue = isQuickJob

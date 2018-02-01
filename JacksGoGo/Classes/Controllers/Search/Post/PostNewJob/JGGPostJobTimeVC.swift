@@ -108,7 +108,7 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
                         let endFullTimeString = String(format: "%@T%@", dateString, endTimeString)
                         endTime = Date(fromString: endFullTimeString, format: FullDate)
                     }
-                    creatingJob.jobTime = JGGTimeSlotModel(startOn: startTime, endOn: endTime, people: nil, isSpecific: isSpecific)
+                    creatingJob.sessions = [JGGTimeSlotModel(startOn: startTime, endOn: endTime, people: nil, isSpecific: isSpecific)]
                     
                 }
                 else if selectedRepeatingType != .none && selectedRepeatingDays.count > 0 {

@@ -56,13 +56,8 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
             
             // Time
             var timeString: String = ""
-            var jobTime: JGGTimeSlotModel?
-            if isEditMode {
-                jobTime = creatingJob.sessions?.first
-            } else {
-                jobTime = creatingJob.jobTime
-            }
-            if let jobTime = jobTime {
+            
+            if let jobTime = creatingJob.sessions?.first {
                 let startTime = jobTime.startOn
                 if jobTime.isSpecific == true {
                     timeString = "on "
@@ -121,6 +116,11 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
             lblAddress.text = LocalizedString("No set")
             lblBudget.text = LocalizedString("No set")
             lblReport.text = LocalizedString("No set")
+        }
+        if isEditMode {
+            self.btnNext.setTitle(LocalizedString("Post New Job"), for: .normal)
+        } else {
+            self.btnNext.setTitle(LocalizedString("Update Job"), for: .normal)
         }
     }
 
@@ -190,6 +190,8 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
 
             creatingJob.attachmentUrl = self.imageDownloadURLs
             self.APIManager.postJob(creatingJob, complete: { (jobId, errorMessage) in
+                self.hud.hide(animated: true)
+                
                 if let jobID = jobId {
                     creatingJob.id = jobID
                     let message = String(format: LocalizedString("Job reference no.: %@\n\nGood luck!"), jobID)
@@ -217,10 +219,42 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
                         cancelAction: nil
                     )
                 }
-                self.hud.hide(animated: true)
+                
             })
         } else {
-            
+            self.hud.label.text = LocalizedString("Saving Job")
+            creatingJob.attachmentUrl = self.imageDownloadURLs
+            self.APIManager.editJob(creatingJob, complete: { (jobId, errorMessage) in
+                self.hud.hide(animated: true)
+                
+                if let jobID = jobId {
+                    creatingJob.id = jobID
+                    let message = String(format: LocalizedString("Job reference no.: %@\n\nGood luck!"), jobID)
+                    JGGAlertViewController.show(
+                        title: LocalizedString("Job Saved!"),
+                        message: message,
+                        colorSchema: .cyan,
+                        okButtonTitle: LocalizedString("View Job"),
+                        okAction: { text in
+                            self.parent?.navigationController?.popToRootViewController(animated: true)
+                    },
+                        cancelButtonTitle: nil,
+                        cancelAction: nil
+                    )
+                } else {
+                    JGGAlertViewController.show(
+                        title: LocalizedString("Error!"),
+                        message: errorMessage,
+                        colorSchema: .red,
+                        okButtonTitle: LocalizedString("Close"),
+                        okAction: { text in
+                            
+                    },
+                        cancelButtonTitle: nil,
+                        cancelAction: nil
+                    )
+                }
+            })
         }
     }
     

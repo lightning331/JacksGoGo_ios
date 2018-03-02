@@ -55,7 +55,7 @@ class JGGPostJobReportVC: JGGEditJobReportVC {
                 else if selectView == viewGeotracking {
                     reportType += 2
                 }
-                if selectView == viewPinCode {
+                else if selectView == viewPinCode {
                     reportType += 4
                 }
             }

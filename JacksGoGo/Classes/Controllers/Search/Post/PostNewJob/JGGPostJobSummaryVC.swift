@@ -118,9 +118,9 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
             lblReport.text = LocalizedString("No set")
         }
         if isEditMode {
-            self.btnNext.setTitle(LocalizedString("Post New Job"), for: .normal)
+            self.btnNext.setTitle(LocalizedString("Save Changes"), for: .normal)
         } else {
-            self.btnNext.setTitle(LocalizedString("Update Job"), for: .normal)
+            self.btnNext.setTitle(LocalizedString("Post New Job"), for: .normal)
         }
     }
 
@@ -229,14 +229,14 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
                 
                 if let jobID = jobId {
                     creatingJob.id = jobID
-                    let message = String(format: LocalizedString("Job reference no.: %@\n\nGood luck!"), jobID)
+                    let message = String(format: LocalizedString("We will notify the bidding service providers about the changes."), jobID)
                     JGGAlertViewController.show(
-                        title: LocalizedString("Job Saved!"),
+                        title: LocalizedString("Changes updated!"),
                         message: message,
                         colorSchema: .cyan,
-                        okButtonTitle: LocalizedString("View Job"),
+                        okButtonTitle: LocalizedString("OK"),
                         okAction: { text in
-                            self.parent?.navigationController?.popToRootViewController(animated: true)
+                            self.parent?.navigationController?.popViewController(animated: true)
                     },
                         cancelButtonTitle: nil,
                         cancelAction: nil

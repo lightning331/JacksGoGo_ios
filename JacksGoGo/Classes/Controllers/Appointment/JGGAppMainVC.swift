@@ -81,8 +81,10 @@ class JGGAppMainVC: JGGStartTableVC {
     }
     
     private func registerCell() {
-        self.tableView.register(UINib(nibName: "JGGAppHistoryListCell", bundle: nil),
-                                forCellReuseIdentifier: "JGGAppHistoryListCell")
+        self.tableView.register(UINib(nibName: "JGGAppHistoryListJobCell", bundle: nil),
+                                forCellReuseIdentifier: "JGGAppHistoryListJobCell")
+        self.tableView.register(UINib(nibName: "JGGAppHistoryListServiceCell", bundle: nil),
+                                forCellReuseIdentifier: "JGGAppHistoryListServiceCell")
         self.tableView.register(UINib(nibName: "JGGSectionTitleView", bundle: nil),
                                 forHeaderFooterViewReuseIdentifier: "JGGSectionTitleView")
     }
@@ -242,8 +244,9 @@ class JGGAppMainVC: JGGStartTableVC {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if isLoggedIn {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppHistoryListCell") as! JGGAppHistoryListCell
+            let cell : JGGAppHistoryListCell!
             if indexPath.section == 0 {
+                cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppHistoryListJobCell") as! JGGAppHistoryListCell
                 if selectedTab == .pending {
                     cell.job = arrayQuickJobs[indexPath.row];
                 } else {
@@ -251,9 +254,18 @@ class JGGAppMainVC: JGGStartTableVC {
                     cell.job = arrayPendingJobs[index];
                 }
             } else if indexPath.section == 1 {
+                cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppHistoryListJobCell") as! JGGAppHistoryListCell
                 cell.job = arrayServicePackages[indexPath.row];
             } else if indexPath.section == 2 {
-                cell.job = arrayPendingJobs[indexPath.row];
+                let job = arrayPendingJobs[indexPath.row];
+                if job.isRequest {
+                    cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppHistoryListJobCell") as! JGGAppHistoryListCell
+                } else {
+                    cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppHistoryListServiceCell") as! JGGAppHistoryListCell
+                }
+                cell.job = job
+            } else {
+                cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppHistoryListJobCell") as! JGGAppHistoryListCell
             }
             return cell
         } else {

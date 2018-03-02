@@ -131,8 +131,10 @@ class JGGAppJobStatusCell: UITableViewCell {
         }
         if let time = time {
             self.lblTime.text = DateTimeString(from: time)
+            self.lblTime.isHidden = false
         } else {
             self.lblTime.text = nil
+            self.lblTime.isHidden = true
         }
         if let boldStrings = boldStrings {
             self.lblDescription.attributedText = text?.toBold(strings: boldStrings)

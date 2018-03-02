@@ -39,12 +39,29 @@ class JGGAppHistoryListCell: UITableViewCell {
     fileprivate func updateValue() {
         if let appointment = job {
             lblDay.text = appointment.appointmentDay()
-            lblMonth.text = appointment.appointmentMonth()
+            lblMonth.text = appointment.appointmentMonth()?.uppercased()
             lblTitle.text = appointment.title
-            lblDescription.text = appointment.description_
-            lblCountBadge.text = String(3)
-            viewCountBadge.isHidden = 3 == 0
-            viewRightSideBadge.isHidden = 3 == 0
+            
+            var desc: String = ""
+            if let firstSession = appointment.sessions?.first,
+                let startTime = firstSession.startOn
+            {
+                desc = "Need on" + startTime.toString(format: .custom("d MMM, yyyy"))
+            } else {
+                desc = appointment.description_ ?? ""
+            }
+            lblDescription.text = desc
+            
+            setBadge(0)
+            
+            let avatarPlaceholder = UIImage(named: "icon_profile")
+            imgviewAvatar.image = avatarPlaceholder
+            if let urlString = appointment.userProfile?.user.photoURL,
+                let url = URL(string: urlString) {
+                imgviewAvatar.af_setImage(withURL: url, placeholderImage: avatarPlaceholder)
+            } else {
+                imgviewAvatar.image = avatarPlaceholder
+            }
             
 //            if let urlString = appointment.attachmentUrl?.first, let url = URL(string: urlString) {
             
@@ -58,6 +75,19 @@ class JGGAppHistoryListCell: UITableViewCell {
             lblMonth.textColor = color
             
             lblStatus.isHidden = true
+        }
+    }
+    
+    private func setBadge(_ badge: Int) {
+        if badge > 0 {
+            lblCountBadge.text = String(badge)
+            lblCountBadge.isHidden = false
+            viewCountBadge.isHidden = false
+            viewRightSideBadge.isHidden = false
+        } else {
+            lblCountBadge.isHidden = true
+            viewCountBadge.isHidden = true
+            viewRightSideBadge.isHidden = true
         }
     }
 }

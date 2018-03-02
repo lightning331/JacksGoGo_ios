@@ -28,6 +28,7 @@ class JGGPostJobRootVC: JGGSearchBaseVC {
             return _editJob
         }
     }
+    var fromAppointment: Bool = false
     fileprivate var _editJob: JGGJobModel?
     
     

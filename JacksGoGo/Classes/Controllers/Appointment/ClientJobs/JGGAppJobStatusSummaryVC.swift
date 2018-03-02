@@ -58,7 +58,12 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
         showJobInformation()
         
         if job.status == .open {
-            
+            cellCount = 2
+            loadProviders()
+            self.tableView.tableHeaderView = nil
+            self.viewChatProposalBox.isHidden = true
+            self.constraintBottomSpaceOfTableView.constant = 0
+            self.updateConstraint()
         } else if job.status == .confirmed {
             
         } else if job.status == .closed {
@@ -119,7 +124,7 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
         APIManager.getProposalsBy(jobId: job!.id!) { (proposals) in
             self.isLoadingProviders = false
             self.providers = proposals
-            
+            self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
         }
     }
     
@@ -158,33 +163,42 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
             // Posted this job in Jobs
             let cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppJobStatusCell") as! JGGAppJobStatusCell
             cell.setType(.posted,
-                         time: Date(timeIntervalSinceNow: -3000),
+                         time: job.postOn,
                          isActive: false,
-                         text: LocalizedString("You posted this job in Jobs"),
+                         text: LocalizedString("New job request posted."),
                          boldStrings: nil)
             return cell
         } else if statusIndex == 1 {
             // Waiting provider or quotations
-            if true { // quotations.count > 0
-                let cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppJobStatusButtonCell") as! JGGAppJobStatusButtonCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppJobStatusButtonCell") as! JGGAppJobStatusButtonCell
+            if self.isLoadingProviders {
+                let desc = "Loading..."
                 cell.setType(.watingProvider,
-                             time: Date(timeIntervalSinceNow: -2990),
-                             isActive: false,
-                             text: LocalizedString("You have received 5 quotations!"),
-                             boldStrings: [LocalizedString("You have received 5 quotations!")])
-                
-                cell.buttonTitle = LocalizedString("View Quotations")
-                return cell
+                             time: nil,
+                             isActive: cellCount == 2,
+                             text: desc,
+                             boldStrings: [desc])
+                cell.showLoading()
             } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppJobStatusCell") as! JGGAppJobStatusCell
+                cell.enable()
+                let desc: String
+                let buttonTitle: String
+                
+                if self.providers.count > 0 {
+                    desc = String(format: LocalizedString("You have received %d quotations!"), self.providers.count)
+                    buttonTitle = LocalizedString("View Quotations")
+                } else {
+                    desc = LocalizedString("Waiting for Service Providers to respond...")
+                    buttonTitle = LocalizedString("Invite Service Providers")
+                }
                 cell.setType(.watingProvider,
-                             time: Date(timeIntervalSinceNow: -2990),
-                             isActive: false,
-                             text: LocalizedString("Waiting for Service Providers to respond..."),
-                             boldStrings: [LocalizedString("Waiting for Service Providers to respond...")])
-
-                return cell
+                             time: nil,
+                             isActive: cellCount == 2,
+                             text: desc,
+                             boldStrings: [desc])
+                cell.buttonTitle = buttonTitle
             }
+            return cell
         } else if statusIndex == 2 {
             // appointment confirmed
             let cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppJobStatusCell") as! JGGAppJobStatusCell

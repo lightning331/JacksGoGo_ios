@@ -32,4 +32,16 @@ class JGGAppJobStatusButtonCell: JGGAppJobStatusCell {
         // Configure the view for the selected state
     }
     
+    func showLoading() -> Void {
+        let text = "Loading..."
+        self.lblDescription.attributedText = text.toBold(strings: [text])
+        btnViewJob.isEnabled = false
+        btnViewJob.alpha = 0.5
+    }
+    
+    func enable() {
+        btnViewJob.isEnabled = true
+        btnViewJob.alpha = 1.0
+    }
+    
 }

@@ -20,7 +20,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JacksGoGo/Classes/Global/API/JGGAPIManager.swift"
-            timestampString = "539208832.570905"
+            timestampString = "541663718.865191"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "522"
@@ -36,7 +36,7 @@
                   moduleName = "JacksGoGo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Volumes/Data/project/me/jacksgogo/JacksGoGo/Classes/Global/API/JGGAPIManager.swift"
-                  timestampString = "539208836.333297"
+                  timestampString = "541674290.5994591"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "522"
@@ -51,7 +51,7 @@
                   moduleName = "JacksGoGo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Volumes/Data/project/me/jacksgogo/JacksGoGo/Classes/Global/API/JGGAPIManager.swift"
-                  timestampString = "539208836.350473"
+                  timestampString = "541674290.605145"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "523"
@@ -68,12 +68,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JacksGoGo/Classes/Global/API/JGGAPIManager.swift"
-            timestampString = "539208832.571101"
+            timestampString = "541663718.865639"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "182"
             endingLineNumber = "182"
             landmarkName = "DELETE(url:params:body:hasHeader:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JacksGoGo/Classes/Controllers/Appointment/ClientJobs/JGGAppJobStatusSummaryVC.swift"
+            timestampString = "541674290.2997659"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "286"
+            endingLineNumber = "286"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

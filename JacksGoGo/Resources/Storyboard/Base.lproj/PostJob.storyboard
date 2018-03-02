@@ -2303,7 +2303,7 @@
                                                             <rect key="frame" x="0.0" y="60" width="343" height="48"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rO-5u-aYO">
-                                                                    <rect key="frame" x="8" y="15" width="70" height="19"/>
+                                                                    <rect key="frame" x="8" y="15.5" width="70" height="19"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="70" id="NVP-FU-6Zz"/>
                                                                     </constraints>
@@ -2312,7 +2312,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcd-Bd-wfD">
-                                                                    <rect key="frame" x="78" y="15" width="9" height="19"/>
+                                                                    <rect key="frame" x="78" y="15.5" width="9" height="19"/>
                                                                     <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
                                                                     <color key="textColor" red="0.78437811140000002" green="0.78115159270000001" blue="0.79996067289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -2352,7 +2352,7 @@
                                                             <rect key="frame" x="0.0" y="116" width="343" height="48"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mpb-uj-yye">
-                                                                    <rect key="frame" x="8" y="15" width="70" height="19"/>
+                                                                    <rect key="frame" x="8" y="15.5" width="70" height="19"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="70" id="596-d6-QNC"/>
                                                                     </constraints>
@@ -2361,7 +2361,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OH5-mn-HY8">
-                                                                    <rect key="frame" x="78" y="15" width="9" height="19"/>
+                                                                    <rect key="frame" x="78" y="15.5" width="9" height="19"/>
                                                                     <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
                                                                     <color key="textColor" red="0.78437811140000002" green="0.78115159270000001" blue="0.79996067289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -2401,7 +2401,7 @@
                                                             <rect key="frame" x="0.0" y="172" width="343" height="48"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7B-74-Cpi">
-                                                                    <rect key="frame" x="8" y="15" width="70" height="19"/>
+                                                                    <rect key="frame" x="8" y="15.5" width="70" height="19"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="70" id="k3L-Le-Bpg"/>
                                                                     </constraints>
@@ -2410,7 +2410,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBH-hj-nXS">
-                                                                    <rect key="frame" x="78" y="15" width="9" height="19"/>
+                                                                    <rect key="frame" x="78" y="15.5" width="9" height="19"/>
                                                                     <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
                                                                     <color key="textColor" red="0.78437811140000002" green="0.78115159270000001" blue="0.79996067289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>

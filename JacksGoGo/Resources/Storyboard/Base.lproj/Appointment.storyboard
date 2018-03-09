@@ -152,7 +152,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Group Swimming Class" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9f3-Np-KXu">
-                                        <rect key="frame" x="40" y="13" width="319" height="15.5"/>
+                                        <rect key="frame" x="40" y="12.5" width="319" height="15.5"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -293,7 +293,7 @@
                                                     <rect key="frame" x="15" y="11" width="313" height="38"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jobs posted." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zw8-gB-vrh">
-                                                            <rect key="frame" x="16" y="9.5" width="281" height="19"/>
+                                                            <rect key="frame" x="16" y="10" width="281" height="19"/>
                                                             <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -457,6 +457,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Invite" id="YXJ-Wa-3yb">
                         <barButtonItem key="backBarButtonItem" title=" " id="e04-Qn-7XP"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="button_tick_green" id="SXa-m2-JBY">
+                            <color key="tintColor" red="0.95005923510000001" green="0.39661446210000001" blue="0.073047049340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="qAH-Lm-2bw" kind="show" identifier="gotoServiceProvidersListVC" id="mbP-QE-Ygx"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -625,7 +631,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5eD-uD-FqM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3114.4000000000001" y="1645.7271364317842"/>
+            <point key="canvasLocation" x="4170" y="1646"/>
         </scene>
         <!--App Job Status SummaryVC-->
         <scene sceneID="pSk-Xb-7v5">
@@ -741,7 +747,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="catherinedesilva" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1E-Vd-1bY">
-                                        <rect key="frame" x="57" y="15.5" width="170" height="19"/>
+                                        <rect key="frame" x="57" y="16" width="170" height="19"/>
                                         <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -880,6 +886,7 @@
                         <viewLayoutGuide key="safeArea" id="1Aq-dE-QzA"/>
                     </view>
                     <navigationItem key="navigationItem" id="Klp-Z6-2iD">
+                        <barButtonItem key="backBarButtonItem" title=" " id="zvr-QS-coj"/>
                         <barButtonItem key="rightBarButtonItem" image="button_more_orange" id="IGM-4i-ZsU">
                             <color key="tintColor" red="0.95005923510000001" green="0.39661446210000001" blue="0.073047049340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -1120,6 +1127,115 @@
             </objects>
             <point key="canvasLocation" x="2309.5999999999999" y="2435.5322338830588"/>
         </scene>
+        <!--Servicce Providers-->
+        <scene sceneID="efw-VP-JR4">
+            <objects>
+                <viewController storyboardIdentifier="JGGServiceProvidersListVC" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="qAH-Lm-2bw" customClass="JGGServiceProvidersListVC" customModule="JacksGoGo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wnh-oF-6pO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2d-Bb-Zw7">
+                                <rect key="frame" x="0.0" y="64" width="375" height="60"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_cat_householdchores" translatesAutoresizingMaskIntoConstraints="NO" id="sxH-fM-CXJ">
+                                        <rect key="frame" x="16" y="8" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="RPv-kj-dbg"/>
+                                            <constraint firstAttribute="width" secondItem="sxH-fM-CXJ" secondAttribute="height" multiplier="1:1" id="tVv-HA-W0Y"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wK-yZ-9cX">
+                                        <rect key="frame" x="48" y="8" width="319" height="15.5"/>
+                                        <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T11-14-M6D">
+                                        <rect key="frame" x="48" y="25.5" width="319" height="15.5"/>
+                                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="T11-14-M6D" firstAttribute="top" secondItem="6wK-yZ-9cX" secondAttribute="bottom" constant="2" id="5Dg-tq-7BY"/>
+                                    <constraint firstAttribute="height" constant="60" id="ADc-5B-U2P"/>
+                                    <constraint firstItem="T11-14-M6D" firstAttribute="trailing" secondItem="6wK-yZ-9cX" secondAttribute="trailing" id="N5B-Ma-dg0"/>
+                                    <constraint firstItem="sxH-fM-CXJ" firstAttribute="top" secondItem="p2d-Bb-Zw7" secondAttribute="top" constant="8" id="PpZ-1m-5Zs"/>
+                                    <constraint firstItem="6wK-yZ-9cX" firstAttribute="top" secondItem="sxH-fM-CXJ" secondAttribute="top" id="WPJ-AE-fqY"/>
+                                    <constraint firstAttribute="trailing" secondItem="6wK-yZ-9cX" secondAttribute="trailing" constant="8" id="e4K-pa-TB6"/>
+                                    <constraint firstItem="T11-14-M6D" firstAttribute="leading" secondItem="6wK-yZ-9cX" secondAttribute="leading" id="fWB-Dy-xHQ"/>
+                                    <constraint firstItem="6wK-yZ-9cX" firstAttribute="leading" secondItem="sxH-fM-CXJ" secondAttribute="trailing" constant="8" id="pdS-Nd-lqm"/>
+                                    <constraint firstItem="sxH-fM-CXJ" firstAttribute="leading" secondItem="p2d-Bb-Zw7" secondAttribute="leading" constant="16" id="txf-aX-zM3"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J8b-2U-5me">
+                                <rect key="frame" x="0.0" y="126" width="375" height="486"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="qAH-Lm-2bw" id="ybd-E4-UqE"/>
+                                    <outlet property="delegate" destination="qAH-Lm-2bw" id="2Rm-te-U6r"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DgJ-87-6vI">
+                                <rect key="frame" x="0.0" y="124" width="375" height="2"/>
+                                <color key="backgroundColor" red="0.91757661099999999" green="0.91768664119999999" blue="0.91753917929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="o5J-Wb-F3U"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zg-kz-KP0">
+                                <rect key="frame" x="0.0" y="612" width="375" height="55"/>
+                                <color key="backgroundColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Q3q-IX-hLU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                                <state key="normal" title="Invite Service Providers">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPressedInvite:" destination="qAH-Lm-2bw" eventType="touchUpInside" id="tRy-EG-bA4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5Zg-kz-KP0" firstAttribute="trailing" secondItem="DQu-en-QFL" secondAttribute="trailing" id="69Y-rB-XDa"/>
+                            <constraint firstItem="p2d-Bb-Zw7" firstAttribute="top" secondItem="DQu-en-QFL" secondAttribute="top" id="873-yh-2Eq"/>
+                            <constraint firstItem="p2d-Bb-Zw7" firstAttribute="trailing" secondItem="DQu-en-QFL" secondAttribute="trailing" id="HSI-yd-oAJ"/>
+                            <constraint firstItem="DgJ-87-6vI" firstAttribute="trailing" secondItem="DQu-en-QFL" secondAttribute="trailing" id="M5t-2l-s30"/>
+                            <constraint firstItem="J8b-2U-5me" firstAttribute="top" secondItem="DgJ-87-6vI" secondAttribute="bottom" id="Nia-7r-1Fe"/>
+                            <constraint firstItem="5Zg-kz-KP0" firstAttribute="leading" secondItem="DQu-en-QFL" secondAttribute="leading" id="RXW-dv-OFD"/>
+                            <constraint firstItem="DgJ-87-6vI" firstAttribute="top" secondItem="p2d-Bb-Zw7" secondAttribute="bottom" id="TA9-jU-9Vb"/>
+                            <constraint firstItem="J8b-2U-5me" firstAttribute="trailing" secondItem="DQu-en-QFL" secondAttribute="trailing" id="kb7-fz-Mc6"/>
+                            <constraint firstItem="DgJ-87-6vI" firstAttribute="leading" secondItem="DQu-en-QFL" secondAttribute="leading" id="lWg-6n-8ku"/>
+                            <constraint firstItem="p2d-Bb-Zw7" firstAttribute="leading" secondItem="DQu-en-QFL" secondAttribute="leading" id="n69-pm-kRH"/>
+                            <constraint firstItem="5Zg-kz-KP0" firstAttribute="bottom" secondItem="DQu-en-QFL" secondAttribute="bottom" id="unY-gu-mIV"/>
+                            <constraint firstItem="J8b-2U-5me" firstAttribute="leading" secondItem="DQu-en-QFL" secondAttribute="leading" id="vJn-7D-X1f"/>
+                            <constraint firstItem="5Zg-kz-KP0" firstAttribute="top" secondItem="J8b-2U-5me" secondAttribute="bottom" id="xiz-de-Nlj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DQu-en-QFL"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Servicce Providers" id="cxP-JD-VMv">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Xv4-9K-SZ3"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="btnInvite" destination="5Zg-kz-KP0" id="bea-eU-y1k"/>
+                        <outlet property="imgviewCategoryIcon" destination="p2d-Bb-Zw7" id="vpw-JQ-RgW"/>
+                        <outlet property="lblServiceTime" destination="T11-14-M6D" id="p2W-M8-taH"/>
+                        <outlet property="lblTitle" destination="6wK-yZ-9cX" id="LdI-5a-R3Y"/>
+                        <outlet property="tableView" destination="J8b-2U-5me" id="Egt-xD-Jkl"/>
+                        <outlet property="viewTitleBox" destination="p2d-Bb-Zw7" id="KTa-CV-nZw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gwu-vQ-oYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3231" y="1646"/>
+        </scene>
     </scenes>
     <resources>
         <image name="222.jpg" width="289" height="289"/>
@@ -1131,6 +1247,7 @@
         <image name="button_proposal_viewed" width="32" height="32"/>
         <image name="button_rehire_round_orange" width="40" height="40"/>
         <image name="button_review_round_orange" width="40" height="40"/>
+        <image name="button_tick_green" width="27" height="27"/>
         <image name="button_tip_round_orange" width="40" height="40"/>
         <image name="icon_cat_exploration" width="56" height="56"/>
         <image name="icon_cat_householdchores" width="56" height="56"/>

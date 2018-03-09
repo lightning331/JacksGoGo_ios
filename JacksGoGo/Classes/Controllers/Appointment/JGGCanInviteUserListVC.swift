@@ -13,13 +13,14 @@ class JGGCanInviteUserListVC: JGGAppointmentDetailBaseVC {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var users: [JGGProviderUserModel] = []
+    var users: [JGGUserProfileModel] = []
+    var invitedUsers: [JGGUserProfileModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initTableView()
-        makeDummyData()
+        loadProviders()
     }
 
     private func initTableView() {
@@ -58,51 +59,23 @@ class JGGCanInviteUserListVC: JGGAppointmentDetailBaseVC {
 
     }
     
-    private func makeDummyData() {
-        let user00 = JGGProviderUserModel()
-        user00.fullname = "CYYong"
-        user00.rate = 4.8
-        users.append(user00)
-        
-        let user01 = JGGProviderUserModel()
-        user01.fullname = "Christina.P"
-        user01.rate = 3.8
-        users.append(user01)
-        
-        let user02 = JGGProviderUserModel()
-        user02.fullname = "RenYW"
-        user02.rate = 4.5
-        users.append(user02)
-        
-        let user03 = JGGProviderUserModel()
-        user03.fullname = "RositaV"
-        user03.rate = 5.0
-        users.append(user03)
-        
-        let user04 = JGGProviderUserModel()
-        user04.fullname = "HeminW"
-        user04.rate = 5.0
-        users.append(user04)
-        
-        let user05 = JGGProviderUserModel()
-        user05.fullname = "Alicia.Leong"
-        user05.rate = 4.0
-        users.append(user05)
-        
-        let user06 = JGGProviderUserModel()
-        user06.fullname = "Rikita.M"
-        user06.rate = 2.3
-        users.append(user06)
-        
-        let user07 = JGGProviderUserModel()
-        user07.fullname = "Amber.W"
-        user07.rate = 5.0
-        users.append(user07)
-        
-        let user08 = JGGProviderUserModel()
-        user08.fullname = "Kelvin"
-        user08.rate = 5.0
-        users.append(user08)
+    private func loadProviders(pageIndex: Int = 0, pageSize: Int = 20) {
+        APIManager.getProvidersForInvite(pageIndex: pageIndex, pageSize: pageSize) { (result) in
+            if pageIndex == 0 {
+                self.users.removeAll()
+            }
+            self.users.append(contentsOf: result)
+            self.tableView.reloadData()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let segueId = segue.identifier {
+            if segueId == "gotoServiceProvidersListVC" {
+                let vc = segue.destination as? JGGServiceProvidersListVC
+                vc?.invitedUsers = self.invitedUsers
+            }
+        }
     }
 
 }
@@ -118,8 +91,34 @@ extension JGGCanInviteUserListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppInviteProviderCell") as! JGGAppInviteProviderCell
-        cell.user = users[indexPath.row]
+        let user = users[indexPath.row]
+        cell.user = user
+        cell.buttonAction = {
+            self.inviteUser(user)
+            self.tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+        
+        cell.disableInviteButton(false)
+        
+        for u in invitedUsers {
+            if user.id == u.id {
+                cell.disableInviteButton()
+            }
+        }
         return cell
+    }
+    
+    private func inviteUser(_ user: JGGUserProfileModel) {
+        invitedUsers.append(user)
+        if let job = self.selectedAppointment as? JGGJobModel {
+            APIManager.sendInvite(appointment: job, user: user) { (success, errorMessage) in
+                if success {
+                    
+                } else {
+                    print("Invite ERROR :", errorMessage ?? "")
+                }
+            }
+        }
     }
 
 }

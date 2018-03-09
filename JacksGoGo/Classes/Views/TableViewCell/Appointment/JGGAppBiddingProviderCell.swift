@@ -11,7 +11,6 @@ import Cosmos
 
 class JGGAppBiddingProviderCell: JGGUserAvatarNameRateCell {
 
-    @IBOutlet weak var viewMainContainer: UIView!
     @IBOutlet weak var lblPrice: UILabel!
     @IBOutlet weak var lblStatus: UILabel!
     @IBOutlet weak var imgviewNoteBadge: UIImageView!
@@ -42,13 +41,13 @@ class JGGAppBiddingProviderCell: JGGUserAvatarNameRateCell {
         if let biddingProvider = self.biddingProvider {
             self.lblUsername.text = biddingProvider.user.fullname
             self.ratebarUserRate.rating = biddingProvider.user.rate
-            self.viewMainContainer.backgroundColor = biddingProvider.isNew ? UIColor.JGGGreen10Percent : UIColor.JGGWhite
+            self.viewBackground.backgroundColor = biddingProvider.isNew ? UIColor.JGGGreen10Percent : UIColor.JGGWhite
             switch biddingProvider.status {
             case .pending:
                 self.lblPrice.text = biddingProvider.price.formattedPriceString()
                 self.lblStatus.text = nil
                 self.imgviewNoteBadge.isHidden = false
-                self.viewMainContainer.alpha = 1.0
+                self.viewBackground.alpha = 1.0
                 self.constraintPriceVerticalCenter.constant = 0
                 updateConstraints()
                 break
@@ -56,13 +55,13 @@ class JGGAppBiddingProviderCell: JGGUserAvatarNameRateCell {
                 self.lblPrice.text = nil
                 self.lblStatus.text = nil
                 self.imgviewNoteBadge.isHidden = true
-                self.viewMainContainer.alpha = 1.0
+                self.viewBackground.alpha = 1.0
                 break
             case .declined:
                 self.lblPrice.text = nil
                 self.lblStatus.text = "Declined"
                 self.imgviewNoteBadge.isHidden = true
-                self.viewMainContainer.alpha = 0.5
+                self.viewBackground.alpha = 0.5
                 self.constraintPriceVerticalCenter.constant = -10
                 updateConstraints()
                 break
@@ -70,7 +69,7 @@ class JGGAppBiddingProviderCell: JGGUserAvatarNameRateCell {
                 self.lblPrice.text = biddingProvider.price.formattedPriceString()
                 self.lblStatus.text = "Rejected"
                 self.imgviewNoteBadge.isHidden = false
-                self.viewMainContainer.alpha = 0.5
+                self.viewBackground.alpha = 0.5
                 self.constraintPriceVerticalCenter.constant = -6
                 updateConstraints()
                 break
@@ -79,7 +78,7 @@ class JGGAppBiddingProviderCell: JGGUserAvatarNameRateCell {
                 self.lblPrice.text = biddingProvider.price.formattedPriceString()
                 self.lblStatus.text = nil
                 self.imgviewNoteBadge.isHidden = true
-                self.viewMainContainer.alpha = 1.0
+                self.viewBackground.alpha = 1.0
                 self.constraintPriceVerticalCenter.constant = 0
                 updateConstraints()
                 break

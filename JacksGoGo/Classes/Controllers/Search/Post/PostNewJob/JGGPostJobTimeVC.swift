@@ -13,7 +13,7 @@ import AFDateHelper
 class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
 
     
-    fileprivate var selectedJobType: JGGJobType = .none
+    fileprivate var selectedJobType: Int = 0
     fileprivate var selectedDate: Date?
     fileprivate var selectedStartTime: Date?
     fileprivate var selectedEndTime: Date?
@@ -39,7 +39,7 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
     }
 
     private func showTemporaryData() {
-        selectedJobType = .repeating
+        selectedJobType = 0
         selectedRepeatingType = .weekly
         selectedRepeatingDays = [0, 5]
     }
@@ -48,7 +48,7 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
         if let parent = self.parent as? JGGPostStepRootBaseVC,
             let editingJob = parent.editingJob
         {
-            selectedJobType = editingJob.jobType
+            selectedJobType = editingJob.appointmentType
             selectedRepeatingType = editingJob.repetitionType
             selectedRepeatingDays =
                 editingJob
@@ -70,12 +70,12 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
             Toast(text: LocalizedString("Select a kind of job"), delay: 0, duration: 3).show()
             readyToNext = false
         } else {
-            if selectedJobType == .oneTime { // One time job
+            if selectedJobType == 1 { // One time job
                 if selectedDate == nil || (selectedStartTime == nil && selectedEndTime == nil) {
                     Toast(text: LocalizedString("Please set date and time."), delay: 0, duration: 3).show()
                     readyToNext = false
                 }
-            } else if selectedJobType == .repeating { // Repeating job
+            } else { // Repeating job
                 if selectedRepeatingType == .none || selectedRepeatingDays.count == 0 {
                     Toast(text: LocalizedString("Please set dates for repeating."), delay: 0, duration: 3).show()
                     readyToNext = false
@@ -96,7 +96,7 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
                 creatingJob = parentVC.creatingJob
             }
             if let creatingJob = creatingJob {
-                creatingJob.jobType = selectedJobType
+                creatingJob.appointmentType = selectedJobType
                 if let selectedDate = selectedDate, let selectedStartTime = selectedStartTime, let isSpecific = isSpecifiedDate {
                     let dateString = selectedDate.toString(format: DateOnly)
                     let startTimeString = selectedStartTime.toString(format: TimeOnly)
@@ -150,7 +150,7 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
                 cell.selectedJobType = self.selectedJobType
                 return cell
             } else if indexPath.row == 1 {
-                if selectedJobType == .oneTime {
+                if selectedJobType == 0 {
                     let cell = tableView.dequeueReusableCell(withIdentifier: "JGGPostJobTimeOneTimeCell") as! JGGPostJobTimeOneTimeCell
                     cell.changedTypeHandler = { isSpecific in
                         self.tableView.beginUpdates()
@@ -166,7 +166,7 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
                     cell.isSpecifyDate = isSpecifiedDate
                     return cell
                 }
-                else if selectedJobType == .repeating {
+                else  {
                     let cell = tableView.dequeueReusableCell(withIdentifier: "JGGPostJobTimeRepeatingCell") as! JGGPostJobTimeRepeatingCell
                     cell.changedTypeHandler = { isMonthly in
                         self.selectedRepeatingType = isMonthly
@@ -288,22 +288,22 @@ class JGGPostJobTimeTypeCell: UITableViewCell {
     @IBOutlet weak var btnOnetimeJob: JGGYellowSelectingButton!
     @IBOutlet weak var btnRepeatingJob: JGGYellowSelectingButton!
 
-    var selectingHandler: ((JGGJobType) -> Void)!
-    var selectedJobType: JGGJobType = .none {
+    var selectingHandler: ((Int) -> Void)!
+    var selectedJobType: Int = -1 {
         didSet {
             switch selectedJobType {
-            case .none:
+            case -1:
                 btnOnetimeJob.isHidden = false
                 btnRepeatingJob.isHidden = false
                 btnOnetimeJob.select(false)
                 btnRepeatingJob.select(false)
                 break
-            case .oneTime:
+            case 1:
                 btnOnetimeJob.isHidden = false
                 btnRepeatingJob.isHidden = true
                 btnOnetimeJob.select(true)
                 break
-            case .repeating:
+            default:
                 btnOnetimeJob.isHidden = true
                 btnRepeatingJob.isHidden = false
                 btnRepeatingJob.select(true)
@@ -319,13 +319,13 @@ class JGGPostJobTimeTypeCell: UITableViewCell {
     }
     
     @IBAction fileprivate func onPressedButton(_ sender: JGGYellowSelectingButton) {
-        var type: JGGJobType = .none
+        var type: Int = 0
         if !sender.selected() {
             if sender == btnOnetimeJob {
-                type = .oneTime
+                type = 1
             }
             else if sender == btnRepeatingJob {
-                type = .repeating
+                type = 0
             }
         }
         self.selectedJobType = type

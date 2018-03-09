@@ -14,7 +14,7 @@ class JGGJobModel: JGGAppointmentBaseModel {
     internal let CategoryID     = "CategoryID"
     internal let Category       = "Category"
     internal let IsRequest      = "IsRequest"
-    internal let ServiceType    = "ServiceType"
+    internal let AppointmentType = "AppointmentType"
     internal let AttachmentURL  = "AttachmentURLs"
     internal let BudgetFrom     = "BudgetFrom"
     internal let BudgetTo       = "BudgetTo"
@@ -32,7 +32,7 @@ class JGGJobModel: JGGAppointmentBaseModel {
     var categoryId: String!
     var category: JGGCategoryModel?
     var isRequest: Bool = true
-    var serviceType: Int = 0
+    var appointmentType: Int = 0  // 0: Repetation, 1: One-time
     var attachmentUrl: [String]?
     var budgetFrom: Double?
     var budgetTo: Double?
@@ -40,7 +40,6 @@ class JGGJobModel: JGGAppointmentBaseModel {
     var expiredOn: Date?
     var reportType: Int = 0
     var isRescheduled: Bool?
-    var jobType: JGGJobType = .none
     var repetitionType: JGGRepetitionType?
     var repetition: String?
     var isQuickJob: Bool = false
@@ -68,7 +67,7 @@ class JGGJobModel: JGGAppointmentBaseModel {
         categoryId = json[CategoryID].stringValue
         category = JGGCategoryModel(json: json[Category])
         isRequest = json[IsRequest].boolValue
-        serviceType = json[ServiceType].intValue
+        appointmentType = json[AppointmentType].intValue
         attachmentUrl = json[AttachmentURL].arrayObject as? [String]
         budgetFrom = json[BudgetFrom].double
         budgetTo = json[BudgetTo].double
@@ -76,7 +75,6 @@ class JGGJobModel: JGGAppointmentBaseModel {
         expiredOn = json[ExpiredOn].dateObject
         reportType = json[ReportType].intValue
         isRescheduled = json[IsRescheduled].bool
-        jobType = JGGJobType(rawValue: json[JobType].intValue) ?? .none
         if let value = json[RepetitionType].int {
             repetitionType = JGGRepetitionType(rawValue: value) ?? .none
         }
@@ -101,7 +99,7 @@ class JGGJobModel: JGGAppointmentBaseModel {
             json[Category] = category.json()
         }
         json[IsRequest].boolValue = isRequest
-        json[ServiceType].intValue = serviceType
+        json[appointmentType].intValue = appointmentType
         json[AttachmentURL].arrayObject = attachmentUrl
         json[BudgetFrom].double = budgetFrom
         json[BudgetTo].double = budgetTo
@@ -109,7 +107,6 @@ class JGGJobModel: JGGAppointmentBaseModel {
         json[ExpiredOn].dateObject = expiredOn
         json[ReportType].intValue = reportType
         json[IsRescheduled].bool = isRescheduled
-        json[JobType].intValue = jobType.rawValue
         json[RepetitionType].int = repetitionType?.rawValue
         json[Repetition].string = repetition
         json[IsQuickJob].boolValue = isQuickJob

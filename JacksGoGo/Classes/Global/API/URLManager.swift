@@ -222,6 +222,10 @@ class URLManager: NSObject {
         static func GetProposalsByUser(id: String, pageIndex: Int = 0, pageSize: Int = 20) -> String {
             return fullPath(for: String(format: "/GetProposalsByUser?ID=\(id)&pageIndex=\(pageIndex)&pageSize=\(pageSize))"))
         }
+        
+        static var GetUsersForInvite: String {
+            return fullPath(for: "/GetUsersForInvite")
+        }
     }
     
     class User: NSObject {

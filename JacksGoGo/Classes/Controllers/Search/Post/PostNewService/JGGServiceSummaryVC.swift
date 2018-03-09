@@ -52,7 +52,7 @@ class JGGServiceSummaryVC: JGGPostAppointmentBaseTableVC {
             if tags != nil { serviceTagView.addTags(tags!) }
             
             var budget: String
-            if creatingService.serviceType < 2 {
+            if creatingService.appointmentType < 2 {
                 if let fixedAmount = creatingService.budget {
                     budget = String(format: "Fixed $ %.02f", fixedAmount)
                 } else if let minAmount = creatingService.budgetFrom,
@@ -63,7 +63,7 @@ class JGGServiceSummaryVC: JGGPostAppointmentBaseTableVC {
                     budget = "No set"
                 }
             } else {
-                budget = String(format: "%d Services", creatingService.serviceType)
+                budget = String(format: "%d Services", creatingService.appointmentType)
                 if let price = creatingService.budget {
                     budget += String(format: ", $ %.02f per service", price)
                 }

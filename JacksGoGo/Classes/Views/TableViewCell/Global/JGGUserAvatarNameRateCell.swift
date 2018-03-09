@@ -11,6 +11,7 @@ import Cosmos
 
 class JGGUserAvatarNameRateCell: UITableViewCell {
 
+    @IBOutlet weak var viewBackground: UIView!
     @IBOutlet weak var imgviewUserAvatar: JGGCircleImageView!
     @IBOutlet weak var lblUsername: UILabel!
     @IBOutlet weak var ratebarUserRate: CosmosView!

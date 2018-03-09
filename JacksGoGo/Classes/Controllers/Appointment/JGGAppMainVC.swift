@@ -154,7 +154,7 @@ class JGGAppMainVC: JGGStartTableVC {
         for job in jobs {
             if job.isQuickJob {
                 arrayLoadedQuickJobs.append(job)
-            } else if job.isRequest == false && job.serviceType > 1 {
+            } else if job.isRequest == false && job.appointmentType > 1 {
                 arrayLoadedServicePackages.append(job)
             } else {
                 arrayLoadedPendingJobs.append(job)

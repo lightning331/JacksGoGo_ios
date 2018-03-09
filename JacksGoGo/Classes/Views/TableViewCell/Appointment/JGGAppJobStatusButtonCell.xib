@@ -70,6 +70,9 @@
                                         <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onPressButton:" destination="yrQ-AB-Bpa" eventType="touchUpInside" id="Brw-ju-JXu"/>
+                                </connections>
                             </button>
                         </subviews>
                     </stackView>

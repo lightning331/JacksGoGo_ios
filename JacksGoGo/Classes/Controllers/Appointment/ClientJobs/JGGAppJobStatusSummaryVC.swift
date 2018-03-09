@@ -190,6 +190,9 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
                 } else {
                     desc = LocalizedString("Waiting for Service Providers to respond...")
                     buttonTitle = LocalizedString("Invite Service Providers")
+                    cell.buttonAction = {
+                        self.onPressedInviteServiceProviders(cell.btnViewJob)
+                    }
                 }
                 cell.setType(.watingProvider,
                              time: nil,
@@ -295,6 +298,12 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
     
     fileprivate func onPressedViewQuotations(_ sender: UIButton) {
         
+    }
+    
+    fileprivate func onPressedInviteServiceProviders(_ sender: UIButton) {
+        let providersVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGCanInviteUserListVC") as! JGGCanInviteUserListVC
+        providersVC.selectedAppointment = self.job
+        self.navigationController?.pushViewController(providersVC, animated: true)
     }
     
     /*

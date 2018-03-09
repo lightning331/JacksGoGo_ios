@@ -103,6 +103,7 @@
 		FF21FB001FAB67E5004D0ADA /* FCAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAFD1FAB67E5004D0ADA /* FCAlertView.swift */; };
 		FF21FB011FAB67E5004D0ADA /* FCAlertViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAFE1FAB67E5004D0ADA /* FCAlertViewDelegate.swift */; };
 		FF21FB021FAB67E5004D0ADA /* FCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21FAFF1FAB67E5004D0ADA /* FCColors.swift */; };
+		FF2B4B4A205307C000E58EBB /* JGGServiceProvidersListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2B4B49205307C000E58EBB /* JGGServiceProvidersListVC.swift */; };
 		FF36F1681FB8CE920055674F /* JGGServiceListingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36F1671FB8CE920055674F /* JGGServiceListingVC.swift */; };
 		FF36F16A1FB8D4C60055674F /* JGGActiveServicesAroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36F1691FB8D4C60055674F /* JGGActiveServicesAroundVC.swift */; };
 		FF7C991F1FB3180800A2E5E4 /* JGGAppClinetServiceDetailRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7C991E1FB3180800A2E5E4 /* JGGAppClinetServiceDetailRootVC.swift */; };
@@ -392,6 +393,7 @@
 		FF21FAFD1FAB67E5004D0ADA /* FCAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCAlertView.swift; sourceTree = "<group>"; };
 		FF21FAFE1FAB67E5004D0ADA /* FCAlertViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCAlertViewDelegate.swift; sourceTree = "<group>"; };
 		FF21FAFF1FAB67E5004D0ADA /* FCColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCColors.swift; sourceTree = "<group>"; };
+		FF2B4B49205307C000E58EBB /* JGGServiceProvidersListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceProvidersListVC.swift; sourceTree = "<group>"; };
 		FF36F1671FB8CE920055674F /* JGGServiceListingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGServiceListingVC.swift; sourceTree = "<group>"; };
 		FF36F1691FB8D4C60055674F /* JGGActiveServicesAroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGActiveServicesAroundVC.swift; sourceTree = "<group>"; };
 		FF7C991E1FB3180800A2E5E4 /* JGGAppClinetServiceDetailRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppClinetServiceDetailRootVC.swift; sourceTree = "<group>"; };
@@ -903,6 +905,7 @@
 				FFB5941A1FDE66BC00D12A1F /* ClientJobs */,
 				FF0CA88F1FB205F600A2C98B /* JGGLocationMapVC.swift */,
 				FFFC213A1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift */,
+				FF2B4B49205307C000E58EBB /* JGGServiceProvidersListVC.swift */,
 				FFFC213E1FB5C0AA00AAA6F7 /* JGGBidDetailVC.swift */,
 			);
 			path = Appointment;
@@ -1816,6 +1819,7 @@
 				FF12131C2020CFAF00FBA64F /* JGGPostStepRootBaseVC.swift in Sources */,
 				FFFC213F1FB5C0AA00AAA6F7 /* JGGBidDetailVC.swift in Sources */,
 				FF849DF41FD6EFBF003EB83A /* JGGSkillTestQuestionCell.swift in Sources */,
+				FF2B4B4A205307C000E58EBB /* JGGServiceProvidersListVC.swift in Sources */,
 				FFEB45D81FEC216200F362FF /* JGGProfileNC.swift in Sources */,
 				FF849DFD1FD708DF003EB83A /* JGGPostAppointmentBaseTableVC.swift in Sources */,
 				FFB594301FDE85E700D12A1F /* JGGAppJobStatusButtonCell.swift in Sources */,

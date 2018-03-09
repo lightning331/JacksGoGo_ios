@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,8 +35,8 @@
                                     <constraint firstAttribute="width" secondItem="Gwu-EZ-gTg" secondAttribute="height" multiplier="1:1" id="EwP-9X-pys"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="CYYong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="32u-p9-B6l">
-                                <rect key="frame" x="91" y="21" width="54.5" height="17.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="CYYong" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="32u-p9-B6l">
+                                <rect key="frame" x="91" y="19.5" width="210" height="19"/>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -67,12 +67,18 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulD-N7-e3n">
-                                <rect key="frame" x="323" y="4" width="36" height="67"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulD-N7-e3n">
+                                <rect key="frame" x="309" y="4" width="50" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="a7e-2r-ysB"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                 <state key="normal" title="Invite">
                                     <color key="titleColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onPressedButton:" destination="Avd-xT-cgp" eventType="touchUpInside" id="RLS-OU-LZi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,6 +92,7 @@
                             <constraint firstAttribute="height" constant="75" id="fxr-QK-6V6"/>
                             <constraint firstItem="Gwu-EZ-gTg" firstAttribute="leading" secondItem="Hqn-dL-dbg" secondAttribute="leadingMargin" constant="16" id="jex-9D-Tlf"/>
                             <constraint firstItem="ulD-N7-e3n" firstAttribute="top" secondItem="Hqn-dL-dbg" secondAttribute="top" constant="4" id="oVm-9O-Ndl"/>
+                            <constraint firstItem="ulD-N7-e3n" firstAttribute="leading" secondItem="32u-p9-B6l" secondAttribute="trailing" constant="8" id="qww-tD-cnH"/>
                             <constraint firstItem="8fy-Q5-0mp" firstAttribute="top" secondItem="32u-p9-B6l" secondAttribute="bottom" constant="2" id="rjs-wr-Asq"/>
                             <constraint firstAttribute="bottom" secondItem="ulD-N7-e3n" secondAttribute="bottom" constant="4" id="ssq-Ub-htw"/>
                         </constraints>
@@ -104,6 +111,7 @@
                 <outlet property="imgviewUserAvatar" destination="Gwu-EZ-gTg" id="wmC-d7-PEi"/>
                 <outlet property="lblUsername" destination="32u-p9-B6l" id="8Im-Pu-776"/>
                 <outlet property="ratebarUserRate" destination="8fy-Q5-0mp" id="YP7-M0-Rzk"/>
+                <outlet property="viewBackground" destination="Hqn-dL-dbg" id="2W5-Ha-JsO"/>
             </connections>
             <point key="canvasLocation" x="-89.5" y="0.0"/>
         </tableViewCell>

@@ -20,6 +20,7 @@ class JGGAppJobStatusButtonCell: JGGAppJobStatusCell {
             return btnViewJob.title(for: .normal)
         }
     }
+    var buttonAction: VoidClosure?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,6 +43,12 @@ class JGGAppJobStatusButtonCell: JGGAppJobStatusCell {
     func enable() {
         btnViewJob.isEnabled = true
         btnViewJob.alpha = 1.0
+    }
+    
+    @IBAction func onPressButton(_ sender: UIButton) {
+        if let buttonAction = buttonAction {
+            buttonAction()
+        }
     }
     
 }

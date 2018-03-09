@@ -62,7 +62,7 @@ class JGGPostServicePriceVC: JGGPostAppointmentBaseTableVC {
             creatingService.budgetFrom = nil
             creatingService.budgetTo = nil
             if selectedServiceType == 1 {
-                creatingService.serviceType = 1
+                creatingService.appointmentType = 1
                 if priceType == 1 {
                     creatingService.budget = fixedPrice
                 } else if priceType == 2 {
@@ -70,7 +70,7 @@ class JGGPostServicePriceVC: JGGPostAppointmentBaseTableVC {
                     creatingService.budgetTo = maxPrice
                 }
             } else if selectedServiceType == 2 {
-                creatingService.serviceType = self.packageNo
+                creatingService.appointmentType = self.packageNo
                 creatingService.budget = self.packagePrice
             }
         }

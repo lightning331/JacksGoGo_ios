@@ -590,13 +590,13 @@ class JGGAPIManager: NSObject {
     func postService(_ service: JGGJobModel, complete: @escaping StringStringClosure) -> Void
     {
         CLS_LOG_SWIFT(format: "postService url: %@\nBODY: %@", [URLManager.Appointment.PostService, service.json().description])
-        POST(url: URLManager.Appointment.PostService, body: service.json().dictionaryObject) { (json, error) in
-            if let response = json {
-                let success = response[SUCCESS_KEY].boolValue
+        POST(url: URLManager.Appointment.PostService, body: service.json().dictionaryObject) { (response, error) in
+            if let json = response {
+                let success = json[SUCCESS_KEY].boolValue
                 if success {
-                    complete(response[VALUE_KEY].stringValue, nil)
+                    complete(json[VALUE_KEY].stringValue, nil)
                 } else {
-                    complete(nil, response[MESSAGE_KEY].stringValue)
+                    complete(nil, json[MESSAGE_KEY].stringValue)
                 }
             } else if let error = error {
                 complete(nil, error.localizedDescription)
@@ -615,8 +615,24 @@ class JGGAPIManager: NSObject {
         
     }
     
-    func sendInvite() -> Void {
-        
+    func sendInvite(appointment: JGGJobModel, user: JGGUserProfileModel, complete: @escaping BoolStringClosure) -> Void {
+        if let appointmentID = appointment.id, let userProfileID = user.id {
+            let params: Dictionary = [
+                "AppointmentID": appointmentID,
+                "UserProfileID": userProfileID
+            ]
+            let url = URLManager.Proposal.SendInvite
+            POST(url: url, body: params, complete: { (response, error) in
+                if let json = response {
+                    let success = json[SUCCESS_KEY].boolValue
+                    complete(success, nil)
+                } else if let error = error {
+                    complete(false, error.localizedDescription)
+                } else {
+                    complete(false, LocalizedString("Unknown request error."))
+                }
+            })
+        }
     }
     
     func approveProposal() -> Void {
@@ -627,7 +643,12 @@ class JGGAPIManager: NSObject {
         
     }
     
-    func getProposalsBy(jobId: String, pageIndex: Int = 0, pageSize: Int = 20, complete: @escaping ProposalsClosure) -> Void {
+    func getProposalsBy(
+        jobId: String,
+        pageIndex: Int = 0,
+        pageSize: Int = 20,
+        complete: @escaping ProposalsClosure) -> Void
+    {
         let url = URLManager.Proposal.GetProposalsByJob(id: jobId, pageIndex: pageIndex, pageSize: pageSize)
         GET(url: url, params: nil) { (response, error) in
             if let json = response {
@@ -638,6 +659,58 @@ class JGGAPIManager: NSObject {
                     }
                 }
                 complete(proposals)
+            }
+        }
+    }
+    
+    func getProvidersForInvite(
+        pageIndex: Int = 0,
+        pageSize: Int = 20,
+        categoryID: String? = nil,
+        city: String? = nil,
+        state: String? = nil,
+        postalCode: String? = nil,
+        lat: Double? = nil,
+        lon: Double? = nil,
+        complete: @escaping ProvidersClosure) -> Void
+    {
+        var params: Dictionary = [
+            "pageIndex": pageIndex,
+            "pageSize": pageSize
+        ]
+        if let categoryID = categoryID {
+            params["CategoryID"] = categoryID
+        }
+        if let city = city  {
+            params["City"] = city
+        }
+        if let state = state  {
+            params["State"] = state
+        }
+        if let postalCode = postalCode {
+            params["PostalCode"] = postalCode
+        }
+        if let lat = lat, let lon = lon {
+            params["lat"] = lat
+            params["lon"] = lon
+        }
+        let url = URLManager.Proposal.GetUsersForInvite
+        POST(url: url, body: params) { (response, error) in
+            if let json = response {
+                let success = json[SUCCESS_KEY].boolValue
+                if success {
+                    var providers: [JGGUserProfileModel] = []
+                    for jsonProvider in json[VALUE_KEY].arrayValue {
+                        if let user = JGGUserProfileModel(json: jsonProvider) {
+                            providers.append(user)
+                        }
+                    }
+                    complete(providers)
+                    return
+                }
+            } else {
+                complete([])
+                print("getProvidersForInvite ERROR: ", error ?? "")
             }
         }
     }

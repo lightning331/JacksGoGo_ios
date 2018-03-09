@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -39,7 +39,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 100.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eFU-xd-x2q">
-                                <rect key="frame" x="236" y="23" width="90" height="17.5"/>
+                                <rect key="frame" x="236" y="22.5" width="90" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="ong-ip-s25"/>
                                 </constraints>
@@ -48,13 +48,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="CYYong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8H1-LD-BZJ">
-                                <rect key="frame" x="82.5" y="19" width="145" height="17.5"/>
+                                <rect key="frame" x="82.5" y="18.5" width="145" height="19"/>
                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqm-fd-3ms" customClass="CosmosView" customModule="Cosmos">
-                                <rect key="frame" x="82.5" y="38.5" width="80" height="15"/>
+                                <rect key="frame" x="82.5" y="39.5" width="80" height="15"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="I1n-1c-pBY"/>
@@ -80,7 +80,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Declined" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OLc-gE-bSb">
-                                <rect key="frame" x="236" y="40.5" width="47" height="14"/>
+                                <rect key="frame" x="236" y="41.5" width="48" height="15.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -139,7 +139,7 @@
                 <outlet property="lblStatus" destination="OLc-gE-bSb" id="nTx-eX-4lm"/>
                 <outlet property="lblUsername" destination="8H1-LD-BZJ" id="9eV-ku-XaG"/>
                 <outlet property="ratebarUserRate" destination="bqm-fd-3ms" id="FOW-Aq-FJ7"/>
-                <outlet property="viewMainContainer" destination="H4M-gP-5he" id="BFk-KP-SCf"/>
+                <outlet property="viewBackground" destination="H4M-gP-5he" id="KBY-5w-aOp"/>
             </connections>
             <point key="canvasLocation" x="27" y="51.5"/>
         </tableViewCell>

@@ -37,4 +37,13 @@ class JGGCategoryModel: JGGBaseModel {
         json["Image"].string = image
         return json
     }
+    
+    func imageURL() -> URL? {
+        if let urlString = image {
+            let url = URL(string: urlString)
+            return url
+        } else {
+            return nil
+        }
+    }
 }

@@ -46,7 +46,7 @@ class JGGAppHistoryListCell: UITableViewCell {
             if let firstSession = appointment.sessions?.first,
                 let startTime = firstSession.startOn
             {
-                desc = "Need on" + startTime.toString(format: .custom("d MMM, yyyy"))
+                desc = "Need on " + startTime.toString(format: .custom("d MMM, yyyy"))
             } else {
                 desc = appointment.description_ ?? ""
             }

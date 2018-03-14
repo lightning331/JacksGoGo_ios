@@ -60,20 +60,23 @@ class JGGPostJobPriceVC: JGGPostAppointmentBaseTableVC {
         if let parent = self.parent as? JGGPostStepRootBaseVC,
             let editingJob = parent.editingJob
         {
-            if let fixedBudget = editingJob.budget {
-                txtFixedAmount.text = String(format: "%.2f", fixedBudget)
+            selectedPriceType = editingJob.budgetType
+            if selectedPriceType == 1 {
+                btnNoLimits.select(false)
+                onPressedPriceType(btnNoLimits)
+            } else if selectedPriceType == 2 {
+                txtFixedAmount.text = String(format: "%.2f", editingJob.budget ?? 0)
                 btnFixedAmount.select(false)
                 onPressedPriceType(btnFixedAmount)
-            } else if let minAmount = editingJob.budgetFrom,
-                let maxAmount = editingJob.budgetTo
-            {
+            } else if selectedPriceType == 2 {
+                let minAmount = editingJob.budgetFrom ?? 0
+                let maxAmount = editingJob.budgetTo ?? 0
                 txtRangeMaxAmount.text = String(format: "%.2f", maxAmount)
                 txtRangeMinAmount.text = String(format: "%.2f", minAmount)
                 btnRangeAmount.select(false)
                 onPressedPriceType(btnRangeAmount)
             } else {
-                btnNoLimits.select(false)
-                onPressedPriceType(btnNoLimits)
+                
             }
         }
     }
@@ -115,6 +118,7 @@ class JGGPostJobPriceVC: JGGPostAppointmentBaseTableVC {
                 creatingJob.budget = nil
                 creatingJob.budgetFrom = nil
                 creatingJob.budgetTo = nil
+                creatingJob.budgetType = selectedPriceType
                 if selectedPriceType == 2 {
                     creatingJob.budget = Double(txtFixedAmount.text ?? "0")
                 }

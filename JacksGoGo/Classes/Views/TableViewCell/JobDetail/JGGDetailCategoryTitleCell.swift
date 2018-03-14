@@ -23,6 +23,18 @@ class JGGDetailCategoryTitleCell: UITableViewCell {
         }
     }
     
+    var category: JGGCategoryModel? {
+        didSet {
+            let placeholderImage: UIImage? = nil
+            if let url = category?.imageURL() {
+                imgviewIcon.af_setImage(withURL: url, placeholderImage: placeholderImage)
+            } else {
+                imgviewIcon.image = placeholderImage
+            }
+            lblCategoryName.text = category?.name
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

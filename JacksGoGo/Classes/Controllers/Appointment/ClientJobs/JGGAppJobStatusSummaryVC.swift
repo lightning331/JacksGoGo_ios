@@ -90,7 +90,7 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
             }
         }
         self.lblTitle.text = job.title
-//        var timeString: String = ""
+        self.lblTime.text = job.jobTimeDescription()
         
     }
     
@@ -161,12 +161,17 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
         let statusIndex = cellCount - indexPath.row - 1
         if statusIndex == 0 {
             // Posted this job in Jobs
-            let cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppJobStatusCell") as! JGGAppJobStatusCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppJobStatusAccessoryCell") as! JGGAppJobStatusAccessoryCell
             cell.setType(.posted,
                          time: job.postOn,
                          isActive: false,
                          text: LocalizedString("New job request posted."),
                          boldStrings: nil)
+            cell.accessoryButtonActionClosure = {
+                let jobDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGJobDetailVC") as! JGGJobDetailVC
+                jobDetailVC.selectedAppointment = self.job
+                self.navigationController?.pushViewController(jobDetailVC, animated: true)
+            }
             return cell
         } else if statusIndex == 1 {
             // Waiting provider or quotations

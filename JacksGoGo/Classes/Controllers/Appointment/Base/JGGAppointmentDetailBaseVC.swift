@@ -15,7 +15,7 @@ class JGGAppointmentDetailBaseVC: JGGAppointmentsBaseVC {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblServiceTime: UILabel!
 
-    var selectedAppointment: JGGAppointmentBaseModel?
+    var selectedAppointment: JGGJobModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +29,8 @@ class JGGAppointmentDetailBaseVC: JGGAppointmentsBaseVC {
     }
     
     private func showCategoryAndTitle() {
-        lblTitle.text = "Gardening"
-        lblServiceTime.text = "21 Jul, 2017 10:00 AM - 12:00 PM"
+        lblTitle.text = selectedAppointment?.title
+        lblServiceTime.text = selectedAppointment?.jobTimeDescription()
         
         if selectedAppointment?.type == .service {
             self.navigationItem.rightBarButtonItem = nil

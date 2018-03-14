@@ -208,12 +208,27 @@ extension JGGSearchMainVC { // UITableViewDataSource, UITableViewDelegate
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        gotoBidDetailVC()
+        if self.selectedTab == .services {
+            gotoServiceDetailVC()
+        } else if self.selectedTab == .jobs {
+            gotoJobDetailVC(with: JGGJobModel())
+        } else if self.selectedTab == .goclub {
+            
+        }
+        
     }
     
-    private func gotoBidDetailVC() {
+    private func gotoServiceDetailVC() {
         let detailVC = JGGServiceDetailVC()
         detailVC.isCanBuyService = true
+        self.navigationController?
+            .pushViewController(detailVC, animated: true)
+    }
+    
+    private func gotoJobDetailVC(with job: JGGJobModel) {
+        let jobsStoryboard = UIStoryboard(name: "Jobs", bundle: nil)
+        let detailVC = jobsStoryboard.instantiateViewController(withIdentifier: "JGGOriginalJobDetailVC") as! JGGOriginalJobDetailVC
+        detailVC.job = job
         self.navigationController?
             .pushViewController(detailVC, animated: true)
     }

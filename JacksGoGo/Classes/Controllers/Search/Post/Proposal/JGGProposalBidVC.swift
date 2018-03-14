@@ -1,15 +1,19 @@
 //
-//  JGGServicesBaseTableVC.swift
+//  JGGProposalBidVC.swift
 //  JacksGoGo
 //
-//  Created by Hemin Wang on 25/10/2017.
-//  Copyright © 2017 Hemin Wang. All rights reserved.
+//  Created by Hemin Wang on 3/14/18.
+//  Copyright © 2018 Hemin Wang. All rights reserved.
 //
 
 import UIKit
 
-class JGGSearchBaseTableVC: JGGTableViewController {
+class JGGProposalBidVC: JGGPostAppointmentBaseTableVC {
 
+    @IBOutlet weak var lblAppointmentPrice: UILabel!
+    @IBOutlet weak var txtPrice: UITextField!
+    @IBOutlet weak var txtBreakdown: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,21 +24,11 @@ class JGGSearchBaseTableVC: JGGTableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 3
     }
 
 

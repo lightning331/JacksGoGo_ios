@@ -55,40 +55,7 @@ class JGGPostJobSummaryVC: JGGPostAppointmentBaseTableVC {
             if tags != nil { tagview.addTags(tags!) }
             
             // Time
-            var timeString: String = ""
-            
-            if let jobTime = creatingJob.sessions?.first {
-                let startTime = jobTime.startOn
-                if jobTime.isSpecific == true {
-                    timeString = "on "
-                } else {
-                    timeString = "any time until "
-                }
-                timeString += ((startTime?.toString(format: .custom("d MMM, yyyy")) ?? "") + " " + (startTime?.timeForJacks() ?? ""))
-                if let endTime = jobTime.endOn {
-                    timeString += (" - " + endTime.timeForJacks())
-                }
-            }
-            else if creatingJob.repetitionType != nil {
-                if creatingJob.repetitionType == .weekly {
-                    let days =
-                        creatingJob
-                            .repetition!
-                            .split(separator: ",")
-                            .flatMap { weekNames[Int($0)!] }
-                            .joined(separator: ", ")
-                    timeString = String(format: "Every %@ of the week", days)
-                } else if creatingJob.repetitionType == .monthly {
-                    let days =
-                        creatingJob
-                            .repetition!
-                            .split(separator: ",")
-                            .flatMap { dayNames[Int($0)! - 1] }
-                            .joined(separator: ", ")
-                    timeString = String(format: "Every %@ of the month", days)
-                }
-            }
-            lblTime.text = timeString
+            lblTime.text = creatingJob.jobTimeDescription()
             
             // Address
             lblAddress.text = creatingJob.address?.fullName

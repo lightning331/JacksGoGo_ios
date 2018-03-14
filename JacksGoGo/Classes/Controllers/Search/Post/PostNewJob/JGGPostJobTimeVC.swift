@@ -13,7 +13,7 @@ import AFDateHelper
 class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
 
     
-    fileprivate var selectedJobType: Int = 0
+    fileprivate var selectedJobType: Int = -1
     fileprivate var selectedDate: Date?
     fileprivate var selectedStartTime: Date?
     fileprivate var selectedEndTime: Date?
@@ -66,7 +66,7 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
     
     override func onPressedNext(_ sender: UIButton) {
         var readyToNext: Bool = true
-        if selectedJobType == .none {
+        if selectedJobType == -1 {
             Toast(text: LocalizedString("Select a kind of job"), delay: 0, duration: 3).show()
             readyToNext = false
         } else {
@@ -121,7 +121,7 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if self.selectedRepeatingType != .none {
+        if selectedJobType != 1 && selectedJobType > -1 {
             return 2
         } else {
             return 1
@@ -130,7 +130,7 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            if selectedJobType == .none {
+            if selectedJobType == -1 {
                 return 1
             }
             return 2
@@ -150,7 +150,7 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
                 cell.selectedJobType = self.selectedJobType
                 return cell
             } else if indexPath.row == 1 {
-                if selectedJobType == 0 {
+                if selectedJobType == 1 {
                     let cell = tableView.dequeueReusableCell(withIdentifier: "JGGPostJobTimeOneTimeCell") as! JGGPostJobTimeOneTimeCell
                     cell.changedTypeHandler = { isSpecific in
                         self.tableView.beginUpdates()
@@ -166,7 +166,7 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
                     cell.isSpecifyDate = isSpecifiedDate
                     return cell
                 }
-                else  {
+                else {
                     let cell = tableView.dequeueReusableCell(withIdentifier: "JGGPostJobTimeRepeatingCell") as! JGGPostJobTimeRepeatingCell
                     cell.changedTypeHandler = { isMonthly in
                         self.selectedRepeatingType = isMonthly
@@ -319,7 +319,7 @@ class JGGPostJobTimeTypeCell: UITableViewCell {
     }
     
     @IBAction fileprivate func onPressedButton(_ sender: JGGYellowSelectingButton) {
-        var type: Int = 0
+        var type: Int = -1
         if !sender.selected() {
             if sender == btnOnetimeJob {
                 type = 1

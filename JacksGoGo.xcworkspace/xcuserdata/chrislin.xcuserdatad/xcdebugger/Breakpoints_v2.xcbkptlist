@@ -36,12 +36,12 @@
                   moduleName = "JacksGoGo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Volumes/Data/project/me/jacksgogo/JacksGoGo/Classes/Global/API/JGGAPIManager.swift"
-                  timestampString = "542323821.96732"
+                  timestampString = "542745000.098976"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "522"
                   endingLineNumber = "522"
-                  offsetFromSymbolStart = "1290">
+                  offsetFromSymbolStart = "988">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -51,12 +51,12 @@
                   moduleName = "JacksGoGo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Volumes/Data/project/me/jacksgogo/JacksGoGo/Classes/Global/API/JGGAPIManager.swift"
-                  timestampString = "542323821.973743"
+                  timestampString = "542745000.10499"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "523"
                   endingLineNumber = "523"
-                  offsetFromSymbolStart = "119">
+                  offsetFromSymbolStart = "140">
                </Location>
             </Locations>
          </BreakpointContent>

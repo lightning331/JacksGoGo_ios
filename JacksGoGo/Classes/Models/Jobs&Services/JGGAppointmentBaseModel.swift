@@ -121,4 +121,5 @@ class JGGAppointmentBaseModel: JGGBaseModel, MKAnnotation {
     func appointmentMonth() -> String? {
         return postOn?.toString(format: .custom("MMM"))
     }
+    
 }

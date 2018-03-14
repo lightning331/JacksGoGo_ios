@@ -60,20 +60,30 @@
                             <constraint firstAttribute="height" constant="40" id="g18-7B-IiE"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSE-wm-8dQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+                        <connections>
+                            <action selector="onPressedAccessoryButton:" destination="Xef-47-hhc" eventType="touchUpInside" id="De4-jz-aFe"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstItem="nSE-wm-8dQ" firstAttribute="top" secondItem="qaY-4C-S83" secondAttribute="top" id="GNB-cW-sYv"/>
                     <constraint firstItem="AQu-k4-3Rh" firstAttribute="top" secondItem="TXR-d1-A9b" secondAttribute="top" id="Hzg-QY-nfD"/>
                     <constraint firstItem="TXR-d1-A9b" firstAttribute="top" secondItem="qaY-4C-S83" secondAttribute="top" id="IRE-k6-Gzc"/>
                     <constraint firstItem="8yd-Dm-EWt" firstAttribute="centerX" secondItem="TXR-d1-A9b" secondAttribute="centerX" id="M2x-Dm-dSA"/>
                     <constraint firstItem="AQu-k4-3Rh" firstAttribute="leading" secondItem="TXR-d1-A9b" secondAttribute="trailing" constant="15" id="N02-3m-s1C"/>
                     <constraint firstItem="8yd-Dm-EWt" firstAttribute="top" secondItem="TXR-d1-A9b" secondAttribute="bottom" id="NT2-q8-6qF"/>
+                    <constraint firstAttribute="bottom" secondItem="nSE-wm-8dQ" secondAttribute="bottom" id="RVk-Rx-ioj"/>
                     <constraint firstItem="rt3-xW-Qei" firstAttribute="leading" secondItem="AQu-k4-3Rh" secondAttribute="leading" id="aTN-cc-JJl"/>
                     <constraint firstAttribute="bottom" secondItem="8yd-Dm-EWt" secondAttribute="bottom" id="eUg-zh-DfE"/>
                     <constraint firstAttribute="bottomMargin" secondItem="rt3-xW-Qei" secondAttribute="bottom" constant="22" id="fag-ZD-BID"/>
+                    <constraint firstItem="nSE-wm-8dQ" firstAttribute="leading" secondItem="qaY-4C-S83" secondAttribute="leading" id="i3J-Au-Jx0"/>
                     <constraint firstItem="rt3-xW-Qei" firstAttribute="top" secondItem="AQu-k4-3Rh" secondAttribute="bottom" constant="7.5" id="lhM-5S-cOA"/>
                     <constraint firstAttribute="trailing" secondItem="fTg-SY-ZDH" secondAttribute="trailing" id="qgb-rn-q3N"/>
                     <constraint firstItem="fTg-SY-ZDH" firstAttribute="centerY" secondItem="qaY-4C-S83" secondAttribute="centerY" id="ras-di-ih3"/>
+                    <constraint firstAttribute="trailing" secondItem="nSE-wm-8dQ" secondAttribute="trailing" id="wtd-Xz-1Dn"/>
                     <constraint firstAttribute="trailing" secondItem="AQu-k4-3Rh" secondAttribute="trailing" constant="40" id="xBj-ze-FPt"/>
                     <constraint firstItem="TXR-d1-A9b" firstAttribute="leading" secondItem="qaY-4C-S83" secondAttribute="leading" constant="16" id="zPq-al-Bci"/>
                     <constraint firstItem="rt3-xW-Qei" firstAttribute="trailing" secondItem="AQu-k4-3Rh" secondAttribute="trailing" id="znj-BS-Gvh"/>
@@ -81,6 +91,7 @@
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
+                <outlet property="btnAccessory" destination="nSE-wm-8dQ" id="2Cw-CI-vBe"/>
                 <outlet property="constraintIconHeight" destination="mMP-0X-ftK" id="FQz-at-jqI"/>
                 <outlet property="imgviewStatus" destination="TXR-d1-A9b" id="qdS-ZJ-ECx"/>
                 <outlet property="lblDescription" destination="rt3-xW-Qei" id="kDN-9P-gPx"/>

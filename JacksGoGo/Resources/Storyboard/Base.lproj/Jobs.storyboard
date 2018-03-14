@@ -1,7 +1,112 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <customFonts key="customFonts">
+        <array key="Muli-Bold.ttf">
+            <string>Muli-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Original Job DetailVC-->
+        <scene sceneID="Ke9-1r-ga2">
+            <objects>
+                <tableViewController storyboardIdentifier="JGGOriginalJobDetailVC" id="Ris-mR-vQC" customClass="JGGOriginalJobDetailVC" customModule="JacksGoGo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ma1-r1-aSL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="2tu-nt-0Zx">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="h2v-5z-dS9">
+                            <rect key="frame" x="0.0" y="287" width="375" height="48"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o93-XH-LeS">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                    <color key="backgroundColor" red="0.078738220040000001" green="0.69248288869999997" blue="0.97351557020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                                    <state key="normal" title="Make A Proposal">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onPressedMakeProposal:" destination="Ris-mR-vQC" eventType="touchUpInside" id="XpY-ih-CbP"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="o93-XH-LeS" secondAttribute="bottom" id="9eL-MQ-guZ"/>
+                                <constraint firstItem="o93-XH-LeS" firstAttribute="top" secondItem="h2v-5z-dS9" secondAttribute="top" id="SKu-DX-sx9"/>
+                                <constraint firstAttribute="trailing" secondItem="o93-XH-LeS" secondAttribute="trailing" id="aCd-Jb-xoM"/>
+                                <constraint firstItem="o93-XH-LeS" firstAttribute="leading" secondItem="h2v-5z-dS9" secondAttribute="leading" id="gX8-41-Ni8"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="mYZ-A2-swI">
+                                <rect key="frame" x="0.0" y="243" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mYZ-A2-swI" id="GSg-Gq-SrU">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ris-mR-vQC" id="9Lo-Ye-eDk"/>
+                            <outlet property="delegate" destination="Ris-mR-vQC" id="FNw-ng-ShJ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="gHG-kA-Jlg">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="button_more_orange" id="mew-P9-o6b">
+                                <color key="tintColor" red="0.078738220040000001" green="0.69248288869999997" blue="0.97351557020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="button_favourite_outline_green" id="Uq8-hr-bHy">
+                                <inset key="imageInsets" minX="14" minY="0.0" maxX="-14" maxY="0.0"/>
+                                <color key="tintColor" red="0.078738220040000001" green="0.69248288869999997" blue="0.97351557020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnFavorite" destination="Uq8-hr-bHy" id="HIm-vD-eIT"/>
+                        <outlet property="btnMakeProposal" destination="o93-XH-LeS" id="hFb-9L-ywv"/>
+                        <outlet property="btnMenu" destination="mew-P9-o6b" id="4an-fL-yHD"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hto-ji-he3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-60" y="-341.37931034482762"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RfZ-3x-fS5">
+            <objects>
+                <navigationController id="dAU-Um-lkN" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yen-x2-2GC">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ris-mR-vQC" kind="relationship" relationship="rootViewController" id="yQm-wq-eKi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tAY-tG-ob7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1012" y="-341"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="button_favourite_outline_green" width="27" height="27"/>
+        <image name="button_more_orange" width="27" height="27"/>
+    </resources>
 </document>

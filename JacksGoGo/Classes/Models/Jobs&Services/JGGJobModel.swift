@@ -19,6 +19,7 @@ class JGGJobModel: JGGAppointmentBaseModel {
     internal let BudgetFrom     = "BudgetFrom"
     internal let BudgetTo       = "BudgetTo"
     internal let Budget         = "Budget"
+    internal let BudgetType     = "BudgetType"
     internal let ExpiredOn      = "ExpiredOn"
     internal let ReportType     = "ReportType"
     internal let IsRescheduled  = "IsRescheduled"
@@ -37,6 +38,7 @@ class JGGJobModel: JGGAppointmentBaseModel {
     var budgetFrom: Double?
     var budgetTo: Double?
     var budget: Double?
+    var budgetType: Int = 0  // 0: Non-select, 1: No limit, 2: Fixed, 3: Package
     var expiredOn: Date?
     var reportType: Int = 0
     var isRescheduled: Bool?
@@ -72,6 +74,7 @@ class JGGJobModel: JGGAppointmentBaseModel {
         budgetFrom = json[BudgetFrom].double
         budgetTo = json[BudgetTo].double
         budget = json[Budget].double
+        budgetType = json[BudgetType].intValue
         expiredOn = json[ExpiredOn].dateObject
         reportType = json[ReportType].intValue
         isRescheduled = json[IsRescheduled].bool
@@ -104,6 +107,7 @@ class JGGJobModel: JGGAppointmentBaseModel {
         json[BudgetFrom].double = budgetFrom
         json[BudgetTo].double = budgetTo
         json[Budget].double = budget
+        json[BudgetType].intValue = budgetType
         json[ExpiredOn].dateObject = expiredOn
         json[ReportType].intValue = reportType
         json[IsRescheduled].bool = isRescheduled
@@ -146,4 +150,40 @@ class JGGJobModel: JGGAppointmentBaseModel {
         let clone = JGGJobModel(json: self.json())
         return clone
     }
+    
+    func jobTimeDescription() -> String {
+        var timeString: String = ""
+        
+        if let jobTime = sessions?.first {
+            let startTime = jobTime.startOn
+            if jobTime.isSpecific == true {
+                timeString = "on "
+            } else {
+                timeString = "any time until "
+            }
+            timeString += ((startTime?.toString(format: .custom("d MMM, yyyy")).uppercased() ?? "") + " " + (startTime?.timeForJacks() ?? ""))
+            if let endTime = jobTime.endOn {
+                timeString += (" - " + endTime.timeForJacks())
+            }
+        }
+        else if repetitionType != nil {
+            if repetitionType == .weekly {
+                let days = repetition!
+                    .split(separator: ",")
+                    .flatMap { weekNames[Int($0)!] }
+                    .joined(separator: ", ")
+                timeString = String(format: "Every %@ of the week", days)
+            } else if repetitionType == .monthly {
+                let days = repetition!
+                    .split(separator: ",")
+                    .flatMap { dayNames[Int($0)! - 1] }
+                    .joined(separator: ", ")
+                timeString = String(format: "Every %@ of the month", days)
+            }
+        } else {
+            timeString = "Not set"
+        }
+        return timeString
+    }
+
 }

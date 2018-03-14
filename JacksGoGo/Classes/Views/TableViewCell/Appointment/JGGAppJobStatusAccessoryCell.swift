@@ -10,6 +10,10 @@ import UIKit
 
 class JGGAppJobStatusAccessoryCell: JGGAppJobStatusCell {
 
+    @IBOutlet weak var btnAccessory: UIButton!
+    
+    var accessoryButtonActionClosure: (() -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +25,7 @@ class JGGAppJobStatusAccessoryCell: JGGAppJobStatusCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func onPressedAccessoryButton(_ sender: UIButton) {
+        accessoryButtonActionClosure?()
+    }
 }

@@ -1299,14 +1299,14 @@
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                             <state key="normal" title="View Original Job Post">
-                                                <color key="titleColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="titleColor" red="0.078738220040000001" green="0.69248288869999997" blue="0.97351557020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                     <real key="value" value="3"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                    <color key="value" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="value" red="0.078738220040000001" green="0.69248288869999997" blue="0.97351557020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                     <real key="value" value="1"/>
@@ -1316,6 +1316,7 @@
                                                 <action selector="onPressedAcceptBid:" destination="bzM-o7-lbj" eventType="touchUpInside" id="Jll-Lw-SgP"/>
                                                 <action selector="onPressedRequest:" destination="Gr4-yz-x4Z" eventType="touchUpInside" id="JQN-3t-J48"/>
                                                 <action selector="onPressedViewOriginalJob:" destination="tkb-af-fjX" eventType="touchUpInside" id="CYb-eF-O7C"/>
+                                                <segue destination="KOu-Rq-RDj" kind="show" id="72F-lP-1iu"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -1380,6 +1381,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qK5-HB-Nad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4180" y="1645.7271364317842"/>
+        </scene>
+        <!--JGGOriginalJobDetailVC-->
+        <scene sceneID="S7N-1X-CbV">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="JGGOriginalJobDetailVC" storyboardName="Jobs" referencedIdentifier="JGGOriginalJobDetailVC" id="KOu-Rq-RDj" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WlN-Cc-P1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4910" y="1645"/>
         </scene>
     </scenes>
     <resources>

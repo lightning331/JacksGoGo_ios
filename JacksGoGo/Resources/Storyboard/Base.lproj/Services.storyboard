@@ -669,7 +669,7 @@
         <!--Search-->
         <scene sceneID="GLQ-Ip-xe7">
             <objects>
-                <navigationController hidesBarsOnSwipe="YES" id="D7p-Pt-t9i" customClass="JGGSearchNC" customModule="JacksGoGo" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController hidesBottomBarWhenPushed="YES" hidesBarsOnSwipe="YES" id="D7p-Pt-t9i" customClass="JGGSearchNC" customModule="JacksGoGo" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" image="tab_search" selectedImage="tab_search_active" id="Y4G-vP-e3K"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="H2T-bF-qDE">
@@ -871,7 +871,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 Services" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EtL-iS-0n3">
-                                        <rect key="frame" x="16" y="21.5" width="82" height="19"/>
+                                        <rect key="frame" x="16" y="20.5" width="82" height="19"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1376,7 +1376,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="$ 150.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yg0-BZ-ykt">
-                                        <rect key="frame" x="113" y="22" width="58" height="18"/>
+                                        <rect key="frame" x="113" y="21" width="58" height="18"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

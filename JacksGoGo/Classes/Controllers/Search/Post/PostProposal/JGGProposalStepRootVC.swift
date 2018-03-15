@@ -20,7 +20,6 @@ class JGGProposalStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderVi
 
     var isEditMode: Bool = false
     
-    var selectedCategory: JGGCategoryModel!
     var appointment: JGGJobModel!
     var proposal: JGGProposalModel?
     
@@ -42,15 +41,22 @@ class JGGProposalStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderVi
         
         self.navigationController?.hidesBarsOnSwipe = false
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        
-        if proposal == nil {
+        guard let nav = self.navigationController as? JGGProposalNC else {
+            return
+        }
+
+        if let editProposal = nav.editProposal {
+            proposal = editProposal
+            isEditMode = true
+        } else {
             proposal = JGGProposalModel()
             proposal?.appointment = appointment
             proposal?.appointmentId = appointment.id
             proposal?.userProfile = appManager.currentUser
             proposal?.userProfileId = appManager.currentUser?.id
         }
-        
+        self.appointment = nav.appointment
+
         (stepView as! JGGProposalStepHeaderView).setCompletedStep(
             describe: isEditMode,
             bid: isEditMode,
@@ -60,6 +66,25 @@ class JGGProposalStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderVi
         
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if isEditMode {
+            NotificationCenter.default.addObserver(self, selector: #selector(onPressedSave(_:)), name: NotificationEditProposalSave, object: nil)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if isEditMode {
+            NotificationCenter.default.removeObserver(self, name: NotificationEditProposalSave, object: nil)
+        }
+    }
+    
+    @objc func onPressedSave(_ sender: Any) {
+        NotificationCenter.default.post(name: NotificationUpdateJobContents, object: nil)
+        gotoSummaryVC()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -93,7 +93,11 @@ class JGGPostServiceAddressVC: JGGPostAppointmentBaseTableVC {
         if let unit = txtUnits.text, let street = txtStreet.text, let postalCode = txtPostcode.text {
             if unit.count > 0 && street.count > 0 && postalCode.count > 0 {
                 super.onPressedNext(sender)
+                
+                NotificationCenter.default.post(name: NotificationUpdateJobContents, object: nil)
+                
                 if let parentVC = parent as? JGGPostServiceStepRootVC {
+                    parentVC.stepView.completeCurrentStep()
                     parentVC.gotoSummaryVC()
                 }
                 return

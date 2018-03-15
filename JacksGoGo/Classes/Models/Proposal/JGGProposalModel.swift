@@ -28,12 +28,13 @@ class JGGProposalModel: JGGBaseModel {
     let BudgetFrom = "BudgetFrom"
     let BudgetTo = "BudgetTo"
     let Budget = "Budget"
+    let Breakdown = "Breakdown"
     let CurrencyCode = "CurrencyCode"
     let RescheduleAllowed = "RescheduleAllowed"
-    let RescheduleDate = "RescheduleDate"
+    let RescheduleTime = "RescheduleTime"
     let RescheduleNote = "RescheduleNote"
     let CancellationAllowed = "CancellationAllowed"
-    let CancellationDate = "CancellationDate"
+    let CancellationTime = "ReschedulTime"
     let CancellationNote = "CancellationNote"
     let IsInvited = "IsInvited"
     let SubmitOn = "SubmitOn"
@@ -51,11 +52,12 @@ class JGGProposalModel: JGGBaseModel {
     var budgetFrom: Double?
     var budgetTo: Double?
     var budget: Double?
+    var breakdown: String?
     var currencyCode: String?
-    var rescheduleAllowed: Bool = false
+    var rescheduleAllowed: Bool?
     var rescheduleDate: Date?
     var rescheduleNote: String?
-    var cancellationAllowed: Bool = false
+    var cancellationAllowed: Bool?
     var cancellationDate: Date?
     var cancellationNote: String?
     var isInvited: Bool = false
@@ -63,6 +65,8 @@ class JGGProposalModel: JGGBaseModel {
     var expireOn: Date?
     var status: JGGProposalStatus = .open
     var isViewed: Bool?
+    var rescheduleTime: Double?
+    var cancellationTime: Double?
     
     override init() {
         super.init()
@@ -83,18 +87,19 @@ class JGGProposalModel: JGGBaseModel {
         budgetFrom          = json[BudgetFrom].double
         budgetTo            = json[BudgetTo].double
         budget              = json[Budget].double
+        breakdown           = json[Breakdown].string
         currencyCode        = json[CurrencyCode].string
-        rescheduleAllowed   = json[RescheduleAllowed].boolValue
-        rescheduleDate      = json[RescheduleDate].dateObject
+        rescheduleAllowed   = json[RescheduleAllowed].bool
         rescheduleNote      = json[RescheduleNote].string
-        cancellationAllowed = json[CancellationAllowed].boolValue
-        cancellationDate    = json[CancellationDate].dateObject
+        cancellationAllowed = json[CancellationAllowed].bool
         cancellationNote    = json[CancellationNote].string
         isInvited           = json[IsInvited].boolValue
         submitOn            = json[SubmitOn].dateObject
         expireOn            = json[ExpireOn].dateObject
         status              = JGGProposalStatus(rawValue: json[Status].intValue) ?? .open
         isViewed            = json[IsViewed].bool
+        rescheduleTime      = json[RescheduleTime].double
+        cancellationTime    = json[CancellationTime].double
     }
     
     override func json() -> JSON {
@@ -115,19 +120,63 @@ class JGGProposalModel: JGGBaseModel {
         json[BudgetFrom].double     = budgetFrom
         json[BudgetTo].double       = budgetTo
         json[Budget].double         = budget
+        json[Breakdown].string      = breakdown
         json[CurrencyCode].string   = currencyCode
-        json[RescheduleAllowed].boolValue = rescheduleAllowed
-        json[RescheduleDate].dateObject = rescheduleDate
+        json[RescheduleAllowed].bool = rescheduleAllowed
         json[RescheduleNote].string = rescheduleNote
-        json[CancellationAllowed].boolValue = cancellationAllowed
-        json[CancellationDate].dateObject = cancellationDate
+        json[CancellationAllowed].bool = cancellationAllowed
         json[CancellationNote].string = cancellationNote
         json[IsInvited].boolValue   = isInvited
         json[SubmitOn].dateObject   = submitOn
         json[ExpireOn].dateObject   = expireOn
         json[Status].intValue       = status.rawValue
         json[IsViewed].bool         = isViewed
+        json[RescheduleTime].double = rescheduleTime
+        json[CancellationTime].double = cancellationTime
 
         return json
+    }
+    
+    func rescheduleTimeDescription() -> String? {
+        return timeDescription(allow: rescheduleAllowed, timeValue: rescheduleTime)
+    }
+    
+    func cancellationTimeDescription() -> String? {
+        return timeDescription(allow: cancellationAllowed, timeValue: cancellationTime)
+    }
+    
+    private func timeDescription(allow: Bool?, timeValue: Double?) -> String? {
+        if allow == true {
+            let totalTime = timeValue ?? 0
+            let days: Int = Int(totalTime / (3600 * 24))
+            let hours: Int = Int((totalTime - Double(days) * 3600 * 24) / 3600)
+            let minutes: Int = Int((totalTime - Double(days) * 3600 * 24 - Double(hours) * 3600) / 60)
+            var result: String = ""
+            if days > 0 {
+                if days == 1 {
+                    result = "1 day "
+                } else {
+                    result = String(format: "%d days ", days)
+                }
+            }
+            if hours > 0 {
+                if hours == 1 {
+                    result = result + "1 hour "
+                } else {
+                    result = result + String(format: "%d hours ", hours)
+                }
+            }
+            if minutes > 0 {
+                if minutes == 1 {
+                    result = result + "1 minute "
+                } else {
+                    result = result + String(format: "%d minutes ", minutes)
+                }
+            }
+            result = String(format: "At least %@ before.", result)
+            return result
+        } else {
+            return nil
+        }
     }
 }

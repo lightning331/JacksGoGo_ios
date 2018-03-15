@@ -15,7 +15,7 @@ class JGGPostJobStepRootVC: JGGPostStepRootBaseVC {
     @IBOutlet weak var containerAddress: UIView!
     @IBOutlet weak var containerBudget: UIView!
     @IBOutlet weak var containerReport: UIView!
-    
+        
     override func viewDidLoad() {
         
         stepView =

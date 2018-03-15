@@ -268,7 +268,7 @@
 		FFB64BB31FB7B03C0028B77B /* JGGSearchMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB64BB21FB7B03C0028B77B /* JGGSearchMainVC.swift */; };
 		FFB8662F2003992F005901DB /* JGGSplashLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB8662E2003992F005901DB /* JGGSplashLoadingView.swift */; };
 		FFB8663120039941005901DB /* JGGSplashLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB8663020039941005901DB /* JGGSplashLoadingView.xib */; };
-		FFB9E1872058155C0065DC36 /* Proposal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB9E1852058155C0065DC36 /* Proposal.storyboard */; };
+		FFB9E1872058155C0065DC36 /* PostProposal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFB9E1852058155C0065DC36 /* PostProposal.storyboard */; };
 		FFB9E189205817C50065DC36 /* JGGProposalNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB9E188205817C50065DC36 /* JGGProposalNC.swift */; };
 		FFB9E18B205818990065DC36 /* JGGProposalStepRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB9E18A205818990065DC36 /* JGGProposalStepRootVC.swift */; };
 		FFB9E18E205819730065DC36 /* JGGProposalStepHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB9E18D205819730065DC36 /* JGGProposalStepHeaderView.swift */; };
@@ -303,6 +303,9 @@
 		FFFC213D1FB5BFFA00AAA6F7 /* JGGAppointmentDetailBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFC213C1FB5BFFA00AAA6F7 /* JGGAppointmentDetailBaseVC.swift */; };
 		FFFC213F1FB5C0AA00AAA6F7 /* JGGBidDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFC213E1FB5C0AA00AAA6F7 /* JGGBidDetailVC.swift */; };
 		FFFC21411FB6005F00AAA6F7 /* JGGAppointmentNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFC21401FB6005F00AAA6F7 /* JGGAppointmentNC.swift */; };
+		FFFC73552059A9A600C91C21 /* JGGProposalRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFC73542059A9A600C91C21 /* JGGProposalRootVC.swift */; };
+		FFFC735A205B04BD00C91C21 /* JGGProposalOverviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFC7359205B04BD00C91C21 /* JGGProposalOverviewVC.swift */; };
+		FFFC735C205B0FAA00C91C21 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFC735B205B0FAA00C91C21 /* NotificationName.swift */; };
 		FFFEFE1F1FF115A8003A2B94 /* PostJob.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFFEFE1D1FF115A8003A2B94 /* PostJob.storyboard */; };
 		FFFEFE231FF1D82E003A2B94 /* JGGJobPostStepHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFEFE221FF1D82E003A2B94 /* JGGJobPostStepHeaderView.swift */; };
 		FFFEFE251FF1DA47003A2B94 /* JGGJobPostStepHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFEFE241FF1DA47003A2B94 /* JGGJobPostStepHeaderView.xib */; };
@@ -574,7 +577,7 @@
 		FFB64BB21FB7B03C0028B77B /* JGGSearchMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSearchMainVC.swift; sourceTree = "<group>"; };
 		FFB8662E2003992F005901DB /* JGGSplashLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSplashLoadingView.swift; sourceTree = "<group>"; };
 		FFB8663020039941005901DB /* JGGSplashLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGSplashLoadingView.xib; sourceTree = "<group>"; };
-		FFB9E1862058155C0065DC36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Proposal.storyboard; sourceTree = "<group>"; };
+		FFB9E1862058155C0065DC36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PostProposal.storyboard; sourceTree = "<group>"; };
 		FFB9E188205817C50065DC36 /* JGGProposalNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGProposalNC.swift; sourceTree = "<group>"; };
 		FFB9E18A205818990065DC36 /* JGGProposalStepRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGProposalStepRootVC.swift; sourceTree = "<group>"; };
 		FFB9E18D205819730065DC36 /* JGGProposalStepHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGProposalStepHeaderView.swift; sourceTree = "<group>"; };
@@ -609,6 +612,9 @@
 		FFFC213C1FB5BFFA00AAA6F7 /* JGGAppointmentDetailBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppointmentDetailBaseVC.swift; sourceTree = "<group>"; };
 		FFFC213E1FB5C0AA00AAA6F7 /* JGGBidDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGBidDetailVC.swift; sourceTree = "<group>"; };
 		FFFC21401FB6005F00AAA6F7 /* JGGAppointmentNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAppointmentNC.swift; sourceTree = "<group>"; };
+		FFFC73542059A9A600C91C21 /* JGGProposalRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGProposalRootVC.swift; sourceTree = "<group>"; };
+		FFFC7359205B04BD00C91C21 /* JGGProposalOverviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGProposalOverviewVC.swift; sourceTree = "<group>"; };
+		FFFC735B205B0FAA00C91C21 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		FFFEFE1E1FF115A8003A2B94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PostJob.storyboard; sourceTree = "<group>"; };
 		FFFEFE221FF1D82E003A2B94 /* JGGJobPostStepHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGJobPostStepHeaderView.swift; sourceTree = "<group>"; };
 		FFFEFE241FF1DA47003A2B94 /* JGGJobPostStepHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGJobPostStepHeaderView.xib; sourceTree = "<group>"; };
@@ -792,6 +798,7 @@
 				63DBC8AD1FA02E6600AAECA8 /* Extension */,
 				63BE91BF1FA025D100D40C07 /* JGGAppManager.swift */,
 				631EF2A61FA87848001D2915 /* Global.swift */,
+				FFFC735B205B0FAA00C91C21 /* NotificationName.swift */,
 				FFEB45DB1FEC2A6300F362FF /* API */,
 			);
 			path = Global;
@@ -1004,7 +1011,7 @@
 				FFB594131FDB310800D12A1F /* Search.storyboard */,
 				FFFEFE1D1FF115A8003A2B94 /* PostJob.storyboard */,
 				FF9381911FF493DE005699C3 /* Jobs.storyboard */,
-				FFB9E1852058155C0065DC36 /* Proposal.storyboard */,
+				FFB9E1852058155C0065DC36 /* PostProposal.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -1133,6 +1140,7 @@
 			children = (
 				FF90E49E2053BE1900B1412F /* JGGJobDetailVC.swift */,
 				FF8381542059093E008902BB /* JGGOriginalJobDetailVC.swift */,
+				FFFC7359205B04BD00C91C21 /* JGGProposalOverviewVC.swift */,
 			);
 			path = Job;
 			sourceTree = "<group>";
@@ -1403,9 +1411,10 @@
 			path = ClientJobs;
 			sourceTree = "<group>";
 		};
-		FFB9E184205815170065DC36 /* Proposal */ = {
+		FFB9E184205815170065DC36 /* PostProposal */ = {
 			isa = PBXGroup;
 			children = (
+				FFFC73542059A9A600C91C21 /* JGGProposalRootVC.swift */,
 				FFB9E188205817C50065DC36 /* JGGProposalNC.swift */,
 				FFB9E18A205818990065DC36 /* JGGProposalStepRootVC.swift */,
 				FFB9E191205822980065DC36 /* JGGProposalSummaryVC.swift */,
@@ -1414,7 +1423,7 @@
 				FFB9E19720583C010065DC36 /* JGGProposalReschedulingVC.swift */,
 				FFB9E19920583C120065DC36 /* JGGProposalCancellationVC.swift */,
 			);
-			path = Proposal;
+			path = PostProposal;
 			sourceTree = "<group>";
 		};
 		FFB9E18C205819340065DC36 /* ProposalStepHeaderView */ = {
@@ -1434,7 +1443,7 @@
 				FF12131B2020CFAF00FBA64F /* JGGPostStepRootBaseVC.swift */,
 				FFFEFE201FF1D736003A2B94 /* PostNewJob */,
 				FFB27A371FD25DF0009A2201 /* PostNewService */,
-				FFB9E184205815170065DC36 /* Proposal */,
+				FFB9E184205815170065DC36 /* PostProposal */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -1612,7 +1621,7 @@
 				FFA956061FBA368800E89197 /* JGGSelectSkillFooterView.xib in Resources */,
 				FF21FAE81FAB5597004D0ADA /* JGGDetailInfoFooterView.xib in Resources */,
 				FF9E5A411FB83D85006C4B50 /* JGGCategoryDetailHeaderView.xib in Resources */,
-				FFB9E1872058155C0065DC36 /* Proposal.storyboard in Resources */,
+				FFB9E1872058155C0065DC36 /* PostProposal.storyboard in Resources */,
 				FFB8663120039941005901DB /* JGGSplashLoadingView.xib in Resources */,
 				FFB9E1902058197D0065DC36 /* JGGProposalStepHeaderView.xib in Resources */,
 				63BE91DF1FA0263C00D40C07 /* Muli-Italic.ttf in Resources */,
@@ -1843,6 +1852,7 @@
 				FFA14B1B1FEDE5A000186657 /* JGGProfileMainVC.swift in Sources */,
 				FFA956081FBA3D1400E89197 /* JGGSelectSkillVC.swift in Sources */,
 				FF21FAF91FAB6387004D0ADA /* AZDropdownMenuBaseCell.swift in Sources */,
+				FFFC735C205B0FAA00C91C21 /* NotificationName.swift in Sources */,
 				FF21FAFA1FAB6387004D0ADA /* AZDropdownMenuConfig.swift in Sources */,
 				FF9E5A451FB89C2B006C4B50 /* JGGSearchNC.swift in Sources */,
 				FFAFC7301FC55050008E0664 /* JGGAllReviewsVC.swift in Sources */,
@@ -1887,6 +1897,7 @@
 				FFB27A291FD19D1B009A2201 /* LightboxConfig.swift in Sources */,
 				FFA061C71FAB522F00185C56 /* JGGDetailInfoCenterAlignCell.swift in Sources */,
 				FFFC213B1FB59D4900AAA6F7 /* JGGCanInviteUserListVC.swift in Sources */,
+				FFFC735A205B04BD00C91C21 /* JGGProposalOverviewVC.swift in Sources */,
 				FFEB45D61FEC134F00F362FF /* JGGSignupSMSVerifyVC.swift in Sources */,
 				FFEE4401200652AD00B07A7B /* JGGCurrencyModel.swift in Sources */,
 				FF849E161FD75D2C003EB83A /* JGGPostServiceAddressVC.swift in Sources */,
@@ -1959,6 +1970,7 @@
 				FFEE43FD200645E200B07A7B /* DateFormatter.swift in Sources */,
 				FFB594121FDB29DC00D12A1F /* JGGSearchVC.swift in Sources */,
 				FF86FA36200A91BE00CF580B /* JGGWeeklySelectPickerVC.swift in Sources */,
+				FFFC73552059A9A600C91C21 /* JGGProposalRootVC.swift in Sources */,
 				63BE91F51FA0286C00D40C07 /* JGGAppointmentsTableVC.swift in Sources */,
 				FF9381A11FF54C20005699C3 /* JGGPostJobPriceVC.swift in Sources */,
 				63B755E61FA1BDB30032B4F1 /* JGGAppointmentBaseModel.swift in Sources */,
@@ -2109,12 +2121,12 @@
 			name = Search.storyboard;
 			sourceTree = "<group>";
 		};
-		FFB9E1852058155C0065DC36 /* Proposal.storyboard */ = {
+		FFB9E1852058155C0065DC36 /* PostProposal.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FFB9E1862058155C0065DC36 /* Base */,
 			);
-			name = Proposal.storyboard;
+			name = PostProposal.storyboard;
 			sourceTree = "<group>";
 		};
 		FFFEFE1D1FF115A8003A2B94 /* PostJob.storyboard */ = {

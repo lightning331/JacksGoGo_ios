@@ -157,7 +157,7 @@ class JGGServiceDetailVC: JGGSearchBaseTableVC {
     }
     
     private func onPressedMenuReport() {
-        print("Pressed Delete")
+        print("Pressed Report")
         JGGAlertViewController.show(title: LocalizedString("Report Service"),
                                     message: LocalizedString("Mark this post as inappropriate or offensive."),
                                     colorSchema: .green,

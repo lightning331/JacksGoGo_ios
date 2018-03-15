@@ -22,26 +22,26 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZO2-Js-Xgf">
-                    <rect key="frame" x="46.5" y="0.0" width="280" height="80"/>
+                    <rect key="frame" x="36.5" y="0.0" width="300" height="80"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line_full" translatesAutoresizingMaskIntoConstraints="NO" id="cVm-th-H0i" customClass="JGGJobDetailStepLineImageView" customModule="JacksGoGo" customModuleProvider="target">
-                            <rect key="frame" x="41" y="23" width="59" height="19"/>
+                            <rect key="frame" x="36" y="23" width="50" height="19"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line_full" translatesAutoresizingMaskIntoConstraints="NO" id="K5t-ou-ZQK" customClass="JGGJobDetailStepLineImageView" customModule="JacksGoGo" customModuleProvider="target">
-                            <rect key="frame" x="114.5" y="23" width="58" height="19"/>
+                            <rect key="frame" x="101" y="23" width="64" height="19"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line_full" translatesAutoresizingMaskIntoConstraints="NO" id="GcI-g9-2YG" customClass="JGGJobDetailStepLineImageView" customModule="JacksGoGo" customModuleProvider="target">
-                            <rect key="frame" x="186.5" y="23" width="58" height="19"/>
+                            <rect key="frame" x="181" y="23" width="69" height="19"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfo-53-Fcv">
-                            <rect key="frame" x="0.0" y="0.0" width="64" height="80"/>
+                            <rect key="frame" x="0.0" y="0.0" width="57" height="80"/>
                             <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
                             <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
-                            <inset key="titleEdgeInsets" minX="-10" minY="30" maxX="0.0" maxY="0.0"/>
-                            <inset key="imageEdgeInsets" minX="25" minY="0.0" maxX="11" maxY="10"/>
+                            <inset key="titleEdgeInsets" minX="-16" minY="30" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="20" minY="0.0" maxX="11" maxY="10"/>
                             <state key="normal" title="Describe" image="counter_greentick">
                                 <color key="titleColor" red="0.399966985" green="0.40001851319999998" blue="0.39994949099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -53,12 +53,12 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Dw-rK-JNW">
-                            <rect key="frame" x="72" y="0.0" width="64" height="80"/>
+                            <rect key="frame" x="65" y="0.0" width="56.5" height="80"/>
                             <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
                             <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
-                            <inset key="titleEdgeInsets" minX="-10" minY="30" maxX="0.0" maxY="0.0"/>
-                            <inset key="imageEdgeInsets" minX="25" minY="0.0" maxX="10" maxY="10"/>
-                            <state key="normal" title="Time" image="counter_greytick">
+                            <inset key="titleEdgeInsets" minX="-16" minY="30" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="19" minY="0.0" maxX="10" maxY="10"/>
+                            <state key="normal" title="Bid" image="counter_greytick">
                                 <color key="titleColor" red="0.399966985" green="0.40001851319999998" blue="0.39994949099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <state key="selected">
@@ -69,12 +69,12 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tG8-gW-QCw">
-                            <rect key="frame" x="144" y="0.0" width="64" height="80"/>
+                            <rect key="frame" x="129.5" y="0.0" width="81.5" height="80"/>
                             <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
                             <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
-                            <inset key="titleEdgeInsets" minX="-10" minY="30" maxX="0.0" maxY="0.0"/>
-                            <inset key="imageEdgeInsets" minX="25" minY="0.0" maxX="10" maxY="10"/>
-                            <state key="normal" title="Address" image="counter_greytick">
+                            <inset key="titleEdgeInsets" minX="-14" minY="30" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="33" minY="0.0" maxX="10" maxY="10"/>
+                            <state key="normal" title="Rescheduling" image="counter_greytick">
                                 <color key="titleColor" red="0.399966985" green="0.40001851319999998" blue="0.39994949099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <state key="selected">
@@ -85,12 +85,12 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gP8-k6-NDo">
-                            <rect key="frame" x="216" y="0.0" width="64" height="80"/>
+                            <rect key="frame" x="219" y="0.0" width="81" height="80"/>
                             <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
                             <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
-                            <inset key="titleEdgeInsets" minX="-10" minY="30" maxX="0.0" maxY="0.0"/>
-                            <inset key="imageEdgeInsets" minX="25" minY="0.0" maxX="10" maxY="10"/>
-                            <state key="normal" title="Report" image="counter_greytick">
+                            <inset key="titleEdgeInsets" minX="-17" minY="30" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="30" minY="0.0" maxX="10" maxY="10"/>
+                            <state key="normal" title="Cancellation" image="counter_greytick">
                                 <color key="titleColor" red="0.399966985" green="0.40001851319999998" blue="0.39994949099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <state key="selected">
@@ -107,16 +107,16 @@
                         <constraint firstItem="tG8-gW-QCw" firstAttribute="leading" secondItem="8Dw-rK-JNW" secondAttribute="trailing" constant="8" id="1KR-y7-9Ps"/>
                         <constraint firstItem="gP8-k6-NDo" firstAttribute="top" secondItem="Lfo-53-Fcv" secondAttribute="top" id="285-wA-Zt2"/>
                         <constraint firstItem="8Dw-rK-JNW" firstAttribute="top" secondItem="Lfo-53-Fcv" secondAttribute="top" id="5Je-St-ueM"/>
-                        <constraint firstAttribute="width" constant="280" id="6fO-6D-oFm"/>
+                        <constraint firstAttribute="width" constant="300" id="6fO-6D-oFm"/>
                         <constraint firstItem="tG8-gW-QCw" firstAttribute="top" secondItem="Lfo-53-Fcv" secondAttribute="top" id="8AT-oi-vZR"/>
                         <constraint firstAttribute="trailing" secondItem="gP8-k6-NDo" secondAttribute="trailing" id="BgB-Yh-h53"/>
                         <constraint firstItem="tG8-gW-QCw" firstAttribute="bottom" secondItem="Lfo-53-Fcv" secondAttribute="bottom" id="Ctl-bT-XUd"/>
                         <constraint firstItem="Lfo-53-Fcv" firstAttribute="leading" secondItem="ZO2-Js-Xgf" secondAttribute="leading" id="IRA-Qu-Guh"/>
                         <constraint firstItem="gP8-k6-NDo" firstAttribute="leading" secondItem="tG8-gW-QCw" secondAttribute="trailing" constant="8" id="O9v-Mb-RTA"/>
                         <constraint firstItem="8Dw-rK-JNW" firstAttribute="width" secondItem="Lfo-53-Fcv" secondAttribute="width" id="OE9-g6-Kfb"/>
-                        <constraint firstItem="gP8-k6-NDo" firstAttribute="width" secondItem="Lfo-53-Fcv" secondAttribute="width" id="Ugi-I9-5GN"/>
+                        <constraint firstItem="gP8-k6-NDo" firstAttribute="width" secondItem="Lfo-53-Fcv" secondAttribute="width" constant="24" id="Ugi-I9-5GN"/>
                         <constraint firstAttribute="height" constant="80" id="Zxy-yV-bfo"/>
-                        <constraint firstItem="tG8-gW-QCw" firstAttribute="width" secondItem="Lfo-53-Fcv" secondAttribute="width" id="dBd-UF-uU6"/>
+                        <constraint firstItem="tG8-gW-QCw" firstAttribute="width" secondItem="Lfo-53-Fcv" secondAttribute="width" constant="25" id="dBd-UF-uU6"/>
                         <constraint firstItem="Lfo-53-Fcv" firstAttribute="top" secondItem="ZO2-Js-Xgf" secondAttribute="top" id="pDZ-1o-wVw"/>
                         <constraint firstItem="gP8-k6-NDo" firstAttribute="bottom" secondItem="Lfo-53-Fcv" secondAttribute="bottom" id="qjR-Fg-LCx"/>
                         <constraint firstAttribute="bottom" secondItem="Lfo-53-Fcv" secondAttribute="bottom" id="qxa-Ep-b8S"/>

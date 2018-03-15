@@ -36,7 +36,7 @@ class JGGPostJobReportVC: JGGEditJobReportVC {
             
             updateData(self)
             
-            NotificationCenter.default.post(name: NSNotification.Name("UpdateData"), object: nil)
+            NotificationCenter.default.post(name: NotificationUpdateJobContents, object: nil)
             
             parentVC.stepView.completeCurrentStep()
             parentVC.gotoSummaryVC()

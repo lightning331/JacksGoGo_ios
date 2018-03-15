@@ -33,7 +33,9 @@ class JGGOriginalJobDetailVC: JGGAppointmentsTableVC {
         
         createMenu()
         
-        self.hidesBottomBarWhenPushed = true
+        self.navigationController?.hidesBarsOnSwipe = false
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.hidesBottomBarWhenPushed = true
     }
     
     private func initTableView() {
@@ -85,7 +87,7 @@ class JGGOriginalJobDetailVC: JGGAppointmentsTableVC {
     }
     
     // MARK: Menu
-    @objc fileprivate func onPressedMenu(_ sender: UIBarButtonItem) {
+    @IBAction fileprivate func onPressedMenu(_ sender: UIBarButtonItem) {
         if self.menu.isDescendant(of: self.navigationController!.view!) {
             self.menu.hideMenu()
         } else {
@@ -130,7 +132,7 @@ class JGGOriginalJobDetailVC: JGGAppointmentsTableVC {
     
     // MARK: - Button actions
     
-    @objc fileprivate func onPressedFavorite(_ sender: UIBarButtonItem) {
+    @IBAction fileprivate func onPressedFavorite(_ sender: UIBarButtonItem) {
         isFavorited = !isFavorited
         if isFavorited {
             sender.image = UIImage(named: "button_favourite_active_orange")
@@ -139,11 +141,20 @@ class JGGOriginalJobDetailVC: JGGAppointmentsTableVC {
         }
     }
 
-    @IBAction func onPressedMakeProposal(_ sender: UIButton) {
-        
+    @IBAction fileprivate func onPressedProposal(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "gotoProposalRootVC", sender: self)
     }
     
-
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let segueId = segue.identifier {
+            if segueId == "gotoProposalRootVC" {
+                let vc = segue.destination as! JGGProposalRootVC
+                vc.job = job
+            }
+        }
+    }
 }
 
 extension JGGOriginalJobDetailVC {
@@ -191,18 +202,7 @@ extension JGGOriginalJobDetailVC {
             }
             else if row == 4 {
                 imageName = "icon_budget"
-                if job.budgetType == 0 {
-                    desc = LocalizedString("Not set")
-                }
-                else if job.budgetType == 1 {
-                    desc = LocalizedString("No limit")
-                }
-                else if job.budgetType == 2 {
-                    desc = String(format: "%@\n$ %.2f", LocalizedString("Fixed"), job.budget ?? 0)
-                }
-                else if job.budgetType == 3 {
-                    desc = String(format: "%@\n$ %.2f - $ $.2f/month", LocalizedString("Package"), job.budgetFrom ?? 0, job.budgetTo ?? 0)
-                }
+                desc = job.budgetDescription()
             }
             else if row == 5 {
                 imageName = "icon_completion"

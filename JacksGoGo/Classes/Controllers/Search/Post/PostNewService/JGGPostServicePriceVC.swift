@@ -65,13 +65,16 @@ class JGGPostServicePriceVC: JGGPostAppointmentBaseTableVC {
                 creatingService.appointmentType = 1
                 if priceType == 1 {
                     creatingService.budget = fixedPrice
+                    creatingService.budgetType = 2
                 } else if priceType == 2 {
                     creatingService.budgetFrom = minPrice
                     creatingService.budgetTo = maxPrice
+                    creatingService.budgetType = 3
                 }
             } else if selectedServiceType == 2 {
                 creatingService.appointmentType = self.packageNo
                 creatingService.budget = self.packagePrice
+                creatingService.budgetType = 2
             }
         }
     }

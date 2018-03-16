@@ -25,11 +25,29 @@ class JGGProposalOverviewVC: JGGAppointmentDetailBaseVC {
         registerCell(nibName: "JGGAppInviteProviderCell")
         registerCell(nibName: "JGGDetailInfoCenterAlignCell")
 
+        if proposal.status != .confirmed {
+            self.tableView.tableFooterView = nil
+        }
     }
 
     @IBAction func onPressedEdit(_ sender: UIBarButtonItem) {
         
     }
+    
+    @IBAction func onPressedDeleteProposal(_ sender: UIButton) {
+        JGGAlertViewController.show(title: LocalizedString("Delete Proposal And Remove Bid?"),
+                                    message: LocalizedString("This action cannot be undo."),
+                                    colorSchema: .red,
+                                    cancelColorSchema: .cyan,
+                                    okButtonTitle: LocalizedString("Delete"),
+                                    okAction: { text in
+                                        
+                                        
+        },
+                                    cancelButtonTitle: LocalizedString("Cancel"),
+                                    cancelAction: nil)
+    }
+    
     
     /*
     // MARK: - Navigation

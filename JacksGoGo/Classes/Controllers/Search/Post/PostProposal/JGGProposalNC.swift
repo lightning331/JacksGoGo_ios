@@ -13,7 +13,7 @@ class JGGProposalNC: UINavigationController {
     var editProposal: JGGProposalModel? {
         set {
             _editProposal = newValue
-            if let _ = newValue {
+            if let proposal = newValue, proposal.status != .open {
                 isEditMode = true
             }
         }
@@ -43,6 +43,7 @@ class JGGProposalNC: UINavigationController {
             isExecutedOne = true
             if let summaryVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGProposalSummaryVC") as? JGGProposalSummaryVC {
                 summaryVC.proposal = editProposal
+                summaryVC.isEditMode = isEditMode
                 summaryVC.appointment = appointment
                 self.pushViewController(summaryVC, animated: false)
             }

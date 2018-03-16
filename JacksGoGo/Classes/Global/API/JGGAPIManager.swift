@@ -607,8 +607,24 @@ class JGGAPIManager: NSObject {
     }
     
     // MARK: - Proposal
-    func postProposal() -> Void {
+    func postProposal(_ proposal: JGGProposalModel, user: JGGUserProfileModel, complete: @escaping StringStringClosure) -> Void {
         
+        CLS_LOG_SWIFT(format: "postProposal url: %@\nBODY: %@", [URLManager.Proposal.PostProposal, proposal.json().description])
+        print(proposal.json().description)
+        POST(url: URLManager.Proposal.PostProposal, body: proposal.json().dictionaryObject) { (response, error) in
+            if let json = response {
+                let success = json[SUCCESS_KEY].boolValue
+                if success {
+                    complete(json[VALUE_KEY].stringValue, nil)
+                } else {
+                    complete(nil, json[MESSAGE_KEY].stringValue)
+                }
+            } else if let error = error {
+                complete(nil, error.localizedDescription)
+            } else {
+                complete(nil, LocalizedString("Unknown request error."))
+            }
+        }
     }
     
     func editProposal() -> Void {

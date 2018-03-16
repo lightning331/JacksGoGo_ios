@@ -138,5 +138,9 @@ class JGGProposalSummaryVC: JGGPostAppointmentBaseTableVC {
     private func submitProposal(_ proposal: JGGProposalModel) {
         hud = MBProgressHUD.showAdded(to: self.parent!.parent!.parent!.view, animated: true)
         hud.mode = .indeterminate
+        APIManager.postProposal(proposal, user: proposal.userProfile!) { (proposalId, errorMessage) in
+            self.hud.hide(animated: true)
+            
+        }
     }
 }

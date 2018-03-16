@@ -20,7 +20,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JacksGoGo/Classes/Global/API/JGGAPIManager.swift"
-            timestampString = "542323821.255151"
+            timestampString = "542919091.582997"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "522"
@@ -36,7 +36,7 @@
                   moduleName = "JacksGoGo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Volumes/Data/project/me/jacksgogo/JacksGoGo/Classes/Global/API/JGGAPIManager.swift"
-                  timestampString = "542834887.644768"
+                  timestampString = "542919092.4099981"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "522"
@@ -51,7 +51,7 @@
                   moduleName = "JacksGoGo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Volumes/Data/project/me/jacksgogo/JacksGoGo/Classes/Global/API/JGGAPIManager.swift"
-                  timestampString = "542834887.651587"
+                  timestampString = "542919092.4161561"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "523"
@@ -68,12 +68,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JacksGoGo/Classes/Global/API/JGGAPIManager.swift"
-            timestampString = "542323821.255227"
+            timestampString = "542919091.5830801"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "182"
             endingLineNumber = "182"
             landmarkName = "DELETE(url:params:body:hasHeader:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JacksGoGo/Classes/Global/API/JGGAPIManager.swift"
+            timestampString = "542919091.583133"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "615"
+            endingLineNumber = "615"
+            landmarkName = "postProposal(_:user:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JacksGoGo/Classes/Controllers/Search/Post/PostProposal/JGGProposalSummaryVC.swift"
+            timestampString = "542919091.58319"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "submitProposal(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

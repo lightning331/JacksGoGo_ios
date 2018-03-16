@@ -19,7 +19,7 @@ class JGGProposalRootVC: JGGViewController {
     var job: JGGJobModel!
     var editProposal: JGGProposalModel? {
         didSet {
-            if editProposal != nil {
+            if let editProposal = editProposal, editProposal.status != .open {
                 isEditMode = true
             }
         }

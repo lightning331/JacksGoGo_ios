@@ -18,7 +18,7 @@ class JGGProposalStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderVi
     @IBOutlet weak var containerRescheduling: UIView!
     @IBOutlet weak var containerCancellation: UIView!
 
-    var isEditMode: Bool = false
+    fileprivate var isEditMode: Bool = false
     
     var appointment: JGGJobModel!
     var proposal: JGGProposalModel?
@@ -45,9 +45,12 @@ class JGGProposalStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderVi
             return
         }
 
+        self.appointment = nav.appointment
         if let editProposal = nav.editProposal {
             proposal = editProposal
-            isEditMode = true
+            if editProposal.status != .open {
+                isEditMode = true
+            }
         } else {
             proposal = JGGProposalModel()
             proposal?.appointment = appointment
@@ -55,7 +58,7 @@ class JGGProposalStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderVi
             proposal?.userProfile = appManager.currentUser
             proposal?.userProfileId = appManager.currentUser?.id
         }
-        self.appointment = nav.appointment
+        
 
         (stepView as! JGGProposalStepHeaderView).setCompletedStep(
             describe: isEditMode,

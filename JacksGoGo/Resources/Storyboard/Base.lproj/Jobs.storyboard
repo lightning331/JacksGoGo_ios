@@ -273,6 +273,41 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zbc-PN-tFP">
                                 <rect key="frame" x="0.0" y="126" width="375" height="541"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="s5U-Ra-lbT">
+                                    <rect key="frame" x="0.0" y="72" width="375" height="110"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2d3-e8-fl0">
+                                            <rect key="frame" x="16" y="31" width="343" height="48"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="48" id="eZH-FS-Car"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                                            <state key="normal" title="Delete Proposal And Remove Bid">
+                                                <color key="titleColor" red="0.078738220040000001" green="0.69248288869999997" blue="0.97351557020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="onPressedDeleteProposal:" destination="LVF-z3-jGc" eventType="touchUpInside" id="iSl-tc-RxS"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="2d3-e8-fl0" firstAttribute="centerY" secondItem="s5U-Ra-lbT" secondAttribute="centerY" id="Foh-6w-Mjb"/>
+                                        <constraint firstAttribute="trailing" secondItem="2d3-e8-fl0" secondAttribute="trailing" constant="16" id="Z7q-TX-0CB"/>
+                                        <constraint firstItem="2d3-e8-fl0" firstAttribute="leading" secondItem="s5U-Ra-lbT" secondAttribute="leading" constant="16" id="ndr-A2-bq3"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="JaC-o9-Sjs">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JaC-o9-Sjs" id="xz7-Ek-uuS">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="LVF-z3-jGc" id="20J-i9-GBs"/>
                                     <outlet property="delegate" destination="LVF-z3-jGc" id="4W9-Co-aCo"/>
@@ -314,7 +349,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzK-pv-7EW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="310" y="527"/>
+            <point key="canvasLocation" x="309.60000000000002" y="526.6866566716642"/>
         </scene>
     </scenes>
     <resources>

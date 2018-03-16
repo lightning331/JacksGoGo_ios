@@ -20,6 +20,10 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
     @IBOutlet weak var imgviewProviderAvatar: UIImageView!
     @IBOutlet weak var lblProviderName: UILabel!
     
+    @IBOutlet weak var viewBottomButtonsBox: UIView!
+    @IBOutlet weak var btnLeft: UIButton!
+    @IBOutlet weak var btnRight: UIButton!
+    
     @IBOutlet weak var headviewButtons: UIView!
     @IBOutlet weak var btnJobReport: UIButton!
     @IBOutlet weak var btnInvoice: UIButton!
@@ -62,13 +66,42 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
             loadProviders()
             self.tableView.tableHeaderView = nil
             self.viewChatProposalBox.isHidden = true
-            self.constraintBottomSpaceOfTableView.constant = 0
+            
+            var bottomSpaceOfTableView: CGFloat = 0
+            
+            if let proposal = job.proposal, proposal.userProfileId == appManager.currentUser?.id
+            {
+                if proposal.isInvited == true && proposal.status == .open {
+                    bottomSpaceOfTableView = viewBottomButtonsBox.frame.height
+                    viewBottomButtonsBox.isHidden = false
+                    btnLeft.setTitle(LocalizedString("Reject Job"), for: .normal)
+                    btnLeft.backgroundColor = UIColor.JGGCyan10Percent
+                    btnLeft.setTitleColor(UIColor.JGGCyan, for: .normal)
+                    btnLeft.addTarget(self, action: #selector(rejectJob(_:)), for: .touchUpInside)
+                    
+                    btnRight.setTitle(LocalizedString("Accept Job"), for: .normal)
+                    btnRight.backgroundColor = UIColor.JGGCyan
+                    btnRight.setTitleColor(UIColor.JGGWhite, for: .normal)
+                    btnRight.addTarget(self, action: #selector(acceptJob(_:)), for: .touchUpInside)
+                    
+                } else if proposal.isInvited == true && proposal.status == .confirmed {
+                    
+                } else if proposal.isInvited == false && proposal.status == .open {
+                    
+                } else if proposal.isInvited == false && proposal.status == .confirmed {
+                    
+                }
+            }
+            
+            self.constraintBottomSpaceOfTableView.constant = bottomSpaceOfTableView
             self.updateConstraint()
         } else if job.status == .confirmed {
             
         } else if job.status == .closed {
             
         }
+        
+        
     }
 
     private func initTableView() {
@@ -94,6 +127,8 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
         
     }
     
+    // MARK: - Button actions
+    
     override func onPressedMenuEdit() {
         let serviceStoryboard = UIStoryboard(name: "Services", bundle: nil)
         if let editJobVC = serviceStoryboard.instantiateViewController(withIdentifier: "JGGPostJobRootVC") as? JGGPostJobRootVC {
@@ -105,16 +140,40 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
     
     override func onPressedMenuDelete() {
         print("Pressed Delete")
-        JGGAlertViewController.show(title: LocalizedString("Delete Job?"),
-                                    message: LocalizedString("Let the providers know why you are cancelling the job."),
-                                    colorSchema: .red,
-                                    textFieldPlaceholder: LocalizedString("Reason"),
-                                    okButtonTitle: LocalizedString("Delete"),
-                                    okAction: { text in
-                                        print("Delete Job")
-                                        self.deleteJob(with: text)
-                                    },
-                                    cancelButtonTitle: LocalizedString("Cancel"))
+        JGGAlertViewController.show(
+            title: LocalizedString("Delete Job?"),
+            message: LocalizedString("Let the providers know why you are cancelling the job."),
+            colorSchema: .red,
+            textFieldPlaceholder: LocalizedString("Reason"),
+            okButtonTitle: LocalizedString("Delete"),
+            okAction: { text in
+                print("Delete Job")
+                self.deleteJob(with: text)
+            },
+            cancelButtonTitle: LocalizedString("Cancel")
+        )
+    }
+    
+    @objc fileprivate func rejectJob(_ sender: Any) {
+        JGGAlertViewController.show(
+            title: LocalizedString("Reject this job?"),
+            message: nil,
+            colorSchema: .cyan,
+            okButtonTitle: LocalizedString("Reject"),
+            okAction: { (text) in
+                self.rejectJob()
+            },
+            cancelButtonTitle: LocalizedString("Cancel"),
+            cancelAction: nil
+        )
+    }
+    
+    @objc fileprivate func acceptJob(_ sender: Any) {
+        let jobsStoryboard = UIStoryboard(name: "Jobs", bundle: nil)
+        let proposalRootVC = jobsStoryboard.instantiateViewController(withIdentifier: "JGGProposalRootVC") as! JGGProposalRootVC
+        proposalRootVC.job = job
+        proposalRootVC.editProposal = job.proposal!
+        self.navigationController?.pushViewController(proposalRootVC, animated: true)
     }
     
     // MARK: - API request
@@ -149,6 +208,10 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
                 )
             }
         }
+    }
+    
+    private func rejectJob() {
+    
     }
     
     // MARK: - UITableView datasource

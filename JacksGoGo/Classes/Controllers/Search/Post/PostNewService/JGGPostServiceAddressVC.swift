@@ -8,6 +8,7 @@
 
 import UIKit
 import Toaster
+import CoreLocation
 
 class JGGPostServiceAddressVC: JGGPostAppointmentBaseTableVC {
 
@@ -16,6 +17,9 @@ class JGGPostServiceAddressVC: JGGPostAppointmentBaseTableVC {
     @IBOutlet weak var txtStreet: UITextField!
     @IBOutlet weak var txtPostcode: UITextField!
     @IBOutlet weak var btnDontShowFullAddress: UIButton?
+    
+    internal var selectedPlacemark: CLPlacemark?
+    internal var selectedCoordinate: CLLocationCoordinate2D?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +75,8 @@ class JGGPostServiceAddressVC: JGGPostAppointmentBaseTableVC {
             addressModel.floor = txtPlaceName.text
             addressModel.address = txtStreet.text
             addressModel.postalCode = txtPostcode.text
+            addressModel.lat = (selectedCoordinate?.latitude ?? 0)!
+            addressModel.lon = (selectedCoordinate?.longitude ?? 0)!
             if let btnDontShowFullAddress = btnDontShowFullAddress {
                 addressModel.isDontShowFullAddress = btnDontShowFullAddress.isSelected
             }
@@ -83,10 +89,29 @@ class JGGPostServiceAddressVC: JGGPostAppointmentBaseTableVC {
         sender.isSelected = !sender.isSelected
     }
 
+    @IBAction func onPressedSelectLocation(_ sender: UIButton) {
+        let mapVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGSelectLocationMapVC") as! JGGSelectLocationMapVC
+        mapVC.selectedLocationHandler = { placemark, coordinate in
+            self.txtPlaceName.text = nil
+            self.txtUnits.text = nil
+            let formattedAddress = (placemark?.addressDictionary?["FormattedAddressLines"] as? [String])?.joined(separator: ", ")
+            self.txtStreet.text = formattedAddress
+            self.txtPostcode.text = placemark?.postalCode
+            self.selectedPlacemark = placemark
+            self.selectedCoordinate = coordinate
+        }
+        if let selectedCoordinate = selectedCoordinate {
+            mapVC.currentCoordinate = selectedCoordinate
+        }
+        let nav = JGGBaseNC(rootViewController: mapVC)
+        self.present(nav, animated: true, completion: nil)
+    }
+    
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
 
     override func onPressedNext(_ sender: UIButton) {

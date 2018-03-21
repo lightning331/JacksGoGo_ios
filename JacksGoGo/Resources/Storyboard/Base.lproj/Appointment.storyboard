@@ -1349,7 +1349,7 @@
                                                 <action selector="onPressedAcceptBid:" destination="bzM-o7-lbj" eventType="touchUpInside" id="Jll-Lw-SgP"/>
                                                 <action selector="onPressedRequest:" destination="Gr4-yz-x4Z" eventType="touchUpInside" id="JQN-3t-J48"/>
                                                 <action selector="onPressedViewOriginalJob:" destination="tkb-af-fjX" eventType="touchUpInside" id="CYb-eF-O7C"/>
-                                                <segue destination="KOu-Rq-RDj" kind="show" id="72F-lP-1iu"/>
+                                                <segue destination="KOu-Rq-RDj" kind="show" identifier="gotoOriginalJobDetailVC" id="72F-lP-1iu"/>
                                             </connections>
                                         </button>
                                     </subviews>

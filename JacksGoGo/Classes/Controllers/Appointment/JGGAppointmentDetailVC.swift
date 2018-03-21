@@ -134,12 +134,17 @@ class JGGAppointmentDetailVC: JGGAppointmentsTableVC {
     
     /// View Original Service Post
     @objc fileprivate func onPressedViewOriginalServicePost(_ sender: UIButton) {
-        let vc = JGGServiceDetailVC()
-        vc.automaticallyAdjustsScrollViewInsets = false
+        guard let service = selectedAppointment as? JGGJobModel else {
+            return
+        }
+        let servicesStoryboard = UIStoryboard(name: "Services", bundle: nil)
+        let detailVC = servicesStoryboard.instantiateViewController(withIdentifier: "JGGOriginalServiceDetailVC") as! JGGOriginalServiceDetailVC
+        detailVC.service = service
+        detailVC.automaticallyAdjustsScrollViewInsets = false
         self.navigationController?
             .parent?
             .navigationController?
-            .pushViewController(vc, animated: true)
+            .pushViewController(detailVC, animated: true)
     }
     
     /// Reject Job

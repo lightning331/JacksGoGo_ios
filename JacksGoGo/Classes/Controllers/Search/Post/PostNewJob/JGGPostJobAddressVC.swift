@@ -42,7 +42,9 @@ class JGGPostJobAddressVC: JGGPostServiceAddressVC {
                 addressModel.floor = txtPlaceName.text
                 addressModel.address = txtStreet.text
                 addressModel.postalCode = txtPostcode.text
-                
+                addressModel.lat = (selectedCoordinate?.latitude ?? 0)!
+                addressModel.lon = (selectedCoordinate?.longitude ?? 0)!
+
                 creatingJob.address = addressModel
             }
         }

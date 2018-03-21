@@ -21,8 +21,6 @@ class JGGProposalCancellationVC: JGGPostAppointmentBaseTableVC, UITextFieldDeleg
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        lblAppointmentTime.text = (parent as? JGGProposalStepRootVC)?.appointment.budgetDescription()
         
         txtDay.addTarget(self, action: #selector(textFieldDidChanged(_:)), for: .editingChanged)
         txtHour.addTarget(self, action: #selector(textFieldDidChanged(_:)), for: .editingChanged)
@@ -34,6 +32,11 @@ class JGGProposalCancellationVC: JGGPostAppointmentBaseTableVC, UITextFieldDeleg
         txtTerms.delegate = self
         
         showOriginalProposal()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        lblAppointmentTime.text = (parent as? JGGProposalStepRootVC)?.appointment.budgetDescription()
     }
     
     private func showOriginalProposal() {

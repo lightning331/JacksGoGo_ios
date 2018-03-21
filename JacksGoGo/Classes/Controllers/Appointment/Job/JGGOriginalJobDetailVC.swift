@@ -18,6 +18,7 @@ class JGGOriginalJobDetailVC: JGGAppointmentsTableVC {
     private var menu: AZDropdownMenu!
 
     var job: JGGJobModel!
+    var myProposal: JGGProposalModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,11 @@ class JGGOriginalJobDetailVC: JGGAppointmentsTableVC {
         initNavigationBar()
         initTableView()
         
+        if job.userProfileId == appManager.currentUser?.id {
+            self.tableView.tableFooterView = nil
+        } else {
+            checkProposal()
+        }
     }
 
     private func initNavigationBar() {
@@ -155,6 +161,23 @@ class JGGOriginalJobDetailVC: JGGAppointmentsTableVC {
             }
         }
     }
+    
+    // MARK: - Check proposal status
+    fileprivate func checkProposal() {
+        guard let jobId = job.id, let userProfileId = appManager.currentUser?.id else {
+            return
+        }
+        self.btnMakeProposal.isEnabled = false
+        self.btnMakeProposal.backgroundColor = UIColor.JGGGrey4
+        APIManager.getProposedStatus(jobId: jobId, userProfileId: userProfileId) { (proposal) in
+            self.btnMakeProposal.isEnabled = true
+            self.btnMakeProposal.backgroundColor = UIColor.JGGCyan
+            if let proposal = proposal {
+                self.myProposal = proposal
+                self.btnMakeProposal.setTitle(LocalizedString("View My Proposal"), for: .normal)
+            }
+        }
+    }
 }
 
 extension JGGOriginalJobDetailVC {
@@ -216,6 +239,7 @@ extension JGGOriginalJobDetailVC {
         case 6:
             let cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppInviteProviderCell") as! JGGAppInviteProviderCell
             cell.btnInvite.isHidden = true
+            cell.btnInvite.setTitle(" ", for: .normal)
             cell.user = job.userProfile
             return cell
         case 7:

@@ -16,12 +16,17 @@ class JGGProposalDescribeVC: JGGPostAppointmentBaseTableVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        lblAppointmentDescription.text = (self.parent as? JGGProposalStepRootVC)?.appointment.description_
         
         showOriginalProposal()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let proposalStepRootVC = self.parent as? JGGProposalStepRootVC
+        lblAppointmentDescription.text = proposalStepRootVC?.appointment.description_
+
+    }
+    
     private func showOriginalProposal() {
         let proposal = (self.parent as? JGGProposalStepRootVC)?.proposal
         txtDescribe.text = proposal?.description_

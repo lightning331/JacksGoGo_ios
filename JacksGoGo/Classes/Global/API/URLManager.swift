@@ -89,12 +89,12 @@ class URLManager: NSObject {
             return fullPath(for: "/GetPendingAppointments")
         }
         
-        static func GetConfirmedAppointments(id: String) -> String {
-            return fullPath(for: "/GetConfirmedAppointments?ID=\(id)")
+        static func GetConfirmedAppointments() -> String {
+            return fullPath(for: "/GetConfirmedAppointments")
         }
         
-        static func GetAppointmentHistory(id: String) -> String {
-            return fullPath(for: "/GetAppointmentHistory?ID=\(id)")
+        static func GetAppointmentHistory() -> String {
+            return fullPath(for: "/GetAppointmentHistory")
         }
         
         // Jobs
@@ -225,6 +225,10 @@ class URLManager: NSObject {
         
         static var GetUsersForInvite: String {
             return fullPath(for: "/GetUsersForInvite")
+        }
+        
+        static func GetProposedStatus(jobId: String, userProfileId: String) -> String {
+            return fullPath(for: "/GetProposedStatus?JobID=\(jobId)&UserProfileID=\(userProfileId)")
         }
     }
     

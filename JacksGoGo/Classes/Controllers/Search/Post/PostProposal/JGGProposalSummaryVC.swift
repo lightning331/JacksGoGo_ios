@@ -140,7 +140,33 @@ class JGGProposalSummaryVC: JGGPostAppointmentBaseTableVC {
         hud.mode = .indeterminate
         APIManager.postProposal(proposal, user: proposal.userProfile!) { (proposalId, errorMessage) in
             self.hud.hide(animated: true)
-            
+            if let proposalId = proposalId {
+                proposal.id = proposalId
+                let message = String(format: LocalizedString("Proposal reference no.: %@\n\nGood luck!"), proposalId)
+                JGGAlertViewController.show(
+                    title: LocalizedString("Proposal Sent!"),
+                    message: message,
+                    colorSchema: .cyan,
+                    okButtonTitle: LocalizedString("View Proposal"),
+                    okAction: { text in
+                        self.parent?.navigationController?.popToRootViewController(animated: true)
+                },
+                    cancelButtonTitle: nil,
+                    cancelAction: nil
+                )
+            } else {
+                JGGAlertViewController.show(
+                    title: LocalizedString("Error!"),
+                    message: errorMessage,
+                    colorSchema: .red,
+                    okButtonTitle: LocalizedString("Close"),
+                    okAction: { text in
+                        
+                },
+                    cancelButtonTitle: nil,
+                    cancelAction: nil
+                )
+            }
         }
     }
 }

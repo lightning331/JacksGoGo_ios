@@ -471,11 +471,30 @@ class JGGAPIManager: NSObject {
     }
     
     // MARK: - Appointments
-    func getPendingJobs(_ complete: @escaping AppointmentsClosure) -> Void {
+    func getPendingJobs(user: JGGUserProfileModel, pageIndex: Int = 0, pageSize: Int = 20, _ complete: @escaping AppointmentsClosure) -> Void {
+        
+        guard let userProfileId = user.id else {
+            complete([])
+            print("Get Peding Job: [ERROR]: No user profile id")
+            return
+        }
         
         CLS_LOG_SWIFT(format: "getPendingJobs url: %@", [URLManager.Appointment.GetPendingAppointments()])
-
-        GET(url: URLManager.Appointment.GetPendingAppointments(), params: nil) { (json, error) in
+        let params: Dictionary = [
+            "UserProfileID": userProfileId,
+            "PageIndex": pageIndex,
+            "PageSize": pageSize,
+        ]
+        getAppointmentsArray(
+            method: .get,
+            url: URLManager.Appointment.GetPendingAppointments(),
+            params: params,
+            complete
+        )
+    }
+    
+    fileprivate func getAppointmentsArray(method: HTTPMethod, url: String, params: Dictionary?, _ complete: @escaping AppointmentsClosure) {
+        let completeClosure: DefaultResponse = { (json, error) in
             if let response = json {
                 let success = response[SUCCESS_KEY].boolValue
                 if success {
@@ -491,8 +510,121 @@ class JGGAPIManager: NSObject {
             }
             complete([])
         }
+        if method == .get {
+            GET(url: url, params: params, complete: completeClosure)
+        } else if method == .post {
+            POST(url: url, body: params, complete: completeClosure)
+        } else {
+            complete([])
+        }
     }
     
+    // MARK: - Search
+    fileprivate func searchAppointments(
+        type: JGGAppointmentType,
+        regionId: String? = nil,
+        userProfileId: String? = nil,
+        query: String? = nil,
+        categoryId: String? = nil,
+        tag: String? = nil,
+        postedOn: String? = nil,
+        lat: Double? = nil,
+        lon: Double? = nil,
+        distance: Double? = nil,
+        pageIndex: Int = 0,
+        pageSize: Int = 20,
+        _ complete: @escaping AppointmentsClosure) -> Void
+    {
+        var params: Dictionary = [:]
+        if let regionId      = regionId         { params["RegionID"] = regionId }
+        if let userProfileId = userProfileId    { params["UserProfileID"] = userProfileId }
+        if let query         = query            { params["Query"] = query }
+        if let categoryId    = categoryId       { params["CategoryID"] = categoryId }
+        if let tag           = tag              { params["Tag"] = tag }
+        if let postedOn      = postedOn         { params["PostedOn"] = postedOn }
+        if let lat           = lat              { params["Lat"] = lat }
+        if let lon           = lon              { params["Lon"] = lon }
+        if let distance = distance              { params["Distance"] = distance }
+        params["PageIndex"] = pageIndex
+        params["PageSize"] = pageSize
+        var url: String
+        if type == .job {
+            url = URLManager.Appointment.SearchJob
+        } else if type == .service {
+            url = URLManager.Appointment.SearchService
+        } else {
+            complete([])
+            return
+        }
+        getAppointmentsArray(
+            method: .post,
+            url: url,
+            params: params,
+            complete
+        )
+    }
+    
+    func searchJobs(
+        regionId: String? = nil,
+        userProfileId: String? = nil,
+        query: String? = nil,
+        categoryId: String? = nil,
+        tag: String? = nil,
+        postedOn: String? = nil,
+        lat: Double? = nil,
+        lon: Double? = nil,
+        distance: Double? = nil,
+        pageIndex: Int = 0,
+        pageSize: Int = 20,
+        _ complete: @escaping AppointmentsClosure) -> Void
+    {
+        searchAppointments(
+            type: .job,
+            regionId: regionId,
+            userProfileId: userProfileId,
+            query: query,
+            categoryId: categoryId,
+            tag: tag,
+            postedOn: postedOn,
+            lat: lat,
+            lon: lon,
+            distance: distance,
+            pageIndex: pageIndex,
+            pageSize: pageSize,
+            complete
+        )
+    }
+    
+    func searchServices(
+        regionId: String? = nil,
+        userProfileId: String? = nil,
+        query: String? = nil,
+        categoryId: String? = nil,
+        tag: String? = nil,
+        postedOn: String? = nil,
+        lat: Double? = nil,
+        lon: Double? = nil,
+        distance: Double? = nil,
+        pageIndex: Int = 0,
+        pageSize: Int = 20,
+        _ complete: @escaping AppointmentsClosure) -> Void
+    {
+        searchAppointments(
+            type: .service,
+            regionId: regionId,
+            userProfileId: userProfileId,
+            query: query,
+            categoryId: categoryId,
+            tag: tag,
+            postedOn: postedOn,
+            lat: lat,
+            lon: lon,
+            distance: distance,
+            pageIndex: pageIndex,
+            pageSize: pageSize,
+            complete
+        )
+    }
     
     // MARK: - Job
     func getCategories(_ complete: @escaping CategoryListClosure) -> Void {
@@ -589,7 +721,8 @@ class JGGAPIManager: NSObject {
     // MARK: - Service
     func postService(_ service: JGGJobModel, complete: @escaping StringStringClosure) -> Void
     {
-        CLS_LOG_SWIFT(format: "postService url: %@\nBODY: %@", [URLManager.Appointment.PostService, service.json().description])
+//        CLS_LOG_SWIFT(format: "postService url: %@\nBODY: %@", [URLManager.Appointment.PostService, service.json().description])
+        print(service.json().description)
         POST(url: URLManager.Appointment.PostService, body: service.json().dictionaryObject) { (response, error) in
             if let json = response {
                 let success = json[SUCCESS_KEY].boolValue
@@ -611,6 +744,7 @@ class JGGAPIManager: NSObject {
         
         CLS_LOG_SWIFT(format: "postProposal url: %@\nBODY: %@", [URLManager.Proposal.PostProposal, proposal.json().description])
         print(proposal.json().description)
+        proposal.currencyCode = proposal.appointment?.currencyCode
         POST(url: URLManager.Proposal.PostProposal, body: proposal.json().dictionaryObject) { (response, error) in
             if let json = response {
                 let success = json[SUCCESS_KEY].boolValue
@@ -728,6 +862,22 @@ class JGGAPIManager: NSObject {
                 complete([])
                 print("getProvidersForInvite ERROR: ", error ?? "")
             }
+        }
+    }
+    
+    func getProposedStatus(jobId: String, userProfileId: String, _ complete: @escaping ProposalClosure) -> Void {
+        let url = URLManager.Proposal.GetProposedStatus(jobId: jobId, userProfileId: userProfileId)
+        GET(url: url, params: nil) { (response, error) in
+            if let json = response {
+                let success = json[SUCCESS_KEY].boolValue
+                if success {
+                    let proposal = JGGProposalModel(json: json[VALUE_KEY].arrayValue.first)
+                    complete(proposal)
+                    return
+                }
+            }
+            complete(nil)
+            print("getProposedStatus ERROR: ", error ?? "")
         }
     }
 }

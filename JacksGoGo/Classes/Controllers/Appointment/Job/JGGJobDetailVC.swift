@@ -14,7 +14,7 @@ class JGGJobDetailVC: JGGAppointmentDetailBaseVC {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnViewOriginalJobPost: UIButton!
     
-    var job: JGGJobModel?
+    fileprivate var job: JGGJobModel?
     override var selectedAppointment: JGGJobModel? {
         didSet {
             job = selectedAppointment
@@ -42,15 +42,17 @@ class JGGJobDetailVC: JGGAppointmentDetailBaseVC {
         
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let segueId = segue.identifier {
+            if segueId == "gotoOriginalJobDetailVC" {
+                let vc = segue.destination as! JGGOriginalJobDetailVC
+                vc.job = self.selectedAppointment
+            }
+        }
     }
-    */
 
 }
 

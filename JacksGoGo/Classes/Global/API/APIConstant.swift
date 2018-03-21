@@ -18,3 +18,9 @@ public enum JGGRepetitionType: Int {
     case weekly = 0
     case monthly = 1
 }
+
+public enum JGGAppointmentType: Int {
+    case job = 0
+    case service = 1
+    case goclub = 2
+}

@@ -198,7 +198,24 @@ class JGGJobModel: JGGAppointmentBaseModel {
             desc = String(format: "%@\n$ %.2f", LocalizedString("Fixed"), budget ?? 0)
         }
         else if budgetType == 3 {
-            desc = String(format: "%@\n$ %.2f - $ $.2f/month", LocalizedString("Package"), budgetFrom ?? 0, budgetTo ?? 0)
+            desc = String(format: "%@\n$ %.2f - $ %.2f/month", LocalizedString("Package"), budgetFrom ?? 0, budgetTo ?? 0)
+        }
+        return desc
+    }
+    
+    func budgetSimpleDescription() -> String {
+        var desc: String = ""
+        if budgetType == 0 {
+            desc = LocalizedString("Not set")
+        }
+        else if budgetType == 1 {
+            desc = LocalizedString("No limit")
+        }
+        else if budgetType == 2 {
+            desc = String(format: "$ %.2f", budget ?? 0)
+        }
+        else if budgetType == 3 {
+            desc = String(format: "$ %.2f - $ %.2f", budgetFrom ?? 0, budgetTo ?? 0)
         }
         return desc
     }

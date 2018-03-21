@@ -77,6 +77,7 @@ extension JGGProposalOverviewVC: UITableViewDataSource, UITableViewDelegate {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppInviteProviderCell") as! JGGAppInviteProviderCell
             cell.btnInvite.isHidden = true
+            cell.btnInvite.setTitle(" ", for: .normal)
             cell.user = proposal.userProfile
             return cell
         case 1, 2, 3, 4:

@@ -26,9 +26,27 @@ class JGGSearchMainVC: JGGStartTableVC {
     @IBOutlet weak var clsviewAllCategories: UICollectionView!
     @IBOutlet weak var constraintCategoriesHeight: NSLayoutConstraint!
     
+    fileprivate var sectionTitleView: JGGSectionTitleButtonView?
+    
     fileprivate lazy var categories: [JGGCategoryModel] = []
     
     private var selectedTab: SearchTabButton = .services
+    private var isLoadingServices: Bool = false {
+        didSet {
+            if selectedTab == .services {
+                sectionTitleView?.startLoading(isLoadingServices)
+            }
+        }
+    }
+    private var isLoadingJobs: Bool = false {
+        didSet {
+            if selectedTab == .jobs {
+                sectionTitleView?.startLoading(isLoadingJobs)
+            }
+        }
+    }
+    fileprivate var arrayRecommendServices: [JGGJobModel] = []
+    fileprivate var arrayRecommendJobs: [JGGJobModel] = []
     
     // MARK: -
     override func viewDidLoad() {
@@ -40,6 +58,9 @@ class JGGSearchMainVC: JGGStartTableVC {
         initCollectionView()
         self.viewServiceSummary.isHidden = false
         self.viewJobSummary.isHidden = true
+        
+        loadRecommendServices()
+        loadRecommendJobs()
     }
     
     override func showLoginVCIfNeed() -> Bool {
@@ -57,8 +78,8 @@ class JGGSearchMainVC: JGGStartTableVC {
     }
     
     private func initTableView() {
-        self.tableView.register(UINib(nibName: "JGGSectionTitleView", bundle: nil),
-                                forHeaderFooterViewReuseIdentifier: "JGGSectionTitleView")
+        self.tableView.register(UINib(nibName: "JGGSectionTitleButtonView", bundle: nil),
+                                forHeaderFooterViewReuseIdentifier: "JGGSectionTitleButtonView")
         self.tableView.register(UINib(nibName: "JGGServiceListCell", bundle: nil),
                                 forCellReuseIdentifier: "JGGServiceListCell")
         self.tableView.allowsSelection = true
@@ -86,6 +107,48 @@ class JGGSearchMainVC: JGGStartTableVC {
         
     }
     
+    // MARK: - Request to load services and jobs
+    
+    fileprivate func loadRecommendServices(pageIndex: Int = 0, pageSize: Int = 20) {
+        if isLoadingServices { return }
+        isLoadingServices = true
+        APIManager.searchServices { (result) in
+            self.isLoadingServices = false
+            if pageIndex == 0 {
+                self.arrayRecommendServices.removeAll()
+            }
+            self.arrayRecommendServices.append(contentsOf: result)
+            if self.selectedTab == .services {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    fileprivate func loadRecommendJobs(pageIndex: Int = 0, pageSize: Int = 20) {
+        if isLoadingJobs { return }
+        isLoadingJobs = true
+        APIManager.searchJobs { (result) in
+            self.isLoadingJobs = false
+            if pageIndex == 0 {
+                self.arrayRecommendJobs.removeAll()
+            }
+            self.arrayRecommendJobs.append(contentsOf: result)
+            if self.selectedTab == .jobs {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    @objc fileprivate func reloadRecommendAppointments(_ sender: Any) {
+        if selectedTab == .services {
+            loadRecommendServices()
+        } else if selectedTab == .jobs {
+            loadRecommendJobs()
+        }
+    }
+    
+    // MARK: - Button actions
+    
     @IBAction func onPressedViewMyServices(_ sender: Any) {
     }
     
@@ -96,6 +159,8 @@ class JGGSearchMainVC: JGGStartTableVC {
     @IBAction func onPressedPostNew(_ sender: Any) {
         
     }
+    
+    // MARK: - Navigation
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "gotoPostJob" || identifier == "gotoPostService" {
@@ -181,13 +246,36 @@ extension JGGSearchMainVC { // UITableViewDataSource, UITableViewDelegate
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let sectionTitleView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "JGGSectionTitleView") as? JGGSectionTitleView
+        let sectionTitleView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "JGGSectionTitleButtonView") as? JGGSectionTitleButtonView
         sectionTitleView?.title = LocalizedString("Recommended For You")
+        var imageName: String = "button_reload_green"
+        if self.selectedTab == .services {
+            if isLoadingServices {
+                sectionTitleView?.loadingIndicator.startAnimating()
+            }
+        } else if self.selectedTab == .jobs {
+            imageName = "button_reload_cyan"
+            if isLoadingJobs {
+                sectionTitleView?.loadingIndicator.startAnimating()
+            }
+        } else if self.selectedTab == .goclub {
+            imageName = "button_reload_purple"
+        }
+        sectionTitleView?.button.setImage(
+            UIImage(named: imageName),
+            for: .normal
+        )
+        sectionTitleView?.button.addTarget(
+            self,
+            action: #selector(reloadRecommendAppointments(_:)),
+            for: .touchUpInside
+        )
+        self.sectionTitleView = sectionTitleView
         return sectionTitleView
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return arrayRecommendAppointments.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -197,30 +285,50 @@ extension JGGSearchMainVC { // UITableViewDataSource, UITableViewDelegate
         } else if self.selectedTab == .jobs {
             cell.imgviewAccessory.image = UIImage(named: "button_next_cyan")
         }
-        cell.viewAddress.isHidden = (indexPath.row == 2)
-        cell.viewBooked.isHidden = (indexPath.row == 4 || indexPath.row == 8)
-        if indexPath.row == 3 {
-            cell.lblServiceTitle.text = "Tennis Coach - Pricate Lessons 1 on 1 for 2 hours"
-        } else {
-            cell.lblServiceTitle.text = "Lifeguard Training"
-        }
+        cell.appointment = arrayRecommendAppointments[indexPath.row]
+        
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let appointment = arrayRecommendAppointments[indexPath.row]
         if self.selectedTab == .services {
-            gotoServiceDetailVC()
+            gotoServiceDetailVC(with: appointment)
         } else if self.selectedTab == .jobs {
-            gotoJobDetailVC(with: JGGJobModel())
+            gotoJobDetailVC(with: appointment)
         } else if self.selectedTab == .goclub {
             
         }
         
     }
     
-    private func gotoServiceDetailVC() {
-        let detailVC = JGGServiceDetailVC()
-        detailVC.isCanBuyService = true
+    private var arrayRecommendAppointments: [JGGJobModel] {
+        set {
+            if self.selectedTab == .services {
+                arrayRecommendServices = newValue
+            } else if self.selectedTab == .jobs {
+                arrayRecommendJobs = newValue
+            } else if self.selectedTab == .goclub {
+                
+            }
+        }
+        get {
+            if self.selectedTab == .services {
+                return arrayRecommendServices
+            } else if self.selectedTab == .jobs {
+                return arrayRecommendJobs
+            } else if self.selectedTab == .goclub {
+                return []
+            } else {
+                return []
+            }
+        }
+    }
+    
+    private func gotoServiceDetailVC(with service: JGGJobModel) {
+        let jobsStoryboard = UIStoryboard(name: "Services", bundle: nil)
+        let detailVC = jobsStoryboard.instantiateViewController(withIdentifier: "JGGOriginalServiceDetailVC") as! JGGOriginalServiceDetailVC
+        detailVC.service = service
         self.navigationController?
             .pushViewController(detailVC, animated: true)
     }

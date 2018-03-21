@@ -18,6 +18,14 @@ class JGGProposalBidVC: JGGPostAppointmentBaseTableVC, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        txtPrice.delegate = self
+        txtBreakdown.delegate = self
+        
+        showOriginalProposal()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         let job = (self.parent as? JGGProposalStepRootVC)?.appointment
         lblAppointmentPrice.text = job?.budgetDescription()
         
@@ -26,11 +34,7 @@ class JGGProposalBidVC: JGGPostAppointmentBaseTableVC, UITextFieldDelegate {
         } else {
             txtPrice.placeholder = LocalizedString("Bid Amount  $ 1.00/month")
         }
-        
-        txtPrice.delegate = self
-        txtBreakdown.delegate = self
-        
-        showOriginalProposal()
+
     }
     
     private func showOriginalProposal() {

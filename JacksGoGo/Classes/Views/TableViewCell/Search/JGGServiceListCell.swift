@@ -31,9 +31,16 @@ class JGGServiceListCell: UITableViewCell {
     
     @IBOutlet weak var imgviewAccessory: UIImageView!
     
+    var appointment: JGGJobModel! {
+        didSet {
+            showAppointmentInfo()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        imgviewFavorite.isHidden = true
+        viewBooked.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -42,4 +49,34 @@ class JGGServiceListCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    fileprivate func showAppointmentInfo() {
+        
+        let placeholderAppointment = UIImage(named: "appointment_placeholder")
+        imgviewPhoto.image = placeholderAppointment
+        if let imageURLString = appointment.attachmentUrl?.first,
+            let url = URL(string: imageURLString)
+        {
+            imgviewPhoto.af_setImage(withURL: url)
+        }
+        
+        imgviewCategory.image = nil
+        if let categoryURLString = appointment.category?.image,
+            let url = URL(string: categoryURLString) {
+            imgviewCategory.af_setImage(withURL: url, placeholderImage: nil)
+        }
+        
+        lblServiceTitle.text = appointment.title
+        
+        if appointment.isRequest { // Job
+            viewRatebar.isHidden = true
+            viewTime.isHidden = false
+            lblTime.text = appointment.jobTimeDescription()
+        } else { // Service
+            viewRatebar.isHidden = false
+            viewTime.isHidden = true
+        }
+        lblAddress.text = appointment.address?.fullName
+        lblPrice.text = appointment.budgetSimpleDescription()
+        
+    }
 }

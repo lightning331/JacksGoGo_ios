@@ -126,7 +126,10 @@ class JGGAppMainVC: JGGStartTableVC {
     fileprivate func reloadJobWithPullRefresh() {
         self.tableView.es.addPullToRefresh {
             if !self.isLoading {
-                self.APIManager.getPendingJobs { (response) in
+                guard let currentUser = self.appManager.currentUser else {
+                    return
+                }
+                self.APIManager.getPendingJobs(user: currentUser) { (response) in
                     self.resetData()
                     self.arrayAllPendingJobs.append(contentsOf: response)
                     self.filterJobs(response)
@@ -141,7 +144,10 @@ class JGGAppMainVC: JGGStartTableVC {
     }
     
     fileprivate func loadJobs() {
-        APIManager.getPendingJobs { (response) in
+        guard let currentUser = self.appManager.currentUser else {
+            return
+        }
+        self.APIManager.getPendingJobs(user: currentUser) { (response) in
             self.arrayAllPendingJobs.append(contentsOf: response)
             self.filterJobs(response)
             if response.count > 0 {

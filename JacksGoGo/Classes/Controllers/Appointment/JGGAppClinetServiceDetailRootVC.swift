@@ -169,7 +169,12 @@ class JGGAppClinetServiceDetailRootVC: JGGAppointmentDetailBaseVC {
     
     /// View Original Service Post
     @objc fileprivate func onPressedViewOriginalServicePost(_ sender: UIButton) {
-        let vc = JGGServiceDetailVC()
-        self.navigationController?.pushViewController(vc, animated: true)
+        guard let service = selectedAppointment as? JGGJobModel else {
+            return
+        }
+        let jobsStoryboard = UIStoryboard(name: "Services", bundle: nil)
+        let detailVC = jobsStoryboard.instantiateViewController(withIdentifier: "JGGOriginalServiceDetailVC") as! JGGOriginalServiceDetailVC
+        detailVC.service = service
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

@@ -8,25 +8,37 @@
 
 import UIKit
 
-class JGGServiceDetailVC: JGGSearchBaseTableVC {
+class JGGOriginalServiceDetailVC: JGGSearchBaseTableVC {
     
-    var isCanBuyService: Bool = false
+    var service: JGGJobModel! {
+        didSet {
+            if let _ = service.budget {
+                isCanBuyService = true
+            }
+        }
+    }
     
+    fileprivate lazy var isCanBuyService: Bool = false
+
     fileprivate var imgviewServiceAvatar: UIImageView!
-    fileprivate var btnRequestAQuotation: UIButton!
-    fileprivate var btnFavorite: UIBarButtonItem!
-    fileprivate var btnMenu: UIBarButtonItem!
+    @IBOutlet fileprivate var btnRequestAQuotation: UIButton!
+    @IBOutlet fileprivate var btnFavorite: UIBarButtonItem!
+    @IBOutlet fileprivate var btnMenu: UIBarButtonItem!
     
     private var isFavorited: Bool = false
     private var menu: AZDropdownMenu!
     fileprivate lazy var serviceStroyboard = UIStoryboard(name: "Services", bundle: nil)
     fileprivate lazy var appointmentStroyboard = UIStoryboard(name: "Appointment", bundle: nil)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initNavigationBar()
         initTableView()
+        
+        if service.userProfileId == appManager.currentUser?.id {
+            self.tableView.tableFooterView = nil
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -39,24 +51,12 @@ class JGGServiceDetailVC: JGGSearchBaseTableVC {
         
         self.navigationItem.title = " "
         
-        let btnFavorite = UIBarButtonItem(image: UIImage(named: "button_favourite_outline_orange"),
-                                          style: .plain,
-                                          target: self,
-                                          action: #selector(onPressedFavorite(_:)))
-        btnFavorite.tintColor = UIColor.JGGGreen
-        self.btnFavorite = btnFavorite
-        
-        let btnMenu = UIBarButtonItem(image: UIImage(named: "button_more_orange"),
-                                      style: .plain,
-                                      target: self,
-                                      action: #selector(onPressedMenu(_:)))
-        btnMenu.tintColor = UIColor.JGGGreen
-        self.btnMenu = btnMenu
-        
         createMenu()
         
-        self.navigationItem.rightBarButtonItems = [btnMenu, btnFavorite]
-        self.hidesBottomBarWhenPushed = true
+        self.navigationController?.hidesBarsOnSwipe = false
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.hidesBottomBarWhenPushed = true
+
     }
     
     private func initTableView() {
@@ -70,26 +70,10 @@ class JGGServiceDetailVC: JGGSearchBaseTableVC {
         self.tableView.tableHeaderView = imageView
         self.imgviewServiceAvatar = imageView
         
-        let btnRequestAQuotation = UIButton(type: .custom)
-        btnRequestAQuotation.frame = CGRect(origin: CGPoint.zero,
-                                            size: CGSize(width: self.view.bounds.width,
-                                                         height: 50))
-        btnRequestAQuotation.titleLabel?.font = UIFont.JGGButton
-        btnRequestAQuotation.backgroundColor = UIColor.JGGGreen
-        btnRequestAQuotation.setTitleColor(UIColor.JGGWhite, for: .normal)
         if isCanBuyService {
             btnRequestAQuotation.setTitle(LocalizedString("Buy Service"), for: .normal)
         } else {
             btnRequestAQuotation.setTitle(LocalizedString("Request A Quotation"), for: .normal)
-        }
-        btnRequestAQuotation.addTarget(self,
-                                       action: #selector(onPressedRequestAQuotation(_:)),
-                                       for: .touchUpInside)
-        self.tableView.tableFooterView = btnRequestAQuotation
-        self.btnRequestAQuotation = btnRequestAQuotation
-        
-        func registerHeaderFooterView(nibName: String) {
-            self.tableView.register(UINib(nibName: nibName, bundle: nil), forHeaderFooterViewReuseIdentifier: nibName)
         }
         
         func registerCell(nibName: String) {
@@ -139,7 +123,7 @@ class JGGServiceDetailVC: JGGSearchBaseTableVC {
     }
     
     // MARK: Menu
-    @objc fileprivate func onPressedMenu(_ sender: UIBarButtonItem) {
+    @IBAction fileprivate func onPressedMenu(_ sender: UIBarButtonItem) {
         if self.menu.isDescendant(of: self.navigationController!.view!) {
             self.menu.hideMenu()
         } else {
@@ -184,7 +168,7 @@ class JGGServiceDetailVC: JGGSearchBaseTableVC {
 
     // MARK: - Button actions
 
-    @objc fileprivate func onPressedFavorite(_ sender: UIBarButtonItem) {
+    @IBAction fileprivate func onPressedFavorite(_ sender: UIBarButtonItem) {
         isFavorited = !isFavorited
         if isFavorited {
             sender.image = UIImage(named: "button_favourite_active_orange")
@@ -203,7 +187,7 @@ class JGGServiceDetailVC: JGGSearchBaseTableVC {
         self.navigationController?.pushViewController(allReviewsVC, animated: true)
     }
     
-    @objc fileprivate func onPressedRequestAQuotation(_ sender: UIButton) {
+    @IBAction fileprivate func onPressedRequestAQuotation(_ sender: UIButton) {
         if isCanBuyService {
             let serviceBuyVC = serviceStroyboard.instantiateViewController(withIdentifier: "JGGServiceBuyVC") as! JGGServiceBuyVC
             self.navigationController?.pushViewController(serviceBuyVC, animated: true)
@@ -226,7 +210,7 @@ class JGGServiceDetailVC: JGGSearchBaseTableVC {
     }
 }
 
-extension JGGServiceDetailVC {
+extension JGGOriginalServiceDetailVC {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

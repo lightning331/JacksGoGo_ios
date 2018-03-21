@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -413,7 +414,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JtY-lP-UmN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2082" y="-599"/>
+            <point key="canvasLocation" x="1412" y="-602"/>
         </scene>
         <!--Service FilterVC-->
         <scene sceneID="pa7-cP-eDU">
@@ -1821,6 +1822,86 @@ Next, let's set up a payment methods. The payment will only be released when the
             </objects>
             <point key="canvasLocation" x="5138" y="1772"/>
         </scene>
+        <!--Original Service DetailVC-->
+        <scene sceneID="k1j-o5-weR">
+            <objects>
+                <tableViewController storyboardIdentifier="JGGOriginalServiceDetailVC" hidesBottomBarWhenPushed="YES" id="JGu-fG-bv8" customClass="JGGOriginalServiceDetailVC" customModule="JacksGoGo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hqm-dY-TYA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="S4u-bv-KbJ">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="v5R-ld-5Ie">
+                            <rect key="frame" x="0.0" y="287" width="375" height="48"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bx2-jV-WZs">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                    <color key="backgroundColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                                    <state key="normal" title="Buy Service">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onPressedRequestAQuotation:" destination="JGu-fG-bv8" eventType="touchUpInside" id="f9q-KH-zR4"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Bx2-jV-WZs" secondAttribute="trailing" id="QoW-pi-uYl"/>
+                                <constraint firstItem="Bx2-jV-WZs" firstAttribute="top" secondItem="v5R-ld-5Ie" secondAttribute="top" id="au6-cR-uMn"/>
+                                <constraint firstItem="Bx2-jV-WZs" firstAttribute="leading" secondItem="v5R-ld-5Ie" secondAttribute="leading" id="xtM-1D-heO"/>
+                                <constraint firstAttribute="bottom" secondItem="Bx2-jV-WZs" secondAttribute="bottom" id="zqo-Pf-Gc7"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="WsN-me-akx">
+                                <rect key="frame" x="0.0" y="243" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WsN-me-akx" id="Rqh-qY-Mm1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JGu-fG-bv8" id="E4j-cA-cVJ"/>
+                            <outlet property="delegate" destination="JGu-fG-bv8" id="7pk-tC-gx5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="fUw-WG-bh7">
+                        <rightBarButtonItems>
+                            <barButtonItem image="button_more_orange" id="hEe-15-eBc">
+                                <color key="tintColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="onPressedMenu:" destination="JGu-fG-bv8" id="5Ma-aC-GdN"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="button_favourite_outline_green" id="Wop-Wv-ccs">
+                                <inset key="imageInsets" minX="14" minY="0.0" maxX="-14" maxY="0.0"/>
+                                <color key="tintColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="onPressedFavorite:" destination="JGu-fG-bv8" id="hIm-Pj-ZY5"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="btnFavorite" destination="Wop-Wv-ccs" id="yyr-Nj-PDs"/>
+                        <outlet property="btnMenu" destination="hEe-15-eBc" id="bek-io-jWz"/>
+                        <outlet property="btnRequestAQuotation" destination="Bx2-jV-WZs" id="vZp-qz-JIm"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jdi-fg-6aU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2358" y="-602"/>
+        </scene>
     </scenes>
     <resources>
         <image name="button_addnew_round_cyan" width="40" height="40"/>
@@ -1828,10 +1909,12 @@ Next, let's set up a payment methods. The payment will only be released when the
         <image name="button_backarrow_cyan" width="27" height="27"/>
         <image name="button_backarrow_green" width="27" height="27"/>
         <image name="button_close_round_green" width="32" height="32"/>
+        <image name="button_favourite_outline_green" width="27" height="27"/>
         <image name="button_filter_green" width="32" height="32"/>
         <image name="button_listview_green" width="32" height="32"/>
         <image name="button_location_green" width="32" height="32"/>
         <image name="button_mapview_green" width="32" height="32"/>
+        <image name="button_more_orange" width="27" height="27"/>
         <image name="button_tick_round_green" width="40" height="40"/>
         <image name="button_today_green" width="27" height="27"/>
         <image name="button_viewall_round_cyan" width="40" height="40"/>

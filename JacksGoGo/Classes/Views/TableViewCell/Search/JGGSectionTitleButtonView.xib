@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Bold.ttf">
+            <string>Muli-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="VN0-hz-Zvc" customClass="JGGSectionTitleButtonView" customModule="JacksGoGo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="383" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mge-Sb-mTy">
+                    <rect key="frame" x="0.0" y="0.0" width="383" height="60"/>
+                    <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFL-md-cgT">
+                    <rect key="frame" x="16" y="33" width="351" height="19"/>
+                    <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8az-p6-aW7">
+                    <rect key="frame" x="327" y="20" width="40" height="40"/>
+                    <state key="normal" image="button_reload_cyan"/>
+                </button>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2fz-oR-Rin">
+                    <rect key="frame" x="337" y="30" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="8az-p6-aW7" secondAttribute="bottom" id="CjO-lK-Pi9"/>
+                <constraint firstAttribute="bottom" secondItem="mge-Sb-mTy" secondAttribute="bottom" id="Cnb-HP-GF7"/>
+                <constraint firstItem="2fz-oR-Rin" firstAttribute="centerX" secondItem="8az-p6-aW7" secondAttribute="centerX" id="IIJ-yf-EfR"/>
+                <constraint firstItem="OIT-Iu-ZYj" firstAttribute="trailing" secondItem="mge-Sb-mTy" secondAttribute="trailing" id="NaQ-xG-SIa"/>
+                <constraint firstItem="OIT-Iu-ZYj" firstAttribute="trailing" secondItem="8az-p6-aW7" secondAttribute="trailing" constant="16" id="PDU-Qj-tjJ"/>
+                <constraint firstItem="mge-Sb-mTy" firstAttribute="leading" secondItem="OIT-Iu-ZYj" secondAttribute="leading" id="TmB-PO-YaU"/>
+                <constraint firstItem="OIT-Iu-ZYj" firstAttribute="bottom" secondItem="QFL-md-cgT" secondAttribute="bottom" constant="8" id="W98-kO-Lec"/>
+                <constraint firstItem="QFL-md-cgT" firstAttribute="leading" secondItem="OIT-Iu-ZYj" secondAttribute="leading" constant="16" id="WSV-9A-v2V"/>
+                <constraint firstItem="2fz-oR-Rin" firstAttribute="centerY" secondItem="8az-p6-aW7" secondAttribute="centerY" id="XRJ-TL-ENW"/>
+                <constraint firstItem="OIT-Iu-ZYj" firstAttribute="trailing" secondItem="QFL-md-cgT" secondAttribute="trailing" constant="16" id="knX-pi-ruP"/>
+                <constraint firstItem="mge-Sb-mTy" firstAttribute="top" secondItem="VN0-hz-Zvc" secondAttribute="top" id="xxy-Rh-RjB"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="OIT-Iu-ZYj"/>
+            <connections>
+                <outlet property="button" destination="8az-p6-aW7" id="KFk-oC-gaq"/>
+                <outlet property="loadingIndicator" destination="2fz-oR-Rin" id="Mvh-ZL-agr"/>
+                <outlet property="titleLabel" destination="QFL-md-cgT" id="c34-lG-KCD"/>
+            </connections>
+            <point key="canvasLocation" x="-77" y="74"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="button_reload_cyan" width="40" height="40"/>
+    </resources>
+</document>

@@ -216,7 +216,7 @@ class URLManager: NSObject {
         }
         
         static func GetProposalsByJob(id: String, pageIndex: Int = 0, pageSize: Int = 20) -> String {
-            return fullPath(for: String(format: "/GetProposalsByJob?ID=\(id)&pageIndex=\(pageIndex)&pageSize=\(pageSize))"))
+            return fullPath(for: String(format: "/GetProposalsByJob?JobID=\(id)&pageIndex=\(pageIndex)&pageSize=\(pageSize)"))
         }
         
         static func GetProposalsByUser(id: String, pageIndex: Int = 0, pageSize: Int = 20) -> String {

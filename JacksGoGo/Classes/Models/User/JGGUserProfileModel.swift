@@ -200,4 +200,30 @@ class JGGUserProfileModel: JGGBaseModel {
         json[IsActive].boolValue                    = isActive
         return json
     }
+    
+    func fullBillingAddress() -> String {
+        var aaa: [String] = []
+        if let a = billingAddressUnit {
+            aaa.append(a)
+        }
+        if let a = billingAddressFloor {
+            aaa.append(a)
+        }
+        if let a = billingAddressAddress {
+            aaa.append(a)
+        }
+        if let a = billingAddressCity {
+            aaa.append(a)
+        }
+        if let a = billingAddressState {
+            aaa.append(a)
+        }
+        if let a = billingAddressCountryCode {
+            aaa.append(a)
+        }
+        if let a = billingAddressPostalCode {
+            aaa.append(a)
+        }
+        return aaa.joined(separator: ", ")
+    }
 }

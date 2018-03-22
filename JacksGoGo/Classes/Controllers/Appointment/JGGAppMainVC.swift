@@ -294,7 +294,7 @@ class JGGAppMainVC: JGGStartTableVC {
                 if cell.job!.isRequest {
                     if let appointmentStatusSummary = self.storyboard?.instantiateViewController(withIdentifier: "JGGAppJobStatusSummaryVC") as? JGGAppJobStatusSummaryVC
                     {
-                        appointmentStatusSummary.job = cell.job!
+                        appointmentStatusSummary.selectedAppointment = cell.job!
                         self.navigationController?.pushViewController(appointmentStatusSummary, animated: true)
                     }
                 } else {

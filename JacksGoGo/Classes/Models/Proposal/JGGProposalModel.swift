@@ -188,4 +188,14 @@ class JGGProposalModel: JGGBaseModel {
             return LocalizedString("Not allowed")
         }
     }
+    
+    func budgetDescription() -> String {
+        if let budget = budget {
+            return String(format: "$ %.2f", budget)
+        } else if let budgetFrom = budgetFrom, let budgetTo = budgetTo {
+            return String(format: "$ %.2f - $ %.2f", budgetFrom, budgetTo)
+        } else {
+            return "Not set"
+        }
+    }
 }

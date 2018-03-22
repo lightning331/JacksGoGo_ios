@@ -826,13 +826,20 @@ class JGGAPIManager: NSObject {
         let url = URLManager.Proposal.GetProposalsByJob(id: jobId, pageIndex: pageIndex, pageSize: pageSize)
         GET(url: url, params: nil) { (response, error) in
             if let json = response {
-                var proposals: [JGGProposalModel] = []
-                for jsonProposal in json.arrayValue {
-                    if let proposal = JGGProposalModel(json: jsonProposal) {
-                        proposals.append(proposal)
+                let success = json[SUCCESS_KEY].boolValue
+                if success {
+                    var proposals: [JGGProposalModel] = []
+                    for jsonProposal in json[VALUE_KEY].arrayValue {
+                        if let proposal = JGGProposalModel(json: jsonProposal) {
+                            proposals.append(proposal)
+                        }
                     }
+                    complete(proposals)
+                    return
                 }
-                complete(proposals)
+            } else {
+                complete([])
+                print("getProvidersForInvite ERROR: ", error ?? "")
             }
         }
     }

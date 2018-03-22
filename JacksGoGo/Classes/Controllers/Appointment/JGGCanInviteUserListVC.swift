@@ -69,6 +69,13 @@ class JGGCanInviteUserListVC: JGGAppointmentDetailBaseVC {
         }
     }
     
+    @objc fileprivate func showUserProfile(_ userProfile: JGGUserProfileModel) {
+        let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+        let publicProfileVC = profileStoryboard.instantiateViewController(withIdentifier: "JGGPublicProfileVC") as! JGGPublicProfileVC
+        publicProfileVC.profile = userProfile
+        self.navigationController?.pushViewController(publicProfileVC, animated: true)
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let segueId = segue.identifier {
             if segueId == "gotoServiceProvidersListVC" {
@@ -92,7 +99,7 @@ extension JGGCanInviteUserListVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppInviteProviderCell") as! JGGAppInviteProviderCell
         let user = users[indexPath.row]
-        cell.user = user
+        cell.profile = user
         cell.buttonAction = {
             self.inviteUser(user)
             self.tableView.reloadRows(at: [indexPath], with: .automatic)
@@ -105,12 +112,15 @@ extension JGGCanInviteUserListVC: UITableViewDataSource, UITableViewDelegate {
                 cell.disableInviteButton()
             }
         }
+        cell.tapProfileHandler = { (cell) in
+            self.showUserProfile(cell.profile)
+        }
         return cell
     }
     
     private func inviteUser(_ user: JGGUserProfileModel) {
         invitedUsers.append(user)
-        if let job = self.selectedAppointment as? JGGJobModel {
+        if let job = self.selectedAppointment {
             APIManager.sendInvite(appointment: job, user: user) { (success, errorMessage) in
                 if success {
                     

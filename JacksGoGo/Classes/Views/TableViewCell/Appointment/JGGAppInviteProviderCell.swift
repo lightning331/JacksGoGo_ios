@@ -12,12 +12,6 @@ class JGGAppInviteProviderCell: JGGUserAvatarNameRateCell {
 
     @IBOutlet weak var btnInvite: UIButton!
     
-    var user: JGGUserProfileModel? {
-        didSet {
-            showUserInformation()
-        }
-    }
-    
     var buttonAction: VoidClosure?
     
     override func awakeFromNib() {
@@ -42,18 +36,6 @@ class JGGAppInviteProviderCell: JGGUserAvatarNameRateCell {
             self.viewBackground.backgroundColor = UIColor.JGGGreen10Percent
         } else {
             self.viewBackground.backgroundColor = UIColor.JGGWhite
-        }
-    }
-    
-    fileprivate func showUserInformation() {
-        if let user = user?.user {
-            self.lblUsername.text = user.fullname ?? user.username
-            self.ratebarUserRate.rating = user.rate
-            let avatarPlaceholder = UIImage(named: "icon_profile")
-            self.imgviewUserAvatar.image = avatarPlaceholder
-            if let urlString = user.photoURL, let url = URL(string: urlString) {
-                self.imgviewUserAvatar.af_setImage(withURL: url, placeholderImage: avatarPlaceholder)
-            }
         }
     }
     

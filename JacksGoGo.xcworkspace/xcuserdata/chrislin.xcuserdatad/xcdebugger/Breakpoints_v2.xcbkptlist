@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JacksGoGo/Classes/Controllers/Appointment/Job/JGGProposalOverviewVC.swift"
-            timestampString = "543407047.891919"
+            filePath = "JacksGoGo/Classes/Controllers/Appointment/JGGServiceProvidersListVC.swift"
+            timestampString = "543445066.84208"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "prepare(for:sender:)"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -63,7 +63,9 @@ class JGGOriginalJobDetailVC: JGGAppointmentsTableVC {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        checkProposal()
+        if job.userProfileId != appManager.currentUser?.id {
+            checkProposal()
+        }
     }
     
     // MARK: Create Menu
@@ -255,7 +257,7 @@ extension JGGOriginalJobDetailVC {
             let cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppInviteProviderCell") as! JGGAppInviteProviderCell
             cell.btnInvite.isHidden = true
             cell.btnInvite.setTitle(" ", for: .normal)
-            cell.user = job.userProfile
+            cell.profile = job.userProfile
             return cell
         case 7:
             let cell = tableView.dequeueReusableCell(withIdentifier: "JGGTagListCell") as! JGGTagListCell

@@ -33,10 +33,18 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
     
     private var cellCount: Int = 9
 
-    var job: JGGJobModel!
+    override var selectedAppointment: JGGAppointmentBaseModel? {
+        didSet {
+            guard let selectedAppointment = selectedAppointment as? JGGJobModel else {
+                return
+            }
+            job = selectedAppointment
+        }
+    }
+    fileprivate var job: JGGJobModel!
 
     fileprivate var isLoadingProviders: Bool = false
-    fileprivate lazy var providers: [JGGProposalModel] = []
+    fileprivate lazy var proposals: [JGGProposalModel] = []
     
     /**
      * 0: Just posted,
@@ -182,7 +190,7 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
         isLoadingProviders = true
         APIManager.getProposalsBy(jobId: job!.id!) { (proposals) in
             self.isLoadingProviders = false
-            self.providers = proposals
+            self.proposals = proposals
             self.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
         }
     }
@@ -252,9 +260,12 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
                 let desc: String
                 let buttonTitle: String
                 
-                if self.providers.count > 0 {
-                    desc = String(format: LocalizedString("You have received %d quotations!"), self.providers.count)
+                if self.proposals.count > 0 {
+                    desc = String(format: LocalizedString("You have received %d quotations!"), self.proposals.count)
                     buttonTitle = LocalizedString("View Quotations")
+                    cell.buttonAction = {
+                        self.onPressedViewQuotations(cell.btnViewJob)
+                    }
                 } else {
                     desc = LocalizedString("Waiting for Service Providers to respond...")
                     buttonTitle = LocalizedString("Invite Service Providers")
@@ -365,7 +376,10 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
     // MARK: - Button actions
     
     fileprivate func onPressedViewQuotations(_ sender: UIButton) {
-        
+        let serviceProvidersVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGServiceProvidersListVC") as! JGGServiceProvidersListVC
+        serviceProvidersVC.selectedAppointment = self.job
+        serviceProvidersVC.proposals = self.proposals
+        self.navigationController?.pushViewController(serviceProvidersVC, animated: true)
     }
     
     fileprivate func onPressedInviteServiceProviders(_ sender: UIButton) {
@@ -374,15 +388,17 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
         self.navigationController?.pushViewController(providersVC, animated: true)
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let segueId = segue.identifier {
+            if segueId == "gotoUserProfileVC" {
+                let profileVC = segue.destination as! JGGPublicProfileVC
+//                profileVC.profile = JGGUserProfileModel(json: nil)
+            }
+        }
     }
-    */
 
 }
 

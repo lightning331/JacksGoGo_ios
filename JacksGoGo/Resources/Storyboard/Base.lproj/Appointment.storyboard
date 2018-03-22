@@ -124,7 +124,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="containerView" destination="v8i-NN-hb0" id="yyv-lF-xzw"/>
-                        <outlet property="imgviewCategoryIcon" destination="J7K-uc-oXa" id="clT-cG-GFK"/>
+                        <outlet property="imgviewCategoryIcon" destination="04p-RS-GRP" id="gwH-eE-BRp"/>
                         <outlet property="lblServiceTime" destination="AVZ-dl-Y5K" id="zo3-Zo-Whw"/>
                         <outlet property="lblTitle" destination="t9q-qT-e3R" id="45c-N1-Ia8"/>
                         <outlet property="viewTitleBox" destination="J7K-uc-oXa" id="odg-xb-bs3"/>
@@ -152,7 +152,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Group Swimming Class" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9f3-Np-KXu">
-                                        <rect key="frame" x="40" y="12.5" width="319" height="15.5"/>
+                                        <rect key="frame" x="40" y="13" width="319" height="15.5"/>
                                         <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -293,7 +293,7 @@
                                                     <rect key="frame" x="15" y="11" width="313" height="38"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jobs posted." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zw8-gB-vrh">
-                                                            <rect key="frame" x="16" y="10" width="281" height="19"/>
+                                                            <rect key="frame" x="16" y="9.5" width="281" height="19"/>
                                                             <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -466,7 +466,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="imgviewCategoryIcon" destination="4dq-Fi-Iuq" id="2cP-Sa-jHf"/>
+                        <outlet property="imgviewCategoryIcon" destination="TqT-jT-ULa" id="RMQ-YT-hX7"/>
                         <outlet property="lblServiceTime" destination="nk5-UI-WIv" id="L7Q-YC-iOb"/>
                         <outlet property="lblTitle" destination="Q3H-H8-cv4" id="bF9-g6-sZ4"/>
                         <outlet property="tableView" destination="tfB-qu-IhT" id="r2F-tv-tsT"/>
@@ -622,16 +622,25 @@
                         <outlet property="btnAcceptBid" destination="PQB-ah-uhI" id="Qw2-Jf-r66"/>
                         <outlet property="btnRejectBid" destination="tNZ-dv-iBN" id="db2-sk-1Ce"/>
                         <outlet property="constraintLeftPaddingOfAccentBidButton" destination="YFK-Lc-Zyh" id="GTd-V2-rTa"/>
-                        <outlet property="imgviewCategoryIcon" destination="hhW-rt-miW" id="oIy-W2-W7b"/>
+                        <outlet property="imgviewCategoryIcon" destination="72w-6E-ct5" id="HMp-Vm-AKK"/>
                         <outlet property="lblServiceTime" destination="XlG-34-E2k" id="4nR-o5-JAb"/>
                         <outlet property="lblTitle" destination="v2T-8t-yjv" id="a48-II-fHp"/>
                         <outlet property="tableView" destination="tnh-NC-sek" id="Xaj-sS-ESE"/>
                         <outlet property="viewTitleBox" destination="hhW-rt-miW" id="z0y-AO-8yF"/>
+                        <segue destination="sUb-iz-6JB" kind="show" identifier="gotoUserProfileVC" id="jLi-DO-FhN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5eD-uD-FqM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3230" y="2436"/>
+        </scene>
+        <!--JGGPublicProfileVC-->
+        <scene sceneID="cDw-xd-bI4">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="JGGPublicProfileVC" storyboardName="Profile" referencedIdentifier="JGGPublicProfileVC" id="sUb-iz-6JB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mvj-FI-b5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3926" y="2435"/>
         </scene>
         <!--App Job Status SummaryVC-->
         <scene sceneID="pSk-Xb-7v5">
@@ -735,8 +744,9 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="222.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="El7-Pb-ke8">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="222.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="El7-Pb-ke8">
                                         <rect key="frame" x="16" y="9" width="33" height="33"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="El7-Pb-ke8" secondAttribute="height" multiplier="1:1" id="1sW-ZH-zWP"/>
                                         </constraints>
@@ -745,9 +755,12 @@
                                                 <real key="value" value="16.5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="ejs-iz-cPI" appends="YES" id="0TC-9a-vVd"/>
+                                        </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="catherinedesilva" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1E-Vd-1bY">
-                                        <rect key="frame" x="57" y="16" width="170" height="19"/>
+                                        <rect key="frame" x="57" y="15.5" width="170" height="19"/>
                                         <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -951,6 +964,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W17-oZ-Gpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ejs-iz-cPI">
+                    <connections>
+                        <segue destination="sUb-iz-6JB" kind="show" identifier="gotoUserProfileVC" id="Ud5-Lo-hTf"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1453.5999999999999" y="2435.5322338830588"/>
         </scene>
@@ -1258,11 +1276,12 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="btnInvite" destination="5Zg-kz-KP0" id="bea-eU-y1k"/>
-                        <outlet property="imgviewCategoryIcon" destination="p2d-Bb-Zw7" id="vpw-JQ-RgW"/>
+                        <outlet property="imgviewCategoryIcon" destination="sxH-fM-CXJ" id="dga-VD-eSz"/>
                         <outlet property="lblServiceTime" destination="T11-14-M6D" id="p2W-M8-taH"/>
                         <outlet property="lblTitle" destination="6wK-yZ-9cX" id="LdI-5a-R3Y"/>
                         <outlet property="tableView" destination="J8b-2U-5me" id="Egt-xD-Jkl"/>
                         <outlet property="viewTitleBox" destination="p2d-Bb-Zw7" id="KTa-CV-nZw"/>
+                        <segue destination="sUb-iz-6JB" kind="show" identifier="gotoUserProfileVC" id="Qbm-ZA-eGu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gwu-vQ-oYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1404,7 +1423,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="btnViewOriginalJobPost" destination="ZTb-fE-kPu" id="Tqd-eh-avN"/>
-                        <outlet property="imgviewCategoryIcon" destination="p3R-s7-jwR" id="XZb-hj-F5y"/>
+                        <outlet property="imgviewCategoryIcon" destination="C8N-Ya-SZ7" id="BXJ-W8-SbL"/>
                         <outlet property="lblServiceTime" destination="nKe-n0-r8U" id="atT-IG-sx8"/>
                         <outlet property="lblTitle" destination="za7-3d-bwQ" id="7lX-07-bat"/>
                         <outlet property="tableView" destination="sEH-Zt-jqM" id="exE-On-Gsz"/>
@@ -1443,4 +1462,7 @@
         <image name="tab_appointment" width="30" height="26"/>
         <image name="tab_appointment_active" width="30" height="26"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Qbm-ZA-eGu"/>
+    </inferredMetricsTieBreakers>
 </document>

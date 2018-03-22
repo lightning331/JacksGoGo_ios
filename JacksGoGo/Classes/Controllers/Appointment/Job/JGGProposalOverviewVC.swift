@@ -83,6 +83,9 @@ class JGGProposalOverviewVC: JGGAppointmentDetailBaseVC {
                     self.proposal.update(with: proposal.json())
                     self.tableView.reloadData()
                 }
+            } else if segueId == "gotoUserProfileVC" {
+                let profileVC = segue.destination as! JGGPublicProfileVC
+                profileVC.profile = proposal.userProfile!
             }
         }
     }
@@ -107,7 +110,10 @@ extension JGGProposalOverviewVC: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: "JGGAppInviteProviderCell") as! JGGAppInviteProviderCell
             cell.btnInvite.isHidden = true
             cell.btnInvite.setTitle(" ", for: .normal)
-            cell.user = proposal.userProfile
+            cell.profile = proposal.userProfile
+            cell.tapProfileHandler = { (cell) in
+                self.performSegue(withIdentifier: "gotoUserProfileVC", sender: self)
+            }
             return cell
         case 1, 2, 3, 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "JGGDetailInfoDescriptionCell") as! JGGDetailInfoDescriptionCell

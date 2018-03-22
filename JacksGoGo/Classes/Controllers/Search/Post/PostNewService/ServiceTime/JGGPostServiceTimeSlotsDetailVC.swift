@@ -72,6 +72,7 @@ class JGGPostServiceTimeSlotsDetailVC: JGGPostServiceTimeSlotsBaseVC {
     }
     
     override func updateData(_ sender: Any) {
+        self.view.endEditing(true)
         if let parentVC = self.navController.parent as? JGGPostServiceStepRootVC {
             if self.navController.selectedPeopleType == .onePerson {
                 self.navController.onePersonTimeSlots = filteredDates.flatMap { $1 }

@@ -13,7 +13,7 @@ class JGGProposalNC: UINavigationController {
     var editProposal: JGGProposalModel? {
         set {
             _editProposal = newValue
-            if let proposal = newValue, proposal.status != .open {
+            if let proposal = newValue, proposal.status == .open {
                 isEditMode = true
             }
         }

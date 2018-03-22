@@ -21,7 +21,7 @@ class JGGProposalBidVC: JGGPostAppointmentBaseTableVC, UITextFieldDelegate {
         txtPrice.delegate = self
         txtBreakdown.delegate = self
         
-        showOriginalProposal()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,7 +34,7 @@ class JGGProposalBidVC: JGGPostAppointmentBaseTableVC, UITextFieldDelegate {
         } else {
             txtPrice.placeholder = LocalizedString("Bid Amount  $ 1.00/month")
         }
-
+        showOriginalProposal()
     }
     
     private func showOriginalProposal() {
@@ -63,6 +63,7 @@ class JGGProposalBidVC: JGGPostAppointmentBaseTableVC, UITextFieldDelegate {
     }
     
     override func updateData(_ sender: Any) {
+        self.view.endEditing(true)
         if let parentVC = self.parent as? JGGProposalStepRootVC {
             parentVC.proposal?.budget = doubleValue(from: txtPrice.text!)
             parentVC.proposal?.breakdown = txtBreakdown.text

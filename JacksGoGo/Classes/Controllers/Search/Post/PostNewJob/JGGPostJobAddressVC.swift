@@ -29,6 +29,7 @@ class JGGPostJobAddressVC: JGGPostServiceAddressVC {
     }
     
     override func updateData(_ sender: Any) {
+        self.view.endEditing(true)
         if let parentVC = parent as? JGGPostJobStepRootVC {
             var creatingJob: JGGJobModel?
             if parentVC.editingJob != nil {

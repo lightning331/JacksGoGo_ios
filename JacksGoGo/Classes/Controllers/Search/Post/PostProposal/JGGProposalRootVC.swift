@@ -19,12 +19,14 @@ class JGGProposalRootVC: JGGViewController {
     var job: JGGJobModel!
     var editProposal: JGGProposalModel? {
         didSet {
-            if let editProposal = editProposal, editProposal.status != .open {
+            if let editProposal = editProposal, editProposal.status == .open {
                 isEditMode = true
             }
         }
     }
     fileprivate var isEditMode: Bool = false
+    
+    var changedProposalHandler: ((JGGProposalModel) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,14 +39,19 @@ class JGGProposalRootVC: JGGViewController {
         lblJobTime.text = job.jobTimeDescription()
         
         if isEditMode {
-            let btnSave = UIBarButtonItem(title: LocalizedString("Save"), style: .plain, target: self, action: #selector(onPressedSaveProposal(_:)))
+            let btnSave = UIBarButtonItem(
+                title: LocalizedString("Save"),
+                style: .plain,
+                target: self,
+                action: #selector(onPressedSaveProposal(_:))
+            )
             btnSave.tintColor = UIColor.JGGCyan
             self.navigationItem.rightBarButtonItem = btnSave
         }
     }
 
     @objc func onPressedSaveProposal(_ sender: UIBarButtonItem) {
-        
+        NotificationCenter.default.post(name: NotificationEditProposalSave, object: nil)
     }
     
 
@@ -74,7 +81,6 @@ class JGGProposalRootVC: JGGViewController {
                 let nav = segue.destination as! JGGProposalNC
                 nav.appointment = job
                 nav.editProposal = editProposal
-                
             }
         }
     }

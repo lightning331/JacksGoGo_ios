@@ -15,6 +15,7 @@ class JGGPostJobDescribeVC: JGGPostServiceDescribeVC {
     }
 
     override func updateData(_ sender: Any) {
+        self.view.endEditing(true)
         if let parentVC = parent as? JGGPostJobStepRootVC {
             let creatingJob: JGGJobModel?
             if parentVC.editingJob != nil {

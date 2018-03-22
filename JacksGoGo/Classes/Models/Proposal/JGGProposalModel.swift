@@ -34,7 +34,7 @@ class JGGProposalModel: JGGBaseModel {
     let RescheduleTime = "RescheduleTime"
     let RescheduleNote = "RescheduleNote"
     let CancellationAllowed = "CancellationAllowed"
-    let CancellationTime = "ReschedulTime"
+    let CancellationTime = "CancellationTime"
     let CancellationNote = "CancellationNote"
     let IsInvited = "IsInvited"
     let SubmitOn = "SubmitOn"
@@ -77,29 +77,6 @@ class JGGProposalModel: JGGBaseModel {
             return nil
         }
         super.init(json: json)
-        appointment         = JGGJobModel(json: json[Appointment])
-        currency            = JGGCurrencyModel(json: json[Currency])
-        userProfile         = JGGUserProfileModel(json: json[UserProfile])
-        appointmentId       = json[AppointmentID].string
-        userProfileId       = json[UserProfileID].string
-        title               = json[Title].string
-        description_        = json[Description].string
-        budgetFrom          = json[BudgetFrom].double
-        budgetTo            = json[BudgetTo].double
-        budget              = json[Budget].double
-        breakdown           = json[Breakdown].string
-        currencyCode        = json[CurrencyCode].string
-        rescheduleAllowed   = json[RescheduleAllowed].bool
-        rescheduleNote      = json[RescheduleNote].string
-        cancellationAllowed = json[CancellationAllowed].bool
-        cancellationNote    = json[CancellationNote].string
-        isInvited           = json[IsInvited].boolValue
-        submitOn            = json[SubmitOn].dateObject
-        expireOn            = json[ExpireOn].dateObject
-        status              = JGGProposalStatus(rawValue: json[Status].intValue) ?? .open
-        isViewed            = json[IsViewed].bool
-        rescheduleTime      = json[RescheduleTime].double
-        cancellationTime    = json[CancellationTime].double
     }
     
     override func json() -> JSON {
@@ -135,6 +112,38 @@ class JGGProposalModel: JGGBaseModel {
         json[CancellationTime].double = cancellationTime
 
         return json
+    }
+    
+    override func clone() -> JGGProposalModel? {
+        let clone = JGGProposalModel(json: self.json())
+        return clone
+    }
+
+    override func update(with json: JSON) {
+        super.update(with: json)
+        appointment         = JGGJobModel(json: json[Appointment])
+        currency            = JGGCurrencyModel(json: json[Currency])
+        userProfile         = JGGUserProfileModel(json: json[UserProfile])
+        appointmentId       = json[AppointmentID].string
+        userProfileId       = json[UserProfileID].string
+        title               = json[Title].string
+        description_        = json[Description].string
+        budgetFrom          = json[BudgetFrom].double
+        budgetTo            = json[BudgetTo].double
+        budget              = json[Budget].double
+        breakdown           = json[Breakdown].string
+        currencyCode        = json[CurrencyCode].string
+        rescheduleAllowed   = json[RescheduleAllowed].bool
+        rescheduleNote      = json[RescheduleNote].string
+        cancellationAllowed = json[CancellationAllowed].bool
+        cancellationNote    = json[CancellationNote].string
+        isInvited           = json[IsInvited].boolValue
+        submitOn            = json[SubmitOn].dateObject
+        expireOn            = json[ExpireOn].dateObject
+        status              = JGGProposalStatus(rawValue: json[Status].intValue) ?? .open
+        isViewed            = json[IsViewed].bool
+        rescheduleTime      = json[RescheduleTime].double
+        cancellationTime    = json[CancellationTime].double
     }
     
     func rescheduleTimeDescription() -> String? {
@@ -176,7 +185,7 @@ class JGGProposalModel: JGGBaseModel {
             result = String(format: "At least %@ before.", result)
             return result
         } else {
-            return nil
+            return LocalizedString("Not allowed")
         }
     }
 }

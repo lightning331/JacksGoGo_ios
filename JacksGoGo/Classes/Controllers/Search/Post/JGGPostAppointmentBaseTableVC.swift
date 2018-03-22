@@ -45,7 +45,7 @@ class JGGPostAppointmentBaseTableVC: JGGTableViewController {
     }
     
     @objc internal func updateData(_ sender: Any) {
-        
+        self.view.endEditing(true)
     }
     
     // MARK: - Table view data source

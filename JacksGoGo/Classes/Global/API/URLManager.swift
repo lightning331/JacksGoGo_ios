@@ -212,7 +212,7 @@ class URLManager: NSObject {
         }
         
         static func DeleteProposal(id: String) -> String {
-            return fullPath(for: "/DeleteProposal?ID=\(id)")
+            return fullPath(for: "/DeleteProposal?ProposalID=\(id)")
         }
         
         static func GetProposalsByJob(id: String, pageIndex: Int = 0, pageSize: Int = 20) -> String {

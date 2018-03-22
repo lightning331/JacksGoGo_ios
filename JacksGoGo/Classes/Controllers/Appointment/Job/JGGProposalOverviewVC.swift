@@ -12,11 +12,20 @@ class JGGProposalOverviewVC: JGGAppointmentDetailBaseVC {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var proposal: JGGProposalModel!
+    var proposal: JGGProposalModel! {
+        didSet {
+            self.selectedAppointment = proposal.appointment
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
+        self.tableView.separatorStyle = .none
+        self.tableView.allowsSelection = false
+        
         func registerCell(nibName: String) {
             self.tableView.register(UINib(nibName: nibName, bundle: nil), forCellReuseIdentifier: nibName)
         }
@@ -49,15 +58,35 @@ class JGGProposalOverviewVC: JGGAppointmentDetailBaseVC {
     }
     
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "gotoEditProposalVC" {
+            if let _ = proposal.clone() {
+                return true
+            } else {
+                return false
+            }
+        }
+        return true
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let segueId = segue.identifier {
+            if segueId == "gotoEditProposalVC" {
+                let editProposalVC = segue.destination as! JGGProposalRootVC
+                editProposalVC.editProposal = proposal.clone()!
+                editProposalVC.job = proposal.appointment
+                editProposalVC.changedProposalHandler = { proposal in
+                    self.proposal.update(with: proposal.json())
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
 
 }
 

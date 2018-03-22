@@ -34,7 +34,6 @@ class JGGProposalSummaryVC: JGGPostAppointmentBaseTableVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         if isEditMode {
             self.btnNext.setTitle(LocalizedString("Delete Proposal And Remove Bid"), for: .normal)
         } else {
@@ -58,7 +57,14 @@ class JGGProposalSummaryVC: JGGPostAppointmentBaseTableVC {
         lblCancellation.font = UIFont.JGGListText
 
         if isEditMode {
-            NotificationCenter.default.addObserver(self, selector: #selector(onPressedSave(_:)), name: NotificationEditProposalSave, object: nil)
+            NotificationCenter
+                .default
+                .addObserver(
+                    self,
+                    selector: #selector(onPressedSave(_:)),
+                    name: NotificationEditProposalSave,
+                    object: nil
+            )
         }
     }
 
@@ -69,22 +75,6 @@ class JGGProposalSummaryVC: JGGPostAppointmentBaseTableVC {
         }
     }
     
-    @objc func onPressedSave(_ sender: Any) {
-        
-        JGGAlertViewController.show(title: LocalizedString("Proposal Sent!"),
-                                    message: String(format: LocalizedString("Proposal reference no.: %@"), proposal.id ?? ""),
-                                    colorSchema: .cyan,
-                                    okButtonTitle: LocalizedString("View Proposal"),
-                                    okAction: { text in
-                                        self.navigationController?.parent?.navigationController?.popViewController(animated: true)
-        },
-                                    cancelButtonTitle: nil,
-                                    cancelAction: nil)
-
-        
-        
-    }
-
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -112,36 +102,35 @@ class JGGProposalSummaryVC: JGGPostAppointmentBaseTableVC {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func onPressedPostNewJob(_ sender: UIButton) {
+    @IBAction func onPressedPostProposal(_ sender: UIButton) {
         
         if isEditMode {
-            
             JGGAlertViewController.show(title: LocalizedString("Delete Proposal And Remove Bid?"),
                                         message: LocalizedString("This action cannot be undo."),
                                         colorSchema: .red,
                                         cancelColorSchema: .cyan,
                                         okButtonTitle: LocalizedString("Delete"),
                                         okAction: { text in
-                                            
-                                            
+                                            self.deleteProposal()
             },
                                         cancelButtonTitle: LocalizedString("Cancel"),
                                         cancelAction: nil)
 
-            
         } else {
-            submitProposal(proposal)
+            submitProposal()
         }
     
     }
     
-    private func submitProposal(_ proposal: JGGProposalModel) {
+    // MARK: - API requests
+    
+    private func submitProposal() {
         hud = MBProgressHUD.showAdded(to: self.parent!.parent!.parent!.view, animated: true)
         hud.mode = .indeterminate
         APIManager.postProposal(proposal, user: proposal.userProfile!) { (proposalId, errorMessage) in
             self.hud.hide(animated: true)
             if let proposalId = proposalId {
-                proposal.id = proposalId
+                self.proposal.id = proposalId
                 let message = String(format: LocalizedString("Proposal reference no.: %@\n\nGood luck!"), proposalId)
                 JGGAlertViewController.show(
                     title: LocalizedString("Proposal Sent!"),
@@ -154,6 +143,68 @@ class JGGProposalSummaryVC: JGGPostAppointmentBaseTableVC {
                     cancelButtonTitle: nil,
                     cancelAction: nil
                 )
+            } else {
+                JGGAlertViewController.show(
+                    title: LocalizedString("Error!"),
+                    message: errorMessage,
+                    colorSchema: .red,
+                    okButtonTitle: LocalizedString("Close"),
+                    okAction: { text in
+                        
+                },
+                    cancelButtonTitle: nil,
+                    cancelAction: nil
+                )
+            }
+        }
+    }
+    
+    @objc func onPressedSave(_ sender: Any) {
+        
+        hud = MBProgressHUD.showAdded(to: self.parent!.parent!.parent!.view, animated: true)
+        hud.mode = .indeterminate
+        APIManager.editProposal(proposal) { (success, errorMessage) in
+            self.hud.hide(animated: true)
+            if success {
+                JGGAlertViewController.show(title: LocalizedString("Proposal Sent!"),
+                                            message: String(format: LocalizedString("Proposal reference no.: %@\n\nGood luck!"), self.proposal.id ?? ""),
+                                            colorSchema: .cyan,
+                                            okButtonTitle: LocalizedString("View Proposal"),
+                                            okAction: { text in
+                                                (self.navigationController?.parent as? JGGProposalRootVC)?.changedProposalHandler?(self.proposal)
+                                                self.parent?.navigationController?.popViewController(animated: true)
+                                            },
+                                            cancelButtonTitle: nil,
+                                            cancelAction: nil)
+            } else {
+                JGGAlertViewController.show(
+                    title: LocalizedString("Error!"),
+                    message: errorMessage,
+                    colorSchema: .red,
+                    okButtonTitle: LocalizedString("Close"),
+                    okAction: { text in
+                        
+                },
+                    cancelButtonTitle: nil,
+                    cancelAction: nil
+                )
+            }
+        }
+    }
+    
+    fileprivate func deleteProposal() {
+        hud = MBProgressHUD.showAdded(to: self.parent!.parent!.parent!.view, animated: true)
+        hud.mode = .indeterminate
+        APIManager.deleteProposal(proposal) { (success, errorMessage) in
+            self.hud.hide(animated: true)
+            if success {
+                guard let nav = self.navigationController?.parent?.navigationController else {
+                    return
+                }
+                var vcs = nav.viewControllers
+                vcs.remove(at: vcs.count - 2)
+                nav.viewControllers = vcs
+                nav.popViewController(animated: true)
             } else {
                 JGGAlertViewController.show(
                     title: LocalizedString("Error!"),

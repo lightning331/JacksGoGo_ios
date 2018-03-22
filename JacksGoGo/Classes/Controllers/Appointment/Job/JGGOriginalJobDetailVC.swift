@@ -29,7 +29,7 @@ class JGGOriginalJobDetailVC: JGGAppointmentsTableVC {
         if job.userProfileId == appManager.currentUser?.id {
             self.tableView.tableFooterView = nil
         } else {
-            checkProposal()
+            
         }
     }
 
@@ -61,6 +61,11 @@ class JGGOriginalJobDetailVC: JGGAppointmentsTableVC {
         registerCell(nibName: "JGGJobBookedInfoCell")
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkProposal()
+    }
+    
     // MARK: Create Menu
     
     private func createMenu() {
@@ -148,7 +153,16 @@ class JGGOriginalJobDetailVC: JGGAppointmentsTableVC {
     }
 
     @IBAction fileprivate func onPressedProposal(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "gotoProposalRootVC", sender: self)
+        if let proposal = myProposal {
+            let proposalOverviewVC =
+                self.storyboard?
+                    .instantiateViewController(withIdentifier: "JGGProposalOverviewVC")
+                    as! JGGProposalOverviewVC
+            proposalOverviewVC.proposal = proposal
+            self.navigationController?.pushViewController(proposalOverviewVC, animated: true)
+        } else {
+            self.performSegue(withIdentifier: "gotoProposalRootVC", sender: self)
+        }
     }
     
     // MARK: - Navigation
@@ -169,12 +183,13 @@ class JGGOriginalJobDetailVC: JGGAppointmentsTableVC {
         }
         self.btnMakeProposal.isEnabled = false
         self.btnMakeProposal.backgroundColor = UIColor.JGGGrey4
-        APIManager.getProposedStatus(jobId: jobId, userProfileId: userProfileId) { (proposal) in
-            self.btnMakeProposal.isEnabled = true
-            self.btnMakeProposal.backgroundColor = UIColor.JGGCyan
+        
+        APIManager.getProposedStatus(jobId: jobId, userProfileId: userProfileId) { [weak self] (proposal) in
+            self?.btnMakeProposal.isEnabled = true
+            self?.btnMakeProposal.backgroundColor = UIColor.JGGCyan
             if let proposal = proposal {
-                self.myProposal = proposal
-                self.btnMakeProposal.setTitle(LocalizedString("View My Proposal"), for: .normal)
+                self?.myProposal = proposal
+                self?.btnMakeProposal.setTitle(LocalizedString("View Proposal"), for: .normal)
             }
         }
     }

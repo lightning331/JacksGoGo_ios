@@ -93,6 +93,7 @@ class JGGPostServiceDescribeVC: JGGPostAppointmentBaseTableVC {
     }
     
     override func updateData(_ sender: Any) {
+        self.view.endEditing(true)
         if let parentVC = parent as? JGGPostServiceStepRootVC {
             let creatingJob = parentVC.creatingJob!
             creatingJob.title = txtServiceTitle.text

@@ -69,6 +69,7 @@ class JGGPostServiceAddressVC: JGGPostAppointmentBaseTableVC {
     }
 
     override func updateData(_ sender: Any) {
+        self.view.endEditing(true)
         if let parentVC = parent as? JGGPostServiceStepRootVC {
             let addressModel = JGGAddressModel()
             addressModel.unit = txtUnits.text

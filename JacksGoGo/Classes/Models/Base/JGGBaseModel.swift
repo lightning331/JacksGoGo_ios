@@ -20,7 +20,7 @@ class JGGBaseModel: NSObject {
         }
         super.init()
 //        aud = JGGModifyInfoModel(json: json["Aud"])
-        id = json["ID"].string
+        update(with: json)
     }
     
     override init() {
@@ -36,5 +36,9 @@ class JGGBaseModel: NSObject {
     func clone() -> JGGBaseModel? {
         let clone = JGGBaseModel(json: self.json())
         return clone
+    }
+    
+    func update(with json: JSON) -> Void {
+        id = json["ID"].string
     }
 }

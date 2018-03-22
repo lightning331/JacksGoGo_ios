@@ -742,7 +742,7 @@ class JGGAPIManager: NSObject {
     // MARK: - Proposal
     func postProposal(_ proposal: JGGProposalModel, user: JGGUserProfileModel, complete: @escaping StringStringClosure) -> Void {
         
-        CLS_LOG_SWIFT(format: "postProposal url: %@\nBODY: %@", [URLManager.Proposal.PostProposal, proposal.json().description])
+//        CLS_LOG_SWIFT(format: "postProposal url: %@\nBODY: %@", [URLManager.Proposal.PostProposal, proposal.json().description])
         print(proposal.json().description)
         proposal.currencyCode = proposal.appointment?.currencyCode
         POST(url: URLManager.Proposal.PostProposal, body: proposal.json().dictionaryObject) { (response, error) in
@@ -761,8 +761,32 @@ class JGGAPIManager: NSObject {
         }
     }
     
-    func editProposal() -> Void {
-        
+    func editProposal(_ proposal: JGGProposalModel, _ complete: @escaping BoolStringClosure) -> Void {
+        print("EDIT proposal: ", proposal.json().description)
+        POST(url: URLManager.Proposal.EditProposal, body: proposal.json().dictionaryObject) { (response, error) in
+            if let json = response {
+                let success = json[SUCCESS_KEY].boolValue
+                complete(success, json[MESSAGE_KEY].string)
+            } else if let error = error {
+                complete(false, error.localizedDescription)
+            } else {
+                complete(false, LocalizedString("Unknown request error."))
+            }
+        }
+    }
+    
+    func deleteProposal(_ proposal: JGGProposalModel, _ complete: @escaping BoolStringClosure) -> Void {
+        print("DELETE proposal: ", proposal.json().description)
+        GET(url: URLManager.Proposal.DeleteProposal(id: proposal.id!), params: nil) { (response, error) in
+            if let json = response {
+                let success = json[SUCCESS_KEY].boolValue
+                complete(success, json[MESSAGE_KEY].string)
+            } else if let error = error {
+                complete(false, error.localizedDescription)
+            } else {
+                complete(false, LocalizedString("Unknown request error."))
+            }
+        }
     }
     
     func sendInvite(appointment: JGGJobModel, user: JGGUserProfileModel, complete: @escaping BoolStringClosure) -> Void {

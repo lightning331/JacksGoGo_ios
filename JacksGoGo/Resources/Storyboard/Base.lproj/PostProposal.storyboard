@@ -161,7 +161,7 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
-                                        <action selector="onPressedPostNewJob:" destination="Ink-i3-b51" eventType="touchUpInside" id="AJA-yw-ms2"/>
+                                        <action selector="onPressedPostProposal:" destination="Ink-i3-b51" eventType="touchUpInside" id="ztT-Uk-iim"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -890,7 +890,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="FWL-2P-Uly">
-                            <rect key="frame" x="0.0" y="425" width="375" height="80"/>
+                            <rect key="frame" x="0.0" y="435" width="375" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1e-a1-7EO">
@@ -921,21 +921,21 @@
                         <sections>
                             <tableViewSection id="O1X-fr-iX1">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="120" id="j0l-Kk-KVa">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="130" id="oa5-Nl-fwb">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j0l-Kk-KVa" id="PJq-wV-xv3">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oa5-Nl-fwb" id="jea-lc-fS0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="Qzj-to-96H">
-                                                    <rect key="frame" x="0.0" y="16" width="375" height="50"/>
+                                                <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="EfN-HD-Juo">
+                                                    <rect key="frame" x="0.0" y="16" width="375" height="67"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_time" translatesAutoresizingMaskIntoConstraints="NO" id="C9U-o0-CTk">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_time" translatesAutoresizingMaskIntoConstraints="NO" id="8Fa-IU-XxL">
                                                             <rect key="frame" x="16" y="9" width="16" height="16"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZU-SH-sqM">
-                                                            <rect key="frame" x="40" y="8" width="319" height="34"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZ9-NR-x1l">
+                                                            <rect key="frame" x="40" y="8" width="319" height="51"/>
                                                             <string key="text">Package Job
 Every Saturday 10:00 AM</string>
                                                             <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="14"/>
@@ -945,36 +945,35 @@ Every Saturday 10:00 AM</string>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="C9U-o0-CTk" firstAttribute="leading" secondItem="Qzj-to-96H" secondAttribute="leading" constant="16" id="OKg-p9-8Vw"/>
-                                                        <constraint firstItem="AZU-SH-sqM" firstAttribute="top" secondItem="Qzj-to-96H" secondAttribute="top" constant="8" id="Xu7-Zp-Aec"/>
-                                                        <constraint firstAttribute="height" constant="50" id="b9m-Sx-xq9"/>
-                                                        <constraint firstItem="AZU-SH-sqM" firstAttribute="leading" secondItem="C9U-o0-CTk" secondAttribute="trailing" constant="8" id="dfy-yI-Gkl"/>
-                                                        <constraint firstItem="C9U-o0-CTk" firstAttribute="top" secondItem="Qzj-to-96H" secondAttribute="top" constant="9" id="dkm-zn-6Rg"/>
-                                                        <constraint firstAttribute="bottom" secondItem="AZU-SH-sqM" secondAttribute="bottom" constant="8" id="qvk-pX-VXN"/>
-                                                        <constraint firstAttribute="trailing" secondItem="AZU-SH-sqM" secondAttribute="trailing" constant="16" id="yBV-2g-U8f"/>
+                                                        <constraint firstItem="8Fa-IU-XxL" firstAttribute="top" secondItem="EfN-HD-Juo" secondAttribute="top" constant="9" id="9IP-3i-v9J"/>
+                                                        <constraint firstAttribute="trailing" secondItem="MZ9-NR-x1l" secondAttribute="trailing" constant="16" id="BsR-w1-MH7"/>
+                                                        <constraint firstItem="8Fa-IU-XxL" firstAttribute="leading" secondItem="EfN-HD-Juo" secondAttribute="leading" constant="16" id="CZ5-F4-jXW"/>
+                                                        <constraint firstItem="MZ9-NR-x1l" firstAttribute="top" secondItem="EfN-HD-Juo" secondAttribute="top" constant="8" id="drO-YA-1k2"/>
+                                                        <constraint firstItem="MZ9-NR-x1l" firstAttribute="leading" secondItem="8Fa-IU-XxL" secondAttribute="trailing" constant="8" id="pSz-RN-e12"/>
+                                                        <constraint firstAttribute="bottom" secondItem="MZ9-NR-x1l" secondAttribute="bottom" constant="8" id="rSx-qc-9I0"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rescheduling Policy (Optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9TZ-4O-YER">
-                                                    <rect key="frame" x="16" y="82" width="343" height="26"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rescheduling Policy (Optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxO-zw-uDP">
+                                                    <rect key="frame" x="16" y="99" width="343" height="19"/>
                                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="9TZ-4O-YER" firstAttribute="top" secondItem="Qzj-to-96H" secondAttribute="bottom" constant="16" id="1J5-tH-jLr"/>
-                                                <constraint firstAttribute="trailing" secondItem="9TZ-4O-YER" secondAttribute="trailing" constant="16" id="7SH-LL-xkT"/>
-                                                <constraint firstAttribute="bottom" secondItem="9TZ-4O-YER" secondAttribute="bottom" constant="12" id="GPs-ee-dE5"/>
-                                                <constraint firstAttribute="trailing" secondItem="Qzj-to-96H" secondAttribute="trailing" id="LOC-2l-7Qj"/>
-                                                <constraint firstItem="Qzj-to-96H" firstAttribute="leading" secondItem="PJq-wV-xv3" secondAttribute="leading" id="Uvz-8x-e8m"/>
-                                                <constraint firstItem="9TZ-4O-YER" firstAttribute="leading" secondItem="PJq-wV-xv3" secondAttribute="leading" constant="16" id="aR2-Mf-hBV"/>
-                                                <constraint firstItem="Qzj-to-96H" firstAttribute="top" secondItem="PJq-wV-xv3" secondAttribute="top" constant="16" id="jzg-dB-8pY"/>
+                                                <constraint firstAttribute="trailing" secondItem="DxO-zw-uDP" secondAttribute="trailing" constant="16" id="Np2-ZB-hS2"/>
+                                                <constraint firstAttribute="trailing" secondItem="EfN-HD-Juo" secondAttribute="trailing" id="RBH-EY-cF6"/>
+                                                <constraint firstItem="DxO-zw-uDP" firstAttribute="leading" secondItem="jea-lc-fS0" secondAttribute="leading" constant="16" id="REj-77-HuG"/>
+                                                <constraint firstItem="DxO-zw-uDP" firstAttribute="top" secondItem="EfN-HD-Juo" secondAttribute="bottom" constant="16" id="TmW-lc-04s"/>
+                                                <constraint firstItem="EfN-HD-Juo" firstAttribute="leading" secondItem="jea-lc-fS0" secondAttribute="leading" id="XQ9-MJ-df1"/>
+                                                <constraint firstAttribute="bottom" secondItem="DxO-zw-uDP" secondAttribute="bottom" constant="12" id="ZBp-h7-Mgs"/>
+                                                <constraint firstItem="EfN-HD-Juo" firstAttribute="top" secondItem="jea-lc-fS0" secondAttribute="top" constant="16" id="sGy-cI-oVf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="8uN-Ch-jUv">
-                                        <rect key="frame" x="0.0" y="120" width="375" height="70"/>
+                                        <rect key="frame" x="0.0" y="130" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8uN-Ch-jUv" id="Q0C-zJ-P8o">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
@@ -1015,7 +1014,7 @@ Every Saturday 10:00 AM</string>
                                         <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="Bwr-lv-wYT">
-                                        <rect key="frame" x="0.0" y="190" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="200" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bwr-lv-wYT" id="IGe-th-kTy">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
@@ -1057,7 +1056,7 @@ Every Saturday 10:00 AM</string>
                                         <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="JkM-sR-7da">
-                                        <rect key="frame" x="0.0" y="250" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="260" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JkM-sR-7da" id="ipC-j0-ddV">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
@@ -1202,7 +1201,7 @@ Every Saturday 10:00 AM</string>
                                         <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="115" id="Md8-6b-cbY">
-                                        <rect key="frame" x="0.0" y="310" width="375" height="115"/>
+                                        <rect key="frame" x="0.0" y="320" width="375" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Md8-6b-cbY" id="WZ5-y8-AvV">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="115"/>
@@ -1282,7 +1281,7 @@ Every Saturday 10:00 AM</string>
                         <outlet property="btnAllow" destination="pjH-FJ-aDS" id="i3A-W2-4vM"/>
                         <outlet property="btnNext" destination="n1e-a1-7EO" id="ieC-s8-o1r"/>
                         <outlet property="btnNoAllow" destination="ZKL-CV-dfb" id="vlq-tT-Anc"/>
-                        <outlet property="lblAppointmentTime" destination="AZU-SH-sqM" id="lhl-a3-XGp"/>
+                        <outlet property="lblAppointmentTime" destination="MZ9-NR-x1l" id="CAZ-2e-iul"/>
                         <outlet property="txtDay" destination="fxB-G6-bNO" id="oYD-EE-B6A"/>
                         <outlet property="txtHour" destination="m2p-wm-Qne" id="VNF-wU-XOe"/>
                         <outlet property="txtMinutes" destination="waJ-ac-dij" id="AaK-ht-c2R"/>
@@ -1302,7 +1301,7 @@ Every Saturday 10:00 AM</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="MwP-ex-UYr">
-                            <rect key="frame" x="0.0" y="425" width="375" height="80"/>
+                            <rect key="frame" x="0.0" y="435" width="375" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iA-kf-MYF">
@@ -1333,21 +1332,21 @@ Every Saturday 10:00 AM</string>
                         <sections>
                             <tableViewSection id="Ahc-BH-rjS">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="120" id="Gxt-yV-5dz">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="130" id="Gxt-yV-5dz">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gxt-yV-5dz" id="yTU-PS-x4q">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="nQ1-lg-bH9">
-                                                    <rect key="frame" x="0.0" y="16" width="375" height="50"/>
+                                                    <rect key="frame" x="0.0" y="16" width="375" height="67"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_time" translatesAutoresizingMaskIntoConstraints="NO" id="bRC-Ky-C7N">
                                                             <rect key="frame" x="16" y="9" width="16" height="16"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKc-HR-NHK">
-                                                            <rect key="frame" x="40" y="8" width="319" height="34"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKc-HR-NHK">
+                                                            <rect key="frame" x="40" y="8" width="319" height="51"/>
                                                             <string key="text">Package Job
 Every Saturday 10:00 AM</string>
                                                             <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="14"/>
@@ -1363,11 +1362,10 @@ Every Saturday 10:00 AM</string>
                                                         <constraint firstItem="bRC-Ky-C7N" firstAttribute="top" secondItem="nQ1-lg-bH9" secondAttribute="top" constant="9" id="jPV-OV-yVL"/>
                                                         <constraint firstAttribute="trailing" secondItem="eKc-HR-NHK" secondAttribute="trailing" constant="16" id="lTm-su-zI0"/>
                                                         <constraint firstItem="eKc-HR-NHK" firstAttribute="leading" secondItem="bRC-Ky-C7N" secondAttribute="trailing" constant="8" id="nhI-6L-Ej2"/>
-                                                        <constraint firstAttribute="height" constant="50" id="yYo-Ve-InY"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancellation Policy (Optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHB-0H-u9x">
-                                                    <rect key="frame" x="16" y="82" width="343" height="26"/>
+                                                    <rect key="frame" x="16" y="99" width="343" height="19"/>
                                                     <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1386,7 +1384,7 @@ Every Saturday 10:00 AM</string>
                                         <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="eVc-zk-084">
-                                        <rect key="frame" x="0.0" y="120" width="375" height="70"/>
+                                        <rect key="frame" x="0.0" y="130" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eVc-zk-084" id="dmD-dZ-87t">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
@@ -1428,7 +1426,7 @@ Every Saturday 10:00 AM</string>
                                         <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="oyu-ly-cZq">
-                                        <rect key="frame" x="0.0" y="190" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="200" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oyu-ly-cZq" id="vfS-c6-eGy">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
@@ -1470,7 +1468,7 @@ Every Saturday 10:00 AM</string>
                                         <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="bbh-7E-nbL">
-                                        <rect key="frame" x="0.0" y="250" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="260" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bbh-7E-nbL" id="J6b-JL-XP6">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
@@ -1606,7 +1604,7 @@ Every Saturday 10:00 AM</string>
                                         <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="115" id="5wK-9c-ogL">
-                                        <rect key="frame" x="0.0" y="310" width="375" height="115"/>
+                                        <rect key="frame" x="0.0" y="320" width="375" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5wK-9c-ogL" id="U0m-Nt-Ovd">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="115"/>

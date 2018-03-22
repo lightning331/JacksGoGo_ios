@@ -48,7 +48,7 @@ class JGGProposalStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderVi
         self.appointment = nav.appointment
         if let editProposal = nav.editProposal {
             proposal = editProposal
-            if editProposal.status != .open {
+            if editProposal.status == .open {
                 isEditMode = true
             }
         } else {
@@ -94,6 +94,7 @@ class JGGProposalStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderVi
     }
     
     func jobDetailStep(selected: Int) {
+        self.view.endEditing(true)
         switch selected {
         case 0:
             mainScrollView.setContentOffset(CGPoint(x: mainScrollView.frame.width * 0, y: 0), animated: true)
@@ -117,6 +118,7 @@ class JGGProposalStepRootVC: JGGViewController, JGGAppointmentDetailStepHeaderVi
         let summaryVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGProposalSummaryVC") as! JGGProposalSummaryVC
         summaryVC.appointment = self.appointment
         summaryVC.proposal = proposal!
+        summaryVC.isEditMode = isEditMode
         self.navigationController?.pushViewController(summaryVC, animated: true)
     }
 

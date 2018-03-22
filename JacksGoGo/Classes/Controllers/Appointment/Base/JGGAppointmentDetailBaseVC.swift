@@ -11,7 +11,7 @@ import UIKit
 class JGGAppointmentDetailBaseVC: JGGAppointmentsBaseVC {
 
     @IBOutlet weak var viewTitleBox: UIView!
-    @IBOutlet weak var imgviewCategoryIcon: UIView!
+    @IBOutlet weak var imgviewCategoryIcon: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblServiceTime: UILabel!
 
@@ -31,7 +31,10 @@ class JGGAppointmentDetailBaseVC: JGGAppointmentsBaseVC {
     private func showCategoryAndTitle() {
         lblTitle.text = selectedAppointment?.title
         lblServiceTime.text = selectedAppointment?.jobTimeDescription()
-        
+        if let urlString = selectedAppointment?.category?.image,
+            let url = URL(string: urlString) {
+            imgviewCategoryIcon.af_setImage(withURL: url)
+        }
         if selectedAppointment?.type == .service {
             self.navigationItem.rightBarButtonItem = nil
         }

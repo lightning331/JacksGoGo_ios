@@ -45,6 +45,7 @@ class JGGPostJobReportVC: JGGEditJobReportVC {
     }
 
     override func updateData(_ sender: Any) {
+        self.view.endEditing(true)
         if let parentVC = parent as? JGGPostJobStepRootVC {
             
             var reportType: Int = 0

@@ -32,13 +32,14 @@ class JGGProposalReschedulingVC: JGGPostAppointmentBaseTableVC, UITextFieldDeleg
         txtMinutes.delegate = self
         txtTerms.delegate = self
         
-        showOriginalProposal()
+        btnNoAllow.defaultColor = UIColor.JGGCyan
+        btnAllow.defaultColor = UIColor.JGGCyan
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         lblAppointmentTime.text = (parent as? JGGProposalStepRootVC)?.appointment.budgetDescription()
-
+        showOriginalProposal()
     }
     
     private func showOriginalProposal() {
@@ -85,6 +86,7 @@ class JGGProposalReschedulingVC: JGGPostAppointmentBaseTableVC, UITextFieldDeleg
     }
     
     override func updateData(_ sender: Any) {
+        self.view.endEditing(true)
         if let parentVC = parent as? JGGProposalStepRootVC {
             if btnAllow.selected() {
                 let days  = Int(txtDay.text ?? "0") ?? 0
@@ -166,7 +168,9 @@ class JGGProposalReschedulingVC: JGGPostAppointmentBaseTableVC, UITextFieldDeleg
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if btnAllow.selected() && indexPath.row == 1 {
+        if indexPath.row == 0 {
+            return UITableViewAutomaticDimension
+        } else if btnAllow.selected() && indexPath.row == 1 {
             return 0
         } else {
             return super.tableView(tableView, heightForRowAt: indexPath)

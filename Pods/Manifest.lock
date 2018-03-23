@@ -9,13 +9,12 @@ PODS:
   - Cache (4.0.4):
     - SwiftHash (~> 2.0.0)
   - Cosmos (12.0.1)
-  - CountryPickerSwift (1.6)
-  - Crashlytics (3.9.3):
-    - Fabric (~> 1.7.2)
-  - ESPullToRefresh (2.7)
-  - Fabric (1.7.2)
+  - CountryPickerSwift (1.7.1)
+  - Crashlytics (3.10.1):
+    - Fabric (~> 1.7.5)
+  - Fabric (1.7.6)
   - Hue (3.0.1)
-  - IGRPhotoTweaks (1.0.6)
+  - IGRPhotoTweaks (1.0.7)
   - Imaginary (3.0.3):
     - Cache (~> 4.0)
   - JTAppleCalendar (7.1.5)
@@ -41,7 +40,6 @@ DEPENDENCIES:
   - Cosmos (~> 12.0)
   - CountryPickerSwift (from `https://github.com/4taras4/CountryCode.git`)
   - Crashlytics
-  - ESPullToRefresh (~> 2.7)
   - Fabric
   - Hue (~> 3.0.0)
   - IGRPhotoTweaks (from `https://github.com/IGRSoft/IGRPhotoTweaks.git`)
@@ -67,13 +65,13 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   CountryPickerSwift:
-    :commit: 3d34259f58238113b71f27f520d8157a4eb43f7b
+    :commit: 42fde360611659d30a00e228835e3c770c059c3c
     :git: https://github.com/4taras4/CountryCode.git
   IGRPhotoTweaks:
-    :commit: 3f1c7a3795f1f869b0f512da2f2c33c7db36871f
+    :commit: 93302dc1cd5b710ca8719234b9de96cba30f14fc
     :git: https://github.com/IGRSoft/IGRPhotoTweaks.git
   UIColor_Hex_Swift:
-    :commit: 9f08e21ffda40c1e3b31a932de8e1a961571a318
+    :commit: cdd61037d27e30176f0f7b6f3f17958ef8f09a2c
     :git: https://github.com/yeahdongcn/UIColor-Hex-Swift.git
 
 SPEC CHECKSUMS:
@@ -83,12 +81,11 @@ SPEC CHECKSUMS:
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
   Cache: 1b3907ee2f5a457e7cfe9ac0be22dc9207f55a09
   Cosmos: 4a9f57998a08788a1062c7b8eefbc62d2b590f39
-  CountryPickerSwift: 0d17033404dbe4236754d5038c35823ae993eeb0
-  Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
-  ESPullToRefresh: 119e2710b82b75536aab2bbe4883ba119fca35c8
-  Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
+  CountryPickerSwift: d46dcaadc64fd6e0f00c98dd23a432de858a5193
+  Crashlytics: aee1a064cbbf99b32efa3f056a5f458d846bc8ff
+  Fabric: f8d42c893bb187326a7968b62abe55c36a987a46
   Hue: 93e852fa6211ab35922ad8c293f51c43d6c79eb2
-  IGRPhotoTweaks: c9edf0f2bdd4f1faac577675ad5664f7cf51b751
+  IGRPhotoTweaks: c84756a57471232b752a1dd845d00dec4b376999
   Imaginary: 9b45836a5af881f452a86e0a1215772ae4712d00
   JTAppleCalendar: 2d4f974f9f3c8b4964d51ca1f6e004883c031fbe
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
@@ -103,6 +100,6 @@ SPEC CHECKSUMS:
   Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
   UIColor_Hex_Swift: c5ff88470499383b8fd85302d59344bb24ba9436
 
-PODFILE CHECKSUM: 9a45fd50cf8201657fb9f1fe84a53a4d690e2aca
+PODFILE CHECKSUM: 2bab79e37530031d8553167e14047797d0bfd084
 
 COCOAPODS: 1.3.1

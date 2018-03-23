@@ -286,11 +286,15 @@ extension JGGSearchMainVC { // UITableViewDataSource, UITableViewDelegate
             cell.imgviewAccessory.image = UIImage(named: "button_next_cyan")
         }
         cell.appointment = arrayRecommendAppointments[indexPath.row]
-        
+
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let _ = appManager.currentUser else {
+            return
+        }
         let appointment = arrayRecommendAppointments[indexPath.row]
         if self.selectedTab == .services {
             gotoServiceDetailVC(with: appointment)

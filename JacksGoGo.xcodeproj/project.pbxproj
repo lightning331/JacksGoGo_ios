@@ -159,6 +159,7 @@
 		FF8F1D44206436D600442971 /* JGGProfileSummaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1D43206436D600442971 /* JGGProfileSummaryVC.swift */; };
 		FF8F1D4620643D5700442971 /* JGGPrivateProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1D4520643D5700442971 /* JGGPrivateProfileVC.swift */; };
 		FF8F1D4820643D6300442971 /* JGGPublicProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1D4720643D6300442971 /* JGGPublicProfileVC.swift */; };
+		FF8F1D4A206460D800442971 /* JGGAcceptBidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1D49206460D800442971 /* JGGAcceptBidVC.swift */; };
 		FF90E49F2053BE1900B1412F /* JGGJobDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF90E49E2053BE1900B1412F /* JGGJobDetailVC.swift */; };
 		FF9381931FF493DE005699C3 /* Jobs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9381911FF493DE005699C3 /* Jobs.storyboard */; };
 		FF9381951FF494D4005699C3 /* JGGSelectJobCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9381941FF494D4005699C3 /* JGGSelectJobCategoryVC.swift */; };
@@ -474,6 +475,7 @@
 		FF8F1D43206436D600442971 /* JGGProfileSummaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGProfileSummaryVC.swift; sourceTree = "<group>"; };
 		FF8F1D4520643D5700442971 /* JGGPrivateProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGPrivateProfileVC.swift; sourceTree = "<group>"; };
 		FF8F1D4720643D6300442971 /* JGGPublicProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGPublicProfileVC.swift; sourceTree = "<group>"; };
+		FF8F1D49206460D800442971 /* JGGAcceptBidVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAcceptBidVC.swift; sourceTree = "<group>"; };
 		FF90E49E2053BE1900B1412F /* JGGJobDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGJobDetailVC.swift; sourceTree = "<group>"; };
 		FF9381921FF493DE005699C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Jobs.storyboard; sourceTree = "<group>"; };
 		FF9381941FF494D4005699C3 /* JGGSelectJobCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGSelectJobCategoryVC.swift; sourceTree = "<group>"; };
@@ -878,7 +880,6 @@
 		63BE91C41FA025F100D40C07 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				63955ED31FA0593400D825B2 /* JGGButton.swift */,
 				63955ED51FA0594300D825B2 /* JGGTextField.swift */,
 				63955ED71FA0598800D825B2 /* UITextField.swift */,
 				63955ED91FA0599400D825B2 /* UIButton.swift */,
@@ -960,6 +961,7 @@
 				FF2B4B49205307C000E58EBB /* JGGServiceProvidersListVC.swift */,
 				FFFC213E1FB5C0AA00AAA6F7 /* JGGBidDetailVC.swift */,
 				FF90E49D2053BDEF00B1412F /* Job */,
+				FF8F1D49206460D800442971 /* JGGAcceptBidVC.swift */,
 			);
 			path = Appointment;
 			sourceTree = "<group>";
@@ -1119,6 +1121,7 @@
 			isa = PBXGroup;
 			children = (
 				FF849E051FD71577003EB83A /* JGGYellowSelectingButton.swift */,
+				63955ED31FA0593400D825B2 /* JGGButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -1724,7 +1727,6 @@
 				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/CountryPickerSwift/CountryPicker.framework",
-				"${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
 				"${BUILT_PRODUCTS_DIR}/IGRPhotoTweaks/IGRPhotoTweaks.framework",
 				"${BUILT_PRODUCTS_DIR}/Imaginary/Imaginary.framework",
@@ -1750,7 +1752,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CountryPicker.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESPullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGRPhotoTweaks.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Imaginary.framework",
@@ -1880,6 +1881,7 @@
 				FF8F1D4820643D6300442971 /* JGGPublicProfileVC.swift in Sources */,
 				FFAD88BB1FBB324E0001F423 /* JGGServiceAnnotationView.swift in Sources */,
 				FF9381A51FF55C94005699C3 /* JGGPostJobSummaryVC.swift in Sources */,
+				FF8F1D4A206460D800442971 /* JGGAcceptBidVC.swift in Sources */,
 				FF21FAE21FAB5525004D0ADA /* JGGImageCarouselCell.swift in Sources */,
 				FF86D1191FC4B78B00EE70F5 /* JGGCalendarView.swift in Sources */,
 				FFB594261FDE7DA600D12A1F /* JGGAppJobStatusAccessoryCell.swift in Sources */,

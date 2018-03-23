@@ -60,4 +60,10 @@ class JGGAppManager: NSObject {
         return (userDefaults.string(forKey: USERNAME_KEY), userDefaults.string(forKey: PASSWORD_KEY))
     }
     
+    func clearCreditional() -> Void {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(nil, forKey: USERNAME_KEY)
+        userDefaults.set(nil, forKey: PASSWORD_KEY)
+        userDefaults.synchronize()
+    }
 }

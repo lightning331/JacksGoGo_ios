@@ -1,6 +1,6 @@
 {
   "name": "CountryPickerSwift",
-  "version": "1.6",
+  "version": "1.7.1",
   "summary": "Swift CountryPicker",
   "description": "TODO: CountryCode Picker",
   "homepage": "https://github.com/4taras4/CountryCode",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/4taras4/CountryCode.git",
-    "tag": "1.6"
+    "tag": "1.7.1"
   },
   "social_media_url": "https://twitter.com/lulz_ua",
   "platforms": {

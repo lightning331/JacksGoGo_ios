@@ -204,7 +204,7 @@ class URLManager: NSObject {
         }
         
         static func RejectProposal(id: String) -> String {
-            return fullPath(for: "/RejectProposal?ID=\(id)")
+            return fullPath(for: "/RejectProposal?ProposalID=\(id)")
         }
         
         static func WithdrawProposal(id: String) -> String {

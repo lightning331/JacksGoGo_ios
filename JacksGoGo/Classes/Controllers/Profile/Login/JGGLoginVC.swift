@@ -74,22 +74,24 @@ class JGGLoginVC: JGGLoginBaseVC, UITextFieldDelegate {
                     self.hideHUD(from: self.navigationController?.tabBarController?.view)
                     if let userProfile = userProfile {
                         self.appManager.currentUser = userProfile
-                        if userProfile.user.phoneNumberVerified {
+                        if true { // userProfile.user.phoneNumberVerified {
                             NotificationCenter.default.post(name: NSNotification.Name(rawValue: JGGNotificationLoggedIn), object: nil)
                             if let nav = self.navigationController as? JGGProfileNC {
                                 nav.loggedIn()
                             }
                             self.appManager.save(username: email, password: password)
                         } else {
-                            JGGAlertViewController.show(title: LocalizedString("Warning"),
-                                                        message: LocalizedString("You have not verified account. Would you verify with your phone number?"),
-                                                        colorSchema: .orange,
-                                                        okButtonTitle: LocalizedString("Verify"),
-                                                        okAction: { text in
-                                                            self.performSegue(withIdentifier: "gotoPhoneVerifyVC", sender: self)
-                                                        },
-                                                        cancelButtonTitle: LocalizedString("Cancel"),
-                                                        cancelAction: nil)
+                            JGGAlertViewController.show(
+                                title: LocalizedString("Warning"),
+                                message: LocalizedString("You have not verified account. Would you verify with your phone number?"),
+                                colorSchema: .orange,
+                                okButtonTitle: LocalizedString("Verify"),
+                                okAction: { text in
+                                    self.performSegue(withIdentifier: "gotoPhoneVerifyVC", sender: self)
+                                },
+                                cancelButtonTitle: LocalizedString("Cancel"),
+                                cancelAction: nil
+                            )
                         }
                     } else {
                         self.showAlert(title: LocalizedString("Error"), message: errorMessage)

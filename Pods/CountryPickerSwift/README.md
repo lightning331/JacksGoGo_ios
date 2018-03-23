@@ -4,6 +4,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/CountryPicker.svg?style=flat)](https://cocoapods.org/pods/CountryPickerSwift)
 [![Swift version](https://img.shields.io/badge/Swift-3.1-orange.svg)](https://cocoapods.org/pods/CountryPickerSwift)
 [![Swift version](https://img.shields.io/badge/Swift-4-orange.svg)](https://cocoapods.org/pods/CountryPickerSwift)
+[![Beerpay](https://beerpay.io/4taras4/CountryCode/badge.svg?style=flat)](https://beerpay.io/4taras4/CountryCode)
 
 Picker code  Swift 3 / 4.
 
@@ -30,7 +31,10 @@ class ViewController: UIViewController, CountryPickerDelegate {
         let locale = Locale.current
         let code = (locale as NSLocale).object(forKey: NSLocale.Key.countryCode) as! String?
         //init Picker
-        picker.displayOnlyCountriesWithCodes = ["DK", "SE", "NO", "DE"] //Optional, must be set before showing 
+        picker.displayOnlyCountriesWithCodes = ["DK", "SE", "NO", "DE"] //display only
+        picker.exeptCountriesWithCodes = ["RU"] //exept country
+        let theme = CountryViewTheme(countryCodeTextColor: .white, countryNameTextColor: .white, rowBackgroundColor: .black, showFlagsBorder: false)        //optional for UIPickerView theme changes
+        picker.theme = theme //optional for UIPickerView theme changes
         picker.countryPickerDelegate = self
         picker.showPhoneNumbers = true
         picker.setCountry(code!)
@@ -52,7 +56,7 @@ class ViewController: UIViewController, CountryPickerDelegate {
 
 CountryPicker is available through [CocoaPods](http://cocoapods.org). To install
 
-*Swift 3.1 (Xcode 9)*  `pod 'CountryPickerSwift', '1.4.5'`
+*Swift 3.1 (Xcode 9)*  `pod 'CountryPickerSwift', '1.7'`
 
 *Swift 3.0+ (Xcode 8)*  `pod 'CountryPickerSwift', '1.4.4'`
 
@@ -103,3 +107,8 @@ CountryPicker is available under the MIT license. See the LICENSE file for more 
 
  Donation Bitcoin 141Q3KduSqvTtMbrU6YouSErDBh1SpiLrL 
 
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/4taras4/CountryCode/badge.svg?style=beer-square)](https://beerpay.io/4taras4/CountryCode)  [![Beerpay](https://beerpay.io/4taras4/CountryCode/make-wish.svg?style=flat-square)](https://beerpay.io/4taras4/CountryCode?focus=wish)

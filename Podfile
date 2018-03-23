@@ -29,7 +29,6 @@ pod 'Hue', '~> 3.0.0'
 pod 'Imaginary', '~> 3.0.0'
 pod 'SwiftHash', '~> 2.0.0'
 
-pod 'ESPullToRefresh', '~> 2.7'
 #pod 'CountryPickerSwift', '~> 1.6'
 pod 'CountryPickerSwift', :git => 'https://github.com/4taras4/CountryCode.git'
 

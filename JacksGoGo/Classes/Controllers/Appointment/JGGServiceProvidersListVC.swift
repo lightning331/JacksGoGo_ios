@@ -74,6 +74,7 @@ class JGGServiceProvidersListVC: JGGAppointmentDetailBaseVC {
     @objc fileprivate func showProposal(_ proposal: JGGProposalModel) {
         let proposalVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGBidDetailVC") as! JGGBidDetailVC
         proposalVC.proposal = proposal
+        proposalVC.selectedAppointment = self.selectedAppointment
         self.navigationController?.pushViewController(proposalVC, animated: true)
     }
     

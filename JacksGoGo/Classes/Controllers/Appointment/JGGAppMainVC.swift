@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ESPullToRefresh
 
 class JGGAppMainVC: JGGStartTableVC {
 
@@ -43,9 +42,6 @@ class JGGAppMainVC: JGGStartTableVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        makeTemporaryData()
-        
-        
         initializeTableView()
         addTabNavigationBar()
         addSearchField()
@@ -57,7 +53,7 @@ class JGGAppMainVC: JGGStartTableVC {
     private func initializeTableView() {
         self.tableView.keyboardDismissMode = .onDrag
         self.tableView.allowsSelection = true
-        
+        self.addRefreshControl()
     }
 
     private func addTabNavigationBar() {
@@ -99,16 +95,22 @@ class JGGAppMainVC: JGGStartTableVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if isLoggedIn && self.arrayAllPendingJobs.count == 0 {
-            reloadJobWithPullRefresh()
+//            reloadJobWithPullRefresh()
+            self.loggedInHandler(self)
         }
     }
     
     override func loggedInHandler(_ sender: Any) {
+//        reloadJobWithPullRefresh()
+        self.refreshControl?.beginRefreshing()
+        self.tableView.setContentOffset(
+            CGPoint(x: 0, y: -self.refreshControl!.frame.height),
+            animated: true
+        )
         reloadJobWithPullRefresh()
     }
     
     override func loggedOutHandler(_ sender: Any) {
-        self.tableView.es.removeRefreshHeader()
         self.tableView.reloadData()
     }
     
@@ -124,23 +126,25 @@ class JGGAppMainVC: JGGStartTableVC {
     }
     
     fileprivate func reloadJobWithPullRefresh() {
-        self.tableView.es.addPullToRefresh {
-            if !self.isLoading {
-                guard let currentUser = self.appManager.currentUser else {
-                    return
-                }
-                self.APIManager.getPendingJobs(user: currentUser) { (response) in
-                    self.resetData()
-                    self.arrayAllPendingJobs.append(contentsOf: response)
-                    self.filterJobs(response)
-                    self.tableView.reloadData()
-                    self.tableView.es.stopPullToRefresh()
-                    self.isLoading = false
-                }
-                self.isLoading = true
+        
+        if !self.isLoading {
+            guard let currentUser = self.appManager.currentUser else {
+                return
             }
+            self.APIManager.getPendingJobs(user: currentUser) { (response) in
+                self.resetData()
+                self.arrayAllPendingJobs.append(contentsOf: response)
+                self.filterJobs(response)
+                self.isLoading = false
+                self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
+            }
+            self.isLoading = true
         }
-        self.tableView.es.startPullToRefresh()
+    }
+    
+    override func pullToRefresh(_ sender: Any) {
+        reloadJobWithPullRefresh()
     }
     
     fileprivate func loadJobs() {

@@ -22,11 +22,6 @@ class JGGAppointmentDetailBaseVC: JGGAppointmentsBaseVC {
         
         showCategoryAndTitle()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     private func showCategoryAndTitle() {
         lblTitle.text = selectedAppointment?.title

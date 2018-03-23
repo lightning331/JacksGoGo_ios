@@ -39,7 +39,8 @@ class JGGSignupEmailPasswordVC: JGGLoginBaseVC, UITextFieldDelegate {
             return
         }
         self.view.endEditing(true)
-        APIManager.accountRegister(email: email, password: password) { (success, errorMessage) in
+        let region = (self.navigationController as! JGGProfileNC).selectedRegion!
+        APIManager.accountRegister(email: email, password: password, region: region) { (success, errorMessage) in
             self.hideHUD(from: self.navigationController?.tabBarController?.view)
             if success {
                 self.appManager.save(username: email, password: password)

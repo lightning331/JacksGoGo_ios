@@ -9,7 +9,7 @@
 import UIKit
 
 class JGGTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +26,22 @@ class JGGTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    internal func addRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.backgroundColor = UIColor.JGGGrey4
+        refreshControl.tintColor = UIColor.JGGBlack
+        refreshControl.addTarget(
+            self,
+            action: #selector(pullToRefresh(_:)),
+            for: .valueChanged
+        )
+        self.refreshControl = refreshControl
+    }
+    
+    @objc internal func pullToRefresh(_ sender: Any) {
+        
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

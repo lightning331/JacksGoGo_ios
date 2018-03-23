@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5B9A544927D9ED12AD3F9525E2E37D39"
+               BlueprintIdentifier = "15AF30C8115A773B14C33A1C97C018E5"
                BuildableName = "CountryPicker.framework"
                BlueprintName = "CountryPickerSwift"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5B9A544927D9ED12AD3F9525E2E37D39"
+            BlueprintIdentifier = "15AF30C8115A773B14C33A1C97C018E5"
             BuildableName = "CountryPicker.framework"
             BlueprintName = "CountryPickerSwift"
             ReferencedContainer = "container:Pods.xcodeproj">

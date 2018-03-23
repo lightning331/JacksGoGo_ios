@@ -293,7 +293,7 @@
                                                     <rect key="frame" x="15" y="11" width="313" height="38"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jobs posted." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zw8-gB-vrh">
-                                                            <rect key="frame" x="16" y="9.5" width="281" height="19"/>
+                                                            <rect key="frame" x="16" y="10" width="281" height="19"/>
                                                             <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -578,7 +578,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="onPressedAcceptBid:" destination="bzM-o7-lbj" eventType="touchUpInside" id="Rph-Fi-75i"/>
+                                            <segue destination="ElI-0S-6GJ" kind="show" identifier="gotoAcceptBid" id="w0N-BZ-8rq"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -640,7 +640,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="JGGPublicProfileVC" storyboardName="Profile" referencedIdentifier="JGGPublicProfileVC" id="sUb-iz-6JB" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvj-FI-b5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3926" y="2435"/>
+            <point key="canvasLocation" x="4886" y="1751"/>
         </scene>
         <!--App Job Status SummaryVC-->
         <scene sceneID="pSk-Xb-7v5">
@@ -760,7 +760,7 @@
                                         </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="catherinedesilva" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1E-Vd-1bY">
-                                        <rect key="frame" x="57" y="15.5" width="170" height="19"/>
+                                        <rect key="frame" x="57" y="16" width="170" height="19"/>
                                         <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1442,6 +1442,222 @@
             </objects>
             <point key="canvasLocation" x="4910" y="1645"/>
         </scene>
+        <!--Accept Bid-->
+        <scene sceneID="o4g-Md-mJj">
+            <objects>
+                <viewController storyboardIdentifier="JGGAcceptBidVC" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="ElI-0S-6GJ" customClass="JGGAcceptBidVC" customModule="JacksGoGo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uz5-a9-vdA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8e-K5-CE3">
+                                <rect key="frame" x="0.0" y="64" width="375" height="60"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_cat_householdchores" translatesAutoresizingMaskIntoConstraints="NO" id="6CJ-nv-mNn">
+                                        <rect key="frame" x="16" y="8" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="2FF-5m-7xc"/>
+                                            <constraint firstAttribute="width" secondItem="6CJ-nv-mNn" secondAttribute="height" multiplier="1:1" id="qzd-K8-YuO"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyg-K1-R6X">
+                                        <rect key="frame" x="48" y="8" width="319" height="15.5"/>
+                                        <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIf-Tj-FV5">
+                                        <rect key="frame" x="48" y="25.5" width="319" height="15.5"/>
+                                        <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="TIf-Tj-FV5" firstAttribute="top" secondItem="cyg-K1-R6X" secondAttribute="bottom" constant="2" id="CFu-3D-UIa"/>
+                                    <constraint firstAttribute="trailing" secondItem="cyg-K1-R6X" secondAttribute="trailing" constant="8" id="IJc-2d-VpX"/>
+                                    <constraint firstItem="6CJ-nv-mNn" firstAttribute="leading" secondItem="t8e-K5-CE3" secondAttribute="leading" constant="16" id="JGq-hC-xCu"/>
+                                    <constraint firstItem="cyg-K1-R6X" firstAttribute="top" secondItem="6CJ-nv-mNn" secondAttribute="top" id="Ji1-AD-zgb"/>
+                                    <constraint firstItem="TIf-Tj-FV5" firstAttribute="trailing" secondItem="cyg-K1-R6X" secondAttribute="trailing" id="KIx-zU-8z4"/>
+                                    <constraint firstItem="6CJ-nv-mNn" firstAttribute="top" secondItem="t8e-K5-CE3" secondAttribute="top" constant="8" id="dAy-ZJ-7ku"/>
+                                    <constraint firstItem="TIf-Tj-FV5" firstAttribute="leading" secondItem="cyg-K1-R6X" secondAttribute="leading" id="lhu-Jn-Zbb"/>
+                                    <constraint firstAttribute="height" constant="60" id="uuc-gK-BTY"/>
+                                    <constraint firstItem="cyg-K1-R6X" firstAttribute="leading" secondItem="6CJ-nv-mNn" secondAttribute="trailing" constant="8" id="yB2-Qb-fiM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nCH-FX-dgf">
+                                <rect key="frame" x="0.0" y="124" width="375" height="2"/>
+                                <color key="backgroundColor" red="0.91757661099999999" green="0.91768664119999999" blue="0.91753917929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="1TC-IY-6xd"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vdg-sB-ikW">
+                                <rect key="frame" x="0.0" y="142" width="375" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 100.00" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NTv-Yz-eZ3">
+                                        <rect key="frame" x="269" y="31" width="90" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="4EB-GN-2IY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="CYYong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lKK-Q6-juR">
+                                        <rect key="frame" x="80" y="22.5" width="181" height="19"/>
+                                        <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9Y-5e-uUg" customClass="CosmosView" customModule="Cosmos">
+                                        <rect key="frame" x="80" y="43.5" width="80" height="15"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="WEu-f1-AhV"/>
+                                            <constraint firstAttribute="height" constant="15" id="rzk-ef-OOx"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                <color key="value" red="0.78437811140000002" green="0.78115159270000001" blue="0.79996067289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="222.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ocs-ky-27o" customClass="JGGCircleImageView" customModule="JacksGoGo" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="12" width="56" height="56"/>
+                                        <color key="backgroundColor" red="0.89019607840000003" green="0.94509803920000002" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ocs-ky-27o" secondAttribute="height" multiplier="1:1" id="J4L-u5-EZK"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="NTv-Yz-eZ3" firstAttribute="leading" secondItem="lKK-Q6-juR" secondAttribute="trailing" constant="8" id="1dQ-2d-9zb"/>
+                                    <constraint firstItem="ocs-ky-27o" firstAttribute="top" secondItem="vdg-sB-ikW" secondAttribute="top" constant="12" id="FP3-qr-LXv"/>
+                                    <constraint firstItem="v9Y-5e-uUg" firstAttribute="top" secondItem="lKK-Q6-juR" secondAttribute="bottom" constant="2" id="PN7-5g-Wnx"/>
+                                    <constraint firstItem="ocs-ky-27o" firstAttribute="leading" secondItem="vdg-sB-ikW" secondAttribute="leading" constant="16" id="c1q-GF-7xc"/>
+                                    <constraint firstAttribute="trailing" secondItem="NTv-Yz-eZ3" secondAttribute="trailing" constant="16" id="h1F-f3-QcI"/>
+                                    <constraint firstAttribute="bottom" secondItem="ocs-ky-27o" secondAttribute="bottom" constant="12" id="h8Z-Qv-LtV"/>
+                                    <constraint firstItem="v9Y-5e-uUg" firstAttribute="leading" secondItem="lKK-Q6-juR" secondAttribute="leading" id="mUA-Rt-4Zj"/>
+                                    <constraint firstItem="lKK-Q6-juR" firstAttribute="leading" secondItem="ocs-ky-27o" secondAttribute="trailing" constant="8" id="oV1-RN-s8i"/>
+                                    <constraint firstItem="NTv-Yz-eZ3" firstAttribute="centerY" secondItem="vdg-sB-ikW" secondAttribute="centerY" id="q2I-Tz-Ng7"/>
+                                    <constraint firstAttribute="height" constant="80" id="zHi-LQ-fUh"/>
+                                    <constraint firstItem="lKK-Q6-juR" firstAttribute="centerY" secondItem="vdg-sB-ikW" secondAttribute="centerY" constant="-8.5" id="zjf-Jb-siA"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oR2-j2-Rtl">
+                                <rect key="frame" x="0.0" y="238" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.91757661099999999" green="0.91768664119999999" blue="0.91753917929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="HMC-Cv-DAQ"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations on finding a good match!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzX-bZ-K0Q">
+                                <rect key="frame" x="16" y="271" width="343" height="19"/>
+                                <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzV-a2-vy7" customClass="JGGButton" customModule="JacksGoGo" customModuleProvider="target">
+                                <rect key="frame" x="16" y="306" width="343" height="48"/>
+                                <color key="backgroundColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="29m-th-c3H"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                                <state key="normal" title="Set Up Payment Method">
+                                    <color key="titleColor" red="0.9999235272" green="1" blue="0.99988299609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onPressedCreditCard:" destination="ElI-0S-6GJ" eventType="touchUpInside" id="Uzq-cU-Id3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDE-zD-lS1" customClass="JGGButton" customModule="JacksGoGo" customModuleProvider="target">
+                                <rect key="frame" x="16" y="370" width="343" height="48"/>
+                                <color key="backgroundColor" red="0.12652084229999999" green="0.74797922370000003" blue="0.22940036650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="15"/>
+                                <state key="normal" title="Set Up Payment Method">
+                                    <color key="titleColor" red="0.9999235272" green="1" blue="0.99988299609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onPressedJacksCredit:" destination="ElI-0S-6GJ" eventType="touchUpInside" id="lq4-vE-h6g"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97639578579999997" green="0.97651261089999997" blue="0.97635620830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GDE-zD-lS1" firstAttribute="top" secondItem="vzV-a2-vy7" secondAttribute="bottom" constant="16" id="0aF-2I-NRx"/>
+                            <constraint firstItem="hpQ-2j-clx" firstAttribute="trailing" secondItem="oR2-j2-Rtl" secondAttribute="trailing" id="9Mh-uG-HsU"/>
+                            <constraint firstItem="nCH-FX-dgf" firstAttribute="top" secondItem="t8e-K5-CE3" secondAttribute="bottom" id="BdR-KM-5JJ"/>
+                            <constraint firstItem="GDE-zD-lS1" firstAttribute="leading" secondItem="vzV-a2-vy7" secondAttribute="leading" id="Eyn-Ms-vN2"/>
+                            <constraint firstItem="vzV-a2-vy7" firstAttribute="leading" secondItem="hpQ-2j-clx" secondAttribute="leading" constant="16" id="IN9-Ek-Uoc"/>
+                            <constraint firstItem="MzX-bZ-K0Q" firstAttribute="leading" secondItem="hpQ-2j-clx" secondAttribute="leading" constant="16" id="Ih8-es-II7"/>
+                            <constraint firstItem="GDE-zD-lS1" firstAttribute="height" secondItem="vzV-a2-vy7" secondAttribute="height" id="KZl-XK-Gto"/>
+                            <constraint firstItem="oR2-j2-Rtl" firstAttribute="leading" secondItem="hpQ-2j-clx" secondAttribute="leading" id="TEa-kl-d8O"/>
+                            <constraint firstItem="hpQ-2j-clx" firstAttribute="trailing" secondItem="vzV-a2-vy7" secondAttribute="trailing" constant="16" id="U3M-Xt-nWt"/>
+                            <constraint firstItem="t8e-K5-CE3" firstAttribute="trailing" secondItem="hpQ-2j-clx" secondAttribute="trailing" id="WBa-nM-5P6"/>
+                            <constraint firstItem="t8e-K5-CE3" firstAttribute="top" secondItem="hpQ-2j-clx" secondAttribute="top" id="WDg-Ga-br9"/>
+                            <constraint firstItem="nCH-FX-dgf" firstAttribute="trailing" secondItem="hpQ-2j-clx" secondAttribute="trailing" id="XrZ-rK-8jy"/>
+                            <constraint firstItem="MzX-bZ-K0Q" firstAttribute="top" secondItem="oR2-j2-Rtl" secondAttribute="bottom" constant="32" id="eOh-gv-bcE"/>
+                            <constraint firstItem="vzV-a2-vy7" firstAttribute="top" secondItem="MzX-bZ-K0Q" secondAttribute="bottom" constant="16" id="lzu-cr-ghI"/>
+                            <constraint firstItem="vdg-sB-ikW" firstAttribute="leading" secondItem="hpQ-2j-clx" secondAttribute="leading" id="mCb-tL-Oc1"/>
+                            <constraint firstItem="vdg-sB-ikW" firstAttribute="top" secondItem="nCH-FX-dgf" secondAttribute="bottom" constant="16" id="nEK-BV-6R8"/>
+                            <constraint firstItem="nCH-FX-dgf" firstAttribute="leading" secondItem="hpQ-2j-clx" secondAttribute="leading" id="o2y-Hm-rpx"/>
+                            <constraint firstItem="oR2-j2-Rtl" firstAttribute="top" secondItem="vdg-sB-ikW" secondAttribute="bottom" constant="16" id="qtc-tb-bc1"/>
+                            <constraint firstItem="hpQ-2j-clx" firstAttribute="trailing" secondItem="vdg-sB-ikW" secondAttribute="trailing" id="v4m-Lw-ngA"/>
+                            <constraint firstItem="GDE-zD-lS1" firstAttribute="trailing" secondItem="vzV-a2-vy7" secondAttribute="trailing" id="wPY-8w-J5c"/>
+                            <constraint firstItem="hpQ-2j-clx" firstAttribute="trailing" secondItem="MzX-bZ-K0Q" secondAttribute="trailing" constant="16" id="y2y-ue-npk"/>
+                            <constraint firstItem="t8e-K5-CE3" firstAttribute="leading" secondItem="hpQ-2j-clx" secondAttribute="leading" id="zOA-NC-ApS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hpQ-2j-clx"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Accept Bid" id="tki-kc-kOv">
+                        <barButtonItem key="backBarButtonItem" title=" " id="1ee-DF-tzZ"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="btnPaymentCreditCard" destination="vzV-a2-vy7" id="ilI-Rb-63Z"/>
+                        <outlet property="btnPaymentJacksCredit" destination="GDE-zD-lS1" id="fHW-gW-6fx"/>
+                        <outlet property="imgviewCategoryIcon" destination="6CJ-nv-mNn" id="aXd-pC-1A7"/>
+                        <outlet property="imgviewUserAvatar" destination="ocs-ky-27o" id="2os-rB-s9I"/>
+                        <outlet property="lblDescription" destination="MzX-bZ-K0Q" id="oCh-HO-7wg"/>
+                        <outlet property="lblPrice" destination="NTv-Yz-eZ3" id="EyQ-G3-Gdy"/>
+                        <outlet property="lblServiceTime" destination="TIf-Tj-FV5" id="JVO-fr-WgC"/>
+                        <outlet property="lblTitle" destination="cyg-K1-R6X" id="C7Z-ns-bC3"/>
+                        <outlet property="lblUsername" destination="lKK-Q6-juR" id="6av-Hg-StS"/>
+                        <outlet property="ratebarUserRate" destination="v9Y-5e-uUg" id="UYo-Ro-X3E"/>
+                        <outlet property="viewTitleBox" destination="t8e-K5-CE3" id="tft-Mk-l6K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Hc-Tl-dmX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4180" y="2436"/>
+        </scene>
     </scenes>
     <resources>
         <image name="222.jpg" width="289" height="289"/>
@@ -1463,6 +1679,6 @@
         <image name="tab_appointment_active" width="30" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Qbm-ZA-eGu"/>
+        <segue reference="jLi-DO-FhN"/>
     </inferredMetricsTieBreakers>
 </document>

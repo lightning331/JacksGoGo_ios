@@ -93,33 +93,39 @@ class JGGProfileMainVC: JGGStartTableVC {
         if let cell = tableView.cellForRow(at: indexPath) as? JGGProfileMainOptionCell {
             let optionTitle = cell.lblTitle.text
             if optionTitle == LocalizedString("Sign Out") {
-                let hud = MBProgressHUD(view: (self.tabBarController?.view)!)
-                hud.show(animated: true)
-                APIManager.accountLogout({ (success, errorMessage) in
-                    if success {
-                        self.appManager.currentUser = nil
-                        NotificationCenter
-                            .default
-                            .post(
-                                name: NSNotification.Name(rawValue: JGGNotificationLoggedOut),
-                                object: nil
-                        )
-                        (self.navigationController as? JGGProfileNC)?.loggedOut()
-                    } else {
-                        JGGAlertViewController.show(
-                            title: LocalizedString("Error"),
-                            message: errorMessage,
-                            colorSchema: .red,
-                            okButtonTitle: LocalizedString("OK"),
-                            okAction: nil,
-                            cancelButtonTitle: nil,
-                            cancelAction: nil
-                        )
-                    }
-                    hud.hide(animated: true)
-                })
+                self.signout()
             }
         }
+    }
+    
+    // MARK: - Actions
+    private func signout() {
+        let hud = MBProgressHUD(view: (self.tabBarController?.view)!)
+        hud.show(animated: true)
+        APIManager.accountLogout({ (success, errorMessage) in
+            if success {
+                self.appManager.currentUser = nil
+                self.appManager.clearCreditional()
+                NotificationCenter
+                    .default
+                    .post(
+                        name: NSNotification.Name(rawValue: JGGNotificationLoggedOut),
+                        object: nil
+                )
+                (self.navigationController as? JGGProfileNC)?.loggedOut()
+            } else {
+                JGGAlertViewController.show(
+                    title: LocalizedString("Error"),
+                    message: errorMessage,
+                    colorSchema: .red,
+                    okButtonTitle: LocalizedString("OK"),
+                    okAction: nil,
+                    cancelButtonTitle: nil,
+                    cancelAction: nil
+                )
+            }
+            hud.hide(animated: true)
+        })
     }
 }
 

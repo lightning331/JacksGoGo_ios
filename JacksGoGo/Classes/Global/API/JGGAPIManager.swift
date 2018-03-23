@@ -299,10 +299,11 @@ class JGGAPIManager: NSObject {
         }
     }
     
-    func accountRegister(email: String, password: String, complete: @escaping BoolStringClosure) -> Void {
-        let body = [
+    func accountRegister(email: String, password: String, region: JGGRegionModel, complete: @escaping BoolStringClosure) -> Void {
+        let body: Dictionary = [
             "email": email,
             "password": password,
+            "regionID": region.id!
             ]
         
         CLS_LOG_SWIFT(format: "Register url: %@ \nbody: %@", [URLManager.Account.Register, body])
@@ -809,12 +810,51 @@ class JGGAPIManager: NSObject {
         }
     }
     
-    func approveProposal() -> Void {
+    func approveProposal(_ proposal: JGGProposalModel, _ complete: @escaping StringStringClosure) -> Void {
         
+        guard let appointmentId = proposal.appointmentId,
+            let proposalId = proposal.id,
+            let currencyCode = proposal.currencyCode,
+            let budget = proposal.budget else {
+                complete(nil, "Invalid parameters.")
+                return
+        }
+        
+        let url = URLManager.Proposal.ApproveProposal
+        let params: Dictionary = [
+            "AppointmentID": appointmentId,
+            "ProposalID": proposalId,
+            "GrossAmt": budget,
+            "CurrencyCode": currencyCode,
+        ]
+        POST(url: url, body: params) { (response, error) in
+            if let json = response {
+                let success = json[SUCCESS_KEY].boolValue
+                if success {
+                    complete(json[VALUE_KEY].stringValue, nil)
+                } else {
+                    complete(nil, json[MESSAGE_KEY].stringValue)
+                }
+            } else if let error = error {
+                complete(nil, error.localizedDescription)
+            } else {
+                complete(nil, LocalizedString("Unknown request error."))
+            }
+        }
     }
     
-    func rejectProposal(id: String) -> Void {
-        
+    func rejectProposal(id: String, _ complete: @escaping BoolStringClosure) -> Void {
+        let url = URLManager.Proposal.RejectProposal(id: id)
+        GET(url: url, params: nil) { (response, error) in
+            if let json = response {
+                let success = json[SUCCESS_KEY].boolValue
+                complete(success, json[MESSAGE_KEY].stringValue)
+            } else if let error = error {
+                complete(false, error.localizedDescription)
+            } else {
+                complete(false, LocalizedString("Unknown request error."))
+            }
+        }
     }
     
     func getProposalsBy(
@@ -911,5 +951,7 @@ class JGGAPIManager: NSObject {
             print("getProposedStatus ERROR: ", error ?? "")
         }
     }
+    
+    
 }
 

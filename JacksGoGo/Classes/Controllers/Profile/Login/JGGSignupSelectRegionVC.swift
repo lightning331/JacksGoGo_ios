@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ESPullToRefresh
 
 class JGGSignupSelectRegionVC: JGGLoginBaseVC {
 
@@ -28,18 +27,19 @@ class JGGSignupSelectRegionVC: JGGLoginBaseVC {
         self.tableView.allowsSelection = true
         self.hidesBottomBarWhenPushed = true
         
-        self.tableView.es.addPullToRefresh {
-            self.loadingIndicator.startAnimating()
-            self.APIManager.getRegions { (regions) in
-                self.regions = regions
-                self.tableView.reloadData()
-                self.tableView.es.stopPullToRefresh()
-                self.loadingIndicator.stopAnimating()
-            }
-        }
-        self.tableView.es.startPullToRefresh()
+        self.addRefreshControl()
+        pullToRefresh(self.refreshControl!)
     }
     
+    override func pullToRefresh(_ sender: Any) {
+        self.loadingIndicator.startAnimating()
+        self.APIManager.getRegions { (regions) in
+            self.regions = regions
+            self.tableView.reloadData()
+            self.refreshControl?.endRefreshing()
+            self.loadingIndicator.stopAnimating()
+        }
+    }
     
     // MARK: - UITableView Datasource, delegate
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -52,7 +52,7 @@ class JGGUserAvatarNameRateCell: UITableViewCell {
     internal func showUserProfileInfo() {
         
         let user = profile.user
-        self.lblUsername.text = user?.fullname
+        self.lblUsername.text = user?.fullname ?? user?.email
         self.ratebarUserRate.rating = user?.rate ?? 0
         let placeholderAvatar = UIImage(named: "icon_Profile")
         if let urlString = user?.photoURL, let url = URL(string: urlString) {

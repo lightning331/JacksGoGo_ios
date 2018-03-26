@@ -19,6 +19,7 @@ class JGGProfileMainVC: JGGStartTableVC {
     @IBOutlet weak var viewUsername: UIView!
     @IBOutlet weak var imgviewUserAvatar: UIImageView!
     @IBOutlet weak var lblUsername: UILabel!
+    @IBOutlet weak var lblUserEmail: UILabel!
     @IBOutlet weak var viewRegion: UIView!
     @IBOutlet weak var imgviewCountryFlag: UIImageView!
     @IBOutlet weak var lblRegionName: UILabel!
@@ -46,8 +47,16 @@ class JGGProfileMainVC: JGGStartTableVC {
         super.viewDidLoad()
 
         self.tableView.allowsSelection = true
+        
+        self.showUserInformation()
     }
 
+    fileprivate func showUserInformation() {
+        if let currentUser = appManager.currentUser {
+            lblUsername.text = currentUser.user.fullname
+            lblUserEmail.text = currentUser.user.email
+        }
+    }
 
     // MARK: - Table view data source
 

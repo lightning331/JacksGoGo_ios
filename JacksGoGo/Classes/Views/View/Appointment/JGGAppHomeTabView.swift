@@ -37,8 +37,30 @@ class JGGAppHomeTabView: UIView {
     
     var delegate: JGGAppHomeTabViewDelegate?
     
-    fileprivate var selectedTabButton: UIButton!
+    var pendingBadge: Int {
+        set {
+            _pendingBadge = newValue
+            viewPendingBadge.isHidden = (newValue == 0)
+        }
+        get {
+            return _pendingBadge
+        }
+    }
     
+    var confirmedBadge: Int {
+        set {
+            _confirmedBadge = newValue
+            viewConfirmedBadge.isHidden = (newValue == 0)
+        }
+        get {
+            return _confirmedBadge
+        }
+    }
+    
+    fileprivate var selectedTabButton: UIButton!
+    fileprivate var _pendingBadge: Int = 0
+    fileprivate var _confirmedBadge: Int = 0
+
     // MARK: -
     
     override func awakeFromNib() {
@@ -94,6 +116,7 @@ class JGGAppHomeTabView: UIView {
             selectedTabButton = sender
         }
     }
+    
 }
 
 protocol JGGAppHomeTabViewDelegate {

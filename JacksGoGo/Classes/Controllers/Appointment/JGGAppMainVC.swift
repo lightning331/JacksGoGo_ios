@@ -63,6 +63,8 @@ class JGGAppMainVC: JGGStartTableVC {
             view.frame = frame
             self.navigationItem.titleView = view
             view.delegate = self
+            view.pendingBadge = 0
+            view.confirmedBadge = 0
         }
     }
     

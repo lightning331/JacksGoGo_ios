@@ -111,7 +111,7 @@ aa</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="222.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-aX-lOY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-aX-lOY">
                                 <rect key="frame" x="72" y="20" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="pdT-aX-lOY" secondAttribute="height" multiplier="1:1" id="jqR-r1-ffK"/>
@@ -169,7 +169,4 @@ aa</string>
             <point key="canvasLocation" x="-100.5" y="-70.5"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="222.jpg" width="289" height="289"/>
-    </resources>
 </document>

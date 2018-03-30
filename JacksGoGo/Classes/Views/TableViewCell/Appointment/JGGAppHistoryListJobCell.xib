@@ -59,7 +59,7 @@
                                     <constraint firstAttribute="width" constant="4" id="CPO-pH-Pqz"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="222.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="RHM-pH-v9o">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RHM-pH-v9o">
                                 <rect key="frame" x="431" y="21" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="RHM-pH-v9o" secondAttribute="height" multiplier="1:1" id="mFq-ag-Fl1"/>
@@ -169,7 +169,4 @@ aa</string>
             <point key="canvasLocation" x="-100.5" y="-70.5"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="222.jpg" width="289" height="289"/>
-    </resources>
 </document>

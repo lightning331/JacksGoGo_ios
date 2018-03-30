@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,12 +29,12 @@
                         <rect key="frame" x="0.0" y="8" width="354" height="125.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="By CYYong on 19 Jul, 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bTA-VD-swQ">
-                                <rect key="frame" x="80" y="12" width="147" height="14"/>
+                                <rect key="frame" x="80" y="12" width="147" height="15.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
                                 <color key="textColor" red="0.54115974899999997" green="0.54185396429999999" blue="0.56077778339999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="222.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="yZ0-nA-OHg" customClass="JGGCircleImageView" customModule="JacksGoGo" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yZ0-nA-OHg" customClass="JGGCircleImageView" customModule="JacksGoGo" customModuleProvider="target">
                                 <rect key="frame" x="16" y="8" width="56" height="56"/>
                                 <color key="backgroundColor" red="0.89019607840000003" green="0.94509803920000002" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -42,7 +42,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbE-5C-cFC" customClass="CosmosView" customModule="Cosmos">
-                                <rect key="frame" x="80" y="28" width="80" height="15"/>
+                                <rect key="frame" x="80" y="29.5" width="80" height="15"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="fvh-eZ-oud"/>
@@ -68,7 +68,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Very patient instructor. 10 people in a group, but ester can handle all of us very well, Love her easy to learn tactics." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmh-yS-XqL">
-                                <rect key="frame" x="80" y="46.5" width="258" height="71"/>
+                                <rect key="frame" x="80" y="48" width="258" height="69.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="rzj-s8-FKO"/>
                                 </constraints>
@@ -112,7 +112,4 @@
             <point key="canvasLocation" x="44" y="97"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="222.jpg" width="289" height="289"/>
-    </resources>
 </document>

@@ -29,7 +29,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZLb-S2-knj">
                         <rect key="frame" x="0.0" y="4" width="375" height="160.5"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="200" verticalCompressionResistancePriority="250" image="carousel03.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="kCQ-kT-SHe">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="200" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="kCQ-kT-SHe">
                                 <rect key="frame" x="0.0" y="0.0" width="88" height="160.5"/>
                                 <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -295,7 +295,6 @@
     </objects>
     <resources>
         <image name="button_next_cyan" width="32" height="32"/>
-        <image name="carousel03.jpg" width="960" height="540"/>
         <image name="icon_budget" width="16" height="16"/>
         <image name="icon_cat_cooking&amp;baking" width="56" height="56"/>
         <image name="icon_favorite" width="7" height="7"/>

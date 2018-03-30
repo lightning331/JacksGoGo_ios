@@ -28,7 +28,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hqn-dL-dbg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="222.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Gwu-EZ-gTg" customClass="JGGCircleImageView" customModule="JacksGoGo" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gwu-EZ-gTg" customClass="JGGCircleImageView" customModule="JacksGoGo" customModuleProvider="target">
                                 <rect key="frame" x="24" y="8" width="59" height="59"/>
                                 <color key="backgroundColor" red="0.89019607840000003" green="0.94509803920000002" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -113,7 +113,4 @@
             <point key="canvasLocation" x="-89.5" y="0.0"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="222.jpg" width="289" height="289"/>
-    </resources>
 </document>

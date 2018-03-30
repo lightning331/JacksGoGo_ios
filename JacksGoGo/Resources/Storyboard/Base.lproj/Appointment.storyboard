@@ -744,7 +744,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="222.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="El7-Pb-ke8">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="El7-Pb-ke8">
                                         <rect key="frame" x="16" y="9" width="33" height="33"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -1537,7 +1537,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="222.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ocs-ky-27o" customClass="JGGCircleImageView" customModule="JacksGoGo" customModuleProvider="target">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ocs-ky-27o" customClass="JGGCircleImageView" customModule="JacksGoGo" customModuleProvider="target">
                                         <rect key="frame" x="16" y="12" width="56" height="56"/>
                                         <color key="backgroundColor" red="0.89019607840000003" green="0.94509803920000002" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -1660,7 +1660,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="222.jpg" width="289" height="289"/>
         <image name="button_close_round_orange" width="32" height="32"/>
         <image name="button_invoice_round_orange" width="40" height="40"/>
         <image name="button_jobreport_round_orange" width="40" height="40"/>

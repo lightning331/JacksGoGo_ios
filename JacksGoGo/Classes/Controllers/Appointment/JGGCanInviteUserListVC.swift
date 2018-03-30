@@ -108,7 +108,7 @@ extension JGGCanInviteUserListVC: UITableViewDataSource, UITableViewDelegate {
         cell.disableInviteButton(false)
         
         for u in invitedUsers {
-            if user.id == u.id {
+            if user.id == u.id || appManager.currentUser?.id == u.id {
                 cell.disableInviteButton()
             }
         }

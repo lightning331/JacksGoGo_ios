@@ -31,7 +31,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H4M-gP-5he">
                         <rect key="frame" x="0.0" y="0.0" width="376" height="74.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="222.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Rc6-iI-2hi" customClass="JGGCircleImageView" customModule="JacksGoGo" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rc6-iI-2hi" customClass="JGGCircleImageView" customModule="JacksGoGo" customModuleProvider="target">
                                 <rect key="frame" x="24" y="11" width="51" height="51.5"/>
                                 <color key="backgroundColor" red="0.89019607840000003" green="0.94509803920000002" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -156,7 +156,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="222.jpg" width="289" height="289"/>
         <image name="icon_proposal_green" width="32" height="32"/>
     </resources>
 </document>

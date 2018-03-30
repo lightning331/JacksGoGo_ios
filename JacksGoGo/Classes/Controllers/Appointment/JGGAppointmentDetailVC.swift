@@ -293,7 +293,7 @@ extension JGGAppointmentDetailVC { // }: UITableViewDataSource, UITableViewDeleg
         } else { // if section == sectionNumberForJobDetail
             if row == 0 {
                 let carouselViewCell = tableView.dequeueReusableCell(withIdentifier: "JGGImageCarouselCell") as! JGGImageCarouselCell
-                carouselViewCell.imgviewJobSummary.image = UIImage(named: "carousel01.jpg")
+                carouselViewCell.imgviewJobSummary.image = nil
                 //                carouselViewCell.carouselView.delegate = self
                 //                carouselViewCell.carouselView.type = .normal
                 //                carouselViewCell.carouselView.selectedIndex = 0

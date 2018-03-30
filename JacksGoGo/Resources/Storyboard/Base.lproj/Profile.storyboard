@@ -114,7 +114,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4z-Yo-fVK">
                                     <rect key="frame" x="0.0" y="152" width="320" height="80"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="222.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NNy-w2-O7p">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NNy-w2-O7p">
                                             <rect key="frame" x="16" y="8" width="64" height="64"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="64" id="Tj2-Bi-paz"/>
@@ -1757,7 +1757,6 @@ You can wait for us to auto detect the SMS, or you can manually enter it below:<
         </scene>
     </scenes>
     <resources>
-        <image name="222.jpg" width="289" height="289"/>
         <image name="SG.png" width="40" height="30"/>
         <image name="button_backarrow_orange" width="27" height="27"/>
         <image name="button_edit_green" width="27" height="27"/>

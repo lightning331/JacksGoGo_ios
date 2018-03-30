@@ -376,6 +376,12 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
     // MARK: - Button actions
     
     fileprivate func onPressedViewQuotations(_ sender: UIButton) {
+        let providersVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGCanInviteUserListVC") as! JGGCanInviteUserListVC
+        providersVC.selectedAppointment = self.job
+        var vcs = self.navigationController!.viewControllers
+        vcs.append(providersVC)
+        self.navigationController?.viewControllers = vcs
+        
         let serviceProvidersVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGServiceProvidersListVC") as! JGGServiceProvidersListVC
         serviceProvidersVC.selectedAppointment = self.job
         serviceProvidersVC.proposals = self.proposals

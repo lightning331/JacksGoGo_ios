@@ -64,7 +64,7 @@ class JGGOriginalServiceDetailVC: JGGSearchBaseTableVC {
         let imageView = UIImageView(frame: CGRect(origin: CGPoint.zero,
                                                   size: CGSize(width: self.view.bounds.width,
                                                                height: self.view.bounds.width * 0.7)))
-        imageView.image = UIImage(named: "carousel02.jpg")
+        imageView.image = nil
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         self.tableView.tableHeaderView = imageView

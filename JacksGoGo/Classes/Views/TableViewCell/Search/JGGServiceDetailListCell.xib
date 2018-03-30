@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,7 +33,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYI-bE-rav">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carousel03.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="y9k-yk-P15">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y9k-yk-P15">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="y9k-yk-P15" secondAttribute="height" multiplier="1:1" id="Ou5-d8-ZIr"/>
@@ -53,13 +53,13 @@
                                         <rect key="frame" x="108" y="8" width="116" height="84"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tennis Coach" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLo-8Q-Ql7">
-                                                <rect key="frame" x="0.0" y="0.0" width="116" height="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="116" height="23"/>
                                                 <fontDescription key="fontDescription" name="Muli-Bold" family="Muli" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RmW-xq-7he" customClass="CosmosView" customModule="Cosmos">
-                                                <rect key="frame" x="0.0" y="25" width="80" height="15"/>
+                                                <rect key="frame" x="0.0" y="27" width="80" height="15"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="80" id="njN-8H-szx"/>
@@ -84,8 +84,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="222.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="o7b-UJ-w6e">
-                                                <rect key="frame" x="0.0" y="44" width="20" height="20"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o7b-UJ-w6e">
+                                                <rect key="frame" x="0.0" y="46" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="aDP-NA-2bR"/>
                                                     <constraint firstAttribute="width" secondItem="o7b-UJ-w6e" secondAttribute="height" multiplier="1:1" id="xUk-x8-fjJ"/>
@@ -97,7 +97,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CYYong" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqJ-bl-NlR">
-                                                <rect key="frame" x="28" y="47.5" width="88" height="14"/>
+                                                <rect key="frame" x="28" y="49" width="88" height="15.5"/>
                                                 <fontDescription key="fontDescription" name="Muli-Regular" family="Muli" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -169,8 +169,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="222.jpg" width="289" height="289"/>
-        <image name="carousel03.jpg" width="960" height="540"/>
         <image name="cell_shadow_grey" width="401" height="20"/>
     </resources>
 </document>

@@ -170,13 +170,13 @@ class JGGJobModel: JGGAppointmentBaseModel {
             if repetitionType == .weekly {
                 let days = repetition!
                     .split(separator: ",")
-                    .flatMap { weekNames[Int($0)!] }
+                    .compactMap { weekNames[Int($0)!] }
                     .joined(separator: ", ")
                 timeString = String(format: "Every %@ of the week", days)
             } else if repetitionType == .monthly {
                 let days = repetition!
                     .split(separator: ",")
-                    .flatMap { dayNames[Int($0)! - 1] }
+                    .compactMap { dayNames[Int($0)! - 1] }
                     .joined(separator: ", ")
                 timeString = String(format: "Every %@ of the month", days)
             }

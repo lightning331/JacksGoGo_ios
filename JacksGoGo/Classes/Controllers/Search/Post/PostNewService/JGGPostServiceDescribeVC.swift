@@ -80,7 +80,7 @@ class JGGPostServiceDescribeVC: JGGPostAppointmentBaseTableVC {
             originalImages =
                 editingJob
                     .attachmentUrl?
-                    .flatMap { URL(string: $0) }
+                    .compactMap { URL(string: $0) }
                     .map { ($0, nil) }
                     .filter { ($0.0 != nil && $0.1 != nil) }
             
@@ -120,7 +120,7 @@ class JGGPostServiceDescribeVC: JGGPostAppointmentBaseTableVC {
         let photoPicker = JGGCustomPhotoPickerVC()
         photoPicker.delegate = self
         if let selectedImages = selectedImages {
-            photoPicker.selectedAssets = selectedImages.filter { $0.0 != nil }.flatMap { $0.0 }
+            photoPicker.selectedAssets = selectedImages.filter { $0.0 != nil }.compactMap { $0.0 }
         }
         photoPicker.didExceedMaximumNumberOfSelection = { [weak self] (picker) in
             self?.showAlert(title: LocalizedString("Warning"),
@@ -212,7 +212,7 @@ extension JGGPostServiceDescribeVC: UITextFieldDelegate, UITextViewDelegate {
 
 extension JGGPostServiceDescribeVC: TLPhotosPickerViewControllerDelegate {
     func dismissPhotoPicker(withTLPHAssets: [TLPHAsset]) {
-        self.selectedImages = withTLPHAssets.flatMap { ($0, $0.fullResolutionImage) }
+        self.selectedImages = withTLPHAssets.compactMap { ($0, $0.fullResolutionImage) }
         if withTLPHAssets.count > 0 {
             collectionPhotos.isHidden = false
             btnTakePhotos.isHidden = true

@@ -139,7 +139,7 @@ class JGGPostServiceTimeSlotsDetailVC: JGGPostServiceTimeSlotsBaseVC {
         selectedDates =
             filteredDates
                 .keys
-                .flatMap { Date(fromString: $0, format: DateOnly) }
+                .compactMap { Date(fromString: $0, format: DateOnly) }
 
     }
     

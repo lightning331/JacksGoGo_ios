@@ -77,6 +77,7 @@ class JGGAppJobStatusSummaryVC: JGGAppDetailBaseVC {
             
             var bottomSpaceOfTableView: CGFloat = 0
             
+            // If my invited job
             if let proposal = job.proposal, proposal.userProfileId == appManager.currentUser?.id
             {
                 if proposal.isInvited == true && proposal.status == .open {

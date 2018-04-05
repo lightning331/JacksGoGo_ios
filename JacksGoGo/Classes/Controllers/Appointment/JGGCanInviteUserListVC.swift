@@ -80,6 +80,7 @@ class JGGCanInviteUserListVC: JGGAppointmentDetailBaseVC {
         if let segueId = segue.identifier {
             if segueId == "gotoServiceProvidersListVC" {
                 let vc = segue.destination as? JGGServiceProvidersListVC
+                vc?.selectedAppointment = self.selectedAppointment
                 vc?.invitedUsers = self.invitedUsers
             }
         }
@@ -104,14 +105,17 @@ extension JGGCanInviteUserListVC: UITableViewDataSource, UITableViewDelegate {
             self.inviteUser(user)
             self.tableView.reloadRows(at: [indexPath], with: .automatic)
         }
-        
-        cell.disableInviteButton(false)
-        
-        for u in invitedUsers {
-            if user.id == u.id || appManager.currentUser?.id == u.id {
-                cell.disableInviteButton()
+        if user.id == appManager.currentUser?.id {
+            cell.disableInviteButton(true)
+        } else {
+            cell.disableInviteButton(false)
+            for u in invitedUsers {
+                if user.id == u.id || appManager.currentUser?.id == u.id {
+                    cell.disableInviteButton()
+                }
             }
         }
+        
         cell.tapProfileHandler = { (cell) in
             self.showUserProfile(cell.profile)
         }

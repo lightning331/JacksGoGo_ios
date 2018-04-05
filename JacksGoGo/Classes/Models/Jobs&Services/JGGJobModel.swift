@@ -132,11 +132,13 @@ class JGGJobModel: JGGAppointmentBaseModel {
         case 2:
             return LocalizedString("Geotracking")
         case 3:
-            return LocalizedString("Before & After Photo") + ", " + LocalizedString("Geotracking")
+            return LocalizedString("Before & After Photo") + ", " +
+                LocalizedString("Geotracking")
         case 4:
             return LocalizedString("PIN Code")
         case 5:
-            return LocalizedString("Before & After Photo") + ", " + LocalizedString("PIN Code")
+            return LocalizedString("Before & After Photo") + ", " +
+                LocalizedString("PIN Code")
         case 6:
             return LocalizedString("Geotracking") + ", " + LocalizedString("PIN Code")
         case 7:

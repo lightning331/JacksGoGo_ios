@@ -54,7 +54,7 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
                 editingJob
                     .repetition?
                     .split(separator: ",")
-                    .flatMap { Int($0) }
+                    .compactMap { Int($0) }
                 ?? []
             let jobTime = editingJob.sessions?.first
             isSpecifiedDate = jobTime?.isSpecific
@@ -114,7 +114,7 @@ class JGGPostJobTimeVC: JGGPostAppointmentBaseTableVC {
                 }
                 else if selectedRepeatingType != .none && selectedRepeatingDays.count > 0 {
                     creatingJob.repetitionType = selectedRepeatingType
-                    creatingJob.repetition = selectedRepeatingDays.flatMap { String($0) }.joined(separator: ",")
+                    creatingJob.repetition = selectedRepeatingDays.compactMap { String($0) }.joined(separator: ",")
                 }
             }
         }

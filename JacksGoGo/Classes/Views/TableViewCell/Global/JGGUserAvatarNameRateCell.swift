@@ -61,6 +61,7 @@ class JGGUserAvatarNameRateCell: UITableViewCell {
             imgviewUserAvatar.image = placeholderAvatar
         }
         self.viewBackground.backgroundColor = UIColor.JGGWhite
+        
     }
 
 }

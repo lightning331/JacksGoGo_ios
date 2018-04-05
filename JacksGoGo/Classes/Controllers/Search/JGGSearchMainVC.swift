@@ -150,10 +150,15 @@ class JGGSearchMainVC: JGGStartTableVC {
     // MARK: - Button actions
     
     @IBAction func onPressedViewMyServices(_ sender: Any) {
+        gotoActiveServiceAroundVC { (servicesVC) in
+            servicesVC.isMyServices = true
+        }
     }
     
     @IBAction func onPressedViewAll(_ sender: Any) {
-        
+        gotoActiveServiceAroundVC { (servicesVC) in
+            
+        }
     }
     
     @IBAction func onPressedPostNew(_ sender: Any) {
@@ -162,6 +167,28 @@ class JGGSearchMainVC: JGGStartTableVC {
     
     // MARK: - Navigation
     
+    fileprivate func gotoActiveServiceAroundVC(_ properties: ((JGGActiveServicesAroundVC) -> Void)) {
+        let servicesVC = self.storyboard?.instantiateViewController(withIdentifier: "JGGActiveServicesAroundVC") as! JGGActiveServicesAroundVC
+        properties(servicesVC)
+        self.navigationController?.pushViewController(servicesVC, animated: true)
+    }
+    
+    fileprivate func gotoServiceDetailVC(with service: JGGJobModel) {
+        let jobsStoryboard = UIStoryboard(name: "Services", bundle: nil)
+        let detailVC = jobsStoryboard.instantiateViewController(withIdentifier: "JGGOriginalServiceDetailVC") as! JGGOriginalServiceDetailVC
+        detailVC.service = service
+        self.navigationController?
+            .pushViewController(detailVC, animated: true)
+    }
+    
+    fileprivate func gotoJobDetailVC(with job: JGGJobModel) {
+        let jobsStoryboard = UIStoryboard(name: "Jobs", bundle: nil)
+        let detailVC = jobsStoryboard.instantiateViewController(withIdentifier: "JGGOriginalJobDetailVC") as! JGGOriginalJobDetailVC
+        detailVC.job = job
+        self.navigationController?
+            .pushViewController(detailVC, animated: true)
+    }
+
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "gotoPostJob" || identifier == "gotoPostService" {
             guard let _ = appManager.currentUser else {
@@ -227,7 +254,9 @@ extension JGGSearchMainVC: UICollectionViewDataSource, UICollectionViewDelegate,
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        gotoActiveServiceAroundVC { (servicesVC) in
+            servicesVC.selectedCategory = categories[indexPath.row]
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -329,19 +358,4 @@ extension JGGSearchMainVC { // UITableViewDataSource, UITableViewDelegate
         }
     }
     
-    private func gotoServiceDetailVC(with service: JGGJobModel) {
-        let jobsStoryboard = UIStoryboard(name: "Services", bundle: nil)
-        let detailVC = jobsStoryboard.instantiateViewController(withIdentifier: "JGGOriginalServiceDetailVC") as! JGGOriginalServiceDetailVC
-        detailVC.service = service
-        self.navigationController?
-            .pushViewController(detailVC, animated: true)
-    }
-    
-    private func gotoJobDetailVC(with job: JGGJobModel) {
-        let jobsStoryboard = UIStoryboard(name: "Jobs", bundle: nil)
-        let detailVC = jobsStoryboard.instantiateViewController(withIdentifier: "JGGOriginalJobDetailVC") as! JGGOriginalJobDetailVC
-        detailVC.job = job
-        self.navigationController?
-            .pushViewController(detailVC, animated: true)
-    }
 }

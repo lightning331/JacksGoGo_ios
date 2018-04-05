@@ -71,9 +71,11 @@ class JGGServiceListCell: UITableViewCell {
             viewRatebar.isHidden = true
             viewTime.isHidden = false
             lblTime.text = appointment.jobTimeDescription()
+            imgviewAccessory.image = #imageLiteral(resourceName: "button_next_cyan")
         } else { // Service
             viewRatebar.isHidden = false
             viewTime.isHidden = true
+            imgviewAccessory.image = #imageLiteral(resourceName: "button_next_green")
         }
         lblAddress.text = appointment.address?.fullName
         lblPrice.text = appointment.budgetSimpleDescription()

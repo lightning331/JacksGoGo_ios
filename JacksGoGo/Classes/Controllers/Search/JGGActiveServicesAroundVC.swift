@@ -35,6 +35,12 @@ UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
     @IBOutlet weak var lblSearchRadius: UILabel!
     @IBOutlet weak var sliderSearchRadius: UISlider!
     
+    var selectedCategory: JGGCategoryModel?
+    var isMyServices: Bool = false
+    
+    fileprivate lazy var appointments: [JGGJobModel] = []
+    fileprivate lazy var isLoading: Bool = false
+    
     // MARK: -
     
     override func viewDidLoad() {
@@ -46,14 +52,18 @@ UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
         self.viewMapFilterBox.isHidden = true
         self.viewMapContainer.isHidden = true
         
-        addDummyPin()
         self.mapView.delegate = self
+        
+        loadServices()
     }
     
     private func initTableView() {
         self.tableView?.register(UINib(nibName: "JGGServiceListCell", bundle: nil),
                                  forCellReuseIdentifier: "JGGServiceListCell")
         
+        self.tableView?.register(UINib(nibName: "JGGLoadingCell", bundle: nil),
+                                 forCellReuseIdentifier: "JGGLoadingCell")
+
         self.tableView?.estimatedRowHeight = 138
         self.tableView?.rowHeight = UITableViewAutomaticDimension
         self.tableView?.separatorStyle = .none
@@ -64,6 +74,32 @@ UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
     func shouldHideNavigationBarManually() -> Bool {
         return true
     }
+    
+    // MARK: - Api requests
+    fileprivate func loadServices(pageIndex: Int = 0, pageSize: Int = 20) {
+        
+        let categoryId = selectedCategory?.id
+        var userProfileId: String? = nil
+        if isMyServices {
+            userProfileId = appManager.currentUser?.id
+        }
+        isLoading = true
+        self.tableView?.reloadData()
+        APIManager.searchServices(userProfileId: userProfileId, categoryId: categoryId) { [weak self] appointments in
+            
+            self?.isLoading = false
+            
+            if pageIndex == 0 {
+                self?.appointments.removeAll()
+            }
+            self?.appointments.append(contentsOf: appointments)
+            self?.tableView?.reloadData()
+            
+        }
+        
+    }
+    
+    // MARK: - Button actions
     
     @IBAction func onPressedViewMap(_ sender: Any) {
         self.tableView?.isHidden = true
@@ -100,13 +136,24 @@ UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
     // MARK: - UITableViewDataSource, delegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return appointments.count + (isLoading ? 1 : 0)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "JGGServiceListCell") as! JGGServiceListCell
-        
-        return cell
+        if indexPath.row >= appointments.count {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "JGGLoadingCell") as! JGGLoadingCell
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "JGGServiceListCell") as! JGGServiceListCell
+            cell.appointment = appointments[indexPath.row]
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row < self.appointments.count  {
+            gotoServiceDetailVC(with: self.appointments[indexPath.row])
+        }
     }
 
     // MARK: ScrollView Delegate
@@ -161,26 +208,12 @@ UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
         print("mapView(_:annotationView:calloutAccessoryControlTapped)")
     }
     
-    private func addDummyPin() {
-        let service00 = JGGServiceModel()
-        service00.coordinate = CLLocationCoordinate2DMake(1.0008, 103.3545)
-        service00.title = "Tennis Coach"
-        let client00 = JGGClientUserModel()
-        client00.fullname = "Alan.Tam"
-        service00.invitingClient = client00
-        self.mapView.addAnnotation(service00)
-        
-        let service01 = JGGServiceModel()
-        service01.coordinate = CLLocationCoordinate2DMake(2.0038, 114.4545)
-        service01.title = "Gardening"
-        let client01 = JGGClientUserModel()
-        client01.fullname = "SeanYong"
-        service01.invitingClient = client01
-        self.mapView.addAnnotation(service01)
-
-//        let region = MKCoordinateRegionMake(service00.coordinate, MKCoordinateSpan(latitudeDelta: 200, longitudeDelta: 200))
-        self.mapView.setCenter(service00.coordinate, animated: true)
-//        self.mapView.showAnnotations(self.mapView.annotations, animated: false)
+    //MARK: - Navigation
+    fileprivate func gotoServiceDetailVC(with service: JGGJobModel) {
+        let jobsStoryboard = UIStoryboard(name: "Services", bundle: nil)
+        let detailVC = jobsStoryboard.instantiateViewController(withIdentifier: "JGGOriginalServiceDetailVC") as! JGGOriginalServiceDetailVC
+        detailVC.service = service
+        self.navigationController?
+            .pushViewController(detailVC, animated: true)
     }
-
 }

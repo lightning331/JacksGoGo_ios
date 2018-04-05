@@ -101,7 +101,7 @@ extension JGGJobDetailVC: UITableViewDataSource, UITableViewDelegate {
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: "JGGDetailInfoCenterAlignCell") as! JGGDetailInfoCenterAlignCell
             cell.lblTitle.text = LocalizedString("Job reference no.: ") + job!.id!
-            cell.lblSubTitle.text = "Posted on " + ((job?.postOn?.toString(format: .custom("d MMM, yyyy"))) ?? "")
+            cell.lblSubTitle.text = LocalizedString("Posted on ") + ((job?.postOn?.toString(format: .custom("d MMM, yyyy"))) ?? "")
             return cell
         default:
             break

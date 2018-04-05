@@ -80,6 +80,8 @@
 		63CA7F131FA8A04A005A44B0 /* JGGAppBiddingProviderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63CA7F121FA8A04A005A44B0 /* JGGAppBiddingProviderCell.xib */; };
 		63DBC8AF1FA02E7800AAECA8 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DBC8AE1FA02E7800AAECA8 /* UIColor.swift */; };
 		63DBC8B11FA0356000AAECA8 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DBC8B01FA0356000AAECA8 /* UIFont.swift */; };
+		C19725ED2076D6DA004E118C /* JGGLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19725EB2076D6DA004E118C /* JGGLoadingCell.swift */; };
+		C19725EE2076D6DA004E118C /* JGGLoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C19725EC2076D6DA004E118C /* JGGLoadingCell.xib */; };
 		F7862BF9654B02B90CFE4900 /* Pods_JacksGoGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781CEC96D6051F4CC98B1136 /* Pods_JacksGoGo.framework */; };
 		FF002DE52019DF790078B486 /* JGGProposalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF002DE42019DF790078B486 /* JGGProposalModel.swift */; };
 		FF0CA88B1FB1BA3B00A2C98B /* JGGAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0CA8891FB1BA3B00A2C98B /* JGGAlertViewController.swift */; };
@@ -393,6 +395,8 @@
 		63DBC8B01FA0356000AAECA8 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		781CEC96D6051F4CC98B1136 /* Pods_JacksGoGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JacksGoGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DDBAF2BE302FE617614219B /* Pods-JacksGoGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JacksGoGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JacksGoGo/Pods-JacksGoGo.release.xcconfig"; sourceTree = "<group>"; };
+		C19725EB2076D6DA004E118C /* JGGLoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGLoadingCell.swift; sourceTree = "<group>"; };
+		C19725EC2076D6DA004E118C /* JGGLoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGLoadingCell.xib; sourceTree = "<group>"; };
 		FF002DE42019DF790078B486 /* JGGProposalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGProposalModel.swift; sourceTree = "<group>"; };
 		FF0CA8891FB1BA3B00A2C98B /* JGGAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGGAlertViewController.swift; sourceTree = "<group>"; };
 		FF0CA88A1FB1BA3B00A2C98B /* JGGAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JGGAlertViewController.xib; sourceTree = "<group>"; };
@@ -1280,6 +1284,8 @@
 				FF9E9E6D1FAC52C600F32283 /* JGGUserAvatarNameRateCell.xib */,
 				FFB1A0B22017BB32002C3738 /* JGGNotLoggedinCell.swift */,
 				FFB1A0B32017BB32002C3738 /* JGGNotLoggedinCell.xib */,
+				C19725EB2076D6DA004E118C /* JGGLoadingCell.swift */,
+				C19725EC2076D6DA004E118C /* JGGLoadingCell.xib */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -1632,6 +1638,7 @@
 				63BE91E21FA0263C00D40C07 /* Muli-Regular.ttf in Resources */,
 				FFA21F721FABC57F00F5A6DA /* JGGTagListCell.xib in Resources */,
 				63CA7F131FA8A04A005A44B0 /* JGGAppBiddingProviderCell.xib in Resources */,
+				C19725EE2076D6DA004E118C /* JGGLoadingCell.xib in Resources */,
 				FF86D11B1FC4B87800EE70F5 /* JGGCalendarView.xib in Resources */,
 				FF849DF91FD707DF003EB83A /* PostService.storyboard in Resources */,
 				FF849DF61FD6EFE4003EB83A /* JGGSkillTestQuestionCell.xib in Resources */,
@@ -1903,6 +1910,7 @@
 				FFFC213F1FB5C0AA00AAA6F7 /* JGGBidDetailVC.swift in Sources */,
 				FF849DF41FD6EFBF003EB83A /* JGGSkillTestQuestionCell.swift in Sources */,
 				FF2B4B4A205307C000E58EBB /* JGGServiceProvidersListVC.swift in Sources */,
+				C19725ED2076D6DA004E118C /* JGGLoadingCell.swift in Sources */,
 				FFEB45D81FEC216200F362FF /* JGGProfileNC.swift in Sources */,
 				FF849DFD1FD708DF003EB83A /* JGGPostAppointmentBaseTableVC.swift in Sources */,
 				FFB594301FDE85E700D12A1F /* JGGAppJobStatusButtonCell.swift in Sources */,

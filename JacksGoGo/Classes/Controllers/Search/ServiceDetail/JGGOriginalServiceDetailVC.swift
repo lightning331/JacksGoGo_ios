@@ -88,7 +88,7 @@ class JGGOriginalServiceDetailVC: JGGSearchBaseTableVC {
         registerCell(nibName: "JGGAppInviteProviderCell")
         registerCell(nibName: "JGGTagListCell")
         registerCell(nibName: "JGGJobBookedInfoCell")
-        
+        registerCell(nibName: "JGGJobReferencePostedTimeCell")
     }
     
     // MARK: Create Menu
@@ -224,25 +224,26 @@ extension JGGOriginalServiceDetailVC {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "JGGDetailCategoryTitleCell") as! JGGDetailCategoryTitleCell
-            
+            cell.category = self.service.category
+            cell.title = self.service.title
             return cell
         case 1, 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "JGGDetailInfoDescriptionCell") as! JGGDetailInfoDescriptionCell
             if indexPath.row == 1 {
                 cell.icon = UIImage(named: "icon_budget")
-                cell.title = "$ 80.00 - $ 110.00"
+                cell.title = self.service.budgetDescription()
                 cell.lblTitle.font = UIFont.JGGListTitle
             }
             else if indexPath.row == 2 {
                 cell.icon = UIImage(named: "icon_info")
-                cell.title = "We are experts at gardening & landscaping. Please state in your quotation: size of your garden, what tasks you need done, and any special requirements."
+                cell.title = self.service.description_
                 cell.lblTitle.font = UIFont.JGGListText
             }
-                return cell
+            return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "JGGDetailInfoAccessoryButtonCell") as! JGGDetailInfoAccessoryButtonCell
             cell.icon = UIImage(named: "icon_location")
-            cell.title = "Smith Street, 0.4km away"
+            cell.title = self.service.address?.fullName
             cell.lblTitle.font = UIFont.JGGListText
             if isCanBuyService {
                 cell.btnAccessory.isHidden = false
@@ -271,17 +272,19 @@ extension JGGOriginalServiceDetailVC {
             } else {
                 cell.btnInvite.isHidden = true
             }
+            let user = self.service.userProfile?.user
+            cell.lblUsername.text = user?.fullname
+            cell.ratebarUserRate.rating = user?.rate ?? 0
             return cell
         case 7:
             let cell = tableView.dequeueReusableCell(withIdentifier: "JGGTagListCell") as! JGGTagListCell
             cell.taglistView.removeAllTags()
-            cell.taglistView.addTags([
-                "gardening", "landscaping", "harticulture", "plants", "garden", "garderner", "training"
-                ])
+            cell.taglistView.addTags(self.service.tags?.components(separatedBy: ",") ?? [])
             return cell
         case 8:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "JGGJobBookedInfoCell") as! JGGJobBookedInfoCell
-            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "JGGJobReferencePostedTimeCell") as! JGGJobReferencePostedTimeCell
+            cell.lblJobReferenceNo.text = LocalizedString("Service reference no: ") + (self.service.id ?? "")
+            cell.lblPostTime.text = LocalizedString("Posted on") + ((self.service.postOn?.toString(format: .custom("d MMM, yyyy"))) ?? "")
             return cell
         default:
             return UITableViewCell()

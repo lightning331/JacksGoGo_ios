@@ -151,13 +151,15 @@ class JGGSearchMainVC: JGGStartTableVC {
     
     @IBAction func onPressedViewMyServices(_ sender: Any) {
         gotoActiveServiceAroundVC { (servicesVC) in
-            servicesVC.isMyServices = true
+            servicesVC.isMyAppointment = true
         }
     }
     
-    @IBAction func onPressedViewAll(_ sender: Any) {
+    @IBAction func onPressedViewAll(_ sender: UIButton) {
         gotoActiveServiceAroundVC { (servicesVC) in
-            
+            if sender == btnViewAllServices {
+                servicesVC.isServices = true
+            }
         }
     }
     
@@ -256,6 +258,9 @@ extension JGGSearchMainVC: UICollectionViewDataSource, UICollectionViewDelegate,
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         gotoActiveServiceAroundVC { (servicesVC) in
             servicesVC.selectedCategory = categories[indexPath.row]
+            if self.selectedTab == .services {
+                servicesVC.isServices = true
+            }
         }
     }
     

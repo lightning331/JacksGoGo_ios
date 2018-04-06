@@ -36,7 +36,8 @@ UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
     @IBOutlet weak var sliderSearchRadius: UISlider!
     
     var selectedCategory: JGGCategoryModel?
-    var isMyServices: Bool = false
+    var isMyAppointment: Bool = false
+    var isServices: Bool = false
     
     fileprivate lazy var appointments: [JGGJobModel] = []
     fileprivate lazy var isLoading: Bool = false
@@ -54,7 +55,16 @@ UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
         
         self.mapView.delegate = self
         
-        loadServices()
+        if isServices {
+            self.btnPostNewService.backgroundColor = UIColor.JGGGreen
+            self.btnPostNewService.setTitle(LocalizedString("Post A Service"), for: .normal)
+        } else {
+            self.btnPostNewService.backgroundColor = UIColor.JGGCyan
+            self.btnPostNewService.setTitle(LocalizedString("Post A Job"), for: .normal)
+        }
+        
+        loadAppointments()
+        
     }
     
     private func initTableView() {
@@ -76,16 +86,17 @@ UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
     }
     
     // MARK: - Api requests
-    fileprivate func loadServices(pageIndex: Int = 0, pageSize: Int = 20) {
+    fileprivate func loadAppointments(pageIndex: Int = 0, pageSize: Int = 20) {
         
         let categoryId = selectedCategory?.id
         var userProfileId: String? = nil
-        if isMyServices {
+        if isMyAppointment {
             userProfileId = appManager.currentUser?.id
         }
         isLoading = true
         self.tableView?.reloadData()
-        APIManager.searchServices(userProfileId: userProfileId, categoryId: categoryId) { [weak self] appointments in
+        
+        let completionClosure: AppointmentsClosure = { [weak self] appointments in
             
             self?.isLoading = false
             
@@ -96,6 +107,13 @@ UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
             self?.tableView?.reloadData()
             
         }
+        
+        if isServices {
+            APIManager.searchServices(userProfileId: userProfileId, categoryId: categoryId, completionClosure)
+        } else {
+            APIManager.searchJobs(userProfileId: userProfileId, categoryId: categoryId, completionClosure)
+        }
+        
         
     }
     
@@ -152,7 +170,12 @@ UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row < self.appointments.count  {
-            gotoServiceDetailVC(with: self.appointments[indexPath.row])
+            let appointment = self.appointments[indexPath.row]
+            if isServices {
+                gotoServiceDetailVC(with: appointment)
+            } else {
+                gotoJobDetailVC(with: appointment)
+            }
         }
     }
 
@@ -216,4 +239,13 @@ UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
         self.navigationController?
             .pushViewController(detailVC, animated: true)
     }
+    
+    fileprivate func gotoJobDetailVC(with job: JGGJobModel) {
+        let jobsStoryboard = UIStoryboard(name: "Jobs", bundle: nil)
+        let detailVC = jobsStoryboard.instantiateViewController(withIdentifier: "JGGOriginalJobDetailVC") as! JGGOriginalJobDetailVC
+        detailVC.job = job
+        self.navigationController?
+            .pushViewController(detailVC, animated: true)
+    }
+
 }
